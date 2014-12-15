@@ -5,6 +5,9 @@ body {
 	/* background: white; */
 	/* background-image : url("../login/beer.jpg");  */
 	/* background : #fec655; */
+	background-image : url("../login/beer.jpg");
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
 }
 
 #wrap {
@@ -14,6 +17,10 @@ body {
 	background: white;
 	margin: 0px auto 0px auto ;
 	border-radius:20px;
+	
+/* 	background-image : url("../login/beer.jpg");
+	background-size: 100% 100%;
+	background-repeat:no-repeat; */
 	/* border : 1px solid red; */
 	
 /* 	box-shadow: 10px 10px 5px #888888; */
@@ -65,7 +72,7 @@ body {
 	width: 670px;
 	height:37px;
 	padding: 3px;
-	border-bottom: 1px solid #fd9e04;
+	border-bottom: 2px solid #fd9e04;
 
 	/* border: 1px solid red; */
 }
@@ -109,17 +116,32 @@ body {
 
 #containerKeyword {
 	width: 880px;
+	height: 100px;
 	margin: 0px auto 0px auto;
 	padding-bottom:10px;
-	background: #feb904;
 	border-radius: 5px;
+	background: #000000;
+	color: white;
+	border-top: 3px solid #fd9e04;
 	
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	
+	padding-top: 16px;
+	
+	/* background: #feb904; */
 	/* border: solid blue 1px; */
 }
 #containerKeyword>p{
-	padding:10px 10px 0px 10px;
+	padding: 10px 10px 0px 10px;
 	font-weight: bold;
+	background: black;
 	color: white;
+	position: absolute;
+	margin-top: -30px;
+	border-radius: 5px;
+	border-top: 3px solid #fd9e04;
+	border-right: 3px solid #fd9e04;
 }
 
 #containerKeyword div{
@@ -143,7 +165,7 @@ body {
 	height:470px;
 	overflow-y:scroll;
 	
-	border:7px double #feb904;
+	/* border:7px double #feb904; */
 }
 
 .list {
@@ -224,3 +246,29 @@ a:active {
     text-decoration: underline;
 }
 
+
+
+input[type="button"] {	background: -webkit-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	background: -moz-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	background: -o-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFCF52), color-stop(0.25, #FEB901), color-stop(0.5, #f38f07), color-stop(0.75, #f89b1f), to(#ffcf53));
+	background: linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	border: 1px solid #ffde86;
+	padding: 5px 10px 5px;
+	border-radius: 3px;
+	color: #FFFFFF;
+	font-weight: bold;
+	
+	border: 1px solid #ffde86;
+	padding: 5px 10px 5px;
+	border-radius: 3px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+input[type="button"]:hover {
+	background: #ffc837;
+	border: 1px solid #ffde86;
+	border-radius: 3px;
+	color: #003a5e;
+}
