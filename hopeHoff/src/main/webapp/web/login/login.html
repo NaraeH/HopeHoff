@@ -6,31 +6,8 @@
 <link rel='stylesheet' href="../../css/login/login.css">
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap.min.css">
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap-theme.min.css">
-
-<style>
-
-        .control_panel  {
-        margin : 0 auto;
-            position:absolute; 
-            height:13px; 
-            overflow:hidden; 
-        }
-
-        .control_button {
-            width:15px; height:30px;
-            position:relative; 
-            float:left; cursor:pointer;  
-            background:url('point_button.png');
-        }
-        .control_button:hover { top:-16px; }
-        .control_button.active { top:-31px; }
-        
-</style>
-
-
-
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<!-- 추천 place 사진 바뀌는거 필요한 플러그인 -->
+<script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/jquery.innerfade.js"></script>
 
 <script>
@@ -70,8 +47,40 @@ $(document).ready(function(){
 				<h3>Wara-Wara</h3>
 				<p>강남3호전 오픈기념 행사 <br>
 				전 메뉴50% 할인</p>
-				<p><button type="button" class="btn btn-danger">Other Hot!Place »</button></p>
+				
+				
+			<!--  -->	
+			
+				<!-- Button trigger modal -->
+				<p><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+				 다른 추천장소 보기 »
+				</button></p>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				      </div>
+				      <div class="modal-body">
+				        ...
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary">Save changes</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				
+			<!--  -->	
+				
+				
+	
+				
 			</div>
+			
 			
 			<div id = "right">
 				<h2>Hope Hoff</h2>
@@ -108,21 +117,17 @@ $(document).ready(function(){
 			</div>
 		</div>
 		
-        <div class="control_panel">
-            <div class="control_button"></div>
-            <div class="control_button"></div>
-            <div class="control_button"></div>
-            <div class="control_button"></div>
-            <div class="control_button"></div>
-        </div>
-	</div>
-	
 		<div id="footer">
 			<hr/>
 			<h5>상호 : Hope Hoff | E-mail : HopeHoff@google.com | 연락처 : 504-5048282</h5>
 			<h5>공동대표 : 반기백, 현나래, 지용근, 배연정  |  사업자번호 : 1002- 48393 - 324892  |  사무실 : 서울특별시 서초구 강남대로53길 8 비트아카데미빌딩 5층 504호 맨 뒷자리. </h5>
 			<h5>[가게 등록]에 관한 문의사항이 있으시면 이 링크로 연락바랍니다.<a href="#"> 문의하기</a>, by <a href="https://twitter.com/mdo">@bit63_HopeHoff</a>.</h5>
 		</div>
+		
+		
+	</div>
+	
+		
 		
 	</body>
 	
