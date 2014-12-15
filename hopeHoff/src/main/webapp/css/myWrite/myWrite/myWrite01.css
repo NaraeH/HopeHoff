@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+
+.tableIndex{
+	display:inline;
+}
+.warning{
+	display: inline;	
+}
+
+#tableForm{
+	padding:20px 50px;
+	margin: 20px;
+ 	border:1px solid black;
+ 	
+}
+
+#myWriteTable{
+	background-color: white;
+	padding: 30px;
+	margin: 0px auto;
+	width: 700px;
+	border: 1px solid red;
+}
+
+#myWrite{
+	padding: 10px;
+	margin: 40px auto;
+	width : 700px;
+	border:1px solid navy;
+}
+
+#myWritedateForm{
+	margin: 10px 40px 10px ;
+	border: 1px solid green;
+	text-align: right;
+}
+
+#myWriteFooter{
+	padding : 10px 5px;
+	margin: 0px auto;
+	width: 700px;
+	border: 1px solid gray;
+}
+
+#big{
+	margin: 0px auto;
+	padding:10px;
+	border:1px solid pink;
+	width:800px;
+	height:670px;
+}
+
+#warningCotent{
+	color:red;
+	font-size: 20px;
+}
