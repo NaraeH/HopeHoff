@@ -1,23 +1,32 @@
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+body {
+  background-size: 100%;
+}
 #wrap{
 	width : 800px;
 	height: 670px;
 	margin: 0 atuo;
 	padding: 10px;
-	border: 1px solid gray;
+	/* border: 1px solid gray; */
+	font-family: 'Hanna', serif;
+	
 }
 
 #header{
 	width:700px;
-	border: red solid 1px;
+	/* border: red solid 1px; */
+	
 } 
 #container{
+	padding: 10px;
 	width:700px;
 	height: 530px;
-	border: orange solid 1px;
+	/* border: orange solid 1px; */
+	background-color: gold;
 }
 #footer{
 	width:700px;
-	border: yellow solid 1px;
+	/* border: yellow solid 1px; */
 	color:blue;
 	
 }
