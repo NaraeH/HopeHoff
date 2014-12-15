@@ -1,6 +1,7 @@
 body{
 background-image : url("beer.jpg");
-background-size : cover;
+background-size : 100% 1000px;
+background-repeat: no-repeat;
 }
 
 #wrap{
