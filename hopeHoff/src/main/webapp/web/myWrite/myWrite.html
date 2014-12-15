@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='../../css/myWrite.css'>
+<link rel='stylesheet'  href='../../css/bootstrap/bootstrap.min.css'>
+<link rel='stylesheet'  href='../../css/bootstrap/bootstrap-theme.min.css'>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-2.1.1.js"> </script>
+ <script>
+  $(function() {
+    $( "#myWriteTable" ).accordion();
+  });
+  </script>
+</head>
+
+
+<body>
+<div id="big">
+<div id="myWrite">
+	<h1>My Page</h1>
+	<h4>회원님이 작성하신 글정보를 한눈에 통화 할수 있습니다.</h4>
+</div>
+
+
+<div id="myWritedateForm">
+<h4>날짜입력</h4>
+</div>
+
+
+<div id="myWriteTable">
+<table id=write class="table table-hover">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>#</th>
+		<th>전화번호</th>
+		<th>인원</th>
+		<th>등록시간</th>
+	</tr>
+		<tr>
+		<td><input type="checkbox"></td>
+		<td>3</td>
+		<td>010-9444-4444</td>
+		<td>7</td>
+		<td>17:06</td>
+	</tr>
+	
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>2</td>
+		<td>010-9444-4444</td>
+		<td>7</td>
+		<td>16:00</td>
+	</tr>
+	
+	
+	
+ 	
+</table>
+</div>
+
+<div id="myWriteFooter">
+	<table id=write class="table table-hover">
+	<tr>
+		<td><input type="checkbox"></td>
+		<td>1</td>
+		<td>010-9444-4444</td>
+		<td>7</td>
+		<td>13:06</td>
+	</tr>
+	</table>
+<button>삭제</button> 삭제 했을시 연락이 오지 않습니다.
+</div>
+</div>
+
+</body>
+
+
+</html>

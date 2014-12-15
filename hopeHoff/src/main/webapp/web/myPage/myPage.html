@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myPage</title>
+<link rel="stylesheet" type="text/css" href="../../css/myPage/myPage.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
+</head>
+<body>
+
+	<div id="wrap" class="center-block">
+		<div id="header" class="center-block">
+			<h1>My Page</h1>
+			<h4>회원님의 가입정보와 글 정보를 한눈에 보실 수 있습니다.</h4>
+		</div>
+		<div class="center-block" id="container">
+
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="id" class="col-xs-4 control-label">ID</label>
+					<div class="col-xs-7">
+						<input type="text" class="form-control" id="id" placeholder="duswjd7918" disabled>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="name" class="col-xs-4 control-label">Name</label>
+					<div class="col-xs-7">
+						<input type="text" class="form-control" id="name" placeholder="배연정" disabled>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="birthday" class="col-xs-4 control-label">BirthDay</label>
+					<div class="col-xs-7">
+						<input type="date" class="form-control" id="birthday">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="oldPwd" class="col-xs-4 control-label">Old
+						Password</label>
+					<div class="col-xs-7">
+						<input type="password" class="form-control" id="oldPwd">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="newPwd" class="col-xs-4 control-label">New Password</label>
+					<div class="col-xs-7">
+						<input type="password" class="form-control" id="newPwd">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="ConfirmNewPwd" class="col-xs-4 control-label">Confirm New Password</label>
+					<div class="col-xs-7">
+						<input type="password" class="form-control" id="confirmNewPwd">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="phoneNo" class="col-xs-4 control-label">Phone Number</label>
+					<div class="col-xs-7">
+						<input type="text" class="form-control" id="phoneNo"
+							placeholder="예)01012345678">
+						<input type="button" id="btnSendVerCode" value="Send Verification Code">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="confirmVerCode" class="col-xs-4 control-label">Confirm Verification Code</label>
+					<div class="col-xs-4">
+						<input type="text" class="form-control" id="confirmVerCode">
+						<input type="button" id="ok" value="ok">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-xs-4 control-label">Email</label>
+					<div class="col-xs-7">
+						<input type="email" class="form-control" id="email">
+					</div>
+				</div>
+				<div id="buttons" align="center">
+              <button type="button" class="btn btn-default" id="btnChange">수정</button>
+				<button type="reset" class="btn btn-default" id="btnCancel">취소</button>
+				</div>
+			</form>
+			</div>
+			<div id="footer" class="center-block" align="center">
+				배연정짱^-^ copyRight!!!!
+			</div>
+
+
+		</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+#wrap{
+	width : 800px;
+	height: 670px;
+	margin: 0 atuo;
+	padding: 10px;
+	border: 1px solid gray;
+}
+
+#header{
+	width:700px;
+	border: red solid 1px;
+} 
+#container{
+	width:700px;
+	height: 530px;
+	border: orange solid 1px;
+}
+#footer{
+	width:700px;
+	border: yellow solid 1px;
+	color:blue;
+	
+}

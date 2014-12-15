@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+#myWriteTable{
+	margin: 0px auto;
+	width: 700px;
+	border: 1px solid red;
+}
+
+#myWrite{
+	margin: 40px auto;
+	width : 700px;
+	border: 1px solid blue;
+}
+
+#myWritedateForm{
+	margin: 10px 180px;
+	border: 1px solid green;
+	text-align: right;
+}
+
+#myWriteFooter{
+	margin: 0px auto;
+	width: 700px;
+	border: 1px solid gray;
+}
+
+#big{
+	margin: 0px auto;
+	padding:10px;
+	border:1px solid pink;
+	width:800px;
+	height:670px;
+}

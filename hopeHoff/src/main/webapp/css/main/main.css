@@ -1,0 +1,130 @@
+/* 큰틀 */
+#wrap {
+	width:  950px;
+	height: 820px;
+	margin: 0 auto;
+	padding: 30px;
+	border: red solid 1px;
+}
+
+/*----------------------header-----------------------  */
+#header {
+	width:940px;
+	height:100px;
+	margin:5px;
+	
+	border: yellow solid 1px;
+}
+
+
+#headerLogo {
+	width: 250px;
+	height: inherit;
+	display: inline-block;
+	
+	border: solid green 1px;
+}
+
+#headerMenu {
+	width: 680px;
+	height: inherit;
+	display: inline-block;
+	
+	border: solid blue 1px;
+}
+
+#headerMenu tr {
+	width: 880px;
+	height: 50px;
+}
+/* ----------------------container-----------------------   */
+#container {
+	width:  940px;
+	margin:5px;
+
+	border: solid green 1px;
+	height:700px;
+}
+
+#containerKeyword {
+	width: 880px;
+	margin: 10px auto 0px auto;
+	padding-bottom:10px;
+	border: solid blue 1px;
+}
+#containerKeyword>p{
+	margin:3px;
+	font-weight: bold
+}
+
+#containerKeyword div{
+	width: 200px;
+	display: inline-block;
+	margin-left:15px;
+	border-right: solid blue 1px;
+}
+
+#containerKeyword>div>p {
+	margin:3px;
+}
+
+#containerKeyword div:last-child{
+	border:0px;
+}
+
+#containerList {
+	width: 880px;
+	margin: 30px;
+	height:500px;
+	overflow-y:scroll;
+	
+	border: 1px solid black;
+}
+
+.list {
+	width: 250px;
+	height:175px;
+	margin: 10px 0px 0px 30px;
+	display:inline-block;
+	padding: 5px 0px 5px 0px;
+	
+	border: 1px solid black;
+	
+}
+
+.list img {
+	width: 220px;
+	height: 80px;
+}
+
+.listInfo{
+	width: 220px;
+	height: 100px;
+	margin: 0 auto;
+	
+	border: 1px solid red;
+}
+
+#listTitle{
+	width: 50px;
+	border-radius:5px;	
+	margin: 0 atuo;
+	
+	
+	border:1px solid yellow;
+}
+
+.listKeywordContainer {
+	width: 220px;
+	height: 50px;
+	margin: 0 auto;
+	
+	border: 1px solid red;
+}
+
+/* ----------------------footer-----------------------   */
+#footer {
+	
+}
+
+

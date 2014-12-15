@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>HopeHoff</title>
+<link rel='stylesheet' href="../../css/main/main.css">
+</head>
+<body>
+
+	<div id="wrap">
+		<div id="header">
+			<div id="headerLogo">
+				<a href="#"><img src="">HopeHoff</a>
+			</div>
+			<div id="headerMenu">
+				추천place
+				 <input id="btnLogin" type="button" value="로그인"> 
+				 <input id="btnSignUp" type="button" value="회원가입">
+			</div>
+		</div>
+
+		<div id="container">
+			<div id="containerKeyword">
+				<p>키워드</p>
+				<div id="keywordRegion">
+					<p>지역</p>
+					<input type="checkbox">영등포<br>
+					<input type="checkbox">강남<br>
+					<input type="checkbox">안양<br>
+				</div>
+				
+				<div id="keywordPlace">
+					<p>장소타입</p>
+					<input type="checkbox">룸형식<br>
+					<input type="checkbox">노래방<br>
+					<input type="checkbox">포장마차<br>
+				</div>
+				
+				<div id="keywordPeole">
+					<p>인원</p>
+					<input type="checkbox">4인 ~ 10인<br>
+					<input type="checkbox">10인 ~ 15명<br>
+					<input type="checkbox">15인 이상<br>
+				</div>
+				
+				<div id="keywordFood">
+					<p>안주류</p>
+					<input type="checkbox">치킨    <input type="checkbox">삼겹살 <br>
+					<input type="checkbox">족발    <input type="checkbox">회<br>
+					<input type="checkbox">곱창    <input type="checkbox">과일<br>
+				</div>
+			</div>
+			
+			<div id="containerList">
+			</div>
+			
+		<div id="footer">
+		</div>
+	</div>
+	</div>
+
+	<script src='../../js/jquery-2.1.1.min.js'></script>
+	<script>
+		var count = 13;
+		for (var i = 0; i < count; i++) {
+			$($("<div>").attr("class", "list")
+					.html("<div class='listInfo'>"
+							+ "<div id='listTitle'>준코</div>"
+							+ "<img src='test.jpg' alt='가게사진'>"
+							+ "<div>"
+							+ "<hr>"
+							+ "<div class='listKeywordContainer'>"
+							+ "<p>keyword</p>"
+							+ "</div>"))
+					.appendTo("#containerList");
+		}
+	</script>
+
+</body>
+</html>
