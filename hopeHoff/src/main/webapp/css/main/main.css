@@ -167,7 +167,7 @@ body {
 	height: 100px;
 	margin: 0 auto;
 	
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 #listTitle{
@@ -176,7 +176,7 @@ body {
 	margin: 0 atuo;
 	
 	
-	border:1px solid yellow;
+	/* border:1px solid yellow; */
 }
 
 .listKeywordContainer {
@@ -184,7 +184,7 @@ body {
 	height: 50px;
 	margin: 0 auto;
 	
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 /* ----------------------footer-----------------------   */
