@@ -1,28 +1,45 @@
 /* 큰틀 */
+
+body {
+	background: #feab03;
+	/* background: white; */
+	/* background-image : url("../login/beer.jpg");  */
+	/* background : #fec655; */
+}
+
 #wrap {
 	width:  950px;
-	height: 820px;
-	margin: 0 auto;
-	padding: 30px;
-	background: #f1b82b;
+	height: 730px;
+ 	padding: 30px;
+	background: white;
+	margin: 0px auto 0px auto ;
+	border-radius:20px;
+	/* border : 1px solid red; */
+	
+/* 	box-shadow: 10px 10px 5px #888888; */
+/* 	border: 10px #CD853F ridge; */
+	/* border-radius:5px; */
+	/* background: rgba(255,255,255,0.3); */
+	/* margin: 0 auto; */
 /* 	border: red solid 1px; */
 }
 
 /*----------------------header-----------------------  */
 #header {
-	width:940px;
+	/* width:950px; */
 	height:100px;
-	margin:5px;
-	background: #f4c73a;
+	margin:0px;
+/* 	border-top: double 5px white;
+	border-bottom: double 5px white; */
+	/* background: #f4c73a; */
 	/* border: yellow solid 1px; */
 }
 
 
 #headerLogo {
 	display: inline-block;
-	
-	border-right: solid green 1px;
 	margin:5px;
+/* 	border-right: dotted black 3px; */
 }
 
 #headerLogo img {
@@ -34,45 +51,82 @@
  	height: 85px;  
  	width: 670px;
 	display: inline-block;
-	border: solid blue 1px;
 	position: absolute;
 	margin:5px;
+/* 	border: solid blue 1px; */
 }
 
-#headerMenu>div {
+/* #headerMenu>div {
 	float : right;
 	margin-right:10px;
+} */
+
+#headerMenuList {
+	width: 670px;
+	height:37px;
+	padding: 3px;
+	border-bottom: 1px solid #fd9e04;
+
+	/* border: 1px solid red; */
 }
 
-/* #headerMenu tr {
-	width: 880px;
-	height: 50px;
-} */
+#headerButtonList {
+	padding: 10px;
+	float : right;
+	
+	/* border: 1px solid red; */
+}
+
+.menuList {
+	background: #fd9e04;
+	width: 90px;
+	height: 25px;
+	padding-top: 15px;
+	padding-left: 10px;
+	
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+.menuList:hover {
+	background: #ffc500;
+}
+
 /* ----------------------container-----------------------   */
 #container {
 	width:  940px;
-	margin:5px;
+	height:640px;
+	margin:0 auto;
+	
+	/* background: -webkit-linear-gradient(left, #ffd306 , #fec303); For Safari 5.1 to 6.0
+    background: -o-linear-gradient(right, #ffd306, #fec303); For Opera 11.1 to 12.0
+    background: -moz-linear-gradient(right, #ffd306, #fec303); For Firefox 3.6 to 15
+    background: linear-gradient(to right, #ffd306 , #fec303); Standard syntax (must be last) */
 
-	border: solid green 1px;
-	height:700px;
+/* 	border: solid green 1px; */
+	
 }
 
 #containerKeyword {
 	width: 880px;
-	margin: 10px auto 0px auto;
+	margin: 0px auto 0px auto;
 	padding-bottom:10px;
-	border: solid blue 1px;
+	background: #feb904;
+	border-radius: 5px;
+	
+	/* border: solid blue 1px; */
 }
 #containerKeyword>p{
-	margin:3px;
-	font-weight: bold
+	padding:10px 10px 0px 10px;
+	font-weight: bold;
+	color: white;
 }
 
 #containerKeyword div{
 	width: 200px;
 	display: inline-block;
-	margin-left:15px;
-	border-right: solid blue 1px;
+	margin-left:12px;
+	border-right: double white 3px;
 }
 
 #containerKeyword>div>p {
@@ -85,11 +139,11 @@
 
 #containerList {
 	width: 880px;
-	margin: 30px;
-	height:500px;
+	margin: 15px 30px 30px 30px;
+	height:470px;
 	overflow-y:scroll;
 	
-	border: 1px solid black;
+	border:7px double #feb904;
 }
 
 .list {
@@ -146,19 +200,27 @@
 /*----------------------a 태그 공통속성-----------------------    */
 
 a:link {
+	color:white;
+	font-weight: bold;
     text-decoration: none;
 }
 
 a:visited {
+	color:white;
+	font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
+	color:white;
+	font-weight: bold;
 	text-decoration: none;
     /* text-decoration: underline; */
 }
 
 a:active {
+	color:white;
+	font-weight: bold;
     text-decoration: underline;
 }
 
