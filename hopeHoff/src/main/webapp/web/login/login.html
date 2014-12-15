@@ -4,72 +4,128 @@
 <meta charset="UTF-8">
 <title>HopeHoff - 로그인페이지 입니다.</title>
 <link rel='stylesheet' href="../../css/login/login.css">
+<link rel='stylesheet' href="../../css/bootstrap/bootstrap.min.css">
+<link rel='stylesheet' href="../../css/bootstrap/bootstrap-theme.min.css">
+
+<style>
+
+        .control_panel  {
+        margin : 0 auto;
+            position:absolute; 
+            height:13px; 
+            overflow:hidden; 
+        }
+
+        .control_button {
+            width:15px; height:30px;
+            position:relative; 
+            float:left; cursor:pointer;  
+            background:url('point_button.png');
+        }
+        .control_button:hover { top:-16px; }
+        .control_button.active { top:-31px; }
+        
+</style>
+
+
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<!-- 추천 place 사진 바뀌는거 필요한 플러그인 -->
+<script src="../../js/jquery.innerfade.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('#leftImg').innerfade({
+		animationtype :'fade',
+		speed : 750,
+		timeout: 2000,
+		type : 'random',
+		containerheight : '130px'
+	});
+});
+</script>
 </head>
 
 <body>
-
-<div id="loginHeader">
-<!-- 헤더부분입니다. -->
-</div>
-
-<div id="loginContainer">
-	<div id="loginHeaderImage">
-		<p>
-			날씨야, 네가 암만추워바라<br>
-			옷 사입나, 술 사먹지<br>
-		</p>
-	</div>
-	
-	<div id ="loginLeft">
-		주인장 추천 Hot place
-		<div id ="loginContent">
-			여기는 사진이나? 그런거???
-			넣어야지??
+	<div id="wrap"> <!-- 전체 -->
+		<div id="header">
+			<!-- 헤더 빈 공간 -->
 		</div>
+		
+		<div id="container"> <!-- 박스안 -->
+			<div id="containerHeader">
+			        <h1>Hope Hoff 오늘의 말씀</h1>
+			        <h3 class="lead">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h3>
+			</div>  
+			
+			<div id="left">
+				<h2>Hot! place</h2>
+				<div id="leftImg">
+				<!-- 추천사진 로테이션 -->
+				<img class="img-circle" src="Wara-Wara01.jpg" alt="Generic placeholder image">
+				<img class="img-circle" src="Wara-Wara02.jpg" alt="Generic placeholder image">
+				<img class="img-circle" src="Wara-Wara03.jpg" alt="Generic placeholder image">
+				<img class="img-circle" src="Wara-Wara04.jpg" alt="Generic placeholder image">
+				</div>
+				<h3>Wara-Wara</h3>
+				<p>강남3호전 오픈기념 행사 <br>
+				전 메뉴50% 할인</p>
+				<p><button type="button" class="btn btn-danger">Other Hot!Place »</button></p>
+			</div>
+			
+			<div id = "right">
+				<h2>Hope Hoff</h2>
+				<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
+					<div class="col-sm-10">
+					<input type="ID" class="form-control" id="inputEmail3" placeholder="아이디를 입력하세요.">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">PWD</label>
+					<div class="col-sm-10">
+					<input type="Password" class="form-control" id="inputPassword3" placeholder="패스워드를 입력하세요.">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					<div class="checkbox">
+					<label>
+					<input type="checkbox"> Save ID
+					</label>
+					</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" class="btn btn-danger">Login</button>
+					<button type="button" class="btn btn-danger">Sign-up</button>
+					</div>
+				</div>
+				
+				</form>
+			</div>
+		</div>
+		
+        <div class="control_panel">
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+            <div class="control_button"></div>
+        </div>
 	</div>
 	
-	<div id = "loginRight">
-		<h1>Hope Hoff</h1>
-			<input type="radio" value="guest" checked>사용자
-			<input type="radio" value="boss" >사업자
-			
-		<form>
-			<table>
-				<tr>
-				<td><br></td>
-				</tr>
-				<tr>
-					<td>ID</td>
-					<td><input id="id" type="text"></td>
-				</tr>
-				<tr>
-				
-				<td><br></td>
-				</tr>
-				
-				<tr>
-					<td>Password</td>
-					<td><input id="password" type="password"></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" checked>Save ID</td>
-				</tr>
-				<tr>
-					
-					<td><input type="button" value="Login" style="height:30px; width:200px; float:right;"></td>
-				
-				</tr>
-			</table>
-		</form>
-		<a href="#">Sign-Up</a>
-	</div>
-
-</div>
-
-<div id="loginFooter">
-<!-- footer -->
-</div>
-
-</body>
+		<div id="footer">
+			<hr/>
+			<h5>상호 : Hope Hoff | E-mail : HopeHoff@google.com | 연락처 : 504-5048282</h5>
+			<h5>공동대표 : 반기백, 현나래, 지용근, 배연정  |  사업자번호 : 1002- 48393 - 324892  |  사무실 : 서울특별시 서초구 강남대로53길 8 비트아카데미빌딩 5층 504호 맨 뒷자리. </h5>
+			<h5>[가게 등록]에 관한 문의사항이 있으시면 이 링크로 연락바랍니다.<a href="#"> 문의하기</a>, by <a href="https://twitter.com/mdo">@bit63_HopeHoff</a>.</h5>
+		</div>
+		
+	</body>
+	
+	
 </html>
+
