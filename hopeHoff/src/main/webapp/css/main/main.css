@@ -4,7 +4,8 @@
 	height: 820px;
 	margin: 0 auto;
 	padding: 30px;
-	border: red solid 1px;
+	background: #f1b82b;
+/* 	border: red solid 1px; */
 }
 
 /*----------------------header-----------------------  */
@@ -12,31 +13,41 @@
 	width:940px;
 	height:100px;
 	margin:5px;
-	
-	border: yellow solid 1px;
+	background: #f4c73a;
+	/* border: yellow solid 1px; */
 }
 
 
 #headerLogo {
-	width: 250px;
-	height: inherit;
 	display: inline-block;
 	
-	border: solid green 1px;
+	border-right: solid green 1px;
+	margin:5px;
+}
+
+#headerLogo img {
+	height:85px;
+	width: 240px;
 }
 
 #headerMenu {
-	width: 680px;
-	height: inherit;
+ 	height: 85px;  
+ 	width: 670px;
 	display: inline-block;
-	
 	border: solid blue 1px;
+	position: absolute;
+	margin:5px;
 }
 
-#headerMenu tr {
+#headerMenu>div {
+	float : right;
+	margin-right:10px;
+}
+
+/* #headerMenu tr {
 	width: 880px;
 	height: 50px;
-}
+} */
 /* ----------------------container-----------------------   */
 #container {
 	width:  940px;
@@ -127,4 +138,27 @@
 	
 }
 
+
+
+
+
+
+/*----------------------a 태그 공통속성-----------------------    */
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+    /* text-decoration: underline; */
+}
+
+a:active {
+    text-decoration: underline;
+}
 
