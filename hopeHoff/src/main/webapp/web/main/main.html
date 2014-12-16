@@ -16,12 +16,16 @@
 			</div>
 			<div id="headerMenu">
 				<div id = "headerMenuList">
-					<div class="menuList"><a href="#">추천 place</a></div>
+					<div id="myPage" class="menuList"><a href="#">내정보</a></div>
+					<div id="myWrite" class="menuList"><a href="#">내가쓴글보기</a></div>
+					<div id="recommandPlace" class="menuList"><a href="#">추천 place</a></div>
 				</div>
 				<div id= "headerButtonList">
+					<input id="btnLogout" type="button" value="로그아웃">
 					<input id="btnLogin" type="button" value="로그인">
 					<input id="btnSignUp" type="button" value="회원가입">
 				</div>
+				<div id="headerMemberInfo"> [이름][사장]님께서 로그인하셨습니다. </div>
 			</div>
 		</div>
 
@@ -67,22 +71,41 @@
 
 	<script src='../../js/jquery-2.1.1.min.js'></script>
 	<script>
-	$(document).ready(function(){
-		var listKeywordContainer = $(".listKeywordContainer");
 	
+	$(document).ready(function(){
+		var count = 0; //for문을 위한 index
+		var checkedList = []; //keyword를 담기위한 배열
+		
+		//첫 시작시 리스트 로딩
 		$("#containerList").load("containerList.html");
 
-		$(":checkbox").click(function(){
-	 			alert($(this).val());
-	 		$("#containerList").load("containerList.html",function() {
-	 			//console.log($(this).val());
-	 			/* $(".listKeywordContainer").append("<div>")
-				   .attr("class", "listKeywordItem")
-				   .text($(":checked").val()); */
-				}); 
-		});
-	});
+			$(":checkbox").click(function() {
+				//체크하는 경우
+				if ($(this).is(":checked")) {
+					checkedList[checkedList.length] = $(this).val();
+				}
+				
+				//체크를 없애는 겨우
+ 				if(!($(this).is(":checked"))){
+ 					for(count = 0; count<checkedList.length; count++){
+ 						if(checkedList[count] == $(this).val()){
+ 							checkedList.splice(count,1);
+						}  
+ 					}
+				} 
+				
+				//가게검색내용에 keyword추가하기
+  				$("#containerList").load("containerList.html", function() {
+					for(count = 0; count<checkedList.length; count++){
+					  $("<div>").attr("class", "listKeywordItem")
+					  .text(checkedList[count])
+					  .appendTo($(".listKeywordContainer"));
+
+					}
+				});  
+			});
 	
+		});
 	</script>
 
 </body>

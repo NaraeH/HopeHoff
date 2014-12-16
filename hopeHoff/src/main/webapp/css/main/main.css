@@ -53,17 +53,14 @@ body {
 	border-bottom: 2px solid #fd9e04;
 }
 
-#headerButtonList {
-	padding: 10px;
-	float : right;
-}
 
 .menuList {
 	background: #fd9e04;
-	width: 90px;
+	width: 105px;
 	height: 25px;
 	padding-top: 15px;
-	padding-left: 10px;
+	display: inline-block;
+	text-align: center;
 	
 	border-top-left-radius: 1em;
 	border-top-right-radius: 1em;
@@ -73,6 +70,24 @@ body {
 	background: #ffc500;
 }
 
+#headerButtonList {
+	padding: 10px;
+	display: inline-block;
+	float:right;
+}
+#headerMemberInfo {
+	display: inline-block;
+	width: 240px;
+	height: 20px;
+	font-size: 12px;
+	text-align: right;
+	float:right;
+	margin-top: 20px;
+}
+
+#btnLogout {
+	/* display:none; */
+}
 /* ----------------------container-----------------------   */
 #container {
 	width:  940px;
@@ -146,31 +161,48 @@ body {
 	height: 80px;
 }
 
+.list img:hover {
+	width: 220px;
+	height: 80px;
+	background: rgba(0,0,0, 0.5);
+}
+
 .listInfo{
 	width: 220px;
 	height: 100px;
 	margin: 0 auto;
 }
 
-#listTitle{
-	width: 50px;
+.listTitle{
+	width: 219px;
 	border-radius:5px;	
-	margin: 0 atuo;
+	text-align: center;
+	margin: 3px;
+}
+
+.pictureBackground{
+	background: rgba(0, 0, 0, 0.5);
+	width: 219px;
+	line-height: 80px;
+ 	margin-top: -83px; 
+ 	text-align: center;
+ 	display: none;
 }
 
 .listKeywordContainer {
 	width: 220px;
 	height: 50px;
 	margin: 0 auto;
+	overflow-y:scroll;
 }
 
 .listKeywordItem{
-	width: 50px;
 	border-bottom: 1px solid #3e3e27;
 	border-right: 1px solid #3e3e27;
 	border-radius: 3px;
 	background: #fd9e04;
 	margin-left: 3px;
+	margin-top: 3px;
 	display: inline-block;
 	
 }

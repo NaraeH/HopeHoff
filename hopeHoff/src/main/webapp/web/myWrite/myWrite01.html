@@ -63,19 +63,24 @@
 				$('<td colspan=\"4\" id=tableContent'+i+' >').html("content").appendTo($('#tRow'+i));
 			}
 		}
-		/* for(var i=2; i<=count*2; i+=2){
+		 for(var i=2; i<=count*2; i+=2){
 			$('#tableContent'+i).css('display','none');
 		}
- */
-	/* 	var number;
+
+ 		/*
+	 	var number;
 		function rowNumber(){
 			$('tr').click(function(event){
 				number = $('tr').attr('id');
 				console.log(number);
 			});
 		} */
-			 $('#tRow'+i).click(function(event){
+			
+			for(var i=1; i<count; i++){
 				
+			
+			 $('#tRow'+i).click(function(event){
+				var p =(2*i);
 				 var status =$('#tableContent'+p).css('display');
 				 if(status=='none'){
 					 console.log("aaaaa");
@@ -84,6 +89,7 @@
 					 $('#tableContent'+p).css('display','none');
 				 } 
 			 });
+			}
 	</script>
 </body>
 </html>
