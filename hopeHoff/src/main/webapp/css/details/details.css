@@ -4,24 +4,75 @@ font-family: Verdana,Geneva, Arail,sans-serif;
 font-size: small ;
 
 }
+.col-xs-6 .col-md-3{
+	border:1px solid red;
+	margin: 0px !important;
+	padding-top: 15px !important;
+}
+.row{
+	margin: 15px;
+	padding-top: 50px;
+}
 
 #carousel-example-generic { 
-	width:355px; 
+	width:350px; 
 	height: 250px; 
-	background:red; 
+	border:3px solid red; 
 	float:left;
 	margin-right: 5px;
 }
+.Info{
+	display:inline;
+	text-align: left;
+}
+
 #hoffInfo { 
-	width:205px; 
+	padding:3px;
+	width:210px; 
 	height:250px; 
-	background:blue; 
+	border:1px solid blue;
 	float:left; 
 }
-#tab { 
-	width:565px; 
+#reservation{
+	margin:10px;
+	text-align: right;
+}
+
+#hoffInfo > h3{
+	font-size: 	x-large;
+}
+#tabs{ 
+	
+	width:580px; 
 	height:300px; 
-	background:green;
+	border:1px solid black;
 	margin-top: 5px;
 	clear:both 
 }
+#tabsContent{
+ height: 200px;
+ margin :20px 15px;
+ border:1px solid green;
+}
+
+#tabsBar{
+ height: 50px;
+ margin :10px 15px;
+ border:1px solid green;
+ padding :7px 10px;
+}
+
+
+#tabsBarText > div{
+	display:inline-block;
+	width:160px;
+}
+
+#tabsBarButton > div{
+	display:inline-block;
+	border:2px solid black;
+	height:15px;
+	background-color: white;
+	width: 160px;
+}
+

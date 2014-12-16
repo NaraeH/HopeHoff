@@ -6,10 +6,13 @@
 <link rel="stylesheet" type="text/css" href="../../css/details/details.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/jquery.innerfade.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<script src="../../js/jquery-ui.js"></script>
 </head>
 <body background="http://resources0.news.com.au/images/2011/11/17/1226197/825992-111119-twam-beer.jpg">
 <!-- Button trigger modal -->
@@ -66,17 +69,63 @@
  		</a>
     </div>
     <div id="hoffInfo">
-       <h4>와라와라 강남점</h4>
-    	<p>운영시간: 17:00 ~ 4:00</p>
-    	<p>전화번호: 02-1234-5678</p>
-    	<p>주소: 서울 강남구 역삼동 822-1</p> 
-    	<p>소개: 분위기 최고! 맛 최고! 서버스도 최고!</p>
-    	<button type="button" class="btn btn-primary">예약하기</button>
+       <h3 >와라와라 강남점</h3>
+    	<div class="Info">운영시간 : </div> <div class="Info">17:00 ~ 4:00</div><br>
+    	<div class="Info">전화번호 : </div> <div class="Info">02-1234-5678</div><br>
+    	<div >주     소  </div> 
+    	<div class="hoffInfoContent">서울시 강남구역삼동 822-1</div>
+    	<div>소     개  </div> 
+    	<div class="hoffInfoContent">맛도 짱! 분위기도짱! 
+    	<br>서비스도 짱!</div>
+    	<div id="reservation"><button id="reservBtn" type="button" class="btn btn-primary" >예약하기</button>	</div>
     </div>
-    <div id="tab">
-    
-    </div>
-  </div> <!-- body -->
+   <div id="tabs" >
+   		<div id="tabsContent">
+			<div class="row">
+			
+				<div class="col-xs-6 col-md-3">
+		   			 <a href="#" class="thumbnail">
+		    	 	 <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
+		   		 </a>
+		 		</div>
+			 	 <div class="col-xs-6 col-md-3">
+		   			 <a href="#" class="thumbnail">
+		    		  <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
+		   			 </a>
+		 		</div>
+		 		<div class="col-xs-6 col-md-3">
+		   			 <a href="#" class="thumbnail">
+		    		  <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
+		   			 </a>
+		 		</div>
+		 		<div class="col-xs-6 col-md-3">
+		   			 <a href="#" class="thumbnail">
+		    	 	 <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
+		   		 </a>
+		 		</div>
+		 		
+				<nav id="tabsContentNavi">
+				  <ul class="pager">
+				    <li><a href="#">Previous</a></li>
+				    <li><a href="#">Next</a></li>
+				  </ul>
+				</nav>
+			</div>
+   		</div>
+   		
+   		<div id="tabsBar">
+   			<div id="tabsBarText">
+   				<div id='menuText' class="menu" >Menu</div>
+   				<div id='mapText' class="map">Map</div>
+   				<div id='commentText' class="comment">Comment</div>
+   			</div>
+   			<div id="tabsBarButton">
+   				<div id='menuButton' class="menu"></div>
+   				<div id='mapButton' class="map"></div>
+   				<div id='commentButton' class="comment"></div>
+   			</div>
+   		</div>
+  </div> 
       
   <div class="modal-footer">
      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -86,5 +135,41 @@
     </div> <!-- 1 -->
   </div> <!-- 2 -->
 </div> <!-- 3 -->
+<script>
+
+$('.menu').click(function(event){
+	$("#tabsContentNavi").css('display','');
+	$(".col-xs-6").css('display','');
+	$('#menuText').css('color','blue');
+	$('#menuButton').css('background-color','blue');
+	$('#mapText').css('color','black');
+	$('#mapButton').css('background-color','white');
+	$('#commentText').css('color','black');
+	$('#commentButton').css('background-color','white');
+	
+});
+
+$('.map').click(function(event){
+	$("#tabsContentNavi").css('display','none');
+	$(".col-xs-6").css('display','none');
+	$('#menuText').css('color','black');
+	$('#menuButton').css('background-color','white')
+	$('#mapText').css('color','blue');
+	$('#mapButton').css('background-color','blue');
+	$('#commentText').css('color','black');
+	$('#commentButton').css('background-color','white');
+});
+
+$('.comment').click(function(event){
+	$("#tabsContentNavi").css('display','none');
+	$(".col-xs-6").css('display','none');
+	$('#menuText').css('color','black');
+	$('#menuButton').css('background-color','white');
+	$('#mapText').css('color','black');
+	$('#mapButton').css('background-color','white');
+	$('#commentText').css('color','blue');
+	$('#commentButton').css('background-color','blue');
+});
+</script>
 </body>
 </html>
