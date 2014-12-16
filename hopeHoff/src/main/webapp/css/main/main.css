@@ -74,6 +74,7 @@ body {
 	padding: 10px;
 	display: inline-block;
 	float:right;
+	margin-right: -15px;
 }
 #headerMemberInfo {
 	display: inline-block;
@@ -85,8 +86,41 @@ body {
 	margin-top: 20px;
 }
 
+#myShopList {
+	width:275px;
+	height:35px;
+	display:inline-block;
+	background: #fd9e04;
+	
+	border: 1px solid red;
+}
+
+#myShopList ul{
+	list-style-type:none;
+	padding-left:0px;
+	display: inline-block;
+}
+
+#myShopList li{
+	display:inline;
+	border-left: 1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+}
+
+#myShopList ul li:first-child {
+	border-left: none;
+}
+
+#btnToRight {
+	float:right;
+}
+
 #btnLogout {
 	/* display:none; */
+}
+
+#btnSignUp{
+	display:none;
 }
 /* ----------------------container-----------------------   */
 #container {
@@ -142,7 +176,7 @@ body {
 	width: 880px;
 	margin: 15px 30px 30px 30px;
 	height:470px;
-	overflow-y:scroll;
+	overflow-y:scroll; /* {overflow : visible | hidden | scroll | auto} */
 }
 
 .list {
@@ -268,4 +302,19 @@ input[type="button"]:hover {
 	border: 1px solid #ffde86;
 	border-radius: 3px;
 	color: #003a5e;
+}
+
+
+.cont-box-rotate{
+	width: 0px;
+	height:0px;
+	border-right:20px solid transparent;
+	border-bottom:20px solid cornflowerblue; 
+	transform:rotate(225deg);
+	-ms-transform:rotate(225deg);
+	-webkit-transform:rotate(225deg);
+	-moz-transform:rotate(225deg);
+	-o-transform:rotate(225deg);
+	
+	display: inline-block;
 }
