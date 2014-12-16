@@ -6,13 +6,15 @@
 <link rel="stylesheet" type="text/css" href="../../css/details/details.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="../../css/details/jquery.bxslider.css">
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/jquery.innerfade.js"></script>
-<script src="../../js/jquery-ui.min.js"></script>
-<script src="../../js/jquery-ui.js"></script>
+<script src="../../js/jquery.bxslider.js"></script>
+<script src="../../js/jquery.easing.1.3.js"></script>
+<script src="../../js/jquery.fitvids.js"></script>
+
 </head>
 <body background="http://resources0.news.com.au/images/2011/11/17/1226197/825992-111119-twam-beer.jpg">
 <!-- Button trigger modal -->
@@ -80,30 +82,17 @@
     	<div id="reservation"><button id="reservBtn" type="button" class="btn btn-primary" >예약하기</button>	</div>
     </div>
    <div id="tabs" >
-   		<div id="tabsContent">
-			<div class="row">
-			
-				<div class="col-xs-6 col-md-3">
-		   			 <a href="#" class="thumbnail">
-		    	 	 <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
-		   		 </a>
-		 		</div>
-			 	 <div class="col-xs-6 col-md-3">
-		   			 <a href="#" class="thumbnail">
-		    		  <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
-		   			 </a>
-		 		</div>
-		 		<div class="col-xs-6 col-md-3">
-		   			 <a href="#" class="thumbnail">
-		    		  <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
-		   			 </a>
-		 		</div>
-		 		<div class="col-xs-6 col-md-3">
-		   			 <a href="#" class="thumbnail">
-		    	 	 <img src="Wara-Wara03.jpg" alt="Wara-Wara03.jpg">
-		   		 </a>
-		 		</div>
-		 		
+		   <div id="tabsContent">
+			<ul class="bxslider">
+				  <li><img src="Wara-Wara02.jpg" /></li>
+				  <li><img src="Wara-Wara03.jpg" /></li>
+				  <li><img src="Wara-Wara01.jpg" /></li>
+				  <li><img src="Wara-Wara03.jpg" /></li>
+				  <li><img src="Wara-Wara02.jpg" /></li>
+				  <li><img src="Wara-Wara01.jpg" /></li>
+				  <li><img src="Wara-Wara03.jpg" /></li>
+				  <li><img src="Wara-Wara02.jpg" /></li>
+			</ul>
 				<nav id="tabsContentNavi">
 				  <ul class="pager">
 				    <li><a href="#">Previous</a></li>
@@ -170,6 +159,13 @@ $('.comment').click(function(event){
 	$('#commentText').css('color','blue');
 	$('#commentButton').css('background-color','blue');
 });
+
+$('.bxslider').bxSlider({
+	  minSlides: 3,
+	  maxSlides: 4,
+	  slideWidth: 170,
+	  slideMargin: 10
+	});
 </script>
 </body>
 </html>

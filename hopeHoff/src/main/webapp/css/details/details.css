@@ -22,6 +22,7 @@ font-size: small ;
 	margin-right: 5px;
 }
 .Info{
+	border:1px solid red;
 	display:inline;
 	text-align: left;
 }
