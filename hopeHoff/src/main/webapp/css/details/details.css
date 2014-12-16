@@ -1,9 +1,4 @@
 @CHARSET "UTF-8";
-body{
-font-family: Verdana,Geneva, Arail,sans-serif;
-font-size: small ;
-
-}
 .col-xs-6 .col-md-3{
 	border:1px solid red;
 	margin: 0px !important;
