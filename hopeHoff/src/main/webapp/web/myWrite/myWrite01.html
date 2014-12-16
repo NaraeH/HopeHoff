@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='../../css/myWrite/myWrite01.css'>
+<link rel='stylesheet' href='../../css/bootstrap/bootstrap.min.css'>
+<link rel='stylesheet'
+	href='../../css/bootstrap/bootstrap-theme.min.css'>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-2.1.1.js"></script>
+</head>
+
+
+<body>
+	<div id=big>
+		<div id="myWrite">
+			<h1>My Page</h1>
+			<div id="myWriteContent">
+				<h4>회원님이 작성하신 글정보를 한눈에 볼 수 있습니다.</h4>
+			</div>
+		</div>
+
+		<div id="myWritedateForm">
+			<p>Date: <input type="text" id="datepicker"></p>
+		</div>
+
+		<div id="tableForm">
+			<table id="dataForm" class="table table-hover">
+			</table>
+		</div>
+
+		<div id="myWriteFooter">
+			<div class="warning">
+				<button>삭제</button>
+			</div>
+			<div class="warning" id="warningCotent">삭제</div>
+			했을시 연락이 오지 않습니다.
+		</div>
+	</div>
+
+	<script>
+		var count= 3;
+		for(var i=0; i<=count*2; i++){
+			$('<tr id=tRow'+i+'>').appendTo($('#dataForm'));
+			if(i==0){
+				for(var j=0;j<5; j++){
+					$('<th class=tableData'+i+'>').html("<input type=\"checkbox\">").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("No").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("Time").appendTo($('#tRow0'));
+					break;
+				}
+			}
+			else if(i%2!=0){
+				for(var j=0;j<5; j++){
+					$('<td class=tableData'+i+'>').html("<input type=\"checkbox\">").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("No").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("Time").appendTo($('#tRow'+i));
+					break;
+				}
+			}
+			else{
+				$('<td colspan=\"4\" id=tableContent'+i+' >').html("content").appendTo($('#tRow'+i));
+			}
+		}
+		
+	</script>
+</body>
+</html>
