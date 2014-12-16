@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel='stylesheet' href='../../css/myWrite/myWrite/myWrite01.css'>
+<link rel='stylesheet' href='../../css/myWrite/myWrite01.css'>
 <link rel='stylesheet' href='../../css/bootstrap/bootstrap.min.css'>
 <link rel='stylesheet' href='../../css/bootstrap/bootstrap-theme.min.css'>
 <meta charset="UTF-8">
@@ -26,6 +26,7 @@
 		<div id="tableForm">
 			<table id="dataForm" class="table table-hover">
 			</table>
+			<button>이전</button> <button>다음</button>
 		</div>
 
 		<div id="myWriteFooter">
@@ -36,6 +37,10 @@
 			했을시 연락이 오지 않습니다.
 		</div>
 	</div>
+	<div id="footer">
+		 지용근 myWrite
+	</div>
+	
 
 	<script>
 		var count= 3;
@@ -46,6 +51,7 @@
 					$('<th class=tableData'+i+'>').html("<input type=\"checkbox\">").appendTo($('#tRow0'));
 					$('<th class=tableData'+i+'>').html("No").appendTo($('#tRow0'));
 					$('<th class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("People-Count").appendTo($('#tRow0'));
 					$('<th class=tableData'+i+'>').html("Time").appendTo($('#tRow0'));
 					break;
 				}
@@ -55,12 +61,13 @@
 					$('<td class=tableData'+i+'>').html("<input type=\"checkbox\">").appendTo($('#tRow'+i));
 					$('<td class=tableData'+i+'>').html("No").appendTo($('#tRow'+i));
 					$('<td class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("People-Count").appendTo($('#tRow'+i));
 					$('<td class=tableData'+i+'>').html("Time").appendTo($('#tRow'+i));
 					break;
 				}
 			}
 			else{
-				$('<td colspan=\"4\" id=tableContent'+i+' >').html("content").appendTo($('#tRow'+i));
+				 $('<td colspan=\"5\" id=tableContent'+i+' >').html(" <p align=center> 내용 </p> ").appendTo($('#tRow'+i));
 			}
 		}
 		/* for(var i=2; i<=count*2; i+=2){
@@ -74,16 +81,10 @@
 				console.log(number);
 			});
 		} */
+		for(var i =1; i<count; i++){
 			 $('#tRow'+i).click(function(event){
-				
-				 var status =$('#tableContent'+p).css('display');
-				 if(status=='none'){
-					 console.log("aaaaa");
-					 $('#tableContent'+p).css('display','');
-				 }else{
-					 $('#tableContent'+p).css('display','none');
-				 } 
 			 });
+			}
 	</script>
 </body>
 </html>

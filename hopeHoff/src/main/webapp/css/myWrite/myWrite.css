@@ -24,13 +24,14 @@
 
 #myWrite{
 	padding: 10px;
-	margin: 40px auto;
+	margin: 20px auto;
 	width : 700px;
 	border:1px solid navy;
 }
 
 #myWritedateForm{
-	margin: 10px 40px 10px ;
+	padding :5px;
+	margin:10px 20px  ;
 	border: 1px solid green;
 	text-align: right;
 }
@@ -42,7 +43,7 @@
 	border: 1px solid gray;
 }
 
-#big{
+#container{
 	margin: 0px auto;
 	padding:10px;
 	border:1px solid pink;
@@ -53,4 +54,11 @@
 #warningCotent{
 	color:red;
 	font-size: 20px;
+}
+
+#footer{
+	width:auto;
+	color:blue;
+	text-align: center;
+	
 }
