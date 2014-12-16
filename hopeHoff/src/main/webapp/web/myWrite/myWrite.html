@@ -1,79 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel='stylesheet' href='../../css/myWrite.css'>
-<link rel='stylesheet'  href='../../css/bootstrap/bootstrap.min.css'>
-<link rel='stylesheet'  href='../../css/bootstrap/bootstrap-theme.min.css'>
+<link rel='stylesheet' href='../../css/myWrite/myWrite.css'>
+<link rel='stylesheet' href='../../css/bootstrap/bootstrap.min.css'>
+<link rel='stylesheet' href='../../css/bootstrap/bootstrap-theme.min.css'>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="../../js/jquery-2.1.1.js"> </script>
- <script>
-  $(function() {
-    $( "#myWriteTable" ).accordion();
-  });
-  </script>
+<script src="../../js/jquery-2.1.1.js"></script>
 </head>
 
 
 <body>
-<div id="big">
-<div id="myWrite">
-	<h1>My Page</h1>
-	<h4>회원님이 작성하신 글정보를 한눈에 통화 할수 있습니다.</h4>
-</div>
+	<div id=container>
+		<div id="myWrite">
+			<h1>My Page</h1>
+			<div id="myWriteContent">
+				<h4>회원님이 작성하신 글정보를 한눈에 볼 수 있습니다.</h4>
+			</div>
+		</div>
 
+		<div id="myWritedateForm">
+			<p>Date: <input type="text" id="datepicker"></p>
+		</div>
 
-<div id="myWritedateForm">
-<h4>날짜입력</h4>
-</div>
+		<div id="tableForm">
+			<table id="dataForm" class="table table-hover">
+			</table>
+			<div align="right">
+			<button id='btnPrev'>이전</button> <button id='btnNext'>다음</button>
+			</div>
+		</div>
 
-
-<div id="myWriteTable">
-<table id=write class="table table-hover">
-	<tr>
-		<th><input type="checkbox"></th>
-		<th>#</th>
-		<th>전화번호</th>
-		<th>인원</th>
-		<th>등록시간</th>
-	</tr>
-		<tr>
-		<td><input type="checkbox"></td>
-		<td>3</td>
-		<td>010-9444-4444</td>
-		<td>7</td>
-		<td>17:06</td>
-	</tr>
+		<div id="myWriteFooter">
+			<div class="warning">
+				<button>삭제</button>
+			</div>
+			<div class="warning" id="warningCotent">삭제</div>
+			했을시 연락이 오지 않습니다.
+		</div>
+	</div>
+	<div id="footer">
+		 지용근 myWrite
+	</div>
 	
-	<tr>
-		<td><input type="checkbox"></td>
-		<td>2</td>
-		<td>010-9444-4444</td>
-		<td>7</td>
-		<td>16:00</td>
-	</tr>
-	
-	
-	
- 	
-</table>
-</div>
 
-<div id="myWriteFooter">
-	<table id=write class="table table-hover">
-	<tr>
-		<td><input type="checkbox"></td>
-		<td>1</td>
-		<td>010-9444-4444</td>
-		<td>7</td>
-		<td>13:06</td>
-	</tr>
-	</table>
-<button>삭제</button> 삭제 했을시 연락이 오지 않습니다.
-</div>
-</div>
-
+	<script>
+		var count= 3;
+		for(var i=0; i<=count*2; i++){
+			$('<tr id=tRow'+i+'>').appendTo($('#dataForm'));
+			if(i==0){
+				for(var j=0;j<5; j++){
+					$('<th class=tableData'+i+'>').html("<input type=\"checkbox\">").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("No").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("People-Count").appendTo($('#tRow0'));
+					$('<th class=tableData'+i+'>').html("Time").appendTo($('#tRow0'));
+					break;
+				}
+			}
+			else if(i%2!=0){
+				for(var j=0;j<5; j++){
+					$('<td class=tableData'+i+'>').html("<input type=\"checkbox\">").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("No").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("People-Count").appendTo($('#tRow'+i));
+					$('<td class=tableData'+i+'>').html("Time").appendTo($('#tRow'+i));
+					break;
+				}
+			}
+			else{
+				 $('<td colspan=\"5\" class=tableShow id=tableContent'+i+' >').html(" <p align=center> 내용 </p> ").appendTo($('#tRow'+i));
+			}
+		}
+		  for(var i=2; i<=count*2; i+=2){
+			$('#tableContent'+i).css('display','none');
+		} 
+		
+		 for(var i=1; i<=count*2; i+=2){
+			 
+			 if(i==1){
+			 $('#tRow1').click(function(event){
+					 var status=$('#tableContent2').css('display');
+				 if(status=='none')
+					 {
+					 	$('#tableContent2').css('display','');
+					 }
+				 else
+					$('#tableContent2').css('display','none');
+			 });
+			}
+			 
+			 if(i==3){
+			 $('#tRow3').click(function(event){
+				 var status=$('#tableContent4').css('display');
+				 if(status=='none')
+					 {
+					 	$('#tableContent4').css('display','');
+					 }
+				 else
+					$('#tableContent4').css('display','none');
+			 });
+			}
+			 
+			 if(i==5){
+				 $('#tRow5').click(function(event){
+					 var status=$('#tableContent6').css('display');
+					 if(status=='none')
+						 {
+						 	$('#tableContent6').css('display','');
+						 }
+					 else
+						$('#tableContent6').css('display','none');
+				 });
+				}
+			/*  console.log(i);
+			 console.log(p); */
+		 }
+	</script>
 </body>
-
-
 </html>
