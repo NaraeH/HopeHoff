@@ -73,12 +73,12 @@
 		$("#containerList").load("containerList.html");
 
 		$(":checkbox").click(function(){
+	 			alert($(this).val());
 	 		$("#containerList").load("containerList.html",function() {
 	 			//console.log($(this).val());
 	 			/* $(".listKeywordContainer").append("<div>")
 				   .attr("class", "listKeywordItem")
 				   .text($(":checked").val()); */
-	 			alert($(this).val());
 				}); 
 		});
 	});
