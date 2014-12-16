@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel='stylesheet' href='../../css/myWrite/myWrite01.css'>
+<link rel='stylesheet' href='../../css/myWrite/myWrite/myWrite01.css'>
 <link rel='stylesheet' href='../../css/bootstrap/bootstrap.min.css'>
-<link rel='stylesheet'
-	href='../../css/bootstrap/bootstrap-theme.min.css'>
+<link rel='stylesheet' href='../../css/bootstrap/bootstrap-theme.min.css'>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="../../js/jquery-2.1.1.js"></script>
@@ -64,7 +63,27 @@
 				$('<td colspan=\"4\" id=tableContent'+i+' >').html("content").appendTo($('#tRow'+i));
 			}
 		}
-		
+		/* for(var i=2; i<=count*2; i+=2){
+			$('#tableContent'+i).css('display','none');
+		}
+ */
+		var number;
+		function rowNumber(){
+			$('tr').click(function(event){
+				number = $('tr').attr('id');
+				console.log(number);
+			});
+		}
+			 $('#tRow'+i).click(function(event){
+				
+				 var status =$('#tableContent'+p).css('display');
+				 if(status=='none'){
+					 console.log("aaaaa");
+					 $('#tableContent'+p).css('display','');
+				 }else{
+					 $('#tableContent'+p).css('display','none');
+				 } 
+			 });
 	</script>
 </body>
 </html>
