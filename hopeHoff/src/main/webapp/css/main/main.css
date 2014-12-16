@@ -86,13 +86,22 @@ body {
 	margin-top: 20px;
 }
 
-#myShopList {
+#myShopListWrap {
 	width:275px;
 	height:35px;
 	display:inline-block;
 	background: #fd9e04;
+	/* border: 1px solid red; */
+}
+
+#myShopList {
+	width:235px;
+	height:35px;
 	
-	border: 1px solid red;
+	border-right: 20px solid rgba(254, 192, 90, 0.7);
+	border-left: 20px solid rgba(254, 192, 90, 0.7);
+	
+	overflow: hidden;
 }
 
 #myShopList ul{
@@ -112,9 +121,18 @@ body {
 }
 
 #btnToRight {
-	float:right;
+	display: inline-block;
+	position: absolute;
+	margin-top: -24px;
+	margin-left: 255px;
 }
 
+#btnToLeft {
+	display: inline-block;
+	position: absolute;
+	margin-top: -24px;
+	margin-left: 7px;
+}
 #btnLogout {
 	/* display:none; */
 }
@@ -305,16 +323,30 @@ input[type="button"]:hover {
 }
 
 
-.cont-box-rotate{
+.box-rotate-right{
 	width: 0px;
 	height:0px;
-	border-right:20px solid transparent;
-	border-bottom:20px solid cornflowerblue; 
-	transform:rotate(225deg);
-	-ms-transform:rotate(225deg);
-	-webkit-transform:rotate(225deg);
+	border-right:15px solid transparent;
+	border-bottom:15px solid black; 
+	transform:rotate(225deg);  
+	-ms-transform:rotate(225deg);      /* IE 9 */
+	-webkit-transform:rotate(225deg);  /* Chrome, Safari, Opera */
 	-moz-transform:rotate(225deg);
 	-o-transform:rotate(225deg);
+	
+	display: inline-block;
+}
+
+.box-rotate-left{
+	width: 0px;
+	height:0px;
+	border-right:15px solid transparent;
+	border-bottom:15px solid black; 
+	transform:rotate(45deg);  
+	-ms-transform:rotate(45deg);      /* IE 9 */
+	-webkit-transform:rotate(45deg);  /* Chrome, Safari, Opera */
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
 	
 	display: inline-block;
 }
