@@ -43,7 +43,7 @@ font-size: small ;
 }
 #tabs{ 
 	
-	width:580px; 
+	width:570px; 
 	height:300px; 
 	border:1px solid black;
 	margin-top: 5px;
@@ -52,7 +52,7 @@ font-size: small ;
 #tabsContent{
  height: 200px;
  margin :20px 15px;
- border:1px solid green;
+ border:2px dotted gold;
 }
 
 #tabsBar{
@@ -75,4 +75,6 @@ font-size: small ;
 	background-color: white;
 	width: 160px;
 }
-
+.modal-header {
+	background-color: #FFCD28;
+}
