@@ -5,16 +5,22 @@
 				var count = 13;
 				for (var i = 0; i < count; i++) {
 					$($("<div>").attr("class", "list").append(
-							$("<div>").attr("class", "listInfo").append(
-									$("<div>").attr("id", "listTitle").text(
-											"준코")).append(
-									$("<img>").attr("src", "test.jpg").attr(
-											"alt", "가게사진"))).append("<hr>")
-							.append(
-									$("<div>").attr("class",
-											"listKeywordContainer").attr(
-											"my-no", i)).appendTo(
-									"#containerList"));
+							$("<div>").attr("class", "listInfo")
+							/* .attr("id", "id"+i) */
+										.append($("<div>").attr("class", "listTitle").text("준코"))
+											  .append($("<a>")
+													  .attr("href", "#")
+											 	 	   .append($("<img>")
+														 	 .attr("src", "test.jpg"))
+														 	 .append($("<div>").attr("class", "pictureBackground")
+														 			 .text("상세보기"))))
+											 	 		.append("<hr>")
+														.append($("<div>")
+													  		.attr("class","listKeywordContainer")
+													  		.attr("my-no", i))
+													  		.appendTo("#containerList"));
 				}
 			}); 
 </script>
+
+
