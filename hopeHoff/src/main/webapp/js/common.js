@@ -23,25 +23,47 @@ myWidthSilde(wrapDiv이름, 움직이고 싶은거리, [움직이는 속도]);
 function myWidthSilde(wrapDiv, moveWidth, speed) {
 
 	var children = $(wrapDiv).children();                // 해당 division의 직속자식인 ul
-	var width = ($(wrapDiv).width());                    //해당 division의 가로
+	var width = ($(wrapDiv).width()); ;                    //해당 division의 가로
 	var moveWidth = moveWidth;                           //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동)
 	var moveWidthPx = moveWidth + "px";
-	var margin = (($(wrapDiv).children()).css("margin-left")).split("px")
-			.splice(0, 1) - 0;
+	var margin = (($(wrapDiv).children()).css("margin-left")).split("px").splice(0, 1) - 0;
 	var speed = (speed == undefined) ? 1500 : speed;     //움직이는 속도 (입력안되었을 경우 default=1500)
-
-	moveWidthPx = (margin + moveWidth) + "px";
-	if ((margin <= 0) && (-width < margin)) {
-
-		if (moveWidth < 0) {                             //margin이 0이어도 오른쪽으로 이동가능
-			$(children).animate({
-				marginLeft : moveWidthPx
-			}, speed);
-		} else if ((moveWidth > 0) && (margin != 0)) {   //margin이 0이면 왼쪽으로 더이상 이동 불가능
+	
+	if (moveWidth < 0) {  //오른쪽으로 움직일 경우
+		moveWidth = margin + moveWidth;
+		
+		console.log("margin==>" + margin);
+		console.log("width===>" + width);
+		console.log("moveWidth==>" + moveWidth);
+		console.log("---------------");
+		
+		if ((margin <= 0) && (-width < margin)) {
 			$(children).animate({
 				marginLeft : moveWidthPx
 			}, speed);
 		}
+	}
+	
+	//click시 이상있음 추후 수정하기 -narae
+	if((moveWidth >= 0) && (margin != 0)){  //왼쪽으로 움직일 경우
+		console.log("hear!!");
+		if((moveWidth + margin) >= 0) {
+			moveWidth = 0;
+		}else if( moveWidth - margin > 0){
+			moveWidth = 0;
+		}else{
+			moveWidth = margin + moveWidth;
+		}
+		moveWidthPx = moveWidth + "px"
+		
+		console.log("margin==>" + margin);
+		console.log("width===>" + width);
+		console.log("moveWidth==>" + moveWidth);
+		console.log("---------------");
+		
+			$(children).animate({
+				marginLeft : moveWidthPx
+			}, speed);
 	}
 }
 
