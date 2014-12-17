@@ -22,7 +22,7 @@
 @media all and (max-width:420px){
 	
 	#signUpHeaderColor{
-	background-color: #FFCD28;
+	background-color: #4d4d4d;
 	}
 	
 	html {
@@ -30,7 +30,7 @@
 	}
 	
 	#wrap{
-	background-color: black;
+	/* background-color: black; */
 	text-align: center;
 	}
 	
@@ -76,7 +76,7 @@
 	
 	#right {
 	
-	border: 10px #CD853F outset;
+	border: 10px #4d4d4d outset;
 	margin-top : 160px;
 	}
 	
@@ -101,27 +101,29 @@
 	}
 	
 	#wrap{
-		background-image : url("11.jpg");
+		/* background-image : url("11.jpg"); */
 		background-size : cover;
 		padding: 20px;
 		margin:  0px auto;
+		background-color: #4d4d4d;
+		
 	}
 	
-	#container {
+	/* #container {
 		background-image : url("beer.jpg");
 		background-size : cover;
 		width: 950px;
-		border: 10px #CD853F outset;
+		border: 10px #4d4d4d outset;
 		padding: 35px;
 		margin: 20px auto 0px auto ;
-		box-shadow: 10px 10px 5px #888888;
-	}
+		
+	} */
 	
 	#containerHeader {
 		font-family: 'Nanum Gothic', sans-serif;
 		font-size: 12px;
 		padding: 5px ;
-		border: 10px double #C2722E;
+		border: 10px double #4d4d4d;
 		text-align: center;
 	}
 	
@@ -130,11 +132,13 @@
 		text-shadow: 5px 5px 5px gray;
 		
 	}
-	
+	#containerHeader > hr {
+		font-color: white;
+	}
 	#left {
 		border-radius:20px;
 		width : 300px;
-		border : 3px dashed #C2722E;
+		border : 3px dashed #4d4d4d;
 		margin : 15px;
 		float: left;
 		display: inline-block;
@@ -164,7 +168,7 @@
 	
 	#left02 {
 		border-radius:20px;
-		border: 3px dashed #C2722E;
+		border: 3px dashed #4d4d4d;
 		width : 260px;
 		display: inline-block;
 		margin: 0px 15px;
@@ -178,7 +182,7 @@
 	
 	#left03 {
 		border-radius:20px;
-		border: 3px dashed #C2722E;
+		border: 3px dashed #4d4d4d;
 		width : 260px;
 		display: inline-block;
 		clear: both;
@@ -186,7 +190,7 @@
 	
 	#leftImg03 > img {
 		margin : 10px auto auto 60px;
-		width:130px;
+		width: 130px;
 		height: 130px;
 	}
 	
@@ -194,7 +198,7 @@
 	#right {
 		border-radius:20px;
 		padding: 35px;
-		border: 3px dashed #C2722E;
+		border: 3px dotted #FFCD28;
 		width: 350px;
 		display: inline-block;
 		clear: both;
@@ -215,7 +219,7 @@
 	
 	#backGroundEvent {
 		margin-top : 50px;
-		text-align: center;
+		text-align : center;
 	}
 	
 	#sign-up-page01 {
@@ -227,12 +231,13 @@
 	}
 	
 	#signUpFooter {
-	margin-left: 225px;
-		}
+	    margin-left: 225px;
+	}
 	
 	.modal-footer {
 		display: inline-block;
 	}
+	
 	#signUpHeader {
 		margin : 0px 0px 0px 225px;
 	}
