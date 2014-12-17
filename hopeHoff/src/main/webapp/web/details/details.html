@@ -3,18 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>details</title>
-<link rel="stylesheet" type="text/css"
-	href="../../css/details/detailsTest.css">
-<link rel="stylesheet" type="text/css"
-	href="../../css/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/details/details.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="../../css/details/jquery.bxslider.css">
+<link rel="stylesheet" type="text/css" href="../../css/details/jquery.bxslider.css">
 
 
-<script type="text/javascript"
-	src="http://apis.daum.net/maps/maps3.js?apikey=93ac1415c475fc830bd04115693ebbc8adf9287d"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=93ac1415c475fc830bd04115693ebbc8adf9287d"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="../../js/common.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/jquery.innerfade.js"></script>
 <script src="../../js/jquery.bxslider.js"></script>
@@ -89,27 +86,24 @@
 
 					<div id="tabs">
 						<div id="tabsContent">
-							<nav id="tabsContentNavi">
-								<ul class="pager">
-									<li><a href="#">Previous</a></li>
-									<li><a href="#">Next</a></li>
-								</ul>
-							</nav>
-
-
-
-							<div id="mapApi"></div>
-
-
-
-
-
+							<div id="contentMenu">
+								<div id= "menuList">
+									<ul>
+										<li><img src="test.jpg"></li>
+										<li><img src="test.jpg"></li>
+										<li><img src="test.jpg"></li>
+										<li><img src="test.jpg"></li>
+									</ul>
+									<div id="btnToLeft" class="box-rotate-left"></div>
+									<div id="btnToRight" class="box-rotate-right"></div>	
+								</div>
+							</div>
+							<div id="contentMap"></div>
+							<div id="contentComments"></div>
 						</div>
 						<!-- tabsContent -->
-					</div>
-					<!-- tabs 꺼야 -->
-
-					<div id="tabsBar">
+						
+						<div id="tabsBar">
 						<div id="tabsBarText">
 							<div id='menuText' class="menu">Menu</div>
 							<div id='mapText' class="map">Map</div>
@@ -121,6 +115,10 @@
 							<div id='commentButton' class="comment"></div>
 						</div>
 					</div>
+					</div>
+					<!-- tabs 꺼야 -->
+
+					
 				</div>
 				<!--body꿑 -->
 				
@@ -139,49 +137,56 @@
 	<script>
 		$(document).ready(function() {
 
-			//$('#mapApi').css('display','none');
+			$('#contentMap').css('display','none');
+			$('#contentComments').css('display','none');
 
 			$('.menu').click(function(event) {
-				$('#mapApi').css('display', 'none');
+ 				$('#contentMap').css('display', 'none');
 				$("#tabsContentNavi").css('display', '');
 				$('#menuText').css('color', 'blue');
 				$('#menuButton').css('background-color', 'blue');
 				$('#mapText').css('color', 'black');
 				$('#mapButton').css('background-color', 'white');
 				$('#commentText').css('color', 'black');
-				$('#commentButton').css('background-color', 'white');
+				$('#commentButton').css('background-color', 'white'); 
 
 			});
 
 			$('.map').click(function(event) {
+				$('#mapButton').css('background-color', 'blue');
 				$("#tabsContentNavi").css('display', 'none');
-				$("#mapApi").css('display', '');
+				$("#contentMap").css('display', '');
 				$('#menuText').css('color', 'black');
 				$('#menuButton').css('background-color', 'white')
 				$('#mapText').css('color', 'blue');
-				$('#mapButton').css('background-color', 'blue');
 				$('#commentText').css('color', 'black');
-				$('#commentButton').css('background-color', 'white');
+				$('#commentButton').css('background-color', 'white'); 
+				
+				//아직안됨
+				$("#mapApi").load("map.html", function() {
+					console.log("success!");
+				});  
+ 				
 			});
 
 			$('.comment').click(function(event) {
-				$("#tabsContentNavi").css('display', 'none');
-				$("#mapApi").css('display', 'none');
+ 				$("#tabsContentNavi").css('display', 'none');
+				$("#contentMap").css('display', 'none');
 				$('#menuText').css('color', 'black');
 				$('#menuButton').css('background-color', 'white');
 				$('#mapText').css('color', 'black');
 				$('#mapButton').css('background-color', 'white');
 				$('#commentText').css('color', 'blue');
-				$('#commentButton').css('background-color', 'blue');
+				$('#commentButton').css('background-color', 'blue'); 
+			});
+			
+			$("#btnToLeft").hover(function(){
+				myWidthSilde("#menuList", 170, 1000);
 			});
 
-			var mapContainer = document.getElementById('mapApi');
-			var mapOption = {
-				center : new daum.maps.LatLng(33.450701, 126.570667),
-				level : 3
-			};
-
-			var map = new daum.maps.Map(mapContainer, mapOption);
+			$("#btnToRight").hover(function(){
+				myWidthSilde("#myShopList", -275, 1000);
+			});
 
 		});
 	</script>

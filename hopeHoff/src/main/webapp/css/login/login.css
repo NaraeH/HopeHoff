@@ -1,3 +1,7 @@
+@viewport{
+	width:device-width;
+	zoom:1;
+}
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -12,154 +16,235 @@
 .nm {font-family: 'Nanum Myeongjo';}
 .nps {font-family: 'Nanum Pen Script';}
 
-      
-body {
-	font-family: 'CabinSketch';
-	font-weight: 700;
-}
 
-#wrap{
-	background-image : url("11.jpg");
-	background-size : cover;
-	padding: 20px;
-	margin:  0px auto;
-}
 
-#container {
-	background-image : url("beer.jpg");
-	background-size : cover;
-	width: 950px;
-	border: 10px #CD853F outset;
-	padding: 35px;
-	margin: 20px auto 0px auto ;
-	box-shadow: 10px 10px 5px #888888;
-}
 
-#containerHeader {
-	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 12px;
-	padding: 5px ;
-	border: 10px double #C2722E;
+@media all and (max-width:420px){
+	
+	#signUpHeaderColor{
+	background-color: #FFCD28;
+	}
+	
+	html {
+	background-color: white;
+	}
+	
+	#wrap{
+	background-color: black;
 	text-align: center;
-}
-
-#containerHeader > h1 {
-	font-weight: bolder;
+	}
+	
+	
+	#container {
+	
+	background-color: #FFCD28;
+	}
+	
+	
+	#inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	display: inline-block;
+	width: 200px;
+	}
+	
+	#inNumber02 {
+	margin-top: 8px;
+	}
+	
+	#id {
+	display: inline-block;
+	float: left;
+	}
+	#containerHeader > h1{
+	display: none;
+	}
+	
+	#containerHeader > h2{
+	display: none;
+	}
+	
+	#signUpFooter{
+	margin-right: 85px;
+	}
+	
+	#left {
+	display: none;
+	}
+	
+	#checkPassword {
+	margin-right: 12px;
+	}
+	
+	#right {
+	
+	border: 10px #CD853F outset;
+	margin-top : 160px;
+	}
+	
+	#right > h2 {
 	text-shadow: 5px 5px 5px gray;
+	}
+	
+	#footer{
+	display : none;
+	}
 	
 }
 
-#left {
-	border-radius:20px;
-	width : 300px;
-	border : 3px dashed #C2722E;
-	margin : 15px;
-	float: left;
-	display: inline-block;
-	margin-left : 60px;
-	margin-right : 40px;
-	text-align: center;
-	font-weight: bolder;
-}
-
-#left > h2 {
-	text-align: center;
-	margin: 15px;
-}
-
-#left > h3 {
-	font-size : xx-large;
-	font-weight: bolder;
-}
 
 
-#leftImg01 > img {
-	margin-left:80px;
-	width:130px;
-	height: 130px;
-}
 
-
-#left02 {
-	border-radius:20px;
-	border: 3px dashed #C2722E;
-	width : 260px;
-	display: inline-block;
-	margin: 0px 15px;
-}
-
-#leftImg02 > img {
-	margin : 10px auto auto 60px;
-	width:130px;
-	height: 130px;
-}
-
-#left03 {
-	border-radius:20px;
-	border: 3px dashed #C2722E;
-	width : 260px;
-	display: inline-block;
-	clear: both;
-}
-
-#leftImg03 > img {
-	margin : 10px auto auto 60px;
-	width:130px;
-	height: 130px;
-}
-
-
-#right {
-	border-radius:20px;
-	padding: 35px;
-	border: 3px dashed #C2722E;
-	width: 350px;
-	display: inline-block;
-	clear: both;
-	margin: 15px 15px 0px 55px;
-}
-
-#right > h2 {
-	text-align: center;
-	margin: 20px ;
-}
-
-#footer{
-	color : white;
-	margin-top : 40px;
-	padding: 45px;
-	text-align: center;
-}
-
-#backGroundEvent {
-	margin-top : 50px;
-	text-align: center;
-}
-
-#sign-up-page01 {
-	margin : 20px auto 0px 50px;
-}
-
-#checkPassword, #phoneNumber, #inNumber01, #inNumber02 {
-	margin-top: 10px;
-}
-
-#signUpFooter {
-margin-left: 225px;
+@media all and (min-width:421px){ 
+	
+	body {
+		font-family: 'CabinSketch';
+		font-weight: 700;
+	}
+	
+	#wrap{
+		background-image : url("11.jpg");
+		background-size : cover;
+		padding: 20px;
+		margin:  0px auto;
+	}
+	
+	#container {
+		background-image : url("beer.jpg");
+		background-size : cover;
+		width: 950px;
+		border: 10px #CD853F outset;
+		padding: 35px;
+		margin: 20px auto 0px auto ;
+		box-shadow: 10px 10px 5px #888888;
+	}
+	
+	#containerHeader {
+		font-family: 'Nanum Gothic', sans-serif;
+		font-size: 12px;
+		padding: 5px ;
+		border: 10px double #C2722E;
+		text-align: center;
+	}
+	
+	#containerHeader > h1 {
+		font-weight: bolder;
+		text-shadow: 5px 5px 5px gray;
+		
+	}
+	
+	#left {
+		border-radius:20px;
+		width : 300px;
+		border : 3px dashed #C2722E;
+		margin : 15px;
+		float: left;
+		display: inline-block;
+		margin-left : 60px;
+		margin-right : 40px;
+		text-align: center;
+		font-weight: bolder;
+	}
+	
+	#left > h2 {
+		text-align: center;
+		margin: 15px;
+	}
+	
+	#left > h3 {
+		font-size : xx-large;
+		font-weight: bolder;
+	}
+	
+	
+	#leftImg01 > img {
+		margin-left:80px;
+		width:130px;
+		height: 130px;
+	}
+	
+	
+	#left02 {
+		border-radius:20px;
+		border: 3px dashed #C2722E;
+		width : 260px;
+		display: inline-block;
+		margin: 0px 15px;
+	}
+	
+	#leftImg02 > img {
+		margin : 10px auto auto 60px;
+		width:130px;
+		height: 130px;
+	}
+	
+	#left03 {
+		border-radius:20px;
+		border: 3px dashed #C2722E;
+		width : 260px;
+		display: inline-block;
+		clear: both;
+	}
+	
+	#leftImg03 > img {
+		margin : 10px auto auto 60px;
+		width:130px;
+		height: 130px;
+	}
+	
+	
+	#right {
+		border-radius:20px;
+		padding: 35px;
+		border: 3px dashed #C2722E;
+		width: 350px;
+		display: inline-block;
+		clear: both;
+		margin: 15px 15px 0px 55px;
+	}
+	
+	#right > h2 {
+		text-align: center;
+		margin: 20px ;
+	}
+	
+	#footer{
+		color : white;
+		margin-top : 40px;
+		padding: 45px;
+		text-align: center;
+	}
+	
+	#backGroundEvent {
+		margin-top : 50px;
+		text-align: center;
+	}
+	
+	#sign-up-page01 {
+		margin : 20px auto 0px 50px;
+	}
+	
+	#checkPassword, #phoneNumber {
+		margin-top: 10px;
+	}
+	
+	#signUpFooter {
+	margin-left: 225px;
+		}
+	
+	.modal-footer {
+		display: inline-block;
+	}
+	#signUpHeader {
+		margin : 0px 0px 0px 225px;
+	}
+	
+	#signUpHeaderColor {
+		background-color: #FFCD28;
+	}
+	
+	#myModalLabel {
+		background-color: #FFCD28;
 	}
 
-.modal-footer {
-	display: inline-block;
-}
-#signUpHeader {
-	margin : 0px 0px 0px 225px;
 }
 
-#signUpHeaderColor {
-	background-color: #FFCD28;
-}
-
-#myModalLabel {
-	background-color: #FFCD28;
-}
 
