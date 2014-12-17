@@ -74,3 +74,8 @@
 .modal-header {
 	background-color: #FFCD28;
 }
+#mapApi {
+	width: 400px;
+	height: 300px;
+
+}
