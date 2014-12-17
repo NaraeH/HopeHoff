@@ -1,3 +1,18 @@
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+.hn {font-family: 'Hanna';}
+.nbs {font-family: 'Nanum Brush Script';}
+.ng {font-family: 'Nanum Gothic';}
+.ngc {font-family: 'Nanum Gothic Coding';}
+.nm {font-family: 'Nanum Myeongjo';}
+.nps {font-family: 'Nanum Pen Script';}
+
+      
 body {
 	font-family: 'CabinSketch';
 	font-weight: 700;
@@ -28,6 +43,7 @@ body {
 #containerHeader > h1 {
 	font-weight: bolder;
 	text-shadow: 5px 5px 5px gray;
+	
 }
 
 #left {
@@ -40,13 +56,55 @@ body {
 	margin-left : 60px;
 	margin-right : 40px;
 	text-align: center;
+	font-weight: bolder;
 }
 
 #left > h2 {
 	text-align: center;
-	margin: 20px ;
-	text-shadow: 5px 5px 5px gray;
+	margin: 15px;
 }
+
+#left > h3 {
+	font-size : xx-large;
+	font-weight: bolder;
+}
+
+
+#leftImg01 > img {
+	margin-left:80px;
+	width:130px;
+	height: 130px;
+}
+
+
+#left02 {
+	border-radius:20px;
+	border: 3px dashed #C2722E;
+	width : 260px;
+	display: inline-block;
+	margin: 0px 15px;
+}
+
+#leftImg02 > img {
+	margin : 10px auto auto 60px;
+	width:130px;
+	height: 130px;
+}
+
+#left03 {
+	border-radius:20px;
+	border: 3px dashed #C2722E;
+	width : 260px;
+	display: inline-block;
+	clear: both;
+}
+
+#leftImg03 > img {
+	margin : 10px auto auto 60px;
+	width:130px;
+	height: 130px;
+}
+
 
 #right {
 	border-radius:20px;
@@ -61,7 +119,6 @@ body {
 #right > h2 {
 	text-align: center;
 	margin: 20px ;
-	text-shadow: 5px 5px 5px gray;
 }
 
 #footer{
@@ -70,11 +127,8 @@ body {
 	text-align: center;
 }
 
-#leftImg > img {
-	margin-left:80px;
-	width:130px;
-	height: 130px;
-}
+
+
 
 #backGroundEvent {
 	margin-top : 50px;
@@ -82,7 +136,7 @@ body {
 }
 
 
-#Sign-up-page01 {
+#sign-up-page01 {
 	margin : 20px auto 0px 50px;
 }
 
@@ -91,7 +145,11 @@ body {
 }
 
 #signUpFooter {
-	margin : 0px 200px 0px 0px;
+margin-left: 225px;
+	}
+
+.modal-footer {
+	display: inline-block;
 }
 #signUpHeader {
 	margin : 0px 0px 0px 225px;
@@ -100,3 +158,9 @@ body {
 #signUpHeaderColor {
 	background-color: #FFCD28;
 }
+
+#myModalLabel {
+	background-color: #FFCD28;
+	
+}
+

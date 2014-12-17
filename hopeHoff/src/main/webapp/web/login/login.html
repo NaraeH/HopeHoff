@@ -4,8 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <title>HopeHoff - 로그인페이지 입니다.</title>
-<link rel="stylesheet" type="text/css" href="http://api.typolink.co.kr/css?family=CabinSketch:700" />
-<link rel="stylesheet" type="text/css" href="http://api.typolink.co.kr/css?family=RixSGo+L:400" />
 <link rel='stylesheet' href="../../css/login/login.css">
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap.min.css">
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap-theme.min.css">
@@ -15,7 +13,28 @@
 
 <script>
 $(document).ready(function(){
-	$('#leftImg').innerfade({
+	$('#leftImg01').innerfade({
+		animationtype :'fade',
+		speed : 750,
+		timeout: 2000,
+		type : 'random',
+		containerheight : '130px'
+	});
+});
+
+
+$(document).ready(function(){
+	$('#leftImg02').innerfade({
+		animationtype :'fade',
+		speed : 750,
+		timeout: 2000,
+		type : 'random',
+		containerheight : '130px'
+	});
+});
+
+$(document).ready(function(){
+	$('#leftImg03').innerfade({
 		animationtype :'fade',
 		speed : 750,
 		timeout: 2000,
@@ -39,23 +58,23 @@ $(document).ready(function(){
 		<!-- in 박스 -->
 		<div id="container"> 
 			<div id="containerHeader">
-			        <h1>Hope Hoff 오늘의 말씀</h1>
-			        <h3 class="lead">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
-			        날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h3>
+			        <h1 class="hn">Hope Hoff 오늘의 말씀</h1>
+			        <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
+			        날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
 			</div>  
 			
 			<div id="left">
-				<h2>Hot! place</h2>
-				<div id="leftImg">
+				<h2 class="hn">추천 No.1</h2>
+				<div id="leftImg01">
 				<!-- 추천사진 로테이션 -->
 				<img class="img-circle" src="Wara-Wara01.jpg" alt="Generic placeholder image">
 				<img class="img-circle" src="Wara-Wara02.jpg" alt="Generic placeholder image">
 				<img class="img-circle" src="Wara-Wara03.jpg" alt="Generic placeholder image">
 				<img class="img-circle" src="Wara-Wara04.jpg" alt="Generic placeholder image">
 				</div>
-				<h3>Wara-Wara</h3>
-				<p>강남3호전 오픈기념 행사 <br>
-				전 메뉴50% 할인</p>
+				<h3 class="nps">Wara-Wara</h3>
+				<h4 class="nps">강남3호전 오픈기념 행사 <br>
+				전 메뉴50% 할인</h4>
 				
 			<!-- 다른추천장소보기  -->	
 				<!-- Button trigger modal -->
@@ -64,15 +83,58 @@ $(document).ready(function(){
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">
-				      <div class="modal-header">
+				      <div class="modal-header" id="myModalLabel">
 				        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				        <h4 class="modal-title" id="myModalLabel">Other Hot! Place</h4>
+				        <h4 class="hn modal-title">Other Hot! Place</h4>
 				      </div>
 				      <div class="modal-body">
-				        ...
+				       
+				       
+				       
+				       
+				       <div id="left02">
+							<h3 class="hn">No.2</h3>
+							<div id="leftImg02">
+							<!-- 추천사진 로테이션 -->
+							<img class="img-circle" src="soju01.jpg" alt="Generic placeholder image">
+							<img class="img-circle" src="soju02.jpg" alt="Generic placeholder image">
+							<img class="img-circle" src="soju03.jpg" alt="Generic placeholder image">
+							<img class="img-circle" src="soju04.jpg" alt="Generic placeholder image">
+							</div>
+							<h3 class="nps">악바리</h3>
+							<h3 class="nps">안양 1호점 오픈기념 행사 <br>
+							계란말이 서비스(금주 토요일까지)</h3>
+				       </div>
+				       
+				       
+				       <div id="left03">
+							<h3 class="hn">No.3</h3>
+							<div id="leftImg03">
+							<!-- 추천사진 로테이션 -->
+							<img class="img-circle" src="mak01.jpg" alt="Generic placeholder image">
+							<img class="img-circle" src="mak02.jpg" alt="Generic placeholder image">
+							<img class="img-circle" src="mak03.jpg" alt="Generic placeholder image">
+							<img class="img-circle" src="mak04.jpg" alt="Generic placeholder image">
+							</div>
+							<h3 class="nps">청담 제1막</h3>
+							<h3 class="nps">막걸리도 이제 품위있게!<br>
+							영화 : 위험한상견례 방영장소</h3>
+				       </div>
+				       
+				       
+				       
+				       
+				       
+				       
+				       
+				       
+				       
+				       
+				       
+				       
 				      </div>
 				      <div class="modal-footer">
-				        <button type="button" class="btn btn-danger" data-dismiss="modal">돌아가기</button>
+				        <button type="button" class="btn btn-warning" data-dismiss="modal">돌아가기</button>
 				      </div>
 				    </div>
 				  </div>
@@ -82,16 +144,16 @@ $(document).ready(function(){
 			
 			
 			<div id = "right">
-				<h2>Hope Hoff</h2>
+				<h2 class="hn">Hope Hoff</h2>
 				<form class="form-horizontal" role="form">
 					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">ID</label>
+						<label for="inputEmail3" class="hn col-sm-2 control-label">ID</label>
 						<div class="col-sm-10">
-							<input type="ID" class="form-control" id="inputEmail3" placeholder="아이디를 입력하세요.">
+							<input class="form-control" id="inputEmail3" placeholder="아이디를 입력하세요.">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-2 control-label">PWD</label>
+						<label for="inputPassword3" class="hn col-sm-2 control-label">PWD</label>
 						<div class="col-sm-10">
 							<input type="Password" class="form-control" id="inputPassword3" placeholder="패스워드를 입력하세요.">
 						</div>
@@ -119,11 +181,11 @@ $(document).ready(function(){
 									<div id="signUpHeaderColor" class="modal-header">
 									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 									<div id="signUpHeader">
-										<h4 class="modal-title" id="myModalLabel">Sign-up Page</h4>
+										<h4 class="hn modal-title" id="myModalLabel">Sign-up Page</h4>
 									</div>
 								</div>
 								      
-								<div id="Sign-up-page01">
+								<div id="sign-up-page01">
 								
 									<div class="form-group">
 										<label class="col-sm-2 control-label" for="formGroupInputLarge">ID</label>
@@ -161,9 +223,9 @@ $(document).ready(function(){
 									</div>
 														  
 									<div class="form-group">
-										<label  for="col-sm-2 control-label" class="col-sm-2 control-label">인증번호 입력</label> 
+										<label  for="col-sm-2 control-label" class="col-sm-2 control-label">인증번호</label> 
 										<div class="col-sm-3">
-										<input id="inNumber01" type="form-control" class="form-control" id="inputPassword3" size="" placeholder="인증번호 입력">
+										<input id="inNumber01" type="form-control" class="form-control" id="inputPassword3" size="" placeholder="인증번호">
 										</div>
 										
 										<button id="inNumber02" type="button" class="btn btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">인증번호 전송</button>
