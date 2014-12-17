@@ -17,14 +17,17 @@ body {
 	font-family: 'CabinSketch';
 	font-weight: 700;
 }
+
 #wrap{
-	background-image : url("beer.jpg");
-	background-size : cover;	
+	background-image : url("11.jpg");
+	background-size : cover;
 	padding: 20px;
 	margin:  0px auto;
 }
 
 #container {
+	background-image : url("beer.jpg");
+	background-size : cover;
 	width: 950px;
 	border: 10px #CD853F outset;
 	padding: 35px;
@@ -122,19 +125,16 @@ body {
 }
 
 #footer{
+	color : white;
 	margin-top : 40px;
 	padding: 45px;
 	text-align: center;
 }
 
-
-
-
 #backGroundEvent {
 	margin-top : 50px;
 	text-align: center;
 }
-
 
 #sign-up-page01 {
 	margin : 20px auto 0px 50px;
@@ -161,6 +161,5 @@ margin-left: 225px;
 
 #myModalLabel {
 	background-color: #FFCD28;
-	
 }
 
