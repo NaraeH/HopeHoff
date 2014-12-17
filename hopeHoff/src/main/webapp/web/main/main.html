@@ -23,11 +23,11 @@
 				<div id="myShopListWrap">
 					<div id="myShopList">
 						<ul>
-							<li><a href="#">가게1</a></li>
-							<li><a href="#">가게2</a></li>
-							<li><a href="#">가게3</a></li>
+							<li><a href="#">와라와라(강남점)</a></li>
+							<li><a href="#">꾼</a></li>
+							<li><a href="#">긴~~~~~~~~가게</a></li>
 							<li><a href="#">가게4</a></li>
-							<!-- <li><a href="#">가게5</a></li> -->
+							<li><a href="#">가게5</a></li>
 						</ul>
 					</div>
 					<div id="btnToLeft" class="box-rotate-left"></div>
@@ -83,52 +83,11 @@
 	</div>
 
 	<script src='../../js/jquery-2.1.1.min.js'></script>
+	<script src='../../js/common.js'></script>
+	<script src='../../js/main.js'></script>
 	<script>
 	
-	$(document).ready(function(){
-		var count = 0; //for문을 위한 index
-		var checkedList = []; //keyword를 담기위한 배열
-		
-		//첫 시작시 리스트 로딩
-		$("#containerList").load("containerList.html");
-
-			$(":checkbox").click(function() {
-				//체크하는 경우
-				if ($(this).is(":checked")) {
-					checkedList[checkedList.length] = $(this).val();
-				}
-				
-				//체크를 없애는 겨우
- 				if(!($(this).is(":checked"))){
- 					for(count = 0; count<checkedList.length; count++){
- 						if(checkedList[count] == $(this).val()){
- 							checkedList.splice(count,1);
-						}  
- 					}
-				} 
-				
-				//가게검색내용에 keyword추가하기
-  				$("#containerList").load("containerList.html", function() {
-					for(count = 0; count<checkedList.length; count++){
-					  $("<div>").attr("class", "listKeywordItem")
-					  .text(checkedList[count])
-					  .appendTo($(".listKeywordContainer"));
-
-					}
-				});  
-			});
-
-			//if조건 체크해서 hover/click 됬을 경우  조금씩 움직이게(계싼 필) 하기
-			$("#btnToLeft").click(function(){
-				$("#myShopList ul").css("margin-left", "0px");
-			});
-			
-			$("#btnToRight").click(function(){
-				$("#myShopList ul").css("margin-left", "-50px");
-			});
-			
 	
-		});
 	</script>
 
 </body>
