@@ -31,12 +31,6 @@ function myWidthSilde(wrapDiv, moveWidth, speed) {
 	
 	if (moveWidth < 0) {  //오른쪽으로 움직일 경우
 		moveWidth = margin + moveWidth;
-		
-		console.log("margin==>" + margin);
-		console.log("width===>" + width);
-		console.log("moveWidth==>" + moveWidth);
-		console.log("---------------");
-		
 		if ((margin <= 0) && (-width < margin)) {
 			$(children).animate({
 				marginLeft : moveWidthPx
@@ -46,7 +40,6 @@ function myWidthSilde(wrapDiv, moveWidth, speed) {
 	
 	//click시 이상있음 추후 수정하기 -narae
 	if((moveWidth >= 0) && (margin != 0)){  //왼쪽으로 움직일 경우
-		console.log("hear!!");
 		if((moveWidth + margin) >= 0) {
 			moveWidth = 0;
 		}else if( moveWidth - margin > 0){
@@ -55,11 +48,6 @@ function myWidthSilde(wrapDiv, moveWidth, speed) {
 			moveWidth = margin + moveWidth;
 		}
 		moveWidthPx = moveWidth + "px"
-		
-		console.log("margin==>" + margin);
-		console.log("width===>" + width);
-		console.log("moveWidth==>" + moveWidth);
-		console.log("---------------");
 		
 			$(children).animate({
 				marginLeft : moveWidthPx
