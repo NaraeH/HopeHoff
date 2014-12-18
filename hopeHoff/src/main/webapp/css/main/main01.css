@@ -1,148 +1,118 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
  
 /* 큰틀 */
 
 body {
-/* 	background-image : url("../login/beer.jpg");
-	background-size: 100% 100%;
-	background-repeat:no-repeat; */
+	margin: 0px;
 }
 
-/* #wrap {
-	width:  950px;
-	height: 730px;
- 	padding: 30px;
-	background: white;
-	margin: 0px auto 0px auto ;
-	border-radius:20px;
-} */
+#wrap {
+} 
 
 /*----------------------header-----------------------  */
 #header {
 	height:150px;
-	background: #fd9e04;
+	background: #333231;
 	margin:0px 0px 15px 0px;
 }
 
 
 #headerLogo {
+	width: 20%;
+	height: 90%;
 	display: inline-block;
 	margin:5px;
+	padding-left: 10px;
+	/* border: 1px solid yellow; */
 }
 
-#headerLogo img {
-	height:135px;
-	width: 315px;
-}
-
-#headerMenu {
- 	height: 135px;  
- 	width: 670px;
-	display: inline-block;
-	position: absolute;
-	margin:5px;
+#headerLogo a{
+	font-size: 75px;
+	font-family: 'Lobster', cursive;
+	color: #fd9e04;
+	text-align: center;
 }
 
 #headerMenuList {
-	width: 670px;
-	height:65px;
-	padding: 3px;
-	border-bottom: 2px solid #fd9e04;
-}
-
-
-.menuList {
-	background: #fd9e04;
-	width: 105px;
-	height: 25px;
-	padding-top: 15px;
+ 	width: 78%;
+ 	height: 140px;
 	display: inline-block;
-	text-align: center;
-	border: 1px solid wheat;
+	position: absolute;
 	
-	border-top-left-radius: 1em;
-	border-top-right-radius: 1em;
-}
-
-.menuList:hover {
-	background: #ffde86;
-}
-
-#headerButtonList {
-	padding: 10px;
-	display: inline-block;
-	float:right;
-	margin-right: -15px;
-}
-#headerMemberInfo {
-	display: inline-block;
-	width: 240px;
-	height: 20px;
-	font-size: 12px;
-	text-align: right;
-	float:right;
-	margin-top: 20px;
-}
-
-#myShopListWrap {
-	width:275px;
-	height:35px;
-	display:inline-block;
-	background: #fd9e04;
+	
 	/* border: 1px solid red; */
+} 
+
+#headerTopMenu {
+	height: 35px;
+	float: right;
+	font-size: small;
+
+	/* border: 1px solid yellow; */
 }
 
-#myShopList {
-	width:235px;
-	height:35px;
-	
-	border-right: 20px solid rgba(254, 192, 90, 0.7);
-	border-left: 20px solid rgba(254, 192, 90, 0.7);
-	
-	overflow: hidden;
-}
-
-#myShopList ul{
+#headerTopMenu ul{
 	list-style-type:none;
 	padding-left:0px;
 	display: inline-block;
+	clear:both;
 }
 
-#myShopList li{
+#headerTopMenu li{
 	display:inline;
 	border-left: 1px solid #c0c0c0;
 	padding: 0px 10px 0px 10px;
 }
 
-#myShopList ul li:first-child {
+#headerTopMenu ul li:first-child {
 	border-left: none;
 }
 
-#btnToRight {
-	display: inline-block;
-	position: absolute;
-	margin-top: -24px;
-	margin-left: 255px;
+#headerMiddleMenu {
+	height: 70px;
+	float: right;
+	clear:both;
+	
+	/* border: 1px solid green; */
 }
 
-#btnToLeft {
-	display: inline-block;
-	position: absolute;
-	margin-top: -24px;
-	margin-left: 7px;
+#btnMyPage {
+	width:60px;
+	height:60px;
+	background-image: url(../../img/common/pictogram_white.png);
+	background-position: -1187px -5608px;;
+	display:inline-block;
+	
 }
 
-/* #btnToRight:hover, #btnToLeft:hover {
-	background: #3e3e27;
-} */
+#btnMyWrite{
+	width:60px;
+	height:60px;
+	background-image: url(../../img/common/pictogram_white.png);
+	background-position: -1187px -5471px;
+	display:inline-block;
+	
+}
 
-#btnLogout {
-	/* display:none; */
+#headerButtomMenu {
+	float: right;
+	color: #ffffff;
+	font-size: small;
+	clear:both;
+	margin-top: 10px;
+	
+	/* border: 1px solid blue; */
 }
 
 
-#btnSignUp{
-	display:none;
+#myShopList {
+	height: 25px;
+	background: #474749;
+	/* border: 1px solid red; */
 }
+
+
+
 /* ----------------------container-----------------------   */
 #container {
 	width:  940px;
@@ -275,26 +245,21 @@ body {
 
 a:link {
 	color:white;
-	font-weight: bold;
     text-decoration: none;
 }
 
 a:visited {
 	color:white;
-	font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
 	color:white;
-	font-weight: bold;
 	text-decoration: none;
-    /* text-decoration: underline; */
 }
 
 a:active {
 	color:white;
-	font-weight: bold;
     text-decoration: underline;
 }
 
