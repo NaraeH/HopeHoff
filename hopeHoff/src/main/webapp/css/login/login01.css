@@ -62,10 +62,6 @@
 	display: none;
 	}
 	
-	#signUpFooter{
-	margin-right: 85px;
-	}
-	
 	#left {
 	display: none;
 	}
@@ -75,9 +71,7 @@
 	}
 	
 	#right {
-	
 	border: 10px #4d4d4d outset;
-	margin-top : 160px;
 	}
 	
 	#right > h2 {
