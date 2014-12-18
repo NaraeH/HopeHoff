@@ -13,9 +13,6 @@ body {
 	float:left;
 	margin-right: 5px;
 }
-#carousel-example-generic span { 
-	margin-top: 111px;
-}
 .Info{
 	border:1px solid red;
 	display:inline;
