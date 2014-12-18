@@ -25,30 +25,30 @@
 	text-decoration: underline;
 }
 
-#carousel-example-generic { 
-	margin-top:10px;
-	margin-left:30px;
-	width: 340px; 
-	height: 230px ; 
-	float:left;
+#menuList {
+	/* width: 520px; */
+	height: 150px;
+	margin: 0 auto;
+	overflow :hidden;
+	margin-top: 20px;
+}
+#menuList ul {
+	list-style-type:none;
+	padding-left: 0px;
+	display: inline-block;
+	overflow: hidden;
+	height: inherit;
 }
 
-#carousel{
-	width: 300px !important;
-	height: 70px !important;
-	
+#menuList li {
+	display:inline;
+	padding: 0px 10px 0px 10px;
 }
 
-.elastislide-wrapper{
-	background-color: white !important;
-	height: 200px !important;	
+#menuList li img {
+	width: 150px;
+	height: 150px;
 }
-
-.elastislide-next{
-	
-	
-}
-
 
 #tabsBar{
  height: 50px;
