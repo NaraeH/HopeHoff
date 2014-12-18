@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <title>details</title>
 <link rel="stylesheet" type="text/css" href="../../css/details/details.css">
+<link rel="stylesheet" type="text/css" href="../../css/details/overlay.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../../css/details/jquery.bxslider.css">
+
+
 
 
 <script type="text/javascript"
@@ -14,10 +16,6 @@
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/jquery.innerfade.js"></script>
-<script src="../../js/jquery.bxslider.js"></script>
-<script src="../../js/jquery.easing.1.3.js"></script>
-<script src="../../js/jquery.fitvids.js"></script>
 
 
 </head>
@@ -99,10 +97,37 @@
 							<div id="contentMenu">
 								<div id="menuList">
 									<ul>
-										<li><img src="test.jpg"></li>
-										<li><img src="test.jpg"></li>
-										<li><img src="test.jpg"></li>
-										<li><img src="test.jpg"></li>
+										<li>
+											<div id="box" style="background-image: url('chiken.jpg')">
+												<div id="overlay">
+													<span id="plus"><input style="width:130px;" type="text" placeholder="뿌링클치킨"></span>
+													<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="17000"></span>
+												</div>
+											</div>
+										<li>
+											<div id="box" style="background-image: url('chease.jpg')">
+												<div id="overlay">
+													<span id="plus"><input style="width:130px;" type="text" placeholder="크림치즈 퐁닭"></span>
+													<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="17500"></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div id="box" style="background-image: url('pizza.jpg')">
+												<div id="overlay">
+													<span id="plus"><input style=" width:130px;" type="text" placeholder="베감피자"></span>
+													<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="16800"></span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div id="box" style="background-image: url('odang.jpg')">
+												<div id="overlay">
+													<span id="plus"><input style="width:130px;" type="text" placeholder="꼬치어묵전골"></span>
+													<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="18500"></span>
+												</div>
+											</div>
+										</li>
 									</ul>
 									<div id="btnToLeft" class="box-rotate-left"></div>
 									<div id="btnToRight" class="box-rotate-right"></div>
