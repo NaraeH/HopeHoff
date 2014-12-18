@@ -8,181 +8,276 @@
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/details/jquery.bxslider.css">
 
-<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=73e44bf099d1abe60ab7b8a5e1624e5b2a750814"></script>
+
+<script type="text/javascript"
+	src="http://apis.daum.net/maps/maps3.js?apikey=f0fe46045347a225b541134d40ca776ff948507a"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="../../js/common.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/jquery.innerfade.js"></script>
 <script src="../../js/jquery.bxslider.js"></script>
 <script src="../../js/jquery.easing.1.3.js"></script>
 <script src="../../js/jquery.fitvids.js"></script>
 
+
 </head>
-<body background="http://resources0.news.com.au/images/2011/11/17/1226197/825992-111119-twam-beer.jpg">
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  modal
-</button>
-
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog"> <!-- 2 -->
-    <div class="modal-content">  <!-- 1 -->
-      
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Details</h4>
-      </div>
-      
-      <div class="modal-body">
-       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		  <!-- Indicators -->
- 		 <ol class="carousel-indicators">
- 		  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-  		  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-  		  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
- 		 </ol>
- 
- 		 <!-- Wrapper for slides -->
- 		 <div class="carousel-inner" role="listbox">
-  		  <div class="item active">
-   		   <img src="Wara-Wara01.jpg" alt="Generic placeholder image">
-   		   <div class="carousel-caption">     	   와라와라(강남점) (1/3)   		  </div>
-    	  </div>
-    
-   		  <div class="item">
-   		   <img src="Wara-Wara02.jpg" alt="Generic placeholder image">
-   		   <div class="carousel-caption"> 		    와라와라(강남점) (2/3)   	  </div>
-  		  </div> 
-    
-   		  <div class="item">
-   		   <img src="Wara-Wara03.jpg" alt="Generic placeholder image">
-   		   <div class="carousel-caption"> 		    와라와라(강남점) (3/3)  		  </div>
-   		  </div>
+<body>
 
- 	 	</div> <!-- end of the Wrapper for slides -->
+	<div id="myModal">
+		<div>
+			<div>
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Details</h4>
+				</div>
 
- 	 	<!-- Controls -->
- 		 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-  		  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  		  <span class="sr-only">Previous</span>
-  		 </a>
-  		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-  		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  		  <span class="sr-only">Next</span>
- 		</a>
-    </div>
-    <div id="hoffInfo">
-       <h3 >와라와라 강남점</h3>
-    	<div class="Info">운영시간 : </div> <div class="Info">17:00 ~ 4:00</div><br>
-    	<div class="Info">전화번호 : </div> <div class="Info">02-1234-5678</div><br>
-    	<div >주     소  </div> 
-    	<div class="hoffInfoContent">서울시 강남구역삼동 822-1</div>
-    	<div>소     개  </div> 
-    	<div class="hoffInfoContent">맛도 짱! 분위기도짱! 
-    	<br>서비스도 짱!</div>
-    	<div id="reservation"><button id="reservBtn" type="button" class="btn btn-warning" >예약하기</button>	</div>
-    </div>
-   <div id="tabs" >
-		   <div id="tabsContent">
-			<!-- <ul class="bxslider">
-				  <li><img src="Wara-Wara02.jpg" /></li>
-				  <li><img src="Wara-Wara03.jpg" /></li>
-				  <li><img src="Wara-Wara01.jpg" /></li>
-				  <li><img src="Wara-Wara03.jpg" /></li>
-				  <li><img src="Wara-Wara02.jpg" /></li>
-				  <li><img src="Wara-Wara01.jpg" /></li>
-				  <li><img src="Wara-Wara03.jpg" /></li>
-				  <li><img src="Wara-Wara02.jpg" /></li>
-			</ul>
-			 -->	
-			<div id="map" style="width:500px;height:200px;">
-			</div>			
-			<nav id="tabsContentNavi">
-				 <ul class="pager">
-				  <li><a href="#">Previous</a></li>
-				 <li><a href="#">Next</a></li>
-				</ul>
-				</nav>
-			</div>
-   		</div>
-   		
-   		<div id="tabsBar">
-   			<div id="tabsBarText">
-   				<div id='menuText' class="menu" >Menu</div>
-   				<div id='mapText' class="map">Map</div>
-   				<div id='commentText' class="comment">Comment</div>
-   			</div>
-   			<div id="tabsBarButton">
-   				<div id='menuButton' class="menu"></div>
-   				<div id='mapButton' class="map"></div>
-   				<div id='commentButton' class="comment"></div>
-   			</div>
-   		</div>
-  </div> 
-      
-  <div class="modal-footer">
-     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-     <button type="button" class="btn btn-warning">Save changes</button>
-  </div>
-      
-    </div> <!-- 1 -->
-  </div> <!-- 2 -->
-</div> <!-- 3 -->
-<script>
+				<div class="modal-body">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
 
-$(document).ready(function(){
-	
-	$('#map').css('display','none');
-$('.menu').click(function(event){
-	$("#tabsContentNavi").css('display','');
-	$('#menuText').css('color','blue');
-	$('#menuButton').css('background-color','blue');
-	$('#mapText').css('color','black');
-	$('#mapButton').css('background-color','white');
-	$('#commentText').css('color','black');
-	$('#commentButton').css('background-color','white');
-	
-});
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="Wara-Wara01.jpg" alt="Generic placeholder image">
+								<div class="carousel-caption">와라와라(강남점) (1/3)</div>
+							</div>
 
-$('.map').click(function(event){
-	$("#tabsContentNavi").css('display','none');
-	$("#map").css('display','');
-	$('#menuText').css('color','black');
-	$('#menuButton').css('background-color','white')
-	$('#mapText').css('color','blue');
-	$('#mapButton').css('background-color','blue');
-	$('#commentText').css('color','black');
-	$('#commentButton').css('background-color','white');
-});
+							<div class="item">
+								<img src="Wara-Wara02.jpg" alt="Generic placeholder image">
+								<div class="carousel-caption">와라와라(강남점) (2/3)</div>
+							</div>
 
-$('.comment').click(function(event){
-	$("#tabsContentNavi").css('display','none');
-	$("#map").css('display','none');
-	$('#menuText').css('color','black');
-	$('#menuButton').css('background-color','white');
-	$('#mapText').css('color','black');
-	$('#mapButton').css('background-color','white');
-	$('#commentText').css('color','blue');
-	$('#commentButton').css('background-color','blue');
-});
+							<div class="item">
+								<img src="Wara-Wara03.jpg" alt="Generic placeholder image">
+								<div class="carousel-caption">와라와라(강남점) (3/3)</div>
+							</div>
 
-$('.bxslider').bxSlider({
-	  minSlides: 3,
-	  maxSlides: 4,
-	  slideWidth: 170,
-	  slideMargin: 10
+						</div>
+						<!-- end of the Wrapper for slides -->
+
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic"
+							role="button" data-slide="prev"> <span
+							class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a> <a class="right carousel-control"
+							href="#carousel-example-generic" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"
+							aria-hidden="true"></span> <span class="sr-only">Next</span>
+						</a>
+					</div>
+					<div id="hoffInfo">
+						<h3>와라와라 강남점</h3>
+						<div class="Info">운영시간 :</div>
+						<div class="Info">17:00 ~ 4:00</div>
+						<br>
+						<div class="Info">전화번호 :</div>
+						<div class="Info">02-1234-5678</div>
+						<br>
+						<div>주 소</div>
+						<div class="hoffInfoContent">서울시 강남구역삼동 822-1</div>
+						<div>소 개</div>
+						<div class="hoffInfoContent">
+							맛도 짱! 분위기도짱! <br>서비스도 짱!
+						</div>
+						<div id="reservation">
+							<button id="reservBtn" type="button" class="btn btn-warning">예약하기</button>
+						</div>
+					</div>
+
+
+					<div id="tabs">
+						<div id="tabsContent">
+							<div id="contentMenu">
+								<div id="menuList">
+									<ul>
+										<li><img src="test.jpg"></li>
+										<li><img src="test.jpg"></li>
+										<li><img src="test.jpg"></li>
+										<li><img src="test.jpg"></li>
+									</ul>
+									<div id="btnToLeft" class="box-rotate-left"></div>
+									<div id="btnToRight" class="box-rotate-right"></div>
+								</div>
+							</div>
+							<div id="contentMap" style="width: 100%; height: 200px;"></div>
+							<div id="contentComments">
+								
+								<table id="dataForm" class="table table-hover"></table>
+					
+							</div>
+						</div>	<!-- tabsContent -->
+
+						<div id="tabsBar">
+							<div id="tabsBarText">
+								<div id='menuText' class="menu">Menu</div>
+								<div id='mapText' class="map">Map</div>
+								<div id='commentText' class="comment">Comment</div>
+							</div>
+							<div id="tabsBarButton">
+								<div id='menuButton' class="menu"></div>
+								<div id='mapButton' class="map"></div>
+								<div id='commentButton' class="comment"></div>
+							</div>
+						</div>
+					</div>	<!-- tabs 꺼야 -->
+
+
+				</div>	<!--body꿑 -->
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-warning">Save changes</button>
+				</div>
+
+			</div>	<!-- 1 -->
+		</div>	<!-- 2 -->
+	</div>	<!-- 3 -->
+	<script>
+		$(document).ready(function() {
+
+			$('#contentMap').css('display', 'none');
+			$('#contentComments').css('display', 'none');
+
+			$('.menu').click(function(event) {
+				$("#contentMenu").css('display', '');
+				$('#contentMap').css('display', 'none');
+				$('#contentComments').css('display', 'none');
+				
+				$('#menuText').css('color', 'blue');
+				$('#menuButton').css('background-color', 'blue');
+				$('#mapText').css('color', 'black');
+				$('#mapButton').css('background-color', 'white');
+				$('#commentText').css('color', 'black');
+				$('#commentButton').css('background-color', 'white');
+
+			});
+
+			$('.map').click(function(event) {
+				$("#contentMenu").css('display', 'none');
+				$("#contentMap").css('display', '');
+				$('#contentComments').css('display', 'none');
+				
+				$('#menuText').css('color', 'black');
+				$('#menuButton').css('background-color', 'white')
+				$('#mapText').css('color', 'blue');
+				$('#mapButton').css('background-color', 'blue');
+				$('#commentText').css('color', 'black');
+				$('#commentButton').css('background-color', 'white');
+
+			});
+
+			$('.comment').click(function(event) {
+				$("#contentMenu").css('display', 'none');
+				$("#contentMap").css('display', 'none');
+				$('#contentComments').css('display', '');
+				
+				$('#menuText').css('color', 'black');
+				$('#menuButton').css('background-color', 'white');
+				$('#mapText').css('color', 'black');
+				$('#mapButton').css('background-color', 'white');
+				$('#commentText').css('color', 'blue');
+				$('#commentButton').css('background-color', 'blue');
+			});
+
+			$("#btnToLeft").hover(function() {
+				myWidthSilde("#menuList", 170, 1000);
+			});
+
+			$("#btnToRight").hover(function() {
+				myWidthSilde("#myShopList", -275, 1000);
+			});
+
+		});
+		
+		
+		
+		
+		
+	var mapContainer = document.getElementById('contentMap'), // 지도를 표시할 div 
+	    mapOption = {
+	        center: new daum.maps.LatLng(37.4986077,127.02851620000001), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };
+
+	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+	// 마커가 표시될 위치입니다
+	var markerPosition  = new daum.maps.LatLng(37.4986077,127.02851620000001); 
+
+	// 마커를 생성합니다
+	var marker = new daum.maps.Marker({
+	    position: markerPosition
 	});
-	
-	
-var container = document.getElementById('map');
-var options = {
-	center: new daum.maps.LatLng(33.450701, 126.570667),
-	level: 3
-};
 
-var map = new daum.maps.Map(container, options);
-});
-</script>
+	// 마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+
+	// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+	// marker.setMap(null);    
+	/************************************************************************************************/
+	
+		$('<tr id=tRow0>').appendTo($('#dataForm'));
+		//$('<th class=tableDataNo>').html("No").appendTo($('#tRow0'));
+		$('<th class=tableDataName>').html("Name").appendTo($('#tRow0'));
+		$('<th class=tableDataComments>').html("Comments").appendTo($('#tRow0'));
+		$('<th class=tableDataTime>').html("Time").appendTo($('#tRow0'));
+		$('<th class=tableDataButton>');
+	
+	
+		 $('<tr id=tRowNew>').appendTo($('#dataForm')); 
+		//$('<td class=tableDataNo>').html("3").appendTo($('#tRow3'));
+	    $('<td class=tableDataName>').html("붸연정").appendTo($('#tRowNew'));
+		$('<td class=tableDataComments>')
+				.append($('<input type="text" placeholder="한줄평을 남겨주세용">'))
+				.appendTo($('#tRowNew'));
+		$('<td class=tableDataTime>').html("2014-12-18").appendTo($('#tRowNew'));
+		$('<td class=tableDataButton>')
+				.append($('<button type="button" id="plus">+</button>'))
+				.appendTo($('#tRowNew'));
+		
+		$('<tr id=tRow2>').appendTo($('#dataForm')); 
+		//$('<td class=tableDataNo>').html("2").appendTo($('#tRow2'));
+	    $('<td class=tableDataName>').html("현나뤠").appendTo($('#tRow2'));
+		$('<td class=tableDataComments>').html("여기 해물탕 추천이요!!").appendTo($('#tRow2'));
+		$('<td class=tableDataTime>').html("2014-12-14").appendTo($('#tRow2'));
+		
+		$('<tr id=tRow1>').appendTo($('#dataForm')); 
+	//	$('<td class=tableDataNo>').html("1").appendTo($('#tRow1'));
+	    $('<td class=tableDataName>').html("붸연정").appendTo($('#tRow1'));
+		$('<td class=tableDataComments>').html("원빈이랑 왔더니 서비스가 좋았음ㅋㅋㅋ").appendTo($('#tRow1'));
+		$('<td class=tableDataTime>').html("2014-12-10").appendTo($('#tRow1'));
+		$('<td class=tableDataButton>')
+				.append($('<button type="button" id="minus">-</button>'))
+				.appendTo($('#tRow1'));
+				
+				
+		$('#minus').click(function(event) {
+		  $("#tRow1").css('display', 'none');
+		
+		});
+		
+		$('#plus').click(function(event) {
+		
+			$('#dataForm').append(
+		  $("#dataForm:nth-child(2)")
+		  		.append($('<tr id=tRow3>'))
+		 	);
+
+		  $('<tr id=tRow3>').appendTo($('#dataForm')); 
+  		  $('<td class=tableDataName>').html("붸연정***").appendTo($('#tRow3'));
+		  $('<td class=tableDataComments>').html("후기당ㅇㅇㅇ").appendTo($('#tRow3'));
+		  $('<td class=tableDataTime>').html("2014-12-18").appendTo($('#tRow3'));
+	
+		}); 
+	</script>
 </body>
 </html>
-
