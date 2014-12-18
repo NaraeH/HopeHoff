@@ -13,6 +13,9 @@ body {
 	float:left;
 	margin-right: 5px;
 }
+#carousel-example-generic span { 
+	margin-top: 111px;
+}
 .Info{
 	border:1px solid red;
 	display:inline;
@@ -131,21 +134,26 @@ body {
 	height: 150px;
 }
 
+#menuList > span {
+	border-bottom:20px solid black;
+	margin-top: 100px;
+}
+#menuList .box-rotate-right {
+	margin-left: 475px;
+}
 #btnToLeft{
 	position: absolute;
 	margin-top: -100px;	
 }
 
-#btnToRight{
-	
-}
+
 
 /*-------------------------------------V----나래언니가만든함수인듯------*/
 
 .box-rotate-right{
 	width: 0px;
 	height:0px;
-	margin-top: 111px;
+	
 	border-right:20px solid transparent;
 	border-bottom:20px solid white; 
 	transform:rotate(225deg);  
@@ -160,7 +168,7 @@ body {
 .box-rotate-right:hover{
 	width: 0px;
 	height:0px;
-	margin-top: 111px;
+
 	border-right:20px solid transparent;
 	border-bottom:20px solid #3e3e27; 
 	transform:rotate(225deg);  
@@ -175,7 +183,7 @@ body {
 .box-rotate-left{
 	width: 0px;
 	height:0px;
-	margin-top: 111px;
+
 	border-right:20px solid transparent;
 	border-bottom:20px solid white; 
 	transform:rotate(45deg);  
@@ -190,7 +198,7 @@ body {
 .box-rotate-left:hover{
 	width: 0px;
 	height:0px;
-	margin-top: 111px;
+
 	border-right:20px solid transparent;
 	border-bottom:20px solid #3e3e27; 
 	transform:rotate(45deg);  
