@@ -1,0 +1,81 @@
+@CHARSET "UTF-8";
+.col-xs-6 .col-md-3{
+	border:1px solid red;
+	margin: 0px !important;
+	padding-top: 15px !important;
+}
+.row{
+	margin: 15px;
+	padding-top: 50px;
+}
+
+#carousel-example-generic { 
+	width:350px; 
+	height: 250px; 
+	border:3px solid red; 
+	float:left;
+	margin-right: 5px;
+}
+.Info{
+	border:1px solid red;
+	display:inline;
+	text-align: left;
+}
+
+#hoffInfo { 
+	padding:3px;
+	width:210px; 
+	height:250px; 
+	border:1px solid blue;
+	float:left; 
+}
+#reservation{
+	margin:10px;
+	text-align: right;
+}
+
+#hoffInfo > h3{
+	font-size: 	x-large;
+}
+#tabs{ 
+	
+	width:570px; 
+	height:300px; 
+	border:1px solid black;
+	margin-top: 5px;
+	clear:both 
+}
+#tabsContent{
+ height: 200px;
+ margin :20px 15px;
+ border:2px dotted gold;
+}
+
+#tabsBar{
+ height: 50px;
+ margin :10px 15px;
+ border:1px solid green;
+ padding :7px 10px;
+}
+
+
+#tabsBarText > div{
+	display:inline-block;
+	width:160px;
+}
+
+#tabsBarButton > div{
+	display:inline-block;
+	border:2px solid black;
+	height:15px;
+	background-color: white;
+	width: 160px;
+}
+.modal-header {
+	background-color: #FFCD28;
+}
+#mapApi {
+	width: 530px;
+	height: 200px;
+
+}

@@ -1,4 +1,10 @@
 @CHARSET "UTF-8";
+
+body {
+	width: 600px;
+	height:700px;
+	border: 1px solid red;
+}
 .col-xs-6 .col-md-3{
 	border:1px solid red;
 	margin: 0px !important;
@@ -46,22 +52,49 @@
 	clear:both 
 }
 #tabsContent{
- height: 200px;
+ height: 205px;
  margin :20px 15px;
  border:2px dotted gold;
 }
 
+#contentMenu {
+	width: 530px;
+	height:200px;
+	border: 1px solid green;
+}
+
+#contentMap {
+	width: 530px;
+	height:200px;
+	border: 1px solid green;
+}
+
+#contentComments {
+	width: 530px;
+	height:200px;
+	border: 1px solid green;
+}
 #tabsBar{
  height: 50px;
- margin :10px 15px;
+ width: 530px;
  border:1px solid green;
  padding :7px 10px;
+ margin: 0 auto;
 }
 
 
 #tabsBarText > div{
 	display:inline-block;
-	width:160px;
+	width:165px;
+	font-size: 17px;
+	text-shadow: 5px 5px 5px #ffffff;
+}
+
+#tabsBarText {
+	position: absolute;
+	margin-top: 1px;
+	z-index: 2;
+	
 }
 
 #tabsBarButton > div{
@@ -69,13 +102,80 @@
 	border:2px solid black;
 	height:15px;
 	background-color: white;
-	width: 160px;
+	width: 165px;
 }
+
+#tabsBarButton {
+	position: absolute;	
+	margin-top: 15px;
+	z-index: 1;
+}
+
 .modal-header {
 	background-color: #FFCD28;
 }
-#mapApi {
-	width: 400px;
-	height: 300px;
 
+#menuList {
+	/* width: 520px; */
+	height: 150px;
+	margin: 0 auto;
+	overflow :hidden;
+	margin-top: 20px;
+}
+#menuList ul {
+	list-style-type:none;
+	padding-left: 0px;
+	display: inline-block;
+	overflow: hidden;
+	height: inherit;
+}
+
+#menuList li {
+	display:inline;
+	padding: 0px 10px 0px 10px;
+}
+
+#menuList li img {
+	width: 150px;
+	height: 150px;
+}
+
+#btnToLeft{
+	position: absolute;
+	margin-top: -100px;	
+}
+
+#btnToRight{
+	
+}
+
+/*-------------------------------*/
+
+
+.box-rotate-left{
+	width: 0px;
+	height:0px;
+	border-right:12px solid transparent;
+	border-bottom:12px solid black; 
+	transform:rotate(45deg);  
+	-ms-transform:rotate(45deg);      /* IE 9 */
+	-webkit-transform:rotate(45deg);  /* Chrome, Safari, Opera */
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	
+	display: inline-block;
+}
+
+.box-rotate-left:hover{
+	width: 0px;
+	height:0px;
+	border-right:12px solid transparent;
+	border-bottom:12px solid #3e3e27; 
+	transform:rotate(45deg);  
+	-ms-transform:rotate(45deg);      /* IE 9 */
+	-webkit-transform:rotate(45deg);  /* Chrome, Safari, Opera */
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	
+	display: inline-block;
 }
