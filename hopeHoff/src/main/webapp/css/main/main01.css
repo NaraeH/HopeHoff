@@ -11,31 +11,61 @@ body {
 
 /*----------------------header-----------------------  */
 #header {
-	height:150px;
+	height: 135px;
 	background: #333231;
-	margin:0px 0px 15px 0px;
 }
 
-
-#headerLogo {
-	width: 20%;
-	height: 90%;
+#headerLeft {
+	width : 33%;
+	/* height: 130px; */
 	display: inline-block;
-	margin:5px;
-	padding-left: 10px;
-	/* border: 1px solid yellow; */
+	
+	/* border: 1px solid green; */
 }
 
-#headerLogo a{
+#headerLeftTopMenu {
+	/* height: 70px; */
+	/* clear:both; */
+	
+	/* border: 1px solid green; */
+}
+
+#headerLeftBottomMenu {
+	color: #ffffff;
+	font-size: small;
+	display: inline-block;
+	/* margin-top: 10px;
+	clear:both; */
+	
+	/* border: 1px solid blue; */
+}
+
+#headerMiddle {
+	width: 33%;
+	/* height: 130px; */
+	display: inline-block;
+	padding-left: 10px;
+	
+/* 	border: 1px solid yellow; */
+}
+
+#headerMiddle a{
 	font-size: 75px;
 	font-family: 'Lobster', cursive;
 	color: #fd9e04;
 	text-align: center;
+	
+	vertical-align: bottom; 
 }
 
-#headerMenuList {
- 	width: 78%;
- 	height: 140px;
+#headerMiddle img{
+	width: 100px;
+	height:100px;
+}
+
+#headerRight {
+ 	width: 32%;
+ 	/* height: 140px; */
 	display: inline-block;
 	position: absolute;
 	
@@ -51,41 +81,17 @@ body {
 	/* border: 1px solid yellow; */
 }
 
-#headerTopMenu ul{
-	list-style-type:none;
-	padding-left:0px;
-	display: inline-block;
-	clear:both;
-}
-
-#headerTopMenu li{
-	display:inline;
-	border-left: 1px solid #c0c0c0;
-	padding: 0px 10px 0px 10px;
-}
-
-#headerTopMenu ul li:first-child {
-	border-left: none;
-}
-
-#headerMiddleMenu {
-	height: 70px;
-	float: right;
-	clear:both;
-	
-	/* border: 1px solid green; */
-}
 
 #btnMyPage {
 	width:60px;
 	height:60px;
 	background-image: url(../../img/common/pictogram_white.png);
-	background-position: -1187px -5608px;;
+	background-position: -1187px -5608px;
 	display:inline-block;
 	
 }
 
-#btnMyWrite{
+#btnBook{
 	width:60px;
 	height:60px;
 	background-image: url(../../img/common/pictogram_white.png);
@@ -94,36 +100,45 @@ body {
 	
 }
 
-#headerButtomMenu {
-	float: right;
-	color: #ffffff;
-	font-size: small;
-	clear:both;
-	margin-top: 10px;
+#btnRecommandPlace {
+	width:60px;
+	height:60px;
+	background-image: url(../../img/common/pictogram_white.png);
+	background-position: -1067px -5680px;
+	display:inline-block;
 	
-	/* border: 1px solid blue; */
 }
+
 
 
 #myShopList {
 	height: 25px;
 	background: #474749;
+	height: 30px;
 	/* border: 1px solid red; */
 }
 
+#myShopList ul{
+	font-size: small;
+}
 
 
 /* ----------------------container-----------------------   */
 #container {
-	width:  940px;
+	/* width:  940px; */
+	width:100%;
 	height:640px;
 	margin:0 auto;
 }
 
+#containerTop {
+	height: 125px;
+	background: #ffb500;
+}
 #containerKeyword {
 	width: 880px;
 	height: 100px;
-	margin: 5px auto 0px auto;
+	margin: 0 auto;
 	border-radius: 5px;
 	background: #000000;
 	color: white;
@@ -164,20 +179,23 @@ body {
 }
 
 #containerList {
-	width: 880px;
-	margin: 15px 30px 30px 30px;
-	height:470px;
-	overflow-y:scroll; /* {overflow : visible | hidden | scroll | auto} */
+	width: 85%;
+	margin-top: 20px;
+	/* overflow-y:scroll;  *//* {overflow : visible | hidden | scroll | auto} */
+	margin: 10px auto;
+	border: 1px solid #b7bbbc;
+	border-top: 5px solid #b7bbbc;
+	
 }
 
 .list {
 	width: 250px;
 	height:175px;
-	margin: 10px 0px 0px 30px;
+	margin: 10px 0px 0px 15px;
 	display:inline-block;
 	padding: 5px 0px 5px 0px;
+	box-shadow: 5px 5px 5px #888888;
 	
-	border: 1px solid black;
 	
 }
 
@@ -346,3 +364,22 @@ input[type="button"]:hover {
 	
 	display: inline-block;
 }
+
+
+/*ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일-----*/
+.width-ul-style ul{
+	list-style-type:none;
+	display: inline-block;
+	clear:both;
+}
+
+.width-ul-style li{
+	display:inline;
+	border-left: 1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+}
+
+.width-ul-style ul li:first-child {
+	border-left: none;
+}
+/*----------------------------------------------------*/
