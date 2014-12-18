@@ -13,19 +13,20 @@
 	
 <script>
 
-// 추천 랜덤사진 돌게하기 No.1
-$(document).ready(function(){
-	$('#leftImg01').innerfade({
-		animationtype :'fade',
-		speed : 750,
-		timeout: 2000,
-		type : 'random',
-		containerheight : '130px'
-	});
-});
 
-// 추천 랜덤사진 돌게하기 No.2
+// 추천 랜덤사진 돌게하기 No.1, No.2, No.2
 $(document).ready(function(){
+	
+	$("#footer").load("../common/footer.html");
+	
+	$('#leftImg01').innerfade({
+			animationtype :'fade',
+			speed : 750,
+			timeout: 2000,
+			type : 'random',
+			containerheight : '130px'
+		});
+		
 	$('#leftImg02').innerfade({
 		animationtype :'fade',
 		speed : 750,
@@ -33,10 +34,7 @@ $(document).ready(function(){
 		type : 'random',
 		containerheight : '130px'
 	});
-});
-
-// 추천 랜덤사진 돌게하기 No.3
-$(document).ready(function(){
+	
 	$('#leftImg03').innerfade({
 		animationtype :'fade',
 		speed : 750,
@@ -44,7 +42,10 @@ $(document).ready(function(){
 		type : 'random',
 		containerheight : '130px'
 	});
+	
 });
+
+
 </script>
 </head>
 
@@ -63,7 +64,7 @@ $(document).ready(function(){
 		<div id="container"> 
 		
 			<div id="containerHeader">
-			        <h1 class="hn">Hope Hoff 오늘의 말씀</h1>
+			        <h1 class="ban">Hope Hoff 오늘의 말씀</h1>
 			        <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
 			        날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
 			</div>  
@@ -74,10 +75,10 @@ $(document).ready(function(){
 				<h2 class="hn">추천 No.1</h2>
 				<div id="leftImg01">
 					<!-- 추천사진 로테이션 -->
-					<img class="img-circle" src="Wara-Wara01.jpg" alt="Generic placeholder image">
-					<img class="img-circle" src="Wara-Wara02.jpg" alt="Generic placeholder image">
-					<img class="img-circle" src="Wara-Wara03.jpg" alt="Generic placeholder image">
-					<img class="img-circle" src="Wara-Wara04.jpg" alt="Generic placeholder image">
+					<img class="img-circle" src="../../img/login/Wara-Wara01.jpg" alt="Generic placeholder image">
+					<img class="img-circle" src="../../img/login/Wara-Wara02.jpg" alt="Generic placeholder image">
+					<img class="img-circle" src="../../img/login/Wara-Wara03.jpg" alt="Generic placeholder image">
+					<img class="img-circle" src="../../img/login/Wara-Wara04.jpg" alt="Generic placeholder image">
 				</div>
 				<h3 class="nps">Wara-Wara</h3>
 				<h4 class="nps">강남3호전 오픈기념 행사 <br>
@@ -101,10 +102,10 @@ $(document).ready(function(){
 									<h3 class="hn">No.2</h3>
 									<div id="leftImg02">
 									<!-- 추천사진 로테이션 -->
-									<img class="img-circle" src="soju01.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="soju02.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="soju03.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="soju04.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/soju01.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/soju02.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/soju03.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/soju04.jpg" alt="Generic placeholder image">
 									</div>
 									<h3 class="nps">악바리</h3>
 									<h3 class="nps">안양 1호점 오픈기념 행사 <br>
@@ -116,10 +117,10 @@ $(document).ready(function(){
 									<h3 class="hn">No.3</h3>
 									<div id="leftImg03">
 									<!-- 추천사진 로테이션 -->
-									<img class="img-circle" src="mak01.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="mak02.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="mak03.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="mak04.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/mak01.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/mak02.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/mak03.jpg" alt="Generic placeholder image">
+									<img class="img-circle" src="../../img/login/mak04.jpg" alt="Generic placeholder image">
 									</div>
 									<h3 class="nps">청담 제1막</h3>
 									<h3 class="nps">막걸리도 이제 품위있게!<br>
@@ -140,7 +141,7 @@ $(document).ready(function(){
 			
 				<!-- 오른쪽박스 타이틀 -->
 				<div id = "rightTop">
-						<h2 class="hn">Hope Hoff</h2>
+						<h2 class="ban">Hope Hoff</h2>
 				</div>	
 						<!-- 오른쪽박스 Body -->
 						<div id="rightBox">
@@ -271,10 +272,7 @@ $(document).ready(function(){
 		
 			<!-- PC용 Footer -->
 			<div id="footer">
-				<hr/>
-				<h5>상호 : Hope Hoff | E-mail : HopeHoff@google.com | 연락처 : 504-5048282</h5>
-				<h5>공동대표 : 반기백, 현나래, 지용근, 배연정  |  사업자번호 : 1002- 48393 - 324892  |  사무실 : 서울특별시 서초구 강남대로53길 8 비트아카데미빌딩 5층 504호 맨 뒷자리. </h5>
-				<h5>[가게 등록]에 관한 문의사항이 있으시면 이 링크로 연락바랍니다.<a href="#"> 문의하기</a>, by <a href="https://twitter.com/mdo">@bit63_HopeHoff</a>.</h5>
+				
 			</div>
 			
 			<!-- 모바일용 Footer -->
