@@ -10,8 +10,45 @@
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
 <script src="../../js/jquery.innerfade.js"></script>
-<script src="../../js/login/login.js"></script>
+	
+<script>
+
+
+// 추천 랜덤사진 돌게하기 No.1, No.2, No.2
+$(document).ready(function(){
+	
+	$("#footer").load("../common/footer.html");
+	
+	$('#leftImg01').innerfade({
+			animationtype :'fade',
+			speed : 750,
+			timeout: 2000,
+			type : 'random',
+			containerheight : '130px'
+		});
+		
+	$('#leftImg02').innerfade({
+		animationtype :'fade',
+		speed : 750,
+		timeout: 2000,
+		type : 'random',
+		containerheight : '130px'
+	});
+	
+	$('#leftImg03').innerfade({
+		animationtype :'fade',
+		speed : 750,
+		timeout: 2000,
+		type : 'random',
+		containerheight : '130px'
+	});
+	
+});
+
+
+</script>
 </head>
+
 
 <body>
 	
