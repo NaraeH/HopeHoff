@@ -18,12 +18,10 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
+  height: 135px;
+  background: #333231;
 }
 
-#header {
-	height: 135px;
-	background: #333231;
-}
 
 #headerLeft {
 	width : 33%;

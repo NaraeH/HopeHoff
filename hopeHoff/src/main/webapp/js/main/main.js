@@ -64,6 +64,9 @@ $(document).ready(function(){
 		console.log("zz");
 	});
 	
+/*	$(".list").click(function(){
+		console.log("눌렀다");
+	});*/
 
 
 
