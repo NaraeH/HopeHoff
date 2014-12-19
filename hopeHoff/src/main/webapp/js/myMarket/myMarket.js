@@ -19,7 +19,7 @@ $('#contentComments').css('display','none');
 		$('#commentButton').css('background-color','blue');
 	});
 	
-	
+	$( '#carousel' ).elastislide();
 	/************************************************************************************************/
 	
 		$('<tr id=tRow0>').appendTo($('#dataForm'));
