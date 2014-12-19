@@ -20,6 +20,33 @@
 													  		.attr("my-no", i))
 													  		.appendTo("#containerList"));
 				}
+				
+				$(".list").click(function(){
+										var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
+										var listWidth = ($(".list").css("width")).split("px").splice(0, 1) - 0;
+										var marginWidth = ($(".list").css("margin-left")).split("px").splice(0, 1) - 0;
+										var widthNo = 5; 
+										//console.log($("#containerList").css("width"));
+										
+										console.log("presentWidth==>" + presentWidth);
+									console.log("listWidth==>" + listWidth);
+										console.log("marginWidth==>" + marginWidth);
+									
+										console.log("===>" + parseInt(presentWidth/(listWidth + marginWidth)));
+									
+										console.log("눌렀다");
+									console.log($("#containerList div:nth-child(7)"));
+										
+										/* $("#containerList div:nth-child(7)").before("<div style='width:100px; height:100px background:black'></div>"); */
+										
+										$("#containerList div:nth-child(7)").add("div").css("width", "100px")
+										.css("height", "100px")
+										.css("background", "black");
+										 
+					 					/* $("<div>").attr("width", "100%")
+										.attr("height", "50px")
+										.appendTo("#containerList div:nth-child(6)");  */
+									});
 			}); 
 </script>
 
