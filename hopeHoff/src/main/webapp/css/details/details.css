@@ -3,13 +3,12 @@
 body {
 	width: 600px;
 	height:700px;
-	border: 1px solid red;
+	border: 1px solid #FFCD28;
 }
 
 #carousel-example-generic { 
 	width:350px; 
-	height:250px; 
-	border:3px solid red; 
+	height:230px; 
 	float:left;
 	margin-right: 5px;
 }
@@ -23,10 +22,10 @@ body {
 }
 
 #hoffInfo { 
-	padding:3px;
+	padding:5px;
 	width:210px; 
-	height:250px; 
-	border:1px solid blue;
+	height:230px; 
+	border:1px solid #FFCD28;
 	float:left; 
 }
 #reservation{
@@ -39,11 +38,11 @@ body {
 }
 #tabs{ 
 	
-	width:570px; 
+	width:565px; 
 	height:300px; 
-	border:1px solid black;
-	margin-top: 5px;
-	clear:both 
+	border:2px solid black;
+	margin-top: 10px;
+	clear:both;
 }
 #tabsContent{
  height: 205px;
@@ -118,7 +117,7 @@ body {
 }
 #menuList ul {
 	list-style-type:none;
-	padding-left: 0px;
+    margin-top:-100px !important; 
 	display: inline-block;
 	overflow: hidden;
 	height: inherit;
@@ -136,11 +135,13 @@ body {
 
 #menuList > span {
 	border-bottom:20px solid black;
-	margin-top: 100px;
+	margin-top: 75px;
 }
 #menuList .box-rotate-right {
 	margin-left: 475px;
 }
+
+
 #btnToLeft{
 	position: absolute;
 	margin-top: -100px;	
@@ -216,9 +217,3 @@ body {
  	border:1px solid #ff005b;
  	
 }
-
-
-
-
-
-
