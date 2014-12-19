@@ -56,22 +56,20 @@
 	
 	
 	/* 전체 배경적용 */
+	
+	
 	#wrap{
-		background-image : url("../../img/login/hoff.jpg");
+		background-color : #fd9e04;
 		background-size : cover;
-		padding: 20px;
-		margin:  0px auto;
+		padding: 10px;
 	}
 	
 	/* 네모박스에 속성적용 */
 	#container {
-		background-image : url("../../img/login/beer.jpg");
 		background-size : cover;
-		width: 950px;
-		border: 10px #CD853F outset;
+		width: 1000px;
 		padding: 35px;
-		margin: 20px auto 0px auto ;
-		box-shadow: 10px 10px 5px #888888;
+		margin: -5px auto 0px auto ;
 	}
 	
 	/* HopeHoff 오늘의말씀 속성적용 */
@@ -93,7 +91,8 @@
 	/* 추천 왼쪽박스 속성적용 */
 	#left {
 		border-radius:20px;
-		width : 300px;
+		width : 350px;
+		height : 360px;
 		border : 3px dashed #C2722E;
 		margin : 15px;
 		float: left;
@@ -119,7 +118,7 @@
 	
 	/* 추천 왼쪽박스 동그란 그림틀 속성*/
 	#leftImg01 > img {
-		margin-left:80px;
+		margin-left:105px;
 		width:130px;
 		height: 130px;
 	}
@@ -276,9 +275,9 @@
 	
 	/* PC footer */
 	#footer{
-		color : white;
-		margin-top : 40px;
-		padding: 45px;
+		background-color : #333231;
+		color : #fd9e04;
+		padding: 25px;
 		text-align: center;
 	}
 	
@@ -296,6 +295,7 @@
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
 	
+	
 	#header{
 	display: none;
 	}
@@ -303,6 +303,7 @@
 	/* 전체화면 HopeHoff와 ID박스 사이 속성적용 */
 	#rightBox{
 	margin-top: 20px;
+
 	}
 	
 	/* 전체화면 SaveID */
@@ -322,10 +323,9 @@
 	}
 	
 	/* 모바일 전체 배경적용01 */
-	html{
-	background-color: black;
+	body{
+		background-color: black !important;
 	}
-	
 	/* 모바일 전체 배경적용02 */
 	#wrap{
 	background-color: black;
@@ -405,6 +405,8 @@
 	
 	/* 모바일 Footer 색깔 */
 	#footer01 {
+	text-align : center;
+	background-color : black;
 	color : white;
 	}	
 	
