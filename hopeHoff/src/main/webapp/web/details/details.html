@@ -8,170 +8,156 @@
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
 
-
-
-
-<script type="text/javascript"
-	src="http://apis.daum.net/maps/maps3.js?apikey=f0fe46045347a225b541134d40ca776ff948507a"></script>
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=f0fe46045347a225b541134d40ca776ff948507a"></script>
+<script src="../../js/jquery-2.1.1.js"></script>
 <script src="../../js/common.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
-
-
 </head>
-<!-- Modal -->
+
 <body>
 
 	<div id="myModal">
-		<div><!-- 2 -->
-			<div><!-- 1 -->
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">Details</h4>
+
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">
+				<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+			</button>
+			<h4 class="modal-title" id="myModalLabel">Details</h4>
+		</div>
+
+		<div class="modal-body">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="Wara-Wara01.jpg" alt="Generic placeholder image">
+						<div class="carousel-caption">와라와라(강남점) (1/3)</div>
+					</div>
+
+					<div class="item">
+						<img src="Wara-Wara02.jpg" alt="Generic placeholder image">
+						<div class="carousel-caption">와라와라(강남점) (2/3)</div>
+					</div>
+
+					<div class="item">
+						<img src="Wara-Wara03.jpg" alt="Generic placeholder image">
+						<div class="carousel-caption">와라와라(강남점) (3/3)</div>
+					</div>
+
+				</div><!-- end of the Wrapper for slides -->
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic"
+					role="button" data-slide="prev"> 
+				<span class="box-rotate-left"></span>			
+				</a> 
+				<a class="right carousel-control" href="#carousel-example-generic" 
+					role="button" data-slide="next">
+				<span class="box-rotate-right"></span>
+				</a>
+			</div>
+					
+			<div id="hoffInfo">
+				<h3>와라와라 강남점</h3>
+				<div class="Info">운영시간 :</div><div class="Info">17:00 ~ 4:00</div><br>
+				<div class="Info">전화번호 :</div><div class="Info">02-1234-5678</div><br>
+				<div>주&emsp;&nbsp;&nbsp;&nbsp;소 :</div>
+				<div class="Info">서울시 강남구 역삼동 822-1</div>
+				<div>소&emsp;&nbsp;&nbsp;&nbsp;개 :</div>
+				<div class="Info">맛도 짱! 분위기도짱! </div>
+				<div id="reservation">
+					<button id="reservBtn" type="button" class="btn btn-warning">예약하기</button>
 				</div>
+			</div>
 
-				<div class="modal-body">
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						</ol>
 
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner" role="listbox">
-							<div class="item active">
-								<img src="Wara-Wara01.jpg" alt="Generic placeholder image">
-								<div class="carousel-caption">와라와라(강남점) (1/3)</div>
-							</div>
-
-							<div class="item">
-								<img src="Wara-Wara02.jpg" alt="Generic placeholder image">
-								<div class="carousel-caption">와라와라(강남점) (2/3)</div>
-							</div>
-
-							<div class="item">
-								<img src="Wara-Wara03.jpg" alt="Generic placeholder image">
-								<div class="carousel-caption">와라와라(강남점) (3/3)</div>
-							</div>
-
-						</div>
-						<!-- end of the Wrapper for slides -->
-
-						<!-- Controls -->
-						<a class="left carousel-control" href="#carousel-example-generic"
-							role="button" data-slide="prev"> 
+			<div id="tabs">
+				<div id="tabsContent">
+					<div id="contentMenu">
+						<div id="menuList">
+								
 							<span class="box-rotate-left"></span>
-							
-						</a> 
-						<a class="right carousel-control" href="#carousel-example-generic" 
-						   role="button" data-slide="next">
 							<span class="box-rotate-right"></span>
-						</a>
-					</div>
-					<div id="hoffInfo">
-						<h3>와라와라 강남점</h3>
-						<div class="Info">운영시간 :</div>
-						<div class="Info">17:00 ~ 4:00</div>
-						<br>
-						<div class="Info">전화번호 :</div>
-						<div class="Info">02-1234-5678</div>
-						<br>
-						<div>주소</div>
-						<div class="hoffInfoContent">서울시 강남구역삼동 822-1</div>
-						<div>소개</div>
-						<div class="hoffInfoContent">
-							맛도 짱! 분위기도짱! 
-						</div>
-						<div id="reservation">
-							<button id="reservBtn" type="button" class="btn btn-warning">예약하기</button>
-						</div>
-					</div>
-
-
-					<div id="tabs">
-						<div id="tabsContent">
-							<div id="contentMenu">
-								<div id="menuList">
 								
-									<span class="box-rotate-left"></span>
-									<span class="box-rotate-right"></span>
-								
-									<ul>
-										<li>
-											<div id="box" style="background-image: url('chiken.jpg')">
-												<div id="overlay">
-													<span id="menu"><input style="width:130px;" type="text" placeholder="뿌링클치킨"></span>
-													<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="17000"></span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div id="box" style="background-image: url('cheese.jpg')">
-												<div id="overlay">
-													<span id="menu"><input style="width:130px;" type="text" placeholder="크림치즈 퐁닭"></span>
-													<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="17500"></span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div id="box" style="background-image: url('pizza.jpg')">
-												<div id="overlay">
-													<span id="menu"><input style=" width:130px;" type="text" placeholder="베감피자"></span>
-													<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="16800"></span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div id="box" style="background-image: url('odang.jpg')">
-												<div id="overlay">
-													<span id="menu"><input style="width:130px;" type="text" placeholder="꼬치어묵전골"></span>
-													<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="18500"></span>
-												</div>
-											</div>
-										</li>
+							<ul>
+								<li>
+									<div id="box" style="background-image: url('chiken.jpg')">
+										<div id="overlay">
+											<span id="menu"><input style="width:130px;" type="text" placeholder="뿌링클치킨"></span>
+											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="17000"></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div id="box" style="background-image: url('cheese.jpg')">
+										<div id="overlay">
+											<span id="menu"><input style="width:130px;" type="text" placeholder="크림치즈 퐁닭"></span>
+											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="17500"></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div id="box" style="background-image: url('pizza.jpg')">
+										<div id="overlay">
+											<span id="menu"><input style=" width:130px;" type="text" placeholder="베감피자"></span>
+											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="16800"></span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div id="box" style="background-image: url('odang.jpg')">
+										<div id="overlay">
+											<span id="menu"><input style="width:130px;" type="text" placeholder="꼬치어묵전골"></span>
+											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="18500"></span>
+										</div>
+									</div>
+								</li>
 									
-									</ul>
+							</ul>
 									 
 									
-								</div> <!-- menuList -->
-							</div><!-- contentMenu -->
+						</div> <!-- menuList -->
+					</div><!-- contentMenu -->
 								   
-							<div id="contentMap"></div>
+					<div id="contentMap"></div>
 							
-							<div id="contentComments">
-								<table id="dataForm" class="table table-hover"></table>
-							</div>
-						</div>	<!-- tabsContent -->
+					<div id="contentComments">
+						<table id="dataForm" class="table table-hover"></table>
+					</div>
+				</div>	<!-- tabsContent -->
 
-						<div id="tabsBar">
-							<div id="tabsBarText">
-								<div id='menuText' class="menu">Menu</div>
-								<div id='mapText' class="map">Map</div>
-								<div id='commentText' class="comment">Comment</div>
-							</div>
-							<div id="tabsBarButton">
-								<div id='menuButton' class="menu"></div>
-								<div id='mapButton' class="map"></div>
-								<div id='commentButton' class="comment"></div>
-							</div>
-						</div>
-					</div>	<!-- tabs 꺼야 -->
-				</div>	<!--body꿑 -->
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-warning">Save changes</button>
+				<div id="tabsBar">
+					<div id="tabsBarText">
+						<div id='menuText' class="menu">Menu</div>
+						<div id='mapText' class="map">Map</div>
+						<div id='commentText' class="comment">Comment</div>
+					</div>
+					<div id="tabsBarButton">
+						<div id='menuButton' class="menu"></div>
+						<div id='mapButton' class="map"></div>
+						<div id='commentButton' class="comment"></div>
+					</div>
 				</div>
+			</div>	<!-- tabs 꺼야 -->
+		</div>	<!--body꿑 -->
 
-			</div>	<!-- 1 -->
-		</div>	<!-- 2 -->
+		<div class="modal-footer">
+			<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-warning">Save changes</button>
+
+		</div>
+
+
 	</div>	<!-- myModal -->
 
-	<script src='../../js/details.js'></script>
+	<script src='../../js/details/details.js'></script>
 
 </body>
 </html>
