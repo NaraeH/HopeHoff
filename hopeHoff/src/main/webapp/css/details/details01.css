@@ -17,7 +17,7 @@ body {
 
 #carousel-example-generic { 
 	width:350px; 
-	height:250px; 
+	height: 250px; 
 	border:3px solid red; 
 	float:left;
 	margin-right: 5px;
@@ -64,8 +64,9 @@ body {
 }
 
 #contentMap {
-
-	border: 5px dotted olive;
+	width: 530px;
+	height:200px;
+	border: 1px solid green;
 }
 
 #contentComments {
@@ -148,7 +149,7 @@ body {
 	
 }
 
-/*-------------------------------------V----나래언니가만든함수인듯------*/
+/*-------------------------------*/
 
 
 .box-rotate-left{
@@ -177,11 +178,4 @@ body {
 	-o-transform:rotate(45deg);
 	
 	display: inline-block;
-}
-/*--------------------------------------------------------------------*/
-#tableForm{
-	padding:20px 50px;
-	margin: 20px;
- 	border:1px solid #ff005b;
- 	
 }

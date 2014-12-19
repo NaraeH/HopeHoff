@@ -1,152 +1,156 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
  
 /* 큰틀 */
 
 body {
-	background-image : url("../login/beer.jpg");
-	background-size: 100% 100%;
-	background-repeat:no-repeat;
+	margin: 0px;
+	font-family: 'Jeju Gothic', serif;
 }
 
 #wrap {
-	width:  950px;
-	height: 730px;
- 	padding: 30px;
-	background: white;
-	margin: 0px auto 0px auto ;
-	border-radius:20px;
-}
+} 
 
 /*----------------------header-----------------------  */
+
 #header {
-	height:100px;
-	margin:0px 0px 15px 0px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 
+#header {
+	height: 135px;
+	background: #333231;
+}
 
-#headerLogo {
+#headerLeft {
+	width : 33%;
+	/* height: 130px; */
 	display: inline-block;
-	margin:5px;
+	
+	/* border: 1px solid green; */
 }
 
-#headerMenu {
- 	height: 85px;  
- 	width: 670px;
+#headerLeftTopMenu {
+	/* height: 70px; */
+	/* clear:both; */
+	
+	/* border: 1px solid green; */
+}
+
+#headerLeftBottomMenu {
+	color: #ffffff;
+	font-size: small;
 	display: inline-block;
-	position: absolute;
-	margin:5px;
+	/* margin-top: 10px;
+	clear:both; */
+	
+	/* border: 1px solid blue; */
 }
 
-#headerMenuList {
-	width: 670px;
-	height:37px;
-	padding: 3px;
-	border-bottom: 2px solid #fd9e04;
-}
-
-
-.menuList {
-	background: #fd9e04;
-	width: 105px;
-	height: 25px;
-	padding-top: 15px;
+#headerMiddle {
+	width: 33%;
+	/* height: 130px; */
 	display: inline-block;
+	padding-left: 10px;
+	
+/* 	border: 1px solid yellow; */
+}
+
+#headerMiddle a{
+	font-size: 75px;
+	font-family: 'Lobster', cursive;
+	color: #fd9e04;
 	text-align: center;
 	
-	border-top-left-radius: 1em;
-	border-top-right-radius: 1em;
+	vertical-align: bottom; 
 }
 
-.menuList:hover {
-	background: #ffc500;
+#headerMiddle img{
+	width: 100px;
+	height:100px;
 }
 
-#headerButtonList {
-	padding: 10px;
+#headerRight {
+ 	width: 32%;
+ 	/* height: 140px; */
 	display: inline-block;
-	float:right;
-	margin-right: -15px;
-}
-#headerMemberInfo {
-	display: inline-block;
-	width: 240px;
-	height: 20px;
-	font-size: 12px;
-	text-align: right;
-	float:right;
-	margin-top: 20px;
+	position: absolute;
+	
+	
+	/* border: 1px solid red; */
+} 
+
+#headerTopMenu {
+	height: 35px;
+	float: right;
+	font-size: small;
+
+	/* border: 1px solid yellow; */
 }
 
-#myShopListWrap {
-	width:275px;
-	height:35px;
+
+#btnMyPage {
+	width:60px;
+	height:60px;
+	background-image: url(../../img/common/pictogram_white.png);
+	background-position: -1187px -5608px;
 	display:inline-block;
-	background: #fd9e04;
+	
+}
+
+#btnBook{
+	width:60px;
+	height:60px;
+	background-image: url(../../img/common/pictogram_white.png);
+	background-position: -1187px -5471px;
+	display:inline-block;
+	
+}
+
+#btnRecommandPlace {
+	width:60px;
+	height:60px;
+	background-image: url(../../img/common/pictogram_white.png);
+	background-position: -1067px -5680px;
+	display:inline-block;
+	
+}
+
+
+
+#myShopList {
+	height: 25px;
+	background: #474749;
+	height: 30px;
 	/* border: 1px solid red; */
 }
 
-#myShopList {
-	width:235px;
-	height:35px;
-	
-	border-right: 20px solid rgba(254, 192, 90, 0.7);
-	border-left: 20px solid rgba(254, 192, 90, 0.7);
-	
-	overflow: hidden;
-}
-
 #myShopList ul{
-	list-style-type:none;
-	padding-left:0px;
-	display: inline-block;
-}
-
-#myShopList li{
-	display:inline;
-	border-left: 1px solid #c0c0c0;
-	padding: 0px 10px 0px 10px;
-}
-
-#myShopList ul li:first-child {
-	border-left: none;
-}
-
-#btnToRight {
-	display: inline-block;
-	position: absolute;
-	margin-top: -24px;
-	margin-left: 255px;
-}
-
-#btnToLeft {
-	display: inline-block;
-	position: absolute;
-	margin-top: -24px;
-	margin-left: 7px;
-}
-
-/* #btnToRight:hover, #btnToLeft:hover {
-	background: #3e3e27;
-} */
-
-#btnLogout {
-	/* display:none; */
+	font-size: small;
 }
 
 
-#btnSignUp{
-	display:none;
-}
 /* ----------------------container-----------------------   */
 #container {
-	width:  940px;
+	/* width:  940px; */
+	width:100%;
 	height:640px;
 	margin:0 auto;
+	
+	margin-top: 135px;
 }
 
+#containerTop {
+	height: 125px;
+	background: #ffb500;
+}
 #containerKeyword {
 	width: 880px;
 	height: 100px;
-	margin: 5px auto 0px auto;
+	margin: 0 auto;
 	border-radius: 5px;
 	background: #000000;
 	color: white;
@@ -187,20 +191,23 @@ body {
 }
 
 #containerList {
-	width: 880px;
-	margin: 15px 30px 30px 30px;
-	height:470px;
-	overflow-y:scroll; /* {overflow : visible | hidden | scroll | auto} */
+	width: 85%;
+	margin-top: 20px;
+	/* overflow-y:scroll;  *//* {overflow : visible | hidden | scroll | auto} */
+	margin: 10px auto;
+	border: 1px solid #b7bbbc;
+	border-top: 5px solid #b7bbbc;
+	
 }
 
 .list {
 	width: 250px;
 	height:175px;
-	margin: 10px 0px 0px 30px;
+	margin: 10px 0px 0px 15px;
 	display:inline-block;
 	padding: 5px 0px 5px 0px;
+	box-shadow: 5px 5px 5px #888888;
 	
-	border: 1px solid black;
 	
 }
 
@@ -268,32 +275,28 @@ body {
 
 a:link {
 	color:white;
-	font-weight: bold;
     text-decoration: none;
 }
 
 a:visited {
 	color:white;
-	font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
 	color:white;
-	font-weight: bold;
 	text-decoration: none;
-    /* text-decoration: underline; */
 }
 
 a:active {
 	color:white;
-	font-weight: bold;
     text-decoration: underline;
 }
 
 
 
-input[type="button"] {	background: -webkit-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+input[type="button"] {
+	background: -webkit-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
 	background: -moz-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
 	background: -o-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFCF52), color-stop(0.25, #FEB901), color-stop(0.5, #f38f07), color-stop(0.75, #f89b1f), to(#ffcf53));
@@ -374,3 +377,23 @@ input[type="button"]:hover {
 	
 	display: inline-block;
 }
+
+
+
+/*ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일-----*/
+.width-ul-style ul{
+	list-style-type:none;
+	display: inline-block;
+	clear:both;
+}
+
+.width-ul-style li{
+	display:inline;
+	border-left: 1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+}
+
+.width-ul-style ul li:first-child {
+	border-left: none;
+}
+/*----------------------------------------------------*/

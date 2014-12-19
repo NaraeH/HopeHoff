@@ -1,17 +1,25 @@
-@import url(http://fonts.googleapis.com/css?family=Lobster);
  
 /* 큰틀 */
 
 body {
-	margin: 0px;
+	background-image : url("../login/beer.jpg");
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
 }
 
 #wrap {
-} 
+	width:  950px;
+	height: 730px;
+ 	padding: 30px;
+	background: white;
+	margin: 0px auto 0px auto ;
+	border-radius:20px;
+}
 
 /*----------------------header-----------------------  */
 
 #header {
+<<<<<<< HEAD
   width: 100%;
   position: fixed;
   top: 0px;
@@ -21,16 +29,30 @@ body {
 #header {
 	height: 135px;
 	background: #333231;
+=======
+	height:100px;
+	margin:0px 0px 15px 0px;
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
 
+<<<<<<< HEAD
 #headerLeft {
 	width : 33%;
 	/* height: 130px; */
+=======
+
+#headerLogo {
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 	display: inline-block;
+<<<<<<< HEAD
 	
 	/* border: 1px solid green; */
+=======
+	margin:5px;
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
 
+<<<<<<< HEAD
 #headerLeftTopMenu {
 	/* height: 70px; */
 	/* clear:both; */
@@ -64,8 +86,17 @@ body {
 	text-align: center;
 	
 	vertical-align: bottom; 
+=======
+#headerMenu {
+ 	height: 85px;  
+ 	width: 670px;
+	display: inline-block;
+	position: absolute;
+	margin:5px;
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
 
+<<<<<<< HEAD
 #headerMiddle img{
 	width: 100px;
 	height:100px;
@@ -87,9 +118,93 @@ body {
 	font-size: small;
 
 	/* border: 1px solid yellow; */
+=======
+#headerMenuList {
+	width: 670px;
+	height:37px;
+	padding: 3px;
+	border-bottom: 2px solid #fd9e04;
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
 
+<<<<<<< HEAD
+=======
 
+.menuList {
+	background: #fd9e04;
+	width: 105px;
+	height: 25px;
+	padding-top: 15px;
+	display: inline-block;
+	text-align: center;
+	
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+}
+
+.menuList:hover {
+	background: #ffc500;
+}
+
+#headerButtonList {
+	padding: 10px;
+	display: inline-block;
+	float:right;
+	margin-right: -15px;
+}
+#headerMemberInfo {
+	display: inline-block;
+	width: 240px;
+	height: 20px;
+	font-size: 12px;
+	text-align: right;
+	float:right;
+	margin-top: 20px;
+}
+
+#myShopListWrap {
+	width:275px;
+	height:35px;
+	display:inline-block;
+	background: #fd9e04;
+	/* border: 1px solid red; */
+}
+
+#myShopList {
+	width:235px;
+	height:35px;
+	
+	border-right: 20px solid rgba(254, 192, 90, 0.7);
+	border-left: 20px solid rgba(254, 192, 90, 0.7);
+	
+	overflow: hidden;
+}
+
+#myShopList ul{
+	list-style-type:none;
+	padding-left:0px;
+	display: inline-block;
+}
+
+#myShopList li{
+	display:inline;
+	border-left: 1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+}
+
+#myShopList ul li:first-child {
+	border-left: none;
+}
+
+#btnToRight {
+	display: inline-block;
+	position: absolute;
+	margin-top: -24px;
+	margin-left: 255px;
+}
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
+
+<<<<<<< HEAD
 #btnMyPage {
 	width:60px;
 	height:60px;
@@ -97,8 +212,16 @@ body {
 	background-position: -1187px -5608px;
 	display:inline-block;
 	
+=======
+#btnToLeft {
+	display: inline-block;
+	position: absolute;
+	margin-top: -24px;
+	margin-left: 7px;
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
 
+<<<<<<< HEAD
 #btnBook{
 	width:60px;
 	height:60px;
@@ -107,7 +230,13 @@ body {
 	display:inline-block;
 	
 }
+=======
+/* #btnToRight:hover, #btnToLeft:hover {
+	background: #3e3e27;
+} */
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 
+<<<<<<< HEAD
 #btnRecommandPlace {
 	width:60px;
 	height:60px;
@@ -115,22 +244,34 @@ body {
 	background-position: -1067px -5680px;
 	display:inline-block;
 	
+=======
+#btnLogout {
+	/* display:none; */
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
 
 
 
+<<<<<<< HEAD
 #myShopList {
 	height: 25px;
 	background: #474749;
 	height: 30px;
 	/* border: 1px solid red; */
+=======
+#btnSignUp{
+	display:none;
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 }
+<<<<<<< HEAD
 
 #myShopList ul{
 	font-size: small;
 }
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/NaraeH/HopeHoff.git
 /* ----------------------container-----------------------   */
 #container {
 	/* width:  940px; */
@@ -273,21 +414,26 @@ body {
 
 a:link {
 	color:white;
+	font-weight: bold;
     text-decoration: none;
 }
 
 a:visited {
 	color:white;
+	font-weight: bold;
     text-decoration: none;
 }
 
 a:hover {
 	color:white;
+	font-weight: bold;
 	text-decoration: none;
+    /* text-decoration: underline; */
 }
 
 a:active {
 	color:white;
+	font-weight: bold;
     text-decoration: underline;
 }
 

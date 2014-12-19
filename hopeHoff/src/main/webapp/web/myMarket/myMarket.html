@@ -3,9 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
-<link rel='stylesheet' href='../../css/myMarket/myMarket.css'>
-<link rel='stylesheet' href='../../css/myMarket/custom.css'>
-<link rel='stylesheet' href='../../css/myMarket/demo.css'>
+<link rel='stylesheet' href='../../css/myMarket/myMarket01.css'>
 <link rel='stylesheet' href='../../css/myMarket/overlay.css'>
 <link rel='stylesheet' href='../../css/myMarket/elastislide.css'>
 
@@ -13,16 +11,13 @@
 <title>Insert title here</title>
 <script src="../../js/jquery-2.1.1.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/jquerypp.custom.js"></script>
-<script src="../../js/modernizr.custom.17475.js"></script>
-<script src="../../js/jquery.elastislide.js"></script>
 </head>
 
 
 <body>
 	<div id=container>
 		<div id="myMarketTitle">
-			<h1>My Page</h1>
+			<h2>My Page</h2>
 			<div id="myMarketTitleContent">
 				<h4>회원님이 정보를  볼 수 있습니다.</h4>
 			</div>
@@ -36,18 +31,16 @@
 			    <label for="speed">내 가게 보기</label>
 			    <select name="speed" id="speed">
 			      <option>와라와라(강남)</option>
-			      <option>와라와라(강남)</option>
-			      <option selected="selected">와라와라(강남)</option>
-			      <option>와라와라(강남)</option>
-			      <option>와라와라(강남)</option>
+			      <option>쭈글이(야탑)</option>
+			      <option>악바리(강남)</option>
+			      <option>한신포차(신촌)</option>
+			      <option>준 코(안양)</option>
 			    </select>
 			   </fieldset>
 			    </form>
 		</div>
 			
-			<hr>
-		
-		<div style="margin:3px 30px;height:400px;width:700px;display:inline-block;border:1px solid yellow;">	
+		<div style="margin:3px 30px;height:450px;width:700px;display:inline-block;border:1px solid yellow;">	
 			<div style="height:250px;width:400px;border:1px solid orange;display:inline-block;
 			margin:10px; float:left;">
 						
@@ -103,48 +96,56 @@
 						<button type="button" style="margin-top: 10px; " class="btn btn-primary btn-sm">수정하기</button>
     				</div>
 			</div>
-			<div style="margin:0px 20px;width:650px;height: 100px;border:1px solid red;">
-				
-				<div class="main" style="border:1px solid blue; width:600px; margin-top:2px;" >
-					<ul id="carousel" class="elastislide-list">
-						<li class=manuImage style="margin :0px 10px;">
-							<div  id="box">
-							  <div id="overlay">
-							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
-							    <input style="width: 100px;" type="text" placeholder="가격">
-							  </div>
+				<div id="tabs">
+						<div id="tabsContent">
+							<div id="contentMenu">
+								<div id="menuList">
+									<ul>
+										<li>
+										<div id="box" style="background-image: url('chiken.jpg')">
+											<div id="overlay">
+												<span id="plus"><input style="width:130px;" type="text" placeholder="뿌링클치킨"></span>
+												<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="17000"></span>
+											</div>
+										</div>
+										</li>
+										<li>
+											<div id="box" style="background-image: url('chease.jpg')">
+											<div id="overlay">
+												<span id="plus"><input style="width:130px;" type="text" placeholder="크림치즈 퐁닭"></span>
+												<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="17500"></span>
+											</div>
+										</div>
+										</li>
+										<li>
+											<div id="box" style="background-image: url('pizza.jpg')">
+											<div id="overlay">
+												<span id="plus"><input style=" width:130px;" type="text" placeholder="베감피자"></span>
+												<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="16800"></span>
+											</div>
+										</div>
+										</li>
+										<li>
+											<div id="box" style="background-image: url('odang.jpg')">
+											<div id="overlay">
+												<span id="plus"><input style="width:130px;" type="text" placeholder="꼬치어묵전골"></span>
+												<span id="minus"><input style="margin-top:15px; width:130px;" type="text" placeholder="18500"></span>
+											</div>
+										</div>
+										</li>
+									</ul>
+									<div id="btnToLeft" class="box-rotate-left"></div>
+									<div id="btnToRight" class="box-rotate-right"></div>
+								</div>
 							</div>
-						</li>
-						<li class=manuImage style="margin :0px 10px;">
-							<div id="box">
-							  <div id="overlay">
-							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
-							    <input style="width: 100px;" type="text" placeholder="가격">
-							  </div>
+							
+							<div style="margin-top:20px;" id="contentComments">
+							<table id="dataForm" class="table table-hover"></table>
 							</div>
-						</li>
-						<li class=manuImage style="margin :0px 10px;"><div id="box">
-							  <div id="overlay">
-							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
-							    <input style="width: 100px;" type="text" placeholder="가격">
-							  </div>
-							</div>
-						</li>
-						<li class=manuImage style="margin :0px 10px;">
-						<div id="box">
-							  <div id="overlay">
-							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
-							    <input style="width: 100px;" type="text" placeholder="가격">
-							  </div>
-							</div>
-						</li>
-					</ul>
-				</div>
+						
+					</div>
+					
 			</div>
-				
-				<div>
-				
-				</div>	
 				
 			</div>
 			<div id="tabsBar">
@@ -164,30 +165,42 @@
 	
 
 	<script>
+	$('#contentComments').css('display','none');
 	
 	$('.menu').click(function(event){
-		$("#tabsContentNavi").css('display','');
 		$('#menuText').css('color','blue');
 		$('#menuButton').css('background-color','blue');
-		$('#mapText').css('color','black');
-		$('#mapButton').css('background-color','white');
+		$('#contentMenu').css('display','');
+		$('#contentComments').css('display','none');
 		$('#commentText').css('color','black');
 		$('#commentButton').css('background-color','white');
 		
 	});
 	
 	$('.comment').click(function(event){
-		$("#tabsContentNavi").css('display','none');
-		$("#map").css('display','none');
 		$('#menuText').css('color','black');
 		$('#menuButton').css('background-color','white');
-		$('#mapText').css('color','black');
-		$('#mapButton').css('background-color','white');
+		$('#contentMenu').css('display','none');
+		$('#contentComments').css('display','');
 		$('#commentText').css('color','blue');
 		$('#commentButton').css('background-color','blue');
 	});
 	
-	$( '#carousel' ).elastislide();
+	
+	/************************************************************************************************/
+	
+		$('<tr id=tRow0>').appendTo($('#dataForm'));
+		$('<th class=tableDataNo>').html("No").appendTo($('#tRow0'));
+		$('<th class=tableDataName>').html("Name").appendTo($('#tRow0'));
+		$('<th class=tableDataComments>').html("Comments").appendTo($('#tRow0'));
+		$('<th class=tableDataTime>').html("Time").appendTo($('#tRow0'));
+	
+		$('<tr id=tRow1>').appendTo($('#dataForm'));
+		$('<td class=tableDataNo>').html("No").appendTo($('#tRow1'));
+		$('<td class=tableDataName>').html("Name").appendTo($('#tRow1'));
+		$('<td class=tableDataComments>').html("Comments").appendTo($('#tRow1'));
+		$('<td class=tableDataTime>').html("Time").appendTo($('#tRow1'));
+	
 	
 	</script>
 </body>
