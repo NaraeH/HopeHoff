@@ -12,16 +12,20 @@
 <script src="../../js/jquery.innerfade.js"></script>
 <script src="../../js/login/login.js"></script>
 </head>
+		
+	<!-- 헤더 -->
+	<div id="header">
+		<div id="headerMiddle">
+			<img src="../../img/main/mainLogo.png">
+			<a>HopeHoff</a>
+		</div>
+	<!-- 헤더 빈 공간 -->
+	</div>
 
 <body>
 	
 	<!-- wrap = body -->
 	<div id="wrap"> 
-		
-	<!-- 헤더 -->
-	<div id="header">
-	<!-- 헤더 빈 공간 -->
-	</div>
 		
 		<!-- HopeHoff 전체박스 -->
 		<div id="container"> 
@@ -203,7 +207,6 @@
 										</div>
 									</div>
 														  
-														  
 									<!-- 회원가입 팝업창 Phone -->						  
 									<div class="form-group">
 									<div class="hn loginForm">Phone</div>
@@ -211,7 +214,15 @@
 										<input id="phoneNumber" type="text" class="form-control" placeholder="Phone Number">
 										</div>
 									</div>
-												
+									
+									<!-- 회원가입 팝업창 사업자번호 -->						  
+									<div id="bNum" class="form-group" style="display:none">
+									<div class="hn loginForm">B-Num</div>
+										<div class="col-sm-8">
+										<input id="bNumber" type="text" class="form-control" placeholder="사업자번호를 써주세요.">
+										</div>
+									</div>
+									
 									<!-- 회원가입 팝업창 인증 -->						  
 									<div class="form-group">
 									<div class="hn loginForm">인증</div>
@@ -240,6 +251,7 @@
 								</div>
 							</div>
 						</div>
+						
 					</div>
 			</form> <!-- 회원가입 팝업창 End -->
 			

@@ -25,5 +25,28 @@ $(document).ready(function(){
 		type : 'random',
 		containerheight : '130px'
 	});
+
+	$("#inlineRadio3").click(function(){
+		$("#bNum").css('display',"none");
+		console.log("display:none");
+	});
 	
+	$("#inlineRadio4").click(function(){
+		$("#bNum").css('display',"");
+		console.log("display:true");
+	});
+	
+	/*
+	$(":input").click(function(){
+		console.log($(this));
+		console.log($(input[type="radio"]).is(":checked"));
+	})
+	*/
+	
+	/*
+	$("#inlineRadio3").click(function(){
+		console.log("check");
+	});
+	*/
 });
+

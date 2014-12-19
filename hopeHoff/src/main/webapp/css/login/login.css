@@ -20,6 +20,41 @@
 /* PC전용입니다. */
 @media all and (min-width:421px){ 
 	
+
+#header {
+	height: 135px;
+	background: #333231;
+	text-align: center;
+}
+	
+#headerMiddle {
+	width: 100%;
+	/* height: 130px; */
+	display: inline-block;
+	padding-left: 10px;
+	
+	/* 	border: 1px solid yellow; */
+}
+
+#headerMiddle a{
+	margin-top : 15px;
+	font-size: 75px;
+	font-family: 'Lobster', cursive;
+	color: #fd9e04;
+	text-align: center;
+	display: inline-block;
+}
+	
+#headerMiddle img{
+	margin-top : -60px;
+	width: 100px;
+	height:100px;
+	display: inline-block;
+}
+	
+	
+	
+	
 	/* 전체 배경적용 */
 	#wrap{
 		background-image : url("../../img/login/hoff.jpg");
@@ -164,7 +199,7 @@
 	/* 오른쪽 회원가입창 Save ID */
 	#saveId{
 	margin-top : 10px;
-	margin-left: 50px;
+	margin-left: 65px;
 	}
 	
 	/* 오른쪽 회원가입창 input inline-block */
@@ -175,7 +210,7 @@
 	/* 오른쪽 회원가입창 버튼 */
 	#loginBtn {
 	margin-top : 5px;
-	margin-left : 27px;
+	margin-left : 46px;
 	}
 	
 	/* 오른쪽 회원가입창 속성적용 */
@@ -184,7 +219,7 @@
 	display : inline-block;
 	text-align: left;
 	float: left;
-	width: 30px;
+	width: 45px;
 	}
 	
 	/* 오른쪽 회원가입창 패스워드 속성적용*/
@@ -261,6 +296,10 @@
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
 	
+	#header{
+	display: none;
+	}
+	
 	/* 전체화면 HopeHoff와 ID박스 사이 속성적용 */
 	#rightBox{
 	margin-top: 20px;
@@ -301,7 +340,7 @@
 	/* 모바일 전체 input정렬-1 (아이디 패스워드 글자크기) */
 	.loginForm {
 	display : inline-block;
-	width: 30px;
+	width: 47px;
 	}
 	/* 모바일 전체 input정렬-2 */
 	.col-sm-10 {
@@ -317,7 +356,7 @@
 	}
 	
 	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
-	#inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	#bNumber, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
 	width: 170px;
 	}
 	
@@ -332,7 +371,7 @@
 	}
 	
 	/* 모바일 Sign-up 팝업창 정렬 속성적용 */
-	#inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
+	#bNumber, #inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
 	margin-right: 53px;
 	}
 	
@@ -383,9 +422,6 @@
 	display : none;
 	}
 	
-	
-
-
 }
 
 
