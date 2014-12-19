@@ -131,6 +131,31 @@
 	text-align: center;
 	}
 	
+	
+	/* 오른쪽 일반/사업자 체크리스트 위아래정렬 */
+	#choose01 {
+	margin-top: -10px;
+	text-align: center;
+	}
+
+	/* 오른쪽 일반/사업자 체크리스트 가운데정렬 */
+	#choose02 {
+	text-align: center;
+	}
+	
+	/* 오른쪽 일반/사업자 사업자 벌리기 */
+	#inlineRadio2 {
+	margin-top : 15px;
+	margin-left : 30px;
+	}
+	
+	/* 오른쪽 회원가입창 팝업 창 일반/사업자 사업자 벌리기 */
+	#inlineRadio4 {
+	margin-top : 15px;
+	margin-left : 30px;
+	}
+	
+	
 	/* 오른쪽 회원가입창 HopeHoff */
 	#rightTop {
 	margin: 20px;
@@ -227,25 +252,6 @@
 	display: none;
 	}
 	
-	#choose01 {
-	margin-top: -10px;
-	text-align: center;
-	}
-
-	#choose02 {
-	text-align: center;
-	}
-	
-	#inlineRadio2 {
-	margin-top : 15px;
-	margin-left : 30px;
-	}
-	
-	#inlineRadio4 {
-	margin-top : 15px;
-	margin-left : 30px;
-	}
-	
 }
 
 
@@ -271,64 +277,97 @@
 	margin-top : 90px;
 	}
 	
-	/* 전체 배경적용01 */
+	/* 모바일 ID PWD input길이 */
+	#inputPassword, #inputId {
+	width : 190px;
+	}
+	
+	/* 모바일 전체 배경적용01 */
 	html{
 	background-color: black;
 	}
 	
-	/* 전체 배경적용02 */
+	/* 모바일 전체 배경적용02 */
 	#wrap{
 	background-color: black;
 	text-align: center;
 	}
 	
-	/* 전체 input 길이제한 속성적용 */
-	#inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
-	width: 170px;
-	}
-	
-	/* 전체 네모박스 뒷 배경 속성적용 */
+	/* 모바일 전체 네모박스 뒷 배경 속성적용 */
 	#container {
 	background-color: #fd9e04;
 	}	
 	
-	/* 전체 input정렬-1 (아이디 패스워드 글자크기) */
+	/* 모바일 전체 input정렬-1 (아이디 패스워드 글자크기) */
 	.loginForm {
 	display : inline-block;
 	width: 30px;
 	}
-	/* 전체 input정렬-2 */
+	/* 모바일 전체 input정렬-2 */
 	.col-sm-10 {
 	display : inline-block;
 	}
-	/* 전체 input정렬-3 */
+	/* 모바일 전체 input정렬-3 */
 	.col-sm-8 {
 	display : inline-block;
 	}
-	/* 전체 input정렬-4 */
+	/* 모바일 전체 input정렬-4 */
 	.form-control {
 	display : inline-block;
 	}
 	
-	/* Sign-up 팝업창 헤더배경 속성적용 */
+	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
+	#inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	width: 170px;
+	}
+	
+	/* 모바일 Sign-up 팝업창 헤더배경 속성적용 */
 	#signUpHeaderColor{
 	background-color: #FFCD28;
 	}
 	
-	/* Sign-up 팝업창 헤더와 인풋 속성적용 */
+	/* 모바일 Sign-up 팝업창 헤더와 인풋 속성적용 */
 	#sign-up-page01 {
 	margin-top: 10px;
 	}
 	
-	/* Sign-up 팝업창 정렬 속성적용 */
+	/* 모바일 Sign-up 팝업창 정렬 속성적용 */
 	#inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
-	margin-right: 60px;
+	margin-right: 53px;
 	}
 	
-	/* Footer 색깔 */
+	/* 모바일 Sign-up 팝업창 sign-up back 가운데정렬 */
+	#signUpFooter {
+	text-align: center;
+	}
+	
+	/* 전체 일반/사업자 체크리스트 위아래정렬 */
+	#choose01 {
+	margin-top: -10px;
+	text-align: center;
+	}
+
+	/* Sign-up 팝업창 일반/사업자 체크리스트 가운데정렬 */
+	#choose02 {
+	margin : 10px 0px 10px 0px;
+	text-align: center;
+	}
+	
+	/* 전체 오른쪽 일반/사업자 사업자 벌리기 */
+	#inlineRadio2 {
+	margin-top : 15px;
+	margin-left : 30px;
+	}
+	
+	/* Sign-up 팝업창 오른쪽 회원가입 팝업 창 일반/사업자 사업자 벌리기 */
+	#inlineRadio4 {
+	margin-left : 30px;
+	}
+	
+	/* 모바일 Footer 색깔 */
 	#footer01 {
 	color : white;
-	}
+	}	
 	
 	/* 기존 PC에 보이던창 모바일에서 가리기 */
 	#containerHeader > h1{
@@ -344,12 +383,6 @@
 	display : none;
 	}
 	
-
-	
-	/* Sign-up 팝업창 sign-up back 가운데정렬 */
-	#signUpFooter {
-	text-align: center;
-	}
 	
 
 
