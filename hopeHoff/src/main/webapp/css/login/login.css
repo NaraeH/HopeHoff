@@ -227,7 +227,24 @@
 	display: none;
 	}
 	
+	#choose01 {
+	margin-top: -10px;
+	text-align: center;
+	}
 
+	#choose02 {
+	text-align: center;
+	}
+	
+	#inlineRadio2 {
+	margin-top : 15px;
+	margin-left : 30px;
+	}
+	
+	#inlineRadio4 {
+	margin-top : 15px;
+	margin-left : 30px;
+	}
 	
 }
 
