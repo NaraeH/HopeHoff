@@ -25,16 +25,26 @@
 					var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
 					var listWidth = ($(".list").css("width")).split("px").splice(0, 1) - 0;
 					var marginWidth = ($(".list").css("margin-left")).split("px").splice(0, 1) - 0;
-					var widthNo = parseInt(presentWidth/(listWidth + marginWidth));
-										
+					var widthCount = parseInt(presentWidth/(listWidth + marginWidth));  //한 줄에 몇개 있는지
+					var childNo = $(".list").index(this);                               //지금 선택된 요소가 몇번째 자식인지
+					var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
+					var lastNo = $(".list").index($(".list:last-child"));
+					
+					//whichNo가 존재하지 않는 인덱스라면(즉 마지막에 whichNo가 더 크다면 lastNo보다)? => 마지막 인덱스 다음에 division을 붙여야 한다. 
+					//whichNo = (lastNo < whichNo)? lastNo : whichNo;
+					
 					console.log("presentWidth==>" + presentWidth);
 					console.log("listWidth==>" + listWidth);
 					console.log("marginWidth==>" + marginWidth);
 					console.log("===>" + parseInt(presentWidth/(listWidth + marginWidth)));
-					console.log($("#containerList").children()[widthNo]);
+					console.log($("#containerList").children()[whichNo]);
+					console.log("몇번째?==>" +  $(".list").index(this) );
+					console.log("마지막==>" +  $(".list").index($(".list:last-child")));
+					console.log(Math.ceil( (childNo + 1) / whichNo) );
 					
+					console.log("whichNo==>" + whichNo);
 					
-					$($("#containerList").children()[widthNo]).after(
+					$($("#containerList").children()[whichNo]).after(
 							$("<div>").attr("id", "detailList")
 									.css("width", "100%")
 									  .css("height", "500px")
