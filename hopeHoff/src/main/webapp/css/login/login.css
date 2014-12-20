@@ -273,6 +273,14 @@
 	margin-left: 117px;
 	}
 	
+	/* 오른쪽 회원가입창 정렬 */
+	#yesno {
+	color : red;
+	font-size : small;
+	margin :  0px 0px 0px -80px;
+	text-align: center;
+	}
+	
 	/* PC footer */
 	#footer{
 		background-color : #333231;
@@ -423,6 +431,18 @@
 	#footer{
 	display : none;
 	}
+	
+	#yesno {
+	color : red;
+	font-size : small;
+	margin-bottom : 10px;
+	text-align: center;
+	}
+	
+	#popId{
+	margin-left: -53px;
+	}
+	
 	
 }
 

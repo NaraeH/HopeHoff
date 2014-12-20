@@ -145,7 +145,7 @@
 							<!-- 오른쪽박스 Login Sign-up -->
 							<div class="form-group">
 								<div id="loginBtn" class="col-sm-10">
-										<button type="button" class="btn btn-danger">Login</button>
+										<button onclick="location.href='../main/main.html'" type="button" class="btn btn-danger">Login</button>
 										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal02">Sign-up</button>
 								</div>
 							</div>	
@@ -176,12 +176,16 @@
 									
 									<!-- 회원가입 팝업창 ID -->
 									<div class="form-group">
-										<div class="hn loginForm">ID</div>
+										<div id="popId" class="hn loginForm">ID</div>
 										<div class="col-sm-8">
 										<input class="form-control" type="text" id="formGroupInputLarge" placeholder="ID를 입력하세요.">
 										</div>
-										<button id="inNumber00" type="button" class="btn btn-warning">검사</button>
+										<!--<button id="inNumber00" type="button" class="btn btn-warning">검사</button>-->
 									</div>
+									
+									
+									<!-- 회원가입 중복여부 -->
+									<div id="yesno"></div>
 									
 									<!-- 회원가입 팝업창 Name -->
 									<div class="form-group">
@@ -259,7 +263,6 @@
 		
 			
 		</div> <!-- wrap /div -->
-		
 	</body>
 	
 			<!-- PC용 Footer -->
