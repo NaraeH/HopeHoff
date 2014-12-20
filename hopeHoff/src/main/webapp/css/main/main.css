@@ -91,32 +91,24 @@ body {
 	/* border: 1px solid yellow; */
 }
 
-
-#btnMyPage {
+#btnMyPage, #btnBook, #btnRecommandPlace{
+	background-image: url(../../img/common/pictogram_white.png);
 	width:60px;
 	height:60px;
-	background-image: url(../../img/common/pictogram_white.png);
-	background-position: -1187px -5608px;
 	display:inline-block;
-	
+	cursor: pointer;
+}
+
+#btnMyPage {
+	background-position: -1187px -5608px;
 }
 
 #btnBook{
-	width:60px;
-	height:60px;
-	background-image: url(../../img/common/pictogram_white.png);
 	background-position: -1187px -5471px;
-	display:inline-block;
-	
 }
 
 #btnRecommandPlace {
-	width:60px;
-	height:60px;
-	background-image: url(../../img/common/pictogram_white.png);
 	background-position: -1067px -5680px;
-	display:inline-block;
-	
 }
 
 
@@ -378,6 +370,19 @@ input[type="button"]:hover {
 	display: inline-block;
 }
 
+.box-rotate-up{
+	width: 0px;
+	height:0px;
+	border-right:12px solid transparent;
+	border-bottom:12px solid black; 
+	transform:rotate(135deg);  
+	-ms-transform:rotate(135deg);      /* IE 9 */
+	-webkit-transform:rotate(135deg);  /* Chrome, Safari, Opera */
+	-moz-transform:rotate(135deg);
+	-o-transform:rotate(135deg);
+	
+	display: inline-block;
+}
 
 
 /*ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일-----*/
