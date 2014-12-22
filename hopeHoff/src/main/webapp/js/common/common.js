@@ -1,8 +1,16 @@
 /*
-1. 구조
+1. 함수를 사용하기 위한 구조
 wrapDiv안에 ul있는 구조
 wrapDiv를 아래와 같이 css를 주면 아래의 함수 적용했을 시 깔끔하게 나옴
-			
+
+wrap내부에는 왼쪽화살표 오른쪽화살표 ul이 차례대로 있음 (화살표와 ul순서바뀌면 안됨)
+<div id="wrapDiv">
+	<span class="box-rotate-left"></span>
+	<span class="box-rotate-right"></span>
+	<ul> ... </ul>
+</div>
+
+* 아래의 css반드시 적용하여야 함.
 #wrapDiv ul {
 	list-style-type:none;
 	padding-left: 0px;
@@ -14,120 +22,53 @@ wrapDiv를 아래와 같이 css를 주면 아래의 함수 적용했을 시 깔�
 	padding: 0px 10px 0px 10px;
 }
 			
-2. 사용방법
-myWidthSilde(wrapDiv이름, 움직이고 싶은거리, [움직이는 속도]);
-* 움직이고 싶은거리:(-:왼쪽으로이동, +:오른쪽으로이동)
+2. 함수 사용방법
+$(wrap이름).NaraeWidthSilde(direction, [움직이고 싶은거리], [움직이는 속도]);
+* 움직이고 싶은거리
 * 움직이는 속도: 숫자가 작을수록 이동속도 빠름
 
 */
-function myWidthSilde(wrapDiv, moveWidth, speed) {
-
-	var children = $(wrapDiv).children()[2];                // 해당 division의 직속자식인 ul
-	var width = ($(wrapDiv).width()); ;                    //해당 division의 가로
-	var moveWidth = moveWidth;                           //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동)
-	var moveWidthPx = moveWidth + "px";
-	var margin = (($(wrapDiv).children()).css("margin-left")).split("px").splice(0, 1) - 0;
-	var speed = (speed == undefined) ? 1500 : speed;     //움직이는 속도 (입력안되었을 경우 default=1500)
-	
-	
-	console.log($(wrapDiv).children()[0]);
-	console.log($(wrapDiv).children()[1]);
-	console.log($(wrapDiv).children()[2]);
-	
-	console.log("--------------");
-	console.log(children);
-	console.log(wrapDiv);
-	console.log(moveWidth);
-	console.log(speed);
-	
-	if (moveWidth < 0) {  //오른쪽으로 움직일 경우
-		moveWidth = margin + moveWidth;
-		if ((margin <= 0) && (-width < margin)) {
-			$(children).animate({
-				marginLeft : moveWidthPx
-			}, speed);
-		}
-	}
-	
-	console.log("--------------------------");
-	console.log(moveWidth);
-	console.log(margin);
-	//click시 이상있음 추후 수정하기 -narae
-	if((moveWidth >= 0) ){  //왼쪽으로 움직일 경우
-		console.log("왼쪽으로 움직일꺼야");
-		
-/*		if((moveWidth + margin) >= 0) {
-			moveWidth = 0;
-		}else if( moveWidth - margin > 0){
-			moveWidth = 0;
-		}else{
-			moveWidth = margin + moveWidth;
-		}
-		moveWidthPx = moveWidth + "px"*/
-		
-		moveWidthPx = moveWidth + "px"
-		
-		console.log(moveWidth);
-		
-			$(children).animate({
-				/*marginLeft : moveWidthPx*/
-				marginLeft : "-170px"
-			}, speed);
-	}
-}
-$.prototype.myWidthSildee = function(moveWidth, speed) {
+$.prototype.NaraeWidthSilde = function(direction, moveWidth, speed) {
 
 	var children = $(this).children()[2];                // 해당 division의 직속자식인 ul
-	var width = ($(this).width()); ;                    //해당 division의 가로
-	var moveWidth = moveWidth;                           //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동)
-	var moveWidthPx = moveWidth + "px";
-	var margin = (($(this).children()).css("margin-left")).split("px").splice(0, 1) - 0;
-	var speed = (speed == undefined) ? 1500 : speed;     //움직이는 속도 (입력안되었을 경우 default=1500)
+	var width = ($(this).width());                      //해당 division의 가로
+	var moveWidth = (moveWidth == undefined) ? ($(children).children().css("width")).split("px").splice(0, 1) - 0 : moveWidth; //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동)
+	var margin = ($(($(this).children()[2])).css("margin-left")).split("px").splice(0, 1) - 0; //현재 ul의 margin
+	var speed = (speed == undefined) ? 1000 : speed;     //움직이는 속도 (입력안되었을 경우 default=1500)
+	var childrenCount = $($(this).children()[2]).children().size();  //ul의 총 자식수
+	var widthCount = Math.floor(width / ($(children).children().css("width")).split("px").splice(0, 1) - 0); //$(this) 디비젼에 들어가 있는 li(item)의 개수
+	var moveWidthPx = "0px";
 	
-	
-	console.log($(this).children()[0]);
-	console.log($(this).children()[1]);
-	console.log($(this).children()[2]);
-	
-	console.log("--------------");
-	console.log(children);
-	console.log(this);
-	console.log(moveWidth);
-	console.log(speed);
-	
-	if (moveWidth < 0) {  //오른쪽으로 움직일 경우
-		moveWidth = margin + moveWidth;
-		if ((margin <= 0) && (-width < margin)) {
+	//오른쪽으로 움직일 경우
+	if (direction == "right") {  
+		moveWidthPx = (margin + moveWidth) + "px";
+		console.log("---right-----");
+		
+		//moveCount = 1; //임시방편 => 나중에 리스트 디비젼에 몇개 들어가있는지 계산하고 moveCount(몇번 움직일 수 있는지)주기
+		if( (-(moveWidth * (childrenCount - widthCount)) < margin) && (margin < 0)){
+			
 			$(children).animate({
 				marginLeft : moveWidthPx
 			}, speed);
+		}else {
+			alert("더이상 메뉴가 존재하지 않습니다.");
 		}
 	}
 	
-	console.log("--------------------------");
-	console.log(moveWidth);
-	console.log(margin);
-	//click시 이상있음 추후 수정하기 -narae
-	if((moveWidth >= 0) ){  //왼쪽으로 움직일 경우
-		console.log("왼쪽으로 움직일꺼야");
+	//왼쪽으로 움직일 경우
+	if(direction == "left"){  
+		moveWidthPx = (margin - moveWidth) + "px";
+		console.log("---left-----");
 		
-/*		if((moveWidth + margin) >= 0) {
-			moveWidth = 0;
-		}else if( moveWidth - margin > 0){
-			moveWidth = 0;
-		}else{
-			moveWidth = margin + moveWidth;
-		}
-		moveWidthPx = moveWidth + "px"*/
-		
-		moveWidthPx = moveWidth + "px"
-		
-		console.log(moveWidth);
-		
+		//moveCount = 1; //임시방편 => 나중에 리스트 디비젼에 몇개 들어가있는지 계산하고 moveCount(몇번 움직일 수 있는지)주기
+		if( (margin - moveWidth) >= -(moveWidth * (childrenCount - widthCount))){
 			$(children).animate({
-				/*marginLeft : moveWidthPx*/
-				marginLeft : "-170px"
+				marginLeft : moveWidthPx
 			}, speed);
+			
+		}else {
+			alert("더이상 메뉴가 존재하지 않습니다.");
+		}
 	}
 }
 
