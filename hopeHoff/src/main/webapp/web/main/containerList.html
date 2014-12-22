@@ -50,8 +50,10 @@
 					var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
 					var lastNo = $(".list").index($(".list:last-child"));
 					
-					//whichNo가 존재하지 않는 인덱스라면(즉 마지막에 whichNo가 더 크다면 lastNo보다)? => 마지막 인덱스 다음에 division을 붙여야 한다. 
-					//whichNo = (lastNo < whichNo)? lastNo : whichNo;
+					//lastNo가 존재하지 않을 경우
+  					if((lastNo > (whichNo - widthCount)) && (lastNo < whichNo) ){
+							whichNo = lastNo + 1;
+					}  
 					
 					//console.log("presentWidth==>" + presentWidth);
 					//console.log("listWidth==>" + listWidth);
