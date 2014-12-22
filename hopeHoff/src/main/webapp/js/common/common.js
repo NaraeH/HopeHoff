@@ -27,11 +27,16 @@ var Narae = new Narae();
  </div>
 
 2) 아래의 css반드시 적용하여야 함.
+
+ #wrapDiv {
+	overflow: hidden;
+ }
+ 
  #wrapDiv ul {
  	list-style-type:none;
 	padding-left: 0px;
 	display: inline-block;
-	overflow: hidden;
+	width: "li의 width * li의 개수"
  }
 
  #wrapDiv li {

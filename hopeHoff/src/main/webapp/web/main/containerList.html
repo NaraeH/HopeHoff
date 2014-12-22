@@ -26,9 +26,14 @@
 				}
 				
 				$(".list").click(function(){
-					var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
-					var listWidth = ($(".list").css("width")).split("px").splice(0, 1) - 0;
-					var marginWidth = ($(".list").css("margin-left")).split("px").splice(0, 1) - 0;
+					//var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
+					//var listWidth = ($(".list").css("width")).split("px").splice(0, 1) - 0;
+					//var marginWidth = ($(".list").css("margin-left")).split("px").splice(0, 1) - 0;
+
+					var presentWidth = Narae.removePx($("#containerList").css("width"));
+					var listWidth = Narae.removePx($(".list").css("width"));
+					var marginWidth = Narae.removePx(($(".list").css("margin-left")));
+					
 					var widthCount = parseInt(presentWidth/(listWidth + marginWidth));  //한 줄에 몇개 있는지
 					var childNo = $(".list").index(this);                               //지금 선택된 요소가 몇번째 자식인지
 					var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
