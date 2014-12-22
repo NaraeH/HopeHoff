@@ -1,5 +1,13 @@
 @CHARSET "UTF-8";
 
+.myMarketInfoData{
+	margin-left:10px;
+}
+
+.Info{
+	border:1px solid red;
+	display:inline;
+}
 #myMarketTitle{
 	border:1px solid red;
 
@@ -13,44 +21,55 @@
 	height:670px;
 }
 
-.Info{
-	border:1px solid red;
-	display:inline;
-}
+
 #myMarketSelect{
 	margin-top:10px;
 }
 
-#menuList {
-	/* width: 520px; */
-	height: 150px;
-	margin: 0 auto;
-	overflow :hidden;
-	margin-top: 20px;
-}
-#menuList ul {
-	list-style-type:none;
-	padding-left: 0px;
-	display: inline-block;
-	overflow: hidden;
-	height: inherit;
+#myMarketInfoForm{
+	margin:3px 30px;
+	height:470px;
+	width:700px;
+	display:inline-block;
+	border:1px solid yellow;
 }
 
-#menuList li {
-	display:inline;
-	padding: 0px 10px 0px 10px;
+#myMarketInfoImage{
+	height:250px;
+	width:400px;
+	display:inline-block; 
+	margin:10px; 
+	float:left;
+}
+#myMarketInfo{
+	height:250px;
+	width:250px;
+	display:inline-block;
+	margin:10px;"
+}
+#btnMod{
+	margin-top: 10px;
 }
 
-#menuList li img {
-	width: 150px;
-	height: 150px;
+
+#menuList{
+	margin:20px 20px;
+	width:600px;
+	height: 170px;
+}
+
+#menuImages{
+	width:600px; 
+}
+
+.manuImage{
+	margin :2px 10px;
 }
 
 #tabsBar{
- height: 50px;
- margin :10px 15px;
- border:1px solid green;
- padding :7px 10px;
+ 	height: 50px;
+	 margin :0 50px;
+	padding :7px 10px;
 }
 
 
