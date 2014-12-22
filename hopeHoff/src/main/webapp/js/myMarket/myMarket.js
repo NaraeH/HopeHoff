@@ -3,23 +3,20 @@ $('#contentComments').css('display','none');
 	$('.menu').click(function(event){
 		$('#menuText').css('color','blue');
 		$('#menuButton').css('background-color','blue');
-		$('#contentMenu').css('display','');
-		$('#contentComments').css('display','none');
+		$('#menuImages').css('display','');
 		$('#commentText').css('color','black');
 		$('#commentButton').css('background-color','white');
-		
 	});
 	
 	$('.comment').click(function(event){
 		$('#menuText').css('color','black');
 		$('#menuButton').css('background-color','white');
-		$('#contentMenu').css('display','none');
+		$('#menuImages').css('display','none');
 		$('#contentComments').css('display','');
 		$('#commentText').css('color','blue');
 		$('#commentButton').css('background-color','blue');
 	});
 	
-	$( '#carousel' ).elastislide();
 	/************************************************************************************************/
 	
 		$('<tr id=tRow0>').appendTo($('#dataForm'));

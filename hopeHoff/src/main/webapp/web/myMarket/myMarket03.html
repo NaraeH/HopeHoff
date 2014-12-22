@@ -22,7 +22,9 @@
 		</div>
 
 		<div id="myMarketSelect">
+ 
 			<form action="#">
+			 
 			  <fieldset>
 			    <label for="speed">내 가게 보기</label>
 			    <select name="speed" id="speed">
@@ -38,8 +40,9 @@
 			
 		
 		
-		<div id="myMarketInfoForm" >
-			<div id="myMarketInfoImage">
+		<div style="margin:3px 30px;height:450px;width:700px;display:inline-block;border:1px solid yellow;">	
+			<div style="height:250px;width:400px;border:1px solid orange;display:inline-block; margin:10px; float:left;">
+						
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <!-- Indicators -->
 			 		 <ol class="carousel-indicators">
@@ -76,84 +79,77 @@
 			  		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			  		  <span class="sr-only">Next</span>
 			 		</a>
-			    </div>	<!-- div=carousel-example-generic  end-->
-			</div><!-- div=myMarketInfoImage -->
-			
-			<div id="myMarketInfo">
+			    </div>	
+			</div>
+			<div style="height:250px;width:250px;border:1px solid navy;display:inline-block;margin:10px;">
 				<h3 >와라와라 강남점</h3>
 				<div>
     				<div class="Info">운영시간 : </div> <div class="Info"><input type="text" placeholder="12:00~04:00"></div><br>
     				<div class="Info">전화번호 : </div> <div class="Info"><input type="text" placeholder="02-444-4444"></div><br>
 				</div>
     				<div>주 소  </div> 
-    					<input class="myMarketInfoData" type="text"  placeholder="서울시 강남구 역삼동">
+    				<input type="text" style="margin-left:10px;" placeholder="서울시 강남구 역삼동">
     				<div>소 개  </div> 
-    					<input class="myMarketInfoData" type="text"  placeholder="짱짱짱맨">
+    				<input type="text" style="margin-left:10px;" placeholder="짱짱짱맨">
     				<div style="text-align: right;padding-right:10px; ">
-						<button id="btnMod" type="button" class="btn btn-primary btn-sm">수정하기</button>
+						<button type="button" style="margin-top: 10px; " class="btn btn-primary btn-sm">수정하기</button>
     				</div>
 			</div>
-			<div id="menuList" >
+			<div style="margin:20px 20px;width:650px;height: 150px;border:1px solid red;">
 				
-				<div id="menuImages" >
+				<div class="main" style="border:1px solid blue; width:600px; margin-top:2px;" >
 					<ul id="carousel" class="elastislide-list">
-						<li class=manuImage >
+						<li class=manuImage style="margin :0px 10px;">
 							<div  id="box">
 							  <div id="overlay">
-							  	<input class="overMenu" style="width: 100px;" type="text" placeholder="메뉴"><br>
+							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
 							    <input style="width: 100px;" type="text" placeholder="가격">
 							  </div>
 							</div>
 						</li>
-						<li class=manuImage >
+						<li class=manuImage style="margin :0px 10px;">
 							<div id="box">
 							  <div id="overlay">
-							  	<input type="text" placeholder="메뉴"><br>
-							    <input type="text" placeholder="가격">
+							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
+							    <input style="width: 100px;" type="text" placeholder="가격">
 							  </div>
 							</div>
 						</li>
-						<li class=manuImage >
-						<div id="box">
+						<li class=manuImage style="margin :0px 10px;"><div id="box">
 							  <div id="overlay">
-							  	<input  type="text" placeholder="메뉴"><br>
-							    <input  type="text" placeholder="가격">
+							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
+							    <input style="width: 100px;" type="text" placeholder="가격">
 							  </div>
 							</div>
 						</li>
-						<li class=manuImage>
+						<li class=manuImage style="margin :0px 10px;">
 						<div id="box">
 							  <div id="overlay">
-							  	<input  type="text" placeholder="메뉴"><br>
-							    <input type="text" placeholder="가격">
+							  	<input style="width: 100px;" type="text" placeholder="메뉴"><br>
+							    <input style="width: 100px;" type="text" placeholder="가격">
 							  </div>
 							</div>
 						</li>
 					</ul>
-				</div> <!-- div=menuImages end -->
-				<div id="contentComments">
-						<table id="dataForm" class="table table-hover"></table>
 				</div>
-			</div> <!-- div=menuList end -->
-			
-	
+			</div>
 				
-			</div><!-- myMarketInfoForm end -->
-			
+				<div>
+				
+				</div>	
+				
+			</div>
 			<div id="tabsBar">
-   					<div id="tabsBarText">
-   						<div id='menuText' class="menu" >Menu</div>
-   						<div id='commentText' class="comment">Comment</div>
-   					</div>
-   					
-   					<div id="tabsBarButton">
-   						<div id='menuButton' class="menu"></div>
-   						<div id='commentButton' class="comment"></div>
-   					</div>
-   			</div><!-- div = tabsBar end -->
-		
-		</div> <!-- div=container end -->
-		
+   			<div id="tabsBarText">
+   				<div id='menuText' class="menu" >Menu</div>
+   				<div id='commentText' class="comment">Comment</div>
+   			</div>
+   			<div id="tabsBarButton">
+   				<div id='menuButton' class="menu"></div>
+   				<div id='commentButton' class="comment"></div>
+   			</div>
+   		</div>
+		</div>
 	<div id="footer">
 		 지용근 멍충2 myMaket
 	</div>

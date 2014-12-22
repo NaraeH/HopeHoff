@@ -21,6 +21,7 @@ body {
 	height:140px;
 	width:150px;
 	opacity: 0;
+	display:inline-block;
 	-webkit-transition: opacity .25s ease;
 	-moz-transition: opacity .25s ease;
 	text-align: center;
@@ -30,20 +31,15 @@ body {
 	opacity: 1;
 }
 
-#plus {
+#overlay > input {
 	font-family: Helvetica;
 	font-weight: 900;
 	color: rgba(255, 255, 255, .85);
 	font-size: 15px;
+	width: 100px;
 	
 }
 
-#minus {
-	font-family: Helvetica;
-	font-weight: 900;
-	color: rgba(255, 255, 255, .85);
-	font-size: 15px;
-}
 
 #menuList {
 	/* width: 520px; */
