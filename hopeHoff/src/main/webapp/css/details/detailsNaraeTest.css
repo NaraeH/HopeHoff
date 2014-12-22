@@ -10,20 +10,20 @@
 @CHARSET "UTF-8";
 
 @media all and (min-width:421px) {
-/* 	body {
-		width: 600px;
-		height: 680px;
+	body {
+		width: 1180px;
+		height: 340px;
 		border: 2px solid #FFCD28;
 		
-	} */
+	}
 	.modal-header {
 		background-color: #FFCD28;
 	}
 	#carousel-example-generic {
-		width: 350px;
+		width: 30%;
 		height: 230px;
 		float: left;
-		margin-right: 5px;
+	/* 	margin-right: 5px; */
 	}
 	#carousel-example-generic span {
 		margin-top: 111px;
@@ -34,52 +34,47 @@
 	}
 	#hoffInfo {
 		padding: 5px;
-		width: 210px;
+		width: 20%;
 		height: 230px;
 		border: 1px solid #FFCD28;
 		float: left;
 	}
 	#reservation {
-		margin: 10px;
+	/* 	margin: 10px; */
 		text-align: right;
 	}
 
 	/* *************V tabs********** */
 	#tabs {
-		width: 565px;
-		height: 300px;
+		width: 50%;
+		height: 230px;
 		border: 2px solid black;
-		margin-top: 10px;
-		clear: both;
+		/* margin-left: 5px; */
+		float: right;
+		/* clear: both; */
 	}
 	#tabsContent {
-		height: 205px;
-		margin: 20px 15px;
+		height: 90%;
+		margin: 10px;
 		border: 3px dotted olive;
+		
 	}
-	#contentMenu {
+	#contentMenu, #contentMap, #contentComments {
 		width: 530px;
 		height: 200px;
+
 	}
-	#contentMap {
-		width: 100%;
-		height: 200px;
-	}
-	#contentComments {
-		width: 530px;
-		height: 200px;
-	}
+
 	/* ************V tabsBar************** */
 	#tabsBar {
 		height: 50px;
 		width: 530px;
-		/*  border:1px solid red; */
 		padding: 5px 10px;
 		margin: 0 auto;
+		clear: both;
 	}
 	#tabsBarText {
 		position: absolute;
-		margin-top: 1px;
 		z-index: 2;
 	}
 	#tabsBarText>div {
@@ -202,3 +197,4 @@
 
 	}
 
+}

@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>details</title>
+<link rel="stylesheet" type="text/css" href="../../css/details/detailsNaraeTest.css">
+<link rel="stylesheet" type="text/css" href="../../css/details/overlay.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
+
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=f0fe46045347a225b541134d40ca776ff948507a"></script>
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/common/common.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
 	<div id="myModal">
 
 		<div class="modal-header">
@@ -7,16 +26,16 @@
 			<h4 class="modal-title" id="myModalLabel">Details</h4>
 		</div>
 
-		 <div class="modal-body">
+		<div class="modal-body">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				Indicators
+				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				</ol>
 
-				Wrapper for slides
+				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<img src="../../img/details/Wara-Wara01.jpg" alt="Generic placeholder image">
@@ -33,9 +52,9 @@
 						<div class="carousel-caption">와라와라(강남점) (3/3)</div>
 					</div>
 
-				</div>end of the Wrapper for slides
+				</div><!-- end of the Wrapper for slides -->
 
-				Controls
+				<!-- Controls -->
 				<a class="left carousel-control" href="#carousel-example-generic"
 					role="button" data-slide="prev"> 
 				<span class="box-rotate-left"></span>			
@@ -72,24 +91,24 @@
 								<li>
 									<div id="box" style="background-image: url('../../img/details/chiken.jpg')">
 										<div id="overlay">
-											<span id="menu"><input style="width:130px;" type="text" placeholder="뿌링클치킨"></span>
-											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="17000"></span>
+											<span id="menu"><h4 style="color:white">뿌링클 치킨</h4></span>
+											<span id="price"><h4 style="color:white">17000</h4></span>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div id="box" style="background-image: url('../../img/details/cheese.jpg')">
 										<div id="overlay">
-											<span id="menu"><input style="width:130px;" type="text" placeholder="크림치즈 퐁닭"></span>
-											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="17500"></span>
+											<span id="menu"><h4 style="color:white">크림치즈 퐁닭</h4></span>
+											<span id="price"><h4 style="color:white">17500</h4></span>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div id="box" style="background-image: url('../../img/details/pizza.jpg')">
 										<div id="overlay">
-											<span id="menu"><input style=" width:130px;" type="text" placeholder="베감피자"></span>
-											<span id="price"><input style="margin-top:15px; width:130px;" type="text" placeholder="16800"></span>
+											<span id="menu"><h4 style="color:white">베감피자</h4></span>
+											<span id="price"><h4 style="color:white">16800</h4></span>
 										</div>
 									</div>
 								</li>
@@ -105,15 +124,15 @@
 							</ul>
 									 
 									
-						</div> menuList
-					</div>contentMenu
+						</div> <!-- menuList -->
+					</div><!-- contentMenu -->
 								   
 					<div id="contentMap"></div>
 							
 					<div id="contentComments">
 						<table id="dataForm" class="table table-hover"></table>
 					</div>
-				</div>	tabsContent
+				</div>	<!-- tabsContent -->
 
 				<div id="tabsBar">
 					<div id="tabsBarText">
@@ -127,12 +146,15 @@
 						<div id='commentButton' class="comment"></div>
 					</div>
 				</div>
-			</div>	tabs 꺼야
-		</div>	body꿑
+			</div>	<!-- tabs 꺼야 -->
+		</div>	<!--body꿑 -->
 
-		<div class="modal-footer">
-			<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-warning">Save changes</button>
+		<div class="modal-footer">	</div>
 
-		</div>
-		</div>
+
+	</div>	<!-- myModal -->
+
+	<script src='../../js/details/detailsNaraeTest.js'></script>
+
+</body>
+</html>
