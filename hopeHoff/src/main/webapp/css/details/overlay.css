@@ -4,7 +4,7 @@ body {
 	background: #e7e7e7;
 }
 
-#box {
+.box {
 	width: 150px;
 	height: 150px;
 	box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, .20);
@@ -26,7 +26,7 @@ body {
 	text-align: center;
 }
 
-#box:hover #overlay {
+.box:hover #overlay {
 	opacity: 1;
 }
 

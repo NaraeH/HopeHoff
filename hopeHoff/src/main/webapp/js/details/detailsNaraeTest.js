@@ -48,14 +48,11 @@
 			});
 
 			$(".box-rotate-left").click(function() {
-				console.log("hihi");
-				//myWidthSilde("#menuList", 200, 800);
-				
-				$("#menuList").myWidthSildee(200, 800);
+				$("#menuList").NaraeWidthSilde("left");
 			});
 
 			$(".box-rotate-right").click(function() {
-				myWidthSilde("#myShopList", -275, 1000);
+				$("#menuList").NaraeWidthSilde("right");
 			});
 
 		});
