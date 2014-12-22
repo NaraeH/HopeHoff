@@ -3,14 +3,16 @@
 
 			$('#contentMap').css('display', 'none');
 			$('#contentComments').css('display', 'none');
-
+			$('#menuText').css('color', 'black');
+			$('#menuButton').css('background-color', 'black');
+			
 			$('.menu').click(function(event) {
 				$("#contentMenu").css('display', '');
 				$('#contentMap').css('display', 'none');
 				$('#contentComments').css('display', 'none');
 				
-				$('#menuText').css('color', 'blue');
-				$('#menuButton').css('background-color', 'blue');
+				$('#menuText').css('color', 'black');
+				$('#menuButton').css('background-color', 'black');
 				$('#mapText').css('color', 'black');
 				$('#mapButton').css('background-color', 'white');
 				$('#commentText').css('color', 'black');
@@ -25,8 +27,8 @@
 				
 				$('#menuText').css('color', 'black');
 				$('#menuButton').css('background-color', 'white')
-				$('#mapText').css('color', 'blue');
-				$('#mapButton').css('background-color', 'blue');
+				$('#mapText').css('color', 'black');
+				$('#mapButton').css('background-color', 'black');
 				$('#commentText').css('color', 'black');
 				$('#commentButton').css('background-color', 'white');
 
@@ -41,8 +43,8 @@
 				$('#menuButton').css('background-color', 'white');
 				$('#mapText').css('color', 'black');
 				$('#mapButton').css('background-color', 'white');
-				$('#commentText').css('color', 'blue');
-				$('#commentButton').css('background-color', 'blue');
+				$('#commentText').css('color', 'black');
+				$('#commentButton').css('background-color', 'black');
 			});
 
 			$("#btnToLeft").hover(function() {

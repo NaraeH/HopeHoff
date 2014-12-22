@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+#myMarketTitle{
+	border:1px solid red;
+
+}
+
+#container{
+	margin: 0px auto;
+	padding:10px;
+	border:1px solid pink;
+	width:800px;
+	height:670px;
+}
+
+.Info{
+	border:1px solid red;
+	display:inline;
+}
+#myMarketSelect{
+	margin-top:10px;
+}
+
+#tabsBar{
+ height: 50px;
+ margin :10px 15px;
+ border:1px solid green;
+ padding :7px 10px;
+}
+
+
+#tabsBarText > div{
+	margin-right:60px;
+	display:inline-block;
+	width:260px;
+}
+
+#tabsBarButton > div{
+	margin-right:30px;
+	display:inline-block;
+	border:2px solid black;
+	height:15px;
+	background-color: white;
+	width: 290px;
+}
+
+
+#footer{
+	color:blue;
+	text-align: center;
+}

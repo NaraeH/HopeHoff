@@ -2,39 +2,70 @@
 
 	 $(document).ready(
 			function() {
-				var count = 13;
+				var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
+				var widthPercent = "20%"; 
+				var count = 13;  //list출력개수 현재는 임의로 지정
+				
+/* 				if(presentWidth > 1070) {
+					widthPercent = ( 100 / 5 ) + "%";
+				}else if(presentWidth <= 1070 ){
+					widthPercent = ( 100 / 4 ) + "%";
+				}else if( presentWidth <= 800){
+					widthPercent = ( 100 / 3 ) + "%";
+				}else if( presentWidth <= 540){
+					widthPercent = ( 100 /2 ) + "%";
+				}else{
+					widthPercent = ( 100 / 1 ) + "%";
+				} */
+				
+				console.log("presentWidth==>" + presentWidth);
+				console.log(widthPercent);
+
 				for (var i = 0; i < count; i++) {
-					$($("<div>").attr("class", "list").append(
-							$("<div>").attr("class", "listInfo")
-							/* .attr("id", "id"+i) */
-										.append($("<div>").attr("class", "listTitle").text("준코"))
-											  .append($("<a>")
-													  .attr("href", "#")
-											 	 	   .append($("<img>")
-														 	 .attr("src", "test.jpg"))
-														 	 .append($("<div>").attr("class", "pictureBackground")
-														 			 .text("상세보기"))))
-											 	 		.append("<hr>")
-														.append($("<div>")
-													  		.attr("class","listKeywordContainer")
-													  		.attr("my-no", i))
-													  		.appendTo("#containerList"));
+					$($("<div>").attr("class", "list").append($("<div>")
+																.attr("class", "listInfo")
+																.append($("<div>")
+																.attr("class", "listTitle")
+																.text("준코"))
+											 .append($("<a>")
+											 	.attr("href", "#")
+											 	.append($("<img>")
+												.attr("src", "test.jpg"))
+											 .append($("<div>")
+												.attr("class", "pictureBackground")
+											    .text("상세보기"))))
+											 .append("<hr>")
+											 .append($("<div>")
+												.attr("class","listKeywordContainer")
+												.attr("my-no", i))
+							.appendTo("#containerList"));
 				}
 				
 				$(".list").click(function(){
 					var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
 					var listWidth = ($(".list").css("width")).split("px").splice(0, 1) - 0;
 					var marginWidth = ($(".list").css("margin-left")).split("px").splice(0, 1) - 0;
-					var widthNo = parseInt(presentWidth/(listWidth + marginWidth));
-										
-					console.log("presentWidth==>" + presentWidth);
-					console.log("listWidth==>" + listWidth);
-					console.log("marginWidth==>" + marginWidth);
-					console.log("===>" + parseInt(presentWidth/(listWidth + marginWidth)));
-					console.log($("#containerList").children()[widthNo]);
+					var widthCount = parseInt(presentWidth/(listWidth + marginWidth));  //한 줄에 몇개 있는지
+					var childNo = $(".list").index(this);                               //지금 선택된 요소가 몇번째 자식인지
+					var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
+					var lastNo = $(".list").index($(".list:last-child"));
 					
+					//lastNo가 존재하지 않을 경우
+  					if((lastNo > (whichNo - widthCount)) && (lastNo < whichNo) ){
+							whichNo = lastNo + 1;
+					}  
 					
-					$($("#containerList").children()[widthNo]).after(
+					//console.log("presentWidth==>" + presentWidth);
+					//console.log("listWidth==>" + listWidth);
+					//console.log("marginWidth==>" + marginWidth);
+					//console.log("===>" + parseInt(presentWidth/(listWidth + marginWidth)));
+					//console.log($("#containerList").children()[whichNo]);
+					//console.log("몇번째?==>" +  $(".list").index(this) );
+					//console.log("마지막==>" +  $(".list").index($(".list:last-child")));
+					//console.log(Math.ceil( (childNo + 1) / whichNo) );
+					//console.log("whichNo==>" + whichNo);
+					
+					$($("#containerList").children()[whichNo]).after(
 							$("<div>").attr("id", "detailList")
 									.css("width", "100%")
 									  .css("height", "500px")
