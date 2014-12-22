@@ -2,23 +2,43 @@
 
 	 $(document).ready(
 			function() {
-				var count = 13;
+				var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
+				var widthPercent = "20%"; 
+				var count = 13;  //list출력개수 현재는 임의로 지정
+				
+/* 				if(presentWidth > 1070) {
+					widthPercent = ( 100 / 5 ) + "%";
+				}else if(presentWidth <= 1070 ){
+					widthPercent = ( 100 / 4 ) + "%";
+				}else if( presentWidth <= 800){
+					widthPercent = ( 100 / 3 ) + "%";
+				}else if( presentWidth <= 540){
+					widthPercent = ( 100 /2 ) + "%";
+				}else{
+					widthPercent = ( 100 / 1 ) + "%";
+				} */
+				
+				console.log("presentWidth==>" + presentWidth);
+				console.log(widthPercent);
+
 				for (var i = 0; i < count; i++) {
-					$($("<div>").attr("class", "list").append(
-							$("<div>").attr("class", "listInfo")
-							/* .attr("id", "id"+i) */
-										.append($("<div>").attr("class", "listTitle").text("준코"))
-											  .append($("<a>")
-													  .attr("href", "#")
-											 	 	   .append($("<img>")
-														 	 .attr("src", "test.jpg"))
-														 	 .append($("<div>").attr("class", "pictureBackground")
-														 			 .text("상세보기"))))
-											 	 		.append("<hr>")
-														.append($("<div>")
-													  		.attr("class","listKeywordContainer")
-													  		.attr("my-no", i))
-													  		.appendTo("#containerList"));
+					$($("<div>").attr("class", "list").append($("<div>")
+																.attr("class", "listInfo")
+																.append($("<div>")
+																.attr("class", "listTitle")
+																.text("준코"))
+											 .append($("<a>")
+											 	.attr("href", "#")
+											 	.append($("<img>")
+												.attr("src", "test.jpg"))
+											 .append($("<div>")
+												.attr("class", "pictureBackground")
+											    .text("상세보기"))))
+											 .append("<hr>")
+											 .append($("<div>")
+												.attr("class","listKeywordContainer")
+												.attr("my-no", i))
+							.appendTo("#containerList"));
 				}
 				
 				$(".list").click(function(){
@@ -33,16 +53,15 @@
 					//whichNo가 존재하지 않는 인덱스라면(즉 마지막에 whichNo가 더 크다면 lastNo보다)? => 마지막 인덱스 다음에 division을 붙여야 한다. 
 					//whichNo = (lastNo < whichNo)? lastNo : whichNo;
 					
-					console.log("presentWidth==>" + presentWidth);
-					console.log("listWidth==>" + listWidth);
-					console.log("marginWidth==>" + marginWidth);
-					console.log("===>" + parseInt(presentWidth/(listWidth + marginWidth)));
-					console.log($("#containerList").children()[whichNo]);
-					console.log("몇번째?==>" +  $(".list").index(this) );
-					console.log("마지막==>" +  $(".list").index($(".list:last-child")));
-					console.log(Math.ceil( (childNo + 1) / whichNo) );
-					
-					console.log("whichNo==>" + whichNo);
+					//console.log("presentWidth==>" + presentWidth);
+					//console.log("listWidth==>" + listWidth);
+					//console.log("marginWidth==>" + marginWidth);
+					//console.log("===>" + parseInt(presentWidth/(listWidth + marginWidth)));
+					//console.log($("#containerList").children()[whichNo]);
+					//console.log("몇번째?==>" +  $(".list").index(this) );
+					//console.log("마지막==>" +  $(".list").index($(".list:last-child")));
+					//console.log(Math.ceil( (childNo + 1) / whichNo) );
+					//console.log("whichNo==>" + whichNo);
 					
 					$($("#containerList").children()[whichNo]).after(
 							$("<div>").attr("id", "detailList")
