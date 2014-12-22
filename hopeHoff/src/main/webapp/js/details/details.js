@@ -127,11 +127,11 @@
 		$('#plus').click(function(event) {
 		
 		  
-/*		  $("#dataForm:nth-child(2)")
+  $("#dataForm:nth-child(2)")
 		  		.append($('<tr id=tRow3>'))
 		 		.appendTo($('#dataForm')); 
   		  $('<td class=tableDataName>').html("붸연정***").appendTo($('#tRow3'));
 		  $('<td class=tableDataComments>').html("후기당ㅇㅇㅇ").appendTo($('#tRow3'));
-		  $('<td class=tableDataTime>').html("2014-12-18").appendTo($('#tRow3')); */
+		  $('<td class=tableDataTime>').html("2014-12-18").appendTo($('#tRow3'));
 	
 		}); 
