@@ -1,3 +1,12 @@
+/* 폰트 속성입니다. */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
 @CHARSET "UTF-8";
 
 @media all and (min-width:421px) {
@@ -60,6 +69,37 @@
 		width: 530px;
 		height: 200px;
 	}
+	/* ************V tabsBar************** */
+	#tabsBar {
+		height: 50px;
+		width: 530px;
+		/*  border:1px solid red; */
+		padding: 5px 10px;
+		margin: 0 auto;
+	}
+	#tabsBarText {
+		position: absolute;
+		margin-top: 1px;
+		z-index: 2;
+	}
+	#tabsBarText>div {
+		display: inline-block;
+		width: 165px;
+		font-size: 16px;
+	}
+	#tabsBarButton {
+		position: absolute;
+		margin-top: 15px;
+		z-index: 1;
+	}
+	#tabsBarButton>div {
+		display: inline-block;
+		border: 2px solid black;
+		height: 15px;
+		background-color: white;
+		width: 170px;
+	}
+
 	/* ************V tabsBar************** */
 	#tabsBar {
 		height: 50px;
@@ -192,4 +232,5 @@
 		float: left;
 
 	}
+}
 }
