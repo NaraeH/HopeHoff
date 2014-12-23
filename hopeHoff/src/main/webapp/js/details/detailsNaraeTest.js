@@ -47,11 +47,11 @@
 				$('#commentButton').css('background-color', 'black');
 			});
 
-			$(".box-rotate-left").click(function() {
+			$("#menuToLeft").click(function() {
 				$("#menuList").NaraeWidthSilde("left");
 			});
 
-			$(".box-rotate-right").click(function() {
+			$("#menuToRight").click(function() {
 				$("#menuList").NaraeWidthSilde("right");
 			});
 

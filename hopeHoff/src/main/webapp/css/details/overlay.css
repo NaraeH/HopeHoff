@@ -1,12 +1,11 @@
 @CHARSET "UTF-8";
 
 body {
-	background: #e7e7e7;
 }
 
 .box {
-	width: 150px;
-	height: 150px;
+	width: 190px;
+	height: 190px;
 	box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, .20);
 	margin: 5px auto 0 auto;
 	background-size: cover; 
@@ -17,13 +16,17 @@ body {
 #overlay {
 	background: rgba(0, 0, 0, .20); 
 	text-align : center;
-	padding: 30px 0 66px 0;
-	height:140px;
-	width:150px;
+	height:200px;
+	width:200px;
 	opacity: 0;
 	-webkit-transition: opacity .25s ease;
 	-moz-transition: opacity .25s ease;
-	text-align: center;
+	
+	/*-- text가운데 정렬 때 쓰는 것-- */
+	vertical-align: middle;
+	align-items: center;
+	display: table-cell;
+	/*-- -------------------- */
 }
 
 .box:hover #overlay {
@@ -43,33 +46,4 @@ body {
 	font-weight: 900;
 	color: rgba(255, 255, 255, .85);
 	font-size: 15px;
-}
-
-#menuList {
-	/* width: 520px; */
-	height: 160px;
-	margin: 0 auto;
-	overflow: hidden;
-	margin-top: 20px;
-}
-
-#menuList ul {
-	list-style-type: none;
-	padding-left: 0px;
-	display: inline-block;
-	overflow: hidden;
-	height: 170px;
-}
-
-#menuList li {
-	display: inline-block;
-	padding: 0px 10px 0px 10px;
-	height:170px;
-	width: 170px;
-}
-
-#menuList li img {
-	border:1px solid gray;
-	width: 140px;
-	height: 170px;
 }
