@@ -47,11 +47,13 @@
 				$('#commentButton').css('background-color', '#FFCD28');
 			});
 
-			$("#menuToLeft").click(function() {
+			$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
+				event.stopPropagation();
 				$("#menuList").NaraeWidthSilde("left");
 			});
 
-			$("#menuToRight").click(function() {
+			$("#menuToRight, #menuList>.rightWrap").click(function() {
+				event.stopPropagation();
 				$("#menuList").NaraeWidthSilde("right");
 			});
 

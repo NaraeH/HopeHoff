@@ -10,6 +10,14 @@
 @CHARSET "UTF-8";
 
 @media all and (min-width:421px) {
+	
+	/* 나중에 삭제하자 */
+	body{
+		background-color: black;
+		color:white;
+	}
+	/* ---------- */
+	
 	#detailsBody {
 		width: 1180px;
 		height: 445px;
@@ -114,15 +122,6 @@
 		font-weight: bold;
 	}
 
-/* 	.Info {
-		display: inline;
-		text-align: left;
-	} */
-/* 	#reservation {
-		margin: 10px;
-		text-align: right;
-	} */
-
 	/* *************V tabs********** */
 	#tabs {
 		width: 100%;
@@ -186,11 +185,61 @@
 		overflow: hidden;
 	}
 	
+	/*--------- 여기 나중에 추가해야되!!!!!! ----------------*/
+	.leftWrap, .rightWrap {
+		width: 8%;
+		height: inherit;
+		position: relative;
+		display: inline-block;
+		z-indx : 5px;
+		z-index: 3;
+		
+		/* border: 1px solid red; */
+	}
+	
+	.leftWrap{
+		float: left;
+		cursor: pointer;
+	}
+	
+	.rightWrap{
+		float: right;
+		cursor: pointer;
+	}
+	
+	.leftWrap:hover{
+	    background: -webkit-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	    background: -moz-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	    background: -o-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	    background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(51, 50, 49, 0.8)), to(rgba(255,255,255,0)));
+	    background: linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	}
+	
+	.rightWrap:hover {
+		background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(51, 50, 49, 0.8)));
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));	}
+	
+	#menuToLeft {
+		margin-top: 90px;
+		margin-left: 5px;
+	}
+
+	#menuToRight {
+		margin-top: 90px;
+		margin-left: 27px;
+	}	
+	
+	/* 여기 까지 */
+	
 	#menuList ul {
 /* 		height: 210px;
 		margin-bottom: 0px; */
 		
-		margin-top: -105px;
+		/*margin-top도 고쳤담!  */
+		margin-top: -203px;
 		height: 210px;
 		list-style-type: none;
 		padding: 0px;
@@ -224,9 +273,10 @@
 		margin-left: 3px;
 		
 	}
-	#menuList .box-rotate-right {
+	/* 여기부분 주석달기 */
+/* 	#menuList .box-rotate-right {
 		margin-left: 650px;
-	}
+	} */
 	#bestMenu1{
 	    background-image: url('../../img/details/chiken.jpg');
 	}
