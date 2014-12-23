@@ -47,12 +47,12 @@
 				$('#commentButton').css('background-color', 'black');
 			});
 
-			$("#btnToLeft").hover(function() {
-				myWidthSilde("#menuList", 170, 1000);
+			$("#menuToLeft").click(function() {
+				$("#menuList").NaraeWidthSilde("left");
 			});
 
-			$("#btnToRight").hover(function() {
-				myWidthSilde("#myShopList", -275, 1000);
+			$("#menuToRight").click(function() {
+				$("#menuList").NaraeWidthSilde("right");
 			});
 
 		});
