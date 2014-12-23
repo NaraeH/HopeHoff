@@ -56,22 +56,11 @@
 	
 	/* 전체 배경적용 */
 	#wrap{
-	background-size : cover;
-		
+		background-image :url("../../img/login/back01.jpg");
+		background-size : cover;
+		padding: 35px;
 	}
 	
-	#background {
-	position: absolute;
-	width: 100%;
-	height : 630px;
-	opacity:0.8;
-	z-index: -1;
-	}
-	
-	#loginBox {
-	padding : 35px;
-	width: 100%;
-	}
 	
 	/* HopeHoff 오늘의말씀 속성적용 */
 	#containerHeader {
@@ -90,8 +79,6 @@
 		font-weight: bolder;
 		text-shadow: 5px 5px 5px gray;
 	}
-	
-	/* 아래 추천 hopeHoff 묵인것 */
 	#box{
 	width : 760px;
 	height : 100%;
@@ -305,8 +292,6 @@
 		color : #fd9e04;
 		padding: 25px;
 		text-align: center;
-		clear : both;
-		width: 100%;
 	}
 	
 
