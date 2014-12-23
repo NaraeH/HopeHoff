@@ -41,12 +41,12 @@
 					
 					
 					//클랙했을시 뒷부분 가려지는 부분
-  					$("<div>").css("width", "100%")
+  					/* $("<div>").css("width", "100%")
 							  .css("height", "800px")
 							  .css("background", "rgba(0, 0, 0, 0.8)")
 							  .css("z-index", "z-index: 3")
 							  .attr("id", "containerBack")
-							  .appendTo("#header");  
+							  .appendTo("#header");  */ 
 					
 					//클릭했을 때 상세정보(detail) 보이는부분
 					$($("#containerList").children()[whichNo]).after(
@@ -56,10 +56,10 @@
 									  .css("background", "black")
 									  .css("margin-top", "15px")
 									  .css("display", "none")
-									  .css("z-index", "3")
+									  .css("z-index", "5")
 					);
 					
-					$("#detailList").load("../details/detailsNaraeTest.html");
+					$("#detailList").load("../details/details.html");
 
 					//detail부분 아래로 내려오는 효과
 					$( "#detailList" ).slideDown( 1000, function() {
