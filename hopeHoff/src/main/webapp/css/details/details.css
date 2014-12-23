@@ -10,53 +10,127 @@
 @CHARSET "UTF-8";
 
 @media all and (min-width:421px) {
-	body {
-		width: 1180px;
-		height: 340px;
-		border: 2px solid #FFCD28;
-		
+	#detailsBody {
+		width: 100%;
+		height: 100%;
+		border: 4px solid #FFCD28;
 	}
-	.modal-header {
+	
+	/*------------------header-------------------*/
+	#detailHeader {
+		height: 45px;
 		background-color: #FFCD28;
 	}
-	#carousel-example-generic {
+	
+	#headerTitle {
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 10px 10px 25px;
+	}
+	
+	#btnClose{
+		background: #FFCD28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin: 10px;
+	}
+	
+	/*-------------------container-------------------*/
+	#detailContainer {
+		width: 97%;
+		height: 87%;
+		padding: 15px;
+		
+		/* border: 1px solid red; */
+	}
+	
+	#pubPhotoListWrap{
+		width: 35%;
+		height: 340px; /* 100%; */ 
+		display: inline-block;
+		
+		border: 1px dashed red; 
+	}
+	
+	#pubPhotoList {
+		overflow: hidden;
+	}
+	
+ 	.widthList ul{
+		width: 1211px;
+		padding: 0px !important;
+		margin: 0px !important;
+	}
+	
+	.widthList li{
+		padding: 0px !important;
+		margin: 0px !important;
+	}
+	
+	#pubPhotoListWrap img {
+		width: 400px;
+		height:340px;
+	}
+
+/* 	#carousel-example-generic {
 		width: 30%;
 		height: 230px;
 		float: left;
-	/* 	margin-right: 5px; */
 	}
 	#carousel-example-generic span {
 		margin-top: 111px;
+	} */
+	
+	#rightContainer{                         /* 오른쪽꺼 */
+		display: inline-block;
+		width: 64%;
+		height: 95%;
+		float: right;
+		border: 1px dashed blue;
 	}
-	.Info {
+	
+	#hoffInfo {
+		width: 98%;
+		height: 85px;
+		margin: 1%;
+		display: inline-block;
+		font-size: small;
+		color: #FFCD28;
+		border: 1px solid #FFCD28;
+	}
+	
+	#hoffInfo>p {
+		display:inline-block;
+		margin: 0px;
+	}
+	#hoffInfo>p:first-child {
+		font-size:large;
+		font-weight: bold;
+	}
+
+/* 	.Info {
 		display: inline;
 		text-align: left;
-	}
-	#hoffInfo {
-		padding: 5px;
-		width: 20%;
-		height: 230px;
-		border: 1px solid #FFCD28;
-		float: left;
-	}
-	#reservation {
-	/* 	margin: 10px; */
+	} */
+/* 	#reservation {
+		margin: 10px;
 		text-align: right;
-	}
+	} */
 
 	/* *************V tabs********** */
 	#tabs {
-		width: 50%;
+		width: 100%;
 		height: 230px;
-		border: 2px solid black;
-		/* margin-left: 5px; */
-		float: right;
-		/* clear: both; */
+		display: inline-block;
 	}
 	#tabsContent {
+		width:98%;
 		height: 90%;
-	    margin: 10px;
-		border: 3px dotted olive;
+	    margin: 1%;
+		border: 3px dotted #FFCD28;
+		display: inline-block;
 		
 	}
 	#contentMenu, #contentMap, #contentComments {
@@ -72,65 +146,131 @@
 	}
 	/* ************V tabsBar************** */
 	#tabsBar {
+		width: 100%;
 		height: 50px;
-		width: 530px;
 		padding: 5px 10px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		clear: both;
 	}
 	#tabsBarText {
-		position: absolute;
+		width: 100%;
+		position: relative;
 	   /* 	z-index: 2; */
 	}
 	#tabsBarText>div {
 		display: inline-block;
-		width: 165px;
-		font-size: 16px;
-		margin-left:3px;
+		width: 30%;
+		font-size: 15px;
+		margin-left:4px;
 	}
 	#tabsBarButton {
-		position: absolute;
-		margin-top: 15px;
+		position: relative;
+		margin-top: -3px;
 		z-index: 1;
 	}
 	#tabsBarButton>div {
 		display: inline-block;
-		border: 2px solid black;
+		width: 30%;
 		height: 15px;
+		margin-left:3px;
+		border: 1px solid black;
 		background-color: white;
-		width: 170px;
 	}
 
 	/* *********V menuList************* */
 	#menuList {
-		/* width: 520px; */
-		height: 150px;
+		width: 707px;
+		height: 205px;
 		margin: 0 auto;
 		overflow: hidden;
-		margin-top: 20px;
 	}
+	
+	.leftWrap, .rightWrap {
+		width: 8%;
+		height: inherit;
+		position: relative;
+		display: inline-block;
+		z-indx : 5px;
+		z-index: 3;
+		
+		/* border: 1px solid red; */
+	}
+	
+	.leftWrap{
+		float: left;
+		cursor: pointer;
+	}
+	
+	.rightWrap{
+		float: right;
+		cursor: pointer;
+	}
+	
+	.leftWrap:hover{
+	    background: -webkit-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	    background: -moz-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	    background: -o-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	    background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(51, 50, 49, 0.8)), to(rgba(255,255,255,0)));
+	    background: linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
+	}
+	
+	.rightWrap:hover {
+		background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(51, 50, 49, 0.8)));
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
+	}
+	
+	#menuToLeft {
+		margin-top: 90px;
+		margin-left: 5px;
+	}
+
+	#menuToRight {
+		margin-top: 90px;
+		margin-left: 27px;
+	}
+	
 	#menuList ul {
+/* 		height: 210px;
+		margin-bottom: 0px; */
+		
+		margin-top: -203px;
+		height: 210px;
 		list-style-type: none;
-		margin-top: -100px !important;
+		padding: 0px;
 		display: inline-block;
 		overflow: hidden;
-		height: inherit;
 	}
+	
 	#menuList li {
-		display: inline;
-		padding: 0px 10px;
+		display: inline-block;
+		padding:0px 10px;
+		height:170px;
+		width: 170px;
 	}
+	
+	#menuList ul li {
+		width:210px;
+		height:210px;
+		
+		/* border: 1px solid red; */
+	}
+	
 	#menuList li img {
-		width: 150px;
-		height: 150px;
+		border:1px solid gray;
+		width: 140px;
+		height: 170px;
 	}
+	
 	#menuList>span {
 		border-bottom: 20px solid black;
-		margin-top: 75px;
+		margin-top: 85px;
+		margin-left: 3px;
+		
 	}
-	#menuList .box-rotate-right {
-		margin-left: 475px;
-	}
+
 	#bestMenu1{
 	    background-image: url('../../img/details/chiken.jpg');
 	}
@@ -144,64 +284,11 @@
 	    background-image: url('../../img/details/odang.jpg');
 	}
 	
-	#btnToLeft {
-		position: absolute;
-		margin-top: -100px;
+	#menuButton , #mapButton, #commentButton {
+		cursor:pointer;
 	}
-	#tableForm {
-		padding: 20px 50px;
-		margin: 20px;
-		border: 1px solid #ff005b;
-	}
-	/*------------V----나래언니가만든함수인듯------*/
-	.box-rotate-right {
-		width: 0px;
-		height: 0px;
-		border-right: 20px solid transparent;
-		border-bottom: 20px solid white;
-		transform: rotate(225deg);
-		-ms-transform: rotate(225deg); /* IE 9 */
-		-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
-		-moz-transform: rotate(225deg);
-		-o-transform: rotate(225deg);
-		display: inline-block;
-	}
-	.box-rotate-right:hover {
-		width: 0px;
-		height: 0px;
-		border-right: 20px solid transparent;
-		border-bottom: 20px solid #3e3e27;
-		transform: rotate(225deg);
-		-ms-transform: rotate(225deg); /* IE 9 */
-		-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
-		-moz-transform: rotate(225deg);
-		-o-transform: rotate(225deg);
-		display: inline-block;
-	}
-	.box-rotate-left {
-		width: 0px;
-		height: 0px;
-		border-right: 20px solid transparent;
-		border-bottom: 20px solid white;
-		transform: rotate(45deg);
-		-ms-transform: rotate(45deg); /* IE 9 */
-		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-		-moz-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		display: inline-block;
-	}
-	.box-rotate-left:hover {
-		width: 0px;
-		height: 0px;
-		border-right: 20px solid transparent;
-		border-bottom: 20px solid #3e3e27;
-		transform: rotate(45deg);
-		-ms-transform: rotate(45deg); /* IE 9 */
-		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-		-moz-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		display: inline-block;
-	}
+
+
 }
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){

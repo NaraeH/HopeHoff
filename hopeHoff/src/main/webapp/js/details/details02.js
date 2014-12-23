@@ -46,15 +46,13 @@
 				$('#commentText').css('color', 'black');
 				$('#commentButton').css('background-color', 'black');
 			});
-			
-			$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
-				event.stopPropagation();
-				$("#menuList").NaraeWidthSilde("left");
+
+			$("#btnToLeft").hover(function() {
+				myWidthSilde("#menuList", 170, 1000);
 			});
 
-			$("#menuToRight, #menuList>.rightWrap").click(function() {
-				event.stopPropagation();
-				$("#menuList").NaraeWidthSilde("right");
+			$("#btnToRight").hover(function() {
+				myWidthSilde("#myShopList", -275, 1000);
 			});
 
 		});
