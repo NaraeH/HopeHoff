@@ -17,7 +17,7 @@ body {
 }
 
 #tableForm {
-	padding: 30px 15px;
+	padding:0px;
 	width: 500px;
 	margin-top : 10px;
 	border: 2px solid black;
@@ -38,8 +38,8 @@ body {
 	
 }
 
-#buttonLine{
-	text-align: right;
+#pagingBar{
+	text-align: center;
 	margin-right:30px;
 }
 
@@ -52,7 +52,7 @@ body {
 
 #myWriteFooter {
 	padding: 10px 5px;
-	margin-top : 20px;
+	margin-left:10px;
 	width: 500px;
 }
 
