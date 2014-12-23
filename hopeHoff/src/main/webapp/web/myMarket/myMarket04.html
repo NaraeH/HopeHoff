@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>myMarketttt</title>
+<link rel="stylesheet" type="text/css" href="../../css/details/details.css">
+<link rel="stylesheet" type="text/css" href="../../css/details/overlay.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
+
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/common/common.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div id="myModal">
+
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">
+				<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+			</button>
+			<h4 class="modal-title" id="myModalLabel">내가게</h4>
+		</div>
+
+		<div class="modal-body">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="../../img/details/Wara-Wara01.jpg" alt="Generic placeholder image">
+						<div class="carousel-caption">와라와라(강남점) (1/3)</div>
+					</div>
+
+					<div class="item">
+						<img src="../../img/details/Wara-Wara02.jpg" alt="Generic placeholder image">
+						<div class="carousel-caption">와라와라(강남점) (2/3)</div>
+					</div>
+
+					<div class="item">
+						<img src="../../img/details/Wara-Wara03.jpg" alt="Generic placeholder image">
+						<div class="carousel-caption">와라와라(강남점) (3/3)</div>
+					</div>
+
+				</div><!-- end of the Wrapper for slides -->
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic"
+					role="button" data-slide="prev"> 
+				<span class="box-rotate-left"></span>			
+				</a> 
+				<a class="right carousel-control" href="#carousel-example-generic" 
+					role="button" data-slide="next">
+				<span class="box-rotate-right"></span>
+				</a>
+			</div>
+			
+		<div id="myMarketSelect">
+			<form action="#">
+			  <fieldset>
+			    <label for="speed">내 가게 보기</label>
+			    <select name="speed" id="speed">
+			      <option selected="selected">와라와라(강남)</option>
+			      <option>와라와라(양재)</option>
+			      <option>와라와라(논현)</option>
+			      <option>와라와라(신논현)</option>
+			      <option>와라와라(서현)</option>
+			    </select>
+			   </fieldset>
+			</form>
+		</div>
+		
+			<div id="myMarketInfo">
+				<h3 >와라와라 강남점</h3>
+				<div>
+    				<div class="Info">운영시간 : </div> <div class="Info"><input type="text" placeholder="12:00~04:00"></div><br>
+    				<div class="Info">전화번호 : </div> <div class="Info"><input type="text" placeholder="02-444-4444"></div><br>
+				</div>
+    				<div>주 소 : </div> 
+    					<input class="myMarketInfoData" type="text"  placeholder="서울시 강남구 역삼동">
+    				<div>소 개 : </div> 
+    					<input class="myMarketInfoData" type="text"  placeholder="짱짱짱맨">
+    				<div style="text-align: right;padding-right:10px; ">
+						<button id="btnMod" type="button" class="btn btn-primary btn-sm">수정하기</button>
+    				</div>
+			</div>
+
+
+			<div id="tabs">
+				<div id="tabsContent">
+			        
+			      <div id="menuImages" >
+					<ul id="carousel" class="elastislide-list">
+						<li class=manuImage >
+							<div  id="box">
+							  <div id="overlay">
+							  	<input class="overMenu" style="width: 100px;" type="text" placeholder="메뉴"><br>
+							    <input style="width: 100px;" type="text" placeholder="가격">
+							  </div>
+							</div>
+						</li>
+						<li class=manuImage >
+							<div id="box">
+							  <div id="overlay">
+							  	<input type="text" placeholder="메뉴"><br>
+							    <input type="text" placeholder="가격">
+							  </div>
+							</div>
+						</li>
+						<li class=manuImage >
+						<div id="box">
+							  <div id="overlay">
+							  	<input  type="text" placeholder="메뉴"><br>
+							    <input  type="text" placeholder="가격">
+							  </div>
+							</div>
+						</li>
+						<li class=manuImage>
+						<div id="box">
+							  <div id="overlay">
+							  	<input  type="text" placeholder="메뉴"><br>
+							    <input type="text" placeholder="가격">
+							  </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+								   
+				
+							
+					<div id="contentComments">
+						<table id="dataForm" class="table table-hover"></table>
+					</div>
+				</div>	<!-- tabsContent -->
+
+				<div id="tabsBar">
+					<div id="tabsBarText">
+						<div id='menuText' class="menu">Menu</div>
+						<div id='mapText' class="map">Map</div>
+						<div id='commentText' class="comment">Comment</div>
+					</div>
+					<div id="tabsBarButton">
+						<div id='menuButton' class="menu"></div>
+						<div id='mapButton' class="map"></div>
+						<div id='commentButton' class="comment"></div>
+					</div>
+				</div>
+			</div>	<!-- tabs 꺼야 -->
+		</div>	<!--body꿑 -->
+
+		<div class="modal-footer">	</div>
+
+
+	</div>	<!-- myModal -->
+
+	<script src='../../js/myMarket/myMarket04.js'></script>
+
+</body>
+</html>

@@ -11,9 +11,9 @@
 
 @media all and (min-width:421px) {
 	#detailsBody {
-		width: 1180px;
-		height: 445px;
-		border: 2px solid #FFCD28;
+		width: 100%;
+		height: 100%;
+		border: 4px solid #FFCD28;
 	}
 	
 	/*------------------header-------------------*/
@@ -29,7 +29,7 @@
 	}
 	
 	#btnClose{
-		background: #ffcd28;
+		background: #FFCD28;
 		border: #FFCD28;
 		font-size: x-large;
 		cursor: pointer;
@@ -40,7 +40,7 @@
 	/*-------------------container-------------------*/
 	#detailContainer {
 		width: 97%;
-		height: 365px;
+		height: 87%;
 		padding: 15px;
 		
 		/* border: 1px solid red; */
@@ -48,11 +48,10 @@
 	
 	#pubPhotoListWrap{
 		width: 35%;
-		height:340px;
+		height: 340px; /* 100%; */ 
 		display: inline-block;
-		margin-top: 12px;
 		
-		border: 1px solid green; 
+		border: 1px dashed red; 
 	}
 	
 	#pubPhotoList {
@@ -84,25 +83,22 @@
 		margin-top: 111px;
 	} */
 	
-	#rightContainer{
+	#rightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
 		width: 64%;
-		height: 365px;
+		height: 95%;
 		float: right;
-		
-		/* border: 1px solid blue; */
+		border: 1px dashed blue;
 	}
 	
 	#hoffInfo {
-		width: 95%;
+		width: 98%;
 		height: 85px;
-		padding: 10px;
-		margin: 10px;
+		margin: 1%;
 		display: inline-block;
-		margin-top: 10px;
 		font-size: small;
-		
-		/* border: 1px solid #FFCD28; */
+		color: #FFCD28;
+		border: 1px solid #FFCD28;
 	}
 	
 	#hoffInfo>p {
@@ -130,8 +126,9 @@
 		display: inline-block;
 	}
 	#tabsContent {
+		width:98%;
 		height: 90%;
-	    margin: 10px;
+	    margin: 1%;
 		border: 3px dotted #FFCD28;
 		display: inline-block;
 		
@@ -149,33 +146,35 @@
 	}
 	/* ************V tabsBar************** */
 	#tabsBar {
+		width: 100%;
 		height: 50px;
-		width: 530px;
 		padding: 5px 10px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		clear: both;
 	}
 	#tabsBarText {
-		position: absolute;
+		width: 100%;
+		position: relative;
 	   /* 	z-index: 2; */
 	}
 	#tabsBarText>div {
 		display: inline-block;
-		width: 165px;
-		font-size: 16px;
-		margin-left:3px;
+		width: 30%;
+		font-size: 15px;
+		margin-left:4px;
 	}
 	#tabsBarButton {
-		position: absolute;
-		margin-top: 15px;
+		position: relative;
+		margin-top: -3px;
 		z-index: 1;
 	}
 	#tabsBarButton>div {
 		display: inline-block;
-		border: 2px solid black;
+		width: 30%;
 		height: 15px;
+		margin-left:3px;
+		border: 1px solid black;
 		background-color: white;
-		width: 170px;
 	}
 
 	/* *********V menuList************* */
@@ -244,7 +243,7 @@
 		cursor:pointer;
 	}
 
-	
+
 }
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
