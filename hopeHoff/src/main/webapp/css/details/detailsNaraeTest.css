@@ -1,0 +1,200 @@
+/* 폰트 속성입니다. */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+@CHARSET "UTF-8";
+
+@media all and (min-width:421px) {
+	body {
+		width: 1180px;
+		height: 340px;
+		border: 2px solid #FFCD28;
+		
+	}
+	.modal-header {
+		background-color: #FFCD28;
+	}
+	#carousel-example-generic {
+		width: 30%;
+		height: 230px;
+		float: left;
+	/* 	margin-right: 5px; */
+	}
+	#carousel-example-generic span {
+		margin-top: 111px;
+	}
+	.Info {
+		display: inline;
+		text-align: left;
+	}
+	#hoffInfo {
+		padding: 5px;
+		width: 20%;
+		height: 230px;
+		border: 1px solid #FFCD28;
+		float: left;
+	}
+	#reservation {
+	/* 	margin: 10px; */
+		text-align: right;
+	}
+
+	/* *************V tabs********** */
+	#tabs {
+		width: 50%;
+		height: 230px;
+		border: 2px solid black;
+		/* margin-left: 5px; */
+		float: right;
+		/* clear: both; */
+	}
+	#tabsContent {
+		height: 90%;
+		margin: 10px;
+		border: 3px dotted olive;
+		
+	}
+	#contentMenu, #contentMap, #contentComments {
+		width: 530px;
+		height: 200px;
+
+	}
+
+	/* ************V tabsBar************** */
+	#tabsBar {
+		height: 50px;
+		width: 530px;
+		padding: 5px 10px;
+		margin: 0 auto;
+		clear: both;
+	}
+	#tabsBarText {
+		position: absolute;
+		z-index: 2;
+	}
+	#tabsBarText>div {
+		display: inline-block;
+		width: 165px;
+		font-size: 16px;
+	}
+	#tabsBarButton {
+		position: absolute;
+		margin-top: 15px;
+		z-index: 1;
+	}
+	#tabsBarButton>div {
+		display: inline-block;
+		border: 2px solid black;
+		height: 15px;
+		background-color: white;
+		width: 170px;
+	}
+
+	/* *********V menuList************* */
+	#menuList {
+		/* width: 520px; */
+		height: 150px;
+		margin: 0 auto;
+		overflow: hidden;
+		margin-top: 20px;
+	}
+	#menuList ul {
+		list-style-type: none;
+		margin-top: -100px !important;
+		display: inline-block;
+		overflow: hidden;
+		height: inherit;
+	}
+	#menuList li {
+		display: inline;
+		padding: 0px 10px 0px 10px;
+	}
+	#menuList li img {
+		width: 150px;
+		height: 150px;
+	}
+	#menuList>span {
+		border-bottom: 20px solid black;
+		margin-top: 75px;
+	}
+	#menuList .box-rotate-right {
+		margin-left: 475px;
+	}
+	#btnToLeft {
+		position: absolute;
+		margin-top: -100px;
+	}
+	#tableForm {
+		padding: 20px 50px;
+		margin: 20px;
+		border: 1px solid #ff005b;
+	}
+	/*------------V----나래언니가만든함수인듯------*/
+	.box-rotate-right {
+		width: 0px;
+		height: 0px;
+		border-right: 20px solid transparent;
+		border-bottom: 20px solid white;
+		transform: rotate(225deg);
+		-ms-transform: rotate(225deg); /* IE 9 */
+		-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
+		-moz-transform: rotate(225deg);
+		-o-transform: rotate(225deg);
+		display: inline-block;
+	}
+	.box-rotate-right:hover {
+		width: 0px;
+		height: 0px;
+		border-right: 20px solid transparent;
+		border-bottom: 20px solid #3e3e27;
+		transform: rotate(225deg);
+		-ms-transform: rotate(225deg); /* IE 9 */
+		-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
+		-moz-transform: rotate(225deg);
+		-o-transform: rotate(225deg);
+		display: inline-block;
+	}
+	.box-rotate-left {
+		width: 0px;
+		height: 0px;
+		border-right: 20px solid transparent;
+		border-bottom: 20px solid white;
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		display: inline-block;
+	}
+	.box-rotate-left:hover {
+		width: 0px;
+		height: 0px;
+		border-right: 20px solid transparent;
+		border-bottom: 20px solid #3e3e27;
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		display: inline-block;
+	}
+}
+/* 모바일 전용입니다. */
+@media all and (max-width:420px){
+	.modal-header {
+		background-color: #FFCD28;
+	}
+	
+	#carousel-example-generic {
+		width: 270px;
+		height: 150px;
+		float: left;
+
+	}
+
+}

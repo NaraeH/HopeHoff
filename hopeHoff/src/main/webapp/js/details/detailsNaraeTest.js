@@ -47,11 +47,14 @@
 				$('#commentButton').css('background-color', 'black');
 			});
 
-			$("#btnToLeft").hover(function() {
-				myWidthSilde("#menuList", 170, 1000);
+			$(".box-rotate-left").click(function() {
+				console.log("hihi");
+				//myWidthSilde("#menuList", 200, 800);
+				
+				$("#menuList").myWidthSildee(200, 800);
 			});
 
-			$("#btnToRight").hover(function() {
+			$(".box-rotate-right").click(function() {
 				myWidthSilde("#myShopList", -275, 1000);
 			});
 

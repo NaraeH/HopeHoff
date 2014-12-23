@@ -1,64 +1,73 @@
 @CHARSET "UTF-8";
 
-.tableIndex{
-	display:inline;
-}
-.warning{
-	display: inline;	
-}
-
-#tableForm{
-	padding:20px 50px;
-	margin: 20px;
- 	border:1px solid black;
- 	
+body {
+	width: 600px;
+	height: 680px;
+	border: 2px solid #FFCD28;
 }
 
-#myWriteTable{
+.tableIndex {
+	display: inline;
+}
+
+.warning {
+	display: inline;
+}
+
+#tableForm {
+	padding: 30px 15px;
+	width: 500px;
+	margin-top : 10px;
+	border: 2px solid black;
+}
+
+#myWriteTable {
 	background-color: white;
 	padding: 30px;
 	margin: 0px auto;
-	width: 700px;
-	border: 1px solid red;
+	width: 500px;
 }
 
-#myWrite{
+#myWrite {
+	background-color:#FFCD28;
 	padding: 10px;
-	margin: 20px auto;
-	width : 700px;
-	border:1px solid navy;
+	width: 500px;
+	border-radius:5px;
+	
 }
 
-#myWritedateForm{
-	padding :5px;
-	margin:10px 20px  ;
-	border: 1px solid green;
+#buttonLine{
+	text-align: right;
+	margin-right:30px;
+}
+
+#myWritedateForm {
+	padding: 5px;
+	margin-top : 10px;
+	width: 500px;
 	text-align: right;
 }
 
-#myWriteFooter{
-	padding : 10px 5px;
-	margin: 0px auto;
-	width: 700px;
-	border: 1px solid gray;
+#myWriteFooter {
+	padding: 10px 5px;
+	margin-top : 20px;
+	width: 500px;
 }
 
-#container{
-	margin: 0px auto;
-	padding:10px;
-	border:1px solid pink;
-	width:800px;
-	height:670px;
+#container {
+	padding: 30px;
+	border: 1px solid pink;
+	width: 600px;
+	height: 570px;
 }
 
-#warningCotent{
-	color:red;
+#warningCotent {
+	color: red;
 	font-size: 20px;
 }
 
-#footer{
-	width:auto;
-	color:blue;
+#footer {
+	width: auto;
+	color: blue;
 	text-align: center;
-	
 }
