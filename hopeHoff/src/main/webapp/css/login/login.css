@@ -20,43 +20,40 @@
 /* PC전용입니다. */
 @media all and (min-width:421px){ 
 	
-
-#header {
-	height: 135px;
-	background: #333231;
-	text-align: center;
-}
 	
-#headerMiddle {
-	width: 100%;
-	/* height: 130px; */
-	display: inline-block;
-	padding-left: 10px;
+	#header {
+		height: 135px;
+		background: #333231;
+		text-align: center;
+	}
+		
+	#headerMiddle {
+		width: 100%;
+		display: inline-block;
+		padding-left: 10px;
+	}
 	
-	/* 	border: 1px solid yellow; */
-}
-
-#headerMiddle a{
-	margin-top : 15px;
-	font-size: 75px;
-	font-family: 'Lobster', cursive;
-	color: #fd9e04;
-	text-align: center;
-	display: inline-block;
-}
-	
-#headerMiddle img{
-	margin-top : -60px;
-	width: 100px;
-	height:100px;
-	display: inline-block;
-}
-	
-	
-	
+	#headerMiddle a{
+		margin-top : 15px;
+		font-size: 75px;
+		font-family: 'Lobster', cursive;
+		color: #fd9e04;
+		display: inline-block;
+	}
+		
+	#headerMiddle img{
+		margin-top : -60px;
+		width: 100px;
+		height:100px;
+		display: inline-block;
+		margin-left: -50px;
+	}
 	
 	/* 전체 배경적용 */
 	
+	.modal{
+	padding-right: 0px !important;
+	}
 	
 	#wrap{
 		background-color : #fd9e04;
@@ -77,7 +74,7 @@
 		font-family: 'Nanum Gothic', sans-serif;
 		font-size: 12px;
 		padding: 5px ;
-		border: 10px double #C2722E;
+		border: 10px double #333231;
 		text-align: center;
 	}
 	
@@ -93,7 +90,7 @@
 		border-radius:20px;
 		width : 350px;
 		height : 360px;
-		border : 3px dashed #C2722E;
+		border : 3px dashed #333231;
 		margin : 15px;
 		float: left;
 		display: inline-block;
@@ -189,7 +186,6 @@
 	margin-left : 30px;
 	}
 	
-	
 	/* 오른쪽 회원가입창 HopeHoff */
 	#rightTop {
 	margin: 20px;
@@ -234,7 +230,7 @@
 	#right {
 		border-radius:20px;
 		padding: 35px;
-		border: 3px dashed #C2722E;
+		border: 3px dashed #333231;
 		width: 350px;
 		height : 360px;
 		display: inline-block;
@@ -263,8 +259,8 @@
 	}
 	
 	/* 오른쪽 회원가입창 input길이 속성적용*/
-	#inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
-	width: 300px;
+	#inputEmail3, #bDay, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	width: 250px;
 	}
 	
 	/* 오른쪽 회원가입창 틀 속성적용 */
@@ -276,9 +272,18 @@
 	/* 오른쪽 회원가입창 정렬 */
 	#yesno {
 	color : red;
-	font-size : small;
-	margin :  0px 0px 0px -80px;
+	font-size : medium;
+	font-weight : bolder;
 	text-align: center;
+	}
+	
+	#inNumber00, #inNumber02 {
+	margin-left: -20px;
+	}
+	
+	body.modal-open{
+	margin : 0px !important;
+	padding:0px !important;
 	}
 	
 	/* PC footer */
@@ -289,15 +294,34 @@
 		text-align: center;
 	}
 	
+
 	/* 모바일 전용 footer */ 
 	#footer01 {
 	display: none;
 	}
 	
+	/* 모바일 팝업 유효성 ID검사 */
+	#myModal104{
+	text-align: center;
+	}
+	
+	/* 모바일 팝업 유효성 ID검사 헤더 색상 */
+	#myModal104Header{
+	background-color: #FFCD28;
+	}
+	
+	/* 모바일 팝업 유효성 ID검사 버튼 가운데 정렬*/
+	#myModal104Footer{
+	text-align: center;
+	}
+	
+	
 }
 
 
 /*===========================================*/
+
+
 
 
 /* 모바일 전용입니다. */
@@ -316,7 +340,8 @@
 	
 	/* 전체화면 SaveID */
 	#saveId{
-	margin:-15px;
+	margin:-10px;
+	margin-left: -55px;
 	}
 	
 	/* 모바일 창 박스 속성적용 */
@@ -364,7 +389,7 @@
 	}
 	
 	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
-	#bNumber, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	#bNumber, #bDay, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
 	width: 170px;
 	}
 	
@@ -379,7 +404,7 @@
 	}
 	
 	/* 모바일 Sign-up 팝업창 정렬 속성적용 */
-	#bNumber, #inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
+	#bNumber, #bDay, #inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
 	margin-right: 53px;
 	}
 	
@@ -392,6 +417,10 @@
 	#choose01 {
 	margin-top: -10px;
 	text-align: center;
+	}
+	
+	/* 팝업 Sign-up ID 가운데정렬 맞추기 */
+	#popId{
 	}
 
 	/* Sign-up 팝업창 일반/사업자 체크리스트 가운데정렬 */
@@ -434,14 +463,29 @@
 	
 	#yesno {
 	color : red;
-	font-size : small;
+	font-size : medium;
+	font-weight : bolder;
 	margin-bottom : 10px;
 	text-align: center;
 	}
 	
-	#popId{
-	margin-left: -53px;
+	
+		/* 모바일 팝업 유효성 ID검사 */
+	#myModal104{
+	text-align: center;
 	}
+	
+	/* 모바일 팝업 유효성 ID검사 헤더 색상 */
+	#myModal104Header{
+	background-color: #FFCD28;
+	}
+	
+	/* 모바일 팝업 유효성 ID검사 버튼 가운데 정렬*/
+	#myModal104Footer{
+	text-align: center;
+	}
+	
+
 	
 	
 }
