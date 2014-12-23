@@ -52,20 +52,27 @@ $("#wrapDiv").NaraeWidthSilde(direction, [움직이고 싶은거리], [움직이
 */
 $.prototype.NaraeWidthSilde = function(direction, moveWidth, speed) {
 
-	var children = $(this).children()[2];                                         // 해당 division의 직속자식인 ul
-	var liWidth = Narae.removePx($(children).children().css("width"));            // li의 width
-	var moveWidth = (moveWidth == undefined) ? liWidth : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width
+	var myChildren = $(this).children()[2];                                         // 해당 division의 직속자식인 ul
+	var liWidth = Narae.removePx($(myChildren).children().css("width"));            // li의 width
+	var liPadding = Narae.removePx($(myChildren).children().css("padding-left")) +  Narae.removePx($(myChildren).children().css("padding-right"));
+	var liMargin = Narae.removePx($(myChildren).children().css("margin-left")) +  Narae.removePx($(myChildren).children().css("margin-right"))
+	var moveWidth = (moveWidth == undefined) ? (liWidth + liPadding + liMargin + 10) : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width , 10=> ul자체에 있는 마진 조정
 	var margin = Narae.removePx(($(($(this).children()[2])).css("margin-left"))); //현재 ul의 margin
 	var speed = (speed == undefined) ? 500 : speed;                               //움직이는 속도 (입력안되었을 경우 default=500)
-	var childrenCount = $($(this).children()[2]).children().size();               //ul의 총 자식수
-	var widthCount = Math.floor($(this).width() / liWidth);                       //$(this) 디비전에 들어가 있는 li(item)의 개수
+	var childrenCount = $(myChildren).children().size();                          //ul의 총 자식수
+	var widthCount = Math.ceil($(this).width() / moveWidth);                       //$(this) 디비전에 들어가 있는 li(item)의 개수
+	
+	console.log(widthCount);
+	console.log("moveWidth" + moveWidth);
+	console.log((-(moveWidth * (childrenCount - widthCount)) < margin));
+	console.log((margin < 0));
 	
 	//오른쪽으로 움직일 경우
 	if (direction == "left") {  
 		console.log("---left-----");
 		
-		if( (-(moveWidth * (childrenCount - widthCount)) < margin) && (margin < 0)){
-			$(children).animate({
+		if( (-(moveWidth * (childrenCount - widthCount)) <= margin) && (margin < 0)){
+			$(myChildren).animate({
 				marginLeft : (margin + moveWidth) + "px"
 			}, speed);
 		}else {
@@ -78,7 +85,7 @@ $.prototype.NaraeWidthSilde = function(direction, moveWidth, speed) {
 		console.log("---right-----");
 		
 		if( (margin - moveWidth) >= -(moveWidth * (childrenCount - widthCount))){
-			$(children).animate({
+			$(myChildren).animate({
 				marginLeft : (margin - moveWidth) + "px"
 			}, speed);
 			
