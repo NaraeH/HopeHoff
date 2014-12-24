@@ -13,11 +13,11 @@
 	#detailsBody {
 		width: 100%;
 		height: 100%;
-		border: 4px solid #FFCD28;
+		/* border: 2px solid #FFCD28; */
 	}
 	
 	/*------------------header-------------------*/
-	#detailHeader {
+/* 	#detailHeader {
 		height: 45px;
 		background-color: #FFCD28;
 	}
@@ -26,15 +26,19 @@
 		display: inline-block;
 		font-size: x-large;
 		margin: 10px 10px 10px 25px;
-	}
+	} */   /* 이칭구들은 없애기러했듬...*/
 	
 	#btnClose{
-		background: #FFCD28;
-		border: #FFCD28;
+		background: #333231;
+		border: #333231;
+		display: inline-block;
+		color: white;
 		font-size: x-large;
 		cursor: pointer;
-		float: right;
-		margin: 10px;
+		margin-left:97%;
+		margin-top: 5px;
+		/* float: right; */
+		
 	}
 	
 	/*-------------------container-------------------*/
@@ -51,7 +55,7 @@
 		height: 340px; /* 100%; */ 
 		display: inline-block;
 		
-		border: 1px dashed red; 
+/* 		border: 1px dashed red;  */
 	}
 	
 	#pubPhotoList {
@@ -88,17 +92,17 @@
 		width: 64%;
 		height: 95%;
 		float: right;
-		border: 1px dashed blue;
+/* 		border: 1px dashed blue; */
 	}
 	
 	#hoffInfo {
 		width: 98%;
-		height: 85px;
+		height: 25%;
 		margin: 1%;
 		display: inline-block;
 		font-size: small;
-		color: #FFCD28;
-		border: 1px solid #FFCD28;
+		color: #ffb500;
+		/* border: 1px solid #FFCD28; */
 	}
 	
 	#hoffInfo>p {
@@ -114,11 +118,23 @@
 		display: inline;
 		text-align: left;
 	} */
-/* 	#reservation {
-		margin: 10px;
-		text-align: right;
-	} */
+ 	#reservBtn {
+ 		margin-left:10%;
+ 		width: 80%;
 
+		background: orange;
+		display: inline-block;
+		color: white;
+		font-size: large;
+		cursor: pointer;
+		
+	} 
+
+	#reservBtn:hover{
+box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+-webkit-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+-moz-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+	}
 	/* *************V tabs********** */
 	#tabs {
 		width: 100%;
@@ -129,7 +145,7 @@
 		width:98%;
 		height: 90%;
 	    margin: 1%;
-		border: 3px dotted #FFCD28;
+/* 		border: 3px dotted #FFCD28; */
 		display: inline-block;
 		
 	}
@@ -148,8 +164,8 @@
 	#tabsBar {
 		width: 100%;
 		height: 50px;
-		padding: 5px 10px;
-		/* margin: 0 auto; */
+		/*padding: 5px 10px; */
+		margin: 1%;/* 0 auto; */
 		clear: both;
 	}
 	#tabsBarText {
@@ -160,7 +176,7 @@
 	#tabsBarText>div {
 		display: inline-block;
 		width: 30%;
-		font-size: 15px;
+		font-size: large;
 		margin-left:4px;
 	}
 	#tabsBarButton {
@@ -173,7 +189,7 @@
 		width: 30%;
 		height: 15px;
 		margin-left:3px;
-		border: 1px solid black;
+		border: 1px solid white;
 		background-color: white;
 	}
 
@@ -302,5 +318,4 @@
 		float: left;
 
 	}
-
 }
