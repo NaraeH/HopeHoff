@@ -17,7 +17,7 @@
 	}
 	
 	/*------------------header-------------------*/
-	#header {
+	#detailHeader {
 		height: 45px;
 		background-color: #FFCD28;
 	}
@@ -43,7 +43,7 @@
 		height: 365px;
 		padding: 15px;
 		
-		border: 1px solid red;
+		/* border: 1px solid red; */
 	}
 	
 	#pubPhotoListWrap{
@@ -52,7 +52,7 @@
 		display: inline-block;
 		margin-top: 12px;
 		
-		border: 1px solid green;
+		border: 1px solid green; 
 	}
 	
 	#pubPhotoList {
@@ -90,7 +90,7 @@
 		height: 365px;
 		float: right;
 		
-		border: 1px solid blue;
+		/* border: 1px solid blue; */
 	}
 	
 	#hoffInfo {
@@ -102,7 +102,7 @@
 		margin-top: 10px;
 		font-size: small;
 		
-		border: 1px solid #FFCD28;
+		/* border: 1px solid #FFCD28; */
 	}
 	
 	#hoffInfo>p {
@@ -111,6 +111,7 @@
 	}
 	#hoffInfo>p:first-child {
 		font-size:large;
+		font-weight: bold;
 	}
 
 /* 	.Info {
@@ -179,31 +180,44 @@
 
 	/* *********V menuList************* */
 	#menuList {
-		/* width: 520px; */
+		width: 707px;
 		height: 205px;
 		margin: 0 auto;
 		overflow: hidden;
 	}
 	
 	#menuList ul {
+/* 		height: 210px;
+		margin-bottom: 0px; */
+		
+		margin-top: -105px;
 		height: 210px;
-		margin-top: -110px;
-		margin-bottom: 0px;
+		list-style-type: none;
+		padding: 0px;
+		display: inline-block;
+		overflow: hidden;
+	}
+	
+	#menuList li {
+		display: inline-block;
+		padding:0px 10px;
+		height:170px;
+		width: 170px;
 	}
 	
 	#menuList ul li {
 		width:210px;
 		height:210px;
+		
+		/* border: 1px solid red; */
 	}
 	
-/* 	.listWidth ul{
-	margin-top: -100px !important;
-	} */
-
-/* 	#menuList li img {
-		width: 180px;
-		height: 180px;
-	} */
+	#menuList li img {
+		border:1px solid gray;
+		width: 140px;
+		height: 170px;
+	}
+	
 	#menuList>span {
 		border-bottom: 20px solid black;
 		margin-top: 85px;
