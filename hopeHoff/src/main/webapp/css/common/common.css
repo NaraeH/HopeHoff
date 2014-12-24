@@ -105,3 +105,12 @@
 		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
 }
 /*--------------------------------------------------------------------*/
+
+#footer{
+		background-color : #333231;
+		color : #fd9e04;
+		padding: 25px;
+		text-align: center;
+		clear : both;
+		width: 100%;
+}
