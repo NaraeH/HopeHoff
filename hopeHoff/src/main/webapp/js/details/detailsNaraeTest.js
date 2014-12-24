@@ -48,12 +48,6 @@
 				$('#commentButton').css('background-color', '#FFCD28');
 			});
 			
-/*			$(".leftWrap").hover(function(){
-				event.stopPropagation();
-				$(".box-rotate-left").hover();
-				console.log($(".box-rotate-left").hover());
-			});*/
-			
 			$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
 				event.stopPropagation();
 				$("#pubPhotoList").NaraeWidthSilde("left");

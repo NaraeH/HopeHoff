@@ -17,17 +17,6 @@
 	}
 	
 	/*------------------header-------------------*/
-/* 	#detailHeader {
-		height: 45px;
-		background-color: #FFCD28;
-	}
-	
-	#headerTitle {
-		display: inline-block;
-		font-size: x-large;
-		margin: 10px 10px 10px 25px;
-	} */   /* 이칭구들은 없애기러했듬...*/
-	
 	#btnClose{
 		background: #333231;
 		border: #333231;
@@ -38,7 +27,6 @@
 		margin-left:97%;
 		margin-top: 5px;
 		/* float: right; */
-		
 	}
 	
 	/*-------------------container-------------------*/
@@ -62,30 +50,67 @@
 		overflow: hidden;
 	}
 	
- 	.widthList ul{
-		width: 1211px;
-		padding: 0px !important;
-		margin: 0px !important;
+	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
+		height: 338px;
+		
+		/* border: 1px solid red; */
 	}
 	
-	.widthList li{
-		padding: 0px !important;
-		margin: 0px !important;
-	}
-	
-	#pubPhotoListWrap img {
-		width: 400px;
-		height:340px;
+	#photoToLeft {
+		margin-top: 160px;
+		margin-left: 16px;
 	}
 
-/* 	#carousel-example-generic {
-		width: 30%;
-		height: 230px;
-		float: left;
+	#photoToRight {
+		margin-top: 160px;
+		margin-left: 6px;
 	}
-	#carousel-example-generic span {
-		margin-top: 111px;
-	} */
+	
+	#pubPhotoList ul {
+		margin-top: -665px;
+	}
+	
+	.widthList ul {
+		width: 2000px;
+		list-style-type: none;
+		display: inline-block;
+		overflow: hidden;
+		margin-left:0px;
+		padding: 0px;
+	}
+	.widthList li{
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	#pubPhotoList .photoList {
+		width: 537px;
+		height: 340px;
+	}
+
+	#pubPhoto1 {
+		background-image: url("../../img/details/Wara-Wara01.jpg");
+	}
+	
+	#pubPhoto2 {
+		background-image: url("../../img/details/Wara-Wara02.jpg");
+	}
+	
+	#pubPhoto3 {
+		background-image: url("../../img/details/Wara-Wara03.jpg");
+	}
+	
+	.photoList .imgText {
+		width: inherit;
+		height: inherit;
+		
+		display: table-cell;
+		text-align: center;
+		vertical-align: bottom;
+		align-items: center;
+		color: white;
+		font-size: small;
+	}
 	
 	#rightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
@@ -200,7 +225,7 @@ box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
 		margin: 0 auto;
 		overflow: hidden;
 	}
-	
+	/* 
 	.leftWrap, .rightWrap {
 		width: 8%;
 		height: inherit;
@@ -209,7 +234,7 @@ box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
 		z-indx : 5px;
 		z-index: 3;
 		
-		/* border: 1px solid red; */
+		border: 1px solid red;
 	}
 	
 	.leftWrap{
@@ -237,7 +262,7 @@ box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
 		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(51, 50, 49, 0.8)));
 		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
 	}
-	
+	 */
 	#menuToLeft {
 		margin-top: 90px;
 		margin-left: 5px;
