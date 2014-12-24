@@ -121,15 +121,20 @@
  	#reservBtn {
  		margin-left:10%;
  		width: 80%;
-		border : #333231;
+
 		background: orange;
 		display: inline-block;
 		color: white;
 		font-size: large;
 		cursor: pointer;
-
+		
 	} 
 
+	#reservBtn:hover{
+box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+-webkit-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+-moz-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
+	}
 	/* *************V tabs********** */
 	#tabs {
 		width: 100%;
