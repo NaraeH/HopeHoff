@@ -11,17 +11,13 @@
 
 @media all and (min-width:421px) {
 	
-	/* 나중에 삭제하자 */
-	body{
-		background-color: black;
-		color:white;
+	body {
+		background: black;
 	}
-	/* ---------- */
-	
 	#detailsBody {
-		width: 1180px;
-		height: 445px;
-		border: 2px solid #FFCD28;
+		width: 100%;
+		height: 100%;
+		border: 4px solid #FFCD28;
 	}
 	
 	/*------------------header-------------------*/
@@ -37,7 +33,7 @@
 	}
 	
 	#btnClose{
-		background: #ffcd28;
+		background: #FFCD28;
 		border: #FFCD28;
 		font-size: x-large;
 		cursor: pointer;
@@ -48,7 +44,7 @@
 	/*-------------------container-------------------*/
 	#detailContainer {
 		width: 97%;
-		height: 365px;
+		height: 87%;
 		padding: 15px;
 		
 		/* border: 1px solid red; */
@@ -56,61 +52,97 @@
 	
 	#pubPhotoListWrap{
 		width: 35%;
-		height:340px;
+		height: 340px; /* 100%; */ 
 		display: inline-block;
-		margin-top: 12px;
 		
-		border: 1px solid green; 
+		border: 1px dashed red; 
 	}
 	
 	#pubPhotoList {
 		overflow: hidden;
 	}
 	
- 	.widthList ul{
-		width: 1211px;
-		padding: 0px !important;
-		margin: 0px !important;
+	/*-------------------여기 나중에 고쳐야되-(비교하고 수정하기)------------------*/
+	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
+		height: 338px;
+		
+		/* border: 1px solid red; */
 	}
 	
-	.widthList li{
-		padding: 0px !important;
-		margin: 0px !important;
-	}
-	
-	#pubPhotoListWrap img {
-		width: 400px;
-		height:340px;
+	#photoToLeft {
+		margin-top: 160px;
+		margin-left: 16px;
 	}
 
-/* 	#carousel-example-generic {
-		width: 30%;
-		height: 230px;
-		float: left;
+	#photoToRight {
+		margin-top: 160px;
+		margin-left: 6px;
 	}
-	#carousel-example-generic span {
-		margin-top: 111px;
-	} */
 	
-	#rightContainer{
+	#pubPhotoList ul {
+		margin-top: -665px;
+	}
+	
+	.widthList ul {
+		width: 2000px;
+		list-style-type: none;
+		display: inline-block;
+		overflow: hidden;
+		margin-left:0px;
+		padding: 0px;
+	}
+	.widthList li{
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	#pubPhotoList .photoList {
+		width: 537px;
+		height: 340px;
+	}
+
+	#pubPhoto1 {
+		background-image: url("../../img/details/Wara-Wara01.jpg");
+	}
+	
+	#pubPhoto2 {
+		background-image: url("../../img/details/Wara-Wara02.jpg");
+	}
+	
+	#pubPhoto3 {
+		background-image: url("../../img/details/Wara-Wara03.jpg");
+	}
+	
+	.photoList .imgText {
+		width: inherit;
+		height: inherit;
+		
+		display: table-cell;
+		text-align: center;
+		vertical-align: bottom;
+		align-items: center;
+		color: white;
+		font-size: small;
+	}
+	
+
+/*---------------------------------*/
+	#rightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
 		width: 64%;
-		height: 365px;
+		height: 95%;
 		float: right;
-		
-		/* border: 1px solid blue; */
+		border: 1px dashed blue;
 	}
 	
 	#hoffInfo {
-		width: 95%;
+		width: 98%;
 		height: 85px;
-		padding: 10px;
-		margin: 10px;
+		margin: 1%;
 		display: inline-block;
-		margin-top: 10px;
 		font-size: small;
-		
-		/* border: 1px solid #FFCD28; */
+		color: #FFCD28;
+		border: 1px solid #FFCD28;
 	}
 	
 	#hoffInfo>p {
@@ -122,6 +154,15 @@
 		font-weight: bold;
 	}
 
+/* 	.Info {
+		display: inline;
+		text-align: left;
+	} */
+/* 	#reservation {
+		margin: 10px;
+		text-align: right;
+	} */
+
 	/* *************V tabs********** */
 	#tabs {
 		width: 100%;
@@ -129,8 +170,9 @@
 		display: inline-block;
 	}
 	#tabsContent {
+		width:98%;
 		height: 90%;
-	    margin: 10px;
+	    margin: 1%;
 		border: 3px dotted #FFCD28;
 		display: inline-block;
 		
@@ -148,33 +190,35 @@
 	}
 	/* ************V tabsBar************** */
 	#tabsBar {
+		width: 100%;
 		height: 50px;
-		width: 530px;
 		padding: 5px 10px;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 		clear: both;
 	}
 	#tabsBarText {
-		position: absolute;
+		width: 100%;
+		position: relative;
 	   /* 	z-index: 2; */
 	}
 	#tabsBarText>div {
 		display: inline-block;
-		width: 165px;
-		font-size: 16px;
-		margin-left:3px;
+		width: 30%;
+		font-size: 15px;
+		margin-left:4px;
 	}
 	#tabsBarButton {
-		position: absolute;
-		margin-top: 15px;
+		position: relative;
+		margin-top: -3px;
 		z-index: 1;
 	}
 	#tabsBarButton>div {
 		display: inline-block;
-		border: 2px solid black;
+		width: 30%;
 		height: 15px;
+		margin-left:3px;
+		border: 1px solid black;
 		background-color: white;
-		width: 170px;
 	}
 
 	/* *********V menuList************* */
@@ -184,44 +228,6 @@
 		margin: 0 auto;
 		overflow: hidden;
 	}
-	
-	/*--------- 여기 나중에 추가해야되!!!!!! ----------------*/
-	.leftWrap, .rightWrap {
-		width: 8%;
-		height: inherit;
-		position: relative;
-		display: inline-block;
-		z-indx : 5px;
-		z-index: 3;
-		
-		/* border: 1px solid red; */
-	}
-	
-	.leftWrap{
-		float: left;
-		cursor: pointer;
-	}
-	
-	.rightWrap{
-		float: right;
-		cursor: pointer;
-	}
-	
-	.leftWrap:hover{
-	    background: -webkit-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	    background: -moz-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	    background: -o-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	    background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(51, 50, 49, 0.8)), to(rgba(255,255,255,0)));
-	    background: linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	}
-	
-	.rightWrap:hover {
-		background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(51, 50, 49, 0.8)));
-		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));	}
-	
 	#menuToLeft {
 		margin-top: 90px;
 		margin-left: 5px;
@@ -230,15 +236,12 @@
 	#menuToRight {
 		margin-top: 90px;
 		margin-left: 27px;
-	}	
-	
-	/* 여기 까지 */
+	}
 	
 	#menuList ul {
 /* 		height: 210px;
 		margin-bottom: 0px; */
 		
-		/*margin-top도 고쳤담!  */
 		margin-top: -203px;
 		height: 210px;
 		list-style-type: none;
@@ -273,10 +276,7 @@
 		margin-left: 3px;
 		
 	}
-	/* 여기부분 주석달기 */
-/* 	#menuList .box-rotate-right {
-		margin-left: 650px;
-	} */
+
 	#bestMenu1{
 	    background-image: url('../../img/details/chiken.jpg');
 	}
@@ -294,7 +294,7 @@
 		cursor:pointer;
 	}
 
-	
+
 }
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
@@ -310,3 +310,9 @@
 	}
 
 }
+
+
+
+
+
+	

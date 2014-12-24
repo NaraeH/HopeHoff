@@ -1,21 +1,22 @@
-
+/*141223 17:28 연흥이가 건든건 ㅂlack을  #FFCD28로 바꾼것 뿐ㅋㅋㅋ*/
 		$(document).ready(function() {
 
 			$('#contentMap').css('display', 'none');
 			$('#contentComments').css('display', 'none');
-			$('#menuText').css('color', 'black');
-			$('#menuButton').css('background-color', 'black');
+			$('#menuText').css('color', '#FFCD28');
+			$('#menuButton').css('background-color', '#FFCD28');
+			$('#pubPhotoList').NaraeWidthSildeAuto();
 			
 			$('.menu').click(function(event) {
 				$("#contentMenu").css('display', '');
 				$('#contentMap').css('display', 'none');
 				$('#contentComments').css('display', 'none');
 				
-				$('#menuText').css('color', 'black');
-				$('#menuButton').css('background-color', 'black');
-				$('#mapText').css('color', 'black');
+				$('#menuText').css('color', '#FFCD28');
+				$('#menuButton').css('background-color', '#FFCD28');
+				$('#mapText').css('color', '#FFCD28');
 				$('#mapButton').css('background-color', 'white');
-				$('#commentText').css('color', 'black');
+				$('#commentText').css('color', '#FFCD28');
 				$('#commentButton').css('background-color', 'white');
 
 			});
@@ -25,11 +26,11 @@
 				$("#contentMap").css('display', '');
 				$('#contentComments').css('display', 'none');
 				
-				$('#menuText').css('color', 'black');
+				$('#menuText').css('color', '#FFCD28');
 				$('#menuButton').css('background-color', 'white')
-				$('#mapText').css('color', 'black');
-				$('#mapButton').css('background-color', 'black');
-				$('#commentText').css('color', 'black');
+				$('#mapText').css('color', '#FFCD28');
+				$('#mapButton').css('background-color', '#FFCD28');
+				$('#commentText').css('color', '#FFCD28');
 				$('#commentButton').css('background-color', 'white');
 
 			});
@@ -39,14 +40,24 @@
 				$("#contentMap").css('display', 'none');
 				$('#contentComments').css('display', '');
 				
-				$('#menuText').css('color', 'black');
+				$('#menuText').css('color', '#FFCD28');
 				$('#menuButton').css('background-color', 'white');
-				$('#mapText').css('color', 'black');
+				$('#mapText').css('color', '#FFCD28');
 				$('#mapButton').css('background-color', 'white');
-				$('#commentText').css('color', 'black');
-				$('#commentButton').css('background-color', 'black');
+				$('#commentText').css('color', '#FFCD28');
+				$('#commentButton').css('background-color', '#FFCD28');
 			});
 			
+			$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
+				event.stopPropagation();
+				$("#pubPhotoList").NaraeWidthSilde("left");
+			});
+
+			$("#photoToRight, #pubPhotoList>.rightWrap").click(function() {
+				event.stopPropagation();
+				$("#pubPhotoList").NaraeWidthSilde("right");
+			});
+
 			$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
 				event.stopPropagation();
 				$("#menuList").NaraeWidthSilde("left");

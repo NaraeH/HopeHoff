@@ -1,70 +1,79 @@
-/*141223 17:28 연흥이가 건든건  black을    #FFB500로 바꾼것 뿐ㅋㅋㅋ
-    ..  21:43              #FFB500 을 #ffb500  */
-		$(document).ready(function() {
+var photoListLiWidth = Narae.removePx($("#pubPhotoList").css("width"));
 
-			$('#contentMap').css('display', 'none');
-			$('#contentComments').css('display', 'none');
-			$('#menuText').css('color', '#FFB500');
-			$('#mapText').css('color', '#FFB500');
-			$('#commentText').css('color', '#FFB500');
-			$('#menuButton').css('background-color', '#FFB500');
-			
-			$('.menu').click(function(event) {
-				$("#contentMenu").css('display', '');
-				$('#contentMap').css('display', 'none');
-				$('#contentComments').css('display', 'none');
-				
-				$('#menuText').css('color', '#FFB500');
-				$('#menuButton').css('background-color', '#FFB500');
-				$('#mapText').css('color', '#FFB500');
-				$('#mapButton').css('background-color', 'white');
-				$('#commentText').css('color', '#FFB500');
-				$('#commentButton').css('background-color', 'white');
+$(document).ready(function() {
+	$('#contentMap').css('display', 'none');
+	$('#contentComments').css('display', 'none');
+	$('#menuText').css('color', '#FFB500');
+	$('#mapText').css('color', '#FFB500');
+	$('#commentText').css('color', '#FFB500');
+	$('#menuButton').css('background-color', '#FFB500');
+	$("#pubPhotoList ul li div").css("width", photoListLiWidth);
+	
+	$('.menu').click(function(event) {
+		$("#contentMenu").css('display', '');
+		$('#contentMap').css('display', 'none');
+		$('#contentComments').css('display', 'none');
 
-			});
+		$('#menuText').css('color', '#FFB500');
+		$('#menuButton').css('background-color', '#FFB500');
+		$('#mapText').css('color', '#FFB500');
+		$('#mapButton').css('background-color', 'white');
+		$('#commentText').css('color', '#FFB500');
+		$('#commentButton').css('background-color', 'white');
+	});
 
-			$('.map').click(function(event) {
-				$("#contentMenu").css('display', 'none');
-				$("#contentMap").css('display', '');
-				$('#contentComments').css('display', 'none');
-				
-				$('#menuText').css('color', '#FFB500');
-				$('#menuButton').css('background-color', 'white')
-				$('#mapText').css('color', '#FFB500');
-				$('#mapButton').css('background-color', '#FFB500');
-				$('#commentText').css('color', '#FFB500');
-				$('#commentButton').css('background-color', 'white');
+	$('.map').click(function(event) {
+		$("#contentMenu").css('display', 'none');
+		$("#contentMap").css('display', '');
+		$('#contentComments').css('display', 'none');
 
-			});
+		$('#menuText').css('color', '#FFB500');
+		$('#menuButton').css('background-color', 'white')
+		$('#mapText').css('color', '#FFB500');
+		$('#mapButton').css('background-color', '#FFB500');
+		$('#commentText').css('color', '#FFB500');
+		$('#commentButton').css('background-color', 'white');
 
-			$('.comment').click(function(event) {
-				$("#contentMenu").css('display', 'none');
-				$("#contentMap").css('display', 'none');
-				$('#contentComments').css('display', '');
-				
-				$('#menuText').css('color', '#FFB500');
-				$('#menuButton').css('background-color', 'white');
-				$('#mapText').css('color', '#FFB500');
-				$('#mapButton').css('background-color', 'white');
-				$('#commentText').css('color', '#FFB500');
-				$('#commentButton').css('background-color', '#FFB500');
-			});
+	});
 
-			$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
-				event.stopPropagation();
-				$("#menuList").NaraeWidthSilde("left");
-			});
+	$('.comment').click(function(event) {
+		$("#contentMenu").css('display', 'none');
+		$("#contentMap").css('display', 'none');
+		$('#contentComments').css('display', '');
 
-			$("#menuToRight, #menuList>.rightWrap").click(function() {
-				event.stopPropagation();
-				$("#menuList").NaraeWidthSilde("right");
-			});
+		$('#menuText').css('color', '#FFB500');
+		$('#menuButton').css('background-color', 'white');
+		$('#mapText').css('color', '#FFB500');
+		$('#mapButton').css('background-color', 'white');
+		$('#commentText').css('color', '#FFB500');
+		$('#commentButton').css('background-color', '#FFB500');
+	});
 
-		});
+	$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
+		event.stopPropagation();
+		$("#pubPhotoList").naraeWidthSilde("left");
+	});
+
+	$("#photoToRight, #pubPhotoList>.rightWrap").click(function() {
+		event.stopPropagation();
+		$("#pubPhotoList").naraeWidthSilde("right");
+	});
+
+	$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
+		event.stopPropagation();
+		$("#menuList").naraeWidthSilde("left");
+	});
+
+	$("#menuToRight, #menuList>.rightWrap").click(function() {
+		event.stopPropagation();
+		$("#menuList").naraeWidthSilde("right");
+	});
+});
+
+//나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
+$('#pubPhotoList').naraeWidthSildeAuto();
 		
-		
-		
-		
+
 		
 	var mapContainer = document.getElementById('contentMap'), // 지도를 표시할 div 
 	    mapOption = {
@@ -140,3 +149,4 @@
 		  $('<td class=tableDataTime>').html("2014-12-18").appendTo($('#tRow3'));
 	
 		}); 
+

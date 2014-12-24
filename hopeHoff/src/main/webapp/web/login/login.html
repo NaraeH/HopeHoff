@@ -27,15 +27,18 @@
 	<div id="wrap">
 	
 			<!-- body background 배경화면 -->
-			<img id="background" src="../../img/login/back01.jpg">
-	
+			<div id="background">
+			<img src="../../img/login/back01.jpg">
+			</div>
 
 			<div id="loginBox">
-			<div id="containerHeader">
-			        <h1 class="ban">Hope Hoff 오늘의 말씀</h1>
-			        <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
-			        날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
-			</div>  
+				<!-- Header -->
+				
+				<div id="containerHeader">
+				  <h1 class="ban">Hope Hoff 오늘의 말씀</h1>
+				  <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
+				  날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
+				</div>  
 			
 			<!-- 추천 / HopeHoff 박스 -->
 			<div id ="box">
@@ -96,7 +99,7 @@
 									<h3 class="nps">청담 제1막</h3>
 									<h3 class="nps">막걸리도 이제 품위있게!<br>
 									영화 : 위험한상견례 방영장소</h3>
-					       </div>
+					      </div>
 				      </div>
 				      
 				      <div id="modal-footer" class="modal-footer">
@@ -127,7 +130,7 @@
 							<div class="form-group">
 								<div class="hn loginForm">ID</div>
 								<div class="col-sm-10">
-									<input class="form-control" id="inputId" placeholder="아이디를 입력하세요.">
+									<input class="form-control" id="inputId" placeholder="아이디">
 								</div>
 							</div>
 							
@@ -135,7 +138,7 @@
 							<div class="form-group">
 								<div id="pwd" class="hn loginForm">PWD</div>
 								<div class="col-sm-10">
-									<input  class="form-control" type="Password" id="inputPassword" placeholder="패스워드를 입력하세요.">
+									<input  class="form-control" type="Password" id="inputPassword" placeholder="패스워드">
 								</div>
 							</div>
 							
@@ -155,8 +158,6 @@
 							</div>	
 						</div>
 			</div>
-			
-			
 			</div>
 			
 			
@@ -190,7 +191,7 @@
 									<div class="form-group">
 										<div id="popId" class="hn loginForm">ID</div>
 										<div class="col-sm-8">
-										<input class="form-control" type="text" id="formGroupInputLarge" placeholder="ID를 입력하세요.">
+										<input class="form-control" type="text" id="formGroupInputLarge" placeholder="ID">
 										</div>
 										<button id="inNumber00" type="button" class="btn btn-warning"  data-toggle="modal" data-target="#myModal104">검사</button>
 									</div>
@@ -217,7 +218,7 @@
 									<div class="form-group">
 									<div class="hn loginForm">Name</div>
 										<div class="col-sm-8">
-											<input class="form-control" type="text" id="formGroupInputSmall" placeholder="Name를 입력하세요.">
+											<input class="form-control" type="text" id="formGroupInputSmall" placeholder="Name">
 										</div>
 									</div>
 												     
@@ -236,6 +237,7 @@
 											<input type="password" class="form-control" id="checkPassword" placeholder="Check Password">
 										</div>
 									</div>
+														
 														  
 									<!-- 회원가입 팝업창 Phone -->						  
 									<div class="form-group">
@@ -245,13 +247,7 @@
 										</div>
 									</div>
 									
-									<!-- 회원가입 팝업창 생일 -->
-								  <div class="form-group">
-									<div class="hn loginForm">B-day</div>
-										<div class="col-sm-8">
-										<input id="bDay" type="date" class="form-control" placeholder="사업자번호를 써주세요.">
-										</div>
-									</div> 
+									
 									
 									<!-- 회원가입 팝업창 인증 -->						  
 									<div class="form-group">
@@ -300,7 +296,5 @@
 			</div>
 		
 	</body>
-	
-			
 </html>
 

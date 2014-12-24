@@ -25,6 +25,7 @@ $(function(){
 		type : 'random',
 		containerheight : '130px'
 	});
+	
 
 	$("#inlineRadio3").click(function(){
 		$("#bNum").css('display',"none");

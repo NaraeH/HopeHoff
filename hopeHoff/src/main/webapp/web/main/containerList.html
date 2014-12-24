@@ -26,11 +26,8 @@
 				}
 				
 				$(".list").click(function(){
-					//var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
-					//var listWidth = ($(".list").css("width")).split("px").splice(0, 1) - 0;
-					//var marginWidth = ($(".list").css("margin-left")).split("px").splice(0, 1) - 0;
-
 					var presentWidth = Narae.removePx($("#containerList").css("width"));
+					var presentHeight = Narae.removePx($("#containerList").css("height"));
 					var listWidth = Narae.removePx($(".list").css("width"));
 					var marginWidth = Narae.removePx(($(".list").css("margin-left")));
 					
@@ -40,13 +37,9 @@
 					var lastNo = $(".list").index($(".list:last-child"));
 					
 					
-					//클랙했을시 뒷부분 가려지는 부분
-  					/* $("<div>").css("width", "100%")
-							  .css("height", "800px")
-							  .css("background", "rgba(0, 0, 0, 0.8)")
-							  .css("z-index", "z-index: 3")
-							  .attr("id", "containerBack")
-							  .appendTo("#header");  */ 
+					$("#back").css("height", presentHeight + 800);
+					$("#back").css("display", "block");
+							 
 					
 					//클릭했을 때 상세정보(detail) 보이는부분
 					$($("#containerList").children()[whichNo]).after(

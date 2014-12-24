@@ -15,7 +15,7 @@
 	width: 0px;
 	height: 0px;
 	border-right: 20px solid transparent;
-	border-bottom: 20px solid white;
+	border-bottom: 20px solid rgba(255, 255, 255, 0.6);
 	transform: rotate(225deg);
 	-ms-transform: rotate(225deg); /* IE 9 */
 	-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
@@ -25,11 +25,11 @@
 	cursor: pointer;
 }
 
-.box-rotate-right:hover {
+.box-rotate-right:hover, .rightWrap:hover .box-rotate-right{
 	width: 0px;
 	height: 0px;
 	border-right: 20px solid transparent;
-	border-bottom: 20px solid #3e3e27;
+	border-bottom: 20px solid rgba(51, 50, 49, 0.6);
 	transform: rotate(225deg);
 	-ms-transform: rotate(225deg); /* IE 9 */
 	-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
@@ -43,7 +43,7 @@
 	width: 0px;
 	height: 0px;
 	border-right: 20px solid transparent;
-	border-bottom: 20px solid white;
+	border-bottom: 20px solid rgba(255, 255, 255, 0.7);
 	transform: rotate(45deg);
 	-ms-transform: rotate(45deg); /* IE 9 */
 	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
@@ -53,11 +53,11 @@
 	cursor: pointer;
 }
 
-.box-rotate-left:hover {
+.box-rotate-left:hover, .leftWrap:hover .box-rotate-left {
 	width: 0px;
 	height: 0px;
 	border-right: 20px solid transparent;
-	border-bottom: 20px solid #3e3e27;
+	border-bottom: 20px solid rgba(51, 50, 49, 0.7);
 	transform: rotate(45deg);
 	-ms-transform: rotate(45deg); /* IE 9 */
 	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
@@ -66,4 +66,51 @@
 	display: inline-block;
 	cursor: pointer;
 }
+
+/* 화살표 위에 새로운 디비전 만들어서 이 디비전위에 올라갔을 경우도 화살표 생기게 할 경우  */
+.leftWrap, .rightWrap {
+	width: 8%;
+	height: inherit;
+	position: relative;
+	display: inline-block;
+	z-indx: 5px;
+	z-index: 3;
+
+	/* border: 1px solid red; */
+}
+
+.leftWrap {
+	float: left;
+	cursor: pointer;
+}
+
+.rightWrap {
+	float: right;
+	cursor: pointer;
+}
+
+.leftWrap:hover{
+	    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
+	    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
+	    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
+	    background: -webkit-gradient(linear, 100% 0, 0 0, from((255, 255, 255, 0.4)), to(rgba(255,255,255,0)));
+	    background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
+}
+	
+.rightWrap:hover {
+		background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.4)));
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
+}
 /*--------------------------------------------------------------------*/
+
+#footer{
+		background-color : #333231;
+		color : #fd9e04;
+		padding: 25px;
+		text-align: center;
+		clear : both;
+		width: 100%;
+}
