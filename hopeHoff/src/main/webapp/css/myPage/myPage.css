@@ -1,33 +1,45 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 @media ( max-width : @screen-xs-max) {
-		body {
+	body {
 		background-color: #8d8daf !important;
-		}
+	}
 }
+
+.
+label{
+	margin-left:10px;
+	border-radius :5px;
+}
+
+#myPageContent {
+	background-color:#FFCD28;
+	padding: 10px;
+	width: 550px;
+	border-radius:5px;
+	margin-bottom: 15px;
 	
-	#wrap {
-		width: 800px;
-		height: 670px;
-		margin: 0 atuo;
-		padding: 10px;
-		/* border: 1px solid gray; */
-		font-family: 'Jeju Gothic', serif;
-	}
-	#header {
-		width: 700px;
-		/* border: red solid 1px; */
-	}
-	#container {
-		padding: 10px;
-		width: 700px;
-		height: 530px;
-		/* border: orange solid 1px; */
-		background-color: gold;
-	}
-	#footer {
-		width: 700px;
-		/* border: yellow solid 1px; */
-		color: blue;
-	}
+}
+#header {
+	width: 700px;
+	/* border: red solid 1px; */
+}
+
+#container {
 	
+	width: 600px;
+	height: 680px;
+	border: 2px solid #FFCD28;
+	padding: 25px;
+}
+
+
+#footer {
+	width: 700px;
+	/* border: yellow solid 1px; */
+	color: blue;
+	text-align: center;
+}
+#myDataForm{
+	margin-left :50px;
+}
