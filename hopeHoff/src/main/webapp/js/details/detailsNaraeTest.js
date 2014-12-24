@@ -46,12 +46,14 @@
 				$('#commentText').css('color', 'black');
 				$('#commentButton').css('background-color', 'black');
 			});
-
-			$("#menuToLeft").click(function() {
+			
+			$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
+				event.stopPropagation();
 				$("#menuList").NaraeWidthSilde("left");
 			});
 
-			$("#menuToRight").click(function() {
+			$("#menuToRight, #menuList>.rightWrap").click(function() {
+				event.stopPropagation();
 				$("#menuList").NaraeWidthSilde("right");
 			});
 

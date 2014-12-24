@@ -1,4 +1,4 @@
-$('#contentComments').css('display','none');
+	$('#contentComments').css('display','none');
 	
 	$('.menu').click(function(event){
 		$('#menuText').css('color','blue');
