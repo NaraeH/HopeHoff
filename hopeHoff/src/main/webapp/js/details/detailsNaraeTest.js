@@ -5,6 +5,7 @@
 			$('#contentComments').css('display', 'none');
 			$('#menuText').css('color', '#FFCD28');
 			$('#menuButton').css('background-color', '#FFCD28');
+			$('#pubPhotoList').NaraeWidthSildeAuto();
 			
 			$('.menu').click(function(event) {
 				$("#contentMenu").css('display', '');
@@ -45,6 +46,22 @@
 				$('#mapButton').css('background-color', 'white');
 				$('#commentText').css('color', '#FFCD28');
 				$('#commentButton').css('background-color', '#FFCD28');
+			});
+			
+/*			$(".leftWrap").hover(function(){
+				event.stopPropagation();
+				$(".box-rotate-left").hover();
+				console.log($(".box-rotate-left").hover());
+			});*/
+			
+			$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
+				event.stopPropagation();
+				$("#pubPhotoList").NaraeWidthSilde("left");
+			});
+
+			$("#photoToRight, #pubPhotoList>.rightWrap").click(function() {
+				event.stopPropagation();
+				$("#pubPhotoList").NaraeWidthSilde("right");
 			});
 
 			$("#menuToLeft, #menuList>.leftWrap").click(function(event) {

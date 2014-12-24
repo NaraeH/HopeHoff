@@ -65,7 +65,8 @@
 	/*-------------------여기 나중에 고쳐야되-(비교하고 수정하기)------------------*/
 	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
 		height: 338px;
-		border: 1px solid red;
+		
+		/* border: 1px solid red; */
 	}
 	
 	#photoToLeft {
@@ -79,39 +80,52 @@
 	}
 	
 	#pubPhotoList ul {
-		margin-top: -340px;
+		margin-top: -665px;
 	}
-	
-	
-	
-/*  	.widthList ul{
-		width: 1211px;
-		padding: 0px !important;
-		margin: 0px !important;
-	}
-	
-	 */
 	
 	.widthList ul {
+		width: 2000px;
 		list-style-type: none;
 		display: inline-block;
 		overflow: hidden;
 		margin-left:0px;
+		padding: 0px;
+	}
+	.widthList li{
+		padding: 0px;
+		margin: 0px;
 	}
 	
-	#pubPhotoListWrap img {
-		width: 470px;
-		height:340px;
+	#pubPhotoList .photoList {
+		width: 537px;
+		height: 340px;
 	}
 
-/* 	#carousel-example-generic {
-		width: 30%;
-		height: 230px;
-		float: left;
+	#pubPhoto1 {
+		background-image: url("../../img/details/Wara-Wara01.jpg");
 	}
-	#carousel-example-generic span {
-		margin-top: 111px;
-	} */
+	
+	#pubPhoto2 {
+		background-image: url("../../img/details/Wara-Wara02.jpg");
+	}
+	
+	#pubPhoto3 {
+		background-image: url("../../img/details/Wara-Wara03.jpg");
+	}
+	
+	.photoList .imgText {
+		width: inherit;
+		height: inherit;
+		
+		display: table-cell;
+		text-align: center;
+		vertical-align: bottom;
+		align-items: center;
+		color: white;
+		font-size: small;
+	}
+	
+
 /*---------------------------------*/
 	#rightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
@@ -301,43 +315,4 @@
 
 
 
-
-
-
-
-	.leftWrap, .rightWrap {
-		width: 8%;
-		height: inherit;
-		position: relative;
-		display: inline-block;
-		z-indx : 5px;
-		z-index: 3;
-		
-		/* border: 1px solid red; */
-	}
 	
-	.leftWrap{
-		float: left;
-		cursor: pointer;
-	}
-	
-	.rightWrap{
-		float: right;
-		cursor: pointer;
-	}
-	
-	.leftWrap:hover{
-	    background: -webkit-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	    background: -moz-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	    background: -o-linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	    background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(51, 50, 49, 0.8)), to(rgba(255,255,255,0)));
-	    background: linear-gradient(to right, rgba(51, 50, 49, 0.8), rgba(255,255,255,0));
-	}
-	
-	.rightWrap:hover {
-		background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(51, 50, 49, 0.8)));
-		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(51, 50, 49, 0.8));
-	}
