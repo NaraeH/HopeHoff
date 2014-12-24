@@ -21,68 +21,51 @@
 	<div id= "detailsBody">
 
 		<div id = "detailHeader">
-			<div id="headerTitle">Details</div>
 			<button id="btnClose" type="button" class="close" value="close">X</button>
 		</div>
 
 		<div id="detailContainer">
 			<div id= "pubPhotoListWrap">
-				<!-- Indicators -->
-<!-- 				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				</ol> -->
-				
-				<div id="pubPhotoList" class="widthList">
-						<!-- <span class="box-rotate-left"></span>
-						<span class="box-rotate-right"></span> -->
-								
-							<ul>
-								<li>
-									<img src="../../img/details/Wara-Wara01.jpg" alt="Generic placeholder image">
-									<!-- <div class="carousel-caption">와라와라(강남점) (1/3)</div> -->
-								</li>
-								<li>
-									<img src="../../img/details/Wara-Wara02.jpg" alt="Generic placeholder image">
-									<!-- <div class="carousel-caption">와라와라(강남점) (2/3)</div> -->
-								</li>
-								<li>
-									<img src="../../img/details/Wara-Wara03.jpg" alt="Generic placeholder image">
-									<!-- <div class="carousel-caption">와라와라(강남점) (3/3)</div> -->
-								</li>
-							</ul>
-						</div> <!-- menuList -->
-				
 
-				<!-- Controls -->
-<!-- 				<a class="left carousel-control" href="#carousel-example-generic"
-					role="button" data-slide="prev"> 
-				<span class="box-rotate-left"></span>			
-				</a> 
-				<a class="right carousel-control" href="#carousel-example-generic" 
-					role="button" data-slide="next">
-				<span class="box-rotate-right"></span>
-				</a> -->
+			<div id="pubPhotoList" class="widthList">
+				<div class="leftWrap">
+					<span id="photoToLeft" class="box-rotate-left"></span>
+				</div>
+				<div class="rightWrap">
+					<span id="photoToRight" class="box-rotate-right"></span>
+				</div>
+
+				<ul>
+					<li>
+						<div id="pubPhoto1" class="photoList">
+							<div class="imgText"> 와라와라(강남점) (1/3) <br> ●○○ </div>
+						</div>
+					</li>
+					<li>
+						<div id="pubPhoto2" class="photoList">
+							<div class="imgText"> 와라와라(강남점) (2/3) <br> ○●○ </div>
+						</div>
+					</li>
+					<li>
+						<div id="pubPhoto3" class="photoList">
+							<div class="imgText"> 와라와라(강남점) (3/3) <br> ○○● </div>
+						</div>
+					</li>
+				</ul>
 			</div>
+			<!-- pubPhotoList -->
+
+				<input type="button" id="reservBtn" value="예약">
+	
+			</div>
+			
 			<div id= "rightContainer">		
 			<div id="hoffInfo">
-				<p>와라와라 강남점</p>
-				<button id="reservBtn" type="button" class="btn btn-warning">예약하기</button><br><br>
+				<p>와라와라 강남점</p><br><br>
 				<p>영업시간 : 17:00 ~ 4:00</p><br>
 				<p>가게주소 : 서울시 강남구 역삼동 822-1</p><br>
 				<p>전화번호 : 02-1234-5678</p><br>
 				<p>가게소개 : 맛도 짱! 분위기도 짱! </p> 
-				
-<!-- 				<div class="Info">운영시간 :</div><div class="Info">17:00 ~ 4:00</div><br>
-				<div class="Info">전화번호 :</div><div class="Info">02-1234-5678</div><br>
-				<div>주&emsp;&nbsp;&nbsp;&nbsp;소 :</div>
-				<div class="Info">서울시 강남구 역삼동 822-1</div>
-				<div>소&emsp;&nbsp;&nbsp;&nbsp;개 :</div>
-				<div class="Info">맛도 짱! 분위기도짱! </div>
-				<div id="reservation">
-					<button id="reservBtn" type="button" class="btn btn-warning">예약하기</button>
-				</div> -->
 			</div>
 
 
@@ -153,10 +136,6 @@
 								</li>
 									
 							</ul>
-							
-							
-									 
-									
 						</div> <!-- menuList -->
 					</div><!-- contentMenu -->
 								   
