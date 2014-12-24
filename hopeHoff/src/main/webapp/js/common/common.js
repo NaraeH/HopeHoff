@@ -142,19 +142,24 @@ $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var time = (time == undefined)? 3000 : time;                                  //몇 초마다 이벤트 발생하는지
 	var count = 0;
 	
-	alert("NaraeWidthSildeAuto호출");
+	console.log("NaraeWidthSildeAuto호출");
+	console.log( $(this));
 	
-/*	setInterval(function(){
+	setInterval(function(){
 		count = (count < 2)? count + 1: 0;
 		
 		$(myChildren).animate({
 			marginLeft : (margin - (moveWidth * count)) + "px"
 		}, speed);
-	}, time);*/
-	//return this;
+	}, time);
+	
+	console.log("NaraeWidthSildeAuto 호출끝");
+	return this;
 }
 
-$.prototype.NaraeTest
+$.prototype.naraeTest = function(){
+	alert("zz");
+}
 
 
 

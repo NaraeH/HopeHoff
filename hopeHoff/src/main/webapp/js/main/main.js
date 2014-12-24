@@ -33,7 +33,6 @@ $(document).ready(function(){
 		});  
 	});
 
-
 	$("#btnMyPage").click(function(){
 		location.href="#";
 		console.log("zz");

@@ -6,9 +6,8 @@ $(document).ready(function() {
 	$('#mapText').css('color', '#FFB500');
 	$('#commentText').css('color', '#FFB500');
 	$('#menuButton').css('background-color', '#FFB500');
-			
-	$('#pubPhotoList').naraeWidthSildeAuto();
-			
+		
+	
 	$('.menu').click(function(event) {
 		$("#contentMenu").css('display', '');
 		$('#contentMap').css('display', 'none');
@@ -52,6 +51,7 @@ $(document).ready(function() {
 	$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
 		event.stopPropagation();
 		$("#pubPhotoList").naraeWidthSilde("left");
+		//$('#pubPhotoList').naraeWidthSildeAuto();
 	});
 
 	$("#photoToRight, #pubPhotoList>.rightWrap").click(function() {
@@ -70,8 +70,8 @@ $(document).ready(function() {
 	});
 });
 
-		
-		
+//나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
+$('#pubPhotoList').naraeWidthSildeAuto();
 		
 		
 		
