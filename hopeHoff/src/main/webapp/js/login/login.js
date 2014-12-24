@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 	
 	$("#footer").load("../common/footer.html");
 	
