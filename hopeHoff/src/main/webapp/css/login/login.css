@@ -7,7 +7,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
-
 .hn {font-family: 'Hanna';}
 .nbs {font-family: 'Nanum Brush Script';}
 .ng {font-family: 'Nanum Gothic';}
@@ -60,7 +59,8 @@
 		
 	}
 	
-	#background {
+	/* 백그라운드 사진 */
+	#background > img {
 	position: absolute;
 	width: 100%;
 	height : 630px;
@@ -68,9 +68,11 @@
 	z-index: -1;
 	}
 	
+	/* 헤더~풋터로 묶은것*/
 	#loginBox {
 	padding : 35px;
 	width: 100%;
+	z-index: 4;
 	}
 	
 	/* HopeHoff 오늘의말씀 속성적용 */
@@ -290,13 +292,9 @@
 	text-align: center;
 	}
 	
+	/* 회원가입창 버튼창 */
 	#inNumber00, #inNumber02 {
 	margin-left: -20px;
-	}
-	
-	body.modal-open{
-	margin : 0px !important;
-	padding:0px !important;
 	}
 	
 	/* PC footer */
@@ -363,11 +361,13 @@
 	#right {
 	border: 10px #CD853F outset;
 	margin-top : 90px;
+	background-color: #fd9e04;
 	}
 	
 	/* 모바일 ID PWD input길이 */
 	#inputPassword, #inputId {
-	width : 190px;
+	width : 170px;
+	margin-left: -15px;
 	}
 	
 	/* 모바일 전체 배경적용01 */
@@ -405,7 +405,7 @@
 	
 	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
 	#bNumber, #bDay, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
-	width: 170px;
+	width: 150px;
 	}
 	
 	/* 모바일 Sign-up 팝업창 헤더배경 속성적용 */
@@ -434,10 +434,6 @@
 	text-align: center;
 	}
 	
-	/* 팝업 Sign-up ID 가운데정렬 맞추기 */
-	#popId{
-	}
-
 	/* Sign-up 팝업창 일반/사업자 체크리스트 가운데정렬 */
 	#choose02 {
 	margin : 10px 0px 10px 0px;
@@ -500,7 +496,21 @@
 	text-align: center;
 	}
 	
+	/* 사진가리게하기 */
+	#background {
+	display: none;
+	}
 
+	#sign-up-page01 {
+	text-align: center;
+	}
+	
+	#myModalLabel{
+	text-align: center;}
+	
+	#saveId {
+	font-size: small;
+	}
 	
 	
 }
