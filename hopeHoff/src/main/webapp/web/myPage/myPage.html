@@ -3,9 +3,11 @@
 <head>
 <link rel='stylesheet' href='../../css/myPage/myPage.css'>
 <link rel='stylesheet' href='../../css/bootstrap/bootstrap.min.css'>
-<link rel='stylesheet' href='../../css/bootstrap/bootstrap-theme.min.css'>
+<link rel='stylesheet'
+	href='../../css/bootstrap/bootstrap-theme.min.css'>
 <link rel='stylesheet' href='../../css/myPage/jquery-ui.css'>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -17,81 +19,82 @@
 
 
 <body>
-	<div id=container>
-		<div id="myWrite">
-			<div id="myPageContent">
-			<h1>My Page</h1>
-				<h4>회원님의 정보를 볼 수 있습니다.</h4>
+	<div id='myPage'>
+			<div id='myPageHeader'>
+			<div id="myPageHeaderTitle">MyPage</div>
+			<button id="btnClose" type="button" class="close" value="close">X</button>
 			</div>
-		</div>
 
-			<form id="myDataForm" class="form-horizontal" role="form">
-				<div class="form-group">
-					<label  for="id" class="col-xs-4 control-label">ID</label>
-					<div class="col-xs-6">
-						<input type="text" class="form-control" id="id" disabled="disabled" placeholder="아이디">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="name" class="col-xs-4 control-label">Name</label>
-					<div class="col-xs-6">
-						<input type="text" class="form-control" id="name" disabled="disabled" placeholder="이름">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="birthday" class="col-xs-4 control-label">BirthDay</label>
-					<div class="col-xs-6">
-						<input type="text" class="form-control" id="birthday" placeholder="연도-월-일">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="oldPwd" class="col-xs-4 control-label">
-						Password</label>
-					<div class="col-xs-6">
-						<input type="password" class="form-control" id="oldPwd">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="newPwd" class="col-xs-4 control-label">Check Password</label>
-					<div class="col-xs-6">
-						<input type="password" class="form-control" id="newPwd">
-					</div>
-				</div>
-				<div class="form-group">
-				</div>
-				<div class="form-group">
-					<label for="phoneNo" class="col-xs-4 control-label">Phone Number</label>
-					<div class="col-xs-6">
-						<input type="text" class="form-control" id="phoneNo"
-							placeholder="예)01012345678">
-						<input type="button" id="btnSendVerCode" value="Send Verification Code">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="confirmVerCode" class="col-xs-4 control-label">Confirm Verification Code</label>
-					<div class="col-xs-6">
-						<input type="text" class="form-control" id="confirmVerCode"><button>확인</button>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="email" class="col-xs-4 control-label">Email</label>
-					<div class="col-xs-6">
-						<input type="email" class="form-control" id="email" placeholder="duswjd7918@naver.com">
-					</div>
-				</div>
-				<div id="buttons" align="center">
-              <button type="button" class="btn btn-default" id="btnChange">수정</button>
-				<button type="reset" class="btn btn-default" id="btnCancel">취소</button>
-				</div>
-			</form>
+		<div id='myPageContainer'>
+		<form id="myDataForm" role="form">
+
+			<div class=formLabel>
+				<label for="id">ID</label>
+			</div>
+
+			<div class=formData>
+				<input type="text" id="id" disabled="disabled" placeholder="아이디">
+			</div>
+			<br>
+
+			<div class=formLabel>
+				<label for="name">Name</label>
+			</div>
+
+			<div class=formData>
+				<input type="text" disabled="disabled" placeholder="이름">
+			</div>
+			<br>
+
+			<div class=formLabel>
+				<label for="oldPwd">Password</label>
+			</div>
+			<div class=formData>
+				<input type="password" id="oldPwd">
+			</div>
+			<br>
+
+			<div class=formLabel>
+				<label for="newPwd">Check Password</label>
+			</div>
+			<div class=formData>
+				<input type="password" id="newPwd">
+			</div>
+			<br>
+			<div class=formLabel>
+				<label for="phoneNo">Phone Number</label>
+			</div>
+			<div class=formData>
+				<input type="text" id="phoneNo" placeholder="예)01012345678">
+				<button id='sendBtn'>전&nbsp;송</button>
+			</div>
+			<br>
+			<div class=formLabel>
+				<label for="confirmVerCode">Insert Code</label>
+			</div>
+			<div class=formData>
+				<input type="text" id="confirmVerCode">
+				<button id='confirmBtn'>확&nbsp;인</button>
+			</div>
+			<br>
+			<div class=formLabel>
+				<label for="email">Email</label>
+			</div>
+			<div class=formData>
+			 <input type="email" id="email"	placeholder="duswjd7918@naver.com">
+			 </div>
+			<div id="buttons" align="center">
+				<button type="button" id="btnChange">수정</button>
+				<button type="reset" id="btnCancel">취소</button>
+			</div>
+		</form>
 
 	</div>
-	
-	<div id="footer">
-		 지용근 myWrite
 	</div>
-	
+
+	<div id="footer">지용근 myWrite</div>
+
 
 </body>
-	<script src="../../js/myPage/myPage.js"></script>
+<script src="../../js/myPage/myPage.js"></script>
 </html>
