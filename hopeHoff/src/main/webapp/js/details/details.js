@@ -1,12 +1,13 @@
-$(document).ready(function() {
+var photoListLiWidth = Narae.removePx($("#pubPhotoList").css("width"));
 
+$(document).ready(function() {
 	$('#contentMap').css('display', 'none');
 	$('#contentComments').css('display', 'none');
 	$('#menuText').css('color', '#FFB500');
 	$('#mapText').css('color', '#FFB500');
 	$('#commentText').css('color', '#FFB500');
 	$('#menuButton').css('background-color', '#FFB500');
-		
+	$("#pubPhotoList ul li div").css("width", photoListLiWidth);
 	
 	$('.menu').click(function(event) {
 		$("#contentMenu").css('display', '');
@@ -51,7 +52,6 @@ $(document).ready(function() {
 	$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
 		event.stopPropagation();
 		$("#pubPhotoList").naraeWidthSilde("left");
-		//$('#pubPhotoList').naraeWidthSildeAuto();
 	});
 
 	$("#photoToRight, #pubPhotoList>.rightWrap").click(function() {
@@ -73,7 +73,7 @@ $(document).ready(function() {
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#pubPhotoList').naraeWidthSildeAuto();
 		
-		
+
 		
 	var mapContainer = document.getElementById('contentMap'), // 지도를 표시할 div 
 	    mapOption = {

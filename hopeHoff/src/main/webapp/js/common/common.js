@@ -142,9 +142,6 @@ $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var time = (time == undefined)? 3000 : time;                                  //몇 초마다 이벤트 발생하는지
 	var count = 0;
 	
-	console.log("NaraeWidthSildeAuto호출");
-	console.log( $(this));
-	
 	setInterval(function(){
 		count = (count < 2)? count + 1: 0;
 		
@@ -152,14 +149,9 @@ $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 			marginLeft : (margin - (moveWidth * count)) + "px"
 		}, speed);
 	}, time);
-	
-	console.log("NaraeWidthSildeAuto 호출끝");
 	return this;
 }
 
-$.prototype.naraeTest = function(){
-	alert("zz");
-}
 
 
 
