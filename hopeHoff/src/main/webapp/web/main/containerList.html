@@ -37,7 +37,6 @@
 					var lastNo = $(".list").index($(".list:last-child"));
 					
 					//이미 detailList있는지 체크하기
-					console.log($("#containerList:has(#detailList)"));
 					if($("#containerList:has(#detailList)")){
 						$("#detailList").remove();
 					}
@@ -45,7 +44,8 @@
 					//클릭했을 때 상세정보(detail) 보이는부분
 					$($("#containerList").children()[whichNo]).after(
 							$("<div>").attr("id", "detailList")
-									.css("width", "100%")
+									  .css("min-width", "1130px")
+									  .css("width", "100%")
 									  .css("height", "470px")
 									  .css("background", "#333231")
 									  .css("margin-top", "15px")

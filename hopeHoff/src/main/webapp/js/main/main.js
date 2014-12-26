@@ -21,9 +21,19 @@ $(document).ready(function(){
             $("#smallHeader").css("display", "none");
           }
 	});
+	
+	$("#btnBook").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		
+		console.log(height);
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		//로드되는 부분 만들기
+		/*$("#containerList").load("containerList.html");*/
+	});
 
 	$(":checkbox").click(function() {
-		
 		//체크하는 경우
 		if ($(this).is(":checked")) {
 			checkedList[checkedList.length] = $(this).val();

@@ -147,6 +147,8 @@ body {
 	height:40px;
 	background: #333231;
 	display: none;
+	
+	box-shadow: 0px 5px 10px #000000;
 }
 
 #leftSmallHeader {
@@ -173,7 +175,7 @@ body {
 }
 
 #rightSmallHeader {
-	width: 40%;
+	width: 50%;
 	height: inherit;
 	float: right;
 	
@@ -249,6 +251,7 @@ body {
 
 #containerList {
 	width: 85%;
+	min-width: 1130px;
 	margin-top: 20px;
 	/* overflow-y:scroll;  *//* {overflow : visible | hidden | scroll | auto} */
 	margin: 10px auto;
