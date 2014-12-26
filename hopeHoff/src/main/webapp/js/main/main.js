@@ -56,6 +56,8 @@ $(document).ready(function(){
 		
 		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 		$("#myBook").load("../myBook/myBook.html");
+		
+		console.log("??");
 	});
 
 	$(".my-market").click(function(){
@@ -69,9 +71,7 @@ $(document).ready(function(){
 		$("#myMarket").load("../myMarket/myMarket.html");
 	});
 	
-	$("#keywordRegion").click(function(){
-		console.log("눌렀다");
-	});
+
 });
 
 

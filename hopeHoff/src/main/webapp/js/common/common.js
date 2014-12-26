@@ -134,7 +134,7 @@ $("#wrapDiv").NaraeWidthSilde([움직이고 싶은거리], [움직이는 속도]
 $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var myChildren = $(this).children()[2];                                         // 해당 division의 직속자식인 ul
 	var liWidth = Narae.removePx($(myChildren).children().css("width"));            // li의 width
-	var liHeight = Narae.removePx($(myChildren).children().css("height"))           // li의 height
+	//var liHeight = Narae.removePx($(myChildren).children().css("height"))           // li의 height
 	var liPadding = Narae.removePx($(myChildren).children().css("padding-left")) +  Narae.removePx($(myChildren).children().css("padding-right"));
 	var liMargin = Narae.removePx($(myChildren).children().css("margin-left")) +  Narae.removePx($(myChildren).children().css("margin-right"))
 	var moveWidth = (moveWidth == undefined)? (liWidth + liPadding + liMargin + 6) : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width , 6=> ul자체에 있는 마진 조정
@@ -144,7 +144,7 @@ $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var time = (time == undefined)? 3000 : time;                                  //몇 초마다 이벤트 발생하는지
 	var count = 0;
 	
-	
+	console.log("너니?");
 	setInterval(function(){
 		count = (count < 2)? count + 1: 0;
 		

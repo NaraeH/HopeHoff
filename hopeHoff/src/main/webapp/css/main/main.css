@@ -15,6 +15,8 @@ body {
 		margin-top: 60px;
 		
 		display:none;
+		
+		z-index: 10;
 }
 
 #myBook {
@@ -267,10 +269,10 @@ body {
 	width: 85%;
 	min-width: 1130px;
 	margin-top: 20px;
-	/* overflow-y:scroll;  *//* {overflow : visible | hidden | scroll | auto} */
+	overflow-y:scroll;  /*  {overflow : visible | hidden | scroll | auto} */
 	margin: 10px auto;
 	border: 1px solid #b7bbbc;
-	border-top: 5px solid #b7bbbc;
+	border-top: 5px solid #b7bbbc; 
 	
 }
 
@@ -344,142 +346,3 @@ body {
 
 
 
-/*----------------------a 태그 공통속성-----------------------    */
-
-a:link {
-	color:white;
-    text-decoration: none;
-}
-
-a:visited {
-	color:white;
-    text-decoration: none;
-}
-
-a:hover {
-	color:white;
-	text-decoration: none;
-}
-
-a:active {
-	color:white;
-    text-decoration: underline;
-}
-
-
-
-input[type="button"] {
-	background: -webkit-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	background: -moz-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	background: -o-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFCF52), color-stop(0.25, #FEB901), color-stop(0.5, #f38f07), color-stop(0.75, #f89b1f), to(#ffcf53));
-	background: linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	border: 1px solid #ffde86;
-	padding: 5px 10px 5px;
-	border-radius: 3px;
-	color: #FFFFFF;
-	font-weight: bold;
-	
-	border: 1px solid #ffde86;
-	padding: 5px 10px 5px;
-	border-radius: 3px;
-	color: #FFFFFF;
-	font-weight: bold;
-}
-
-input[type="button"]:hover {
-	background: #ffc837;
-	border: 1px solid #ffde86;
-	border-radius: 3px;
-	color: #003a5e;
-}
-
-
-.box-rotate-right{
-	width: 0px;
-	height:0px;
-	border-right:12px solid transparent;
-	border-bottom:12px solid black; 
-	transform:rotate(225deg);  
-	-ms-transform:rotate(225deg);      /* IE 9 */
-	-webkit-transform:rotate(225deg);  /* Chrome, Safari, Opera */
-	-moz-transform:rotate(225deg);
-	-o-transform:rotate(225deg);
-	
-	display: inline-block;
-}
-
-.box-rotate-right:hover{
-	width: 0px;
-	height:0px;
-	border-right:12px solid transparent;
-	border-bottom:12px solid #3e3e27; 
-	transform:rotate(225deg);  
-	-ms-transform:rotate(225deg);      /* IE 9 */
-	-webkit-transform:rotate(225deg);  /* Chrome, Safari, Opera */
-	-moz-transform:rotate(225deg);
-	-o-transform:rotate(225deg);
-	
-	display: inline-block;
-}
-
-.box-rotate-left{
-	width: 0px;
-	height:0px;
-	border-right:12px solid transparent;
-	border-bottom:12px solid black; 
-	transform:rotate(45deg);  
-	-ms-transform:rotate(45deg);      /* IE 9 */
-	-webkit-transform:rotate(45deg);  /* Chrome, Safari, Opera */
-	-moz-transform:rotate(45deg);
-	-o-transform:rotate(45deg);
-	
-	display: inline-block;
-}
-
-.box-rotate-left:hover{
-	width: 0px;
-	height:0px;
-	border-right:12px solid transparent;
-	border-bottom:12px solid #3e3e27; 
-	transform:rotate(45deg);  
-	-ms-transform:rotate(45deg);      /* IE 9 */
-	-webkit-transform:rotate(45deg);  /* Chrome, Safari, Opera */
-	-moz-transform:rotate(45deg);
-	-o-transform:rotate(45deg);
-	
-	display: inline-block;
-}
-
-.box-rotate-up{
-	width: 0px;
-	height:0px;
-	border-right:12px solid transparent;
-	border-bottom:12px solid black; 
-	transform:rotate(135deg);  
-	-ms-transform:rotate(135deg);      /* IE 9 */
-	-webkit-transform:rotate(135deg);  /* Chrome, Safari, Opera */
-	-moz-transform:rotate(135deg);
-	-o-transform:rotate(135deg);
-	
-	display: inline-block;
-}
-
-
-/*ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일-----*/
-.width-ul-style ul{
-	list-style-type:none;
-	display: inline-block;
-	clear:both;
-}
-
-.width-ul-style li{
-	display:inline;
-	border-left: 1px solid #c0c0c0;
-	padding: 0px 10px 0px 10px;
-}
-
-.width-ul-style ul li:first-child {
-	border-left: none;
-}
-/*----------------------------------------------------*/

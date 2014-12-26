@@ -1,31 +1,29 @@
-var photoListLiWidth = Narae.removePx($("#pubPhotoList").css("width"));
 
 $(document).ready(function() {
-	$('#contentComments').css('display', 'none');
-	$('#menuText').css('color', '#FFB500');
-	$('#commentText').css('color', '#FFB500');
-	$('#menuButton').css('background-color', '#FFB500');
-	$("#pubPhotoList ul li div").css("width", photoListLiWidth);
+	$('#myContentComments').css('display', 'none');
+	$('#myMenuText').css('color', '#FFB500');
+	$('#myCommentText').css('color', '#FFB500');
+	$('#myMenuButton').css('background-color', '#FFB500');
 	
 	$('.menu').click(function(event) {
-		$("#contentMenu").css('display', '');
-		$('#contentComments').css('display', 'none');
+		$("#myContentMenu").css('display', '');
+		$('#myContentComments').css('display', 'none');
 
-		$('#menuText').css('color', '#FFB500');
-		$('#menuButton').css('background-color', '#FFB500');
-		$('#commentText').css('color', '#FFB500');
-		$('#commentButton').css('background-color', 'white');
+		$('#myMenuText').css('color', '#FFB500');
+		$('#myMenuButton').css('background-color', '#FFB500');
+		$('#myCommentText').css('color', '#FFB500');
+		$('#myCommentButton').css('background-color', 'white');
 	});
 
 	
 	$('.comment').click(function(event) {
-		$("#contentMenu").css('display', 'none');
-		$('#contentComments').css('display', '');
+		$("#myContentMenu").css('display', 'none');
+		$('#myContentComments').css('display', '');
 
-		$('#menuText').css('color', '#FFB500');
-		$('#menuButton').css('background-color', 'white');
-		$('#commentText').css('color', '#FFB500');
-		$('#commentButton').css('background-color', '#FFB500');
+		$('#myMenuText').css('color', '#FFB500');
+		$('#myMenuButton').css('background-color', 'white');
+		$('#myCommentText').css('color', '#FFB500');
+		$('#myCommentButton').css('background-color', '#FFB500');
 	});
 
 	$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
@@ -48,7 +46,7 @@ $(document).ready(function() {
 		$("#menuList").naraeWidthSilde("right");
 	});
 	
-	$("#btnClose").click(function(){
+	$("#btnMyMarketClose").click(function(){
 		$("#back").css("display", "none");
 		$("#myMarket").remove();
 	})
@@ -60,7 +58,7 @@ $('#pubPhotoList').naraeWidthSildeAuto();
 
 	/************************************************************************************************/
 	
-		$('<tr id=tRow0 style="color:white">').appendTo($('#dataForm'));
+		$('<tr id=tRow0 style="color:white">').appendTo($('#myDataForm'));
 		//$('<th class=tableDataNo>').html("No").appendTo($('#tRow0'));
 		$('<th class=tableDataName>').html("Name").appendTo($('#tRow0'));
 		$('<th class=tableDataComments>').html("Comments").appendTo($('#tRow0'));
@@ -68,7 +66,7 @@ $('#pubPhotoList').naraeWidthSildeAuto();
 		$('<th class=tableDataButton>');
 	
 	
-		 $('<tr id=tRowNew style="color:white">').appendTo($('#dataForm')); 
+		 $('<tr id=tRowNew style="color:white">').appendTo($('#myDataForm')); 
 		//$('<td class=tableDataNo>').html("3").appendTo($('#tRow3'));
 	    $('<td class=tableDataName>').html("붸연정").appendTo($('#tRowNew'));
 		$('<td class=tableDataComments>')
@@ -79,13 +77,13 @@ $('#pubPhotoList').naraeWidthSildeAuto();
 				.append($('<button type="button" id="plus" style="color:blue">+</button>'))
 				.appendTo($('#tRowNew'));
 		
-		$('<tr id=tRow2 style="color:white">').appendTo($('#dataForm')); 
+		$('<tr id=tRow2 style="color:white">').appendTo($('#myDataForm')); 
 		//$('<td class=tableDataNo>').html("2").appendTo($('#tRow2'));
 	    $('<td class=tableDataName>').html("현나뤠").appendTo($('#tRow2'));
 		$('<td class=tableDataComments>').html("여기 해물탕 추천이요!!").appendTo($('#tRow2'));
 		$('<td class=tableDataTime>').html("2014-12-14").appendTo($('#tRow2'));
 		
-		$('<tr id=tRow1 style="color:white">').appendTo($('#dataForm')); 
+		$('<tr id=tRow1 style="color:white">').appendTo($('#myDataForm')); 
 	//	$('<td class=tableDataNo>').html("1").appendTo($('#tRow1'));
 	    $('<td class=tableDataName>').html("붸연정").appendTo($('#tRow1'));
 		$('<td class=tableDataComments>').html("원빈이랑 왔더니 서비스가 좋았음ㅋㅋㅋ").appendTo($('#tRow1'));
@@ -102,7 +100,7 @@ $('#pubPhotoList').naraeWidthSildeAuto();
 		
 		$('#plus').click(function(event) {
 		
-		  $('#dataForm').append($("#dataForm:nth-child(2)")).append($('<tr id=tRow3>'));
+		  $('#myDataForm').append($("#myDataForm:nth-child(2)")).append($('<tr id=tRow3>'));
 	
   		  $('<td class=tableDataName>').html("붸연정***").appendTo($('#tRow3'));
 		  $('<td class=tableDataComments>').html("후기당ㅇㅇㅇ").appendTo($('#tRow3'));
