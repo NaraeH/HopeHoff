@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	var count = 0; //for문을 위한 index
 	var checkedList = []; //keyword를 담기위한 배열
-	var headerOffset = Narae.removePx($("#header").css("height")); 
+	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
 	
 	//첫 시작시 리스트 로딩
 	$("#containerList").load("containerList.html");
@@ -23,6 +23,7 @@ $(document).ready(function(){
 	});
 
 	$(":checkbox").click(function() {
+		
 		//체크하는 경우
 		if ($(this).is(":checked")) {
 			checkedList[checkedList.length] = $(this).val();
