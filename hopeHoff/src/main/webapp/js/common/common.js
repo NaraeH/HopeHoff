@@ -144,9 +144,6 @@ $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var time = (time == undefined)? 3000 : time;                                  //몇 초마다 이벤트 발생하는지
 	var count = 0;
 	
-	//이미지 사이즈 해당 division의 사이즈와 동일하게 고정
-	$(".photoList").css("width", $("#pubPhotoList").css("width"));
-	$(".widthList ul").css("width", moveWidth * childrenCount);
 	
 	setInterval(function(){
 		count = (count < 2)? count + 1: 0;

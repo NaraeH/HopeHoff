@@ -1,5 +1,3 @@
-var photoListLiWidth = Narae.removePx($("#pubPhotoList").css("width"));
-
 $(document).ready(function() {
 	$('#contentMap').css('display', 'none');
 	$('#contentComments').css('display', 'none');
@@ -7,7 +5,7 @@ $(document).ready(function() {
 	$('#mapText').css('color', '#FFB500');
 	$('#commentText').css('color', '#FFB500');
 	$('#menuButton').css('background-color', '#FFB500');
-	$("#pubPhotoList ul li div").css("width", photoListLiWidth);
+	
 	
 	$("#btnClose").click(function(){
 		$("#detailList").remove();
