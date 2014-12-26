@@ -36,13 +36,12 @@
 					var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
 					var lastNo = $(".list").index($(".list:last-child"));
 					
-					
-					/*
-					//뒷부분 배경 검게
-					$("#back").css("height", presentHeight + 800);
-					$("#back").css("display", "block"); */
+					//이미 detailList있는지 체크하기
+					console.log($("#containerList:has(#detailList)"));
+					if($("#containerList:has(#detailList)")){
+						$("#detailList").remove();
+					}
 							 
-					
 					//클릭했을 때 상세정보(detail) 보이는부분
 					$($("#containerList").children()[whichNo]).after(
 							$("<div>").attr("id", "detailList")
