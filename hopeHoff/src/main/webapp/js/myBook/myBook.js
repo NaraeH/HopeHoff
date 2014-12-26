@@ -92,6 +92,8 @@ $(document).ready(function(){
 	
 	//******************** btnClose 클릭시에 ************************//
 	$("#btnClose").click(function(){
+		console.log("#btnClose");
+		$("#back").css("display", "none");
 		$("#myBook").remove();
 	});
 

@@ -12,10 +12,13 @@ body {
 		max-width:  600px;
 		height: 680px;
 		border: 2px solid #FFCD28;
-		margin: 100px 300px;
+		/* margin: 100px 300px; */
 		background-color: white;
 		position: absolute;
+		margin-top: 60px;
 		z-index: 9999;
+		
+		display:none;
 	}
 
 
@@ -23,6 +26,7 @@ body {
 #mainBody {
 	margin: 0px;
 	font-family: 'Jeju Gothic', serif;
+	position:absolute;
 	z-index:  -100;
 }
 

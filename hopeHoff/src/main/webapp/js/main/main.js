@@ -7,8 +7,6 @@ $(document).ready(function(){
 	//첫 시작시 리스트 로딩
 	$("#containerList").load("containerList.html");
 	$("#footer").load("../common/footer.html");
-	$("#myBook").css("display","none");
-	
 	
 	//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
 	$(window).scroll(function(){
@@ -25,18 +23,19 @@ $(document).ready(function(){
 	
 	$("#btnBook").click(function(){
 		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
 		
-		
-		console.log(height);
-		$("#myBook").css("display","");
-		$("#mainBody").css('position','absolute');
-		$("#myBook").load("../myBook/myBook.html");
+		console.log("zz=>" + marginLeft);
+		console.log(Narae.removePx($("#myBook").css("width")));
 		
 		$("#back").css("display", "block")
 				  .css("height", height);
 		
-		//로드되는 부분 만들기
-		/*$("#containerList").load("containerList.html");*/
+		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myBook").load("../myBook/myBook.html");
+		
+		
+	
 
 	});
 
