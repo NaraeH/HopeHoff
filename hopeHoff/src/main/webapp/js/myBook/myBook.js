@@ -8,26 +8,26 @@ $(document).ready(function(){
 	
 	//***************************** table에 행만들기. ********************************//
 	for(var i=0; i<=totalSize*2; i++){
-		$('<tr id=tRow'+i+'>').appendTo($('#dataForm'));
+		$('<tr id=tRow'+i+'>').appendTo($('#myBookData'));
 		if(i==0){
 			for(var j=0;j<5; j++){
-				$('<th class=tableData'+i+'>').html("<input id=checkboxHeader  type=\"checkbox\">").appendTo($('#tRow0'));
-				$('<th class=tableData'+i+'>').html("번호").appendTo($('#tRow0'));
-				$('<th class=tableData'+i+'>').html("전화 번호").appendTo($('#tRow0'));
-				$('<th class=tableData'+i+'>').html("인원").appendTo($('#tRow0'));
-				$('<th class=tableData'+i+'>').html("시간").appendTo($('#tRow0'));
-				$('<th class=tableData'+i+'>').html("비고").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("<input id=checkboxHeader  type=\"checkbox\">").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("번호").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("전화 번호").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("인원").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("시간").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("비고").appendTo($('#tRow0'));
 				break;
 			}
 		}
 		else if(i%2!=0){
 			for(var j=0;j<5; j++){
-				$('<td class=tableData'+i+'>').html("<input id=checkbox"+i+"  class=\"checkbox\" type=\"checkbox\">").appendTo($('#tRow'+i));
-				$('<td class=tableData'+i+'>').html("No").appendTo($('#tRow'+i));
-				$('<td class=tableData'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
-				$('<td class=tableData'+i+'>').html("People-Count").appendTo($('#tRow'+i));
-				$('<td class=tableData'+i+'>').html("Time").appendTo($('#tRow'+i));
-				$('<td class=tableButton'+i+'>').html("<button id=dataButton"+i+" class=\"dataButton\"></button>").appendTo($('#tRow'+i));
+				$('<td style=\"width:50px ;\"  id=tableDataCheck'+i+'>').html("<input id=checkbox"+i+"  class=checkedBox type=\"checkbox\">").appendTo($('#tRow'+i));
+				$('<td style=\"width:50px ;\"  id=tableDataNo'+i+'>').html("No").appendTo($('#tRow'+i));
+				$('<td style=\"width:150px ;\" id=tableDataPhone'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
+				$('<td style=\"width:100px ;\" id=tableDataCount'+i+'>').html("People-Count").appendTo($('#tRow'+i));
+				$('<td style=\"width:100px ;\" id=tableDataTime'+i+'>').html("Time").appendTo($('#tRow'+i));
+				$('<td style=\"width:100px ;\" class=tableButton'+i+'>').html("<button id=dataButton"+i+" class=\"dataButton\"></button>").appendTo($('#tRow'+i));
 				$('.dataButton').css('background-image','url(../../img/common/arrow_down.png)')
 				.css('width','25px')
 				.css('height','20px')
@@ -76,7 +76,9 @@ $(document).ready(function(){
 	
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
 	$('#btnDelete').click(function(event){
-		console.log("aaa");
+		if(checkedTable == 0){
+			return;
+		}
 		$('#'+'tRow'+checkedTable).remove();
 	});
 

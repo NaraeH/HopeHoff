@@ -1,92 +1,308 @@
+/* 폰트 속성입니다. */
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
 @CHARSET "UTF-8";
 
 @media all and (min-width:421px) {
-	body {
-		width: 600px;
-		height: 680px;
+
+	#detailsBody {
+		width: 65%;
+		height: 100%;
 		border: 4px solid #FFCD28;
-		
 	}
-	.modal-header {
+	
+	/*------------------header-------------------*/
+	#detailHeader {
+		height: 45px;
 		background-color: #FFCD28;
 	}
-	.myMarketInfoData {
-		margin-left: 10px;
+	
+	#headerTitle {
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 10px 10px 25px;
 	}
-	.Info {
-		border: 1px solid red;
-		display: inline;
+	
+	#btnClose{
+		background: #FFCD28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin: 10px;
 	}
-	#myMarketTitle {
-		border: 1px solid red;
+	
+	/*-------------------container-------------------*/
+	#detailContainer {
+		width: 97%;
+		height: 87%;
+		padding: 15px;
+		background-color: #333231;
 	}
-	#container {
-		margin: 0px auto;
-		padding: 10px;
-		border: 1px solid pink;
-		width: 800px;
-		height: 670px;
+	
+	#pubPhotoListWrap {
+		width: 35%;
+		height: 20%;
+		
+		display: inline-block;
+		border: 1px dashed red; 
+	}
+	
+	#pubPhotoList {
+		overflow: hidden;
+	    width:100%;
+		height: 50%;
+	}
+	
+	/*-------------------여기 나중에 고쳐야되-(비교하고 수정하기)------------------*/
+	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
+		height: 338px;
+		
+		/* border: 1px solid red; */
+	}
+	
+	#photoToLeft {
+		margin-top: 160px;
+		margin-left: 16px;
+	}
+
+	#photoToRight {
+		margin-top: 160px;
+		margin-left: 6px;
+	}
+	
+	#pubPhotoList ul {
+		margin-top: -665px;
+	}
+	
+	.widthList ul {
+		width: 2000px;
+		list-style-type: none;
+		display: inline-block;
+		overflow: hidden;
+		margin-left:0px;
+		padding: 0px;
+	}
+	.widthList li{
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	#pubPhotoList .photoList {
+		width: 537px;
+		height: 340px;
+	}
+
+	#pubPhoto1 {
+		background-image: url("../../img/details/Wara-Wara01.jpg");
+	}
+	
+	#pubPhoto2 {
+		background-image: url("../../img/details/Wara-Wara02.jpg");
+	}
+	
+	#pubPhoto3 {
+		background-image: url("../../img/details/Wara-Wara03.jpg");
+	}
+	
+	.photoList .imgText {
+		width: inherit;
+		height: inherit;
+		
+		display: table-cell;
+		text-align: center;
+		vertical-align: bottom;
+		align-items: center;
+		color: white;
+		font-size: small;
+	}
+	
+
+/*---------------------------------*/
+	#rightContainer{                         /* 오른쪽꺼 */
+		display: inline-block;
+		width: 64%;
+		height: 95%;
+		float: right;
+		border: 1px dashed blue;
+	}
+	
+	#hoffInfo {
+		width: 98%;
+		height: 50%;
+		margin: 1%;
+		display: inline-block;
+		font-size: small;
+		color: #FFCD28;
+		border: 1px solid #FFCD28;
+	}
+	
+	#hoffInfo>div {
+		display:inline-block;
+		margin: 0px;
+	}
+	#hoffInfo>div:first-child {
+		font-size:large;
+		font-weight: bold;
 	}
 	#myMarketSelect {
-		margin-top: 10px;
+		float: right;
 	}
-	#myMarketInfoForm {
-		margin: 3px 30px;
-		height: 470px;
-		width: 700px;
-		display: inline-block;
-		border: 1px solid yellow;
+
+	.inputBox {
+		width: 40%;
+	
 	}
-	#myMarketInfoImage {
-		height: 250px;
-		width: 400px;
-		display: inline-block;
+/* 	.Info {
+		display: inline;
+		text-align: left;
+	} */
+/* 	#reservation {
 		margin: 10px;
-		float: left;
-	}
-	#myMarketInfo {
-		height: 250px;
-		width: 250px;
+		text-align: right;
+	} */
+
+	/* *************V tabs********** */
+	#tabs {
+		width: 100%;
+		height: 230px;
 		display: inline-block;
-		margin: 10px;
-		"
 	}
-	#btnMod {
-		margin-top: 10px;
+	#tabsContent {
+		width:98%;
+		height: 90%;
+	    margin: 1%;
+		border: 3px dotted #FFCD28;
+		display: inline-block;
+		
 	}
-	#menuList {
-		margin: 20px 20px;
-		width: 600px;
-		height: 170px;
+	#contentMenu, #contentComments {
+		width: 100%;
+		height: 200px;
+
 	}
-	#menuImages {
-		width: 600px;
+	#menu, #price {
+		color:blue;
+		font-size: large;
+		text-align: center;
+		margin-top:18px;
 	}
-	.manuImage {
-		margin: 2px 10px;
+	#overlay>input{
+		width:70%;
 	}
+	/* ************V tabsBar************** */
 	#tabsBar {
+		width: 100%;
 		height: 50px;
-		margin: 0 50px;
-		padding: 7px 10px;
+		padding: 5px 10px;
+		/* margin: 0 auto; */
+		clear: both;
+	}
+	#tabsBarText {
+		width: 100%;
+		position: relative;
+	   /* 	z-index: 2; */
 	}
 	#tabsBarText>div {
-		margin-right: 60px;
 		display: inline-block;
-		width: 260px;
+		width: 48%;
+		font-size: 15px;
+		margin-left:4px;
+	}
+	#tabsBarButton {
+		position: relative;
+		margin-top: -3px;
+		z-index: 1;
 	}
 	#tabsBarButton>div {
-		margin-right: 30px;
 		display: inline-block;
-		border: 2px solid black;
+		width: 48%;
 		height: 15px;
+		margin-left:3px;
+		border: 1px solid white;
 		background-color: white;
-		width: 290px;
 	}
-	#footer {
-		color: blue;
-		text-align: center;
+
+	/* *********V menuList************* */
+	#menuList {
+		width: 707px;
+		height: 205px;
+		margin: 0 auto;
+		overflow: hidden;
 	}
+	#menuToLeft {
+		margin-top: 90px;
+		margin-left: 5px;
+	}
+
+	#menuToRight {
+		margin-top: 90px;
+		margin-left: 27px;
+	}
+	
+	#menuList ul {
+/* 		height: 210px;
+		margin-bottom: 0px; */
+		
+		margin-top: -203px;
+		height: 210px;
+		list-style-type: none;
+		padding: 0px;
+		display: inline-block;
+		overflow: hidden;
+	}
+	
+	#menuList li {
+		display: inline-block;
+		padding:0px 10px;
+		height:170px;
+		width: 170px;
+	}
+	
+	#menuList ul li {
+		width:210px;
+		height:210px;
+		
+		/* border: 1px solid red; */
+	}
+	
+	#menuList li img {
+		border:1px solid gray;
+		width: 140px;
+		height: 170px;
+	}
+	
+	#menuList>span {
+		border-bottom: 20px solid black;
+		margin-top: 85px;
+		margin-left: 3px;
+		
+	}
+
+	#bestMenu1{
+	    background-image: url('../../img/details/chiken.jpg');
+	}
+	#bestMenu2{
+	    background-image: url('../../img/details/cheese.jpg');
+	}
+	#bestMenu3{
+	    background-image: url('../../img/details/pizza.jpg');
+	}
+	#bestMenu4{
+	    background-image: url('../../img/details/odang.jpg');
+	}
+	
+	#menuButton, #commentButton {
+		cursor:pointer;
+	}
+
+
 }
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
@@ -94,5 +310,12 @@
 		background-color: #FFCD28;
 	}
 	
-	
+	#carousel-example-generic {
+		width: 270px;
+		height: 150px;
+		float: left;
+
+	}
+
 }
+

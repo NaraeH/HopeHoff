@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+@media all and (min-width:421px) {
+	body {
+	}
+	
+	#myBook {
+		width: 600px;
+		height: 680px;
+		border: 2px solid #FFCD28;
+	}
+	/******************** Header 부분 **************************/
+	#myBookHeader {
+		background-color: #FFCD28;
+		height: 45px;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	#myBookHeaderTitle {
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 10px 10px 25px;
+	}
+	#btnClose {
+		background: #ffcd28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin: 10px;
+	}
+	/******************** DatePicker 부분 **************************/
+	#myBookDatePicker > p{
+		margin-left: 350px;
+	}
+	
+	/********************* Container 부분 ***************************/
+	#myBookContainer {
+		width: 97%;
+		height: 90%;
+		padding: 30px 50px 15px 15px;
+		margin: 0 auto;
+	} 
+	#myBookData {
+		margin-left: 30px;
+	}
+	.tableData{
+	 	height: 45px;
+	 	border-radius :15px;
+	 	text-align:center;
+		border:1px solid white;
+		background-color : #FFCD28;
+	}
+	
+	td{
+		height: 45px; 
+		text-align: center;
+	}
+	
+	#btnDelete{
+		font-weight: bolder;	
+		margin: 15px 15px  0px 40px;
+	}
+	
+	.warnigMessage{
+	display :inline-block;
+	}
+	#warningCotent{
+		color:red;
+		font-size: large;
+		font-weight: bolder;		
+		
+	}
+	#pagingBar{
+	margin-top : 50px;
+		text-align: center;
+	}
+	
+	/************** Footer 부분 *********************/
+
+	#footer {
+		width: 700px;
+		/* border: yellow solid 1px; */
+		color: blue;
+		text-align: center;
+	}
+}

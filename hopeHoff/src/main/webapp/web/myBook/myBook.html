@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='../../css/myBook/myBook.css'>
+<link rel='stylesheet' href='../../css/bootstrap/bootstrap.min.css'>
+<link rel='stylesheet'
+	href='../../css/bootstrap/bootstrap-theme.min.css'>
+<link rel='stylesheet' href='../../css/myBook/jquery-ui.css'>
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+
+
+</head>
+
+
+<body>
+	<div id='myBook'>
+			<div id="myBookHeader">
+			<div id="myBookHeaderTitle">MyBook</div>
+			<button id="btnClose" type="button" class="close" value="close">X</button>
+			</div>
+
+		<div id="myBookContainer">
+			<div id="myBookDatePicker">
+				<p>
+					Date: <input type="text" id="datepicker">
+				</p>
+			</div>
+
+			<hr>
+
+			<div id="myBookDataTable">
+				<table id="myBookData">
+				</table>
+				<div class= "warnigMessage">
+					<button id="btnDelete">삭제</button>
+				</div>
+				<div class="warnigMessage" id="warningCotent">삭제</div>
+					했을시 연락이 오지 않습니다.
+			</div>
+			<hr>
+			
+			<div id="pagingBar">
+				<nav>
+					
+						<a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>	</a>
+						<a href="#">1</a>
+						<a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span>	</a>
+					
+				</nav>
+			</div>
+		</div>
+
+		</div>
+
+	<div id="footer">지용근 myBook</div>
+
+
+</body>
+<script src="../../js/myBook/myBook.js"></script>
+<link rel='stylesheet' href='../../css/myBook/myBook.css'>
+</html>
