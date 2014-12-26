@@ -145,13 +145,8 @@ $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var count = 0;
 	
 	//이미지 사이즈 해당 division의 사이즈와 동일하게 고정
-	$("#pubPhotoList").css("height", liHeight);
-	$("#pubPhotoList").css("width", liWidth);
-	
+	$(".photoList").css("width", $("#pubPhotoList").css("width"));
 	$(".widthList ul").css("width", moveWidth * childrenCount);
-	
-	//console.log(liWidth * childrenCount);
-	//console.log("요기==>" + $(".widthList ul").css("width"));
 	
 	setInterval(function(){
 		count = (count < 2)? count + 1: 0;
