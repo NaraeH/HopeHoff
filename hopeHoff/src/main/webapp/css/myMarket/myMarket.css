@@ -188,10 +188,13 @@
 
 	}
 	#menu, #price {
-		color:white;
+		color:blue;
 		font-size: large;
 		text-align: center;
 		margin-top:18px;
+	}
+	#overlay>input{
+		width:70%;
 	}
 	/* ************V tabsBar************** */
 	#tabsBar {

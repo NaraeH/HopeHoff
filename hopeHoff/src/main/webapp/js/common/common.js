@@ -62,10 +62,10 @@ $.prototype.naraeWidthSilde = function(direction, moveWidth, speed) {
 	var childrenCount = $(myChildren).children().size();                          //ul의 총 자식수
 	var widthCount = Math.ceil($(this).width() / moveWidth);                       //$(this) 디비전에 들어가 있는 li(item)의 개수
 	
-	console.log(widthCount);
+/*	console.log(widthCount);
 	console.log("moveWidth" + moveWidth);
 	console.log((-(moveWidth * (childrenCount - widthCount)) < margin));
-	console.log((margin < 0));
+	console.log((margin < 0));*/
 	
 	//오른쪽으로 움직일 경우
 	if (direction == "left") {  
@@ -134,13 +134,19 @@ $("#wrapDiv").NaraeWidthSilde([움직이고 싶은거리], [움직이는 속도]
 $.prototype.naraeWidthSildeAuto = function(moveWidth, speed, time){
 	var myChildren = $(this).children()[2];                                         // 해당 division의 직속자식인 ul
 	var liWidth = Narae.removePx($(myChildren).children().css("width"));            // li의 width
+	var liHeight = Narae.removePx($(myChildren).children().css("height"))           // li의 height
 	var liPadding = Narae.removePx($(myChildren).children().css("padding-left")) +  Narae.removePx($(myChildren).children().css("padding-right"));
 	var liMargin = Narae.removePx($(myChildren).children().css("margin-left")) +  Narae.removePx($(myChildren).children().css("margin-right"))
 	var moveWidth = (moveWidth == undefined)? (liWidth + liPadding + liMargin + 6) : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width , 6=> ul자체에 있는 마진 조정
 	var margin = Narae.removePx(($(($(this).children()[2])).css("margin-left"))); //현재 ul의 margin
 	var speed = (speed == undefined) ? 500 : speed;                               //움직이는 속도 (입력안되었을 경우 default=500)
+	var childrenCount = $(myChildren).children().size();                          //ul의 총 자식수
 	var time = (time == undefined)? 3000 : time;                                  //몇 초마다 이벤트 발생하는지
 	var count = 0;
+	
+	//이미지 사이즈 해당 division의 사이즈와 동일하게 고정
+	$(".photoList").css("width", $("#pubPhotoList").css("width"));
+	$(".widthList ul").css("width", moveWidth * childrenCount);
 	
 	setInterval(function(){
 		count = (count < 2)? count + 1: 0;
