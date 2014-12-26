@@ -16,7 +16,7 @@
 .ban{font-family: 'Lobster', cursive;}
 
 
-/* PC전용입니다. */
+/* =========== PC전용입니다. =========== */
 @media all and (min-width:421px){ 
 	
 	body{
@@ -53,10 +53,13 @@
 		margin-left: -50px;
 	}
 	
+
+	
 	/* 전체 배경적용 */
+
+	/* 바디 사이즈 딱 맞게 */
 	#wrap{
 	background-size : cover;
-		
 	}
 	
 	/* 백그라운드 사진 */
@@ -307,7 +310,6 @@
 		width: 100%;
 	}
 	
-
 	/* 모바일 전용 footer */ 
 	#footer01 {
 	display: none;
@@ -328,27 +330,38 @@
 	text-align: center;
 	}
 	
-	
 }
 
-
 /*===========================================*/
-
-
-
 
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
 	
 	
+	/* 기존 PC에 보이던창 모바일에서 가리기 */
 	#header{
 	display: none;
 	}
+	#containerHeader > h1{
+	display: none;
+	}
+	#containerHeader > h2{
+	display: none;
+	}
+	#left {
+	display: none;
+	}
+	#footer{
+	display : none;
+	}
+	#background {
+	display: none;
+	}
+
 	
 	/* 전체화면 HopeHoff와 ID박스 사이 속성적용 */
 	#rightBox{
 	margin-top: 20px;
-
 	}
 	
 	/* 전체화면 SaveID */
@@ -458,20 +471,7 @@
 	color : white;
 	}	
 	
-	/* 기존 PC에 보이던창 모바일에서 가리기 */
-	#containerHeader > h1{
-	display: none;
-	}
-	#containerHeader > h2{
-	display: none;
-	}
-	#left {
-	display: none;
-	}
-	#footer{
-	display : none;
-	}
-	
+	/* 팝업 검사버튼 */
 	#yesno {
 	color : red;
 	font-size : medium;
@@ -481,7 +481,7 @@
 	}
 	
 	
-		/* 모바일 팝업 유효성 ID검사 */
+	/* 모바일 팝업 유효성 ID검사 */
 	#myModal104{
 	text-align: center;
 	}
@@ -496,10 +496,6 @@
 	text-align: center;
 	}
 	
-	/* 사진가리게하기 */
-	#background {
-	display: none;
-	}
 
 	#sign-up-page01 {
 	text-align: center;

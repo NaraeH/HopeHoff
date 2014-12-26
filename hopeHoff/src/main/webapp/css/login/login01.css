@@ -7,7 +7,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
-
 .hn {font-family: 'Hanna';}
 .nbs {font-family: 'Nanum Brush Script';}
 .ng {font-family: 'Nanum Gothic';}
@@ -17,90 +16,103 @@
 .ban{font-family: 'Lobster', cursive;}
 
 
-/* PC전용입니다. */
+/* =========== PC전용입니다. =========== */
 @media all and (min-width:421px){ 
 	
-
-#header {
-	height: 135px;
-	background: #333231;
-	text-align: center;
-}
-	
-#headerMiddle {
-	width: 100%;
-	/* height: 130px; */
-	display: inline-block;
-	padding-left: 10px;
-	
-	/* 	border: 1px solid yellow; */
-}
-
-#headerMiddle a{
-	margin-top : 15px;
-	font-size: 75px;
-	font-family: 'Lobster', cursive;
-	color: #fd9e04;
-	text-align: center;
-	display: inline-block;
-}
-	
-#headerMiddle img{
-	margin-top : -60px;
-	width: 100px;
-	height:100px;
-	display: inline-block;
-}
-	
-	
-	
-	
-	/* 전체 배경적용 */
-	
-	
-	#wrap{
-		background-color : #fd9e04;
-		background-size : cover;
-		padding: 40px;
-		margin:  0px auto;
+	body{
+	width : 100%;
+	height : 100%;
 	}
 	
-	/* 네모박스에 속성적용 */
-	#container {
-		background-image : url("../../img/login/beer.jpg");
-		background-size : cover;
-		width: 1000px;
-		border: 10px #CD853F outset;
-		padding: 35px;
-		margin: 10px auto 0px auto ;
-		box-shadow: 10px 10px 5px #888888;
+	/* 로그인화면 헤더정보 */
+	#header {
+		height: 135px;
+		background: #333231;
+		text-align: center;
+	}
+		
+	#headerMiddle {
+		width: 100%;
+		display: inline-block;
+		padding-left: 10px;
+	}
+	
+	#headerMiddle a{
+		margin-top : 15px;
+		font-size: 75px;
+		font-family: 'Lobster', cursive;
+		color: #fd9e04;
+		display: inline-block;
+	}
+		
+	#headerMiddle img{
+		margin-top : -60px;
+		width: 100px;
+		height:100px;
+		display: inline-block;
+		margin-left: -50px;
+	}
+	
+
+	
+	/* 전체 배경적용 */
+
+	/* 바디 사이즈 딱 맞게 */
+	#wrap{
+	background-size : cover;
+	}
+	
+	/* 백그라운드 사진 */
+	#background > img {
+	position: absolute;
+	width: 100%;
+	height : 630px;
+	opacity:0.8;
+	z-index: -1;
+	}
+	
+	/* 헤더~풋터로 묶은것*/
+	#loginBox {
+	padding : 35px;
+	width: 100%;
+	z-index: 4;
 	}
 	
 	/* HopeHoff 오늘의말씀 속성적용 */
 	#containerHeader {
+		margin : 0 auto;
+		width : 900px;
+		background-color : #fd9e04;
 		font-family: 'Nanum Gothic', sans-serif;
 		font-size: 12px;
-		padding: 5px ;
-		border: 10px double #C2722E;
+		border: 10px double #333231;
 		text-align: center;
+		margin-bottom: 25px;
 	}
 	
 	/* HopeHoff 오늘의말씀 타이틀 속성적용 */
 	#containerHeader > h1 {
 		font-weight: bolder;
 		text-shadow: 5px 5px 5px gray;
-		
+	}
+	
+	/* 아래 추천 hopeHoff 묵인것 */
+	#box{
+	width : 760px;
+	height : 100%;
+	margin: 0 auto;
+	z-index: 100;
 	}
 	
 	/* 추천 왼쪽박스 속성적용 */
 	#left {
+		background-color : #fd9e04;
 		border-radius:20px;
-		width : 300px;
-		border : 3px dashed #C2722E;
-		margin : 15px;
+		width : 350px;
+		height : 360px;
+		border : 3px dashed #333231;
 		float: left;
 		display: inline-block;
-		margin-left : 60px;
 		margin-right : 40px;
 		text-align: center;
 		font-weight: bolder;
@@ -121,7 +133,7 @@
 	
 	/* 추천 왼쪽박스 동그란 그림틀 속성*/
 	#leftImg01 > img {
-		margin-left:80px;
+		margin-left:105px;
 		width:130px;
 		height: 130px;
 	}
@@ -192,7 +204,6 @@
 	margin-left : 30px;
 	}
 	
-	
 	/* 오른쪽 회원가입창 HopeHoff */
 	#rightTop {
 	margin: 20px;
@@ -235,14 +246,14 @@
 	
 	/* 오른쪽 회원가입창 속성적용 */
 	#right {
+		background-color : #fd9e04;
 		border-radius:20px;
 		padding: 35px;
-		border: 3px dashed #C2722E;
+		border: 3px dashed #333231;
 		width: 350px;
 		height : 360px;
 		display: inline-block;
 		clear: both;
-		margin: 15px 15px 0px 55px;
 	}
 	
 	/* 오른쪽 회원가입창 가운데 속성정렬 */
@@ -266,8 +277,8 @@
 	}
 	
 	/* 오른쪽 회원가입창 input길이 속성적용*/
-	#inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
-	width: 300px;
+	#inputEmail3, #bDay, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	width: 250px;
 	}
 	
 	/* 오른쪽 회원가입창 틀 속성적용 */
@@ -276,17 +287,47 @@
 	margin-left: 117px;
 	}
 	
+	/* 오른쪽 회원가입창 정렬 */
+	#yesno {
+	color : red;
+	font-size : medium;
+	font-weight : bolder;
+	text-align: center;
+	}
+	
+	/* 회원가입창 버튼창 */
+	#inNumber00, #inNumber02 {
+	margin-left: -20px;
+	}
+	
 	/* PC footer */
 	#footer{
 		background-color : #333231;
 		color : #fd9e04;
 		padding: 25px;
 		text-align: center;
+		clear : both;
+		width: 100%;
 	}
 	
 	/* 모바일 전용 footer */ 
 	#footer01 {
 	display: none;
+	}
+	
+	/* 모바일 팝업 유효성 ID검사 */
+	#myModal104{
+	text-align: center;
+	}
+	
+	/* 모바일 팝업 유효성 ID검사 헤더 색상 */
+	#myModal104Header{
+	background-color: #FFCD28;
+	}
+	
+	/* 모바일 팝업 유효성 ID검사 버튼 가운데 정렬*/
+	#myModal104Footer{
+	text-align: center;
 	}
 	
 }
@@ -295,12 +336,32 @@
 /*===========================================*/
 
 
+
+
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
 	
+	
+	/* 기존 PC에 보이던창 모바일에서 가리기 */
 	#header{
 	display: none;
 	}
+	#containerHeader > h1{
+	display: none;
+	}
+	#containerHeader > h2{
+	display: none;
+	}
+	#left {
+	display: none;
+	}
+	#footer{
+	display : none;
+	}
+	#background {
+	display: none;
+	}
+
 	
 	/* 전체화면 HopeHoff와 ID박스 사이 속성적용 */
 	#rightBox{
@@ -309,25 +370,27 @@
 	
 	/* 전체화면 SaveID */
 	#saveId{
-	margin:-15px;
+	margin:-10px;
+	margin-left: -55px;
 	}
 	
 	/* 모바일 창 박스 속성적용 */
 	#right {
 	border: 10px #CD853F outset;
 	margin-top : 90px;
+	background-color: #fd9e04;
 	}
 	
 	/* 모바일 ID PWD input길이 */
 	#inputPassword, #inputId {
-	width : 190px;
+	width : 170px;
+	margin-left: -15px;
 	}
 	
 	/* 모바일 전체 배경적용01 */
-	html{
-	background-color: black;
+	body{
+		background-color: black !important;
 	}
-	
 	/* 모바일 전체 배경적용02 */
 	#wrap{
 	background-color: black;
@@ -358,8 +421,8 @@
 	}
 	
 	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
-	#bNumber, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
-	width: 170px;
+	#bNumber, #bDay, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	width: 150px;
 	}
 	
 	/* 모바일 Sign-up 팝업창 헤더배경 속성적용 */
@@ -373,7 +436,7 @@
 	}
 	
 	/* 모바일 Sign-up 팝업창 정렬 속성적용 */
-	#bNumber, #inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
+	#bNumber, #bDay, #inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword{
 	margin-right: 53px;
 	}
 	
@@ -387,7 +450,7 @@
 	margin-top: -10px;
 	text-align: center;
 	}
-
+	
 	/* Sign-up 팝업창 일반/사업자 체크리스트 가운데정렬 */
 	#choose02 {
 	margin : 10px 0px 10px 0px;
@@ -407,22 +470,48 @@
 	
 	/* 모바일 Footer 색깔 */
 	#footer01 {
+	text-align : center;
+	background-color : black;
 	color : white;
 	}	
 	
-	/* 기존 PC에 보이던창 모바일에서 가리기 */
-	#containerHeader > h1{
-	display: none;
+	/* 팝업 검사버튼 */
+	#yesno {
+	color : red;
+	font-size : medium;
+	font-weight : bolder;
+	margin-bottom : 10px;
+	text-align: center;
 	}
-	#containerHeader > h2{
-	display: none;
+	
+	
+	/* 모바일 팝업 유효성 ID검사 */
+	#myModal104{
+	text-align: center;
 	}
-	#left {
-	display: none;
+	
+	/* 모바일 팝업 유효성 ID검사 헤더 색상 */
+	#myModal104Header{
+	background-color: #FFCD28;
 	}
-	#footer{
-	display : none;
+	
+	/* 모바일 팝업 유효성 ID검사 버튼 가운데 정렬*/
+	#myModal104Footer{
+	text-align: center;
 	}
+	
+
+	#sign-up-page01 {
+	text-align: center;
+	}
+	
+	#myModalLabel{
+	text-align: center;}
+	
+	#saveId {
+	font-size: small;
+	}
+	
 	
 }
 

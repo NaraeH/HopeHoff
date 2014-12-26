@@ -13,30 +13,38 @@
 <script src="../../js/login/login.js"></script>
 </head>
 		
-	<!-- 헤더 -->
+<body>
+	
+	<!-- header -->
 	<div id="header">
 		<div id="headerMiddle">
 			<img src="../../img/main/mainLogo.png">
 			<a>HopeHoff</a>
 		</div>
-	<!-- 헤더 빈 공간 -->
 	</div>
-
-<body>
 	
-	<!-- wrap = body -->
-	<div id="wrap"> 
-		
-		<!-- HopeHoff 전체박스 -->
-		<div id="container"> 
-			<div id="containerHeader">
-			        <h1 class="ban">Hope Hoff 오늘의 말씀</h1>
-			        <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
-			        날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
-			</div>  
+	<!-- body -->
+	<div id="wrap">
+	
+			<!-- body background 배경화면 -->
+			<div id="background">
+			<img src="../../img/login/back01.jpg">
+			</div>
+
+			<div id="loginBox">
+				<!-- Header -->
+				
+				<div id="containerHeader">
+				  <h1 class="ban">Hope Hoff 오늘의 말씀</h1>
+				  <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
+				  날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
+				</div>  
 			
+			<!-- 추천 / HopeHoff 박스 -->
+			<div id ="box">
 			<!-- 전체박스 중 왼쪽 틀 -->
 			<div id="left">
+			
 				<!-- 추천 No.1 -->
 				<h2 class="hn">추천 No.1</h2>
 				<div id="leftImg01">
@@ -91,7 +99,7 @@
 									<h3 class="nps">청담 제1막</h3>
 									<h3 class="nps">막걸리도 이제 품위있게!<br>
 									영화 : 위험한상견례 방영장소</h3>
-					       </div>
+					      </div>
 				      </div>
 				      
 				      <div id="modal-footer" class="modal-footer">
@@ -122,7 +130,7 @@
 							<div class="form-group">
 								<div class="hn loginForm">ID</div>
 								<div class="col-sm-10">
-									<input class="form-control" id="inputId" placeholder="아이디를 입력하세요.">
+									<input class="form-control" id="inputId" placeholder="아이디">
 								</div>
 							</div>
 							
@@ -130,7 +138,7 @@
 							<div class="form-group">
 								<div id="pwd" class="hn loginForm">PWD</div>
 								<div class="col-sm-10">
-									<input  class="form-control" type="Password" id="inputPassword" placeholder="패스워드를 입력하세요.">
+									<input  class="form-control" type="Password" id="inputPassword" placeholder="패스워드">
 								</div>
 							</div>
 							
@@ -144,12 +152,15 @@
 							<!-- 오른쪽박스 Login Sign-up -->
 							<div class="form-group">
 								<div id="loginBtn" class="col-sm-10">
-										<button type="button" class="btn btn-danger">Login</button>
-										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal02">Sign-up</button>
+										<button onclick="location.href='../main/main.html'" type="button" class="btn btn-danger">Login</button>
+										<button id="signUp" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal02">Sign-up</button>
 								</div>
 							</div>	
 						</div>
-			</div>	
+			</div>
+			</div>
+		</div>	<!--End 추천 / HopeHoff 박스 -->
+		</div> <!-- wrap /div -->
 								
 			<!-- 회원가입 팝업 -->
 			<form class="form-horizontal" role="form">			
@@ -169,24 +180,42 @@
 									
 									<!-- 회원가입 선택 -->
 									<div id="choose02" class="hn">
-										<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1"> 일반
-										<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"> 사업자
+										<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1"/> 일반
+										<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"/> 사업자
 									</div>
 									
 									<!-- 회원가입 팝업창 ID -->
 									<div class="form-group">
-										<div class="hn loginForm">ID</div>
+										<div id="popId" class="hn loginForm">ID</div>
 										<div class="col-sm-8">
-										<input class="form-control" type="text" id="formGroupInputLarge" placeholder="ID를 입력하세요.">
+										<input class="form-control" type="text" id="formGroupInputLarge" placeholder="ID">
 										</div>
-										<button id="inNumber00" type="button" class="btn btn-warning">검사</button>
+										<button id="inNumber00" type="button" class="btn btn-warning"  data-toggle="modal" data-target="#myModal104">검사</button>
 									</div>
 									
+														<!-- 회원가입 중복여부 창 -->
+														<div class="modal fade" id="myModal104">
+															  <div class="modal-dialog">
+															    <div class="modal-content">
+															      <div id="myModal104Header" class="modal-header">
+															        <h4 class="hn modal-title">아이디 유효성 검사</h4>
+															      </div>
+															      <div class="modal-body">
+															      <!-- 회원가입 중복여부 질의응답 get받는 곳-->
+															       <div id="yesno"></div>
+															      </div>
+															      <div id="myModal104Footer"class="modal-footer">
+															        <button id="myModal104End" type="button" class="btn btn-warning" data-dismiss="modal">돌아가기</button>
+															      </div>
+															    </div>
+															  </div>
+															</div>
+															
 									<!-- 회원가입 팝업창 Name -->
 									<div class="form-group">
 									<div class="hn loginForm">Name</div>
 										<div class="col-sm-8">
-											<input class="form-control" type="text" id="formGroupInputSmall" placeholder="Name를 입력하세요.">
+											<input class="form-control" type="text" id="formGroupInputSmall" placeholder="Name">
 										</div>
 									</div>
 												     
@@ -214,14 +243,6 @@
 										</div>
 									</div>
 									
-									<!-- 회원가입 팝업창 사업자번호 -->						  
-									<div id="bNum" class="form-group" style="display:none">
-									<div class="hn loginForm">B-Num</div>
-										<div class="col-sm-8">
-										<input id="bNumber" type="text" class="form-control" placeholder="사업자번호를 써주세요.">
-										</div>
-									</div>
-									
 									<!-- 회원가입 팝업창 인증 -->						  
 									<div class="form-group">
 									<div class="hn loginForm">인증</div>
@@ -245,7 +266,7 @@
 								<div class="modal-footer">
 									<div id="signUpFooter">
 										<button type="button" class="btn btn-warning">Sign-up</button>
-										<button type="button" class="btn btn-warning" data-dismiss="modal">Back</button>
+										<button id=btnCancel type="reset" class="btn btn-warning" data-dismiss="modal">Back</button>
 									</div>
 								</div>
 							</div>
@@ -254,17 +275,8 @@
 					</div>
 			</form> <!-- 회원가입 팝업창 End -->
 			
-		</div><!-- HopeHoff 전체박스 End -->
-		
-			
-		</div> <!-- wrap /div -->
-		
-	</body>
-	
 			<!-- PC용 Footer -->
-			<div id="footer">
-				
-			</div>
+			<div id="footer"></div>
 			
 			<!-- 모바일용 Footer -->
 			<div id="footer01">
@@ -272,6 +284,7 @@
 				<h5>현재 모바일 모드로 전환되었습니다.</h5>
 				<h5>상호 : Hope Hoff | E-mail : HopeHoff@google.com </h5>
 			</div>
-			
+		
+	</body>
 </html>
 

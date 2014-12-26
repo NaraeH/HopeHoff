@@ -1,5 +1,6 @@
-$(function(){
 	
+$(function(){
+
 	$("#footer").load("../common/footer.html");
 	
 	$('#leftImg01').innerfade({
@@ -8,7 +9,7 @@ $(function(){
 			timeout: 2000,
 			type : 'random',
 			containerheight : '130px'
-		});
+	});
 		
 	$('#leftImg02').innerfade({
 		animationtype :'fade',
@@ -26,7 +27,6 @@ $(function(){
 		containerheight : '130px'
 	});
 	
-
 	$("#inlineRadio3").click(function(){
 		$("#bNum").css('display',"none");
 		console.log("display:none");
@@ -78,6 +78,8 @@ $(function(){
 		$('#myModal104').dropdown();
 		setTimeout(function(){$('#yesno').html("아이디를 입력해주세요.");},300);
 	});
+	
+	
 	
 	
 
