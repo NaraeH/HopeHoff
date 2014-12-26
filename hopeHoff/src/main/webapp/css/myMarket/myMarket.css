@@ -26,6 +26,7 @@
 	#headerTitle {
 		display: inline-block;
 		font-size: x-large;
+		font-family: 'Lobster', cursive;
 		margin: 10px 10px 10px 25px;
 	}
 	
@@ -56,15 +57,12 @@
 	
 	#pubPhotoList {
 		overflow: hidden;
-	    width:100%;
-		height: 50%;
+/* 	    width:100%;
+		height: 50%; */
 	}
 	
-	/*-------------------여기 나중에 고쳐야되-(비교하고 수정하기)------------------*/
 	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
 		height: 338px;
-		
-		/* border: 1px solid red; */
 	}
 	
 	#photoToLeft {
@@ -95,8 +93,8 @@
 	}
 	
 	#pubPhotoList .photoList {
-		width: 537px;
-		height: 340px;
+		width: 311px;
+		height: 280px;
 	}
 
 	#pubPhoto1 {
