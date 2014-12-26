@@ -9,6 +9,10 @@ $(document).ready(function() {
 	$('#menuButton').css('background-color', '#FFB500');
 	$("#pubPhotoList ul li div").css("width", photoListLiWidth);
 	
+	$("#btnClose").click(function(){
+		$("#detailList").remove();
+	});
+	
 	$('.menu').click(function(event) {
 		$("#contentMenu").css('display', '');
 		$('#contentMap').css('display', 'none');

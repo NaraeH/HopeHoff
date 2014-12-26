@@ -2,10 +2,36 @@ $(document).ready(function(){
 	
 	var count = 0; //for문을 위한 index
 	var checkedList = []; //keyword를 담기위한 배열
-
+	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
+	
 	//첫 시작시 리스트 로딩
 	$("#containerList").load("containerList.html");
 	$("#footer").load("../common/footer.html");
+	
+	
+	//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
+	$(window).scroll(function(){
+        if ( $( document ).scrollTop() > headerOffset) {
+            $("#smallHeader").css("display", "block")
+            				 .css("position", "fixed")
+            				 .css("top", "0px")
+            				 .css("z-index", "2");
+          }
+          else {
+            $("#smallHeader").css("display", "none");
+          }
+	});
+	
+	$("#btnBook").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		
+		console.log(height);
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		//로드되는 부분 만들기
+		/*$("#containerList").load("containerList.html");*/
+	});
 
 	$(":checkbox").click(function() {
 		//체크하는 경우

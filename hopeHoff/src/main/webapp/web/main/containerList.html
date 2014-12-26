@@ -36,15 +36,16 @@
 					var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
 					var lastNo = $(".list").index($(".list:last-child"));
 					
-					
-					$("#back").css("height", presentHeight + 800);
-					$("#back").css("display", "block");
+					//이미 detailList있는지 체크하기
+					if($("#containerList:has(#detailList)")){
+						$("#detailList").remove();
+					}
 							 
-					
 					//클릭했을 때 상세정보(detail) 보이는부분
 					$($("#containerList").children()[whichNo]).after(
 							$("<div>").attr("id", "detailList")
-									.css("width", "100%")
+									  .css("min-width", "1130px")
+									  .css("width", "100%")
 									  .css("height", "470px")
 									  .css("background", "#333231")
 									  .css("margin-top", "15px")
