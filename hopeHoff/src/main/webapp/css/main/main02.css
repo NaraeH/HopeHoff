@@ -8,22 +8,9 @@ body {
 	padding:0px;
 }
 
-#myBook {
-		max-width:  600px;
-		height: 680px;
-		border: 2px solid #FFCD28;
-		margin: 100px 300px;
-		background-color: white;
-		position: absolute;
-		z-index: 9999;
-	}
-
-
-
 #mainBody {
 	margin: 0px;
 	font-family: 'Jeju Gothic', serif;
-	z-index:  -100;
 }
 
 #wrap {
@@ -31,11 +18,12 @@ body {
 
 #back {
 	display:none;
+	
 	width: 100%;
 	background: rgba(0, 0, 0, 0.4);
 	position: absolute;
 	
-	z-index:1000;
+	z-index:3;
 
 /* back보일때 바디부분 height계산에서 적용하기 */
 }
@@ -205,16 +193,13 @@ body {
 }
 
 /* ----------------------container-----------------------   */
-
-
 #container {
-	
 	/* width:  940px; */
 	width:100%;
 	margin:0 auto;
 	position:relative;
 	
-	z-index:-1;
+	/* z-index:3; */
 }
 
 #containerTop {
@@ -274,18 +259,6 @@ body {
 	border-top: 5px solid #b7bbbc;
 	
 }
-
-/* 	#myBook {
-		border-bottom-left-radius:20px;
-		border-bottom-right-radius:20px;
-		background-color: white;
-		margin:0px auto;
-		width: 600px;
-		height: 650px;
-		border: 3px solid #FFCD28;
-		z-index: 1000;
-	} */
-
 
 .list {
 	width: 23%;
