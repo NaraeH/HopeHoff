@@ -11,14 +11,14 @@
 
 @media all and (min-width:421px) {
 
-	#detailsBody {
+/* 	#myMarketBody {
 		width: 65%;
 		height: 100%;
 		border: 4px solid #FFCD28;
-	}
+	} */
 	
 	/*------------------header-------------------*/
-	#detailHeader {
+	#myMarketHeader {
 		height: 45px;
 		background-color: #FFCD28;
 	}
@@ -40,8 +40,8 @@
 	}
 	
 	/*-------------------container-------------------*/
-	#detailContainer {
-		width: 97%;
+	#myMarketContainer {
+		/* width: 97%; */
 		height: 87%;
 		padding: 15px;
 		background-color: #333231;
@@ -157,14 +157,6 @@
 		width: 40%;
 	
 	}
-/* 	.Info {
-		display: inline;
-		text-align: left;
-	} */
-/* 	#reservation {
-		margin: 10px;
-		text-align: right;
-	} */
 
 	/* *************V tabs********** */
 	#tabs {

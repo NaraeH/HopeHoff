@@ -21,24 +21,6 @@ $(document).ready(function(){
           }
 	});
 	
-	$("#btnBook").click(function(){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
-		
-		console.log("zz=>" + marginLeft);
-		console.log(Narae.removePx($("#myBook").css("width")));
-		
-		$("#back").css("display", "block")
-				  .css("height", height);
-		
-		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myBook").load("../myBook/myBook.html");
-		
-		
-	
-
-	});
-
 	$(":checkbox").click(function() {
 		//체크하는 경우
 		if ($(this).is(":checked")) {
@@ -64,10 +46,31 @@ $(document).ready(function(){
 			}
 		});  
 	});
+	
+	$("#btnBook").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+		
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myBook").load("../myBook/myBook.html");
+	});
 
-	$("#btnMyPage").click(function(){
-		location.href="#";
-		console.log("zz");
+	$(".my-market").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
+		
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myMarket").load("../myMarket/myMarket.html");
+	});
+	
+	$("#keywordRegion").click(function(){
+		console.log("눌렀다");
 	});
 });
 

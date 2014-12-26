@@ -8,26 +8,28 @@ body {
 	padding:0px;
 }
 
-#myBook {
-		max-width:  600px;
-		height: 680px;
+#myBook, #myMarket {
 		border: 2px solid #FFCD28;
-		/* margin: 100px 300px; */
 		background-color: white;
 		position: absolute;
 		margin-top: 60px;
-		z-index: 9999;
 		
 		display:none;
-	}
+}
 
+#myBook {
+	width:  600px;
+	height: 680px;
+}
 
-
+#myMarket {
+	width:  750px;
+	height: 709px;
+}
 #mainBody {
 	margin: 0px;
 	font-family: 'Jeju Gothic', serif;
 	position:absolute;
-	z-index:  -100;
 }
 
 #wrap {
@@ -39,9 +41,7 @@ body {
 	background: rgba(0, 0, 0, 0.4);
 	position: absolute;
 	
-	z-index:1000;
-
-/* back보일때 바디부분 height계산에서 적용하기 */
+	z-index:2;
 }
 
 
@@ -67,10 +67,6 @@ body {
 }
 
 #headerLeftTopMenu {
-	/* height: 70px; */
-	/* clear:both; */
-	
-	 /* border: 1px solid green; */
 }
 
 #headerLeftBottomMenu {
@@ -108,15 +104,13 @@ body {
 
 #headerRight {
  	width: 28%;
- 	/* height: 140px; */
 	display: inline-block;
 	position: absolute;
-	
 	
 	/* border: 1px solid red;  */
 } 
 
-#headerTopMenu {
+#headerRight #headerTopMenu {
 	height: 35px;
 	float: right;
 	font-size: small;
@@ -145,7 +139,6 @@ body {
 }
 
 
-
 #myShopList {
 	height: 25px;
 	background: #474749;
@@ -154,7 +147,12 @@ body {
 }
 
 #myShopList ul{
-	font-size: small;
+	margin:10px;
+}
+
+#myShopList li {
+	color:white;
+	cursor: pointer;
 }
 
 
@@ -212,13 +210,10 @@ body {
 
 
 #container {
-	
 	/* width:  940px; */
 	width:100%;
 	margin:0 auto;
 	position:relative;
-	
-	z-index:-1;
 }
 
 #containerTop {
@@ -278,18 +273,6 @@ body {
 	border-top: 5px solid #b7bbbc;
 	
 }
-
-/* 	#myBook {
-		border-bottom-left-radius:20px;
-		border-bottom-right-radius:20px;
-		background-color: white;
-		margin:0px auto;
-		width: 600px;
-		height: 650px;
-		border: 3px solid #FFCD28;
-		z-index: 1000;
-	} */
-
 
 .list {
 	width: 23%;
