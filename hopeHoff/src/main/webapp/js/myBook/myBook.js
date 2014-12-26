@@ -8,7 +8,7 @@ $(document).ready(function(){
 	
 	//***************************** table에 행만들기. ********************************//
 	for(var i=0; i<=totalSize*2; i++){
-		$('<tr id=tRow'+i+'>').appendTo($('#myWriteData'));
+		$('<tr id=tRow'+i+'>').appendTo($('#myBookData'));
 		if(i==0){
 			for(var j=0;j<5; j++){
 				$('<th class=tableData>').html("<input id=checkboxHeader  type=\"checkbox\">").appendTo($('#tRow0'));
