@@ -63,19 +63,25 @@
 	}
 	
 	/* 백그라운드 사진 */
-	#background > img {
-	position: absolute;
+	#carousel-example-generic {
+	position : absolute;
 	width: 100%;
 	height : 630px;
 	opacity:0.8;
 	z-index: -1;
 	}
 	
+	/* 백그라운드 사진 */
+	#background > div > img {
+	width: 100%;
+	height : 630px;
+	}
+	
 	/* 헤더~풋터로 묶은것*/
 	#loginBox {
 	padding : 35px;
 	width: 100%;
-	z-index: 4;
+	z-index: 100;
 	}
 	
 	/* HopeHoff 오늘의말씀 속성적용 */
