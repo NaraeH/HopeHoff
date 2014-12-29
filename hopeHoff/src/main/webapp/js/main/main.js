@@ -10,7 +10,7 @@ $(document).ready(function(){
 	
 	//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
 	$(window).scroll(function(){
-        if ( $( document ).scrollTop() > headerOffset) {
+        if ( $( document ).scrollTop() > headerOffset && Narae.removePx($("#mainBody").css("width")) >= 421) {
             $("#smallHeader").css("display", "block")
             				 .css("position", "fixed")
             				 .css("top", "0px")

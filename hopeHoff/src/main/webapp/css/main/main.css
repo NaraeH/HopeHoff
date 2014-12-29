@@ -2,347 +2,460 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
  
 /* 큰틀 */
-
-body {
-	margin: 0px;
-	padding:0px;
-}
-
-#myBook, #myMarket {
-		border: 2px solid #FFCD28;
-		background-color: white;
-		position: absolute;
-		margin-top: 60px;
-		
+@media all and (min-width:421px){
+	body {
+		margin: 0px;
+		padding:0px;
+	}
+	
+	#smallMenu, #adv {
+		display: none;	
+	}
+	
+	#myBook, #myMarket {
+			border: 2px solid #FFCD28;
+			background-color: white;
+			position: absolute;
+			margin-top: 60px;
+			
+			display:none;
+			
+			z-index: 10;
+	}
+	
+	#myBook {
+		width:  600px;
+		height: 680px;
+	}
+	
+	#myMarket {
+		width:  750px;
+		height: 709px;
+	}
+	#mainBody {
+		margin: 0px;
+		font-family: 'Jeju Gothic', serif;
+		position:absolute;
+	}
+	
+	#wrap {
+	} 
+	
+	#back {
 		display:none;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		position: absolute;
 		
-		z-index: 10;
-}
-
-#myBook {
-	width:  600px;
-	height: 680px;
-}
-
-#myMarket {
-	width:  750px;
-	height: 709px;
-}
-#mainBody {
-	margin: 0px;
-	font-family: 'Jeju Gothic', serif;
-	position:absolute;
-}
-
-#wrap {
-} 
-
-#back {
-	display:none;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.4);
-	position: absolute;
-	
-	z-index:2;
-}
-
-
-/*----------------------header-----------------------  */
-
-#header {
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  position:relative;
-  background: #333231;
-  
-  z-index:2; 
-}
-
-#headerLeft {
-	width : 28%;
-	/* height: 130px; */
-	display: inline-block;
-	
-	/* border: 1px solid green; */
-}
-
-#headerLeftTopMenu {
-}
-
-#headerLeftBottomMenu {
-	color: #ffffff;
-	font-size: small;
-	display: inline-block;
-	/* margin-top: 10px;
-	clear:both; */
-	
-	/* border: 1px solid blue; */
-}
-
-#headerMiddle {
-	width: 43%;
-	/* height: 130px; */
-	display: inline-block;
-	text-align: center;
-	
-/* border: 1px solid yellow; */
-}
-
-#headerMiddle a{
-	font-size: 75px;
-	font-family: 'Lobster', cursive;
-	color: #fd9e04;
-	text-align: center;
-	
-	vertical-align: bottom; 
-}
-
-#headerMiddle img{
-	width: 100px;
-	height:100px;
-}
-
-#headerRight {
- 	width: 28%;
-	display: inline-block;
-	position: absolute;
-	
-	/* border: 1px solid red;  */
-} 
-
-#headerRight #headerTopMenu {
-	height: 35px;
-	float: right;
-	font-size: small;
-
-	/*  border: 1px solid yellow;  */
-}
-
-#btnMyPage, #btnBook, #btnRecommandPlace{
-	background-image: url(../../img/common/pictogram_white.png);
-	width:60px;
-	height:60px;
-	display:inline-block;
-	cursor: pointer;
-}
-
-#btnMyPage {
-	background-position: -1187px -5608px;
-}
-
-#btnBook{
-	background-position: -1187px -5471px;
-}
-
-#btnRecommandPlace {
-	background-position: -1067px -5680px;
-}
-
-
-#myShopList {
-	height: 25px;
-	background: #474749;
-	height: 30px;
-	/* border: 1px solid red; */
-}
-
-#myShopList ul{
-	margin:10px;
-}
-
-#myShopList li {
-	color:white;
-	cursor: pointer;
-}
-
-
-#smallHeader {
-	width: 100%;
-	height:40px;
-	background: #333231;
-	display: none;
-	
-	box-shadow: 0px 5px 10px #000000;
-}
-
-#leftSmallHeader {
-	width:40%;
-	height: inherit;	
-	float: left;
-	padding-left: 20px;
-	
-	/* border: 1px solid red; */
-}
-
-#leftSmallHeader a {
-	font-family: 'Lobster', cursive;
-	color: #fd9e04;
-	text-align: center;
-	font-size: 30px;
-	
-	vertical-align: top;
-}
-
-#leftSmallHeader img{
-	width: 40px;
-	height: 40px;	
-}
-
-#rightSmallHeader {
-	width: 50%;
-	height: inherit;
-	float: right;
-	
-	/* border: 1px solid green; */
-}
-
-#rightSmallHeader ul{
-	padding:0px;
-}
-
-#rightSmallHeader div{
-	float:right;
-	font-size: 15px;
-	color: white;
-}
-
-/* ----------------------container-----------------------   */
-
-
-#container {
-	/* width:  940px; */
-	width:100%;
-	margin:0 auto;
-	position:relative;
-}
-
-#containerTop {
-	height: 125px;
-	background: #ffb500;
-}
-#containerKeyword {
-	width: 880px;
-	height: 100px;
-	margin: 0 auto;
-	border-radius: 5px;
-	background: #000000;
-	color: white;
-	border-top: 3px solid #fd9e04;
-	
-	border-top-left-radius: 1em;
-	border-top-right-radius: 1em;
-	
-	padding-top: 16px;
-}
-
-#containerKeyword>p{
-	padding: 10px 10px 0px 10px;
-	font-weight: bold;
-	background: black;
-	color: white;
-	position: absolute;
-	margin-top: -30px;
-	margin-left: 35px;
-	border-radius: 5px;
-	border-top: 3px solid #fd9e04;
-	border-right: 3px solid #fd9e04;
-}
-
-#containerKeyword div{
-	width: 200px;
-	display: inline-block;
-	margin-left:12px;
-	border-right: double white 3px;
-}
-
-#containerKeyword>div>p {
-	margin:3px;
-}
-
-#containerKeyword div:last-child{
-	border:0px;
-}
-
-#containerList {
-	width: 85%;
-	min-width: 1130px;
-	margin-top: 20px;
-	overflow-y:scroll;  /*  {overflow : visible | hidden | scroll | auto} */
-	margin: 10px auto;
-	border: 1px solid #b7bbbc;
-	border-top: 5px solid #b7bbbc; 
-	
-}
-
-.list {
-	width: 23%;
-	min-width: 225px;
-	height:175px;
-	margin: 10px 0px 0px 15px;
-	display:inline-block;
-	padding: 5px 0px 5px 0px;
-	box-shadow: 5px 5px 5px #888888;
+		z-index:2;
+	}
 	
 	
+	/*----------------------header-----------------------  */
+	
+	#header {
+	  width: 100%;
+	  position: fixed;
+	  top: 0px;
+	  left: 0px;
+	  position:relative;
+	  background: #333231;
+	  
+	  z-index:2; 
+	}
+	
+	#headerLeft {
+		width : 28%;
+		/* height: 130px; */
+		display: inline-block;
+		
+		/* border: 1px solid green; */
+	}
+	
+	#headerLeftTopMenu {
+	}
+	
+	#headerLeftBottomMenu {
+		color: #ffffff;
+		font-size: small;
+		display: inline-block;
+		/* margin-top: 10px;
+		clear:both; */
+		
+		/* border: 1px solid blue; */
+	}
+	
+	#headerMiddle {
+		width: 43%;
+		/* height: 130px; */
+		display: inline-block;
+		text-align: center;
+		
+	/* border: 1px solid yellow; */
+	}
+	
+	#headerMiddle a{
+		font-size: 75px;
+		font-family: 'Lobster', cursive;
+		color: #fd9e04;
+		text-align: center;
+		
+		vertical-align: bottom; 
+	}
+	
+	#headerMiddle img{
+		width: 100px;
+		height:100px;
+	}
+	
+	#headerRight {
+	 	width: 28%;
+		display: inline-block;
+		position: absolute;
+		
+		/* border: 1px solid red;  */
+	} 
+	
+	#headerRight #headerTopMenu {
+		height: 35px;
+		float: right;
+		font-size: small;
+	
+		/*  border: 1px solid yellow;  */
+	}
+	
+	#btnMyPage, #btnBook, #btnRecommandPlace{
+		background-image: url(../../img/common/pictogram_white.png);
+		width:60px;
+		height:60px;
+		display:inline-block;
+		cursor: pointer;
+	}
+	
+	#btnMyPage {
+		background-position: -1187px -5608px;
+	}
+	
+	#btnBook{
+		background-position: -1187px -5471px;
+	}
+	
+	#btnRecommandPlace {
+		background-position: -1067px -5680px;
+	}
+	
+	
+	#myShopList {
+		height: 25px;
+		background: #474749;
+		height: 30px;
+		/* border: 1px solid red; */
+	}
+	
+	#myShopList ul{
+		margin:10px;
+	}
+	
+	#myShopList li {
+		color:white;
+		cursor: pointer;
+	}
+	
+	
+	#smallHeader {
+		width: 100%;
+		height:40px;
+		background: #333231;
+		display: none;
+		
+		box-shadow: 0px 5px 10px #000000;
+	}
+	
+	#leftSmallHeader {
+		width:30%;
+		height: inherit;	
+		float: left;
+		padding-left: 20px;
+		
+		/* border: 1px solid red; */
+	}
+	
+	#leftSmallHeader a {
+		font-family: 'Lobster', cursive;
+		color: #fd9e04;
+		text-align: center;
+		font-size: 30px;
+		
+		vertical-align: top;
+	}
+	
+	#leftSmallHeader img{
+		width: 40px;
+		height: 40px;	
+	}
+	
+	#rightSmallHeader {
+		width: 60%;
+		height: inherit;
+		float: right;
+		
+		/* border: 1px solid green; */
+	}
+	
+	#rightSmallHeader ul{
+		padding:0px;
+	}
+	
+	#rightSmallHeader div{
+		float:right;
+		font-size: 15px;
+		color: white;
+	}
+	
+	/* ----------------------container-----------------------   */
+	
+	
+	#container {
+		/* width:  940px; */
+		width:100%;
+		margin:0 auto;
+		position:relative;
+	}
+	
+	#containerTop {
+		height: 125px;
+		background: #ffb500;
+	}
+	#containerKeyword {
+		width: 880px;
+		height: 100px;
+		margin: 0 auto;
+		border-radius: 5px;
+		background: #000000;
+		color: white;
+		border-top: 3px solid #fd9e04;
+		
+		border-top-left-radius: 1em;
+		border-top-right-radius: 1em;
+		
+		padding-top: 16px;
+	}
+	
+	#containerKeyword #keywordOpen{
+		display: none;
+	}
+	
+	#containerKeyword div{
+		width: 200px;
+		display: inline-block;
+		margin-left:12px;
+		border-right: double white 3px;
+	}
+	
+	#containerKeyword>div>p {
+		margin:3px;
+	}
+	
+	#containerKeyword div:last-child{
+		border:0px;
+	}
+	
+	#containerList {
+		width: 85%;
+		min-width: 1130px;
+		margin-top: 20px;
+		overflow-y:scroll;  /*  {overflow : visible | hidden | scroll | auto} */
+		margin: 10px auto;
+		border: 1px solid #b7bbbc;
+		border-top: 5px solid #b7bbbc; 
+		
+	}
+	
+	.list {
+		width: 23%;
+		min-width: 225px;
+		height:175px;
+		margin: 10px 0px 0px 15px;
+		display:inline-block;
+		padding: 5px 0px 5px 0px;
+		box-shadow: 5px 5px 5px #888888;
+		
+		
+	}
+	
+	.list img {
+		width: 220px;
+		height: 80px;
+	}
+	
+	.list img:hover {
+		width: 220px;
+		height: 80px;
+		background: rgba(0,0,0, 0.5);
+	}
+	
+	.listInfo{
+		width: 220px;
+		height: 100px;
+		margin: 0 auto;
+	}
+	
+	.listTitle{
+		width: 219px;
+		border-radius:5px;	
+		text-align: center;
+		margin: 3px;
+	}
+	
+	.pictureBackground{
+		background: rgba(0, 0, 0, 0.5);
+		width: 219px;
+		line-height: 80px;
+	 	margin-top: -83px; 
+	 	text-align: center;
+	 	display: none;
+	}
+	
+	.listKeywordContainer {
+		width: 220px;
+		height: 50px;
+		margin: 0 auto;
+		overflow-y:scroll;
+	}
+	
+	.listKeywordItem{
+		border-bottom: 1px solid #3e3e27;
+		border-right: 1px solid #3e3e27;
+		border-radius: 3px;
+		background: #fd9e04;
+		margin-left: 3px;
+		margin-top: 3px;
+		display: inline-block;
+		
+	}
+	
+	/* ----------------------footer-----------------------   */
+	#footer {
+		position:relative;
+	}
+
 }
 
-.list img {
-	width: 220px;
-	height: 80px;
-}
 
-.list img:hover {
-	width: 220px;
-	height: 80px;
-	background: rgba(0,0,0, 0.5);
-}
 
-.listInfo{
-	width: 220px;
-	height: 100px;
-	margin: 0 auto;
-}
+/* ----------------------------media ------------------------------------- */
+@media all and (max-width:420px){
+	
+	body {
+		margin: 0px;
+		padding:0px;
+	}
+	
+	#mainBody {
+		margin: 0px;
+		font-family: 'Jeju Gothic', serif;
+		position:absolute;
+	}
+	
+	/*----------------------------header--------------------------------  */
+	#headerLeft, #headerMiddle, #headerRight, #myShopList, #smallHeader {
+		display: none;
+	}
+	
+	#smallMenu{
+		display: inline-block;
+	}
+	
+	#header {
+		width: 100%;
+		height: 70px;
+		background: #333231;
+	  
+	}
 
-.listTitle{
-	width: 219px;
-	border-radius:5px;	
-	text-align: center;
-	margin: 3px;
-}
+	 #smallMenu #smallLeftMenu {
+		display: inline-block;
+		background-size: 400px 674px;
+		background-image: url(../../img/common/pictogram_white.png);
+		width:48px;
+		height:48px;
+		background-position: -52px -109px;
+		background-color: black;
+		position:absolute;
+		cursor:pointer;
+		
+		margin-top: 10px;
+		margin-left:5px;
+	
+		border-radius:7px;
+		box-shadow: 1px 1px 2px #FFFFFF;
+		
+	}
+	
+	#smallMenu a{
+		display:inline-block;
+		font-size: 35px;
+		font-family: 'Lobster', cursive;
+		color: #fd9e04;
+		
+		margin-top: 10px;
+		margin-left: 145px;
+		
+	}
+	
+	/* -----------------------conatainer------------------------------ */
+ 	#keywordRegion, #keywordPlace, #keywordPeole, #keywordFood {
+		display: none;
+	} 
+	
+	#container, #containerKeyword, #containerList {
+		width:100%;
+		min-width:0px;
+		border:0px;
+	}
+	
+	#adv {
+		display:block;
+		position: relative;
+		width: 100%;
+		height: 50px;
+		background:#ffb500;
+		text-align: center;
+	}
+	
+	#containerKeyword {
+		height:30px;
+		background: #474749;
+		border-radius:0px;
+	}
+	
+	#containerKeyword #keywordOpen{
+		color: #ffffff;
+		margin: 0px;
+		float: right;
+		margin-top: 6px;
+		cursor: pointer;
+	}
+	
+	.list {
+		height: 180px;
+		margin-top:10px;
+		
+		/* border: 1px solid red;  */
+	}
+	
+	.list .listKeywordContainer, .list hr, .pictureBackground{
+		display:none;
+	}
 
-.pictureBackground{
-	background: rgba(0, 0, 0, 0.5);
-	width: 219px;
-	line-height: 80px;
- 	margin-top: -83px; 
- 	text-align: center;
- 	display: none;
-}
-
-.listKeywordContainer {
-	width: 220px;
-	height: 50px;
-	margin: 0 auto;
-	overflow-y:scroll;
-}
-
-.listKeywordItem{
-	border-bottom: 1px solid #3e3e27;
-	border-right: 1px solid #3e3e27;
-	border-radius: 3px;
-	background: #fd9e04;
-	margin-left: 3px;
-	margin-top: 3px;
-	display: inline-block;
+	.list .listTitle {
+		text-align: center;
+	}
+	
+	.list img {	
+		width: 100%;
+		height: 160px;
+	}
 	
 }
-
-/* ----------------------footer-----------------------   */
-#footer {
-	position:relative;
-}
-
-
 
