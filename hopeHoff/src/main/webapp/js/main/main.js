@@ -71,6 +71,18 @@ $(document).ready(function(){
 		$("#myMarket").load("../myMarket/myMarket.html");
 	});
 	
+	$("#btnMyPage").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+		
+		$("#back").css("display", "block")
+		  .css("height", height);
+		
+		$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myPage").load("../myPage/myPage.html");
+
+	});
+	
 
 });
 
