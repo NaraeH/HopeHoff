@@ -8,7 +8,7 @@ body {
 	padding:0px;
 }
 
-#myBook, #myMarket {
+#myBook, #myMarket, #myPage {
 		border: 2px solid #FFCD28;
 		background-color: white;
 		position: absolute;
