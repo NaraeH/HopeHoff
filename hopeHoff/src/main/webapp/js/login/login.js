@@ -47,7 +47,7 @@ $(function(){
 	// 키를 눌렀다가 내 손에 모든게 떨어졌을때
 	$("#formGroupInputLarge").keyup(function(){
 		
-		$.get("http://192.168.0.125:3000/loginCheck",{
+		$.get("http://192.168.0.205:3000/loginCheck",{
 			// 겟 요청의 파라미터를 이것을 전달하겠다. 이위에꺼  //겟터
 			id : $('#formGroupInputLarge').val()
 		}, function(data){
