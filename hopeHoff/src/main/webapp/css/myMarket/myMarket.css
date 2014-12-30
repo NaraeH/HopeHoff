@@ -48,10 +48,9 @@
 	}
 	
 	#myPubPhotoListWrap {
-		/* width: 35%;
-		height: 300px; */
-		width: 30%;
-		height: 340px;
+
+		width: 35%;
+		height: 235px;
 		
 		display: inline-block;
 		border: 1px dashed red; 
@@ -59,11 +58,11 @@
 	
 	#myPubPhotoList {
 		overflow: hidden;
-/* 	    width:100%;
-		height: 50%; */
+		height: 235px;
 	}
 	
 	#myPubPhotoList>.myLeftWrap, #myPubPhotoList>.myRightWrap {
+		display: inline-block;
 		height: 338px;
 	}
 	
@@ -74,15 +73,15 @@
 
 	#myPhotoToRight {
 		margin-top: 160px;
-		margin-left: 6px;
+		margin-left: 180px;
 	}
 	
 	#myPubPhotoList ul {
-		margin-top: -665px;
+		margin-top: -2000px;
 	}
 	
 	.myWidthList ul {
-		width: 2000px;
+		width: 1300px;
 
 		list-style-type: none;
 		display: inline-block;
@@ -93,6 +92,7 @@
 	.myWidthList li{
 		padding: 0px;
 		margin: 0px;
+		display: inline-block;
 	}
 	
 	#myPubPhotoList .myPhotoList {
@@ -144,7 +144,7 @@
 		display: inline-block;
 		font-size: small;
 		color: #FFCD28;
-		border: 1px solid #FFCD28;
+		/* border: 1px solid #FFCD28; */
 	}
 	
 	#myHoffInfo>div {
@@ -163,7 +163,12 @@
 		width: 50%;
 	
 	}
-
+    #changeBtn {
+    	margin-top: 30px;
+    	margin-left: 360px;
+    	background: #FFCD28;
+    	
+    }
 	/* *************V tabs********** */
 	#myTabs {
 		width: 100%;

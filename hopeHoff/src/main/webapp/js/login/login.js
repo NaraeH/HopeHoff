@@ -53,10 +53,18 @@ $(function(){
 		}, function(data){
 			//노드에 서버에 응답까지 성공하면  //세터
 			//이렇게 응답하겠다.(이렇게 이벤트발생하겠다.)
-			$('#yesno').html(data.result);
+
+			if(data.result == "사용가능한 아이디입니다."){
+				$('#yesno').html(data.result).css("color","green");
+			} else {
+				$('#yesno').html(data.result).css("color","red");
+			} 
+			
 		});
 		
 	});
+
+	
 	
 	$('#btnCancel').click(function(){
 		$("input[name='inlineRadioOptions']").filter("[value='option1']").prop("checked",false);
