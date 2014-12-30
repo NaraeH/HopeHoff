@@ -12,7 +12,7 @@
 		display: none;	
 	}
 	
-	#myBook, #myMarket {
+	#myBook, #myMarket,#myPage {
 			border: 2px solid #FFCD28;
 			background-color: white;
 			position: absolute;
@@ -23,7 +23,7 @@
 			z-index: 10;
 	}
 	
-	#myBook {
+	#myBook,#myPage {
 		width:  600px;
 		height: 680px;
 	}
