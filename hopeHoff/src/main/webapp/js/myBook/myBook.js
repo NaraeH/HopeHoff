@@ -83,14 +83,21 @@ $(document).ready(function(){
 	});
 
 
+	
+	//******************** datePicker 설정 하기************************//
 	$(function() {
 		  $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
 	});
 	
+	
+	//******************** btnClose 클릭시에 ************************//
+	$("#btnMyBookClose").click(function(){
+		$("#back").css("display", "none");
+		$("#myBook").remove();
+	});
 
 });
 
-//***************************** 삭제 버튼 눌렀을시에********************************//
 
 
 

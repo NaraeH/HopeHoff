@@ -104,12 +104,81 @@
 		background: -webkit-gradient(linear, 100% 0, 0 0, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.4)));
 		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
 }
-/*--------------------------------------------------------------------*/
 
+
+/*ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일-----*/
+.width-ul-style ul{
+	list-style-type:none;
+	display: inline-block;
+	clear:both;
+}
+
+.width-ul-style li{
+	display:inline;
+	border-left: 1px solid #c0c0c0;
+	padding: 0px 10px 0px 10px;
+}
+
+.width-ul-style ul li:first-child {
+	border-left: none;
+}
+/*----------------------------------------------------*/
+
+/*----------------------a 태그 공통속성-----------------------    */
+
+a:link {
+	color:white;
+    text-decoration: none;
+}
+
+a:visited {
+	color:white;
+    text-decoration: none;
+}
+
+a:hover {
+	color:white;
+	text-decoration: none;
+}
+
+a:active {
+	color:white;
+    text-decoration: underline;
+}
+
+
+
+input[type="button"] {
+	background: -webkit-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	background: -moz-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	background: -o-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFCF52), color-stop(0.25, #FEB901), color-stop(0.5, #f38f07), color-stop(0.75, #f89b1f), to(#ffcf53));
+	background: linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
+	border: 1px solid #ffde86;
+	padding: 5px 10px 5px;
+	border-radius: 3px;
+	color: #FFFFFF;
+	font-weight: bold;
+	
+	border: 1px solid #ffde86;
+	padding: 5px 10px 5px;
+	border-radius: 3px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+input[type="button"]:hover {
+	background: #ffc837;
+	border: 1px solid #ffde86;
+	border-radius: 3px;
+	color: #003a5e;
+}
+
+/*----------------------------------------------------*/
 #footer{
 		background-color : #333231;
 		color : #fd9e04;
-		padding: 25px;
+		padding: 25px 0px;
 		text-align: center;
 		clear : both;
 		width: 100%;

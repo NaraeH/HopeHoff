@@ -2,20 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-
 <title>HopeHoff</title>
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<link rel='stylesheet' href='../../css/myBook/jquery-ui.css'>
-
-<link rel='stylesheet' href="../../css/common/common.css">
 <link rel='stylesheet' href="../../css/main/main.css">
+<link rel='stylesheet' href="../../css/common/common.css">
 <link rel="stylesheet" type="text/css" href="../../css/details/details.css">
 <link rel="stylesheet" type="text/css" href="../../css/details/overlay.css">
-<link rel='stylesheet' type="text/css" href='../../css/myBook/myBook.css'>
-<link rel="stylesheet" type="text/css" 	href="../../css/myMarket/myMarket.css">
-<link rel='stylesheet' type="text/css" href='../../css/myPage/myPage.css'>
 
 </head>
 <body>
@@ -23,10 +15,6 @@
 	<div id="mainBody">
 		<div id="wrap">
 			<div id="header">
-				<div id="smallMenu">
-					<div id="smallLeftMenu"></div>
-					<a href="main.html">HopeHoff</a>
-				</div>
 				<div id="headerLeft">
 					<div id="headerLeftTopMenu">
 						<div id="btnMyPage" title="MyPage"></div>
@@ -49,9 +37,9 @@
 				</div>
 				<div id="myShopList" class="width-ul-style">
 					<ul>
-						<li id="myMarket1" class="my-market">가게1</li>
-						<li id="myMarket2" class="my-market">가게2</li>
-						<li id="myMarket3" class="my-market">가게3</li>
+						<li><a href="#">가게1</a></li>
+						<li><a href="#">가게2</a></li>
+						<li><a href="#">가게3</a></li>
 					</ul>
 				</div>
 			</div>
@@ -72,12 +60,9 @@
 			</div>
 			
 			<div id="container">
-				<div id="adv">
-					광고입니다
-				</div>
 				<div id="containerTop">
 					<div id="containerKeyword">
-						<p id="keywordOpen">검색설정 ▼</p>
+						<!-- <p>키워드</p> -->
 						<div id="keywordRegion">
 							<p>지역</p>
 							<input type="checkbox" value="영등포">영등포<br> <input
@@ -116,13 +101,11 @@
 			<div id="footer"></div>
 		</div>
 	</div>
-	<div id="myPage"></div>
-	<div id="myBook"></div>
-	<div id="myMarket"></div>
-	
+
 	<script src='../../js/jquery-2.1.1.min.js'></script>
 	<script src='../../js/common/common.js'></script>
 	<script src='../../js/main/main.js'></script>
+	<script src='../../js/details/details.js'></script>
 	
 <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d4d9b75720036a3beb504b5419e4327529360b24"></script>
 <!-- <script src="../../js/bootstrap.min.js"></script> -->

@@ -11,14 +11,14 @@
 
 @media all and (min-width:421px) {
 
-	#detailsBody {
+/* 	#myMarketBody {
 		width: 65%;
 		height: 100%;
 		border: 4px solid #FFCD28;
-	}
+	} */
 	
 	/*------------------header-------------------*/
-	#detailHeader {
+	#myMarketHeader {
 		height: 45px;
 		background-color: #FFCD28;
 	}
@@ -30,7 +30,7 @@
 		margin: 10px 10px 10px 25px;
 	}
 	
-	#btnClose{
+	#btnMyMarketClose {
 		background: #FFCD28;
 		border: #FFCD28;
 		font-size: x-large;
@@ -40,14 +40,14 @@
 	}
 	
 	/*-------------------container-------------------*/
-	#detailContainer {
-		width: 97%;
+	#myMarketContainer {
+		/* width: 97%; */
 		height: 87%;
 		padding: 15px;
 		background-color: #333231;
 	}
 	
-	#pubPhotoListWrap {
+	#myPubPhotoListWrap {
 		width: 35%;
 		height: 20%;
 		
@@ -55,31 +55,31 @@
 		border: 1px dashed red; 
 	}
 	
-	#pubPhotoList {
+	#myPubPhotoList {
 		overflow: hidden;
 /* 	    width:100%;
 		height: 50%; */
 	}
 	
-	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
+	#myPubPhotoList>.myLeftWrap, #myPubPhotoList>.myRightWrap {
 		height: 338px;
 	}
 	
-	#photoToLeft {
+	#myPhotoToLeft {
 		margin-top: 160px;
 		margin-left: 16px;
 	}
 
-	#photoToRight {
+	#myPhotoToRight {
 		margin-top: 160px;
 		margin-left: 6px;
 	}
 	
-	#pubPhotoList ul {
+	#myPubPhotoList ul {
 		margin-top: -665px;
 	}
 	
-	.widthList ul {
+	.myWidthList ul {
 		width: 2000px;
 		list-style-type: none;
 		display: inline-block;
@@ -87,29 +87,29 @@
 		margin-left:0px;
 		padding: 0px;
 	}
-	.widthList li{
+	.myWidthList li{
 		padding: 0px;
 		margin: 0px;
 	}
 	
-	#pubPhotoList .photoList {
+	#myPubPhotoList .myPhotoList {
 		width: 311px;
 		height: 280px;
 	}
 
-	#pubPhoto1 {
+	#myPubPhoto1 {
 		background-image: url("../../img/details/Wara-Wara01.jpg");
 	}
 	
-	#pubPhoto2 {
+	#myPubPhoto2 {
 		background-image: url("../../img/details/Wara-Wara02.jpg");
 	}
 	
-	#pubPhoto3 {
+	#myPubPhoto3 {
 		background-image: url("../../img/details/Wara-Wara03.jpg");
 	}
 	
-	.photoList .imgText {
+	.myPhotoList .myImgText {
 		width: inherit;
 		height: inherit;
 		
@@ -123,7 +123,7 @@
 	
 
 /*---------------------------------*/
-	#rightContainer{                         /* 오른쪽꺼 */
+	#myRightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
 		width: 64%;
 		height: 95%;
@@ -131,7 +131,7 @@
 		border: 1px dashed blue;
 	}
 	
-	#hoffInfo {
+	#myHoffInfo {
 		width: 98%;
 		height: 50%;
 		margin: 1%;
@@ -141,11 +141,11 @@
 		border: 1px solid #FFCD28;
 	}
 	
-	#hoffInfo>div {
+	#myHoffInfo>div {
 		display:inline-block;
 		margin: 0px;
 	}
-	#hoffInfo>div:first-child {
+	#myHoffInfo>div:first-child {
 		font-size:large;
 		font-weight: bold;
 	}
@@ -153,26 +153,18 @@
 		float: right;
 	}
 
-	.inputBox {
+	.myInputBox {
 		width: 40%;
 	
 	}
-/* 	.Info {
-		display: inline;
-		text-align: left;
-	} */
-/* 	#reservation {
-		margin: 10px;
-		text-align: right;
-	} */
 
 	/* *************V tabs********** */
-	#tabs {
+	#myTabs {
 		width: 100%;
 		height: 230px;
 		display: inline-block;
 	}
-	#tabsContent {
+	#myTabsContent {
 		width:98%;
 		height: 90%;
 	    margin: 1%;
@@ -180,12 +172,12 @@
 		display: inline-block;
 		
 	}
-	#contentMenu, #contentComments {
+	#myContentMenu, #myContentComments {
 		width: 100%;
 		height: 200px;
 
 	}
-	#menu, #price {
+	.myMenu, .myPrice {
 		color:blue;
 		font-size: large;
 		text-align: center;
@@ -195,30 +187,30 @@
 		width:70%;
 	}
 	/* ************V tabsBar************** */
-	#tabsBar {
+	#myTabsBar
 		width: 100%;
 		height: 50px;
 		padding: 5px 10px;
 		/* margin: 0 auto; */
 		clear: both;
 	}
-	#tabsBarText {
+	#myTabsBarText {
 		width: 100%;
 		position: relative;
 	   /* 	z-index: 2; */
 	}
-	#tabsBarText>div {
+	#myTabsBarText>div {
 		display: inline-block;
 		width: 48%;
 		font-size: 15px;
 		margin-left:4px;
 	}
-	#tabsBarButton {
+	#myTabsBarButton {
 		position: relative;
 		margin-top: -3px;
 		z-index: 1;
 	}
-	#tabsBarButton>div {
+	#myTabsBarButton>div {
 		display: inline-block;
 		width: 48%;
 		height: 15px;
@@ -228,23 +220,23 @@
 	}
 
 	/* *********V menuList************* */
-	#menuList {
+	#myMenuList {
 		width: 707px;
 		height: 205px;
 		margin: 0 auto;
 		overflow: hidden;
 	}
-	#menuToLeft {
+	#myMenuToLeft {
 		margin-top: 90px;
 		margin-left: 5px;
 	}
 
-	#menuToRight {
+	#myMenuToRight {
 		margin-top: 90px;
 		margin-left: 27px;
 	}
 	
-	#menuList ul {
+	#myMenuList ul {
 /* 		height: 210px;
 		margin-bottom: 0px; */
 		
@@ -256,47 +248,47 @@
 		overflow: hidden;
 	}
 	
-	#menuList li {
+	#myMenuList li {
 		display: inline-block;
 		padding:0px 10px;
 		height:170px;
 		width: 170px;
 	}
 	
-	#menuList ul li {
+	#myMenuList ul li {
 		width:210px;
 		height:210px;
 		
 		/* border: 1px solid red; */
 	}
 	
-	#menuList li img {
+	#myMenuList li img {
 		border:1px solid gray;
 		width: 140px;
 		height: 170px;
 	}
 	
-	#menuList>span {
+	#myMenuList>span {
 		border-bottom: 20px solid black;
 		margin-top: 85px;
 		margin-left: 3px;
 		
 	}
 
-	#bestMenu1{
+	#myBestMenu1{
 	    background-image: url('../../img/details/chiken.jpg');
 	}
-	#bestMenu2{
+	#myBestMenu2{
 	    background-image: url('../../img/details/cheese.jpg');
 	}
-	#bestMenu3{
+	#myBestMenu3{
 	    background-image: url('../../img/details/pizza.jpg');
 	}
-	#bestMenu4{
+	#myBestMenu4{
 	    background-image: url('../../img/details/odang.jpg');
 	}
 	
-	#menuButton, #commentButton {
+	#myMenuButton, #myCommentButton {
 		cursor:pointer;
 	}
 

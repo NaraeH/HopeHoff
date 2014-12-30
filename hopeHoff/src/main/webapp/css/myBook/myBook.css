@@ -4,11 +4,12 @@
 	body {
 	}
 	
-	#myBook {
+/* 	#myBook {
 		width: 600px;
 		height: 680px;
 		border: 2px solid #FFCD28;
-	}
+		
+	} */
 	/******************** Header 부분 **************************/
 	#myBookHeader {
 		background-color: #FFCD28;
@@ -21,7 +22,7 @@
 		font-size: x-large;
 		margin: 10px 10px 10px 25px;
 	}
-	#btnClose {
+	#btnMyBookClose {
 		background: #ffcd28;
 		border: #FFCD28;
 		font-size: x-large;
@@ -73,15 +74,6 @@
 	}
 	#pagingBar{
 	margin-top : 50px;
-		text-align: center;
-	}
-	
-	/************** Footer 부분 *********************/
-
-	#footer {
-		width: 700px;
-		/* border: yellow solid 1px; */
-		color: blue;
 		text-align: center;
 	}
 }

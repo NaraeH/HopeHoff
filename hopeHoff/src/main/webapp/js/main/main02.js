@@ -7,10 +7,12 @@ $(document).ready(function(){
 	//첫 시작시 리스트 로딩
 	$("#containerList").load("containerList.html");
 	$("#footer").load("../common/footer.html");
+	$("#myBook").load("../myBook/myBook.html");
+	
 	
 	//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
 	$(window).scroll(function(){
-        if ( $( document ).scrollTop() > headerOffset && Narae.removePx($("#mainBody").css("width")) >= 421) {
+        if ( $( document ).scrollTop() > headerOffset) {
             $("#smallHeader").css("display", "block")
             				 .css("position", "fixed")
             				 .css("top", "0px")
@@ -21,6 +23,17 @@ $(document).ready(function(){
           }
 	});
 	
+	$("#btnBook").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		
+		console.log(height);
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		//로드되는 부분 만들기
+		/*$("#containerList").load("containerList.html");*/
+	});
+
 	$(":checkbox").click(function() {
 		//체크하는 경우
 		if ($(this).is(":checked")) {
@@ -46,44 +59,11 @@ $(document).ready(function(){
 			}
 		});  
 	});
-	
-	$("#btnBook").click(function(){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
-		
-		$("#back").css("display", "block")
-				  .css("height", height);
-		
-		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myBook").load("../myBook/myBook.html");
-		
-		console.log("??");
-	});
 
-	$(".my-market").click(function(){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
-		
-		$("#back").css("display", "block")
-				  .css("height", height);
-		
-		$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myMarket").load("../myMarket/myMarket.html");
-	});
-	
 	$("#btnMyPage").click(function(){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
-		
-		$("#back").css("display", "block")
-		  .css("height", height);
-		
-		$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myPage").load("../myPage/myPage.html");
-
+		location.href="#";
+		console.log("zz");
 	});
-	
-
 });
 
 

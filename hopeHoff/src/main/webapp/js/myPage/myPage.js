@@ -1,8 +1,8 @@
 $(document).ready(function(){
-		$(function() {
-			$( "#birthday" ).datepicker({dateFormat: 'yy-mm-dd',
-				changeMonth: true,
-				changeYear: true
-			});
-		});
-}) ;
+	//******************** btnClose 클릭시에 ************************//
+	$("#btnMyPageClose").click(function(){
+		$("#back").css("display", "none");
+		$("#myPage").remove();
+	});
+
+});
