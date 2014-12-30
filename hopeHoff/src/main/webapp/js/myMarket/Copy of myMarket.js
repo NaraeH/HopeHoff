@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$('#myCommentText').css('color', '#FFB500');
 	$('#myMenuButton').css('background-color', '#FFB500');
 	
-	$('.myMenuTabs').click(function(event) {
+	$('.menu').click(function(event) {
 		$("#myContentMenu").css('display', '');
 		$('#myContentComments').css('display', 'none');
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
 	});
 
 	
-	$('.myCommentTabs').click(function(event) {
+	$('.comment').click(function(event) {
 		$("#myContentMenu").css('display', 'none');
 		$('#myContentComments').css('display', '');
 
@@ -26,24 +26,24 @@ $(document).ready(function() {
 		$('#myCommentButton').css('background-color', '#FFB500');
 	});
 
-	$("#myPhotoToLeft, #myPubPhotoList>.myLeftWrap").click(function(event) {
+	$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
 		event.stopPropagation();
-		$("#myPubPhotoList").naraeWidthSilde("left");
+		$("#pubPhotoList").naraeWidthSilde("left");
 	});
 
-	$("#myPhotoToRight, #myPubPhotoList>.myRightWrap").click(function() {
+	$("#photoToRight, #pubPhotoList>.rightWrap").click(function() {
 		event.stopPropagation();
-		$("#myPubPhotoList").naraeWidthSilde("right");
+		$("#pubPhotoList").naraeWidthSilde("right");
 	});
 
-	$("#myMenuToLeft, #myMenuList>.myLeftWrap").click(function(event) {
+	$("#menuToLeft, #menuList>.leftWrap").click(function(event) {
 		event.stopPropagation();
-		$("#myMenuList").naraeWidthSilde("left");
+		$("#menuList").naraeWidthSilde("left");
 	});
 
-	$("#myMenuToRight, #myMenuList>.myRightWrap").click(function() {
+	$("#menuToRight, #menuList>.rightWrap").click(function() {
 		event.stopPropagation();
-		$("#myMenuList").naraeWidthSilde("right");
+		$("#menuList").naraeWidthSilde("right");
 	});
 	
 	$("#btnMyMarketClose").click(function(){
@@ -53,7 +53,7 @@ $(document).ready(function() {
 });
 
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
-$('#myPubPhotoList').naraeWidthSildeAuto();
+$('#pubPhotoList').naraeWidthSildeAuto();
 		
 
 	/************************************************************************************************/
