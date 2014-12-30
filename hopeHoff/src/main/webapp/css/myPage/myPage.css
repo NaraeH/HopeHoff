@@ -4,11 +4,7 @@
 	body {
 	}
 	
-	#myPage {
-		width: 600px;
-		height: 680px;
-		border: 2px solid #FFCD28;
-	}
+
 	/******************** Header 부분 **************************/
 	#myPageHeader {
 		background-color: #FFCD28;
