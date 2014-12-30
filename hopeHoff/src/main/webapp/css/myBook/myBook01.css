@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+@media all and (min-width:421px) {
+	body {
+		width: 100%;
+		height: 100%;
+	}
+	/******************** Header 부분 **************************/
+	#myBookHeader {
+		background-color: #FFCD28;
+		height: 45px;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	#myBookHeaderTitle {
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 10px 10px 25px;
+	}
+	#myBookMobileSearchBar{
+	display:none;
+	}
+	#myBookMobileHeaderTitle{
+		display:none;
+	}
+	#btnMyBookClose {
+		background: #ffcd28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin: 10px;
+	}
+	/******************** DatePicker 부분 **************************/
+	#myBookDatePicker>p {
+		margin-left: 350px;
+	}
+
+	/********************* Container 부분 ***************************/
+	#myBookContainer {
+		width: 97%;
+		height: 90%;
+		padding: 30px 50px 15px 15px;
+		margin: 0 auto;
+	}
+	#myBookData {
+		margin-left: 30px;
+	}
+	.tableData {
+		height: 45px;
+		border-radius: 15px;
+		text-align: center;
+		border: 1px solid white;
+		background-color: #FFCD28;
+	}
+	td {
+		height: 45px;
+		text-align: center;
+	}
+	#btnDelete {
+		font-weight: bolder;
+		margin: 15px 15px 0px 40px;
+	}
+	.warnigMessage {
+		display: inline-block;
+	}
+	#warningCotent {
+		color: red;
+		font-size: large;
+		font-weight: bolder;
+	}
+	#pagingBar {
+		margin-top: 50px;
+		text-align: center;
+	}
+}
+
+@media all and (max-width:420px) {
+	#myBookHeader {
+	height: 50px;
+	background-color: #FFCD28;
+	}
+	
+	#btnMyBookClose{
+		display:none;
+	}
+	#myBookHeaderTitle {
+		display: none;
+	}
+	#MobileSearchBar{
+		width:  90px;
+	}
+	
+	#myBookMobileSearchBar{
+		display: '';
+		display: inline-block;
+		margin-left: 30px;
+	}
+	#myBookMobileHeaderTitle{
+		display:'';
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 20px 10px 80px;
+		}
+	
+	#myBookDatePicker>p {
+		margin: 30px 5px 0 200px;
+	}
+	#datepicker{
+		width:130px;
+	}
+	.warnigMessage {
+		display: inline-block;
+	}
+	#warningCotent {
+		color: red;
+		font-size: large;
+		font-weight: bolder;
+	}
+	.tableData {
+		height: 45px;
+		border-radius: 15px;
+		text-align: center;
+		border: 1px solid white;
+		background-color: #FFCD28;
+	}
+	
+	td {
+		height: 45px;
+		text-align: center;
+	}
+}
