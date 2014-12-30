@@ -60,8 +60,9 @@ $(function(){
 			
 				if(data.result == "사용가능한 아이디입니다."){
 					$('#yesno').html(data.result).css("color","green");
-				} else {
+				} else { /*중복된 아이디가 있습니다.*/
 					$('#yesno').html(data.result).css("color","red");
+					$('#btnSignUp').attr("disabled", true);
 				} 
 	
 			
