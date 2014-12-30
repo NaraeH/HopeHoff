@@ -226,6 +226,11 @@
 		height: 125px;
 		background: #ffb500;
 	}
+
+	#containerTop #keywordOpen{
+		display: none;
+	}
+
 	#containerKeyword {
 		width: 880px;
 		height: 100px;
@@ -240,9 +245,17 @@
 		
 		padding-top: 16px;
 	}
+	#containerKeyword ul{
+		padding: 0px;
+		margin: 0px;
+	}
 	
-	#containerTop #keywordOpen{
-		display: none;
+	#containerKeyword li{
+		list-style-type: none;
+	}
+	
+	#containerKeyword li p{
+		margin: 5px;
 	}
 	
 	#containerKeyword div{
@@ -426,7 +439,7 @@
 	#containerTop {
 		height:30px;
 		background: #474749;
-		/* border: 1px solid red; */
+		border: 1px solid #474749;
 	}
 	
 	#containerTop #keywordOpen{
@@ -438,13 +451,47 @@
 	}
 
 	#containerKeyword {
-		height:30px;
+		display:none;
+		height:200px;
 		border-radius:0px;
 		
-		background: green;
-		padding-top: 25px;
+		/* background: green; */
+		margin-top: 25px; 
 	}
 	
+	#containerKeyword ul{
+		padding: 0px;
+		margin: 0px;
+		
+		color: #ffffff;
+	}
+	
+	#containerKeyword li{
+		list-style-type: none;
+	}
+	
+	#containerKeyword li{
+		list-style-type: none;
+		display: inline;
+	}
+	
+	#containerKeyword li:first-child{
+		display: block;
+	}
+	
+	#containerKeyword li p{
+		margin: 5px;
+	}
+	
+	#containerKeyword div{
+		border-bottom: 1px solid white;
+		padding-bottom: 5px;
+	}
+	
+	#containerKeyword div:last-child{
+		border:0px;
+	}
+
 	
 	.list {
 		height: 180px;

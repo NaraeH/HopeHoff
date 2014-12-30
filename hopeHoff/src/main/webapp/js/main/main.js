@@ -12,15 +12,24 @@ $(document).ready(function(){
 	$(window).resize(function(){
 		mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 		
-		//mobile에서 검색설정 ▼ 누른 채 크기 늘렸다 줄여도 유지 되도록 하기
+		
 		if( mainBodyWidth >= 421 ){
+			$( "#containerKeyword" ).css("display", "block");
 			$("#containerTop").css("height", "125px");
+			
+			/*$("#containerKeyword input" ).after( "<br>" ); */
+			/*console.log($("#containerKeyword input" ));*/
 		}else {
+			
+			//mobile에서 검색설정 ▼ 누른 채 크기 늘렸다 줄여도 유지 되도록 하기
 			if( $( "#keywordOpen" ).text() == "접기 ▲" ){
-				$( "#containerTop" ).css("height", "300px");
+				$( "#containerTop" ).css("height", "230px");
 			}else{
 				$( "#containerTop" ).css("height", "30px");
 			}
+			
+			//mobile용에서는 input으로 되어있는 키워드가 가로 정렬 되도록 설정
+			/*$( "#containerKeyword br" ).remove()*/
 		}
 	});
 	
@@ -101,13 +110,15 @@ $(document).ready(function(){
 	
 	$( "#keywordOpen" ).click(function(){
 		if( $( "#keywordOpen" ).text() == "접기 ▲" ){
+			$( "#containerKeyword" ).css("display", "none");
 			$( "#keywordOpen" ).text( "검색설정 ▼" );
 			$( "#containerTop" ).css("height", "30px");
 			$( "#containerKeyword div" ).removeClass( "mobileKeyword" );
 			
 		}else {
+			$( "#containerKeyword" ).css("display", "block");
 			$( "#keywordOpen ").text( "접기 ▲" );
-			$( "#containerTop" ).css("height", "300px");
+			$( "#containerTop" ).css("height", "230px");
 			$( "#containerKeyword div" ).addClass( "mobileKeyword" );
 		}
 	});
