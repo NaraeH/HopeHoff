@@ -485,7 +485,7 @@
 	
 	#containerKeyword div{
 		border-bottom: 1px solid white;
-		padding-bottom: 5px;
+		padding-bottom: 3px;
 	}
 	
 	#containerKeyword div:last-child{
