@@ -3,14 +3,31 @@ $(document).ready(function(){
 	var count = 0; //for문을 위한 index
 	var checkedList = []; //keyword를 담기위한 배열
 	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
+	var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 	
 	//첫 시작시 리스트 로딩
 	$("#containerList").load("containerList.html");
 	$("#footer").load("../common/footer.html");
 	
+	$(window).resize(function(){
+		mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
+		
+		//mobile에서 검색설정 ▼ 누른 채 크기 늘렸다 줄여도 유지 되도록 하기
+		if( mainBodyWidth >= 421 ){
+			$("#containerTop").css("height", "125px");
+		}else {
+			if( $( "#keywordOpen" ).text() == "접기 ▲" ){
+				$( "#containerTop" ).css("height", "300px");
+			}else{
+				$( "#containerTop" ).css("height", "30px");
+			}
+		}
+	});
+	
 	//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
 	$(window).scroll(function(){
-        if ( $( document ).scrollTop() > headerOffset && Narae.removePx($("#mainBody").css("width")) >= 421) {
+        if ( $( document ).scrollTop() > headerOffset && mainBodyWidth >= 421) {
+        	console.log("==>" + mainBodyWidth);
             $("#smallHeader").css("display", "block")
             				 .css("position", "fixed")
             				 .css("top", "0px")
@@ -57,7 +74,6 @@ $(document).ready(function(){
 		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 		$("#myBook").load("../myBook/myBook.html");
 		
-		console.log("??");
 	});
 
 	$(".my-market").click(function(){
@@ -83,7 +99,22 @@ $(document).ready(function(){
 
 	});
 	
+	$( "#keywordOpen" ).click(function(){
+		if( $( "#keywordOpen" ).text() == "접기 ▲" ){
+			$( "#keywordOpen" ).text( "검색설정 ▼" );
+			$( "#containerTop" ).css("height", "30px");
+			$( "#containerKeyword div" ).removeClass( "mobileKeyword" );
+			
+		}else {
+			$( "#keywordOpen ").text( "접기 ▲" );
+			$( "#containerTop" ).css("height", "300px");
+			$( "#containerKeyword div" ).addClass( "mobileKeyword" );
+		}
+	});
+	
+	
 
+	
 });
 
 
