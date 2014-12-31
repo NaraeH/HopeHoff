@@ -16,22 +16,18 @@ $(document).ready(function(){
 				$('<th class=tableData>').html("전화 번호").appendTo($('#tRow0'));
 				$('<th class=tableData>').html("인원").appendTo($('#tRow0'));
 				$('<th class=tableData>').html("시간").appendTo($('#tRow0'));
-				$('<th class=tableData>').html("비고").appendTo($('#tRow0'));
+				$('<th class=tableData>').html("상태 정보").appendTo($('#tRow0'));
 				break;
 			}
 		}
 		else if(i%2!=0){
 			for(var j=0;j<5; j++){
-				$('<td style=\"width:50px ;\"  id=tableDataCheck'+i+'>').html("<input id=checkbox"+i+"  class=checkedBox type=\"checkbox\">").appendTo($('#tRow'+i));
-				$('<td style=\"width:50px ;\"  id=tableDataNo'+i+'>').html("No").appendTo($('#tRow'+i));
-				$('<td style=\"width:150px ;\" id=tableDataPhone'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
-				$('<td style=\"width:100px ;\" id=tableDataCount'+i+'>').html("People-Count").appendTo($('#tRow'+i));
-				$('<td style=\"width:100px ;\" id=tableDataTime'+i+'>').html("Time").appendTo($('#tRow'+i));
-				$('<td style=\"width:100px ;\" class=tableButton'+i+'>').html("<button id=dataButton"+i+" class=\"dataButton\"></button>").appendTo($('#tRow'+i));
-				$('.dataButton').css('background-image','url(../../img/common/arrow_down.png)')
-				.css('width','25px')
-				.css('height','20px')
-				.css('background-position','-1260px -5120px');
+				$('<td style=\"width:50px ;\"   id=tableDataCheck'+i+'>').html("<input id=checkbox"+i+"  class=checkedBox type=\"checkbox\">").appendTo($('#tRow'+i));
+				$('<td style=\"width:50px ;\" class=tableTitle id=tableDataNo'+i+'>').html("No").appendTo($('#tRow'+i));
+				$('<td style=\"width:150px ;\" class=tableTitle id=tableDataPhone'+i+'>').html("Phone-Number").appendTo($('#tRow'+i));
+				$('<td style=\"width:100px ;\" class=tableTitle id=tableDataCount'+i+'>').html("People-Count").appendTo($('#tRow'+i));
+				$('<td style=\"width:100px ;\" class=tableTitle id=tableDataTime'+i+'>').html("Time").appendTo($('#tRow'+i));
+				$('<td style=\"width:100px ;\" class=tableTitle id=tableStatus'+i+'>').html("예약 요청중").appendTo($('#tRow'+i));
 				break;
 			}
 		}
@@ -49,8 +45,8 @@ $(document).ready(function(){
 	} 
 	//***************************** 홀수열 눌렀을때 짝수열 내용보기 ********************************//
 
-	$('.dataButton').click(function(event){
-		var num =$($(this)[0]).attr("id").split("dataButton")[1]-0;
+	$('.tableTitle').click(function(event){
+		var num =$($(this)[0]).attr("id").split("tableStatus")[1]-0;
 		//console.log($($(this)[0]).attr("id");
 		//console.log($($(this)[0]).attr("id").split("dataButton"));
 
@@ -59,10 +55,10 @@ $(document).ready(function(){
 		console.log(tableContents);
 		if(status=='none')
 		{
-			$('#'+'tableContent'+(num+1)).slideDown(200);
+			$('#'+'tableContent'+(num+1)).slideDown(1000);
 		}
 		else
-			$('#'+'tableContent'+(num+1)).slideUp(200);
+			$('#'+'tableContent'+(num+1)).slideUp(1000);
 	});
 
 	//***************************** checkbox를 선택했을때 값을 저장하는것. ********************************//
@@ -79,6 +75,7 @@ $(document).ready(function(){
 		if(checkedTable == 0){
 			return;
 		}
+		alert("예약 취소 하시겠습니까?");
 		$('#'+'tRow'+checkedTable).remove();
 	});
 
