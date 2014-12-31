@@ -3,13 +3,7 @@
 @media all and (min-width:421px) {
 	body {
 	}
-	
-/* 	#myBook {
-		width: 600px;
-		height: 680px;
-		border: 2px solid #FFCD28;
-		
-	} */
+
 	/******************** Header 부분 **************************/
 	#myBookHeader {
 		background-color: #FFCD28;
@@ -75,5 +69,81 @@
 	#pagingBar{
 	margin-top : 50px;
 		text-align: center;
+	}
+	
+}
+@media all and (max-width:420px) {
+	
+	#myBookHeaderTitle {
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 10px 10px 25px;
+	}
+	
+	#btnMyBookClose {
+		background: #ffcd28;
+		border: #FFCD28;
+		font-size: large;
+		cursor: pointer;
+		float: right;
+		margin-right: 10px;
+		
+	}
+	
+	#myBookHeader {
+		height: 50px;
+		background-color: #FFCD28;
+	}	
+	
+	#myBookHeaderTitle {
+		text-align:  center;
+	}
+
+	#myBookMobileHeaderTitle{
+		display:absolute;
+		display:'';
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 20px 10px 80px;
+		}
+	
+	#myBookDatePicker>p {
+		margin: 30px 5px 0 200px;
+	}
+	#datepicker{
+		width:130px;
+	}
+	.warnigMessage {
+		font-size:small;
+		display: inline-block;
+	}
+	#warningCotent {
+		color: red;
+		font-size: smaller;
+		font-weight: bolder;
+	}
+	.tableData {
+		height: 45px;
+		border-radius: 15px;
+		text-align: center;
+		border: 1px solid white;
+		background-color: #FFCD28;
+	}
+	
+	th{
+		font-size:small;
+	
+	}
+	
+	td {
+		font-size: x-small;
+		height: 45px;
+		text-align: center;
+	}
+	
+	#btnDelete{
+		width:70px;
+		font-size: smaller;
+		margin:10px;
 	}
 }
