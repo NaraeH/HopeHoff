@@ -285,7 +285,12 @@
 		margin: 10px 0px 0px 15px;
 		display:inline-block;
 		padding: 5px 0px 5px 0px;
+<<<<<<< HEAD
 		border: 1px solid #888888;
+=======
+		border: 1px solid black;
+		
+>>>>>>> refs/remotes/origin/master
 	}
 	
 	.list img {
