@@ -3146,6 +3146,7 @@ input[type="button"].btn-block {
 }
 .fade.in {
   opacity: 1;
+  height: 180%;
 }
 .collapse {
   display: none;
@@ -5530,7 +5531,7 @@ button.close {
 .modal-backdrop.in {
   filter: alpha(opacity=50);
   opacity: .5;
-  height: 100%;
+
 }
 .modal-header {
   min-height: 16.42857143px;
