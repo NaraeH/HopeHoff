@@ -13,13 +13,12 @@
 	}
 	
 	#myBook, #myMarket,#myPage {
+	
 			border: 2px solid #FFCD28;
 			background-color: white;
 			position: absolute;
 			margin-top: 60px;
-			
 			display:none;
-			
 			z-index: 10;
 	}
 	
@@ -358,6 +357,10 @@
 
 /* ----------------------------media ------------------------------------- */
 @media all and (max-width:420px){
+	#back{
+		position:absolute;
+		z-index: -10;
+	}
 	
 	body {
 		margin: 0px;
@@ -368,6 +371,17 @@
 		margin: 0px;
 		font-family: 'Jeju Gothic', serif;
 		position:absolute;
+	}
+	
+	#myBook,#myPage{
+		margin:200px 10px !important;
+		margin-top: 15px;
+		position: absolute;
+		z-index: 10;
+		background-color: white;
+	}
+	#myBook,#myPage{
+		width: 380px;
 	}
 	
 	/*----------------------------header--------------------------------  */
