@@ -85,7 +85,7 @@ $(document).ready(function(){
 		
 	});
 
-	$(".my-market").click(function(){
+	$("#btnMyShop").click(function(){
 		var height = Narae.removePx($("#mainBody").css("height"));
 		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
 		
@@ -107,6 +107,7 @@ $(document).ready(function(){
 		$("#myPage").load("../myPage/myPage.html");
 
 	});
+	
 	
 	$( "#keywordOpen" ).click(function(){
 		if( $( "#keywordOpen" ).text() == "접기 ▲" ){
