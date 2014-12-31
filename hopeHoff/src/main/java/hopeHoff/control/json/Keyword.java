@@ -37,5 +37,6 @@ public class Keyword {
 		Keyword keyword = new Keyword();
 		
 		System.out.println(keyword.keywords());
+		System.out.println();
 	}
 }
