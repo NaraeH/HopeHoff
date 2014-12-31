@@ -32,9 +32,7 @@ $(function(){
 		console.log("display:none");
 	});
 	
-	$("#signUp").click(function(){
-		$('#yesno').html("아이디를 입력해주세요.");
-	})
+
 
 	/*
 	 사업자 번호 받았을때의 사라지게 하는 함수였음.
