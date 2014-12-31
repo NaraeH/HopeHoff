@@ -43,9 +43,13 @@ $(function(){
 		console.log("display:true");
 	}); */
 	
-	// Node.js랑 연결되어있다. 아이디 중복체크임
-	// 키를 눌렀다가 내 손에 모든게 떨어졌을때
-	$("#formGroupInputLarge").keyup(function(){
+	//V ID input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)
+	$('#formGroupInputLarge').focus(function() {
+	 $('#yesno').css("display","");
+		
+		// Node.js랑 연결되어있다. 아이디 중복체크임
+		// 키를 눌렀다가 내 손에 모든게 떨어졌을때
+	 $("#formGroupInputLarge").keyup(function(){
 		
 		$.get("http://192.168.0.205:3000/loginCheck",{
 			// 겟 요청의 파라미터를 이것을 전달하겠다. 이위에꺼  //겟터
@@ -53,17 +57,25 @@ $(function(){
 		}, function(data){
 			//노드에 서버에 응답까지 성공하면  //세터
 			//이렇게 응답하겠다.(이렇게 이벤트발생하겠다.)
-
-			if(data.result == "사용가능한 아이디입니다."){
-				$('#yesno').html(data.result).css("color","green");
-			} else {
-				$('#yesno').html(data.result).css("color","red");
-			} 
 			
-		});
-		
-	});
+				if(data.result == "사용가능한 아이디입니다."){
+					$('#yesno').html(data.result).css("color","green");
+				} else { /*중복된 아이디가 있습니다.*/
+					$('#yesno').html(data.result).css("color","red");
+					$('#btnSignUp').attr("disabled", true);
+				} 
+	
+			
+		}); /*get꺼*/	
+	 }); /*keyup꺼*/
 
+	});//focus
+	
+	
+	//V ID input칸에 outfocus면, 유효성숨기기
+	$('#formGroupInputLarge').focusout(function() {
+		$('#yesno').css("display","none");
+	});
 	
 	
 	$('#btnCancel').click(function(){
