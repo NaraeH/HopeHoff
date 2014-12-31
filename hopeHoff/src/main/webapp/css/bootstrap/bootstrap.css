@@ -5530,6 +5530,7 @@ button.close {
 .modal-backdrop.in {
   filter: alpha(opacity=50);
   opacity: .5;
+  height: 100%;
 }
 .modal-header {
   min-height: 16.42857143px;
