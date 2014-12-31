@@ -32,15 +32,15 @@ $(function(){
 		console.log("display:none");
 	});
 	
-
-
-	/*
+   /*
 	 사업자 번호 받았을때의 사라지게 하는 함수였음.
 	$("#inlineRadio4").click(function(){
 		$("#bNum").css('display',"");
 		console.log("display:true");
 	}); */
 	
+	
+	/*********************/
 	//V ID input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)
 	$('#formGroupInputLarge').focus(function() {
 	 $('#yesno').css("display","");
@@ -75,6 +75,28 @@ $(function(){
 		$('#yesno').css("display","none");
 	});
 	
+	
+	/*********************/
+	$('#checkPassword').focus(function() {
+		 $('#pwdCheckText').css("display","");
+		
+		 $("#checkPassword").keyup(function(){
+		
+			 if(($('#inputPassword3').val() == $('#checkPassword').val()) && ($('#inputPassword3').val()!= "")){
+				 $('#pwdCheckText').html("일치합니다.").css("color","green");
+		
+			 } else {
+				 $('#pwdCheckText').html("불일치ㅠ_ㅠ").css("color","red");
+				 $('#btnSignUp').attr("disabled", true);
+			 }
+		 });
+	});
+	
+	
+	$('#checkPassword').focusout(function() {
+		$('#pwdCheckText').css("display","none");
+	});
+	/********************/
 	
 	$('#btnCancel').click(function(){
 		$("input[name='inlineRadioOptions']").filter("[value='option1']").prop("checked",false);
