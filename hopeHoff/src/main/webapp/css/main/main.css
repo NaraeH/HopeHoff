@@ -60,6 +60,7 @@
 	  left: 0px;
 	  position:relative;
 	  background: #333231;
+	  border-bottom: 8px solid #474749;
 	  
 	  z-index:2; 
 	}
@@ -124,7 +125,7 @@
 		/*  border: 1px solid yellow;  */
 	}
 	
-	#btnMyPage, #btnBook, #btnRecommandPlace{
+	#btnMyPage, #btnBook, #btnRecommandPlace, #btnMyShop{
 		background-image: url(../../img/common/pictogram_white.png);
 		width:60px;
 		height:60px;
@@ -144,16 +145,13 @@
 		background-position: -1067px -5680px;
 	}
 	
-	
-	#myShopList {
-		height: 25px;
-		background: #474749;
-		height: 30px;
+	#btnMyShop {
+		background-position: -317px -625px;
 	}
 	
-	#myShopList select {
-		margin: 5px 10px 0px 0px;
-		float:right;
+	
+	#btnMyPage:hover, #btnBook:hover, #btnRecommandPlace:hover, #btnMyShop:hover {
+		background-image: url(../../img/common/pictogram_gray_push.png);
 	}
 
 	#smallHeader {
@@ -217,7 +215,7 @@
 	}
 	
 	#containerTop {
-		height: 125px;
+		height: 130px;
 		background: #ffb500;
 	}
 
@@ -232,7 +230,7 @@
 		border-radius: 5px;
 		background: #000000;
 		color: white;
-		border-top: 3px solid #fd9e04;
+		border-top: 8px solid #ffb500;
 		
 		border-top-left-radius: 1em;
 		border-top-right-radius: 1em;
@@ -285,12 +283,7 @@
 		margin: 10px 0px 0px 15px;
 		display:inline-block;
 		padding: 5px 0px 5px 0px;
-<<<<<<< HEAD
 		border: 1px solid #888888;
-=======
-		border: 1px solid black;
-		
->>>>>>> refs/remotes/origin/master
 	}
 	
 	.list img {
