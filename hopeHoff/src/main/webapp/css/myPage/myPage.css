@@ -52,3 +52,55 @@
 	/************** Footer 부분 *********************/
 
 }
+@media all and (max-width:420px) {
+	
+	#myPageHeader {
+		background-color: #FFCD28;
+		height: 45px;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	#myPageHeaderTitle {
+		display: inline-block;
+		font-size: x-large;
+		margin: 10px 10px 10px 25px;
+	}
+	#btnMyPageClose {
+		background: #ffcd28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin: 10px;
+	}
+	
+	
+	#myPageContainer {
+		width: 97%;
+		height: 90%;
+		padding: 30px 50px 15px 15px;
+		margin: 0 auto;
+	} 
+	
+	#myDataForm {
+		margin-left: 10px;
+	}
+	
+	
+	.formLabel {
+		font-size: small;
+		width: 100px;
+		display: inline-block;
+		color: black;
+	}
+	
+	.formData {
+		display: inline-block;
+		margin-bottom: 35px;
+	}
+
+		
+	.formData>button {
+		margin-left: 5px;
+	}
+}
