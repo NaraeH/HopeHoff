@@ -296,7 +296,7 @@
 	}
 	
 	/* 오른쪽 회원가입창 정렬 */
-	#yesno, #pwdCheckText {
+	#yesno, #pwdCheckText, #pwdValid {
 	color : red;
 	font-size : medium;
 	font-weight : bolder;
@@ -480,7 +480,7 @@
 	}	
 	
 	/* 팝업 검사버튼 */
-	#yesno, #pwdCheckText {
+	#yesno, #pwdCheckText, #pwdValid {
 	color : red;
 	font-size : x-small;
 	font-weight : bolder;
