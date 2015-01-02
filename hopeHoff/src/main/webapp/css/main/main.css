@@ -73,16 +73,14 @@
 	}
 	
 	#headerLeftTopMenu {
+		
 	}
 	
 	#headerLeftBottomMenu {
 		color: #ffffff;
 		font-size: small;
 		display: inline-block;
-		/* margin-top: 10px;
-		clear:both; */
-		
-		/* border: 1px solid blue; */
+		padding: 7px;
 	}
 	
 	#headerMiddle {
@@ -126,27 +124,28 @@
 	
 	#btnMyPage, #btnBook, #btnRecommandPlace, #btnMyShop{
 		background-image: url(../../img/common/pictogram_white.png);
-		width:60px;
+		width:70px;
 		height:60px;
-		display:inline-block;
+		display: table-cell;
 		cursor: pointer;
 	}
 	
 	#btnMyPage {
-		background-position: -1187px -5608px;
+		background-position: -1184px -5608px;
 	}
 	
 	#btnBook{
-		background-position: -1187px -5471px;
-	}
-	
-	#btnRecommandPlace {
-		background-position: -1067px -5680px;
+		background-position: -1183px -5470px;
 	}
 	
 	#btnMyShop {
-		background-position: -317px -625px;
+		background-position: -313px -625px;
 	}
+
+	#btnRecommandPlace {
+		background-position: -1059px -5677px;
+	}
+	
 	
 	
 	#btnMyPage:hover, #btnBook:hover, #btnRecommandPlace:hover, #btnMyShop:hover {
@@ -202,6 +201,22 @@
 		font-size: 15px;
 		color: white;
 	}
+	
+	.btn-header-top-left {
+		display:table;
+		color: rgba(253, 158, 4, 0.7);
+		text-shadow: 2px 0 0 #333231, -2px 0 0 #333231, 0 2px 0 #333231, 0 -2px 0 #333231, 1px 1px #333231, -1px -1px 0 #333231, 1px -1px 0 #333231, -1px 1px 0 #333231; 
+		font-size: 10px; 
+		font-weight: bold;
+		
+		text-align: center;
+		vertical-align: bottom;
+	}
+	
+	.btn-header-top-left:hover {
+		color: #ffffff;
+	}
+	
 	
 	/* ----------------------container-----------------------   */
 	
