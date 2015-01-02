@@ -213,6 +213,10 @@
 		position:relative;
 	}
 	
+	#mobileNav {
+		display:none;
+	}
+	
 	#containerTop {
 		height: 130px;
 		background: #ffb500;
@@ -440,6 +444,64 @@
 		text-align: center;
 	}
 	
+	#mobileNav {
+		width: 70%;
+		height:100%;
+		display:block;
+		position: absolute;
+		background: #333231;
+		margin-top: -50px;
+		
+	}
+	
+	#mobileNav ul {
+		list-style-type: none;
+		padding: 0px;
+	}
+	
+	#mobileNav li {
+		height: 30px;
+		padding: 15px 0px 0px 10px;
+		color: #ffffff;
+		cursor: pointer;
+
+	}
+	
+	#mobileNav li:hover {
+		background: rgba(98, 96, 94, 0.8);
+	}
+	
+	#mobileNavTop {
+		width: 95%;
+		height: 30px;
+		margin-top: 3px;
+		
+		border-bottom: 1px solid yellow;
+		margin: 0 auto;
+	}
+	
+	#mobileNavTop a{
+		text-decoration: none;
+		vertical-align: -webkit-baseline-middle;
+	}
+	
+	#mobileNavTop div {
+		display:inline-block;
+		color: #ffffff;
+		font-size: 25px;
+		font-weight: bold;
+		float: right;
+		cursor: pointer;
+	}
+
+	#mobileNavTop div:hover {
+		color: #fd9e04;
+	}
+	
+	#mobileNavMiddle {
+		margin-top: 5px;
+	}
+	
 	#containerTop {
 		height:30px;
 		background: #474749;
@@ -461,6 +523,18 @@
 		
 		/* background: green; */
 		margin-top: 25px; 
+	}
+	
+	#btnMobileLogin {
+		background-position: -458px -288px;
+	}
+	
+	#btnMobileJoin {
+		background-position: -827px -565px;
+	}
+	
+	#btnMoblieLogout {
+		background-position: -276px -288px;
 	}
 	
 	#containerKeyword ul{
@@ -519,6 +593,27 @@
 	
 	.mobileKeyword {
 		display: block !important;
+	}
+	
+	.btn-mobile {
+		width: 85px;
+		height:60px;
+		background-image: url(../../img/common/pictogram_white2.png);
+		
+		display:table-cell;
+		color: #fd9e04;
+		font-weight: bold;
+		text-align: center;
+		vertical-align: bottom;
+		text-shadow: 2px 0 0 #333231, -2px 0 0 #333231, 0 2px 0 #333231, 0 -2px 0 #333231, 1px 1px #333231, -1px -1px 0 #333231, 1px -1px 0 #333231, -1px 1px 0 #333231; /* font border */
+   		font-size: 12px;
+   		cursor:pointer;
+	}
+	
+	.btn-mobile:hover {
+		background-image: url(../../img/common/pictogram_white_push2.png);
+		color: #292827;
+		text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 2px 0 #ffffff, 0 -2px 0 #ffffff, 1px 1px #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
 	}
 	
 	
