@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ReservationService {
-  @Autowired
+ /* @Autowired
   ReservationDao reservationDao;
   
   public List<?> getList(int pageNo, int pageSize) {
@@ -37,10 +37,10 @@ public class ReservationService {
     return maxPageNo;
   }
   
-  /* @Transactional 선언
+   @Transactional 선언
    * => 메서드 안의 입력/변경/삭제(manipluation) 작업을 하나의 작업을 묶는다.
    * => 모든 작업이 성공했을 때만 서버에 반영한다. 
-   */
+   
   @Transactional(
       rollbackFor=Exception.class, 
       propagation=Propagation.REQUIRED)
@@ -60,7 +60,7 @@ public class ReservationService {
 	  Reservation reservation = reservationDao.selectOne(reservationNo);
    
 	  return reservation;
-  }
+  }*/
 }
 
 

@@ -9,15 +9,15 @@
 <title>HopeHoff</title>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<link rel='stylesheet' href='../../css/myBook/jquery-ui.css'>
+<link rel='stylesheet' href='/hopeHoff/css/myBook/jquery-ui.css'>
 
-<link rel='stylesheet' href="../../css/common/common.css">
-<link rel='stylesheet' href="../../css/main/main.css">
-<link rel="stylesheet" type="text/css" href="../../css/details/details.css">
-<link rel="stylesheet" type="text/css" href="../../css/details/overlay.css">
-<link rel='stylesheet' type="text/css" href='../../css/myBook/myBook.css'>
-<link rel="stylesheet" type="text/css" 	href="../../css/myMarket/myMarket.css">
-<link rel='stylesheet' type="text/css" href='../../css/myPage/myPage.css'>
+<link rel='stylesheet' href="/hopeHoff/css/common/common.css">
+<link rel='stylesheet' href="/hopeHoff/css/main/main.css">
+<link rel="stylesheet" type="text/css" href="/hopeHoff/css/details/details.css">
+<link rel="stylesheet" type="text/css" href="/hopeHoff/css/details/overlay.css">
+<link rel='stylesheet' type="text/css" href='/hopeHoff/css/myBook/myBook.css'>
+<link rel="stylesheet" type="text/css" 	href="/hopeHoff/css/myMarket/myMarket.css">
+<link rel='stylesheet' type="text/css" href='/hopeHoff/css/myPage/myPage.css'>
 
 </head>
 <body>
@@ -39,7 +39,7 @@
 					<div id="headerLeftBottomMenu">[이름][사장]님께서 로그인하셨습니다.</div>
 				</div>
 				<div id="headerMiddle">
-					<a href="main.html"><img src="../../img/main/mainLogo.png">HopeHoff</a>
+					<a href="main.html"><img src="/hopeHoff/img/main/mainLogo.png">HopeHoff</a>
 				</div>
 				<div id="headerRight">
 					<div id="headerTopMenu" class="width-ul-style">
@@ -53,7 +53,7 @@
 			</div>
 			<div id="smallHeader">
 				<div id="leftSmallHeader">
-					<a href="main.html"><img src="../../img/main/mainLogo.png">HopeHoff</a>
+					<a href="main.html"><img src="/hopeHoff/img/main/mainLogo.png">HopeHoff</a>
 				</div>
 				<div id="rightSmallHeader" class="width-ul-style">
 					<div class="width-ul-style">
@@ -126,10 +126,10 @@
 	<div id="myBook"></div>
 	<div id="myMarket"></div>
 	
-	<script src='../../js/jquery-2.1.1.min.js'></script>
-	<script src='../../js/common/common.js'></script>
-	<script src='../../js/main/main.js'></script>
-	<script src="../../js/jquery-ui.min.js"></script>
+	<script src='/hopeHoff/js/jquery-2.1.1.min.js'></script>
+	<script src='/hopeHoff/js/common/common.js'></script>
+	<script src='/hopeHoff/js/main/main.js'></script>
+	<script src="/hopeHoff/js/jquery-ui.min.js"></script>
 	
 <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d4d9b75720036a3beb504b5419e4327529360b24"></script>
 

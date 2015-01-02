@@ -6,8 +6,8 @@ $(document).ready(function(){
 	var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 	
 	//첫 시작시 리스트 로딩
-	$("#containerList").load("containerList.html");
-	$("#footer").load("../common/footer.html");
+	$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	$(window).resize(function(){
 		mainBodyWidth = Narae.removePx($("#mainBody").css("width"));

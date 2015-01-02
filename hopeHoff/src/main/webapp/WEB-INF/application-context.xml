@@ -11,8 +11,8 @@
 		<context:exclude-filter type="regex" 
 								expression=" "/><!-- control 단 이름들어가야한다.  -->
 	</context:component-scan>
-
-	<!-- Database 커넥션 풀 준비 -->
+<!-- 
+	 Database 커넥션 풀 준비 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -22,7 +22,7 @@
 		<property name="password" value="1111" />
 	</bean>
 
-	<!-- SqlSessionFactory 준비 -->
+	SqlSessionFactory 준비
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="" />
@@ -34,11 +34,11 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-	<!-- Dao 클래스 자동 생성 설정하기 -->
+	Dao 클래스 자동 생성 설정하기
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<!-- DAO를 위한 인터페이스가 선언된 패키지 지정 -->
+		DAO를 위한 인터페이스가 선언된 패키지 지정
 		<property name="basePackage" value="hopeHoff.hopeHoff.dao" />
-	</bean>
+	</bean> -->
 </beans>
 
 

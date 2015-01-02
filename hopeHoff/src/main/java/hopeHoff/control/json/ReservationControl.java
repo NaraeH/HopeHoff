@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller("reservationControl")
 @RequestMapping("/json/reservation")
 public class ReservationControl {
+	/*
 
 	static final int PAGE_DEFAULT_SIZE = 3;
 	
@@ -29,7 +29,7 @@ public class ReservationControl {
 	// POST요청일 때 이것을 사용하라고 하는
 	public Object add(Reservation reservation) throws Exception {
 
-	/*	if(reservation.getPhotofile() != null 
+		if(reservation.getPhotofile() != null 
 		   &&  !product.getPhotofile().isEmpty()){
 			
 			String fileuploadRealpath = 
@@ -40,7 +40,7 @@ public class ReservationControl {
 			product.getPhotofile().transferTo(file);
 			product.setPhoto(filename);
 
-		}*/
+		}
 		
 		 reservationService.add(reservation);
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
@@ -95,6 +95,6 @@ public class ReservationControl {
 		resultMap.put("reservation", reservation);
 		
 		return resultMap;
-	}
+	}*/
 
 }

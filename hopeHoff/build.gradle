@@ -26,6 +26,8 @@ dependencies {
 	compile 'com.googlecode.json-simple:json-simple:1.1.1' //narae추가 => json데이터 parse위해서
 	compile 'org.springframework:spring-webmvc:4.1.2.RELEASE'
 	
+	compile 'javax.servlet:jstl:1.2'
+	
 	
 //추가되어야 할 Library들 => 추후 6번에서 확인되어야 할 jar파일
 	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
