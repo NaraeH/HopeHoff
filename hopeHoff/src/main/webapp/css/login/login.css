@@ -295,10 +295,21 @@
 	margin-left: 117px;
 	}
 	
+	#btnLoginClose {
+       background: #FFCD28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin-top: -25px;
+		margin-right: 5px;
+		text-decoration: none;
+	}
+	
 	/* 오른쪽 회원가입창 정렬 */
-	#yesno, #pwdCheckText, #pwdValid {
+	#yesno, #pwdCheckText, #pwdValid, #emailValid {
 	color : red;
-	font-size : medium;
+	font-size : small;
 	font-weight : bolder;
 	text-align: center;
 	}
@@ -480,7 +491,7 @@
 	}	
 	
 	/* 팝업 검사버튼 */
-	#yesno, #pwdCheckText, #pwdValid {
+	#yesno, #pwdCheckText, #pwdValid, #emailValid {
 	color : red;
 	font-size : x-small;
 	font-weight : bolder;
