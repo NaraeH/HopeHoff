@@ -4,7 +4,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="hopeHoff.hopeHoff.dao.ReservationDao">
+<mapper namespace="hopeHoff.dao.ReservationDao">
+
+	<resultMap type="Reservation" id="reservationMap2">
+	    <id column="RNO" property="reservationNo"/>
+	    <result column="RDATE" property="reservationDate"/>
+	  </resultMap>
 
 	  <resultMap type="Reservation" id="reservationMap">
 	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
@@ -48,7 +53,9 @@
   </select>
   
   <select id="selectOne" parameterType="int" resultMap="reservationMap">
-  	<include refid="reservationSelect"/>
+  	<!-- <include refid="reservationSelect"/> -->
+  	SELECT RNO,RDATE
+  	FROM RESERVATION
   	WHERE RNO=#{value}
   </select>
   
@@ -61,4 +68,9 @@
   <delete id="delete" parameterType="int">
 	DELETE FROM RESERVATION WHERE RNO=#{value}  
   </delete>
+  
+  <select id="totalSize" resultType="int">
+	SELECT count(RNO)
+	FROM RESERVATION
+  </select>
 </mapper>

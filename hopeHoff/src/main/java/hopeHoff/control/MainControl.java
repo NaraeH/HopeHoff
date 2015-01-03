@@ -1,4 +1,4 @@
-package hopeHoff.control.json;
+package hopeHoff.control;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

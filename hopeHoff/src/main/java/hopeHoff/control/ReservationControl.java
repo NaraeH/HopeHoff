@@ -1,30 +1,31 @@
-package hopeHoff.control.json;
+package hopeHoff.control;
 
+import hopeHoff.dao.ReservationDao;
 import hopeHoff.domain.Reservation;
 import hopeHoff.service.ReservationService;
 
 import java.util.HashMap;
 
-import javax.servlet.ServletContext;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller("reservationControl")
-@RequestMapping("/json/reservation")
+@Controller("ReservationControl")
+@RequestMapping("/reservation")
 public class ReservationControl {
-	/*
+	
 
 	static final int PAGE_DEFAULT_SIZE = 3;
 	
-	  @Autowired ReservationService     reservationService;
-	  @Autowired ServletContext 	servletContext;
+	@Autowired ReservationDao reservationDao;
+	
+	  ReservationService     reservationService = new ReservationService();
+	  /*@Autowired ServletContext 	servletContext;*/
 
 
+	 /*
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	// POST요청일 때 이것을 사용하라고 하는
 	public Object add(Reservation reservation) throws Exception {
@@ -48,8 +49,9 @@ public class ReservationControl {
 		
 		return resultMap;
 	}
+	*/
 
-	@RequestMapping("/delete")
+	/*@RequestMapping("/delete")
 	public Object delete(int no) throws Exception {
 		
 		reservationService.delete(no);
@@ -59,7 +61,7 @@ public class ReservationControl {
 		
 		return resultMap;
 
-	}
+	}*/
 
 	@RequestMapping("/list")
 	public Object list(
@@ -70,6 +72,8 @@ public class ReservationControl {
 			pageSize = PAGE_DEFAULT_SIZE;
 		}
 
+		System.out.println("11");
+		System.out.println(pageSize);
 		int maxPageNo = reservationService.getMaxPageNo(pageSize);
 
 		if (pageNo <= 0) pageNo = 1;
@@ -88,13 +92,15 @@ public class ReservationControl {
 
 	@RequestMapping("/view")
 	public Object view(int no, Model model) throws Exception {
-		Reservation reservation= reservationService.get(no);
+		//Reservation reservation= reservationService.get(no);
+		
+		Reservation reservation = reservationDao.selectOne(no);
 		
 		HashMap<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "success");
 		resultMap.put("reservation", reservation);
 		
 		return resultMap;
-	}*/
+	}
 
 }
