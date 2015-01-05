@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("json")
 public class Keyword {
-	
+	/*
 
 	@RequestMapping("/main.jsp")
 	public Object keywords(){
@@ -38,5 +38,5 @@ public class Keyword {
 		
 		System.out.println(keyword.keywords());
 		System.out.println();
-	}
+	}*/
 }
