@@ -265,6 +265,11 @@
 	}
 	
 	#containerKeyword li p{
+		display:inline-block;
+		margin : 0px;
+	}
+	
+	#containerKeyword li p:first-child{
 		margin: 5px;
 	}
 	

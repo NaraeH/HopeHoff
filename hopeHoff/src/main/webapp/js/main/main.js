@@ -132,41 +132,22 @@ function loadKeyword() {
 	$.getJSON(
 			'keyword.do',
 			function(data){
-				console.log($(data).size());
-				console.log(data.keywordRegion);
-				
-				var keywordRegion = data.keywordRegion;
-				var keywordPlace = data.keywordPlace;
-				var keywordPeole = data.keywordPeole;
-				
-				for(var i = 0; i < data.length; i ++){
-					$("<div>").attr("id", data[i].val());
+				for(var keyword in data) {
+					$("<div>").attr("id", keyword)
+								.append($("<ul>")
+										.append($("<li>")
+												.append($("<p>")
+												.html(data[keyword][0]))))
+								.appendTo($("#containerKeyword"));
+					
+					for(var i = 1; i < data[keyword].length; i++){
+						$("<li>").append($("<input>")
+									.attr("type", "checkbox")
+									.attr("value", data[keyword][i]))
+								 .append($("<p>" + data[keyword][i] + "</p>"))
+								 .appendTo("#" + keyword + " ul");
+					}
 				}
-/*				for(var i = 0; keywordRegion.length; i++ ){
-					$("<div>").attr("id", "keywordRegion")
-							  .append($("<ul>")
-									  .append$(("<li>")))
-				}*/
-				
-				//("#containerKeyword")
-/*				setPageNo(data.currengPage, data.maxPageNo);
-
-				var currPage = data.currenPage;
-				var products = data.product;
-				
-				for(var i = 0; i<products.length; i++){
-					$("<tr>")
-						.addClass('data-row')
-						.append($('<td>').html(products[i].no))
-						.append($('<td>')
-								.append($("<a>")
-										.attr("href", "../json/product/view.do?no=" + products[i].no)
-										.attr("data-no", products[i].no) //data-로 시작하면 기존에 없는 속성
-										.html(products[i].name)))
-						.append($('<td>').html(products[i].quantity))
-						.append($('<td>').html(products[i].maker))
-						.appendTo($("#productTable"));
-				} */
 	});
 }
 

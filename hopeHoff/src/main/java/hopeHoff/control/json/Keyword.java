@@ -25,6 +25,7 @@ public class Keyword {
 			keywords.put("region", keyword.get("region"));
 			keywords.put("place", keyword.get("place"));
 			keywords.put("snack", keyword.get("snack"));
+			keywords.put("people", keyword.get("people"));
 			
 		}catch(Exception e){
 			e.printStackTrace();
