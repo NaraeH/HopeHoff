@@ -1,3 +1,5 @@
+import java.lang.invoke.LambdaForm.Compiled;
+
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'war'
@@ -27,6 +29,8 @@ dependencies {
 	compile 'org.springframework:spring-webmvc:4.1.2.RELEASE'
 	
 	compile 'javax.servlet:jstl:1.2'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.5.0'
+
 	
 	
 //추가되어야 할 Library들 => 추후 6번에서 확인되어야 할 jar파일

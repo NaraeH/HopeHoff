@@ -9,30 +9,7 @@ $(document).ready(function(){
 	$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
-	$.getJSON(
-			'../json/product/list.do?pageNo=' + pageNo,
-			function(data){
-				setPageNo(data.currengPage, data.maxPageNo);
-
-				var currPage = data.currenPage;
-				var products = data.product;
-				
-				for(var i = 0; i<products.length; i++){
-					$("<tr>")
-						.addClass('data-row')
-						.append($('<td>').html(products[i].no))
-						.append($('<td>')
-								.append($("<a>")
-										.attr("href", "../json/product/view.do?no=" + products[i].no)
-										.attr("data-no", products[i].no) //data-로 시작하면 기존에 없는 속성
-										.html(products[i].name)))
-						.append($('<td>').html(products[i].quantity))
-						.append($('<td>').html(products[i].maker))
-						.appendTo($("#productTable"));
-				} 
-	});
-	
-	-->$("#containerKeyword")
+	loadKeyword();
 	
 	$(window).resize(function(){
 		mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
@@ -149,10 +126,36 @@ $(document).ready(function(){
 		}
 	});
 	
-	
-
-	
 });
+
+function loadKeyword() {
+		console.log("loadKeyword");
+	$.getJSON(
+			'keyword.do',
+			function(data){
+				console.log(data);
+				
+				//("#containerKeyword")
+/*				setPageNo(data.currengPage, data.maxPageNo);
+
+				var currPage = data.currenPage;
+				var products = data.product;
+				
+				for(var i = 0; i<products.length; i++){
+					$("<tr>")
+						.addClass('data-row')
+						.append($('<td>').html(products[i].no))
+						.append($('<td>')
+								.append($("<a>")
+										.attr("href", "../json/product/view.do?no=" + products[i].no)
+										.attr("data-no", products[i].no) //data-로 시작하면 기존에 없는 속성
+										.html(products[i].name)))
+						.append($('<td>').html(products[i].quantity))
+						.append($('<td>').html(products[i].maker))
+						.appendTo($("#productTable"));
+				} */
+	});
+}
 
 
 
