@@ -23,7 +23,7 @@ public class MainControl {
 		
 		try{
 			JSONParser parser = new JSONParser();            
-			String path = Keyword.class.getResource("../../domain/keyword.json").getPath();
+			String path = MainControl.class.getResource("../../domain/keyword.json").getPath();
 			
 			JSONObject keyword = (JSONObject) parser.parse(new FileReader(path));
 			
@@ -37,6 +37,12 @@ public class MainControl {
 			e.printStackTrace();
 		}
 		return resultMap;
+	}
+	
+	public static void main(String[] args) {
+		MainControl mainControl = new MainControl();
+		
+		System.out.println(mainControl.keywords());
 	}
 
 }
