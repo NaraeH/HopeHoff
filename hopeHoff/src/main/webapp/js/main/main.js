@@ -129,11 +129,24 @@ $(document).ready(function(){
 });
 
 function loadKeyword() {
-		console.log("loadKeyword");
 	$.getJSON(
 			'keyword.do',
 			function(data){
-				console.log(data);
+				console.log($(data).size());
+				console.log(data.keywordRegion);
+				
+				var keywordRegion = data.keywordRegion;
+				var keywordPlace = data.keywordPlace;
+				var keywordPeole = data.keywordPeole;
+				
+				for(var i = 0; i < data.length; i ++){
+					$("<div>").attr("id", data[i].val());
+				}
+/*				for(var i = 0; keywordRegion.length; i++ ){
+					$("<div>").attr("id", "keywordRegion")
+							  .append($("<ul>")
+									  .append$(("<li>")))
+				}*/
 				
 				//("#containerKeyword")
 /*				setPageNo(data.currengPage, data.maxPageNo);

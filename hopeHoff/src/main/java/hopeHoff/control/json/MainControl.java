@@ -28,9 +28,9 @@ public class MainControl {
 			JSONObject keyword = (JSONObject) parser.parse(new FileReader(path));
 			
 			resultMap = new HashMap<String, Object>();
-			resultMap.put("region", keyword.get("region"));
-			resultMap.put("place", keyword.get("place"));
-			resultMap.put("snack", keyword.get("snack"));
+			resultMap.put("keywordRegion", keyword.get("region"));
+			resultMap.put("keywordPlace", keyword.get("place"));
+			resultMap.put("keywordSnack", keyword.get("snack"));
 			
 		}catch(Exception e){
 			e.printStackTrace();
