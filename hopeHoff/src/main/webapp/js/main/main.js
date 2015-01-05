@@ -2,8 +2,6 @@ $(function(){
 	
 	var count = 0; //for문을 위한 index
 	var checkedList = []; //keyword를 담기위한 배열
-	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
-	var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 	
 	//첫 시작시 리스트 로딩
 	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
@@ -32,20 +30,23 @@ $(window).resize(function(){
 		$("#containerTop").css("height", "125px");
 		$( "#containerKeyword" ).css("display", "block");
 		
-		//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
-		$(window).scroll(function(){
-		    if ( $( document ).scrollTop() > headerOffset && mainBodyWidth >= 421) {
-		    	console.log("==>" + mainBodyWidth);
-		        $("#smallHeader").css("display", "block")
-		        				 .css("position", "fixed")
-		        				 .css("top", "0px")
-		        				 .css("z-index", "2");
-		      }
-		      else {
-		        $("#smallHeader").css("display", "none");
-		      }
-		});
 	}
+});
+
+//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
+$(window).scroll(function(){
+	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
+	var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
+	
+    if ( $( document ).scrollTop() > headerOffset && mainBodyWidth >= 421) {
+        $("#smallHeader").css("display", "block")
+        				 .css("position", "fixed")
+        				 .css("top", "0px")
+        				 .css("z-index", "2");
+      }
+      else {
+        $("#smallHeader").css("display", "none");
+      }
 });
 
 
