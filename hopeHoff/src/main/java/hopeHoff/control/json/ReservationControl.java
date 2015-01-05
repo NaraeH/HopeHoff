@@ -1,4 +1,4 @@
-package hopeHoff.control;
+package hopeHoff.control.json;
 
 import hopeHoff.dao.ReservationDao;
 import hopeHoff.domain.Reservation;
@@ -99,6 +99,8 @@ public class ReservationControl {
 		HashMap<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "success");
 		resultMap.put("reservation", reservation);
+		
+		System.out.println(resultMap);
 		
 		return resultMap;
 	}
