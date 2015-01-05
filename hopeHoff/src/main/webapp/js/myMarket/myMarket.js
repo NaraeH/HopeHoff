@@ -48,7 +48,7 @@ $(document).ready(function() {
 	
 	$("#btnMyMarketClose").click(function(){
 		$("#back").css("display", "none");
-		$("#myMarket").remove();
+		$("#myMarket").css("display", "none");
 	})
 });
 

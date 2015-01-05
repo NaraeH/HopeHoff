@@ -90,7 +90,7 @@ $(document).ready(function(){
 	//******************** btnClose 클릭시에 ************************//
 	$("#btnMyBookClose").click(function(){
 		$("#back").css("display", "none");
-		$("#myBook").remove();
+		$("#myBook").css("display", "none");
 	});
 
 });
