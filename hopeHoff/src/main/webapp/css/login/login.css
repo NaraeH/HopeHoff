@@ -306,14 +306,7 @@
 		text-decoration: none;
 	}
 	
-	/* 오른쪽 회원가입창 정렬 */
-	#yesno, #pwdCheckText, #pwdValid, #emailValid {
-	color : red;
-	font-size : small;
-	font-weight : bolder;
-	text-align: center;
-	}
-	
+
 	/* 회원가입창 버튼창 */
 	#inNumber00, #inNumber02 {
 	margin-left: -20px;
@@ -495,7 +488,7 @@
 	color : red;
 	font-size : x-small;
 	font-weight : bolder;
-	margin-bottom : 10px;
+	/* margin-bottom : -10px; */
 	text-align: center;
 	}
 	
