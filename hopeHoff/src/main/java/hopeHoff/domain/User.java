@@ -1,60 +1,62 @@
 package hopeHoff.domain;
 
-public class User {
-	
-	protected String userId;
-	protected String userName;
-	protected String userType;
-	protected String userPassWord;
-	protected String userEmail;
-	protected String userPhone;
-	
-	
-	
-	
+import java.io.Serializable;
+
+public class User implements Serializable {
+  private static final long serialVersionUID = 1L;
+  
+  	protected String uId;
+	protected String uName;
+	protected String uType;
+	protected String uPwd;
+	protected String uEmail;
+	protected String uPhone;
+	public String getuId() {
+		return uId;
+	}
+	public void setuId(String uId) {
+		this.uId = uId;
+	}
+	public String getuName() {
+		return uName;
+	}
+	public void setuName(String uName) {
+		this.uName = uName;
+	}
+	public String getuType() {
+		return uType;
+	}
+	public void setuType(String uType) {
+		this.uType = uType;
+	}
+	public String getuPwd() {
+		return uPwd;
+	}
+	public void setuPwd(String uPwd) {
+		this.uPwd = uPwd;
+	}
+	public String getuEmail() {
+		return uEmail;
+	}
+	public void setuEmail(String uEmail) {
+		this.uEmail = uEmail;
+	}
+	public String getuPhone() {
+		return uPhone;
+	}
+	public void setuPhone(String uPhone) {
+		this.uPhone = uPhone;
+	}
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName
-				+ ", userType=" + userType + ", userPassWord=" + userPassWord
-				+ ", userEmail=" + userEmail + ", userPhone=" + userPhone + "]";
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getUserType() {
-		return userType;
-	}
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
-	public String getUserPassWord() {
-		return userPassWord;
-	}
-	public void setUserPassWord(String userPassWord) {
-		this.userPassWord = userPassWord;
-	}
-	public String getUserEmail() {
-		return userEmail;
-	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
-	}
-	public String getUserPhone() {
-		return userPhone;
-	}
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+		return "User [uId=" + uId + ", uName=" + uName + ", uType=" + uType
+				+ ", uPwd=" + uPwd + ", uEmail=" + uEmail + ", uPhone="
+				+ uPhone + "]";
 	}
 	
 	
-
+	
+	
+	
+	
 }

@@ -1,31 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="hopeHoff.dao.UserDao">
 
-	<resultMap type="USER" id="userMap">
-		<!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
-		<id column="UID" property="userId" />
-		<result column="UPASSWORD" property="userPassword" />
-		<result column="UEMAIL" property="userEmail" />
-		<result column="UTYPE" property="userType" />
-		<result column="UNAME" property="userName" />
-	<result column="UPHONE" property="userPhone" />
-	</resultMap>
-	
-	<sql id="userSelect">
-    SELECT UID,UNAME,UPHONE,UEMAIL
-    FROM USER
-  </sql>
+  <resultMap type="USER" id="userMap">
+		<id column="UID" property="uId" />
+		<result column="UNAME" property="uName" />
+		<result column="UTYPE" property="uType" />
+		<result column="UPASSWORD" property="uPwd" />
+		<result column="UEMAIL" property="uEmail" />
+		<result column="UPHONE" property="uPhone" />
+  </resultMap>
   
-  <select id="userSelectOne" parameterType="map" resultMap="userMap">
-  	  <include refid="userSelect"/>
-  	  WHERE UID=#{value}
-  
+  <select id="existUser" parameterType="map" resultMap="userMap">
+  SELECT UID,UNAME,UPHONE,UEMAIL FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
   </select>
   
-
-
 </mapper>

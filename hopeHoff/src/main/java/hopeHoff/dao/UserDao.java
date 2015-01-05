@@ -1,5 +1,9 @@
 package hopeHoff.dao;
 
-public interface UserDao {
+import hopeHoff.domain.User;
 
+import java.util.Map;
+
+public interface UserDao {
+  User existUser(Map<String,String> params);
 }
