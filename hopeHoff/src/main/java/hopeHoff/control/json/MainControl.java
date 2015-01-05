@@ -39,6 +39,17 @@ public class MainControl {
 		return resultMap;
 	}
 	
+	@RequestMapping("/list")
+	public Object list(){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		resultMap.put("test", "test입니다");
+		
+		return resultMap;
+		
+		
+	}
+	
 	public static void main(String[] args) {
 		MainControl mainControl = new MainControl();
 		
