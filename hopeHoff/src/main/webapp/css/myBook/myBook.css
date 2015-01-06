@@ -39,12 +39,15 @@
 	#myBookData {
 		margin-left: 30px;
 	}
-	.tableData{
-	 	height: 45px;
+	
+	#myBookDatath > th{
+		height: 45px;
 	 	border-radius :15px;
 	 	text-align:center;
 		border:1px solid white;
 		background-color : #FFCD28;
+		width:  100px;
+
 	}
 	
 	td{

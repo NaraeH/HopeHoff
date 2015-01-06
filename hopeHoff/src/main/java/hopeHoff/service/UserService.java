@@ -4,6 +4,7 @@ import hopeHoff.dao.UserDao;
 import hopeHoff.domain.User;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,10 @@ public class UserService {
     params.put("uId", uId);
     params.put("uPwd", uPwd);
     return userDao.existUser(params);
+  }
+  
+  public List<User> getList(){
+	  return userDao.selectPhoneList();
   }
 
 }

@@ -24,7 +24,6 @@ repositories {
 }
 
 dependencies {
-	compile 'javax.servlet:javax.servlet-api:3.1.0'
 	compile 'com.googlecode.json-simple:json-simple:1.1.1' //narae추가 => json데이터 parse위해서
 	compile 'org.springframework:spring-webmvc:4.1.2.RELEASE'
 	

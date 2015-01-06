@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <link rel='stylesheet' href='../../css/myBook/myBook.css'>
@@ -11,12 +11,10 @@
 
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="../../js/jquery-2.1.1.js"></script>
-<script src="../../js/jquery-ui.min.js"></script>
 
 </head>
 <body>
- -->
+
  
  <div id="myBookBody">
 			<div id="myBookHeader">
@@ -35,6 +33,13 @@
 
 			<div id="myBookDataTable">
 				<table id="myBookData">
+				<tr id="myBookDatath">
+					<th><input type="checkbox" disabled="disabled">	</th>
+					<th>번호</th>
+					<th>전화번호</th>
+					<th>등록일</th>
+					<th>상태</th>
+				</tr>
 				</table>
 				<div class= "warnigMessage">
 					<button id="btnDelete">예약 취소</button>
@@ -44,12 +49,22 @@
 			</div>
 			<hr>
 			
+			<div id='pagingBar'>
+			  <button id='prevBtn' type='button' class='btn btn-default'>이전</button>
+			  <span id='pageNo'>1</span>
+			  <button id='nextBtn' type='button' class='btn btn-default'>다음</button>
+			</div>
+			
 		</div>
 </div>
 
 <script src="../../js/myBook/myBook.js"></script>
+<script src="../../js/jquery/jquery-2.1.1.js"></script>
+<script src="../../js/jquery/jquery-1.11.1.js"></script>
+<script src="../../js/jquery/jquery-ui.min.js"></script>
 
-<!-- </body>
+
+ </body>
 <script src="../../js/myBook/myBook.js"></script>
 <link rel='stylesheet' href='../../css/myBook/myBook.css'>
-</html> -->
+</html> 
