@@ -92,9 +92,15 @@ $(function(){
 			
 				if(data.result == "사용가능한 아이디입니다."){
 					$('#yesno').html(data.result).css("color","green");
-
+					
+					/*	$(".has-feedback").append("<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>");*/
+					
+					/*$(".has-feedback").attr("class","has-success");*/
+					   /*.append("<span id='inputSuccess4Status' class='sr-only'>(success)</span>");*/
 				} else { /*중복된 아이디가 있습니다.*/
 					$('#yesno').html(data.result).css("color","red");
+					/*$(".has-feedback").attr("class","has-error");*/
+					
 				} 
 	       }
 	  ); /*get꺼*/	

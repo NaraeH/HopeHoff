@@ -294,7 +294,15 @@
 	margin-top : 20px;
 	margin-left: 117px;
 	}
-	
+		
+	/* 팝업 검사버튼 */
+	#yesno, #pwdCheckText, #pwdValid, #emailValid {
+	color : red;
+	font-size : x-small;
+	font-weight : bolder;
+	/* margin-bottom : -10px; */
+	text-align: center;
+	}
 	#btnLoginClose {
        background: #FFCD28;
 		border: #FFCD28;
