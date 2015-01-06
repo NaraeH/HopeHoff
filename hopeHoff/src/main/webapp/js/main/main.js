@@ -1,14 +1,12 @@
 $(function(){
 	
-	var count = 0; //for문을 위한 index
-	var checkedList = []; //keyword를 담기위한 배열
-	
 	//첫 시작시 리스트 로딩
-	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	loadContainerList();
+	//loadContainerList();
+	
 });
 
 
@@ -51,10 +49,17 @@ $(window).scroll(function(){
 
 
 
-$(":checkbox").click(function() {
+$("#containerKeyword").click(function() {
+	var count = 0; //for문을 위한 index
+	var checkedList = []; //keyword를 담기위한 배열
+	
+	console.log($(this).children());
+	console.log("체크됬다");
 	//체크하는 경우
 	if ($(this).is(":checked")) {
 		checkedList[checkedList.length] = $(this).val();
+		console.log($(this));
+		console.log($(this).val());
 	}
 
 	//체크를 없애는 겨우
@@ -171,13 +176,12 @@ function loadContainerList(){
 	var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
 	var count = 13;  //list출력개수 현재는 임의로 지정
 	
-	$.getJSON(
+	/*$.getJSON(
 			'../../main/list.do',
 			function(data){
-				console.log(data.shops[0].shopName);
-				console.log(data.shops.length);
-				
 				for (var i = 0; i < data.shops.length; i++) {
+					var shopId = "#shop" + i;
+					
 					$($("<div>").attr("class", "list").append($("<div>")
 																.attr("class", "listInfo")
 																.append($("<div>")
@@ -186,17 +190,31 @@ function loadContainerList(){
 											 .append($("<a>")
 											 	.attr("href", "#")
 											 	.append($("<img>")
-												.attr("src", data.shops[0].shopPhoto))
+												.attr("src", data.shops[i].shopPhoto))
 											 .append($("<div>")
 												.attr("class", "pictureBackground")
 											    .text("상세보기"))))
 											 .append("<hr>")
 											 .append($("<div>")
 												.attr("class","listKeywordContainer")
-												.attr("my-no", i))
+												.attr("id", "shop" + i))
 							.appendTo("#containerList"));
+						
+						
+						$("<div>").addClass("deactivatKeyword")
+									.text(data.shops[i].shopArea)
+									.appendTo($(shopId));
+						
+						$("<div>").addClass("deactivatKeyword")
+									.text(data.shops[i].shopType)
+									.appendTo($(shopId));
+						
+						$("<div>").addClass("deactivatKeyword")
+									.text(data.shops[i].shopSnack)
+									.appendTo($(shopId));
+						
 				}
-			});
+			});*/
 }
 
 
