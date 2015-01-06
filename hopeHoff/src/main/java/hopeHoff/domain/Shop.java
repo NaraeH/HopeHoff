@@ -14,8 +14,6 @@ public class Shop {
 	protected String shopType;
 	protected String shopSnack;
 	
-	
-	
 	@Override
 	public String toString() {
 		return "Shop [businessNo=" + businessNo + ", userId=" + userId
