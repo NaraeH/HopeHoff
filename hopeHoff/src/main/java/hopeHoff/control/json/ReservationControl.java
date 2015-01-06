@@ -22,7 +22,7 @@ public class ReservationControl {
   @Autowired ReservationService     reservationService;
   @Autowired ServletContext servletContext;
  
-  @RequestMapping(value="/add", method=RequestMethod.POST)
+/*  @RequestMapping(value="/add", method=RequestMethod.POST)
   public Object add(Reservation reservation) throws Exception {  
     
     reservationService.add(reservation);
@@ -31,8 +31,9 @@ public class ReservationControl {
     resultMap.put("status", "success");
     
     return resultMap;
-  }
+  }*/
 
+  /*
   @RequestMapping("/delete")
   public Object delete(int no) throws Exception {
     reservationService.delete(no);
@@ -41,7 +42,7 @@ public class ReservationControl {
     resultMap.put("status", "success");
     
     return resultMap;
-  }
+  }*/
   
   @RequestMapping("/list")
   public Object list(
