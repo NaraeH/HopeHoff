@@ -371,11 +371,17 @@
 
 /* ----------------------------media ------------------------------------- */
 @media all and (max-width:420px){
-	#back{
-		position:absolute;
-		z-index: -10;
-	}
 	
+	#back {
+		display:none;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.4);
+		position: absolute;
+		
+		z-index:2;
+	}
+
 	body {
 		margin: 0px;
 		padding:0px;
@@ -387,16 +393,14 @@
 		position:absolute;
 	}
 	
-	#myBook,#myPage{
+  	#myBook,#myPage{
 		margin:200px 10px !important;
 		margin-top: 15px;
 		position: absolute;
 		z-index: 10;
 		background-color: white;
-	}
-	#myBook,#myPage{
 		width: 380px;
-	}
+	} 
 	
 	/*----------------------------header--------------------------------  */
 	#headerLeft, #headerMiddle, #headerRight, #myShopList, #smallHeader {
@@ -414,23 +418,20 @@
 	  
 	}
 
-	 #mobileMenu #mobileLeftMenu {
+	 #mobileMenu #btnMobileLeftMenu {
 		display: inline-block;
-		background-size: 400px 674px;
-		background-image: url(../../img/common/pictogram_white.png);
-		width:48px;
-		height:48px;
-		background-position: -52px -109px;
-		background-color: black;
+		background-image: url(../../img/common/pictogram_white2.png);
+		width: 45px;
+		height: 45px;
+		background-position: -202px -481px;
 		position:absolute;
 		cursor:pointer;
 		
-		margin-top: 10px;
-		margin-left:5px;
+ 		margin-top: 12px;
+	}
 	
-		border-radius:7px;
-		box-shadow: 1px 1px 2px #FFFFFF;
-		
+	#mobileMenu #btnMobileLeftMenu:hover {
+		background-image: url(../../img/common/pictogram_white_push2.png);
 	}
 	
 	#mobileMenu a{
@@ -465,12 +466,12 @@
 	}
 	
 	#mobileNav {
+		display:none;
 		width: 70%;
 		height:100%;
-		display:block;
 		position: absolute;
 		background: #333231;
-		margin-top: -50px;
+		z-index:100
 		
 	}
 	
@@ -492,8 +493,9 @@
 	}
 	
 	#mobileNavTop {
+		display:table;
 		width: 95%;
-		height: 30px;
+		height: 45px;
 		margin-top: 3px;
 		
 		border-bottom: 1px solid yellow;
@@ -501,17 +503,20 @@
 	}
 	
 	#mobileNavTop a{
+		display:table-cell;
 		text-decoration: none;
-		vertical-align: -webkit-baseline-middle;
+		vertical-align: middle;
+		padding-left: 7px;
 	}
 	
 	#mobileNavTop div {
-		display:inline-block;
+		display:table-cell;
+		vertical-align: middle;
 		color: #ffffff;
 		font-size: 25px;
 		font-weight: bold;
-		float: right;
 		cursor: pointer;
+		text-align: center;
 	}
 
 	#mobileNavTop div:hover {
@@ -564,11 +569,13 @@
 		color: #ffffff;
 	}
 	
-	#containerKeyword li{
-		list-style-type: none;
+	#containerKeyword li {
+		display: inline;
+		margin: 10px 5px 5px 7px;
 	}
 	
-	#containerKeyword li{
+	#containerKeyword li input, #containerKeyword li p{
+		margin: 0px;
 		list-style-type: none;
 		display: inline;
 	}
@@ -577,9 +584,11 @@
 		display: block;
 	}
 	
-	#containerKeyword li p{
+	
+	#containerKeyword li:first-child p{
 		margin: 5px;
 	}
+	
 	
 	#containerKeyword div{
 		border-bottom: 1px solid white;

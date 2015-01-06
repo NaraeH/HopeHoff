@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/main")
 public class MainControl {
 	
-	@RequestMapping("/main")
-	public String testMain() throws Exception {
-		return "main/main";
-	}
-	
 	@RequestMapping("/keyword")
 	public Object keywords(){
 		HashMap<String, Object> resultMap= null;
