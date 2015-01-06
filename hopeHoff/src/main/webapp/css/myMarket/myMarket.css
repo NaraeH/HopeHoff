@@ -47,58 +47,63 @@
 		background-color: #333231;
 	}
 	
-	#myPubPhotoListWrap {
-
-		width: 35%;
+	.width-silde-wrap {
+		width: 230px;
 		height: 235px;
+		position: relative;
+		overflow: hidden;
 		
-		display: inline-block;
+		display: table;
 		border: 1px dashed red; 
 	}
 	
-	#myPubPhotoList {
-		overflow: hidden;
-		height: 235px;
+	.myLeftWrap, .myRightWrap {
+		width: 36px;
+		position: absolute;
+		display: table;
+		height: inherit;
+		z-index: 1;
+		text-align: center;
+		
+		cursor:pointer;
 	}
 	
-	#myPubPhotoList>.myLeftWrap, #myPubPhotoList>.myRightWrap {
-		display: inline-block;
-		height: 338px;
+	.myLeftWrap div, .myRightWrap div{
+		display: table-cell;
+		vertical-align: middle;
 	}
 	
-	#myPhotoToLeft {
-		margin-top: 160px;
-		margin-left: 16px;
+	.myLeftWrap:hover, .myRightWrap:hover{
+		background: rgba(255, 255, 255, 0.2);
 	}
 
-	#myPhotoToRight {
-		margin-top: 160px;
-		margin-left: 180px;
+	
+	.box-rotate-left {
+/* 		margin-top: 160px;
+		margin-left: 16px; */
+	}
+
+	.box-rotate-right {
+/* 		margin-top: 160px;
+		margin-left: 180px; */
 	}
 	
-	#myPubPhotoList ul {
-		margin-top: -2000px;
-	}
-	
-	.myWidthList ul {
-		width: 1300px;
+	.width-silde-wrap ul {
+		display: inline-block;
+		position:absolute;
 
 		list-style-type: none;
-		display: inline-block;
 		overflow: hidden;
-		margin-left:0px;
+		margin:0px;
 		padding: 0px;
 	}
-	.myWidthList li{
+	.width-silde-wrap li{
 		padding: 0px;
 		margin: 0px;
-		display: inline-block;
+		display: table-cell;
 	}
 	
 	#myPubPhotoList .myPhotoList {
-		/* width: 250px;
-		height: 290px; */
-		
 		width: 425px;
 		height: 340px;
 	}

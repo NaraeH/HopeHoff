@@ -26,30 +26,29 @@ public class ReservationService {
     paramMap.put("startIndex", ((pageNo - 1) * pageSize));
     paramMap.put("pageSize", pageSize);
     
-    return reservationDao.reservationList(paramMap);
+    return reservationDao.selectList(paramMap);
   }
   
   public int getMaxPageNo(int pageSize) {
-	  System.out.println("22");
     int totalSize = reservationDao.totalSize();
     int maxPageNo = totalSize / pageSize;
     if ((totalSize % pageSize) > 0) maxPageNo++;
     
-    System.out.println(maxPageNo);
     return maxPageNo;
   }
   
-/*   @Transactional 선언
+  /* @Transactional 선언
    * => 메서드 안의 입력/변경/삭제(manipluation) 작업을 하나의 작업을 묶는다.
-   * => 모든 작업이 성공했을 때만 서버에 반영한다. */
-   
+   * => 모든 작업이 성공했을 때만 서버에 반영한다. 
+   */
   @Transactional(
       rollbackFor=Exception.class, 
       propagation=Propagation.REQUIRED)
   public void add(Reservation reservation) {
-    reservationDao.insert(reservation);
+	  reservationDao.insert(reservation);
     
   }
+  
   
   @Transactional(
       rollbackFor=Exception.class, 
@@ -59,9 +58,8 @@ public class ReservationService {
   }
   
   public Reservation get(int reservationNo) {
-	  Reservation reservation = reservationDao.selectOne(reservationNo);
-   
-	  return reservation;
+	Reservation reservation = reservationDao.selectOne(reservationNo);
+    return reservation;
   }
 }
 
