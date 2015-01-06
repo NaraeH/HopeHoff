@@ -51,7 +51,7 @@ $(document).ready(function() {
 		$('#commentButton').css('background-color', '#FFB500');
 	});
 
-	$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
+	/*$("#photoToLeft, #pubPhotoList>.leftWrap").click(function(event) {
 		event.stopPropagation();
 		$("#pubPhotoList").naraeWidthSilde("left");
 	});
@@ -69,11 +69,11 @@ $(document).ready(function() {
 	$("#menuToRight, #menuList>.rightWrap").click(function() {
 		event.stopPropagation();
 		$("#menuList").naraeWidthSilde("right");
-	});
+	});*/
 });
 
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
-$('#pubPhotoList').naraeWidthSildeAuto();
+$('#pubPhotoListWrap').naraeWidthSildeAuto();
 		
 
 		

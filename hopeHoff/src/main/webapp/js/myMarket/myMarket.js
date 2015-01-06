@@ -26,7 +26,7 @@ $(document).ready(function() {
 		$('#myCommentButton').css('background-color', '#FFB500');
 	});
 
-	$("#myPhotoToLeft, #myPubPhotoList>.myLeftWrap").click(function(event) {
+	/*$("#myPhotoToLeft, #myPubPhotoList>.myLeftWrap").click(function(event) {
 		event.stopPropagation();
 		$("#myPubPhotoList").naraeWidthSilde("left");
 	});
@@ -49,12 +49,12 @@ $(document).ready(function() {
 	$("#btnMyMarketClose").click(function(){
 		$("#back").css("display", "none");
 		$("#myMarket").css("display", "none");
-	})
+	})*/
 });
 
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#myPubPhotoListWrap').naraeWidthSildeAuto(1500);
-		
+$('#myMenuListWrap').naraeWidthSilde();		
 
 	/************************************************************************************************/
 	

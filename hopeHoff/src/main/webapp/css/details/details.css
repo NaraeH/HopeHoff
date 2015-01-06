@@ -35,59 +35,13 @@
 		height: 87%;
 		padding: 15px;
 		
-		/* border: 1px solid red; */
 	}
 	
-	#pubPhotoListWrap{
+ 	#pubPhotoListWrap{
 		width: 30%;
-		height: 340px; /* 100%; */ 
-		display: inline-block;
-		
-/* 		border: 1px dashed red;  */
+		height: 340px; 
 	}
-	
-	#pubPhotoList {
-		overflow: hidden;
-	}
-	
-	#pubPhotoList>.leftWrap, #pubPhotoList>.rightWrap {
-		height: 338px;
-		
-		/* border: 1px solid red; */
-	}
-	
-	#photoToLeft {
-		margin-top: 160px;
-		margin-left: 16px;
-	}
-
-	#photoToRight {
-		margin-top: 160px;
-		margin-left: 6px;
-	}
-	
-	#pubPhotoList ul {
-		margin-top: -665px;
-	}
-	
-	.widthList ul {
-		width: 1300px;
-		list-style-type: none;
-		display: inline-block;
-		overflow: hidden;
-		margin-left:0px;
-		padding: 0px;
-	}
-	.widthList li{
-		padding: 0px;
-		margin: 0px;
-	}
-	
-	#pubPhotoList .photoList {
-		width: 425px;
-		height: 340px;
-	}
-
+ 
 	#pubPhoto1 {
 		background-image: url("../../img/details/Wara-Wara01.jpg");
 	}
@@ -144,9 +98,6 @@
 		text-align: left;
 	} */
  	#reservBtn {
- 		margin-left:10%;
- 		width: 80%;
-
 		background: orange;
 		display: inline-block;
 		color: white;

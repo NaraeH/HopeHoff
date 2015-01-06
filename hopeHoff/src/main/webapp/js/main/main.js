@@ -4,11 +4,11 @@ $(function(){
 	var checkedList = []; //keyword를 담기위한 배열
 	
 	//첫 시작시 리스트 로딩
-	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	loadContainerList();
+	//loadContainerList();
 });
 
 

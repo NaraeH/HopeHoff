@@ -1,15 +1,3 @@
-.widthList ul {
-		list-style-type: none;
-		margin-left: 10px;
-		display: inline-block;
-		overflow: hidden;
-}
-.widthList li {
-		display: inline-block;
-		padding: 0px 10px;
-}
-
-
 /*-----------------------------------화살표 ----------------------------*/
 .box-rotate-right {
 	width: 0px;
@@ -25,7 +13,7 @@
 	cursor: pointer;
 }
 
-.box-rotate-right:hover, .rightWrap:hover .box-rotate-right{
+.box-rotate-right:hover{
 	width: 0px;
 	height: 0px;
 	border-right: 20px solid transparent;
@@ -53,7 +41,7 @@
 	cursor: pointer;
 }
 
-.box-rotate-left:hover, .leftWrap:hover .box-rotate-left {
+.box-rotate-left:hover{
 	width: 0px;
 	height: 0px;
 	border-right: 20px solid transparent;
@@ -67,29 +55,18 @@
 	cursor: pointer;
 }
 
-/* 화살표 위에 새로운 디비전 만들어서 이 디비전위에 올라갔을 경우도 화살표 생기게 할 경우  */
-.leftWrap, .rightWrap {
-	width: 8%;
+/* common.js에서   naraeWidthSilde(), naraeWidthSildeAuto()를 위한 css*/
+.myLeftWrap, .myRightWrap  {
+	width: 36px;
+	position: absolute;
+	display: table;
 	height: inherit;
-	position: relative;
-	display: inline-block;
-	z-indx: 5px;
-	z-index: 3;
-
-	/* border: 1px solid red; */
-}
-
-.leftWrap {
-	float: left;
+	z-index: 1;
+	text-align: center;
 	cursor: pointer;
 }
 
-.rightWrap {
-	float: right;
-	cursor: pointer;
-}
-
-.leftWrap:hover{
+.myLeftWrap:hover{
 	    background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
 	    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
 	    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
@@ -97,7 +74,7 @@
 	    background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255,255,255,0));
 }
 	
-.rightWrap:hover {
+.myRightWrap:hover {
 		background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
 		background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
 		background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
@@ -105,8 +82,84 @@
 		background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
 }
 
+.myLeftWrap div, .myRightWrap div{
+	display: table-cell;
+	vertical-align: middle;
+}
 
-/*ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일-----*/
+.myLeftWrap:hover .box-rotate-left {
+	width: 0px;
+	height: 0px;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid rgba(51, 50, 49, 0.7);
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	display: inline-block;
+	cursor: pointer;
+}
+
+.myRightWrap:hover .box-rotate-right{
+	width: 0px;
+	height: 0px;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid rgba(51, 50, 49, 0.6);
+	transform: rotate(225deg);
+	-ms-transform: rotate(225deg); /* IE 9 */
+	-webkit-transform: rotate(225deg); /* Chrome, Safari, Opera */
+	-moz-transform: rotate(225deg);
+	-o-transform: rotate(225deg);
+	display: inline-block;
+	cursor: pointer;
+}
+
+.width-silde-wrap {
+	width: 230px;
+	height: 235px;
+	display : inline-block;
+	position: relative;
+	overflow: hidden;
+	
+}
+
+.width-silde-wrap ul {
+	height: inherit;
+	display: inline-block;
+	position:absolute;
+
+	list-style-type: none;
+	overflow: hidden;
+	margin:0px;
+	padding: 0px;
+}
+
+.width-silde-wrap li {
+	height: inherit;
+	padding: 0px;
+	margin: 0px;
+	display: table-cell;
+}
+
+.width-silde-wrap li div {
+	height: inherit;
+}
+.myPhotoList{
+	background-repeat: no-repeat;	
+}
+.myPhotoList .myImgText {
+	width: inherit;
+	height: inherit;
+	display: table-cell;
+	text-align: center;
+	vertical-align: bottom;
+	align-items: center;
+	color: white;
+	font-size: small;
+}
+
+/*------ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일 => 메인페이지에서 씀-----*/
 .width-ul-style ul{
 	list-style-type:none;
 	display: inline-block;
@@ -122,9 +175,9 @@
 .width-ul-style ul li:first-child {
 	border-left: none;
 }
-/*----------------------------------------------------*/
 
-/*----------------------a 태그 공통속성-----------------------    */
+
+/*----------------------a 태그 공통속성----------------------- */
 
 a:link {
 	color:white;
