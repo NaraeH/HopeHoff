@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="hopeHoff.dao.ShopDao">
+
+	<resultMap type="Map" id="shopMap">
+		<id column="BBNO" property="businessNo"/>
+   		<result column="SNAME" property="shopName"/>
+   		<result column="SPHOTO" property="shopPhoto"/>
+   		<result column="SAREA" property="shopArea"/>
+   		<result column="STYPE" property="shopType"/>
+   		<result column="SSNACK" property="shopSnack"/>
+	</resultMap>
+
+	<select id="selectList" resultMap="shopMap">
+		SELECT BBNO, SNAME, SPHOTO, SAREA, STYPE, SSNACK FROM hopehoff.shop;
+	</select>
+</mapper>

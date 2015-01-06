@@ -1,23 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>details</title>
-<link rel="stylesheet" type="text/css" href="../../css/details/details.css">
-<link rel="stylesheet" type="text/css" href="../../css/common/common.css">
-<link rel="stylesheet" type="text/css" href="../../css/details/overlay.css">
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap/bootstrap.min.css">
-
-<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=f0fe46045347a225b541134d40ca776ff948507a"></script>
-<script src="../../js/jquery-2.1.1.js"></script>
-<script src="../../js/common/common.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-</head>
-
-<body>
- -->
 	<div id= "detailsBody">
 
 		<div id = "detailHeader">
@@ -25,39 +5,36 @@
 		</div>
 
 		<div id="detailContainer">
-			<div id= "pubPhotoListWrap">
-
-			<div id="pubPhotoList" class="widthList">
-				<div class="leftWrap">
-					<span id="photoToLeft" class="box-rotate-left"></span>
-				</div>
-				<div class="rightWrap">
-					<span id="photoToRight" class="box-rotate-right"></span>
-				</div>
-
-				<ul>
-					<li>
-						<div id="pubPhoto1" class="photoList">
-							<div class="imgText"> 와라와라(강남점) (1/3) <br> ●○○ </div>
-						</div>
-					</li>
-					<li>
-						<div id="pubPhoto2" class="photoList">
-							<div class="imgText"> 와라와라(강남점) (2/3) <br> ○●○ </div>
-						</div>
-					</li>
-					<li>
-						<div id="pubPhoto3" class="photoList">
-							<div class="imgText"> 와라와라(강남점) (3/3) <br> ○○● </div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<!-- pubPhotoList -->
-
-				<input type="button" id="reservBtn" value="예약">
+			<div id="leftContainer">
+				<div id= "pubPhotoListWrap" class="width-silde-wrap">
+					<div class="myLeftWrap">
+						<div><span id="photoToLeft" class="box-rotate-left"></span></div>
+					</div>
+					<div class="myRightWrap">
+						<div><span id="photoToRight" class="box-rotate-right"></span></div>
+					</div>
 	
-			</div>
+					<ul>
+						<li>
+							<div id="pubPhoto1" class="myPhotoList">
+								<div class="myImgText"> 와라와라(강남점) (1/3) <br> ●○○ </div>
+							</div>
+						</li>
+						<li>
+							<div id="pubPhoto2" class="myPhotoList">
+								<div class="myImgText"> 와라와라(강남점) (2/3) <br> ○●○ </div>
+							</div>
+						</li>
+						<li>
+							<div id="pubPhoto3" class="myPhotoList">
+								<div class="myImgText"> 와라와라(강남점) (3/3) <br> ○○● </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+	
+				<input type="button" id="reservBtn" value="예약">
+				</div>
 			
 			<div id= "rightContainer">		
 			<div id="hoffInfo">
@@ -72,14 +49,17 @@
 			<div id="tabs">
 				<div id="tabsContent">
 					<div id="contentMenu">
-						<div id="menuList" class="listWidth">
-						
-							<div class="leftWrap"><span id="menuToLeft" class="box-rotate-left"></span></div>
-							<div class="rightWrap"><span id="menuToRight" class="box-rotate-right"></span></div>
+						<div id="menuListWrap" class="width-silde-wrap">
+							<div class="myLeftWrap">
+								<div><span id="menuToLeft" class="box-rotate-left"></span></div>
+							</div>
+							<div class="myRightWrap">
+								<div><span id="menuToRight" class="box-rotate-right"></span></div>
+							</div>
 									
 							<ul>
 								<li>
-									<div id="bestMenu1" class="box" >
+									<div id="bestMenu1" class="box myPhotoList" >
 										<div id="overlay">
 											<span id="menu">뿌링클 치킨</span><br>
 											<span id="price">17000</span>
@@ -87,7 +67,7 @@
 									</div>
 								</li>
 								<li>
-									<div id="bestMenu2" class="box" >
+									<div id="bestMenu2" class="box myPhotoList" >
 										<div id="overlay">
 											<span id="menu">크림치즈 퐁닭</span><br>
 											<span id="price">17500</span>
@@ -95,7 +75,7 @@
 									</div>
 								</li>
 								<li>
-									<div id="bestMenu3" class="box" >
+									<div id="bestMenu3" class="box myPhotoList" >
 										<div id="overlay">
 											<span id="menu">베감피자</span><br>
 											<span id="price">16800</span>
@@ -103,7 +83,7 @@
 									</div>
 								</li>
 								<li>
-									<div id="bestMenu4" class="box">
+									<div id="bestMenu4" class="box myPhotoList">
 										<div id="overlay">
 											<span id="menu">꼬치어묵전골</span><br>
 											<span id="price">17500</span>
@@ -111,7 +91,7 @@
 									</div>
 								</li>
 								 <li>
-									<div id="bestMenu4" class="box">
+									<div id="bestMenu4" class="box myPhotoList">
 										<div id="overlay">
 											<span id="menu">꼬치어묵전골</span><br>
 											<span id="price">17500</span>
@@ -119,7 +99,7 @@
 									</div>
 								</li> 
 								<li>
-									<div id="bestMenu3" class="box" >
+									<div id="bestMenu3" class="box myPhotoList" >
 										<div id="overlay">
 											<span id="menu">베감피자</span><br>
 											<span id="price">16800</span>
@@ -127,7 +107,7 @@
 									</div>
 								</li>
 								<li>
-									<div id="bestMenu1" class="box" >
+									<div id="bestMenu1" class="box myPhotoList" >
 										<div id="overlay">
 											<span id="menu">뿌링클 치킨</span><br>
 											<span id="price">17000</span>
@@ -162,13 +142,8 @@
 			</div>
 		</div>	<!--body꿑 -->
 
-		<div class="modal-footer">	</div>
 
 
 	</div>	<!-- myModal -->
 
 	<script src='../../js/details/details.js'></script>
-
-<!-- </body>
-</html>
- -->

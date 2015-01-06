@@ -174,18 +174,19 @@ function loadContainerList(){
 	$.getJSON(
 			'../../main/list.do',
 			function(data){
-				console.log(data);
+				console.log(data.shops[0].shopName);
+				console.log(data.shops.length);
 				
-				for (var i = 0; i < count; i++) {
+				for (var i = 0; i < data.shops.length; i++) {
 					$($("<div>").attr("class", "list").append($("<div>")
 																.attr("class", "listInfo")
 																.append($("<div>")
 																.attr("class", "listTitle")
-																.text("준코"))
+																.text(data.shops[i].shopName))
 											 .append($("<a>")
 											 	.attr("href", "#")
 											 	.append($("<img>")
-												.attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
+												.attr("src", data.shops[0].shopPhoto))
 											 .append($("<div>")
 												.attr("class", "pictureBackground")
 											    .text("상세보기"))))

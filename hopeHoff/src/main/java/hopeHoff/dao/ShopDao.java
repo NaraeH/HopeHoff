@@ -1,8 +1,9 @@
 package hopeHoff.dao;
 
-import hopeHoff.domain.Shop;
+import java.util.List;
+
 
 public interface ShopDao {
-	public Shop selectList();
+	public List<?> selectList();
 
 }
