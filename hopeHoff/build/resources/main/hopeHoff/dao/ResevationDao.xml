@@ -9,7 +9,7 @@
 	 <resultMap type="Reservation" id="reservationMap">
     	<!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
     	<id column="RNO" property="reservationNo"/>
-   		<result column="UPHONE" property="userPhone"/>
+   		<result column="UPHONE" property="uPhone"/>
    		<result column="RDATE" property="reservationDate"/>
    		<result column="RSTATUS" property="reservationStatus"/>
   	</resultMap>
@@ -17,7 +17,7 @@
   	 <resultMap type="reservationListItem" id="reservationListItemMap">
 	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
 	    <id column="RNO" property="reservationNo"/>
-	    <result column="UPHONE" property="userPhone"/>
+	    <result column="UPHONE" property="uPhone"/>
 	    <result column="RDATE" property="reservationDate"/>
 	    <result column="RSTATUS" property="reservationStatus"/>
     </resultMap>
@@ -32,6 +32,7 @@
 		FROM RESERVATION T1 LEFT OUTER JOIN USER T2 
 		USING(UID)
 		ORDER BY T1.RNO
+		WHERE T2.UID=#{uId}
     <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
     </if>
@@ -46,9 +47,9 @@
 	   	 SELECT count(RNO) FROM RESERVATION
 	  </select>
 	  
-<!-- 	  <insert id="insert" parameterType="Product"
-	   	  useGeneratedKeys="true" keyColumn="PNO" keyProperty="no">
-	   	  INSERT INTO PRODUCTS(RDATE,RCONTENT,UID,RSTATUS) 
+<!-- 	  <insert id="insert" parameterType="Reservation"
+	   	  useGeneratedKeys="true" keyColumn="RNO" keyProperty="reservationNo">
+	   	  INSERT INTO RESERVATION(RDATE,RCONTENT,UID,RSTATUS) 
 	   	  VALUES (#{reservationDate},#{reservationContent},#{userId},#{reservationStatus})
 	  </insert> -->
   
