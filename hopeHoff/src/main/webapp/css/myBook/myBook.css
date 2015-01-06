@@ -41,7 +41,7 @@
 	}
 	
 	#myBookDatath > th{
-		height: 45px;
+		height: 35px;
 	 	border-radius :15px;
 	 	text-align:center;
 		border:1px solid white;
@@ -50,9 +50,12 @@
 
 	}
 	
-	td{
-		height: 45px; 
+	#myBookData > td{
 		text-align: center;
+		background-color: red;
+	}
+	td > input{
+		margin-left:45px;
 	}
 	
 	#btnDelete{
@@ -61,7 +64,7 @@
 	}
 	
 	.warnigMessage{
-	display :inline-block;
+		display :inline-block;
 	}
 	#warningCotent{
 		color:red;
@@ -70,8 +73,8 @@
 		
 	}
 	#pagingBar{
-	margin-top : 50px;
-		text-align: center;
+	margin-left:45px;
+		text-align: left;
 	}
 	
 }

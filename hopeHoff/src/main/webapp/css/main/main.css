@@ -229,7 +229,7 @@
 	}
 	
 	#containerTop {
-		height: 130px;
+		height: 50px;
 		background: #ffb500;
 	}
 
@@ -237,7 +237,37 @@
 		display: none;
 	}
 
-	#containerKeyword {
+	#WebContainerKeyword {
+		width: 70%;
+		height: 50px;
+		background:#ffb500;
+		display: table;
+		cursor:pointer;
+		margin: 0 auto;
+	}
+	
+
+	#mobileContainerKeyword {
+		display:none;
+	}
+	
+	.webKeyword {
+		width: 100px;
+		height: inherit;
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		
+		/* border: 1px solid red; */
+	}
+	
+	.webKeyword:hover {
+		background:#ff8000;
+		color: #ffffff;
+		font-weight: bold;
+	}
+	
+	/* #containerKeyword {
 		width: 880px;
 		height: 100px;
 		margin: 0 auto;
@@ -282,26 +312,20 @@
 	
 	#containerKeyword div:last-child{
 		border:0px;
-	}
+	} */
 	
 	#containerList {
-		width: 85%;
 		min-width: 1130px;
 		margin-top: 20px;
-		overflow-y:scroll;  /*  {overflow : visible | hidden | scroll | auto} */
 		margin: 10px auto;
-		border: 1px solid #b7bbbc;
-		border-top: 5px solid #b7bbbc; 
-		
 	}
 	
 	.list {
-		width: 23%;
+		width: 320px;
 		min-width: 225px;
-		height:150px;
-		margin: 10px 0px 0px 15px;
-		display:inline-block;
-		padding: 5px 0px 5px 0px;
+		height: 480px;
+		margin: 10px 0px 0px 5px;
+		display: inline-block;
 		border: 1px solid #888888;
 	}
 	
@@ -576,40 +600,40 @@
 		background-position: -276px -288px;
 	}
 	
-	#containerKeyword ul{
+	#mobileContainerKeyword ul{
 		padding: 0px;
 		margin: 0px;
 		
 		color: #ffffff;
 	}
 	
-	#containerKeyword li {
+	#mobileContainerKeyword li {
 		display: inline;
 		margin: 10px 5px 5px 7px;
 	}
 	
-	#containerKeyword li input, #containerKeyword li p{
+	#mobileContainerKeyword li input, #mobileContainerKeyword li p{
 		margin: 0px;
 		list-style-type: none;
 		display: inline;
 	}
 	
-	#containerKeyword li:first-child{
+	#mobileContainerKeyword li:first-child{
 		display: block;
 	}
 	
 	
-	#containerKeyword li:first-child p{
+	#mobileContainerKeyword li:first-child p{
 		margin: 5px;
 	}
 	
 	
-	#containerKeyword div{
+	#mobileContainerKeyword div{
 		border-bottom: 1px solid white;
 		padding-bottom: 3px;
 	}
 	
-	#containerKeyword div:last-child{
+	#mobileContainerKeyword div:last-child{
 		border:0px;
 	}
 

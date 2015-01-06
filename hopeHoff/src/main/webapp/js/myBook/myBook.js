@@ -5,9 +5,6 @@ var checkedTable;
 $(function(){
 	  
 	  loadReservationList(1);
-	  $(document).on('click', '.data-row a', function(){
-		    loadProduct($(this).attr('data-reservationNo'));
-		  });
 	  
 	});
 	
@@ -113,20 +110,20 @@ $(function(){
 	function loadReservationList(pageNo) {
 		  if (pageNo <= 0) pageNo = currPageNo;
 		  
-			$.getJSON('../json/resevation/list.do?pageNo=' + pageNo, 
+			$.getJSON('../../json/reservation/list.do?pageNo=' + pageNo, 
 		    function(data){
+				console.log(data);
 		      setPageNo(data.currPageNo, data.maxPageNo);
 		      var reservations = data.reservations;
-		      console.log(data);
 		      
 		      
 		      for (var i = 0; i < reservations.length; i++) {
 		        $('<tr>')
-		        	.append($('<input type="checkedbox">'))
-		            .append($('<td>').html(reservation[i].reservationNo))
-		            .append($('<td>').html(reservation[i].userPhone))
-		            .append($('<td>').html(reservation[i].reservationDate))
-		            .append($('<td>').html(reservation[i].reservationStatus))
+		        	.append($('<input type="checkbox">'))
+		            .append($('<td>').html(reservations[i].reservationNo))
+		            .append($('<td>').html(reservations[i].userPhone))
+		            .append($('<td>').html(reservations[i].reservationDate))
+		            .append($('<td>').html(reservations[i].reservationStatus))
 		            .appendTo('#myBookData')
 		      }
 		    });

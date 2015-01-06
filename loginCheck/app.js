@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
     port : 3306,
     user : 'study',
     password : 'study',
-    database:'studydb'
+    database:'hopeHoff'
 });
 
 
@@ -49,7 +49,7 @@ app.get('/loginCheck', function(request,response){
 	//에이잭스 : 비동기방식으로 서버에 요청받는것
 	// : 나한테 온 요청 다 받것슴
 	response.setHeader("Access-Control-Allow-Origin", "*");
-    var query = connection.query('select UID from MEMBERS WHERE UID=?',[request.param('id')],function(err,result){
+    var query = connection.query('select UID from USER WHERE UID=?',[request.param('id')],function(err,result){
     	
     	console.log(result);
     	
