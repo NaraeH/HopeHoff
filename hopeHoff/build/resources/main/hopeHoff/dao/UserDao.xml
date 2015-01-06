@@ -27,9 +27,8 @@
   SELECT UID,UNAME,UPHONE,UEMAIL FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
   </select>
   
-  <select id="selectPhoneList" resultMap="makerMap">
-  	SELECT UID,UPHONE
-  	FROM USER
+ <select id="selectPhoneList" resultMap="userPhoneMap">
+  	SELECT UID,UPHONE FROM USER
   </select>
   
 </mapper>
