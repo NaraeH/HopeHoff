@@ -8,7 +8,8 @@
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap.css">
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap.min.css">
 <link rel='stylesheet' href="../../css/bootstrap/bootstrap-theme.min.css">
-<script src="../../js/jquery/jquery-2.1.1.js"></script>
+<link rel='stylesheet' href='../../css/common/common.css'>
+<script src="../../js/jquery/jquery-1.11.1.js"></script>
 <script src="../../js/bootstrap/bootstrap.min.js"></script>
 <script src="../../js/jquery/jquery.innerfade.js"></script>
 <script src="../../js/login/login.js"></script>
@@ -144,7 +145,7 @@
 							<div class="form-group">
 								<div class="hn loginForm">ID</div>
 								<div class="col-sm-10">
-									<input class="form-control" id="inputId" placeholder="아이디">
+									<input class="form-control" id="uId" placeholder="아이디"> 
 								</div>
 							</div>
 							
@@ -152,21 +153,23 @@
 							<div class="form-group">
 								<div id="pwd" class="hn loginForm">PWD</div>
 								<div class="col-sm-10">
-									<input  class="form-control" type="Password" id="inputPassword" placeholder="패스워드">
+									<input  class="form-control" type="Password" id="uPwd" placeholder="패스워드">
 								</div>
 							</div>
 							
 							<!-- 오른쪽박스 Save ID -->
 							<div class="form-group">
 								<div class="col-sm-10">
-									<div id="saveId"class="checkbox"><input type="checkbox"> Save ID</div>
+									<div id="saveId"class="checkbox"><input type="checkbox" id='save'> Save ID</div>
+									
 								</div>
 							</div>
 					
 							<!-- 오른쪽박스 Login Sign-up -->
 							<div class="form-group">
 								<div id="loginBtn" class="col-sm-10">
-										<button onclick="location.href='../main/main.html'" type="button" class="btn btn-danger">Login</button>
+										<!-- <button onclick="location.href='../main/main.html'" type="button" class="btn btn-danger">Login</button> -->
+										<button id='btnLogin' type="button" class="btn btn-danger">Login</button>
 										<button id="signUp" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal02">Sign-up</button>
 								</div>
 							</div>	
