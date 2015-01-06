@@ -6,10 +6,11 @@ $(document).ready(function(){
 	var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 	
 	//첫 시작시 리스트 로딩
-	$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
+	loadContainerList();
 	
 	$(window).resize(function(){
 		mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
@@ -149,6 +150,37 @@ function loadKeyword() {
 					}
 				}
 	});
+}
+
+function loadContainerList(){
+	var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
+	var count = 13;  //list출력개수 현재는 임의로 지정
+	
+	$.getJSON(
+			'list.do',
+			function(data){
+				console.log(data);
+				
+				for (var i = 0; i < count; i++) {
+					$($("<div>").attr("class", "list").append($("<div>")
+																.attr("class", "listInfo")
+																.append($("<div>")
+																.attr("class", "listTitle")
+																.text("준코"))
+											 .append($("<a>")
+											 	.attr("href", "#")
+											 	.append($("<img>")
+												.attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
+											 .append($("<div>")
+												.attr("class", "pictureBackground")
+											    .text("상세보기"))))
+											 .append("<hr>")
+											 .append($("<div>")
+												.attr("class","listKeywordContainer")
+												.attr("my-no", i))
+							.appendTo("#containerList"));
+				}
+			});
 }
 
 

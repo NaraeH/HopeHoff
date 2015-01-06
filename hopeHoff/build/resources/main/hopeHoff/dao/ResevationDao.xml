@@ -5,72 +5,56 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="hopeHoff.dao.ReservationDao">
-
-	<resultMap type="Reservation" id="reservationMap2">
-	    <id column="RNO" property="reservationNo"/>
-	    <result column="RDATE" property="reservationDate"/>
-	  </resultMap>
-
-	  <resultMap type="Reservation" id="reservationMap">
+	 
+	 <resultMap type="Reservation" id="reservationMap">
+    	<!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
+    	<id column="RNO" property="reservationNo"/>
+   		<result column="UPHONE" property="userPhone"/>
+   		<result column="RDATE" property="reservationDate"/>
+   		<result column="RSTATUS" property="reservationStatus"/>
+  	</resultMap>
+  	
+  	 <resultMap type="reservationListItem" id="reservationListItemMap">
 	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
 	    <id column="RNO" property="reservationNo"/>
-	    <result column="BBNO" property="businessNo"/>
+	    <result column="UPHONE" property="userPhone"/>
 	    <result column="RDATE" property="reservationDate"/>
-	    <result column="RCONTENT" property="reservationContent"/>
 	    <result column="RSTATUS" property="reservationStatus"/>
-	    <result column="UID" property="userId"/>
-	  </resultMap>
+    </resultMap>
+    
+    <select id="selectList" parameterType="map" 
+        resultMap="reservationListItemMap">
+    SELECT 
+		  T1.RNO, 
+		  T2.UPHONE, 
+		  T1.RDATE, 
+		  T1.RSTATUS
+		FROM RESERVATION T1 LEFT OUTER JOIN USER T2 
+		USING(UID)
+		ORDER BY T1.RNO
+    <if test="pageSize > 0">
+      limit #{startIndex}, #{pageSize}
+    </if>
+  </select>
+  
+	  <select id="selectOne" parameterType="int" resultMap="reservationMap">
+	  	  SELECT RNO,UPHONE,RDATE,RSTATUS
+	  	  WHERE RNO=#{value}
+	  </select>
+  
+	   <select id="totalSize" resultType="int">
+	   	 SELECT count(RNO) FROM RESERVATION
+	  </select>
 	  
+	  <insert id="insert" parameterType="Product"
+	   	  useGeneratedKeys="true" keyColumn="PNO" keyProperty="no">
+	   	  INSERT INTO PRODUCTS(RDATE,RCONTENT,UID,RSTATUS) 
+	   	  VALUES (#{reservationDate},#{reservationContent},#{userId},#{reservationStatus})
+	  </insert>
   
-	<resultMap type="map" id="reservationListMap">
-	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
-	    <id column="RNO" property="reservationNo"/>
-	    <result column="BBNO" property="businessNo"/>
-	    <result column="RDATE" property="reservationDate"/>
-	    <result column="RCONTENT" property="reservationContent"/>
-	    <result column="RSTATUS" property="reservationStatus"/>
-	    <result column="UID" property="userId"/>
-	  </resultMap>
-  
-  
-  <sql id="reservationSelect">
-  	SELECT RNO,RDATE,RSTATUS
-  	FROM RESERVATION	
-  </sql>
+   	  <delete id="delete" parameterType="int">
+         DELETE FROM RESERVATION WHERE PNO=#{value}
+  	  </delete>
 
-<select id="reservationList" parameterType="map" resultMap="reservationListMap">
-  SELECT  T1.RNO,
-	T2.UPHONE,
-	T1.RDATE,
-	T1.RSTATUS
-  FROM RESERVATION T1 LEFT OUTER JOIN USER T2
-  USING(UID)
-  WHERE T2.UID=#{userId}
-  ORDER BY T1.RNO
-  	<if test="pageSize > 0">
-  		limit #{startIndex},#{pageSize}
-  	</if>)
-  </select>
-  
-  <select id="selectOne" parameterType="int" resultMap="reservationMap">
-  	<!-- <include refid="reservationSelect"/> -->
-  	SELECT RNO,RDATE
-  	FROM RESERVATION
-  	WHERE RNO=#{value}
-  </select>
-  
-  <insert id="insert" parameterType="reservation"
-   useGeneratedKeys="true" keyColumn="RNO" keyProperty="reservationNo">
-  	INSERT INTO RESERVATION(RDATE,RCONTENT,RSATUS)
-  	VALUES(#{reservationDate},#{reservationContent},#{reservationStatus})
-  </insert>
-  
-  <delete id="delete" parameterType="int">
-	DELETE FROM RESERVATION WHERE RNO=#{value}  
-  </delete>
-  
-  <select id="totalSize" resultType="int">
-	SELECT count(RNO)
-	FROM RESERVATION
-  </select>
+	
 </mapper>

@@ -7,8 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="hopeHoff.dao" >
-		<!--  <context:exclude-filter type="regex" expression="hopeHoff.control.*"/> -->
+	<context:component-scan base-package="hopeHoff.*" >
+	  <context:exclude-filter type="regex" expression="hopeHoff.control.*"/>
 	</context:component-scan>
 
 	<!-- Database 커넥션 풀 준비  -->
