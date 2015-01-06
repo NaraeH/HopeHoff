@@ -2,6 +2,7 @@ package hopeHoff.control.json;
 
 import hopeHoff.domain.Reservation;
 import hopeHoff.service.ReservationService;
+import hopeHoff.service.UserService;
 
 import java.util.HashMap;
 
@@ -17,9 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller("json.reservationControl")
 @RequestMapping("/json/reservation")
 public class ReservationControl {
-  static final int PAGE_DEFAULT_SIZE = 5;
+  static final int PAGE_DEFAULT_SIZE = 3;
   
   @Autowired ReservationService     reservationService;
+  @Autowired UserService 			userService;
   @Autowired ServletContext servletContext;
  
 /*  @RequestMapping(value="/add", method=RequestMethod.POST)

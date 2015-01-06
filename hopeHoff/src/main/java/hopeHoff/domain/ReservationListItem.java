@@ -1,9 +1,12 @@
 package hopeHoff.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ReservationListItem {
+public class ReservationListItem implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	protected int reservationNo;
 	protected String userPhone;
 	protected Date reservationDate;
