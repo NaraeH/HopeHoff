@@ -14,8 +14,22 @@
 		<result column="UPHONE" property="uPhone" />
   </resultMap>
   
+    <resultMap type="USER" id="userPhoneMap">
+		<id column="UID" property="uId" />
+		<result column="UNAME" property="uName" />
+		<result column="UTYPE" property="uType" />
+		<result column="UPASSWORD" property="uPwd" />
+		<result column="UEMAIL" property="uEmail" />
+		<result column="UPHONE" property="uPhone" />
+  </resultMap>
+  
   <select id="existUser" parameterType="map" resultMap="userMap">
   SELECT UID,UNAME,UPHONE,UEMAIL FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
+  </select>
+  
+  <select id="selectPhoneList" resultMap="makerMap">
+  	SELECT UID,UPHONE
+  	FROM USER
   </select>
   
 </mapper>

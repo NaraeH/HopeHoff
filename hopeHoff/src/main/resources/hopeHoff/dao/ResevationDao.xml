@@ -46,11 +46,11 @@
 	   	 SELECT count(RNO) FROM RESERVATION
 	  </select>
 	  
-	  <insert id="insert" parameterType="Product"
+<!-- 	  <insert id="insert" parameterType="Product"
 	   	  useGeneratedKeys="true" keyColumn="PNO" keyProperty="no">
 	   	  INSERT INTO PRODUCTS(RDATE,RCONTENT,UID,RSTATUS) 
 	   	  VALUES (#{reservationDate},#{reservationContent},#{userId},#{reservationStatus})
-	  </insert>
+	  </insert> -->
   
    	  <delete id="delete" parameterType="int">
          DELETE FROM RESERVATION WHERE PNO=#{value}
