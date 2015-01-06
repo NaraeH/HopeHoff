@@ -1,16 +1,21 @@
 package hopeHoff.control.json;
 
+import hopeHoff.dao.ShopDao;
+
 import java.io.FileReader;
 import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/main")
 public class MainControl {
+	@Autowired
+	ShopDao shopDao;
 	
 	@RequestMapping("/keyword")
 	public Object keywords(){
@@ -38,7 +43,9 @@ public class MainControl {
 	public Object list(){
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
-		resultMap.put("test", "test입니다");
+		//shopDao.selectList();
+		
+		resultMap.put("shops", shopDao.selectList());
 		
 		return resultMap;
 		

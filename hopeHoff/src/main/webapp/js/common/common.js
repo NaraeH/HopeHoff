@@ -19,110 +19,67 @@ var Narae = new Narae();
 /*
 1. 함수를 사용하기 위한 구조
 
-1) wrapDiv 내부에는 왼쪽화살표 오른쪽화살표 ul이 차례대로 있음 (화살표와 ul순서 뒤바뀌면 안됨)
- <div id="wrapDiv">
-     <span class="box-rotate-left"></span>
- 	 <span class="box-rotate-right"></span>
-	 <ul> ... </ul>
- </div>
+1) wrapDiv 내부에는 왼쪽화살표 오른쪽화살표 ul이 차례대로 있음 (화살표와 ul순서 뒤바뀌면 안됨) 
+   class는 common.js에 정의되어 있음
 
-2) 아래의 css반드시 적용하여야 함.
+<div id= "Wrap" class="width-silde-wrap">
+	<div class="myLeftWrap">
+		<div><span id="toLeft" class="box-rotate-left"></span></div>
+	</div>
+	<div class="myRightWrap">
+		<div><span id="tooRight" class="box-rotate-right"></span></div>
+	</div>
 
- #wrapDiv {
-	overflow: hidden;
- }
- 
- #wrapDiv ul {
- 	list-style-type:none;
-	padding-left: 0px;
-	display: inline-block;
-	width: "li의 width * li의 개수"
- }
-
- #wrapDiv li {
-	display:inline;
-	padding: 0px 10px 0px 10px;
- }
+	<ul>
+		<li>
+			<div id="pubPhoto1" class="myPhotoList"></div>
+		</li>
+		<li>
+			<div id="pubPhoto2" class="myPhotoList"></div>
+		</li>
+		....
+</div>
 			
 2. 함수 사용방법
-$("#wrapDiv").NaraeWidthSilde(direction, [움직이고 싶은거리], [움직이는 속도]);
+$("#wrapDiv").NaraeWidthSilde([움직이고 싶은거리], [움직이는 속도]);
 * 움직이고 싶은거리 : default => li(item)의 width 만큼 움직임
-* 움직이는 속도: 숫자가 작을수록 이동속도 빠름, default => 1000
+* 움직이는 속도: 숫자가 작을수록 이동속도 빠름, default => 500
 
 */
-$.prototype.naraeWidthSilde = function(direction, moveWidth, speed) {
-
-	var myChildren = $(this).children()[2];                                         // 해당 division의 직속자식인 ul
-	var liWidth = Narae.removePx($(myChildren).children().css("width"));            // li의 width
-	var liPadding = Narae.removePx($(myChildren).children().css("padding-left")) +  Narae.removePx($(myChildren).children().css("padding-right"));
-	var liMargin = Narae.removePx($(myChildren).children().css("margin-left")) +  Narae.removePx($(myChildren).children().css("margin-right"))
-	var moveWidth = (moveWidth == undefined) ? (liWidth + liPadding + liMargin + 6) : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width , 6=> ul자체에 있는 마진 조정
-	var margin = Narae.removePx(($(($(this).children()[2])).css("margin-left"))); //현재 ul의 margin
-	var speed = (speed == undefined) ? 500 : speed;                               //움직이는 속도 (입력안되었을 경우 default=500)
-	var childrenCount = $(myChildren).children().size();                          //ul의 총 자식수
-	var widthCount = Math.ceil($(this).width() / moveWidth);                       //$(this) 디비전에 들어가 있는 li(item)의 개수
+$.prototype.naraeWidthSilde = function(moveWidth, speed) {
+	setSizeSilde($(this), "existMargin");
+	clickSilde($(this));
 	
-/*	console.log(widthCount);
-	console.log("moveWidth" + moveWidth);
-	console.log((-(moveWidth * (childrenCount - widthCount)) < margin));
-	console.log((margin < 0));*/
-	
-	//오른쪽으로 움직일 경우
-	if (direction == "left") {  
-		console.log("---left-----");
-		
-		if( (-(moveWidth * (childrenCount - widthCount)) <= margin) && (margin < 0)){
-			$(myChildren).animate({
-				marginLeft : (margin + moveWidth) + "px"
-			}, speed);
-		}else {
-			alert("더이상 메뉴가 존재하지 않습니다.");
-		}
-	}
-	
-	//왼쪽으로 움직일 경우
-	if(direction == "right"){  
-		console.log("---right-----");
-		
-		if( (margin - moveWidth) >= -(moveWidth * (childrenCount - widthCount))){
-			$(myChildren).animate({
-				marginLeft : (margin - moveWidth) + "px"
-			}, speed);
-			
-		}else {
-			alert("더이상 메뉴가 존재하지 않습니다.");
-		}
-	}
 	return this;
 }
 
 /*
 1. 함수를 사용하기 위한 구조
 
-1) wrapDiv 내부에는 왼쪽화살표 오른쪽화살표 ul이 차례대로 있음 (화살표와 ul순서 뒤바뀌면 안됨)
- <div id="wrapDiv">
-     <span class="box-rotate-left"></span>
- 	 <span class="box-rotate-right"></span>
-	 <ul> ... </ul>
- </div>
-
-2) 아래의 css반드시 적용하여야 함.
-
- #wrapDiv {
-	overflow: hidden;
- }
+1) wrapDiv 내부에는 왼쪽화살표 오른쪽화살표 ul이 차례대로 있음 (화살표와 ul순서 뒤바뀌면 안됨) 
+   class는 common.js에 정의되어 있음
  
- #wrapDiv ul {
- 	list-style-type:none;
-	padding-left: 0px;
-	display: inline-block;
-	width: "li의 width * li의 개수"
- }
+ <div id= "Wrap" class="width-silde-wrap">
+	<div class="myLeftWrap">
+		<div><span id="toLeft" class="box-rotate-left"></span></div>
+	</div>
+	<div class="myRightWrap">
+		<div><span id="tooRight" class="box-rotate-right"></span></div>
+	</div>
 
- #wrapDiv li {
-	display:inline;
-	padding: 0px 10px 0px 10px;
- }
+	<ul>
+		<li>
+			<div id="pubPhoto1" class="myPhotoList">
+				<div class="myImgText"> 사진이름 (1/3) <br> ●○○ </div>
+			</div>
+		</li>
+		<li>
+			<div id="pubPhoto2" class="myPhotoList">
+				<div class="myImgText"> 사진이름 (2/3) <br> ○●○ </div>
+			</div>
+		</li>
+		....
+</div>
 			
 2. 함수 사용방법
 $("#wrapDiv").NaraeWidthSilde([시간], [움직이는 속도], [움직이고 싶은거리]);
@@ -132,21 +89,11 @@ $("#wrapDiv").NaraeWidthSilde([시간], [움직이는 속도], [움직이고 싶
 
 */
 $.prototype.naraeWidthSildeAuto = function(time, speed, moveWidth){
-	//사이즈 계산하는 부분 나중에 따로빼기 => 먼저 계산 되어야 함 -----
-	var widthSildeWrapWidth = $(".width-silde-wrap").css("width");
-	var widthSildeWrapHeight = $(".width-silde-wrap").css("height");
-	var myLeftWrapWidth = Narae.removePx($(".myLeftWrap").css("width"));
-	
-	$(".myPhotoList").css("background-size", widthSildeWrapWidth + " " + widthSildeWrapHeight);
-	$(".myPhotoList").css("width", widthSildeWrapWidth);
-	$(".myPhotoList").css("height", widthSildeWrapHeight);
-	
-	$(".myRightWrap").css("margin-left", Narae.removePx(widthSildeWrapWidth) - myLeftWrapWidth );
-	//------여기까지
+	setSizeSilde($(this) , "noMargin");
+	clickSilde($(this));
 	
 	var myChildren = $(this).children()[2];                                         // 해당 division의 직속자식인 ul
 	var liWidth = Narae.removePx($(myChildren).children().css("width"));            // li의 width
-	//var liHeight = Narae.removePx($(myChildren).children().css("height"))           // li의 height
 	var liPadding = Narae.removePx($(myChildren).children().css("padding-left")) +  Narae.removePx($(myChildren).children().css("padding-right"));
 	var liMargin = Narae.removePx($(myChildren).children().css("margin-left")) +  Narae.removePx($(myChildren).children().css("margin-right"))
 	var moveWidth = (moveWidth == undefined)? (liWidth + liPadding + liMargin) : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width
@@ -163,9 +110,69 @@ $.prototype.naraeWidthSildeAuto = function(time, speed, moveWidth){
 			marginLeft : (margin - (moveWidth * count)) + "px"
 		}, speed);
 	}, time);
+	
 	return this;
 }
 
+function setSizeSilde(obj, isMargin) {
+	var thisMyPhotoList = "#" + $(obj).attr("id") + " " +".myPhotoList";
+	var thisMyRightWrap = "#" + $(obj).attr("id") + " " +".myRightWrap";
+	var widthSildeWrapSize = $(obj).css("width");
+	var widthSildeWrapMarginSize = Narae.removePx($(obj).css("height")) - 30 + "px";
+	var myLeftWrapWidth = Narae.removePx($(".myLeftWrap").css("width"));
+	
+	if(isMargin == "noMargin"){
+		$(thisMyPhotoList).css("background-size", widthSildeWrapSize + " " + widthSildeWrapSize);
+		$(thisMyPhotoList).css("width", widthSildeWrapSize);
+		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
+	
+	}else if(isMargin == "existMargin"){
+		$(thisMyPhotoList).css("background-size", widthSildeWrapMarginSize + " " + widthSildeWrapMarginSize);
+		$(thisMyPhotoList).css("width", Narae.removePx(widthSildeWrapSize) / 3);
+		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
+		 
+	}
+}
+
+function clickSilde(obj){
+	var myChildren = $(obj).children()[2];                                         // 해당 division의 직속자식인 ul
+	var liWidth = Narae.removePx($(myChildren).children().css("width"));            // li의 width
+	var liPadding = Narae.removePx($(myChildren).children().css("padding-left")) +  Narae.removePx($(myChildren).children().css("padding-right"));
+	var liMargin = Narae.removePx($(myChildren).children().css("margin-left")) +  Narae.removePx($(myChildren).children().css("margin-right"))
+	var moveWidth = (moveWidth == undefined) ? (liWidth + liPadding + liMargin) : moveWidth;               //가로로 이동하고 싶은 정도 (-:왼쪽으로이동, +:오른쪽으로이동), default=li의 width , 6=> ul자체에 있는 마진 조정
+	var margin = Narae.removePx(($(myChildren).css("margin-left"))); //현재 ul의 margin
+	var speed = (speed == undefined) ? 500 : speed;                               //움직이는 속도 (입력안되었을 경우 default=500)
+	var liCount = $(myChildren).children().length
+	var widthCount = Math.ceil($(obj).width() / moveWidth);                       //$(this) 디비전에 들어가 있는 li(item)의 개수
+	
+	var myLeftWrap = "#" + $(obj).attr("id") + " " +".myLeftWrap";
+	var myRightWrap = "#" + $(obj).attr("id") + " " +".myRightWrap";
+
+	$(myLeftWrap).click(function(){
+		margin = Narae.removePx(($(myChildren).css("margin-left")));
+		
+		if( margin < 0 && margin >= ( -moveWidth ) * ( liCount - widthCount ) ){
+			$(myChildren).animate({
+				marginLeft : (margin + moveWidth) + "px"
+			}, speed);
+		}else {
+			alert("더이상 메뉴가 존재하지 않습니다.");
+		}
+	});
+	
+	$(myRightWrap).click(function(){
+		margin = Narae.removePx(($(myChildren).css("margin-left")));
+		
+		if( margin <= 0 && margin > ( -moveWidth ) * ( liCount - widthCount ) ){
+			$(myChildren).animate({
+				marginLeft : (margin - moveWidth) + "px"
+			}, speed);
+			
+		}else {
+			alert("더이상 메뉴가 존재하지 않습니다.");
+		}
+	});
+}
 
 
 

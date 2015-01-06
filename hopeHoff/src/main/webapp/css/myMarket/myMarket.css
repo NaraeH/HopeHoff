@@ -46,68 +46,12 @@
 		padding: 15px;
 		background-color: #333231;
 	}
-	
-	.width-silde-wrap {
-		width: 230px;
-		height: 235px;
-		position: relative;
-		overflow: hidden;
-		
-		display: table;
-		border: 1px dashed red; 
-	}
-	
-	.myLeftWrap, .myRightWrap {
-		width: 36px;
-		position: absolute;
-		display: table;
-		height: inherit;
-		z-index: 1;
-		text-align: center;
-		
-		cursor:pointer;
-	}
-	
-	.myLeftWrap div, .myRightWrap div{
-		display: table-cell;
-		vertical-align: middle;
-	}
-	
-	.myLeftWrap:hover, .myRightWrap:hover{
-		background: rgba(255, 255, 255, 0.2);
-	}
 
-	
-	.box-rotate-left {
-/* 		margin-top: 160px;
-		margin-left: 16px; */
-	}
-
-	.box-rotate-right {
-/* 		margin-top: 160px;
-		margin-left: 180px; */
-	}
-	
-	.width-silde-wrap ul {
-		display: inline-block;
-		position:absolute;
-
-		list-style-type: none;
-		overflow: hidden;
-		margin:0px;
-		padding: 0px;
-	}
-	.width-silde-wrap li{
-		padding: 0px;
-		margin: 0px;
-		display: table-cell;
-	}
-	
 	#myPubPhotoList .myPhotoList {
 		width: 425px;
 		height: 340px;
 	}
-
+	
 	#myPubPhoto1 {
 		background-image: url("../../img/details/Wara-Wara01.jpg");
 	}
@@ -120,17 +64,7 @@
 		background-image: url("../../img/details/Wara-Wara03.jpg");
 	}
 	
-	.myPhotoList .myImgText {
-		width: inherit;
-		height: inherit;
-		
-		display: table-cell;
-		text-align: center;
-		vertical-align: bottom;
-		align-items: center;
-		color: white;
-		font-size: small;
-	}
+
 	
 
 /*---------------------------------*/
@@ -237,59 +171,13 @@
 		background-color: white;
 	}
 
-	/* *********V menuList************* */
-	#myMenuList {
-		
+	/* *********menuList************* */
+	#myMenuListWrap {
 		height: 205px;
+		width: inherit;
 		margin: 0 auto;
 		overflow: hidden;
 	}
-	#myMenuToLeft {
-		margin-top: 90px;
-		margin-left: 5px;
-	}
-
-	#myMenuToRight {
-
-		cursor: pointer;
-	}
-	
-	#myMenuList ul {
-	
-      /*margin-bottom: 0px; */
-		width: 2000px;
-		/* height: 210px; */
-		margin-top: -130px;
-		list-style-type: none;
-
-		display: inline-block;
-		overflow: hidden;
-		border: 1px solid wheat;
-	}
-	
-	#myMenuList li {
-		display: inline-block;
-		width: 150px;
-		height: 150px;
-		border: 1px red solid;
-/* 		margin-top:15px; */
-
-	}
-
-	/* myBestMenu1,2,3,4.5 */
- 	#myMenuList li div:first-child { 
-      
-		width: 150px;
-		height: 150px;
-		
-	} 
-	
-/*  	#myMenuList span {
-		border-bottom: 20px solid black;
-		margin-top: 85px;
-		margin-left: 3px;
-		
-	}  */
 
 	#myBestMenu1{
 	    background-image: url('../../img/details/chiken.jpg');

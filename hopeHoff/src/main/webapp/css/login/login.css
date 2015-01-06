@@ -248,7 +248,7 @@
 	margin-top: 18px;
 	}
 	/* 오른쪽 회원가입창 패스워드 input 속성적용*/
-	#inputPassword{
+	#uPwd{
 	margin-top: 10px;
 	}
 	
@@ -390,7 +390,7 @@
 	}
 	
 	/* 모바일 ID PWD input길이 */
-	#inputPassword, #inputId {
+	#uId, #uPwd {
 	width : 170px;
 	margin-left: -15px;
 	}

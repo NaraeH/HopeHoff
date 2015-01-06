@@ -1,16 +1,12 @@
 @CHARSET "UTF-8";
 
-body {
-}
-
 .box {
 	width: 190px;
 	height: 190px;
-	box-shadow: inset 1px 1px 40px 0 rgba(0, 0, 0, .20);
 	margin: 5px auto 0 auto;
 	background-size: cover; 
 	overflow: hidden;
-	border-radius: 5px;
+	/* border-radius: 5px; */
 }
 
 #overlay {
