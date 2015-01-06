@@ -13,24 +13,20 @@
 	}
 	
 	#myBook, #myMarket,#myPage {
-	
-			border: 2px solid #FFCD28;
-			background-color: white;
-			position: absolute;
-			margin-top: 60px;
-			display:none;
-			z-index: 10;
+		width:  750px;
+		border: 2px solid #FFCD28;
+		background-color: white;
+		position: absolute;
+		margin-top: 60px;
+		display:none;
+		z-index: 10;
 	}
 	
 	#myBook,#myPage {
 		width:  600px;
 		height: 680px;
 	}
-	
-	#myMarket {
-		width:  750px;
-		height: 709px;
-	}
+
 	#mainBody {
 		margin: 0px;
 		font-family: 'Jeju Gothic', serif;
@@ -46,7 +42,7 @@
 		background: rgba(0, 0, 0, 0.4);
 		position: absolute;
 		
-		z-index:2;
+		z-index:3;
 	}
 	
 	

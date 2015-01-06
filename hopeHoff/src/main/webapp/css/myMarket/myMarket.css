@@ -52,10 +52,6 @@
 		height: 340px;
 	}
 	
-	#myPubPhotoListWrap {
-		border: 1px dashed red;
-	}
-
 	#myPubPhoto1 {
 		background-image: url("../../img/details/Wara-Wara01.jpg");
 	}
