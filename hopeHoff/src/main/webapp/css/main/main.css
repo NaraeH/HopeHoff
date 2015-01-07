@@ -14,6 +14,7 @@
 	
 	#myBook, #myMarket,#myPage {
 		width:  750px;
+		height: 560px;
 		border: 2px solid #FFCD28;
 		background-color: white;
 		position: absolute;
