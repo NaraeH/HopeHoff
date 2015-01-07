@@ -50,13 +50,6 @@
 
 	}
 	
-	#myBookData > td{
-		text-align: center;
-		background-color: red;
-	}
-	td > input{
-		margin-left:45px;
-	}
 	
 	#btnDelete{
 		font-weight: bolder;	
@@ -135,15 +128,10 @@
 		border: 1px solid white;
 		background-color: #FFCD28;
 	}
-	
-	th{
-		font-size:small;
-	
-	}
-	
-	td {
-		font-size: x-small;
+	.tableReservationData > td{
 		height: 45px;
+		font-size: small;
+		background-color: red;
 		text-align: center;
 	}
 	
