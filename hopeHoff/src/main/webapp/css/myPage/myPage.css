@@ -1,38 +1,28 @@
 /* 폰트 속성입니다. */
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
-.hn {font-family: 'Hanna';}
-.formLabel {font-family: 'Nanum Brush Script';}
-.ng {font-family: 'Nanum Gothic';}
-.ngc {font-family: 'Nanum Gothic Coding';}
-.nm {font-family: 'Nanum Myeongjo';}
-.nps {font-family: 'Nanum Pen Script';}
-.ban{font-family: 'Lobster', cursive;}
+.font-div-title{font-family: 'Josefin Sans', sans-serif;
+				font-weight: bolder;}
 
 
 @media all and (min-width:421px) {
 	body {
+	font-family: 'jejugothic'
 	}
 	
 
 	/******************** Header 부분 **************************/
-	#myPageHeader {
+	
+	.div-header{
 		background-color: #FFCD28;
-		height: 70px;
+		height: 60px;
 		width: 100%;
-		margin-bottom: 30px;
+		margin-bottom: 15px;
 	}
 	#myPageHeaderTitle {
-		font-family: 'Nanum Pen Script';
 		display: inline-block;
-		font-size: 3em;
+		font-size: 25px;
 		margin: 10px 10px 10px 25px;
 	}
 	#btnMyPageClose {
@@ -44,51 +34,63 @@
 		margin: 10px;
 	}
 	/******************** Container 부분 **************************/
-	#myPageBody{
-	background-color: #333231;
-	}
+	
 	#myPageContainer {
-		width: 97%;
-		height: 90%;
+		text-align:center;
+		width: 91%;
+		height: 440px;
 		padding: 30px 50px 15px 15px;
 		margin: 0 auto;
 	} 
+	
 	#myDataForm {
 		margin-left: 30px;
+		height: 100%;
 	}
-	.formLabel {
-		width: 200px;
+	
+	.form-label {
+		height:30px;
+		text-align:left;
+		width: 170px;
 		display: inline-block;
-		color: white;
+		color: Black;
 		margin-bottom: 19px;
 	}
-	.formData {
-		width: 400px;
+	
+	.form-label > label{
+		height:30px;
+		font-size: larger;
+		font-weight: bold;
+	}
+	
+	.form-data {
+		text-align:left;
+		width: 370px;
 		display: inline-block;
 		margin-bottom: 19px;
 	}
 	
-	.formData > button {
-		font-family: ;
+	.form-data > button {
 		background-color :#FFCD28;
 		border-radius:5px;
 		width: 60px;
+		height:28px;
 		margin-left: 5px;
 	}
 	
-	.formData > input{
+	.form-data > input{
 		
 		padding-left: 10px;
-		font-family:'Nanum Myeongjo';
-		height:25px;
+		height:30px;
 		width: 230px;
 		border-radius: 5px;
 	}
-	label{
-		font-size: 2em;
-	}
 	/************** Footer 부분 *********************/
 
+	#btnChange,#btnCancel{
+		width:80px;
+		height: 40px;
+	}
 }
 @media all and (max-width:420px) {
 	
