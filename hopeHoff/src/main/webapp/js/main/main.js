@@ -1,22 +1,26 @@
 $(function(){
 	
 	//첫 시작시 리스트 로딩
-	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	loadContainerList();
+	//loadContainerList();
 	
 });
 
+var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 
 /*------------------------이벤트 발생시------------------------*/
-
 $(window).resize(function(){
 	mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
 	
+	setSmallHeader();
+	
 	//1132는 하드 코딩된값 => 나중에 동적으로 수정하자!
-	if( mainBodyWidth < 1132 ){
+	
+	
+/*	if( mainBodyWidth < 1132 ){
 		//mobile에서 검색설정 ▼ 누른 채 크기 늘렸다 줄여도 유지 되도록 하기
 		if( $( "#keywordOpen" ).text() == "검색설정 ▼" ){
 			$( "#containerTop" ).css("height", "30px");
@@ -28,23 +32,12 @@ $(window).resize(function(){
 		$("#containerTop").css("height", "125px");
 		$( "#containerKeyword" ).css("display", "block");
 		
-	}
+	}*/
 });
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
 $(window).scroll(function(){
-	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
-	var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
-	
-    if ( $( document ).scrollTop() > headerOffset && mainBodyWidth >= 421) {
-        $("#smallHeader").css("display", "block")
-        				 .css("position", "fixed")
-        				 .css("top", "0px")
-        				 .css("z-index", "2");
-      }
-      else {
-        $("#smallHeader").css("display", "none");
-      }
+	setSmallHeader();
 });
 
 
@@ -120,6 +113,7 @@ $(".click-myPage").click(function(){
 
 });
 
+/*--------------------------mobile용 event------------------------------*/
 
 $( "#keywordOpen" ).click(function(){
 	if( $( "#keywordOpen" ).text() == "접기 ▲" ){
@@ -187,10 +181,6 @@ function loadContainerList(){
 			'../../main/list.do',
 			function(data){
 				
-				console.log($( window ).width());
-				console.log($( document ).width());
-				
-				$("#containerList").css("width", "1439px");
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
 					
@@ -229,6 +219,24 @@ function loadContainerList(){
 						
 				}
 			});
+}
+
+//스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이는 함수
+function setSmallHeader(){
+	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
+	var bodyWidth = Narae.removePx($("body").css("width"));
+	
+	console.log("bodyWidth==>" +bodyWidth);
+	console.log("mainBodyWidth==>" + mainBodyWidth);
+    if ( $( document ).scrollTop() > headerOffset && bodyWidth >= 769 ) {
+        $("#smallHeader").css("display", "block")
+        				 .css("position", "fixed")
+        				 .css("top", "0px")
+        				 .css("z-index", "2");
+      }
+      else {
+        $("#smallHeader").css("display", "none");
+      }
 }
 
 
