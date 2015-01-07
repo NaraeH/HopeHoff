@@ -15,8 +15,8 @@
 </head>
 <body> -->
  <div id="myBookBody">
-			<div id="myBookHeader">
-			<div id="myBookHeaderTitle">MyBook</div>
+			<div id="myBookHeader" class="div-header">
+			<div id="myBookHeaderTitle" class="font-div-title">내 예약 정보</div>
 			<button id="btnMyBookClose" type="button" class="close" value="close">X</button>
 			</div>
 
@@ -31,20 +31,22 @@
 
 			<div id="myBookDataTable">
 				<table id="myBookData">
-				<tr id="myBookDatath">
-					<th><input type="checkbox" disabled="disabled">	</th>
-					<th>번호</th>
-					<th>전화번호</th>
-					<th>등록일</th>
-					<th>상태</th>
+				<tr>
+					<th class="mybook-data-th-check"><input type="checkbox" disabled="disabled">	</th>
+					<th class="mybook-data-th-short">번호</th>
+					<th class="mybook-data-th-long">전화번호</th>
+					<th class="mybook-data-th-long">등록일</th>
+					<th class="mybook-data-th-short">상태</th>
 				</tr>
 				</table>
-				<div class= "warnigMessage">
-					<button id="btnDelete">예약 취소</button>
+				<div id="warning-line">
+					<div class= "warnig-message">
+						<button id="btnDelete">예약 취소</button>
+					</div>
+					<div class="warnig-message" id="warningCotent">취소</div>
+						했을시 연락이 오지 않습니다.
+					</div>
 				</div>
-				<div class="warnigMessage" id="warningCotent">취소</div>
-					했을시 연락이 오지 않습니다.
-			</div>
 			<hr>
 			
 			<div id='pagingBar'>

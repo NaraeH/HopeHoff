@@ -9,30 +9,16 @@ $(function(){
 	
 });
 
-var mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
+var bodyWidth = Narae.removePx($("body").css("width"));
+var isMobile = bodyWidth < 769;
 
 /*------------------------이벤트 발생시------------------------*/
 $(window).resize(function(){
-	mainBodyWidth = Narae.removePx($("#mainBody").css("width"));
+	bodyWidth = Narae.removePx($("body").css("width"));
+	isMobile = bodyWidth < 769;
 	
 	setSmallHeader();
-	
-	//1132는 하드 코딩된값 => 나중에 동적으로 수정하자!
-	
-	
-/*	if( mainBodyWidth < 1132 ){
-		//mobile에서 검색설정 ▼ 누른 채 크기 늘렸다 줄여도 유지 되도록 하기
-		if( $( "#keywordOpen" ).text() == "검색설정 ▼" ){
-			$( "#containerTop" ).css("height", "30px");
-			$( "#containerKeyword" ).css("display", "none");
-		}else if( $( "#keywordOpen" ).text() == "접기 ▲" ){
-			$( "#containerTop" ).css("height", "230px");
-		}
-	}else {
-		$("#containerTop").css("height", "125px");
-		$( "#containerKeyword" ).css("display", "block");
-		
-	}*/
+	setKeyword();
 });
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
@@ -117,16 +103,16 @@ $(".click-myPage").click(function(){
 
 $( "#keywordOpen" ).click(function(){
 	if( $( "#keywordOpen" ).text() == "접기 ▲" ){
-		$( "#containerKeyword" ).css("display", "none");
+		$( "#mobileContainerKeyword" ).css("display", "none");
 		$( "#keywordOpen" ).text( "검색설정 ▼" );
 		$( "#containerTop" ).css("height", "30px");
-		$( "#containerKeyword div" ).removeClass( "mobileKeyword" );
+		$( "#mobileContainerKeyword div" ).removeClass( "mobileKeyword" );
 		
 	}else if( $( "#keywordOpen" ).text() == "검색설정 ▼" ) {
-		$( "#containerKeyword" ).css("display", "block");
+		$( "#mobileContainerKeyword" ).css("display", "block");
 		$( "#keywordOpen ").text( "접기 ▲" );
 		$( "#containerTop" ).css("height", "230px");
-		$( "#containerKeyword div" ).addClass( "mobileKeyword" );
+		$( "#mobileContainerKeyword div" ).addClass( "mobileKeyword" );
 	}
 });
 
@@ -224,11 +210,8 @@ function loadContainerList(){
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이는 함수
 function setSmallHeader(){
 	var headerOffset = Narae.removePx($("#header").css("height"));  //smallHeader고정 시키기 위한 계산 값
-	var bodyWidth = Narae.removePx($("body").css("width"));
 	
-	console.log("bodyWidth==>" +bodyWidth);
-	console.log("mainBodyWidth==>" + mainBodyWidth);
-    if ( $( document ).scrollTop() > headerOffset && bodyWidth >= 769 ) {
+    if ( $( document ).scrollTop() > headerOffset && !( isMobile ) ) {
         $("#smallHeader").css("display", "block")
         				 .css("position", "fixed")
         				 .css("top", "0px")
@@ -239,6 +222,26 @@ function setSmallHeader(){
       }
 }
 
+
+function setKeyword() {
+	var keywordState = {
+			webHeight    : "50px",
+			mobileHeightClose : "30px",
+			mobileHeightOpen : "230px"
+	}
+	
+	if(isMobile) {
+		if( $( "#keywordOpen" ).text() == "검색설정 ▼" ){
+			$( "#containerTop" ).css("height", keywordState.mobileHeightClose);
+		}else if( $( "#keywordOpen" ).text() == "접기 ▲" ){
+			$( "#containerTop" ).css("height", keywordState.mobileHeightOpen);
+			$( "#mobileContainerKeyword" ).css("display", "block");
+		}
+	}else {
+		$( "#containerTop" ).css("height", keywordState.webHeight);
+		$( "#mobileContainerKeyword" ).css("display", "none");
+	}
+}
 
 
 

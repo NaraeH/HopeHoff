@@ -445,7 +445,22 @@
 	}
 	
 	#mobileMenu{
-		display: inline-block;
+		height: inherit;
+	}
+	
+	#mobileMenu>#mobileHeaderText {
+		height: inherit;
+		display:table;
+		margin: 0 auto;
+	}
+	
+	#mobileMenu>#mobileHeaderText a{
+		height: inherit;
+		display:table-cell;
+		font-size: 35px;
+		font-family: 'Lobster', cursive;
+		color: #fd9e04;
+		vertical-align: middle;
 	}
 	
 	#header {
@@ -471,7 +486,7 @@
 		background-image: url(../../img/common/pic2_yellow.png);
 	}
 	
-	#mobileMenu a{
+/* 	#mobileMenu a{
 		display:inline-block;
 		font-size: 35px;
 		font-family: 'Lobster', cursive;
@@ -480,7 +495,7 @@
 		margin-top: 10px;
 		margin-left: 145px;
 		
-	}
+	} */
 	
 	/* -----------------------conatainer------------------------------ */
  	#keywordRegion, #keywordPlace, #keywordPeole, #keywordFood {
@@ -577,15 +592,6 @@
 		margin-top: 6px;
 		cursor: pointer;
 	}
-
-	#containerKeyword {
-		display:none;
-		height:200px;
-		border-radius:0px;
-		
-		/* background: green; */
-		margin-top: 25px; 
-	}
 	
 	#btnMobileLogin {
 		background-position: -458px -288px;
@@ -628,12 +634,17 @@
 	
 	
 	#mobileContainerKeyword div{
+		display:none;
 		border-bottom: 1px solid white;
 		padding-bottom: 3px;
 	}
 	
 	#mobileContainerKeyword div:last-child{
 		border:0px;
+	}
+	
+	#WebContainerKeyword {
+		display:none;
 	}
 
 	

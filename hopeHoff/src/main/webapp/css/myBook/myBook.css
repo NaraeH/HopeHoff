@@ -1,35 +1,16 @@
 /* 폰트 속성입니다. */
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
-
-.hn {font-family: 'Hanna';}
-.nbs {font-family: 'Nanum Brush Script';}
-.ng {font-family: 'Nanum Gothic';}
-.ngc {font-family: 'Nanum Gothic Coding';}
-.nm {font-family: 'Nanum Myeongjo';}
-.nps {font-family: 'Nanum Pen Script';}
-.ban{font-family: 'Lobster', cursive;}
 
 
 
 
 @media all and (min-width:421px) {
-	body {
-
-	}
 
 	/******************** Header 부분 **************************/
-	#myBookHeader {
+	.div-header{
 		background-color: #FFCD28;
-		height: 45px;
+		height: 60px;
 		width: 100%;
-		margin-bottom: 30px;
+		margin-bottom: 15px;
 	}
 	#myBookHeaderTitle {
 		display: inline-block;
@@ -46,48 +27,56 @@
 	}
 	
 	
-	/******************** myBookBody ******************************/
-	#myBookBody{
-	background-color: #333231;
-	}
-	
 	/******************** DatePicker 부분 **************************/
 	#myBookDatePicker > p{
+		padding-left:30px;
 		margin-left: 350px;
 		margin-bottom: 55px;
 	}
 	
 	/********************* Container 부분 ***************************/
 	#myBookContainer {
-		border:1px solid black;
 		width: 80%;
 		height: 90%;
-		padding: 30px 50px 15px 15px;
+		padding: 0px 30px 50px 30px;
 		margin: 0 auto;
-		margin-top: 55px;
 	} 
 	#myBookData {
 		
 		margin-left: 30px;
 	}
 	
-	#myBookDatath > th{
+	.mybook-data-th-check, .mybook-data-th-long , .mybook-data-th-short{
 		height: 35px;
 	 	border-radius :15px;
-	 	text-align:center;
-		border:1px solid white;
 		background-color : #FFCD28;
-		width:  100px;
-
+		margin:15px ;
+	}
+	.mybook-data-th-long{
+		width:150px;
+		text-align:center;
+		
+	} 
+	.mybook-data-th-short{
+		width: 60px;
 	}
 	
 	
+	.table-data{
+		font-size:medium;
+		text-align:center;
+	}
+	
+	.warning-line{
+		margin-top: 20px;
+	}
 	#btnDelete{
 		font-weight: bolder;	
-		margin: 15px 15px  0px 40px;
+		width: 100px;
+		margin: 0px 10px  0px 40px;
 	}
 	
-	.warnigMessage{
+	.warnig-message{
 		display :inline-block;
 	}
 	#warningCotent{
