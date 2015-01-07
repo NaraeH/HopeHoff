@@ -17,8 +17,6 @@
 
 
 /* =========== PC전용입니다. =========== */
-@media all and (min-width:421px){ 
-
 	
 	body{
 	width : 100%;
@@ -28,32 +26,31 @@
 	}
 	
 	/* 로그인화면 헤더정보 */
+
 	#header {
-		height: 100px;
-		background: #333231;
+		width: 30%;
+		height: 110px;
+		display: table;
 		text-align: center;
-	}
+		margin: auto;
 		
-	#headerMiddle {
-		width: 100%;
-		display: inline-block;
-		padding-left: 10px;
-	}
+		}
 	
-	#headerMiddle a{
-		margin-top : 15px;
+	#header a{
+	
 		font-size: 60px;
 		font-family: 'Lobster', cursive;
-		color: #fd9e04;
-		display: inline-block;
+		color: #4c4947;
+		display: table-cell;
+		padding:0px;
+		vertical-align:middle;
+		
 	}
 		
-	#headerMiddle img{
-		margin-top : -60px;
-		width: 100px;
-		height:100px;
-		display: inline-block;
-		margin-left: -50px;
+	#header img{
+		width:90px;
+		display: table-cell;
+
 	}
 	
 
@@ -101,17 +98,17 @@
 	}
 	
 	/* 오른쪽 회원가입창 속성적용 */
-	.loginForm {
+	/* .loginForm {
 	margin-top : 8px;
 	display : inline-block;
 	text-align: left;
 	float: left;
 	width: 45px;
-	}
+	} */
 
 	/* 오른쪽 회원가입창 패스워드 input 속성적용*/
 	#uPwd{
-	margin-top: 10px;
+		margin-top: 10px;
 	}
 	
 
@@ -136,7 +133,7 @@
 	}
 	
 	/* 오른쪽 회원가입창 input길이 속성적용*/
-	#inputEmail3, #bDay, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	#inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
 	width: 250px;
 	}
 	
@@ -147,25 +144,14 @@
 	}
 		
 	/* 팝업 검사버튼 */
-	#yesno, #pwdCheckText, #pwdValid, #emailValid {
+	#idText, #pwdCheckText, #pwdValid {
 	color : red;
 	font-size : x-small;
 	font-weight : bolder;
 	/* margin-bottom : -10px; */
 	text-align: center;
 	}
-	.has-success>.form-control {
-		margin-left:60px;
-	}
-	.has-error>.form-control {
-	    margin-left:60px;
-	}
-/* 	#colorPhone {
-		marging-right:140px;
-	} */
-	#inNumber02 {
-		display:inline-block;
-	}
+
 	#btnLoginClose {
        background: #FFCD28;
 		border: #FFCD28;
@@ -176,14 +162,7 @@
 		margin-right: 5px;
 		text-decoration: none;
 	}
-	
 
-	/* 회원가입창 버튼창 */
-	#inNumber00, #inNumber02 {
-	margin-left: -20px;
-
-	} 
-	
 	/* PC footer */
 	#footer{
 		background-color : #333231;
@@ -194,25 +173,6 @@
 		width: 100%;
 	}
 	
-	/* 모바일 전용 footer */ 
-	#footer01 {
-	display: none;
-	}
-	
-	/* 모바일 팝업 유효성 ID검사 */
-	#myModal104{
-	text-align: center;
-	}
-	
-	/* 모바일 팝업 유효성 ID검사 헤더 색상 */
-	#myModal104Header{
-	background-color: #FFCD28;
-	}
-	
-	/* 모바일 팝업 유효성 ID검사 버튼 가운데 정렬*/
-	#myModal104Footer{
-	text-align: center;
-	}
 	
 }
 
@@ -242,12 +202,7 @@
 	display: none;
 	}
 
-	
-	/* 전체화면 HopeHoff와 ID박스 사이 속성적용 */
-	#rightBox{
-	margin-top: 20px;
-	}
-	
+
 	/* 전체화면 SaveID */
 	#saveId{
 	margin:-10px;
@@ -301,7 +256,7 @@
 	}
 	
 	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
-	#bNumber, #bDay, #inputEmail3, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	#bNumber, #bDay, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
 	width: 150px;
 	}
 	
@@ -316,7 +271,7 @@
 	}
 	
 	/* 모바일 Sign-up 팝업창 정렬 속성적용 */
-	#bNumber, #bDay, #inputEmail3, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword, #formGroupInputLarge{
+	#bNumber, #bDay, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword, #formGroupInputLarge{
 	margin-right: 53px;
 	}
 	
@@ -356,7 +311,7 @@
 	}	
 	
 	/* 팝업 검사버튼 */
-	#yesno, #pwdCheckText, #pwdValid, #emailValid {
+	#idText, #pwdCheckText, #pwdValid {
 	color : red;
 	font-size : x-small;
 	font-weight : bolder;

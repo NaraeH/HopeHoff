@@ -4,9 +4,6 @@
 
 
 @media all and (min-width:421px) {
-	body {
-	font-family: 'jejugothic'
-	}
 	
 
 	/******************** Header 부분 **************************/
@@ -40,7 +37,7 @@
 	} 
 	
 	#myDataForm {
-		margin-left: 75px;
+		margin-left: 35px;
 		height: 100%;
 	}
 	

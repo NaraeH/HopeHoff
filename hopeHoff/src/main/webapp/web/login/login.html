@@ -13,172 +13,133 @@
 		
 <body>
 	
-	<!-- header -->
-	<div id="header">
-		<div id="headerMiddle">
-			<img src="../../img/main/mainLogo.png">
-			<a>HopeHoff</a>
-		</div>
-	</div>
-	
-	<!-- body -->
 	<div id="wrap">
 
-
 			<div id="loginBox">
-			
-		
-			
-			
-				<!-- 오른쪽박스 타이틀 -->
-				<div id = "rightTop">
-					<!-- <img src="../../img/main/mainLogo.png"> -->
-					<a class="ban"> HopeHoff</a>
-					
-				</div>
 
-				<!-- 오른쪽박스 Body -->
-				<div id="rightBox">
+				<div id="header">
+					<img src="../../img/common/logo_beer.png">
+					<a href="../../web/main/main.html">HopeHoff</a>
+				</div> 
+
 			
-								<div>
-									<input class="form-control" id="uId" placeholder="아이디"> 
-								</div>
-								<br>
-								
-								<div>
-									<input  class="form-control" type="Password" id="uPwd" placeholder="패스워드">
-								</div>
+				<div>
+					<input class="form-control" id="uId" placeholder="아이디"> 
+				</div>
+							
+				<div>
+					<input  class="form-control" type="Password" id="uPwd" placeholder="패스워드">
+				</div>
 					
 							
-								<div id="saveId"class="checkbox">
-									<input type="checkbox" id='save'> Save ID
-								</div>
-								<br>
-								
-								<div id="loginBtn">
-										<button id='btnLogin' type="button">Login</button>
-										<button id="signUp" type="button">Sign-up</button>
-								</div>
-						
+				<div id="saveId"class="checkbox">
+					<input type="checkbox" id='save'> Save ID
 				</div>
-			</div>
+								
+				<div id="loginBtn">
+						<button id='btnLogin' type="button">Login</button>
+						<button id="signUp" type="button">Sign-up</button>
+				</div>
+			
+			</div> <!-- loginBox -->
 			
 		</div> <!-- wrap /div -->
-								
-			<!-- 회원가입 팝업 -->
-			<form>			
-					<div id="myModal02">
-					
-								<!-- 회원가입 팝업창 헤더 -->
-								<div id="signUpHeaderColor">
-									<div id="signUpHeader">
-										<h4 class="hn" id="myModalLabel">Sign-up Page</h4>
-										<a href="../login/login.html"><button id="btnLoginClose" type="button" value="close">X</button></a>
-									</div>
-								</div>
-								
-							  <!-- 회원가입 팝업창 BODY -->    
-								<div id="sign-up-page01">
-									
-									<!-- 회원가입 선택 -->
-									<div id="choose02" class="hn">
-										<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1" checked/> 일반
-										<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"/> 사업자
-									</div>
-									
-									<!-- 회원가입 팝업창 ID -->
-									<div class="form-group">
-										<div id="popId" class="hn loginForm">ID</div>
-										<div id="colorId">
-											<input type="text" id="formGroupInputLarge" placeholder="ID">
-										</div>
-										</div>
-											  
-										 <!-- 회원가입 중복여부 질의응답 get받는 곳-->	 
-										 <div id="yesno"></div>  <!-- 사용가능한 아이디입니다. -->
-															     
-															
-									<!-- 회원가입 팝업창 Name -->
-									<div class="form-group">
-									<div class="hn loginForm">Name</div>
-										<div id="colorName">
-											<input type="text" id="formGroupInputSmall" placeholder="Name">
-										</div>
-									</div>
-												     
-									<!-- 회원가입 팝업창 PWD -->			      
-									<div class="form-group">
-									<div class="hn loginForm">PWD</div>
-										<div id="colorPwd">
-											<input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자의 조합으로 6~16자리">
-										</div>
-									</div>
-									
-									 <div id="pwdValid"></div>
-									 
-									<!-- 회원가입 팝업창 Check -->					  
-									<div class="form-group">
-									<div class="hn loginForm">Check</div>
-										<div id="colorPwdCheck">
-											<input type="password" id="checkPassword" placeholder="Check Password">
-										</div>
-									</div>
-									
-									  <div id="pwdCheckText"></div> 
-									  
-									<!-- 회원가입 팝업창 Phone -->						  
-									<div class="form-group">
-									<div class="hn loginForm">Phone</div>
-										<div id="colorPhone" >
-											<input id="phoneNumber" type="text" placeholder="Phone Number">
-										</div>
-										<button id="inNumber02" type="button">전송</button>
-									</div>
-									
-									 <div id="phoneNumValid"></div>
-									 
-									<!-- 회원가입 팝업창 인증 -->						  
-									<div class="form-group">
-									<div class="hn loginForm">인증</div>
-										<div id="colorValid">
-										<input id="inNumber01" type="text" placeholder="인증번호">
-										</div>
-										<div>1분 준다</div>																	
-									</div>
-														  
-									<!-- 회원가입 팝업창 Email -->				      
-									<div class="form-group">
-									<div class="hn loginForm">Email</div>
-										<div id="colorEmail">
-										<input type="email" id="inputEmail3" placeholder="Email">
-										</div>
-									</div>
-									
-									 <div id="emailValid"></div> 		  
-								</div><!-- 팝업창 body End -->
-								
-								
-								
-								<!-- 회원가입 팝업창 Footer -->
-								<div>
-									<div id="signUpFooter">
-										<button id=btnSignUp type="button">Sign-up</button>
-										<button id=btnCancel type="reset">Cancel</button>
-									</div>
-								</div>
-				</div>
-		
-			</form> <!-- 회원가입 팝업창 End -->
-			
-			<!-- PC용 Footer -->
-			<div id="footer"></div>
-			
-			<!-- 모바일용 Footer -->
-			<div id="footer01">
-				<hr>
-				<h5>현재 모바일 모드로 전환되었습니다.</h5>
-				<h5>상호 : Hope Hoff | E-mail : HopeHoff@google.com </h5>
+
+
+
+
+
+	<!-- 회원가입 팝업 -->
+	<form>
+
+		<!-- 회원가입 팝업창 헤더 -->
+		<div id="signUpHeaderColor">
+			<div id="signUpHeader">
+				<h4 class="hn" id="myModalLabel">Sign-up Page</h4>
+				<a href="../login/login.html"><button id="btnLoginClose"
+						type="button" value="close">X</button></a>
 			</div>
+		</div>
+
+		<!-- 회원가입 팝업창 BODY -->
+		<div id="sign-up-page01">
+
+			<!-- 회원가입 선택 -->
+			<div id="choose02" class="hn">
+				<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1" checked /> 일반
+				 <input type="radio"	name="inlineRadioOptions" id="inlineRadio4" value="option2" /> 사업자
+			</div>
+
+			<!-- 회원가입 팝업창 ID -->
+			<div class="form-group">
+				<div id="colorId">
+					<input type="text" id="formGroupInputLarge" placeholder="ID">
+				</div>
+			</div>
+
+			<!-- 회원가입 중복여부 질의응답 get받는 곳-->
+			<div id="idText"></div>
+			<!-- 사용가능한 아이디입니다. -->
+
+			<!-- 회원가입 팝업창 Name -->
+			<div class="form-group">
+				<div id="colorName">
+					<input type="text" id="formGroupInputSmall" placeholder="Name">
+				</div>
+			</div>
+
+			<!-- 회원가입 팝업창 PWD -->
+			<div class="form-group">
+				<div id="colorPwd">
+					<input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자의 조합으로 6~16자리">
+				</div>
+			</div>
+
+			<div id="pwdValid"></div>
+
+			<!-- 회원가입 팝업창 Check -->
+			<div class="form-group">
+				<div id="colorPwdCheck">
+					<input type="password" id="checkPassword"	placeholder="Check Password">
+				</div>
+			</div>
+
+			<div id="pwdCheckText"></div>
+
+			<!-- 회원가입 팝업창 Phone -->
+			<div class="form-group">
+				<div id="colorPhone">
+					<input id="phoneNumber" type="text" placeholder="Phone Number">
+				</div>
+				<button id="sendValid" type="button">전송</button>
+			</div>
+
+			<div id="phoneNumValid"></div>
+
+			<!-- 회원가입 팝업창 인증 -->
+			<div class="form-group">
+				<div id="colorValid">
+					<input id="inNumber01" type="text" placeholder="인증번호">
+				</div>
+				<div>1분 준다</div>
+			</div>
+
+
+
+			<!-- 회원가입 팝업창 Footer -->
+			<div>
+				<div id="signUpFooter">
+					<button id=btnSignUp type="button">Sign-up</button>
+					<button id=btnCancel type="reset">Cancel</button>
+				</div>
+			</div>
+		</div>
+
+	</form>
+	<!-- 회원가입 팝업창 End -->
+
+	<!-- PC용 Footer -->
+	<div id="footer"></div>
 		
 	</body>
 </html>

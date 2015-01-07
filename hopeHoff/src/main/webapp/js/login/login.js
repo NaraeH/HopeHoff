@@ -1,5 +1,6 @@
 	
 $(function(){
+	$("#footer").load("../common/footer.html");
 
 	$('#btnLogin').click(function(event){
 	    $.post('../../json/auth/login.do'
@@ -31,54 +32,12 @@ $(function(){
 	
 	
 	
-	
-	
-	
-	$("#footer").load("../common/footer.html");
-	
-	$('#leftImg01').innerfade({
-			animationtype :'fade',
-			speed : 750,
-			timeout: 2000,
-			type : 'random',
-			containerheight : '130px'
-	});
-		
-	$('#leftImg02').innerfade({
-		animationtype :'fade',
-		speed : 750,
-		timeout: 2000,
-		type : 'random',
-		containerheight : '130px'
-	});
-	
-	$('#leftImg03').innerfade({
-		animationtype :'fade',
-		speed : 750,
-		timeout: 2000,
-		type : 'random',
-		containerheight : '130px'
-	});
-	
-	$("#inlineRadio3").click(function(){
-		$("#bNum").css('display',"none");
-		console.log("display:none");
-	});
-	
-   /*
-	 사업자 번호 받았을때의 사라지게 하는 함수였음.
-	$("#inlineRadio4").click(function(){
-		$("#bNum").css('display',"");
-		console.log("display:true");
-	}); */
-	
-	
-	/**********************************************************************유. 효 . 성........ 검 사**************************/	
+	/***********************************************유. 효 . 성........ 검 사**************************/	
 	var valpoint=0;
 	
 	//V ID input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)
 	$('#formGroupInputLarge').focus(function() {
-	 $('#yesno').css("display","");
+	 $('#idText').css("display","");
 		
 		// Node.js랑 연결되어있다. 아이디 중복체크임
 		// 키를 눌렀다가 내 손에 모든게 떨어졌을때
@@ -92,12 +51,12 @@ $(function(){
 			//이렇게 응답하겠다.(이렇게 이벤트발생하겠다.)
 			
 				if(data.result == "사용가능한 아이디입니다."){
-					$('#yesno').html(data.result).css("color","green");
-					$('#colorId').attr("class","has-success");
+					$('#idText').html(data.result).css("color","green");
+					$('#colorId').css("border","green");
 					
 				} else { /*중복된 아이디가 있습니다.*/
-					$('#yesno').html(data.result).css("color","red");
-					$('#colorId').attr("class","has-error");
+					$('#idText').html(data.result).css("color","red");
+					$('#colorId').css("border","red");
 				} 
 	       }
 	  ); /*get꺼*/	
@@ -109,16 +68,16 @@ $(function(){
 	//V ID input칸에 outfocus면, 유효성숨기기
 	$('#formGroupInputLarge').focusout(function() {
 		
-		if($('#yesno').css("color") == "rgb(0, 128, 0)") {
-			$('#yesno').css("display","none");
+		if($('#idText').css("color") == "rgb(0, 128, 0)") {
+			$('#idText').css("display","none");
 			valpoint++;
 			console.log(valpoint);
-		} else if($('#yesno').css("color") == "rgb(128, 0, 0)"){
-			$('#yesno').css("display","");
+		} else if($('#idText').css("color") == "rgb(128, 0, 0)"){
+			$('#idText').css("display","");
 		}
 		
-		if(valpoint == 7) {	
-			$('#btnSignUp').attr("class", "btn btn-success");
+		if(valpoint == 6) {	
+			$('#btnSignUp').css("border", "green");
 			$('#btnSignUp').attr("disabled", false);
 
 		} else {
@@ -133,11 +92,11 @@ $(function(){
 					 && (($('#inputPassword3').val().length >= 6)&&($('#inputPassword3').val().length <= 16) )){
 				
 				 $('#pwdValid').html("ok").css("color","green");
-				 $('#colorPwd').attr("class","has-success");
+				 $('#colorPwd').css("border","green");
 	
 			 } else {
 				 $('#pwdValid').html("문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~의 조합으로 6~16자리").css("color","red");
-				 $('#colorPwd').attr("class","has-error");
+				 $('#colorPwd').css("border","red");
 				
 			 }
 		 });
@@ -152,8 +111,8 @@ $(function(){
 			$('#pwdValid').css("display","");
 		}
 		
-		if(valpoint == 7) {	
-			$('#btnSignUp').attr("class", "btn btn-success");
+		if(valpoint == 6) {	
+			$('#btnSignUp').css("border","green");
 			$('#btnSignUp').attr("disabled", false);
 
 		} else {
@@ -168,11 +127,11 @@ $(function(){
 		
 			 if(($('#inputPassword3').val() == $('#checkPassword').val()) && ($('#inputPassword3').val()!= "")){
 				 $('#pwdCheckText').html("일치합니다.").css("color","green");
-				 $('#colorPwdCheck').attr("class","has-success");
+				 $('#colorPwdCheck').css("border","green");
 		
 			 } else {
 				 $('#pwdCheckText').html("불일치ㅠ_ㅠ").css("color","red");
-				 $('#colorPwdCheck').attr("class","has-error");
+				 $('#colorPwdCheck').css("border","red");
 				 
 			 }
 		 });
@@ -189,64 +148,29 @@ $(function(){
 			$('#pwdCheckText').css("display","");
 		}
 		
-		if(valpoint == 7) {	
-			$('#btnSignUp').attr("class", "btn btn-success");
+		if(valpoint == 6) {	
+			$('#btnSignUp').css("border","green");
 			$('#btnSignUp').attr("disabled", false);
 
 		} else {
 			$('#btnSignUp').attr("disabled", true);
 		}
 	});
-	/*************email 유효성검사ㅏㅏㅏㅏㅏㅏ***************/
-
-	$('#inputEmail3').focus(function() {
-		 $('#emailValid').css("display","");
-		 $("#inputEmail3").keyup(function(){
-			 if($('#inputEmail3').val().match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/) != null) {
-				
-				 $('#emailValid').html("ok").css("color","green");
-				 $('#colorEmail').attr("class","has-success");
-		   
-			 } else {
-				 $('#emailValid').html("이메일 형식으로 입력해 주세요.").css("color","red");
-				 $('#colorEmail').attr("class","has-error");
-			 }
-		 });
-	});
-	$('#inputEmail3').focusout(function() {
-		
-		if($('#emailValid').css("color") == "rgb(0, 128, 0)") {
-			valpoint++;
-			console.log(valpoint);
-			$('#emailValid').css("display","none");
-		} else if($('#emailValid').css("color") == "rgb(128, 0, 0)"){
-			$('#emailValid').css("display","");
-		}
-		
-
-		if(valpoint == 7) {	
-			$('#btnSignUp').attr("class", "btn btn-success");
-			$('#btnSignUp').attr("disabled", false);
-
-		} else {
-			$('#btnSignUp').attr("disabled", true);
-		}
-
-	});
+	
 	
 	/*****focus만-------Name  / Phone  / 인증******/
 	$('#formGroupInputSmall').focus(function() {
-		$('#colorName').attr("class","has-success");
+		$('#colorName').css("border","green");
 		valpoint++;
 	});
 	
 	$('#phoneNumber').focus(function() {
-		$('#colorPhone').attr("class","has-success");
+		$('#colorPhone').css("border","green");
 		valpoint++;
 	});
 	
 	$('#inNumber01').focus(function() {
-		$('#colorValid').attr("class","has-success");
+		$('#colorValid').css("border","green");
 		valpoint++;
 	});
 
@@ -287,21 +211,20 @@ $(function(){
 		$("input[name='inlineRadioOptions']").filter("[value='option1']").prop("checked",false);
 		$("input[name='inlineRadioOptions']").filter("[value='option2']").prop("checked",false);
 		$('#formGroupInputLarge').val('');
-		$('#yesno').html('');
+		$('#idText').html('');
 		$('#formGroupInputSmall').val('');
 		$('#inputPassword3').val('');
 		$('#checkPassword').val('');
 		$('#phoneNumber').val('');
 		$('#checkPassword').val('');
 		$('#inNumber01').val('');
-		$('#inputEmail3').val('');
-		
+
 	});
 	
 /*	$('#myModal104End').click(function(){
-		$('#yesno').html('');
+		$('#idText').html('');
 		$('#myModal104').dropdown();
-		setTimeout(function(){$('#yesno').html("아이디를 입력해주세요.");},300);
+		setTimeout(function(){$('#idText').html("아이디를 입력해주세요.");},300);
 	});*/
 	
 	

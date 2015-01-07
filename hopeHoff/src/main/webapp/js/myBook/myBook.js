@@ -119,11 +119,11 @@ $(function(){
 		      
 		      for (var i = 0; i < reservations.length; i++) {
 		        $('<tr>').addClass('tableReservationData')
-		        	.append($('<input type="checkbox">'))
-		            .append($('<td>').html(reservations[i].reservationNo))
-		            .append($('<td>').html(reservations[i].uPhone))
-		            .append($('<td>').html(reservations[i].reservationDate))
-		            .append($('<td>').html(reservations[i].reservationStatus))
+		        	.append($('<td class=table-data>').html('<input  type=\"checkbox\">'))
+		            .append($('<td class=table-data>').html(reservations[i].reservationNo))
+		            .append($('<td class=table-data>').html(reservations[i].uPhone))
+		            .append($('<td class=table-data>').html(reservations[i].reservationDate))
+		            .append($('<td class=table-data>').html(reservations[i].reservationStatus))
 		            .appendTo('#myBookData')
 		      }
 		    });
