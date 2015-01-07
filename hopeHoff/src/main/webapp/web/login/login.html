@@ -5,12 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HopeHoff - 로그인페이지 입니다.</title>
 <link rel='stylesheet' href="../../css/login/login.css">
-<link rel='stylesheet' href="../../css/bootstrap/bootstrap.css">
-<link rel='stylesheet' href="../../css/bootstrap/bootstrap.min.css">
-<link rel='stylesheet' href="../../css/bootstrap/bootstrap-theme.min.css">
 <link rel='stylesheet' href='../../css/common/common.css'>
 <script src="../../js/jquery/jquery-1.11.1.js"></script>
-<script src="../../js/bootstrap/bootstrap.min.js"></script>
 <script src="../../js/jquery/jquery.innerfade.js"></script>
 <script src="../../js/login/login.js"></script>
 </head>
@@ -27,170 +23,57 @@
 	
 	<!-- body -->
 	<div id="wrap">
-			
-		<!-- body background 배경화면 -->
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-		
-		  <!-- Wrapper for slides -->
-			<div id="background" class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <img src="../../img/login/back01.jpg">
-			    </div>
-			    <div class="item">
-			      <img src="../../img/login/back02.jpg">
-			    </div>
-			    <div class="item">
-			      <img src="../../img/login/back03.jpg">
-			    </div>
-			</div>
-			
-		</div>	
+
 
 			<div id="loginBox">
 			
-				<!-- Header -->
-				<div id="containerHeader">
-				  <h1 class="ban">Hope Hoff 오늘의 말씀</h1>
-				  <h2 class="nps">You, weather!No matter how cold you are, I'm gonna buy beer not an outer.<br>
-				  날씨야 네가 암만 추워봐라. 옷사입나, 술사먹지</h2>
-				</div>  
+		
 			
-			<!-- 추천 / HopeHoff 박스 -->
-			<div id ="box">
-			<!-- 전체박스 중 왼쪽 틀 -->
-			<div id="left">
-			
-				<!-- 추천 No.1 -->
-				<h2 class="hn">추천 No.1</h2>
-				<div id="leftImg01">
-					<!-- 추천사진 로테이션 -->
-					<img class="img-circle" src="../../img/login/Wara-Wara01.jpg" alt="Generic placeholder image">
-					<img class="img-circle" src="../../img/login/Wara-Wara02.jpg" alt="Generic placeholder image">
-					<img class="img-circle" src="../../img/login/Wara-Wara03.jpg" alt="Generic placeholder image">
-					<img class="img-circle" src="../../img/login/Wara-Wara04.jpg" alt="Generic placeholder image">
-				</div>
-				<h3 class="nps">Wara-Wara</h3>
-				<h4 class="nps">강남3호전 오픈기념 행사 <br>
-				전 메뉴50% 할인</h4>
-				<p><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">다른 추천장소 보기 »</button></p>
-				
-				
-				<!-- 다른추천장소보기  -->	
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				  <div class="modal-dialog">
-				    <div class="modal-content">
-				   		
-				   		<!-- 다른추천장소보기 헤더 -->
-				      <div class="modal-header" id="myModalLabel">
-				      	<h4 class="hn modal-title">Other Hot! Place</h4>
-				      </div>
-				      
-				      <div class="modal-body">
-					      <!-- 추천 No.2 -->
-					      <div id="left02">
-									<h3 class="hn">No.2</h3>
-									<div id="leftImg02">
-									<!-- 추천사진 로테이션 -->
-									<img class="img-circle" src="../../img/login/soju01.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="../../img/login/soju02.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="../../img/login/soju03.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="../../img/login/soju04.jpg" alt="Generic placeholder image">
-									</div>
-									<h3 class="nps">악바리</h3>
-									<h3 class="nps">안양 1호점 오픈기념 행사 <br>
-									계란말이 서비스(금주 토요일까지)</h3>
-					      </div>
-					       
-					      <!-- 추천 No.3 -->
-					      <div id="left03">
-									<h3 class="hn">No.3</h3>
-									<div id="leftImg03">
-									<!-- 추천사진 로테이션 -->
-									<img class="img-circle" src="../../img/login/mak01.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="../../img/login/mak02.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="../../img/login/mak03.jpg" alt="Generic placeholder image">
-									<img class="img-circle" src="../../img/login/mak04.jpg" alt="Generic placeholder image">
-									</div>
-									<h3 class="nps">청담 제1막</h3>
-									<h3 class="nps">막걸리도 이제 품위있게!<br>
-									영화 : 위험한상견례 방영장소</h3>
-					      </div>
-				      </div>
-				      
-				      <div id="modal-footer" class="modal-footer">
-				        <button type="button" class="btn btn-warning" data-dismiss="modal">돌아가기</button>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-			</div>
-			
-			<!-- 전체박스 중 오른쪽 틀 -->
-			<div id = "right">
 			
 				<!-- 오른쪽박스 타이틀 -->
 				<div id = "rightTop">
-						<h2 class="ban">Hope Hoff</h2>
-				</div>
-				
-				<div id="choose01" class="hn">
-						<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> 일반
-						<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 사업자
-				</div>
+					<!-- <img src="../../img/main/mainLogo.png"> -->
+					<a class="ban"> HopeHoff</a>
 					
-						<!-- 오른쪽박스 Body -->
-						<div id="rightBox">
-						
-							<!-- 오른쪽박스 ID -->
-							<div class="form-group">
-								<div class="hn loginForm">ID</div>
-								<div class="col-sm-10">
+				</div>
+
+				<!-- 오른쪽박스 Body -->
+				<div id="rightBox">
+			
+								<div>
 									<input class="form-control" id="uId" placeholder="아이디"> 
 								</div>
-							</div>
-							
-							<!-- 오른쪽박스 PWD -->
-							<div class="form-group">
-								<div id="pwd" class="hn loginForm">PWD</div>
-								<div class="col-sm-10">
+								<br>
+								
+								<div>
 									<input  class="form-control" type="Password" id="uPwd" placeholder="패스워드">
 								</div>
-							</div>
-							
-							<!-- 오른쪽박스 Save ID -->
-							<div class="form-group">
-								<div class="col-sm-10">
-									<div id="saveId"class="checkbox"><input type="checkbox" id='save'> Save ID</div>
-									
-								</div>
-							</div>
 					
-							<!-- 오른쪽박스 Login Sign-up -->
-							<div class="form-group">
-								<div id="loginBtn" class="col-sm-10">
-										<!-- <button onclick="location.href='../main/main.html'" type="button" class="btn btn-danger">Login</button> -->
-										<button id='btnLogin' type="button" class="btn btn-danger">Login</button>
-										<button id="signUp" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal02">Sign-up</button>
+							
+								<div id="saveId"class="checkbox">
+									<input type="checkbox" id='save'> Save ID
 								</div>
-							</div>	
-						</div>
+								<br>
+								
+								<div id="loginBtn">
+										<button id='btnLogin' type="button">Login</button>
+										<button id="signUp" type="button">Sign-up</button>
+								</div>
+						
+				</div>
 			</div>
-			</div>
-		</div>	<!--End 추천 / HopeHoff 박스 -->
+			
 		</div> <!-- wrap /div -->
 								
 			<!-- 회원가입 팝업 -->
-			<form class="form-horizontal" role="form">			
-					<div class="modal fade" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-							
+			<form>			
+					<div id="myModal02">
+					
 								<!-- 회원가입 팝업창 헤더 -->
-								<div id="signUpHeaderColor" class="modal-header">
+								<div id="signUpHeaderColor">
 									<div id="signUpHeader">
-										<h4 class="hn modal-title" id="myModalLabel">Sign-up Page</h4>
+										<h4 class="hn" id="myModalLabel">Sign-up Page</h4>
 										<a href="../login/login.html"><button id="btnLoginClose" type="button" value="close">X</button></a>
-										
 									</div>
 								</div>
 								
@@ -204,30 +87,30 @@
 									</div>
 									
 									<!-- 회원가입 팝업창 ID -->
-									<div class="form-group has-feedback">
+									<div class="form-group">
 										<div id="popId" class="hn loginForm">ID</div>
-										<div class="col-sm-8">
-										<input class="form-control" type="text" id="formGroupInputLarge" placeholder="ID">
+										<div id="colorId">
+											<input type="text" id="formGroupInputLarge" placeholder="ID">
 										</div>
-									</div>
-									  <!-- 회원가입 중복여부 질의응답 get받는 곳-->
-									  <!-- 사용가능한 아이디입니다. -->
-									  <div id="yesno"></div> 
+										</div>
+											  
+										 <!-- 회원가입 중복여부 질의응답 get받는 곳-->	 
+										 <div id="yesno"></div>  <!-- 사용가능한 아이디입니다. -->
 															     
 															
 									<!-- 회원가입 팝업창 Name -->
 									<div class="form-group">
 									<div class="hn loginForm">Name</div>
-										<div class="col-sm-8">
-											<input class="form-control" type="text" id="formGroupInputSmall" placeholder="Name">
+										<div id="colorName">
+											<input type="text" id="formGroupInputSmall" placeholder="Name">
 										</div>
 									</div>
 												     
 									<!-- 회원가입 팝업창 PWD -->			      
 									<div class="form-group">
 									<div class="hn loginForm">PWD</div>
-										<div class="col-sm-8">
-											<input type="password" class="form-control" id="inputPassword3" placeholder="문자, 숫자, 특수문자의 조합으로 6~16자리">
+										<div id="colorPwd">
+											<input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자의 조합으로 6~16자리">
 										</div>
 									</div>
 									
@@ -236,8 +119,8 @@
 									<!-- 회원가입 팝업창 Check -->					  
 									<div class="form-group">
 									<div class="hn loginForm">Check</div>
-										<div class="col-sm-8">
-											<input type="password" class="form-control" id="checkPassword" placeholder="Check Password">
+										<div id="colorPwdCheck">
+											<input type="password" id="checkPassword" placeholder="Check Password">
 										</div>
 									</div>
 									
@@ -246,42 +129,45 @@
 									<!-- 회원가입 팝업창 Phone -->						  
 									<div class="form-group">
 									<div class="hn loginForm">Phone</div>
-										<div class="col-sm-8">
-										<input id="phoneNumber" type="text" class="form-control" placeholder="Phone Number">
+										<div id="colorPhone" >
+											<input id="phoneNumber" type="text" placeholder="Phone Number">
 										</div>
+										<button id="inNumber02" type="button">전송</button>
 									</div>
 									
 									 <div id="phoneNumValid"></div>
+									 
 									<!-- 회원가입 팝업창 인증 -->						  
 									<div class="form-group">
 									<div class="hn loginForm">인증</div>
-										<div class="col-sm-8">
-										<input id="inNumber01" type="text" class="form-control" placeholder="인증번호">
+										<div id="colorValid">
+										<input id="inNumber01" type="text" placeholder="인증번호">
 										</div>
-										<button id="inNumber02" type="button" class="btn btn-warning">전송</button>						
+										<div>1분 준다</div>																	
 									</div>
 														  
 									<!-- 회원가입 팝업창 Email -->				      
 									<div class="form-group">
 									<div class="hn loginForm">Email</div>
-										<div class="col-sm-8">
-										<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+										<div id="colorEmail">
+										<input type="email" id="inputEmail3" placeholder="Email">
 										</div>
 									</div>
+									
 									 <div id="emailValid"></div> 		  
 								</div><!-- 팝업창 body End -->
 								
+								
+								
 								<!-- 회원가입 팝업창 Footer -->
-								<div class="modal-footer">
+								<div>
 									<div id="signUpFooter">
-										<button id=btnSignUp type="button" class="btn btn-warning">Sign-up</button>
-										<button id=btnCancel type="reset" class="btn btn-warning">Cancel</button>
+										<button id=btnSignUp type="button">Sign-up</button>
+										<button id=btnCancel type="reset">Cancel</button>
 									</div>
 								</div>
-							</div>
-						</div>
-						
-					</div>
+				</div>
+		
 			</form> <!-- 회원가입 팝업창 End -->
 			
 			<!-- PC용 Footer -->

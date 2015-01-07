@@ -1,8 +1,6 @@
 	
 $(function(){
 
-	
-	
 	$('#btnLogin').click(function(event){
 	    $.post('../../json/auth/login.do'
 	        , {
@@ -24,7 +22,10 @@ $(function(){
 	  });
 	
 	
-	
+	$('#btnSignUp').click(function(event){
+		alert("감사합니다 ~ 이제,로그인 해주세요 !");
+       location.href = '../../web/login/login.html';
+	});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
 	
 	
 	
@@ -92,14 +93,11 @@ $(function(){
 			
 				if(data.result == "사용가능한 아이디입니다."){
 					$('#yesno').html(data.result).css("color","green");
+					$('#colorId').attr("class","has-success");
 					
-					/*	$(".has-feedback").append("<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span>");*/
-					
-					/*$(".has-feedback").attr("class","has-success");*/
-					   /*.append("<span id='inputSuccess4Status' class='sr-only'>(success)</span>");*/
 				} else { /*중복된 아이디가 있습니다.*/
 					$('#yesno').html(data.result).css("color","red");
-					$(".has-feedback").attr("class","has-error");					
+					$('#colorId').attr("class","has-error");
 				} 
 	       }
 	  ); /*get꺼*/	
@@ -110,13 +108,24 @@ $(function(){
 	
 	//V ID input칸에 outfocus면, 유효성숨기기
 	$('#formGroupInputLarge').focusout(function() {
-		$('#yesno').css("display","none");
+		
 		if($('#yesno').css("color") == "rgb(0, 128, 0)") {
+			$('#yesno').css("display","none");
 			valpoint++;
 			console.log(valpoint);
+		} else if($('#yesno').css("color") == "rgb(128, 0, 0)"){
+			$('#yesno').css("display","");
+		}
+		
+		if(valpoint == 7) {	
+			$('#btnSignUp').attr("class", "btn btn-success");
+			$('#btnSignUp').attr("disabled", false);
+
+		} else {
+			$('#btnSignUp').attr("disabled", true);
 		}
 	});
-	/* ----------------------------- */
+	/* --------------password 유 효 성--------------- */
 	$('#inputPassword3').focus(function() {
 		 $('#pwdValid').css("display","");
 		 $("#inputPassword3").keyup(function(){
@@ -124,21 +133,34 @@ $(function(){
 					 && (($('#inputPassword3').val().length >= 6)&&($('#inputPassword3').val().length <= 16) )){
 				
 				 $('#pwdValid').html("ok").css("color","green");
+				 $('#colorPwd').attr("class","has-success");
 	
 			 } else {
 				 $('#pwdValid').html("문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~의 조합으로 6~16자리").css("color","red");
+				 $('#colorPwd').attr("class","has-error");
 				
 			 }
 		 });
 	});
 	$('#inputPassword3').focusout(function() {
-		$('#pwdValid').css("display","none");
+		
 		if($('#pwdValid').css("color") == "rgb(0, 128, 0)") {
+			$('#pwdValid').css("display","none");
 			valpoint++;
 			console.log(valpoint);
+		} else if($('#pwdValid').css("color") == "rgb(128, 0, 0)"){
+			$('#pwdValid').css("display","");
+		}
+		
+		if(valpoint == 7) {	
+			$('#btnSignUp').attr("class", "btn btn-success");
+			$('#btnSignUp').attr("disabled", false);
+
+		} else {
+			$('#btnSignUp').attr("disabled", true);
 		}
 	});
-	/*********************/
+	/************Password  다시 누르는거 확인*********/
 	$('#checkPassword').focus(function() {
 		 $('#pwdCheckText').css("display","");
 		
@@ -146,10 +168,11 @@ $(function(){
 		
 			 if(($('#inputPassword3').val() == $('#checkPassword').val()) && ($('#inputPassword3').val()!= "")){
 				 $('#pwdCheckText').html("일치합니다.").css("color","green");
-	
+				 $('#colorPwdCheck').attr("class","has-success");
 		
 			 } else {
 				 $('#pwdCheckText').html("불일치ㅠ_ㅠ").css("color","red");
+				 $('#colorPwdCheck').attr("class","has-error");
 				 
 			 }
 		 });
@@ -157,12 +180,22 @@ $(function(){
 	
 	
 	$('#checkPassword').focusout(function() {
-		$('#pwdCheckText').css("display","none");
+	
 		if($('#pwdCheckText').css("color") == "rgb(0, 128, 0)") {
 			valpoint++;
 			console.log(valpoint);
+			$('#pwdCheckText').css("display","none");
+		} else if($('#pwdCheckText').css("color") == "rgb(128, 0, 0)"){
+			$('#pwdCheckText').css("display","");
 		}
 		
+		if(valpoint == 7) {	
+			$('#btnSignUp').attr("class", "btn btn-success");
+			$('#btnSignUp').attr("disabled", false);
+
+		} else {
+			$('#btnSignUp').attr("disabled", true);
+		}
 	});
 	/*************email 유효성검사ㅏㅏㅏㅏㅏㅏ***************/
 
@@ -172,31 +205,51 @@ $(function(){
 			 if($('#inputEmail3').val().match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/) != null) {
 				
 				 $('#emailValid').html("ok").css("color","green");
-				 
+				 $('#colorEmail').attr("class","has-success");
 		   
 			 } else {
 				 $('#emailValid').html("이메일 형식으로 입력해 주세요.").css("color","red");
-				 
+				 $('#colorEmail').attr("class","has-error");
 			 }
 		 });
 	});
 	$('#inputEmail3').focusout(function() {
-		$('#emailValid').css("display","none");
+		
 		if($('#emailValid').css("color") == "rgb(0, 128, 0)") {
 			valpoint++;
 			console.log(valpoint);
+			$('#emailValid').css("display","none");
+		} else if($('#emailValid').css("color") == "rgb(128, 0, 0)"){
+			$('#emailValid').css("display","");
 		}
 		
 
-		if(valpoint == 4) {	
+		if(valpoint == 7) {	
 			$('#btnSignUp').attr("class", "btn btn-success");
 			$('#btnSignUp').attr("disabled", false);
 
-		} 
+		} else {
+			$('#btnSignUp').attr("disabled", true);
+		}
 
 	});
 	
+	/*****focus만-------Name  / Phone  / 인증******/
+	$('#formGroupInputSmall').focus(function() {
+		$('#colorName').attr("class","has-success");
+		valpoint++;
+	});
 	
+	$('#phoneNumber').focus(function() {
+		$('#colorPhone').attr("class","has-success");
+		valpoint++;
+	});
+	
+	$('#inNumber01').focus(function() {
+		$('#colorValid').attr("class","has-success");
+		valpoint++;
+	});
+
 	/***************************************************************/
 
 	
@@ -245,11 +298,11 @@ $(function(){
 		
 	});
 	
-	$('#myModal104End').click(function(){
+/*	$('#myModal104End').click(function(){
 		$('#yesno').html('');
 		$('#myModal104').dropdown();
 		setTimeout(function(){$('#yesno').html("아이디를 입력해주세요.");},300);
-	});
+	});*/
 	
 	
 	
