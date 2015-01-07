@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+
+
 /*-----------------------------------화살표 ----------------------------*/
 .box-rotate-right {
 	width: 0px;
@@ -199,7 +203,9 @@ a:active {
     text-decoration: underline;
 }
 
-.btn, input[type="button"], button {
+
+/*----------------------------------------------------*/
+input[type="button"], button {
 	width: 75px;
 	background: #f0ad4e;
 	border: 1px solid #eea236;
@@ -210,11 +216,25 @@ a:active {
 	cursor: pointer;
 }
 
-.btn:hover, input[type="button"]:hover, button:hover {
+input[type="button"]:hover, button:hover {
 	background: #ec971f;
 }
 
+.btn-deactive {
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	color: #000000;
+}
+
+.btn-deactive:hover {
+	background: #e6e6e6;
+}
+
 /*----------------------------------------------------*/
+body {
+	font-family: 'Jeju Gothic', serif;
+}
+
 #footer{
 		background-color : #333231;
 		color : #fd9e04;
