@@ -1,11 +1,11 @@
 $(function(){
 	
 	//첫 시작시 리스트 로딩
-	$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	//loadContainerList();
+	loadContainerList();
 	
 });
 
@@ -49,7 +49,7 @@ $(window).scroll(function(){
 
 
 
-$("#containerKeyword").click(function() {
+/*$("#mobileContainerKeyword").click(function() {
 	var count = 0; //for문을 위한 index
 	var checkedList = []; //keyword를 담기위한 배열
 	
@@ -80,7 +80,7 @@ $("#containerKeyword").click(function() {
 
 		}
 	});  
-});
+});*/
 
 $(".click-myBook").click(function(){
 	var height = Narae.removePx($("#mainBody").css("height"));
@@ -153,21 +153,28 @@ function loadKeyword() {
 	$.getJSON(
 			'../../main/keyword.do',
 			function(data){
+				var i = 0;
 				for(var keyword in data) {
 					$("<div>").attr("id", keyword)
 								.append($("<ul>")
 										.append($("<li>")
 												.append($("<p>")
-												.html(data[keyword][0]))))
-								.appendTo($("#containerKeyword"));
+												.html(data[keyword][i++]))))
+								.appendTo($("#mobileContainerKeyword"));
 					
-					for(var i = 1; i < data[keyword].length; i++){
+					for(var j = 1; j < data[keyword].length; j++){
 						$("<li>").append($("<input>")
 									.attr("type", "checkbox")
-									.attr("value", data[keyword][i]))
-								 .append($("<p>" + data[keyword][i] + "</p>"))
+									.attr("value", data[keyword][j]))
+								 .append($("<p>" + data[keyword][j] + "</p>"))
 								 .appendTo("#" + keyword + " ul");
 					}
+				}
+				
+				for(var keyword in data){
+					$("<div>").html(data[keyword][0]+ "  ▼")
+							  .addClass("webKeyword")
+						.appendTo("#WebContainerKeyword");
 				}
 	});
 }
@@ -176,9 +183,14 @@ function loadContainerList(){
 	var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
 	var count = 13;  //list출력개수 현재는 임의로 지정
 	
-	/*$.getJSON(
+	$.getJSON(
 			'../../main/list.do',
 			function(data){
+				
+				console.log($( window ).width());
+				console.log($( document ).width());
+				
+				$("#containerList").css("width", "1439px");
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
 					
@@ -190,7 +202,9 @@ function loadContainerList(){
 											 .append($("<a>")
 											 	.attr("href", "#")
 											 	.append($("<img>")
-												.attr("src", data.shops[i].shopPhoto))
+											 	.attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))		
+											 			
+												/*.attr("src", data.shops[i].shopPhoto))*/
 											 .append($("<div>")
 												.attr("class", "pictureBackground")
 											    .text("상세보기"))))
@@ -201,7 +215,7 @@ function loadContainerList(){
 							.appendTo("#containerList"));
 						
 						
-						$("<div>").addClass("deactivatKeyword")
+/*						$("<div>").addClass("deactivatKeyword")
 									.text(data.shops[i].shopArea)
 									.appendTo($(shopId));
 						
@@ -211,10 +225,10 @@ function loadContainerList(){
 						
 						$("<div>").addClass("deactivatKeyword")
 									.text(data.shops[i].shopSnack)
-									.appendTo($(shopId));
+									.appendTo($(shopId));*/
 						
 				}
-			});*/
+			});
 }
 
 
