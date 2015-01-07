@@ -99,8 +99,7 @@ $(function(){
 					   /*.append("<span id='inputSuccess4Status' class='sr-only'>(success)</span>");*/
 				} else { /*중복된 아이디가 있습니다.*/
 					$('#yesno').html(data.result).css("color","red");
-					/*$(".has-feedback").attr("class","has-error");*/
-					
+					$(".has-feedback").attr("class","has-error");					
 				} 
 	       }
 	  ); /*get꺼*/	
