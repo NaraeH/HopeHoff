@@ -199,32 +199,19 @@ a:active {
     text-decoration: underline;
 }
 
-
-
-input[type="button"] {
-	background: -webkit-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	background: -moz-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	background: -o-linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FFCF52), color-stop(0.25, #FEB901), color-stop(0.5, #f38f07), color-stop(0.75, #f89b1f), to(#ffcf53));
-	background: linear-gradient(#FFCF52, #FEB901, #f38f07, #f89b1f, #ffcf53);
-	border: 1px solid #ffde86;
-	padding: 5px 10px 5px;
+.btn, input[type="button"], button {
+	width: 75px;
+	background: #f0ad4e;
+	border: 1px solid #eea236;
 	border-radius: 3px;
+	padding: 7px 15px 7px;
 	color: #FFFFFF;
 	font-weight: bold;
-	
-	border: 1px solid #ffde86;
-	padding: 5px 10px 5px;
-	border-radius: 3px;
-	color: #FFFFFF;
-	font-weight: bold;
+	cursor: pointer;
 }
 
-input[type="button"]:hover {
-	background: #ffc837;
-	border: 1px solid #ffde86;
-	border-radius: 3px;
-	color: #003a5e;
+.btn:hover, input[type="button"]:hover, button:hover {
+	background: #ec971f;
 }
 
 /*----------------------------------------------------*/

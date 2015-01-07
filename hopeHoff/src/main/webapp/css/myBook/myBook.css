@@ -1,7 +1,27 @@
+/* 폰트 속성입니다. */
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+.hn {font-family: 'Hanna';}
+.nbs {font-family: 'Nanum Brush Script';}
+.ng {font-family: 'Nanum Gothic';}
+.ngc {font-family: 'Nanum Gothic Coding';}
+.nm {font-family: 'Nanum Myeongjo';}
+.nps {font-family: 'Nanum Pen Script';}
+.ban{font-family: 'Lobster', cursive;}
+
+
+
 
 @media all and (min-width:421px) {
 	body {
+
 	}
 
 	/******************** Header 부분 **************************/
@@ -24,19 +44,30 @@
 		float: right;
 		margin: 10px;
 	}
+	
+	
+	/******************** myBookBody ******************************/
+	#myBookBody{
+	background-color: #333231;
+	}
+	
 	/******************** DatePicker 부분 **************************/
 	#myBookDatePicker > p{
 		margin-left: 350px;
+		margin-bottom: 55px;
 	}
 	
 	/********************* Container 부분 ***************************/
 	#myBookContainer {
-		width: 97%;
+		border:1px solid black;
+		width: 80%;
 		height: 90%;
 		padding: 30px 50px 15px 15px;
 		margin: 0 auto;
+		margin-top: 55px;
 	} 
 	#myBookData {
+		
 		margin-left: 30px;
 	}
 	
@@ -50,13 +81,6 @@
 
 	}
 	
-	#myBookData > td{
-		text-align: center;
-		background-color: red;
-	}
-	td > input{
-		margin-left:45px;
-	}
 	
 	#btnDelete{
 		font-weight: bolder;	
@@ -73,7 +97,8 @@
 		
 	}
 	#pagingBar{
-	margin-left:45px;
+		margin-top: 15px;
+		margin-left:45px;
 		text-align: left;
 	}
 	
@@ -135,15 +160,10 @@
 		border: 1px solid white;
 		background-color: #FFCD28;
 	}
-	
-	th{
-		font-size:small;
-	
-	}
-	
-	td {
-		font-size: x-small;
+	.tableReservationData > td{
 		height: 45px;
+		font-size: small;
+		background-color: red;
 		text-align: center;
 	}
 	

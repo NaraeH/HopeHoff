@@ -14,6 +14,7 @@
 	
 	#myBook, #myMarket,#myPage {
 		width:  750px;
+		height: 560px;
 		border: 2px solid #FFCD28;
 		background-color: white;
 		position: absolute;
@@ -22,10 +23,6 @@
 		z-index: 10;
 	}
 	
-	#myBook,#myPage {
-		width:  600px;
-		height: 680px;
-	}
 
 	#mainBody {
 		margin: 0px;
@@ -119,7 +116,7 @@
 	}
 	
 	#btnMyPage, #btnBook, #btnRecommandPlace, #btnMyShop{
-		background-image: url(../../img/common/pictogram_white.png);
+		background-image: url(../../img/common/pic1_white.png);
 		width:70px;
 		height:60px;
 		display: table-cell;
@@ -145,7 +142,7 @@
 	
 	
 	#btnMyPage:hover, #btnBook:hover, #btnRecommandPlace:hover, #btnMyShop:hover {
-		background-image: url(../../img/common/pictogram_gray_push.png);
+		background-image: url(../../img/common/pic1_yellow.png);
 	}
 
 	#smallHeader {
@@ -458,7 +455,7 @@
 
 	 #mobileMenu #btnMobileLeftMenu {
 		display: inline-block;
-		background-image: url(../../img/common/pictogram_white2.png);
+		background-image: url(../../img/common/pic2_white.png);
 		width: 45px;
 		height: 45px;
 		background-position: -202px -481px;
@@ -469,7 +466,7 @@
 	}
 	
 	#mobileMenu #btnMobileLeftMenu:hover {
-		background-image: url(../../img/common/pictogram_white_push2.png);
+		background-image: url(../../img/common/pic2_yellow.png);
 	}
 	
 	#mobileMenu a{
@@ -665,7 +662,7 @@
 	.btn-mobile {
 		width: 85px;
 		height:60px;
-		background-image: url(../../img/common/pictogram_white2.png);
+		background-image: url(../../img/common/pic2_white.png);
 		
 		display:table-cell;
 		color: #fd9e04;
@@ -678,7 +675,7 @@
 	}
 	
 	.btn-mobile:hover {
-		background-image: url(../../img/common/pictogram_white_push2.png);
+		background-image: url(../../img/common/pic2_white.png);
 		color: #292827;
 		text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 2px 0 #ffffff, 0 -2px 0 #ffffff, 1px 1px #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
 	}

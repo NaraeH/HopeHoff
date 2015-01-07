@@ -1,4 +1,21 @@
+/* 폰트 속성입니다. */
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+.hn {font-family: 'Hanna';}
+.formLabel {font-family: 'Nanum Brush Script';}
+.ng {font-family: 'Nanum Gothic';}
+.ngc {font-family: 'Nanum Gothic Coding';}
+.nm {font-family: 'Nanum Myeongjo';}
+.nps {font-family: 'Nanum Pen Script';}
+.ban{font-family: 'Lobster', cursive;}
+
 
 @media all and (min-width:421px) {
 	body {
@@ -8,13 +25,14 @@
 	/******************** Header 부분 **************************/
 	#myPageHeader {
 		background-color: #FFCD28;
-		height: 45px;
+		height: 70px;
 		width: 100%;
 		margin-bottom: 30px;
 	}
 	#myPageHeaderTitle {
+		font-family: 'Nanum Pen Script';
 		display: inline-block;
-		font-size: x-large;
+		font-size: 3em;
 		margin: 10px 10px 10px 25px;
 	}
 	#btnMyPageClose {
@@ -26,6 +44,9 @@
 		margin: 10px;
 	}
 	/******************** Container 부분 **************************/
+	#myPageBody{
+	background-color: #333231;
+	}
 	#myPageContainer {
 		width: 97%;
 		height: 90%;
@@ -36,23 +57,45 @@
 		margin-left: 30px;
 	}
 	.formLabel {
-		width: 145px;
+		width: 200px;
 		display: inline-block;
-		color: black;
+		color: white;
+		margin-bottom: 19px;
 	}
 	.formData {
+		width: 400px;
 		display: inline-block;
-		margin-bottom: 35px;
+		margin-bottom: 19px;
 	}
 	
-	.formData>button {
+	.formData > button {
+		font-family: ;
+		background-color :#FFCD28;
+		border-radius:5px;
+		width: 60px;
 		margin-left: 5px;
 	}
 	
+	.formData > input{
+		
+		padding-left: 10px;
+		font-family:'Nanum Myeongjo';
+		height:25px;
+		width: 230px;
+		border-radius: 5px;
+	}
+	label{
+		font-size: 2em;
+	}
 	/************** Footer 부분 *********************/
 
 }
 @media all and (max-width:420px) {
+	
+	#myPageBody{
+	background-color: #333231;
+	
+	}
 	
 	#myPageHeader {
 		background-color: #FFCD28;
@@ -61,6 +104,7 @@
 		margin-bottom: 30px;
 	}
 	#myPageHeaderTitle {
+		font-family: 'Nanum Pen Script';
 		display: inline-block;
 		font-size: x-large;
 		margin: 10px 10px 10px 25px;
@@ -88,7 +132,7 @@
 	
 	
 	.formLabel {
-		font-size: small;
+		font-size: xx-large ;
 		width: 100px;
 		display: inline-block;
 		color: black;
@@ -96,11 +140,21 @@
 	
 	.formData {
 		display: inline-block;
-		margin-bottom: 35px;
+		margin-bottom: 10px;
 	}
 
 		
-	.formData>button {
+	.formData > button {
+		background-color :#FFCD28;
+		border-radius:5px;
 		margin-left: 5px;
+	}
+	
+	.formData > input{
+		padding: 10px;
+		border-radius:5px;
+	}
+	label{
+		font-size: large;
 	}
 }
