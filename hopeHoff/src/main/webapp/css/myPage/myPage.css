@@ -1,9 +1,6 @@
 /* 폰트 속성입니다. */
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
-.font-div-title{font-family: 'Josefin Sans', sans-serif;
-				font-weight: bolder;}
 
 
 @media all and (min-width:421px) {
@@ -36,7 +33,6 @@
 	/******************** Container 부분 **************************/
 	
 	#myPageContainer {
-		text-align:center;
 		width: 91%;
 		height: 440px;
 		padding: 30px 50px 15px 15px;
@@ -44,52 +40,42 @@
 	} 
 	
 	#myDataForm {
-		margin-left: 30px;
+		margin-left: 75px;
 		height: 100%;
 	}
 	
-	.form-label {
-		height:30px;
-		text-align:left;
-		width: 170px;
-		display: inline-block;
-		color: Black;
-		margin-bottom: 19px;
+	#myDataFormData{
+	margin-left: 35px;
 	}
 	
-	.form-label > label{
-		height:30px;
-		font-size: larger;
-		font-weight: bold;
-	}
-	
-	.form-data {
-		text-align:left;
-		width: 370px;
-		display: inline-block;
+	.form-data-nonchange, .form-data-change {
+		text-align:center;
+		width: 500px;
 		margin-bottom: 19px;
 	}
 	
 	.form-data > button {
-		background-color :#FFCD28;
 		border-radius:5px;
-		width: 60px;
-		height:28px;
+		width: 70px;
 		margin-left: 5px;
 	}
 	
-	.form-data > input{
-		
+	.form-data-change > input ,.form-data-nonchange > input{
 		padding-left: 10px;
 		height:30px;
-		width: 230px;
+		width: 350px;
 		border-radius: 5px;
+		margin-bottom: 5px;
+	}
+	.and-button{
+		width:268px !important;
 	}
 	/************** Footer 부분 *********************/
 
 	#btnChange,#btnCancel{
-		width:80px;
-		height: 40px;
+		margin-top: 20px;
+		margin-left: 10px;
+		width:90px;
 	}
 }
 @media all and (max-width:420px) {
