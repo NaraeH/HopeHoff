@@ -32,7 +32,7 @@
 		FROM RESERVATION T1 LEFT OUTER JOIN USER T2 
 		USING(UID)
 		ORDER BY T1.RNO
-		WHERE T2.UID=#{uId}
+		<!-- WHERE T2.UID=#{uId} -->
     <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
     </if>
