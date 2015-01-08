@@ -242,7 +242,7 @@
 	
 	#containerList {
 		background: #f5f5f5;
-		padding-top: 15px;
+		padding: 15px 0px;
 	}
 	
 	.list {
@@ -252,6 +252,13 @@
 		margin: 10px 0px 0px 5px;
 		display: inline-block;
 		border: 1px solid #e5e5e5;
+	}
+	
+	.list:hover  {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;    /* 위 3개의 box-sizing은 inner border */
+		border: 2px solid #ff0000;
 	}
 	
 	.list img {
@@ -296,10 +303,14 @@
 	
 	.shopInfo>.shopAddr {
 		height: 35px;
+		line-height: 35px;
+		padding: 0px 5px;
+		font-size: 12px;
 		margin-top: 10px;
 		overflow: hidden;
+		color: #333231;
 
-		border: 1px solid red;
+		/* border: 1px solid red; */
 	}
 	
 /* 	.list img:hover {
@@ -403,6 +414,7 @@
 		 font-size: 20px;
 		 float: left;
 		 margin: 0;
+		 z-index: 1;
 	}
 	
 	#WebContainerKeyword > ul > li:hover:after {

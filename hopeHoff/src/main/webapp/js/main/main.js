@@ -1,7 +1,6 @@
 $(function(){
-	
 	//첫 시작시 리스트 로딩
-	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	//$("#containerList").load("/hopeHoff/web/main/containerList.html"); => 나중에 containerList.html지우기
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
@@ -65,6 +64,8 @@ $(".click-myPage").click(function(){
 
 });
 
+
+
 /*--------------------------mobile용 event------------------------------*/
 
 $( "#keywordOpen" ).click(function(){
@@ -90,7 +91,43 @@ $("#btnMobileLeftMenu").click(function(){
 $("#moblieNavCancel").click(function(){
 	$("#mobileNav").css("display", "none");
 	$("#back").css("display", "none");
-})
+});
+
+$(document).delegate(".list","click",function(){
+		console.log("list호출zz");
+		
+		var presentWidth = Narae.removePx($("#containerList").css("width"));
+		var presentHeight = Narae.removePx($("#containerList").css("height"));
+		var listWidth = Narae.removePx($(".list").css("width"));
+		var marginWidth = Narae.removePx(($(".list").css("margin-left")));
+		var widthCount = parseInt(presentWidth/(listWidth + marginWidth));  //한 줄에 몇개 있는지
+		var childNo = $(".list").index(this);                               //지금 선택된 요소가 몇번째 자식인지
+		var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
+		var lastNo = $(".list").index($(".list:last-child"));
+		
+		//이미 detailList있는지 체크하기
+		if($("#containerList:has(#detailList)")){
+			$("#detailList").remove();
+		} 
+				 
+		//클릭했을 때 상세정보(detail) 보이는부분
+		$($("#containerList").children()[whichNo]).after(
+				$("<div>").attr("id", "detailList")
+						 .css("width", "100%")  
+						  .css("height", "470px")
+						  .css("background", "#333231")
+						  .css("margin-top", "15px")
+						  .css("display", "none")
+						  .css("z-index", "5")
+		);
+		
+		$("#detailList").load("../details/details.html"); 
+
+		//detail부분 아래로 내려오는 효과
+		$( "#detailList" ).slideDown( 1000, function() {
+			$("#detailList").css("display", "inline-block");
+		  });
+		});	
 
 
 /*------------------------함수------------------------*/
@@ -144,37 +181,12 @@ function loadKeyword() {
 }
 
 function loadContainerList(){
-	var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
-	var count = 13;  //list출력개수 현재는 임의로 지정
-	
-	console.log("loadContainerList");
-	
 	$.getJSON(
 			'../../main/list.do',
 			function(data){
 				
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
-					
-					/*$($("<div>").attr("class", "list").append($("<div>")
-																.attr("class", "listInfo")
-																.append($("<div>")
-																.attr("class", "listTitle")
-																.text(data.shops[i].shopName))
-											 .append($("<a>")
-											 	.attr("href", "#")
-											 	.append($("<img>")
-											 	.attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))		
-											 			
-											 .append($("<div>")
-												.attr("class", "pictureBackground")
-											    .text("상세보기"))))
-											 .append("<hr>")
-											 .append($("<div>")
-												.attr("class","listKeywordContainer")
-												.attr("id", "shop" + i))
-							.appendTo("#containerList"));*/
-					
 					
 					$($("<div>").addClass("list")
 							    .append($("<div>").addClass("shopPhoto")
