@@ -1,16 +1,16 @@
 $(function(){
-	
 	//첫 시작시 리스트 로딩
-	$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	//$("#containerList").load("/hopeHoff/web/main/containerList.html"); => 나중에 containerList.html지우기
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	//loadContainerList();
-	
+	loadContainerList();
 });
 
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
+var shopAddrText = "가게주소";
+//var dataLength = 0; //데이터 개수
 
 /*------------------------이벤트 발생시------------------------*/
 $(window).resize(function(){
@@ -26,40 +26,6 @@ $(window).scroll(function(){
 	setSmallHeader();
 });
 
-
-
-/*$("#mobileContainerKeyword").click(function() {
-	var count = 0; //for문을 위한 index
-	var checkedList = []; //keyword를 담기위한 배열
-	
-	console.log($(this).children());
-	console.log("체크됬다");
-	//체크하는 경우
-	if ($(this).is(":checked")) {
-		checkedList[checkedList.length] = $(this).val();
-		console.log($(this));
-		console.log($(this).val());
-	}
-
-	//체크를 없애는 겨우
-	if(!($(this).is(":checked"))){
-		for(count = 0; count<checkedList.length; count++){
-			if(checkedList[count] == $(this).val()){
-				checkedList.remove(count);
-			}  
-		}
-	} 
-
-	//가게검색내용에 keyword추가하기
-	$("#containerList").load("containerList.html", function() {
-		for(count = 0; count<checkedList.length; count++){
-			$("<div>").attr("class", "listKeywordItem")
-			.text(checkedList[count])
-			.appendTo($(".listKeywordContainer"));
-
-		}
-	});  
-});*/
 
 $(".click-myBook").click(function(){
 	var height = Narae.removePx($("#mainBody").css("height"));
@@ -99,6 +65,59 @@ $(".click-myPage").click(function(){
 
 });
 
+$(document).delegate(".list","mouseover",function(){
+	var shopAddr = "#" + $(this).attr("id") + " .shopAddr";
+	shopAddrText = $(shopAddr).html();
+	
+	$(shopAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
+});
+
+$(document).delegate(".list","mouseout",function(){
+	var btnDetail = "#" + $(this).attr("id") + " .btnDetail";
+	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
+});
+
+
+$(document).delegate(".shopInfo>.btnDetail","click",function(){
+		var whichNo = Math.ceil(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) * 4;
+
+		
+		if($("#containerList").children().length < 4) {
+			whichNo = $("#containerList").children().length;
+		}
+		
+		if(whichNo > $("#containerList").children().length) {
+			whichNo = $("#containerList").children().length - 1;
+		}
+
+		console.log("==>" + whichNo);
+		
+		//이미 detailList있는지 체크하기
+		if($("#containerList:has(#detailList)")){
+			$("#detailList").remove();
+		} 
+		
+		//클릭했을 때 상세정보(detail) 보이는부분
+		$($("#containerList").children()[whichNo - 1]).after(
+				$("<div>").attr("id", "detailList")
+						 .css("width", "100%")  
+						  .css("height", "470px")
+						  .css("background", "#333231")
+						  .css("margin-top", "15px")
+						  .css("display", "none")
+						  .css("z-index", "5")
+		);
+		
+		$("#detailList").load("../details/details.html"); 
+		
+		//detail부분 아래로 내려오는 효과
+		$( "#detailList" ).slideDown( 1000, function() {
+			$("#detailList").css("display", "inline-block");
+		  });
+});	
+
+
+
 /*--------------------------mobile용 event------------------------------*/
 
 $( "#keywordOpen" ).click(function(){
@@ -124,8 +143,7 @@ $("#btnMobileLeftMenu").click(function(){
 $("#moblieNavCancel").click(function(){
 	$("#mobileNav").css("display", "none");
 	$("#back").css("display", "none");
-})
-
+});
 
 /*------------------------함수------------------------*/
 
@@ -134,6 +152,8 @@ function loadKeyword() {
 			'../../main/keyword.do',
 			function(data){
 				var i = 0;
+				
+				//mobileContainerKeyword
 				for(var keyword in data) {
 					$("<div>").attr("id", keyword)
 								.append($("<ul>")
@@ -151,60 +171,54 @@ function loadKeyword() {
 					}
 				}
 				
+				//webContainerKeyword
+				var ul = $("<ul>").appendTo("#WebContainerKeyword");
+				
 				for(var keyword in data){
-					$("<div>").html(data[keyword][0]+ "  ▼")
-							  .addClass("webKeyword")
-						.appendTo("#WebContainerKeyword");
+					//keyword group
+					$("<li>").addClass("has-sub")
+					 		 .append($("<a>").attr("href", "#")
+					 				 		 .append($("<span>").html(data[keyword][0])))
+					 		 .append($("<ul>").attr("id", data[keyword][0]))
+					 .appendTo(ul);
+					
+					//keyword item
+					var keywordGroup= data[keyword];
+					var keywordUl = $("#WebContainerKeyword>ul>li ul" + "#" + data[keyword][0]);
+					for(var i = 1; i < keywordGroup.length; i++){
+						$("<li>")
+						 		.append($("<a>").attr("href", "#")
+									     		.append($("<span>").html(keywordGroup[i])))
+						.appendTo(keywordUl);
+					}
 				}
 	});
 }
 
 function loadContainerList(){
-	var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
-	var count = 13;  //list출력개수 현재는 임의로 지정
-	
 	$.getJSON(
 			'../../main/list.do',
 			function(data){
-				
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
-					
-					$($("<div>").attr("class", "list").append($("<div>")
-																.attr("class", "listInfo")
-																.append($("<div>")
-																.attr("class", "listTitle")
-																.text(data.shops[i].shopName))
-											 .append($("<a>")
-											 	.attr("href", "#")
-											 	.append($("<img>")
-											 	.attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))		
-											 			
-												/*.attr("src", data.shops[i].shopPhoto))*/
-											 .append($("<div>")
-												.attr("class", "pictureBackground")
-											    .text("상세보기"))))
-											 .append("<hr>")
-											 .append($("<div>")
-												.attr("class","listKeywordContainer")
-												.attr("id", "shop" + i))
-							.appendTo("#containerList"));
-						
-						
-/*						$("<div>").addClass("deactivatKeyword")
-									.text(data.shops[i].shopArea)
-									.appendTo($(shopId));
-						
-						$("<div>").addClass("deactivatKeyword")
-									.text(data.shops[i].shopType)
-									.appendTo($(shopId));
-						
-						$("<div>").addClass("deactivatKeyword")
-									.text(data.shops[i].shopSnack)
-									.appendTo($(shopId));*/
-						
+					$($("<div>").addClass("list").attr("id", "shop" + (i + 1))
+							    .append($("<div>").addClass("shopPhoto")							    				  .append($("<img>").attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
+							    				  .append($("<div>").addClass("btnBook")
+							    						  			.attr("id", "book" + i)
+							    						  			.html("예약하기")))
+							    .append($("<div>").addClass("shopInfo")
+							    				  .append($("<span>").addClass("shopTilte")
+							    						  			 .html("[ " + data.shops[i].shopName + " ]"))
+							    				  .append($("<span>").addClass("shopIntro")
+							    						  			 .html(data.shops[i].shopIntro))
+							    				  .append($("<div>").addClass("shopAddr")
+							    						  			.html(data.shops[i].shopAddr))))
+							    				  /*.text("[" + data.shops[i].shopName + "]" + data.shops[i].shopIntro)))*/
+					.appendTo("#containerList");
 				}
+				setContainerSize( data.shops.length );
 			});
+	
 }
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이는 함수
@@ -243,6 +257,18 @@ function setKeyword() {
 	}
 }
 
+function setContainerSize(dataLength){
+	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
+							  + Narae.removePx( $(".list").css("margin-left") ) 
+							  + Narae.removePx( $(".list").css("margin-right") ) + 10;
+	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
+			  + Narae.removePx( $(".list").css("margin-left") ) 
+			  + Narae.removePx( $(".list").css("margin-right") )) * dataLength + 10;
+	var containerWidth = Narae.removePx( $("#container").css("width") );
+
+	if(containerListCountWidth > containerWidth ) { containerListWidth = containerListWidth * 4; }
+	$("#containerList").css("width", ( containerListWidth ) + "px");
+}
 
 
 
