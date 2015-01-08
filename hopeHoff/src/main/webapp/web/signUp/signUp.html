@@ -13,93 +13,65 @@
 		
 <body>
 	
-	<!-- 회원가입 팝업 -->
-	<form>
+<!-- -------------------------------회원가입 팝업---------------------------------------- -->
+	<div id="signUpBody">
 
-		<!-- 회원가입 팝업창 헤더 -->
-		<div id="signUpHeaderColor">
-			<div id="signUpHeader">
-				<h4 class="hn" id="myModalLabel">Sign-up Page</h4>
-				<a href="../login/login.html"><button id="btnLoginClose" type="button" value="close">X</button></a>
-			</div>
+		<!-- 회원가입 팝업창 헤더ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ -->
+		<div id="signUpHeader" class="div-header">
+			<div id="signUpHeaderTitle" class="font-div-title">회원가입</div>
+			<a href="../login/login.html">
+				<button id="btnSignUpClose" type="button" value="close">X</button>
+			</a>
 		</div>
 
-		<!-- 회원가입 팝업창 BODY -->
-		<div id="sign-up-page01">
 
-			<!-- 회원가입 선택 -->
-			<div id="choose02" class="hn">
-				<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1" checked /> 일반
-				 <input type="radio"	name="inlineRadioOptions" id="inlineRadio4" value="option2" /> 사업자
-			</div>
+		<!-- 회원가입 팝업창 BODYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY -->
+		<div id='mySignUpContainer'>
+		 <form id="myDataForm" role="form">
+		  <div id="myDataFormData" class="form-data">
+			
+			<!-- 회원가입      ㅌ ㅏ 입  선  택-->
+			<input type="radio" id="user" name="type" value="option1" checked /> 일반
+			<input type="radio" id="boss" name="type" value="option2" /> 사업자
+			
 
 			<!-- 회원가입 팝업창 ID -->
-			<div class="form-group">
-				<div id="colorId">
-					<input type="text" id="formGroupInputLarge" placeholder="ID">
-				</div>
-			</div>
-
-			<!-- 회원가입 중복여부 질의응답 get받는 곳-->
-			<div id="idText"></div>
-			<!-- 사용가능한 아이디입니다. -->
+	       <input type="text" id="formGroupInputLarge" placeholder="아이디">
+	       <div id="idText"></div> <!-- 회원가입 중복여부 질의응답 get받는 곳--><!-- 사용가능한 아이디입니다. -->
 
 			<!-- 회원가입 팝업창 Name -->
-			<div class="form-group">
-				<div id="colorName">
-					<input type="text" id="formGroupInputSmall" placeholder="Name">
-				</div>
-			</div>
-
+	       <input type="text" id="formGroupInputSmall" placeholder="이름">
+	
 			<!-- 회원가입 팝업창 PWD -->
-			<div class="form-group">
-				<div id="colorPwd">
-					<input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자의 조합으로 6~16자리">
-				</div>
-			</div>
-
-			<div id="pwdValid"></div>
+	       <input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자 조합 6~16자리">
+		    <div id="pwdValid"></div>
 
 			<!-- 회원가입 팝업창 Check -->
-			<div class="form-group">
-				<div id="colorPwdCheck">
-					<input type="password" id="checkPassword"	placeholder="Check Password">
-				</div>
-			</div>
-
-			<div id="pwdCheckText"></div>
+		    <input type="password" id="checkPassword"	placeholder="비밀번호 확인">
+		    <div id="pwdCheckText"></div>
 
 			<!-- 회원가입 팝업창 Phone -->
-			<div class="form-group">
-				<div id="colorPhone">
-					<input id="phoneNumber" type="text" placeholder="Phone Number">
-				</div>
-				<button id="sendValid" type="button">전송</button>
-			</div>
-
-			<div id="phoneNumValid"></div>
+		    <input id="phoneNumber" type="text" class="and-button" placeholder="전화번호">
+           <button id="sendValid" type="button" class="btn-deactive">전&nbsp;송</button>
+           <div id="phoneNumValid"></div>
 
 			<!-- 회원가입 팝업창 인증 -->
-			<div class="form-group">
-				<div id="colorValid">
-					<input id="inNumber01" type="text" placeholder="인증번호">
-				</div>
-				<div>1분 준다</div>
-			</div>
+           <input id="inNumber01" type="text" class="and-button" placeholder="인증번호">
+           <button id='confirmBtn' type="button" class="btn-deactive">확&nbsp;인</button>
+			<div>1분 준다</div><br>
+			
+		 </div> <!-- myDataFormData -->
 
-
-
-			<!-- 회원가입 팝업창 Footer -->
-			<div>
-				<div id="signUpFooter">
-					<button id=btnSignUp type="button">Sign-up</button>
-					<button id=btnCancel type="reset">Cancel</button>
-				</div>
-			</div>
+		<!-- 회원가입 팝업창 Footer-------------------------- -->
+		<div id="myDataFormbuttons" align="center">  
+			<button id=btnSignUp type="button">Sign-up</button>
+			<button id=btnCancel type="reset">Cancel</button>
 		</div>
-
-	</form>
 		
-	</body>
-</html>
+	 </form>
+    </div> <!-- mySignUpContainer -->
 
+   </div><!-- signUpBody -->
+  <!-- ---------------------------------------------------------------------------------- -->
+ </body>
+</html>

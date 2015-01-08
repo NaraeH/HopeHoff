@@ -1,5 +1,21 @@
 	
 $(function(){
+	
+	$("input[type=checkbox]").click(function(){
+		console.log(this);
+		if($(this).is(":checked")){
+			$("#saveDiv>div:first-child").css("background", 'url(../../img/common/pic1_yellow.png) 0px no-repeat')
+								.css("background-size","900%")
+								.css("background-position","-207px -413px");
+								
+		} else {
+			$("#saveDiv>div:first-child").css("background", 'url(../../img/common/pic1_gray.png) 0px no-repeat')
+								.css("background-size","900%")
+								.css("background-position","-207px -413px");
+		}
+	});
+	
+	
 	$("#footer").load("../common/footer.html");
 
 	$('#btnLogin').click(function(event){
@@ -29,6 +45,20 @@ $(function(){
 	});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
 	
 	
+	
+	
+	$(".click-signUp").click(function(){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+		
+		$("#mobileNav").css("display", "none");
+		$("#back").css("display", "block")
+		  .css("height", height);
+		
+		$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myPage").load("../myPage/myPage.html");
+
+	});
 	
 	
 	

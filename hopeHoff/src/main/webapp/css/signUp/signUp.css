@@ -16,45 +16,73 @@
 .ban{font-family: 'Lobster', cursive;}
 
 
-	/* 바디 사이즈 딱 맞게 */
-	#wrap{
-	background-size : cover;
-	}
-
-
-	/* 오른쪽 일반/사업자 체크리스트 가운데정렬 */
-	#choose02 {
-	text-align: center;
-	}
-
-
-	/* 오른쪽 회원가입창 타이틀 헤더 속성적용 */
-	#signUpHeaderColor {
+	/******************** Header 부분 **************************/
+	
+	.div-header{
 		background-color: #FFCD28;
+		height: 60px;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	#signUpHeaderTitle {
+		display: inline-block;
+		font-size: 25px;
+		margin: 10px 10px 10px 25px;
+	}
+	#btnSignUpClose {
+		background: #ffcd28;
+		border: #FFCD28;
+		font-size: x-large;
+		cursor: pointer;
+		float: right;
+		margin: 10px;
+	}
+   	/******************** Container 부분 **************************/
+	
+	#signUpContainer {
+		width: 91%;
+		height: 440px;
+		padding: 30px 50px 15px 15px;
+		margin: 0 auto;
+	} 
+	
+	#myDataForm {
+		margin-left: 35px;
+		height: 100%;
 	}
 	
-	/* 오른쪽 회원가입창 헤더 가운데정렬 속성적용 */
-	#myModalLabel {
-		text-align: center;
+	#myDataFormData{
+		margin-left: 35px;
 	}
 	
-	/* 오른쪽 회원가입창 아래버튼 */
-	#signUpFooter {
-		text-align: center;
+	.form-data {
+		text-align:center;
+		width: 500px;
+		margin-bottom: 19px;
 	}
 	
-	/* 오른쪽 회원가입창 input길이 속성적용*/
-	#inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
-	width: 250px;
+	.form-data > button {
+		border-radius:5px;
+		width: 70px;
+		margin-left: 5px;
 	}
 	
-	/* 오른쪽 회원가입창 틀 속성적용 */
-	#sign-up-page01 > .form-group {
-	margin-top : 20px;
-	margin-left: 117px;
+	.form-data > input {
+		padding-left: 10px;
+		height:30px;
+		width: 350px;
+		border-radius: 5px;
+		margin-bottom: 5px;
 	}
-		
-	/* 팝업 검사버튼 */
+	
+	.and-button{
+		width:268px !important;
+	}
+	
+	
+	
+	/*************** 검사 문구**********************/
+
 	#idText, #pwdCheckText, #pwdValid {
 	color : red;
 	font-size : x-small;
@@ -63,10 +91,16 @@
 	text-align: center;
 	}
 
-	
+	/************** Footer 부분 *********************/
+
+	#btnSignUp,#btnCancel{
+		margin-top: 20px;
+		margin-left: 10px;
+		width:90px;
+	}
 }
 
-/*===========================================*/
+/*======================================================================*/
 
 /* 모바일 전용입니다. */
 @media all and (max-width:420px){
