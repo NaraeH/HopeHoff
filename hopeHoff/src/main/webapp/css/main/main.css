@@ -14,7 +14,7 @@
 	
 	#myBook, #myMarket,#myPage {
 		width:  650px;
-		height: 560px;
+		height: 590px;
 		border: 2px solid #FFCD28;
 		background-color: white;
 		position: absolute;
@@ -236,120 +236,90 @@
 		display: none;
 	}
 
-	#WebContainerKeyword {
-		width: 70%;
-		height: 50px;
-		background:#ffb500;
-		display: table;
-		cursor:pointer;
-		margin: 0 auto;
-	}
-	
-
 	#mobileContainerKeyword {
 		display:none;
 	}
 	
-	.webKeyword {
-		width: 100px;
-		height: inherit;
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		
-		/* border: 1px solid red; */
-	}
-	
-	.webKeyword:hover {
-		background:#ff8000;
-		color: #ffffff;
-		font-weight: bold;
-	}
-	
-	/* #containerKeyword {
-		width: 880px;
-		height: 100px;
-		margin: 0 auto;
-		border-radius: 5px;
-		background: #000000;
-		color: white;
-		border-top: 8px solid #ffb500;
-		
-		border-top-left-radius: 1em;
-		border-top-right-radius: 1em;
-		
-		padding-top: 16px;
-	}
-	#containerKeyword ul{
-		padding: 0px;
-		margin: 0px;
-	}
-	
-	#containerKeyword li{
-		list-style-type: none;
-	}
-	
-	#containerKeyword li p{
-		display:inline-block;
-		margin : 0px;
-	}
-	
-	#containerKeyword li p:first-child{
-		margin: 5px;
-	}
-	
-	#containerKeyword div{
-		width: 200px;
-		display: inline-block;
-		margin-left:12px;
-		border-right: double white 3px;
-	}
-	
-	#containerKeyword>div>p {
-		margin:3px;
-	}
-	
-	#containerKeyword div:last-child{
-		border:0px;
-	} */
-	
 	#containerList {
-		margin-top: 20px;
-		margin: 10px auto;
+		background: #f5f5f5;
+		padding-top: 15px;
 	}
 	
 	.list {
 		width: 320px;
-		min-width: 225px;
-		height: 480px;
+		height: 410px;
+		background: #ffffff;
 		margin: 10px 0px 0px 5px;
 		display: inline-block;
-		border: 1px solid #888888;
+		border: 1px solid #e5e5e5;
 	}
 	
 	.list img {
-		width: 220px;
-		height: 80px;
+		width: 100%;
+		height: 330px;
+		position: absolute;
 	}
 	
-	.list img:hover {
+	.list>.shopPhoto {
+		position: relative;
+		width: 100%;
+		height: 335px;
+	}
+	
+	.list .btnBook {
+		width: 80px;
+		height: 40px;
+		display: table-cell;
+		transform: translateY(290px);
+		cursor:pointer;
+
+		background: rgba(255, 181, 0, 0.4);
+		text-align: center;
+		color: #ffffff;
+		font-size: 15px;
+		vertical-align: middle;
+	}
+	
+	.shopInfo {
+		color:#666666;
+		margin: 10px 2px;
+	}
+
+	.shopInfo>.shopTilte {
+		font-size:15px;
+	}
+	
+	.shopInfo>.shopIntro {
+		padding: 0px 5px;
+		font-size:13px;
+	}
+	
+	.shopInfo>.shopAddr {
+		height: 35px;
+		margin-top: 10px;
+		overflow: hidden;
+
+		border: 1px solid red;
+	}
+	
+/* 	.list img:hover {
 		width: 220px;
 		height: 80px;
 		background: rgba(0,0,0, 0.5);
-	}
+	} */
 	
-	.listInfo{
+/* 	.listInfo{
 		width: 220px;
 		height: 100px;
 		margin: 0 auto;
-	}
+	} */
 	
-	.listTitle{
+/* 	.listTitle{
 		width: 219px;
 		border-radius:5px;	
 		text-align: center;
 		margin: 3px;
-	}
+	} */
 	
 	.pictureBackground{
 		background: rgba(0, 0, 0, 0.5);
@@ -400,7 +370,100 @@
 	#footer {
 		position:relative;
 	}
+	
+	
+	/*--------------------- web keyword-----------------------------*/
+	#WebContainerKeyword {
+		width: 70%;
+		height: 50px;
+		background:#ffb500;
+		display: table;
+		margin: 0 auto;
+	}
+	
+	#WebContainerKeyword ul,
+	#WebContainerKeyword li,
+	#WebContainerKeyword span,
+	#WebContainerKeyword a {
+		 margin: 0;
+		 padding: 0;
+		 position: relative;
+	}
+	
+	#WebContainerKeyword ul {
+		 height: inherit;
+		 display:table;
+		 list-style: none;
+		  margin: 0 auto;
+	}
+	
+	#WebContainerKeyword > ul > li {
+		 height : inherit;
+		 display: inline-block;
+		 font-size: 20px;
+		 float: left;
+		 margin: 0;
+	}
+	
+	#WebContainerKeyword > ul > li:hover:after {
+		  content: ''; 
+		  display: block;
+		  width: 0;
+		  height: 0;
+		  position: absolute;
+		  left: 50%;
+		  bottom: 0;
+		  margin-left: -10px;
+	}
+	
+	#WebContainerKeyword > ul > li.active > a,
+	#WebContainerKeyword > ul > li:hover > a {
+		  color: #ffffff;
+		  background: #474749;
+	}
+	
+	#WebContainerKeyword .has-sub ul li:hover a {
+		background: #ffb500;
+	}
 
+	#WebContainerKeyword .has-sub:hover > ul {
+	  	display: block;
+	}
+	
+	#WebContainerKeyword .has-sub ul {
+		  display: none;
+		  position: absolute;
+		  width: 200px;
+		  top: 100%;
+		  left: 0;
+	}
+	
+	#WebContainerKeyword .has-sub a {
+		 display: table;
+		 height: inherit;
+	}
+	
+	#WebContainerKeyword .has-sub>a span {
+	  	 width: 300px;
+		 height: inherit;
+		 display: table-cell;
+		 vertical-align: middle;
+		 text-align: center;
+	}
+	
+	#WebContainerKeyword .has-sub ul li a {
+		  background: #474749;
+		  border-bottom: 1px dotted #ffb500;
+		  font-size: 15px;
+		  display: block;
+		  padding: 10px 0px;
+		  width: 300px;
+		  text-align: center;
+	}
+	
+	#WebContainerKeyword .has-sub ul li:last-child a {
+		border: 0px;
+	}
 }
 
 
@@ -692,9 +755,5 @@
 		color: #292827;
 		text-shadow: 2px 0 0 #ffffff, -2px 0 0 #ffffff, 0 2px 0 #ffffff, 0 -2px 0 #ffffff, 1px 1px #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff;
 	}
-	
-	
-	
-	
 }
 
