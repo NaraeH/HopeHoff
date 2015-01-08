@@ -10,6 +10,7 @@ $(function(){
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
 var shopAddrText = "가게주소";
+//var dataLength = 0; //데이터 개수
 
 /*------------------------이벤트 발생시------------------------*/
 $(window).resize(function(){
@@ -80,14 +81,21 @@ $(document).delegate(".list","mouseout",function(){
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		var whichNo = Math.ceil(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) * 4;
 
+		
 		if($("#containerList").children().length < 4) {
 			whichNo = $("#containerList").children().length;
 		}
 		
+		if(whichNo > $("#containerList").children().length) {
+			whichNo = $("#containerList").children().length - 1;
+		}
+
+		console.log("==>" + whichNo);
+		
 		//이미 detailList있는지 체크하기
-/*		if($("#containerList:has(#detailList)")){
+		if($("#containerList:has(#detailList)")){
 			$("#detailList").remove();
-		} */
+		} 
 		
 		//클릭했을 때 상세정보(detail) 보이는부분
 		$($("#containerList").children()[whichNo - 1]).after(
@@ -191,13 +199,8 @@ function loadContainerList(){
 	$.getJSON(
 			'../../main/list.do',
 			function(data){
-				
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
-					//shopAddr = data.shops[i].shopAddr;
-					
-					//console.log(shopAddr);
-					
 					$($("<div>").addClass("list").attr("id", "shop" + (i + 1))
 							    .append($("<div>").addClass("shopPhoto")							    				  .append($("<img>").attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
 							    				  .append($("<div>").addClass("btnBook")
@@ -212,10 +215,8 @@ function loadContainerList(){
 							    						  			.html(data.shops[i].shopAddr))))
 							    				  /*.text("[" + data.shops[i].shopName + "]" + data.shops[i].shopIntro)))*/
 					.appendTo("#containerList");
-					
-						
-					setContainerSize(data.shops.length);
 				}
+				setContainerSize( data.shops.length );
 			});
 	
 }
@@ -256,14 +257,17 @@ function setKeyword() {
 	}
 }
 
-function setContainerSize(count){
-	var containerListWidth = Narae.removePx( $(".list").css("width") ) 
-							+ Narae.removePx( $(".list").css("margin-left") ) 
-							+ Narae.removePx( $(".list").css("margin-right") ) + 10;
+function setContainerSize(dataLength){
+	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
+							  + Narae.removePx( $(".list").css("margin-left") ) 
+							  + Narae.removePx( $(".list").css("margin-right") ) + 10;
+	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
+			  + Narae.removePx( $(".list").css("margin-left") ) 
+			  + Narae.removePx( $(".list").css("margin-right") )) * dataLength + 10;
 	var containerWidth = Narae.removePx( $("#container").css("width") );
-	
-	if(containerWidth > containerWidth ) { containerWidth = containerWidth; }
-	$("#containerList").css("width", ( containerListWidth * count ) + "px");
+
+	if(containerListCountWidth > containerWidth ) { containerListWidth = containerListWidth * 4; }
+	$("#containerList").css("width", ( containerListWidth ) + "px");
 }
 
 

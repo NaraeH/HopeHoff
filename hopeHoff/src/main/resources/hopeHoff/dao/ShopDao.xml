@@ -9,7 +9,6 @@
 	<resultMap type="Map" id="shopMap">
 		<id column="BBNO" property="businessNo"/>
    		<result column="SNAME" property="shopName"/>
-   		<result column="SPHOTO" property="shopPhoto"/>
    		<result column="SAREA" property="shopArea"/>
    		<result column="STYPE" property="shopType"/>
    		<result column="SSNACK" property="shopSnack"/>
@@ -18,6 +17,6 @@
 	</resultMap>
 
 	<select id="selectList" resultMap="shopMap">
-		SELECT BBNO, SNAME, SPHOTO, SAREA, STYPE, SSNACK, SINTRO, SADDR FROM hopehoff.shop;
+		SELECT BBNO, SNAME, SAREA, STYPE, SSNACK, SINTRO, SADDR FROM hopehoff.shop;
 	</select>
 </mapper>
