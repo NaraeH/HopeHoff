@@ -5,7 +5,6 @@ $(function(){
 	
 	loadKeyword();
 	loadContainerList();
-	
 });
 
 var bodyWidth = Narae.removePx($("body").css("width"));
@@ -86,9 +85,9 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		}
 		
 		//이미 detailList있는지 체크하기
-		if($("#containerList:has(#detailList)")){
+/*		if($("#containerList:has(#detailList)")){
 			$("#detailList").remove();
-		} 
+		} */
 		
 		//클릭했을 때 상세정보(detail) 보이는부분
 		$($("#containerList").children()[whichNo - 1]).after(
@@ -215,8 +214,10 @@ function loadContainerList(){
 					.appendTo("#containerList");
 					
 						
+					setContainerSize(data.shops.length);
 				}
 			});
+	
 }
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이는 함수
@@ -255,6 +256,15 @@ function setKeyword() {
 	}
 }
 
+function setContainerSize(count){
+	var containerListWidth = Narae.removePx( $(".list").css("width") ) 
+							+ Narae.removePx( $(".list").css("margin-left") ) 
+							+ Narae.removePx( $(".list").css("margin-right") ) + 10;
+	var containerWidth = Narae.removePx( $("#container").css("width") );
+	
+	if(containerWidth > containerWidth ) { containerWidth = containerWidth; }
+	$("#containerList").css("width", ( containerListWidth * count ) + "px");
+}
 
 
 

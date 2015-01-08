@@ -221,6 +221,7 @@
 		width:100%;
 		margin:0 auto;
 		position:relative;
+		background: #f5f5f5;
 	}
 	
 	#mobileNav {
@@ -241,8 +242,8 @@
 	}
 	
 	#containerList {
-		background: #f5f5f5;
 		padding: 15px 0px;
+		margin: 0 auto;
 	}
 	
 	.list {
@@ -427,7 +428,7 @@
 	#WebContainerKeyword > ul > li {
 		 height : inherit;
 		 display: inline-block;
-		 font-size: 20px;
+		 font-size: 17px;
 		 float: left;
 		 margin: 0;
 		 z-index: 1;
