@@ -151,10 +151,27 @@ function loadKeyword() {
 					}
 				}
 				
+				//webContainerKeyword
+				var ul = $("<ul>").appendTo("#WebContainerKeyword");
+				
+				
 				for(var keyword in data){
-					$("<div>").html(data[keyword][0]+ "  ▼")
-							  .addClass("webKeyword")
-						.appendTo("#WebContainerKeyword");
+					//keyword group
+					$("<li>").addClass("has-sub")
+					 		 .append($("<a>").attr("href", "#")
+					 				 		 .append($("<span>").html(data[keyword][0])))
+					 		 .append($("<ul>").attr("id", data[keyword][0]))
+					 .appendTo(ul);
+					
+					//keyword item
+					var keywordGroup= data[keyword];
+					var keywordUl = $("#WebContainerKeyword>ul>li ul" + "#" + data[keyword][0]);
+					for(var i = 1; i < keywordGroup.length; i++){
+						$("<li>")
+						 		.append($("<a>").attr("href", "#")
+									     		.append($("<span>").html(keywordGroup[i])))
+						.appendTo(keywordUl);
+					}
 				}
 	});
 }
