@@ -13,9 +13,11 @@
    		<result column="SAREA" property="shopArea"/>
    		<result column="STYPE" property="shopType"/>
    		<result column="SSNACK" property="shopSnack"/>
+   		<result column="SINTRO" property="shopIntro"/>
+   		<result column="SADDR" property="shopAddr"/>
 	</resultMap>
 
 	<select id="selectList" resultMap="shopMap">
-		SELECT BBNO, SNAME, SPHOTO, SAREA, STYPE, SSNACK FROM hopehoff.shop;
+		SELECT BBNO, SNAME, SPHOTO, SAREA, STYPE, SSNACK, SINTRO, SADDR FROM hopehoff.shop;
 	</select>
 </mapper>
