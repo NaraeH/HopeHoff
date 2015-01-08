@@ -18,15 +18,15 @@
 	} */
 	
 	/*------------------header-------------------*/
-	#myMarketHeader {
-		height: 45px;
+	.div-header {
 		background-color: #FFCD28;
+		height: 60px;
+		width: 100%;
 	}
 	
 	#headerTitle {
 		display: inline-block;
 		font-size: x-large;
-		font-family: 'Lobster', cursive;
 		margin: 10px 10px 10px 25px;
 	}
 	
@@ -44,7 +44,6 @@
 		width: 96%;
 		height: 87%;
 		padding: 15px;
-		background-color: #333231;
 	}
 
 	#myPubPhotoList .myPhotoList {
@@ -70,7 +69,7 @@
 /*---------------------------------*/
 	#myRightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
-		width: 64%;
+		width: 60%;
 		height: 95%;
 		float: right;
 		border: 1px dashed blue;
@@ -103,9 +102,9 @@
 	
 	}
     #changeBtn {
-    	margin-top: 30px;
-    	margin-left: 360px;
-    	background: #FFCD28;
+    	margin-top: 20px;
+    	margin-left: 10px;
+    	width:100px;
     	
     }
 	/* *************V tabs********** */
