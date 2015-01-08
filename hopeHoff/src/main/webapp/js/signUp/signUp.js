@@ -1,26 +1,24 @@
 	
 $(function(){
 
-/*	$('#btnLogin').click(function(event){
-	    $.post('../../json/auth/login.do'
-	        , {
-	          uId : $('#uId').val(),
-	          uPwd : $('#uPwd').val(),
-	          save : $('#save').is(':checked')
-	        }
-	        , function(data){
-	          if (data.status == 'success') {
-	        	 alert("환영합니다 ^_^*");
-	            location.href = '../../web/main/main.html';
-	          } else {
-	            alert('로그인 아이디 또는 암호가 맞지 않습니다.');
-	            $('#uPwd').val('');
-	            console.log("failllll");
-	          }
-	        }
-	        , 'json');
-	  });
+/*	$("#btnSignUpClose").click(function(){
+		$("#back").css("display", "none");
+		$("#myPage").css("display", "none");
+	});
 	*/
+	$('#btnCancel').click(function(){
+		$("input[name='inlineRadioOptions']").filter("[value='option1']").prop("checked",false);
+		$("input[name='inlineRadioOptions']").filter("[value='option2']").prop("checked",false);
+		$('#formGroupInputLarge').val('');
+		$('#idText').html('');
+		$('#formGroupInputSmall').val('');
+		$('#inputPassword3').val('');
+		$('#checkPassword').val('');
+		$('#phoneNumber').val('');
+		$('#checkPassword').val('');
+		$('#inNumber01').val('');
+
+	});
 	
 	$('#btnSignUp').click(function(event){
 		alert("감사합니다 ~ 이제,로그인 해주세요 !");
@@ -171,24 +169,6 @@ $(function(){
 	$('#inNumber01').focus(function() {
 		$('#colorValid').css("border","green");
 		valpoint++;
-	});
-
-
-
-	
-	/* .............................................*/
-	$('#btnCancel').click(function(){
-		$("input[name='inlineRadioOptions']").filter("[value='option1']").prop("checked",false);
-		$("input[name='inlineRadioOptions']").filter("[value='option2']").prop("checked",false);
-		$('#formGroupInputLarge').val('');
-		$('#idText').html('');
-		$('#formGroupInputSmall').val('');
-		$('#inputPassword3').val('');
-		$('#checkPassword').val('');
-		$('#phoneNumber').val('');
-		$('#checkPassword').val('');
-		$('#inNumber01').val('');
-
 	});
 
 });

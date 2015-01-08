@@ -4,51 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HopeHoff - 로그인페이지 입니다.</title>
-<link rel='stylesheet' href="../../css/login/login.css">
 <link rel='stylesheet' href='../../css/common/common.css'>
+<link rel='stylesheet' href="../../css/login/login.css">
 <script src="../../js/jquery/jquery-1.11.1.js"></script>
 <script src="../../js/jquery/jquery.innerfade.js"></script>
 <script src="../../js/login/login.js"></script>
 </head>
 		
 <body>
-	
-	<div id="wrap">
-
+	<div id="back"></div>
+	<div id="loginBody">
+			<!-- header 같은 칭구-->
+			<div id="header"> </div>
+			
+			<!-- body같은칭구 -->
 			<div id="loginBox">
 
-				<div id="header">
+				<div id="logo">
 					<img src="../../img/common/logo_beer.png">
 					<a href="../../web/main/main.html">HopeHoff</a>
 				</div> 
 
 			
-				<div>
-					<input class="form-control" id="uId" placeholder="아이디"> 
+				<div class="form-data">
+					<input id="uId" placeholder="아이디"> 
 				</div>
 							
-				<div>
-					<input  class="form-control" type="Password" id="uPwd" placeholder="패스워드">
+				<div class="form-data">
+					<input type="Password" id="uPwd" placeholder="패스워드">
 				</div>
 					
-							
-				<div id="saveId"class="checkbox">
-					<input type="checkbox" id='save'> Save ID
+				<div id="saveDiv" class="checkbox">
+					<div><input type="checkbox" id='save'></div>
+					<div id="saveIdText">아이디 저장</div>
+					
+					<a id="signUpText" href="../signUp/signUp.html" class="click-signUp">Sign-up</a>
 				</div>
-								
-				<div id="loginBtn">
-						<button id='btnLogin' type="button">Login</button>
-						<button id="signUp" type="button">Sign-up</button>
+				
+				
+				<div id="btnLoginDiv">
+					<button id='btnLogin' type="button">Login</button>
 				</div>
-			
+											
 			</div> <!-- loginBox -->
 			
 		</div> <!-- wrap /div -->
 
-
-
 	<!-- PC용 Footer -->
-	<div id="footer"></div>
+<!-- 	<div id="footer"></div> -->
 		
 	</body>
 </html>
