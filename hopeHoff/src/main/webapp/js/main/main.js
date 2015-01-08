@@ -1,11 +1,11 @@
 $(function(){
 	
 	//첫 시작시 리스트 로딩
-	$("#containerList").load("/hopeHoff/web/main/containerList.html");
+	//$("#containerList").load("/hopeHoff/web/main/containerList.html");
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	//loadContainerList();
+	loadContainerList();
 	
 });
 
@@ -26,40 +26,6 @@ $(window).scroll(function(){
 	setSmallHeader();
 });
 
-
-
-/*$("#mobileContainerKeyword").click(function() {
-	var count = 0; //for문을 위한 index
-	var checkedList = []; //keyword를 담기위한 배열
-	
-	console.log($(this).children());
-	console.log("체크됬다");
-	//체크하는 경우
-	if ($(this).is(":checked")) {
-		checkedList[checkedList.length] = $(this).val();
-		console.log($(this));
-		console.log($(this).val());
-	}
-
-	//체크를 없애는 겨우
-	if(!($(this).is(":checked"))){
-		for(count = 0; count<checkedList.length; count++){
-			if(checkedList[count] == $(this).val()){
-				checkedList.remove(count);
-			}  
-		}
-	} 
-
-	//가게검색내용에 keyword추가하기
-	$("#containerList").load("containerList.html", function() {
-		for(count = 0; count<checkedList.length; count++){
-			$("<div>").attr("class", "listKeywordItem")
-			.text(checkedList[count])
-			.appendTo($(".listKeywordContainer"));
-
-		}
-	});  
-});*/
 
 $(".click-myBook").click(function(){
 	var height = Narae.removePx($("#mainBody").css("height"));
@@ -134,6 +100,8 @@ function loadKeyword() {
 			'../../main/keyword.do',
 			function(data){
 				var i = 0;
+				
+				//mobileContainerKeyword
 				for(var keyword in data) {
 					$("<div>").attr("id", keyword)
 								.append($("<ul>")
@@ -153,7 +121,6 @@ function loadKeyword() {
 				
 				//webContainerKeyword
 				var ul = $("<ul>").appendTo("#WebContainerKeyword");
-				
 				
 				for(var keyword in data){
 					//keyword group
@@ -180,6 +147,8 @@ function loadContainerList(){
 	var presentWidth = ($("#containerList").css("width")).split("px").splice(0, 1) - 0;
 	var count = 13;  //list출력개수 현재는 임의로 지정
 	
+	console.log("loadContainerList");
+	
 	$.getJSON(
 			'../../main/list.do',
 			function(data){
@@ -187,7 +156,7 @@ function loadContainerList(){
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
 					
-					$($("<div>").attr("class", "list").append($("<div>")
+					/*$($("<div>").attr("class", "list").append($("<div>")
 																.attr("class", "listInfo")
 																.append($("<div>")
 																.attr("class", "listTitle")
@@ -197,7 +166,6 @@ function loadContainerList(){
 											 	.append($("<img>")
 											 	.attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))		
 											 			
-												/*.attr("src", data.shops[i].shopPhoto))*/
 											 .append($("<div>")
 												.attr("class", "pictureBackground")
 											    .text("상세보기"))))
@@ -205,20 +173,25 @@ function loadContainerList(){
 											 .append($("<div>")
 												.attr("class","listKeywordContainer")
 												.attr("id", "shop" + i))
-							.appendTo("#containerList"));
-						
-						
-/*						$("<div>").addClass("deactivatKeyword")
-									.text(data.shops[i].shopArea)
-									.appendTo($(shopId));
-						
-						$("<div>").addClass("deactivatKeyword")
-									.text(data.shops[i].shopType)
-									.appendTo($(shopId));
-						
-						$("<div>").addClass("deactivatKeyword")
-									.text(data.shops[i].shopSnack)
-									.appendTo($(shopId));*/
+							.appendTo("#containerList"));*/
+					
+					
+					$($("<div>").addClass("list")
+							    .append($("<div>").addClass("shopPhoto")
+							    				  .append($("<img>").attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
+							    				  .append($("<div>").addClass("btnBook")
+							    						  			.attr("id", "book" + i)
+							    						  			.html("예약하기")))
+							    .append($("<div>").addClass("shopInfo")
+							    				  .append($("<span>").addClass("shopTilte")
+							    						  			 .html("[ " + data.shops[i].shopName + " ]"))
+							    				  .append($("<span>").addClass("shopIntro")
+							    						  			 .html(data.shops[i].shopIntro))
+							    				  .append($("<div>").addClass("shopAddr")
+							    						  			.html(data.shops[i].shopAddr))))
+							    				  /*.text("[" + data.shops[i].shopName + "]" + data.shops[i].shopIntro)))*/
+					.appendTo("#containerList");
+					
 						
 				}
 			});
