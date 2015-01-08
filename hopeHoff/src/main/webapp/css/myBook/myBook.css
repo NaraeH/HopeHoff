@@ -10,7 +10,6 @@
 		background-color: #FFCD28;
 		height: 60px;
 		width: 100%;
-		margin-bottom: 15px;
 	}
 	#myBookHeaderTitle {
 		display: inline-block;
@@ -42,15 +41,13 @@
 		margin: 0 auto;
 	} 
 	#myBookData {
-		
-		margin-left: 30px;
+		margin: 0 auto;
 	}
 	
 	.mybook-data-th-check, .mybook-data-th-long , .mybook-data-th-short{
-		height: 35px;
 	 	border-radius :15px;
 		background-color : #FFCD28;
-		margin:15px ;
+		height: 40px;
 	}
 	.mybook-data-th-long{
 		width:150px;
@@ -65,6 +62,7 @@
 	.table-data{
 		font-size:medium;
 		text-align:center;
+		height: 40px;
 	}
 	
 	.warning-line{
@@ -72,19 +70,11 @@
 	}
 	#btnDelete{
 		font-weight: bolder;	
-		width: 100px;
-		margin: 0px 10px  0px 40px;
+		width: 65px;
+		background-color: red;
+		margin-left: 10px;
 	}
 	
-	.warnig-message{
-		display :inline-block;
-	}
-	#warningCotent{
-		color:red;
-		font-size: large;
-		font-weight: bolder;		
-		
-	}
 	#pagingBar{
 		margin-top: 15px;
 		margin-left:45px;
