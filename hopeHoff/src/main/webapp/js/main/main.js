@@ -10,6 +10,7 @@ $(function(){
 
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
+var shopAddrText = "가게주소";
 
 /*------------------------이벤트 발생시------------------------*/
 $(window).resize(function(){
@@ -64,6 +65,50 @@ $(".click-myPage").click(function(){
 
 });
 
+$(document).delegate(".list","mouseover",function(){
+	var shopAddr = "#" + $(this).attr("id") + " .shopAddr";
+	shopAddrText = $(shopAddr).html();
+	
+	$(shopAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
+});
+
+$(document).delegate(".list","mouseout",function(){
+	var btnDetail = "#" + $(this).attr("id") + " .btnDetail";
+	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
+});
+
+
+$(document).delegate(".shopInfo>.btnDetail","click",function(){
+		var whichNo = Math.ceil(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) * 4;
+
+		if($("#containerList").children().length < 4) {
+			whichNo = $("#containerList").children().length;
+		}
+		
+		//이미 detailList있는지 체크하기
+		if($("#containerList:has(#detailList)")){
+			$("#detailList").remove();
+		} 
+		
+		//클릭했을 때 상세정보(detail) 보이는부분
+		$($("#containerList").children()[whichNo - 1]).after(
+				$("<div>").attr("id", "detailList")
+						 .css("width", "100%")  
+						  .css("height", "470px")
+						  .css("background", "#333231")
+						  .css("margin-top", "15px")
+						  .css("display", "none")
+						  .css("z-index", "5")
+		);
+		
+		$("#detailList").load("../details/details.html"); 
+		
+		//detail부분 아래로 내려오는 효과
+		$( "#detailList" ).slideDown( 1000, function() {
+			$("#detailList").css("display", "inline-block");
+		  });
+});	
+
 
 
 /*--------------------------mobile용 event------------------------------*/
@@ -92,43 +137,6 @@ $("#moblieNavCancel").click(function(){
 	$("#mobileNav").css("display", "none");
 	$("#back").css("display", "none");
 });
-
-$(document).delegate(".list","click",function(){
-		console.log("list호출zz");
-		
-		var presentWidth = Narae.removePx($("#containerList").css("width"));
-		var presentHeight = Narae.removePx($("#containerList").css("height"));
-		var listWidth = Narae.removePx($(".list").css("width"));
-		var marginWidth = Narae.removePx(($(".list").css("margin-left")));
-		var widthCount = parseInt(presentWidth/(listWidth + marginWidth));  //한 줄에 몇개 있는지
-		var childNo = $(".list").index(this);                               //지금 선택된 요소가 몇번째 자식인지
-		var whichNo =  (Math.ceil( (childNo + 1) / widthCount))* widthCount;          //어떤 요소 다음에 추가 될지 번호
-		var lastNo = $(".list").index($(".list:last-child"));
-		
-		//이미 detailList있는지 체크하기
-		if($("#containerList:has(#detailList)")){
-			$("#detailList").remove();
-		} 
-				 
-		//클릭했을 때 상세정보(detail) 보이는부분
-		$($("#containerList").children()[whichNo]).after(
-				$("<div>").attr("id", "detailList")
-						 .css("width", "100%")  
-						  .css("height", "470px")
-						  .css("background", "#333231")
-						  .css("margin-top", "15px")
-						  .css("display", "none")
-						  .css("z-index", "5")
-		);
-		
-		$("#detailList").load("../details/details.html"); 
-
-		//detail부분 아래로 내려오는 효과
-		$( "#detailList" ).slideDown( 1000, function() {
-			$("#detailList").css("display", "inline-block");
-		  });
-		});	
-
 
 /*------------------------함수------------------------*/
 
@@ -187,10 +195,12 @@ function loadContainerList(){
 				
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
+					//shopAddr = data.shops[i].shopAddr;
 					
-					$($("<div>").addClass("list")
-							    .append($("<div>").addClass("shopPhoto")
-							    				  .append($("<img>").attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
+					//console.log(shopAddr);
+					
+					$($("<div>").addClass("list").attr("id", "shop" + (i + 1))
+							    .append($("<div>").addClass("shopPhoto")							    				  .append($("<img>").attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
 							    				  .append($("<div>").addClass("btnBook")
 							    						  			.attr("id", "book" + i)
 							    						  			.html("예약하기")))

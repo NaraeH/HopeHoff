@@ -306,11 +306,27 @@
 		line-height: 35px;
 		padding: 0px 5px;
 		font-size: 12px;
-		margin-top: 10px;
+		margin-top: 5px;
 		overflow: hidden;
 		color: #333231;
+		background: #ffffff;
 
 		/* border: 1px solid red; */
+	}
+	
+	.shopInfo>.btnDetail {
+		height: 35px;
+		line-height: 35px;
+		padding: 0px 5px;
+		font-size: 12px;
+		margin-top: 5px;
+		color: #333231;
+		overflow: hidden;
+		background: #ffb500;
+		cursor: pointer;
+		text-align: center;
+		border-radius:5px;
+		
 	}
 	
 /* 	.list img:hover {
