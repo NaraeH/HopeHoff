@@ -236,3 +236,23 @@ insert into reservation(BBNO,RDATE,RCONTENT,UID)
 values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
 insert into reservation(BBNO,RDATE,RCONTENT,UID)
 values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
+
+
+
+------------------ shopPhoto data --------------------------
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('408-81-28536','hansin-main.jpg','hansin-back1.jpg','hansin-back2.jpg','hansin-back3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('203-81-63199','junco-main.jpg','junco-detail1.jpg','junco-detail2.jpg','junco-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('124-86-06376','wara-main.jpg','wara-detail1.jpg','wara-detail2.jpg','wara-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('211-87-14784','seven-main.jpg','seven-detail1.jpg','seven-detail2.jpg','seven-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('128-31-85241','moon-main.jpg','moon-detail1.jpg','moon-detail2.jpg','moon-detail3.jpg');
+
+
