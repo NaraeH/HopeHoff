@@ -49,11 +49,11 @@ $(function(){
 			
 				if(data.result == "사용가능한 아이디입니다."){
 					$('#idText').html(data.result).css("color","green");
-					$('#colorId').css("border","green");
+					$('#formGroupInputLarge').css("border","green 2px solid");
 					
 				} else { /*중복된 아이디가 있습니다.*/
 					$('#idText').html(data.result).css("color","red");
-					$('#colorId').css("border","red");
+					$('#formGroupInputLarge').css("border","red 2px solid");
 				} 
 	       }
 	  ); /*get꺼*/	
@@ -89,11 +89,11 @@ $(function(){
 					 && (($('#inputPassword3').val().length >= 6)&&($('#inputPassword3').val().length <= 16) )){
 				
 				 $('#pwdValid').html("ok").css("color","green");
-				 $('#colorPwd').css("border","green");
+				 $('#inputPassword3').css("border","green 2px solid");
 	
 			 } else {
 				 $('#pwdValid').html("문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~의 조합으로 6~16자리").css("color","red");
-				 $('#colorPwd').css("border","red");
+				 $('#inputPassword3').css("border","red 2px solid");
 				
 			 }
 		 });
@@ -124,11 +124,11 @@ $(function(){
 		
 			 if(($('#inputPassword3').val() == $('#checkPassword').val()) && ($('#inputPassword3').val()!= "")){
 				 $('#pwdCheckText').html("일치합니다.").css("color","green");
-				 $('#colorPwdCheck').css("border","green");
+				 $('#checkPassword').css("border","green 2px solid");
 		
 			 } else {
-				 $('#pwdCheckText').html("불일치ㅠ_ㅠ").css("color","red");
-				 $('#colorPwdCheck').css("border","red");
+				 $('#pwdCheckText').html("위 암호와 일치하지 않습니다.").css("color","red");
+				 $('#checkPassword').css("border","red 2px solid");
 				 
 			 }
 		 });
@@ -157,17 +157,17 @@ $(function(){
 	
 	/*****focus만-------Name  / Phone  / 인증******/
 	$('#formGroupInputSmall').focus(function() {
-		$('#colorName').css("border","green");
+		$('#formGroupInputSmall').css("border","green 2px solid");
 		valpoint++;
 	});
 	
 	$('#phoneNumber').focus(function() {
-		$('#colorPhone').css("border","green");
+		$('#phoneNumber').css("border","green 2px solid");
 		valpoint++;
 	});
 	
 	$('#inNumber01').focus(function() {
-		$('#colorValid').css("border","green");
+		$('#inNumber01').css("border","green 2px solid");
 		valpoint++;
 	});
 

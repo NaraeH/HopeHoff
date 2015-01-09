@@ -9,8 +9,12 @@ public class User implements Serializable {
 	protected String uName;
 	protected String uType;
 	protected String uPwd;
-	protected String uEmail;
 	protected String uPhone;
+	@Override
+	public String toString() {
+		return "User [uId=" + uId + ", uName=" + uName + ", uType=" + uType
+				+ ", uPwd=" + uPwd + ", uPhone=" + uPhone + "]";
+	}
 	public String getuId() {
 		return uId;
 	}
@@ -35,28 +39,12 @@ public class User implements Serializable {
 	public void setuPwd(String uPwd) {
 		this.uPwd = uPwd;
 	}
-	public String getuEmail() {
-		return uEmail;
-	}
-	public void setuEmail(String uEmail) {
-		this.uEmail = uEmail;
-	}
 	public String getuPhone() {
 		return uPhone;
 	}
 	public void setuPhone(String uPhone) {
 		this.uPhone = uPhone;
 	}
-	@Override
-	public String toString() {
-		return "User [uId=" + uId + ", uName=" + uName + ", uType=" + uType
-				+ ", uPwd=" + uPwd + ", uEmail=" + uEmail + ", uPhone="
-				+ uPhone + "]";
-	}
-	
-	
-	
-	
 	
 	
 }
