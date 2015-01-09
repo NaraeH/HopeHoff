@@ -7,12 +7,16 @@ public class Shop {
 	protected String shopIntro;
 	protected String shopAddr;
 	protected String shopMainPhoto;
+	protected String shopTime;
+	protected String shopPhone;
+	protected String shopInfo;
 	
 	@Override
 	public String toString() {
 		return "Shop [businessNo=" + businessNo + ", shopName=" + shopName
 				+ ", shopIntro=" + shopIntro + ", shopAddr=" + shopAddr
-				+ ", shopMainPhoto=" + shopMainPhoto + "]";
+				+ ", shopMainPhoto=" + shopMainPhoto + ", shopTime=" + shopTime
+				+ ", shopPhone=" + shopPhone + ", shopInfo=" + shopInfo + "]";
 	}
 
 	public String getBusinessNo() {
@@ -54,7 +58,29 @@ public class Shop {
 	public void setShopMainPhoto(String shopMainPhoto) {
 		this.shopMainPhoto = shopMainPhoto;
 	}
-	
-	
+
+	public String getShopTime() {
+		return shopTime;
+	}
+
+	public void setShopTime(String shopTime) {
+		this.shopTime = shopTime;
+	}
+
+	public String getShopPhone() {
+		return shopPhone;
+	}
+
+	public void setShopPhone(String shopPhone) {
+		this.shopPhone = shopPhone;
+	}
+
+	public String getShopInfo() {
+		return shopInfo;
+	}
+
+	public void setShopInfo(String shopInfo) {
+		this.shopInfo = shopInfo;
+	}
 	
 }

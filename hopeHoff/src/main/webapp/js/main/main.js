@@ -80,7 +80,7 @@ $(document).delegate(".list","mouseout",function(){
 
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		var whichNo = Math.ceil(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) * 4;
-
+		var shopName =  $(this).closest(".list").attr("data-shop");
 		
 		if($("#containerList").children().length < 4) {
 			whichNo = $("#containerList").children().length;
@@ -107,6 +107,16 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		);
 		
 		$("#detailList").load("../details/details.html"); 
+	
+		
+		/*
+		//json으로 불러오는 건 성공 => 데이터 어떻게 뿌려줄지 고민중
+		$.getJSON(
+				'../../main/detail.do', {"shopName": shopName},
+				function(data){
+					console.log(data);
+		});*/
+		
 		
 		//detail부분 아래로 내려오는 효과
 		$( "#detailList" ).slideDown( 1000, function() {
@@ -199,7 +209,7 @@ function loadContainerList(){
 			function(data){
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
-					$($("<div>").addClass("list").attr("id", "shop" + (i + 1))
+					$($("<div>").addClass("list").attr("id", "shop" + (i + 1)).attr("data-shop", data.shops[i].shopName)
 							    .append($("<div>").addClass("shopPhoto")
 							    				  .append($("<img>").attr("src", "/hopeHoff/img/shopPhoto/" + data.shops[i].shopMainPhoto))
 							    				  .append($("<div>").addClass("btnBook")
@@ -259,7 +269,7 @@ function setKeyword() {
 function setContainerSize(){
 	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
 							  + Narae.removePx( $(".list").css("margin-left") ) 
-							  + Narae.removePx( $(".list").css("margin-right") ) + 10;
+							  + Narae.removePx( $(".list").css("margin-right") ) + 5;
 /*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
 			  + Narae.removePx( $(".list").css("margin-left") ) 
 			  + Narae.removePx( $(".list").css("margin-right") )) * 4;  //4 =>한줄에 있는 리스트 개수

@@ -12,11 +12,28 @@
    		<result column="SINTRO" property="shopIntro"/>
    		<result column="SADDR" property="shopAddr"/>
    		<result column="MAINPHOTO" property="shopMainPhoto"/>
+   		<result column="STIME" property="shopTime"/>
+   		<result column="SPHONE" property="shopPhone"/>
+   		<result column="SINFO" property="shopInfo"/>
+   		
 	</resultMap>
 
 	<select id="selectList" resultMap="shopMap">
 		SELECT shop.BBNO, SNAME, SINTRO, SADDR, MAINPHOTO 
 		FROM shop, shopphoto 
-		where shop.BBNO = shopphoto.BBNO;
+		where shop.BBNO = shopphoto.BBNO
 	</select>
+	
+ 	<select id="selectOne" parameterType="String" resultMap="shopMap">
+ 		SELECT STIME, SPHONE, SNAME, SINFO, SADDR
+		FROM shop WHERE shop.SNAME = #{shopName}
+	</select>
+	
+	<select id="selectPhoto" parameterType="String" resultMap="shopMap">
+ 		 SELECT MAINPHOTO, DETAILPHOTO1, DETAILPHOTO2, DETAILPHOTO3
+		 FROM shop, shopPhoto  
+		 WHERE shop.BBNO = shopPhoto.BBNO
+		 AND shop.SNAME = #{shopName}
+	</select>
+	
 </mapper>
