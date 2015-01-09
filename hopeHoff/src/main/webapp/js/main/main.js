@@ -5,7 +5,57 @@ $(function(){
 	
 	loadKeyword();
 	loadContainerList();
+	
+		   
+
+	
 });
+//로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
+$('.logoutBtn').click(function(event){
+	  $.getJSON('/hopeHoff/json/auth/logout.do', function(data){
+	    location.href = '/hopeHoff/web/login/login.html';
+	  });
+	});
+//로그인 클릭 시 로그인페이지로 고고
+$('.loginBtn').click(function(event){
+	  location.href = '/hopeHoff/web/login/login.html';
+	});
+	
+//로그인해서 사용자 정보가 main으로 넘어오게됩니당
+$.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
+	if (data.status == 'fail') {
+		$('.loginBtn').css('display', ''); //로그인실패시 로그인버튼을 살리구
+		$('.logoutBtn').css('display', 'none');
+		$('.signUpBtn').css('display', '');
+
+	} else {
+		$('.logoutBtn').css('display', ''); //로그인 성공 시 로그아웃버튼 살리구~ 
+		$('.loginBtn').css('display', 'none');
+		$('.signUpBtn').css('display', 'none');
+		
+		$('.userName').html(data.loginUser.uName).css("color","#ffcd28");
+
+	   if(data.loginUser.uType == "user") {
+		 
+		   $("#btnMyPage").css('display','');		   
+			$("#btnBook").css('display','');		   
+		    $("#btnMyShop").css('display','none');
+		    
+	   } else if(data.loginUser.uType == "boss") {
+		  
+		   $("#btnMyPage").css('display','');		   
+			 $("#btnBook").css('display','none');		   
+			 $("#btnMyShop").css('display','');
+	   } else { //손님ㅋㅋ
+		   
+		   $("#btnMyPage").css('display','none');		   
+			 $("#btnBook").css('display','none');		   
+			 $("#btnMyShop").css('display','none');	
+	   }  
+
+	}
+});
+
 
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
