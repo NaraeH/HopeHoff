@@ -1,3 +1,9 @@
+# create database hopeHoff character set utf8 collate utf8_general_ci;
+# grant all privileges on hopeHoff.* to ‘root’@‘localhost’ with grant option;
+# grant all privileges on hopeHoff.* to ‘root’@‘%’ with grant option;
+
+
+
 -- 메뉴
 DROP TABLE IF EXISTS MENU RESTRICT;
 
