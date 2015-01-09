@@ -2,8 +2,6 @@
 # grant all privileges on hopeHoff.* to ‘root’@‘localhost’ with grant option;
 # grant all privileges on hopeHoff.* to ‘root’@‘%’ with grant option;
 
-
-
 -- 메뉴
 DROP TABLE IF EXISTS MENU RESTRICT;
 
@@ -19,7 +17,6 @@ DROP TABLE IF EXISTS SHOP RESTRICT;
 
 -- 사용자정보
 DROP TABLE IF EXISTS USER RESTRICT;
-
 
 -- 사용자정보
 CREATE TABLE USER (
@@ -61,11 +58,6 @@ ALTER TABLE SHOP
 			BBNO -- 사업자번호
 		);
 
--- 가게리스트 유니크 인덱스
-CREATE UNIQUE INDEX UIX_SHOP
-	ON SHOP ( -- 가게리스트
-	);
-
 -- 예약정보
 CREATE TABLE RESERVATION (
 	RNO      INTEGER      NOT NULL COMMENT '예약번호', -- 예약번호
@@ -82,11 +74,6 @@ ALTER TABLE RESERVATION
 		PRIMARY KEY (
 			RNO -- 예약번호
 		);
-
--- 예약정보 유니크 인덱스
-CREATE UNIQUE INDEX UIX_RESERVATION
-	ON RESERVATION ( -- 예약정보
-	);
 
 ALTER TABLE RESERVATION
 	MODIFY COLUMN RNO INTEGER NOT NULL AUTO_INCREMENT COMMENT '예약번호';
@@ -108,11 +95,6 @@ ALTER TABLE MENU
 			MID -- 메뉴아이디
 		);
 
--- 메뉴 유니크 인덱스
-CREATE UNIQUE INDEX UIX_MENU
-	ON MENU ( -- 메뉴
-	);
-
 ALTER TABLE MENU
 	MODIFY COLUMN MID INTEGER NOT NULL AUTO_INCREMENT COMMENT '메뉴아이디';
 
@@ -132,18 +114,13 @@ ALTER TABLE BOARD
 			RNO -- 예약번호
 		);
 
--- 후기 유니크 인덱스
-CREATE UNIQUE INDEX UIX_BOARD
-	ON BOARD ( -- 후기
-	);
-
 -- 가게사진
 CREATE TABLE SHOPPHOTO (
 	BBNO         VARCHAR(30) NOT NULL COMMENT '사업자번호', -- 사업자번호
-	MAINPHOTO    VARCHAR(30) NOT NULL COMMENT '대표사진', -- 대표사진
-	DETAILPHOTO1 VARCHAR(30) NOT NULL COMMENT '내부사진1', -- 내부사진1
-	DETAILPHOTO2 VARCHAR(30) NOT NULL COMMENT '내부사진2', -- 내부사진2
-	DETAILPHOTO3 VARCHAR(30) NOT NULL COMMENT '내부사진3' -- 내부사진3
+	MAINPHOTO    VARCHAR(50) NOT NULL COMMENT '대표사진', -- 대표사진
+	DETAILPHOTO1 VARCHAR(50) NOT NULL COMMENT '내부사진1', -- 내부사진1
+	DETAILPHOTO2 VARCHAR(50) NOT NULL COMMENT '내부사진2', -- 내부사진2
+	DETAILPHOTO3 VARCHAR(50) NOT NULL COMMENT '내부사진3' -- 내부사진3
 )
 COMMENT '가게사진';
 
@@ -153,11 +130,6 @@ ALTER TABLE SHOPPHOTO
 		PRIMARY KEY (
 			BBNO -- 사업자번호
 		);
-
--- 가게사진 유니크 인덱스
-CREATE UNIQUE INDEX UIX_SHOPPHOTO
-	ON SHOPPHOTO ( -- 가게사진
-	);
 
 -- 가게리스트
 ALTER TABLE SHOP
