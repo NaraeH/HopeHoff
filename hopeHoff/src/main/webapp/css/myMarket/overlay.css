@@ -14,7 +14,7 @@ body {
 	border-radius: 5px;
 }
 
-#overlay {
+.overlay {
 	background: rgba(0, 0, 0, .20); 
 	text-align : center;
 	padding: 30px 0 66px 0;
@@ -31,7 +31,7 @@ body {
 	opacity: 1;
 }
 
-#overlay > input {
+.overlay > input {
 	font-family: Helvetica;
 	font-weight: 900;
 	color: rgba(255, 255, 255, .85);

@@ -42,14 +42,9 @@ public class MainControl {
 	@RequestMapping("/list")
 	public Object list(){
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		
-		//shopDao.selectList();
-		
 		resultMap.put("shops", shopDao.selectList());
 		
 		return resultMap;
-		
-		
 	}
 	
 	public static void main(String[] args) {

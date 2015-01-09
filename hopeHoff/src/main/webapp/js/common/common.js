@@ -127,8 +127,11 @@ function setSizeSilde(obj, isMargin) {
 		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
 	
 	}else if(isMargin == "existMargin"){
+		var photoListMargin = ( Narae.removePx(widthSildeWrapSize) / 3 - Narae.removePx(widthSildeWrapMarginSize) ) /2;
+
 		$(thisMyPhotoList).css("background-size", widthSildeWrapMarginSize + " " + widthSildeWrapMarginSize);
-		$(thisMyPhotoList).css("width", Narae.removePx(widthSildeWrapSize) / 3);
+		$(thisMyPhotoList).css("width", widthSildeWrapMarginSize );
+		$(thisMyPhotoList).css("margin", photoListMargin );
 		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
 		 
 	}

@@ -179,7 +179,7 @@
 		overflow: hidden;
 	}
 
-	#myBestMenu1{
+/* 	#myBestMenu1{
 	    background-image: url('../../img/details/chiken.jpg');
 	}
 	#myBestMenu2{
@@ -193,7 +193,7 @@
 	}
 	#myBestMenu5{
 	    background-image: url('../../img/details/odang.jpg');
-	}
+	} */
 	#myMenuButton, #myCommentButton {
 		cursor:pointer;
 	}

@@ -89,8 +89,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		if(whichNo > $("#containerList").children().length) {
 			whichNo = $("#containerList").children().length - 1;
 		}
-
-		console.log("==>" + whichNo);
 		
 		//이미 detailList있는지 체크하기
 		if($("#containerList:has(#detailList)")){
@@ -202,7 +200,8 @@ function loadContainerList(){
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
 					$($("<div>").addClass("list").attr("id", "shop" + (i + 1))
-							    .append($("<div>").addClass("shopPhoto")							    				  .append($("<img>").attr("src", "/hopeHoff/img/details/Wara-Wara01.jpg"))
+							    .append($("<div>").addClass("shopPhoto")
+							    				  .append($("<img>").attr("src", "/hopeHoff/img/shopPhoto/" + data.shops[i].shopMainPhoto))
 							    				  .append($("<div>").addClass("btnBook")
 							    						  			.attr("id", "book" + i)
 							    						  			.html("예약하기")))
@@ -216,7 +215,7 @@ function loadContainerList(){
 							    				  /*.text("[" + data.shops[i].shopName + "]" + data.shops[i].shopIntro)))*/
 					.appendTo("#containerList");
 				}
-				setContainerSize( data.shops.length );
+				setContainerSize();
 			});
 	
 }
@@ -257,17 +256,23 @@ function setKeyword() {
 	}
 }
 
-function setContainerSize(dataLength){
+function setContainerSize(){
 	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
 							  + Narae.removePx( $(".list").css("margin-left") ) 
 							  + Narae.removePx( $(".list").css("margin-right") ) + 10;
-	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
+/*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
 			  + Narae.removePx( $(".list").css("margin-left") ) 
-			  + Narae.removePx( $(".list").css("margin-right") )) * dataLength + 10;
-	var containerWidth = Narae.removePx( $("#container").css("width") );
+			  + Narae.removePx( $(".list").css("margin-right") )) * 4;  //4 =>한줄에 있는 리스트 개수
+	var containerWidth = Narae.removePx( $("#container").css("width") );*/
 
-	if(containerListCountWidth > containerWidth ) { containerListWidth = containerListWidth * 4; }
-	$("#containerList").css("width", ( containerListWidth ) + "px");
+/*	console.log(containerListWidth);
+	console.log(containerListCountWidth);
+	console.log(containerListCountWidth > containerWidth);
+	
+	if(containerListCountWidth > containerWidth ) { containerListCountWidth = containerListWidth * 4; }
+	$("#containerList").css("width", ( containerListCountWidth ) + "px");*/
+	
+	$("#containerList").css("width", ( containerListWidth * 4 ) + "px");
 }
 
 

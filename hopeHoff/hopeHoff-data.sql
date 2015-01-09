@@ -256,3 +256,12 @@ insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('128-31-85241','moon-main.jpg','moon-detail1.jpg','moon-detail2.jpg','moon-detail3.jpg');
 
 
+
+
+
+
+
+------------------------------데이터 수정---------------------------
+
+update hopehoff.shop set sintro='추억 복고풍의 달동네 포차!' where bbno='128-31-85241';
+update hopehoff.shop set sintro='술마시고 노래해! 하나가득 준코!' where bbno='203-81-63199';
