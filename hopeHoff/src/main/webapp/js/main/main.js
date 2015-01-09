@@ -179,7 +179,8 @@ function loadKeyword() {
 					}
 				}
 				
-				//webContainerKeyword
+			
+/*				//webContainerKeyword
 				var ul = $("<ul>").appendTo("#WebContainerKeyword");
 				
 				for(var keyword in data){
@@ -189,6 +190,28 @@ function loadKeyword() {
 					 				 		 .append($("<span>").html(data[keyword][0])))
 					 		 .append($("<ul>").attr("id", data[keyword][0]))
 					 .appendTo(ul);
+					
+					//keyword item
+					var keywordGroup= data[keyword];
+					var keywordUl = $("#WebContainerKeyword>ul>li ul" + "#" + data[keyword][0]);
+					for(var i = 1; i < keywordGroup.length; i++){
+						$("<li>")
+						 		.append($("<a>").attr("href", "#")
+									     		.append($("<span>").html(keywordGroup[i])))
+						.appendTo(keywordUl);
+					}
+				}*/
+				
+				//webContainerKeyword
+				//var ul = $("<ul>").appendTo("#WebContainerKeyword");
+				
+				for(var keyword in data){
+					//keyword group
+					$("<li>").addClass("has-sub")
+					 		 .append($("<a>").attr("href", "#")
+					 				 		 .append($("<span>").html(data[keyword][0])))
+					 		 .append($("<ul>").attr("id", data[keyword][0]))
+					 .appendTo("#webKeyword");
 					
 					//keyword item
 					var keywordGroup= data[keyword];
