@@ -26,7 +26,10 @@ public class AuthControl {
     
     if (session.getAttribute("loginUser") != null) {
       resultMap.put("status", "success");
+      System.out.println(session.getAttribute("loginUser"));
+
       resultMap.put("loginUser", session.getAttribute("loginUser"));
+      System.out.println(resultMap);
     } else {
       resultMap.put("status", "fail");
     }
@@ -65,6 +68,9 @@ public class AuthControl {
     if (user != null) {
       resultMap.put("status", "success");
       session.setAttribute("loginUser", user);
+     /* System.out.println(resultMap);    //{status=success}*/
+      resultMap.put("",session.getAttribute("loginUser"));
+      
     } else {
       session.invalidate();
       resultMap.put("status", "fail");
