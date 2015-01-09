@@ -7,7 +7,6 @@ $(function(){
 	  loadReservationList(1);
 	  
 	});
-	
 
 	//***************************** 홀수열 눌렀을때 짝수열 내용보기 ********************************//
 
@@ -46,12 +45,26 @@ $(function(){
 	});
 	
 	
+	$('#prevBtn').click(function(event){
+		if (currPageNo > 1) {
+		  loadProductList(currPageNo - 1);
+		}
+	});
+
+	$('#nextBtn').click(function(event){
+		if (currPageNo < maxPageNo) {
+		  loadProductList(currPageNo + 1);
+		}
+	});
+	
+	
+	
 	function setPageNo(currPageNo, maxPageNo) {
 		  window.currPageNo = currPageNo;
 		  window.maxPageNo = maxPageNo;
 		  
 		  $('#pageNo').html(currPageNo);
-		  
+		  console.log(currPageNo);
 		  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
 		  else $('#prevBtn').css('display', '');
 		  

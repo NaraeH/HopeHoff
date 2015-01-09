@@ -30,6 +30,13 @@
 		margin: 10px 10px 10px 25px;
 	}
 	
+	#myMarketSelect{
+		width:75%;
+	}
+	#selectForm{
+		margin-top:15px;
+	}
+	
 	#btnMyMarketClose {
 		background: #FFCD28;
 		border: #FFCD28;

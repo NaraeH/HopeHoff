@@ -57,6 +57,8 @@ public class ReservationControl {
     
     if (pageNo <= 0) pageNo = 1;
     if (pageNo > maxPageNo) pageNo = maxPageNo;
+    System.out.println("maxPageNo"+maxPageNo);
+    System.out.println("pageNo"+pageNo);
     
     HashMap<String,Object> resultMap = new HashMap<>();
     resultMap.put("status", "success");
