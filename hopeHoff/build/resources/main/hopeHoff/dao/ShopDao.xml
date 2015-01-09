@@ -9,14 +9,14 @@
 	<resultMap type="Map" id="shopMap">
 		<id column="BBNO" property="businessNo"/>
    		<result column="SNAME" property="shopName"/>
-   		<result column="SAREA" property="shopArea"/>
-   		<result column="STYPE" property="shopType"/>
-   		<result column="SSNACK" property="shopSnack"/>
    		<result column="SINTRO" property="shopIntro"/>
    		<result column="SADDR" property="shopAddr"/>
+   		<result column="MAINPHOTO" property="shopMainPhoto"/>
 	</resultMap>
 
 	<select id="selectList" resultMap="shopMap">
-		SELECT BBNO, SNAME, SAREA, STYPE, SSNACK, SINTRO, SADDR FROM hopehoff.shop;
+		SELECT shop.BBNO, SNAME, SINTRO, SADDR, MAINPHOTO 
+		FROM shop, shopphoto 
+		where shop.BBNO = shopphoto.BBNO;
 	</select>
 </mapper>
