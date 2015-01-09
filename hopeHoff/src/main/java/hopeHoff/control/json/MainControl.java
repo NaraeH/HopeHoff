@@ -47,6 +47,16 @@ public class MainControl {
 		return resultMap;
 	}
 	
+	@RequestMapping("/detail")
+	public Object detail(String shopName){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("shopInfo", shopDao.selectOne(shopName));
+		resultMap.put("shopPhotos", shopDao.selectPhoto(shopName));
+		
+		System.out.println(resultMap);
+		return resultMap;
+	}
+	
 	public static void main(String[] args) {
 		MainControl mainControl = new MainControl();
 		
