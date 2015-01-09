@@ -119,16 +119,16 @@ values(4,'408-81-28536','해물떡볶이','15000','hansin-menu4.jpg');
 /********************준코***********************/
 
 insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(5,'203-81-63199','꿔바로탕수육','26500','junco-menu1.jpg');
-
-insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(6,'203-81-63199','닭모래통마늘구이','24500','junco-menu2.jpg');
-
-insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(7,'203-81-63199','삼겹두부김치','24500','junco-menu3.jpg');
-
-insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(8,'203-81-63199','수제모듬꼬치어묵','27500','junco-menu4.jpg');
+	values(5,'203-81-63199','꿔바로탕수육','26500','junco-menu1.jpg');
+	
+	insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+	values(6,'203-81-63199','닭모래통마늘구이','24500','junco-menu2.jpg');
+	
+	insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+	values(7,'203-81-63199','삼겹두부김치','24500','junco-menu3.jpg');
+	
+	insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+	values(8,'203-81-63199','수제모듬꼬치어묵','27500','junco-menu4.jpg');
 
 /*********************와라와라**********************/
 insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
