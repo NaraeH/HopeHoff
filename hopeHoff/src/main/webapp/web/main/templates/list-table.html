@@ -1,0 +1,13 @@
+{{#each shops}}
+<div class="list" id="shop{{@index}}" data-shop="{{businessNo}}">
+	<div class="shopPhoto">
+		<img src="/hopeHoff/img/shopPhoto/{{shopMainPhoto}}">
+		<div class="btnBook" id="book{{@index}}">예약하기</div>
+	</div>
+	<div class="shopInfo">
+		<span class="shopTilte">[ {{shopName}} ]</span>
+		<span class="shopIntro">{{shopIntro}}</span>
+		<div class="shopAddr">{{shopAddr}}</div>
+	</div>
+</div>
+{{/each}}

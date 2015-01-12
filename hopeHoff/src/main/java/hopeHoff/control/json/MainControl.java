@@ -11,6 +11,7 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/main")
@@ -32,7 +33,6 @@ public class MainControl {
 			resultMap.put("keywordRegion", keyword.get("region"));
 			resultMap.put("keywordPlace", keyword.get("place"));
 			resultMap.put("keywordSnack", keyword.get("snack"));
-			/*resultMap.put("keywordPeople", keyword.get("people"));*/
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -40,10 +40,14 @@ public class MainControl {
 		return resultMap;
 	}
 	
-	@RequestMapping("/list")
-	public Object list(){
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public Object list(String keywordGroup, String keyword ){
+		HashMap<String, String> paraMap = new HashMap<String, String>();
+		paraMap.put("keywordGroup", keywordGroup);
+		paraMap.put("keyword", keyword);
+
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("shops", shopDao.selectList());
+		resultMap.put("shops", shopDao.selectList(paraMap));
 		
 		return resultMap;
 	}
@@ -55,7 +59,6 @@ public class MainControl {
 		resultMap.put("shopPhotos", shopDao.selectPhoto(businessNo));
 		resultMap.put("shopMenu", menuDao.selectMenu(businessNo));
 		
-		System.out.println(resultMap);
 		return resultMap;
 	}
 	

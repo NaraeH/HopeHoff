@@ -27,10 +27,20 @@
 	
 	
 	/******************** DatePicker 부분 **************************/
+	#myBookDatePicker{
+		margin-top: 30px;
+		margin-bottom: 40px;
+	
+	}
 	#myBookDatePicker > p{
+		display:inline;
 		padding-left:30px;
-		margin-left: 350px;
-		margin-bottom: 55px;
+		margin-left: 200px;
+		
+	}
+	#myBookDatePicker > button{
+		width:65px !important;
+		height:30px !important;
 	}
 	
 	/********************* Container 부분 ***************************/
@@ -62,7 +72,7 @@
 	.table-data{
 		font-size:medium;
 		text-align:center;
-		height: 40px;
+		height: 50px;
 	}
 	
 	.warning-line{
@@ -76,9 +86,10 @@
 	}
 	
 	#pagingBar{
+	
 		margin-top: 15px;
 		margin-left:45px;
-		text-align: left;
+		text-align: center;
 	}
 	
 }
@@ -150,5 +161,6 @@
 		width:70px;
 		font-size: smaller;
 		margin:10px;
-	}
+		display:none;
+}
 }

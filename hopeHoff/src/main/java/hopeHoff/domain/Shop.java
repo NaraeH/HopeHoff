@@ -6,6 +6,9 @@ public class Shop {
 	protected String shopName;
 	protected String shopIntro;
 	protected String shopAddr;
+	protected String shopArea;
+	protected String shopType;
+	protected String shopSnack;
 	protected String shopMainPhoto;
 	protected String shopTime;
 	protected String shopPhone;
@@ -15,8 +18,10 @@ public class Shop {
 	public String toString() {
 		return "Shop [businessNo=" + businessNo + ", shopName=" + shopName
 				+ ", shopIntro=" + shopIntro + ", shopAddr=" + shopAddr
-				+ ", shopMainPhoto=" + shopMainPhoto + ", shopTime=" + shopTime
-				+ ", shopPhone=" + shopPhone + ", shopInfo=" + shopInfo + "]";
+				+ ", shopArea=" + shopArea + ", shopType=" + shopType
+				+ ", shopSnack=" + shopSnack + ", shopMainPhoto="
+				+ shopMainPhoto + ", shopTime=" + shopTime + ", shopPhone="
+				+ shopPhone + ", shopInfo=" + shopInfo + "]";
 	}
 
 	public String getBusinessNo() {
@@ -49,6 +54,30 @@ public class Shop {
 
 	public void setShopAddr(String shopAddr) {
 		this.shopAddr = shopAddr;
+	}
+
+	public String getShopArea() {
+		return shopArea;
+	}
+
+	public void setShopArea(String shopArea) {
+		this.shopArea = shopArea;
+	}
+
+	public String getShopType() {
+		return shopType;
+	}
+
+	public void setShopType(String shopType) {
+		this.shopType = shopType;
+	}
+
+	public String getShopSnack() {
+		return shopSnack;
+	}
+
+	public void setShopSnack(String shopSnack) {
+		this.shopSnack = shopSnack;
 	}
 
 	public String getShopMainPhoto() {
