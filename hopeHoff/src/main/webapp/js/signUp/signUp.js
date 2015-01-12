@@ -1,4 +1,5 @@
-	
+var valpoint=0;
+
 $(function(){
 
 /*	$("#btnSignUpClose").click(function(){
@@ -26,13 +27,30 @@ $(function(){
 	});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
 	
 	
-	
+	$('#confirmBtn').click(function(){
+		if($('#inNumber01').val() == "1111"){
+			 $('#inNumber01').css("border","green 2px solid");
+			 valpoint++;
+			 console.log(valpoint);
+
+			 if(valpoint == 6) {	
+			 	$('#btnSignUp').css("background-color", "green");
+			 	$('#btnSignUp').attr("disabled", false);
+
+			 } 
+			 /*else {	$('#btnSignUp').attr("disabled", true); }*/
+		 } else {
+			 $('#inNumber01').css("border","red 2px solid");
+		
+		 }
+	});
 	
 	
 	/*************************유. 효 . 성..... 검 사************************/	
-	var valpoint=0;
+
 	
-	//V ID input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)
+
+	//-------- ID-------------( input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)  )
 	$('#formGroupInputLarge').focus(function() {
 	 $('#idText').css("display","");
 		
@@ -47,16 +65,18 @@ $(function(){
 			//노드에 서버에 응답까지 성공하면  //세터
 			//이렇게 응답하겠다.(이렇게 이벤트발생하겠다.)
 			
-				if(data.result == "사용가능한 아이디입니다."){
-					$('#idText').html(data.result).css("color","green");
-					$('#formGroupInputLarge').css("border","green 2px solid");
-					
-				} else { /*중복된 아이디가 있습니다.*/
-					$('#idText').html(data.result).css("color","red");
+			if(($('#formGroupInputLarge').val().match(/^[a-z][a-z\d]{3,11}$/) != null)
+					 &&(data.result == "사용가능한 아이디입니다.")){
+				
+				$('#idText').html("ok").css("color","green");
+				$('#formGroupInputLarge').css("border","green 2px solid");
+	
+			 } else { /*중복된 아이디가 있습니다.*/
+					$('#idText').html("That's nono").css("color","red");
 					$('#formGroupInputLarge').css("border","red 2px solid");
-				} 
-	       }
-	  ); /*get꺼*/	
+			 } 
+				
+		}); /*get꺼*/	
 	 }); /*keyup꺼*/
 	 
 	});//focus
@@ -73,14 +93,37 @@ $(function(){
 			$('#idText').css("display","");
 		}
 		
-		if(valpoint == 6) {	
-			$('#btnSignUp').css("border", "green");
-			$('#btnSignUp').attr("disabled", false);
-
-		} else {
-			$('#btnSignUp').attr("disabled", true);
-		}
 	});
+	
+	/*    ******    이름 유효성       /^[가-힝]{2,}$/   ******* */
+	$('#formGroupInputSmall').focus(function() {
+		 $('#nameValid').css("display","");
+		 $("#formGroupInputSmall").keyup(function(){
+			 if($('#formGroupInputSmall').val().match( /^[가-힝]{2,}$/) != null){
+				
+				 $('#nameValid').html("멋진 이름이네요!").css("color","green");
+				 $('#formGroupInputSmall').css("border","green 2px solid");
+	
+			 } else {
+				 $('#nameValid').html("한글 2자 이상의 이름을 입력해 주세요.").css("color","red");
+				 $('#formGroupInputSmall').css("border","red 2px solid");
+				
+			 }
+		 });
+	});
+	
+   $('#formGroupInputSmall').focusout(function() {
+		
+		if($('#nameValid').css("color") == "rgb(0, 128, 0)") {
+			$('#nameValid').css("display","none");
+			valpoint++;
+			console.log(valpoint);
+		} else if($('#nameValid').css("color") == "rgb(128, 0, 0)"){
+			$('#nameValid').css("display","");
+		}
+		
+	});
+	
 	/* --------------password 유 효 성--------------- */
 	$('#inputPassword3').focus(function() {
 		 $('#pwdValid').css("display","");
@@ -108,15 +151,9 @@ $(function(){
 			$('#pwdValid').css("display","");
 		}
 		
-		if(valpoint == 6) {	
-			$('#btnSignUp').css("border","green");
-			$('#btnSignUp').attr("disabled", false);
 
-		} else {
-			$('#btnSignUp').attr("disabled", true);
-		}
 	});
-	/************Password  다시 누르는거 확인*********/
+	/************패스워드 확인*********/
 	$('#checkPassword').focus(function() {
 		 $('#pwdCheckText').css("display","");
 		
@@ -145,31 +182,43 @@ $(function(){
 			$('#pwdCheckText').css("display","");
 		}
 		
-		if(valpoint == 6) {	
-			$('#btnSignUp').css("border","green");
-			$('#btnSignUp').attr("disabled", false);
+		
+	});
+	
+	
+	/*****focus만--- / Phone  / 인증******/
 
-		} else {
-			$('#btnSignUp').attr("disabled", true);
-		}
-	});
-	
-	
-	/*****focus만-------Name  / Phone  / 인증******/
-	$('#formGroupInputSmall').focus(function() {
-		$('#formGroupInputSmall').css("border","green 2px solid");
-		valpoint++;
-	});
-	
 	$('#phoneNumber').focus(function() {
-		$('#phoneNumber').css("border","green 2px solid");
-		valpoint++;
+		 $('#phoneNumValid').css("display","");
+		 $("#phoneNumber").keyup(function(){
+			 if($('#phoneNumber').val().match(/[01](0|1|6|7|8|9)[-](\d{4}|\d{3})[-]\d{4}$/) != null){
+				
+				 $('#phoneNumValid').html("ok").css("color","green");
+				 $('#phoneNumber').css("border","green 2px solid");
+	
+			 } else {
+				 $('#phoneNumValid').html("제대로 입력하셔야 인증번호를 보내죠..").css("color","red");
+				 $('#phoneNumber').css("border","red 2px solid");
+			
+			 }
+		 });
+	});
+	$('#phoneNumber').focusout(function() {
+		
+		if($('#phoneNumValid').css("color") == "rgb(0, 128, 0)") {
+			$('#phoneNumValid').css("display","none");
+			valpoint++;
+			console.log(valpoint);
+		} else if($('#phoneNumValid').css("color") == "rgb(128, 0, 0)"){
+			$('#phoneNumValid').css("display","");
+		}
+		
+
 	});
 	
-	$('#inNumber01').focus(function() {
-		$('#inNumber01').css("border","green 2px solid");
-		valpoint++;
-	});
+	/***************inNumber01**********************/
+
+
 
 });
 
