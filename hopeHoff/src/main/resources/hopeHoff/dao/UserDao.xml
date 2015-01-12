@@ -22,7 +22,7 @@
   </resultMap>
   
   <select id="existUser" parameterType="map" resultMap="userMap">
-  SELECT UID,UNAME,UPHONE FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
+  SELECT UID,UNAME,UTYPE,UPHONE FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
   </select>
   
  <select id="selectPhoneList" resultMap="userPhoneMap">

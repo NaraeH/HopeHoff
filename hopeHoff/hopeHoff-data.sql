@@ -185,57 +185,57 @@ values(3,'사진과는 많이 다릅니다 맛도 별로에요.','2014-12-30','b
 
 ------------------ reservation data --------------------------
 /*--------------------------------------------------*/
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U01');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U01');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U01');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U01');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U01');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
 
 
 
 /*--------------------------------------------------*/
 
-insert into reservation(RDATE,RCONTENT,UID)
-values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U02');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U02');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U02');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U02');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U02');
+insert into RESERVATION(RDATE,RCONTENT,UID)
+values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');
 
 
 /*--------------------------------------------------*/
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U03');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U03');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U03');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U03');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U03');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u03');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u03');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u03');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u03');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u03');
 
 
 /*----------------------------------------------------*/
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
-insert into reservation(BBNO,RDATE,RCONTENT,UID)
-values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','U04');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u04');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u04');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('408-81-28536','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u04');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u04');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
+values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u04');
 
 
 
