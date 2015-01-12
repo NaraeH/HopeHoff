@@ -13,18 +13,37 @@ $(function(){
 		$('#formGroupInputLarge').val('');
 		$('#idText').html('');
 		$('#formGroupInputSmall').val('');
+		$('#nameValid').html('');
 		$('#inputPassword3').val('');
+		$('#pwdValid').html('');
 		$('#checkPassword').val('');
+		$('#pwdCheckText').html('');
 		$('#phoneNumber').val('');
-		$('#checkPassword').val('');
+		$('#phoneNumValid').html('');
 		$('#inNumber01').val('');
 
 	});
 	
 	$('#btnSignUp').click(function(event){
-		alert("감사합니다 ~ 이제,로그인 해주세요 !");
-       location.href = '../../web/login/login.html';
-	});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
+	    $.post('../../json/auth/login.do'
+	        , {
+	          uId : $('#uId').val(),
+	          uPwd : $('#uPwd').val(),
+	          save : $('#save').is(':checked')
+	        }
+	        , function(data){
+	          if (data.status == 'success') {
+	        	 alert("환영합니다 ^_^*");
+	        	 location.href = '../../web/login/login.html';
+	        
+	            
+	          } else {
+	            alert('로그인 아이디 또는 암호가 맞지 않습니다.');
+	            $('#uPwd').val('');
+	          }
+	        }
+	        , 'json');
+	  });
 	
 	
 	$('#confirmBtn').click(function(){
@@ -37,6 +56,11 @@ $(function(){
 			 	$('#btnSignUp').css("background-color", "green");
 			 	$('#btnSignUp').attr("disabled", false);
 
+			 	$('#btnSignUp').click(function(event){
+					alert("감사합니다 ~ 이제,로그인 해주세요 !");
+			       location.href = '../../web/login/login.html';
+				});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
+			 	
 			 } 
 			 /*else {	$('#btnSignUp').attr("disabled", true); }*/
 		 } else {
@@ -186,7 +210,7 @@ $(function(){
 	});
 	
 	
-	/*****focus만--- / Phone  / 인증******/
+	/*****PHONE NUMBER******/
 
 	$('#phoneNumber').focus(function() {
 		 $('#phoneNumValid').css("display","");
@@ -197,7 +221,7 @@ $(function(){
 				 $('#phoneNumber').css("border","green 2px solid");
 	
 			 } else {
-				 $('#phoneNumValid').html("제대로 입력하셔야 인증번호를 보내죠..").css("color","red");
+				 $('#phoneNumValid').html("예)010-1234-4567").css("color","red");
 				 $('#phoneNumber').css("border","red 2px solid");
 			
 			 }
