@@ -14,7 +14,11 @@
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments/>
+<<<<<<< HEAD
 		</buildCommand> 
+=======
+		</buildCommand>
+>>>>>>> refs/remotes/origin/master
 		<buildCommand>
 			<name>org.eclipse.wst.common.project.facet.core.builder</name>
 			<arguments/>

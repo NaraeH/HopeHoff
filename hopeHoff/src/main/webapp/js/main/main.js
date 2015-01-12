@@ -1,13 +1,9 @@
 $(function(){
 	//첫 시작시 리스트 로딩
-	//$("#containerList").load("/hopeHoff/web/main/containerList.html"); => 나중에 containerList.html지우기
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	loadContainerList();
-	
-		   
-
+	loadContainerList("none");
 	
 });
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
@@ -157,43 +153,53 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		);
 		
 		//$("#detailList").load("../details/details.html"); 
-	
 		
-		
-		//json으로 불러오는 건 성공 => 데이터 어떻게 뿌려줄지 고민중
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
-					console.log(data);
-					
 					require(['text!templates/detail-table.html'], function(html){
 				        var template = Handlebars.compile(html);
 				        $('#detailList').html( template(data) );
 				      });
 		});
 		
-		
-/*		function loadProductList(pageNo) {
-			  if (pageNo <= 0) pageNo = currPageNo;
-			  
-				$.getJSON('../json/product/list.do?pageNo=' + pageNo, 
-			    function(data){
-			      setPageNo(data.currPageNo, data.maxPageNo);
-			      var products = data.products;
-			      
-			      require(['text!templates/product-table.html'], function(html){
-			        var template = Handlebars.compile(html);
-			        $('#listDiv').html( template(data) );
-			      });
-			    });
-			}*/
-		
-		
 		//detail부분 아래로 내려오는 효과
 		$( "#detailList" ).slideDown( 1000, function() {
 			$("#detailList").css("display", "inline-block");
 		  });
 });	
+
+//여기!!!!
+$(document).delegate(".has-sub ul a","click",function(){
+	
+	loadContainerList($(this));
+	
+/*	var ulId = $(this).closest("ul").attr("id");
+	var keywordGroup = null;
+	
+	if( ulId = "지역" ){
+		keywordGroup = "SAREA";
+	}else if( ulId = "장소타입" ){
+		keywordGroup = "STYPE";
+	}else if( ulId = "안주류" ){
+		keywordGroup = "SSNACK";
+	}else {
+		keywordGroup = "all";
+	}
+	
+	$.getJSON(
+			'../../main/list.do', {"keywordGroup": keywordGroup, "keyword":$($(this).children()[0]).html()},
+			function(data){
+				console.log(data);
+				console.log("!!!");
+				
+				require(['text!templates/list-table.html'], function(html){
+			        var template = Handlebars.compile(html);
+			        $('#containerList').html( template(data) );
+			      });
+	});*/
+});
+
 
 
 
@@ -249,33 +255,7 @@ function loadKeyword() {
 								 .appendTo("#" + keyword + " ul");
 					}
 				}
-				
-			
-/*				//webContainerKeyword
-				var ul = $("<ul>").appendTo("#WebContainerKeyword");
-				
-				for(var keyword in data){
-					//keyword group
-					$("<li>").addClass("has-sub")
-					 		 .append($("<a>").attr("href", "#")
-					 				 		 .append($("<span>").html(data[keyword][0])))
-					 		 .append($("<ul>").attr("id", data[keyword][0]))
-					 .appendTo(ul);
-					
-					//keyword item
-					var keywordGroup= data[keyword];
-					var keywordUl = $("#WebContainerKeyword>ul>li ul" + "#" + data[keyword][0]);
-					for(var i = 1; i < keywordGroup.length; i++){
-						$("<li>")
-						 		.append($("<a>").attr("href", "#")
-									     		.append($("<span>").html(keywordGroup[i])))
-						.appendTo(keywordUl);
-					}
-				}*/
-				
-				//webContainerKeyword
-				//var ul = $("<ul>").appendTo("#WebContainerKeyword");
-				
+		
 				for(var keyword in data){
 					//keyword group
 					$("<li>").addClass("has-sub")
@@ -297,31 +277,32 @@ function loadKeyword() {
 	});
 }
 
-function loadContainerList(){
-	$.getJSON(
-			'../../main/list.do',
-			function(data){
-				for (var i = 0; i < data.shops.length; i++) {
-					var shopId = "#shop" + i;
-					$($("<div>").addClass("list").attr("id", "shop" + (i + 1)).attr("data-shop", data.shops[i].businessNo)
-							    .append($("<div>").addClass("shopPhoto")
-							    				  .append($("<img>").attr("src", "/hopeHoff/img/shopPhoto/" + data.shops[i].shopMainPhoto))
-							    				  .append($("<div>").addClass("btnBook")
-							    						  			.attr("id", "book" + i)
-							    						  			.html("예약하기")))
-							    .append($("<div>").addClass("shopInfo")
-							    				  .append($("<span>").addClass("shopTilte")
-							    						  			 .html("[ " + data.shops[i].shopName + " ]"))
-							    				  .append($("<span>").addClass("shopIntro")
-							    						  			 .html(data.shops[i].shopIntro))
-							    				  .append($("<div>").addClass("shopAddr")
-							    						  			.html(data.shops[i].shopAddr))))
-							    				  /*.text("[" + data.shops[i].shopName + "]" + data.shops[i].shopIntro)))*/
-					.appendTo("#containerList");
-				}
-				setContainerSize();
-			});
+function loadContainerList(that){
+	var ulId = $(that).closest("ul").attr("id");
+	var keyword = $($(that).children()[0]).html();
+	var keywordGroup = null;
 	
+	if( ulId == "지역" ){ 
+		keywordGroup = "SAREA";
+	}else if( ulId == "장소타입" ){
+		keywordGroup = "STYPE";
+	}else if( ulId == "안주류" ){
+		keywordGroup = "SSNACK";
+	}else {
+		keywordGroup = "none";
+	}
+	
+	if(keyword == "undefined" ){ keyword = "all" }
+	
+	$.getJSON(
+			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
+			function(data){
+				require(['text!templates/list-table.html'], function(html){
+			        var template = Handlebars.compile(html);
+			        $('#containerList').html( template(data) );
+			        setContainerSize();
+			      });
+			});
 }
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이는 함수
@@ -364,6 +345,7 @@ function setContainerSize(){
 	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
 							  + Narae.removePx( $(".list").css("margin-left") ) 
 							  + Narae.removePx( $(".list").css("margin-right") ) + 5;
+	
 /*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
 			  + Narae.removePx( $(".list").css("margin-left") ) 
 			  + Narae.removePx( $(".list").css("margin-right") )) * 4;  //4 =>한줄에 있는 리스트 개수
