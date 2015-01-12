@@ -10,7 +10,6 @@
 		<result column="UNAME" property="uName" />
 		<result column="UTYPE" property="uType" />
 		<result column="UPASSWORD" property="uPwd" />
-		<result column="UEMAIL" property="uEmail" />
 		<result column="UPHONE" property="uPhone" />
   </resultMap>
   
@@ -19,12 +18,11 @@
 		<result column="UNAME" property="uName" />
 		<result column="UTYPE" property="uType" />
 		<result column="UPASSWORD" property="uPwd" />
-		<result column="UEMAIL" property="uEmail" />
 		<result column="UPHONE" property="uPhone" />
   </resultMap>
   
   <select id="existUser" parameterType="map" resultMap="userMap">
-  SELECT UID,UNAME,UPHONE,UEMAIL FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
+  SELECT UID,UNAME,UPHONE FROM USER WHERE UID=#{uId} AND UPASSWORD=#{uPwd}
   </select>
   
  <select id="selectPhoneList" resultMap="userPhoneMap">

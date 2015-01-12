@@ -19,21 +19,21 @@
 	</resultMap>
 
 	<select id="selectList" resultMap="shopMap">
-		SELECT shop.BBNO, SNAME, SINTRO, SADDR, MAINPHOTO 
-		FROM shop, shopphoto 
-		where shop.BBNO = shopphoto.BBNO
+		SELECT SHOP.BBNO, SNAME, SINTRO, SADDR, MAINPHOTO 
+		FROM SHOP, SHOPPHOTO 
+		WHERE SHOP.BBNO = SHOPPHOTO.BBNO
 	</select>
 	
  	<select id="selectOne" parameterType="String" resultMap="shopMap">
  		SELECT STIME, SPHONE, SNAME, SINFO, SADDR
-		FROM shop WHERE shop.SNAME = #{shopName}
+		FROM SHOP WHERE SHOP.SNAME = #{shopName}
 	</select>
 	
 	<select id="selectPhoto" parameterType="String" resultMap="shopMap">
  		 SELECT MAINPHOTO, DETAILPHOTO1, DETAILPHOTO2, DETAILPHOTO3
-		 FROM shop, shopPhoto  
-		 WHERE shop.BBNO = shopPhoto.BBNO
-		 AND shop.SNAME = #{shopName}
+		 FROM SHOP, SHOPPHOTO  
+		 WHERE SHOP.BBNO = SHOPPHOTO.BBNO
+		 AND SHOP.SNAME = #{shopName}
 	</select>
 	
 </mapper>
