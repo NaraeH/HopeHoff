@@ -1,0 +1,161 @@
+	<div id= "detailsBody">
+
+		<div id = "detailHeader">
+			<button id="btnClose" type="button" class="close" value="close">X</button>
+		</div>
+
+		<div id="detailContainer">
+			<div id="leftContainer">
+				<div id= "pubPhotoListWrap" class="width-silde-wrap">
+					<div class="myLeftWrap">
+						<div><span id="photoToLeft" class="box-rotate-left"></span></div>
+					</div>
+					<div class="myRightWrap">
+						<div><span id="photoToRight" class="box-rotate-right"></span></div>
+					</div>
+	
+					<ul>
+						<li>
+							<div id="pubPhoto1" class="myPhotoList" data-src={{shopPhotos.shopMainPhoto}}>
+								<div class="myImgText"> {{shopDetail.shopName}} (1/4) <br> ●○○○ </div>
+							</div>
+						</li>
+						<li>
+							<div id="pubPhoto2" class="myPhotoList" data-src={{shopPhotos.shopDetailPhoto1}}>
+								<div class="myImgText"> {{shopDetail.shopName}} (2/4) <br> ○●○○ </div>
+							</div>
+						</li>
+						<li>
+							<div id="pubPhoto3" class="myPhotoList" data-src={{shopPhotos.shopDetailPhoto2}}>
+								<div class="myImgText"> {{shopDetail.shopName}} (3/4) <br> ○○●○ </div>
+							</div>
+						</li>
+						<li>
+							<div id="pubPhoto3" class="myPhotoList" data-src={{shopPhotos.shopDetailPhoto3}}>
+								<div class="myImgText"> {{shopDetail.shopName}} (4/4) <br> ○○○● </div>
+							</div>
+						</li>
+					</ul>
+				</div>
+	
+				<input type="button" id="reservBtn" value="예약">
+				</div>
+			
+			<div id= "rightContainer">		
+			<div id="hoffInfo">
+				<p>{{shopDetail.shopName}}</p><br><br>
+				<p>영업시간 : {{shopDetail.shopTime}}</p><br>
+				<p>가게주소 : {{shopDetail.shopAddr}}</p><br>
+				<p>전화번호 : {{shopDetail.shopPhone}}</p><br>
+				<p>가게소개 : {{shopDetail.shopInfo}} </p> 
+			</div>
+
+
+			<div id="tabs">
+				<div id="tabsContent">
+					<div id="contentMenu">
+						<div id="menuListWrap" class="width-silde-wrap">
+							<div class="myLeftWrap">
+								<div><span id="menuToLeft" class="box-rotate-left"></span></div>
+							</div>
+							<div class="myRightWrap">
+								<div><span id="menuToRight" class="box-rotate-right"></span></div>
+							</div>
+									
+							<ul>
+								<li>
+									<div>
+										<img src ="../../img/details/chiken.jpg" class="box myPhotoList">
+ 										<div id="overlay">
+											<span id="menu">{{shopMenu.menuName}}</span><br>
+											<span id="price">17000</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<img src ="../../img/details/cheese.jpg" class="box myPhotoList">
+										<!-- <div id="overlay">
+											<span id="menu">크림치즈 퐁닭</span><br>
+											<span id="price">17500</span>
+										</div> -->
+									</div>
+								</li>
+								<li>
+									<div>
+										<img src ="../../img/details/pizza.jpg" class="box myPhotoList">
+										<!-- <div id="overlay">
+											<span id="menu">베감피자</span><br>
+											<span id="price">16800</span>
+										</div> -->
+									</div>
+								</li>
+								<li>
+									<div>
+										<img src ="../../img/details/odang.jpg" class="box myPhotoList">
+										<!-- <div id="overlay">
+											<span id="menu">꼬치어묵전골</span><br>
+											<span id="price">17500</span>
+										</div> -->
+									</div>
+								</li>
+								 <li>
+								 	<div>
+								 		<img src ="../../img/details/odang.jpg" class="box myPhotoList">
+										<!-- <div id="overlay">
+											<span id="menu">꼬치어묵전골</span><br>
+											<span id="price">17500</span>
+										</div> -->
+									</div>
+								</li> 
+								<li>
+									<div>
+										<img src ="../../img/details/pizza.jpg" class="box myPhotoList">
+										<!-- <div id="overlay">
+											<span id="menu">베감피자</span><br>
+											<span id="price">16800</span>
+										</div> -->
+									</div>
+								</li>
+								<li>
+									<div>
+										<img src ="../../img/details/chiken.jpg" class="box myPhotoList">
+										<!-- <div id="overlay">
+											<span id="menu">뿌링클 치킨</span><br>
+											<span id="price">17000</span>
+										</div> -->
+									</div>
+								</li>
+									
+							</ul>
+						</div> <!-- menuList -->
+					</div><!-- contentMenu -->
+								   
+					<div id="contentMap"></div>
+							
+					<div id="contentComments">
+						<table id="dataForm" class="table table-hover"></table>
+					</div>
+				</div>	<!-- tabsContent -->
+
+ 				<div id="tabsBar">
+					<div id="tabsBarText">
+						<div id='menuText' class="menu">Menu</div>
+						<div id='mapText' class="map">Map</div>
+						<div id='commentText' class="comment">Comment</div>
+					</div>
+					<div id="tabsBarButton">
+						<div id='menuButton' class="menu"></div>
+						<div id='mapButton' class="map"></div>
+						<div id='commentButton' class="comment"></div>
+					</div>
+				</div> 
+			</div>	<!-- tabs 꺼야 -->
+			</div>
+		</div>	<!--body꿑 -->
+
+
+
+	</div>	<!-- myModal -->
+
+	<script src='../../js/details/detail-table.js'></script>

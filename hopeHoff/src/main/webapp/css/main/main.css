@@ -300,6 +300,7 @@
 	.shopInfo>.shopIntro {
 		padding: 0px 5px;
 		font-size:13px;
+		overflow: hidden;
 	}
 	
 	.shopInfo>.shopAddr {
@@ -402,7 +403,7 @@
 	
 	/*--------------------- web keyword-----------------------------*/
 	#WebContainerKeyword {
-		width: 70%;
+		/* width: 70%; */
 		height: 50px;
 		background:#ffb500;
 		display: table;

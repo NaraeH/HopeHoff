@@ -16,6 +16,9 @@
 <link rel="stylesheet" type="text/css" 	href="/hopeHoff/css/myMarket/myMarket.css">
 <link rel='stylesheet' type="text/css" href='/hopeHoff/css/myPage/myPage.css'>
 
+
+<link rel="stylesheet" type="text/css" href="/hopeHoff/css/details/detail-table.css">
+
 </head>
 <body>
 	<div id="back"></div>
@@ -53,7 +56,7 @@
 						<div id="btnMyShop" title="My Shop" class="btn-header-top-left click-myShop">내가게 보기</div>
 						<div id="btnRecommandPlace" title="Recommand place" class="btn-header-top-left click-recommandPlace">추천장소</div>
 					</div>
-					<div id="headerLeftBottomMenu"> <a class='userName' href='#'>손</a>님 환영합니다</div>
+					<div id="headerLeftBottomMenu"><span class='userName'>손님</span> 환영합니다</div>
 				</div>
 				<div id="headerMiddle">
 					<a href="main.html"><img src="/hopeHoff/img/main/mainLogo.png">HopeHoff</a>
@@ -61,9 +64,9 @@
 				<div id="headerRight">
 					<div id="headerTopMenu" class="width-ul-style">
 						<ul>
-							<li><a href="#" class="loginBtn">로그인</a></li>
-							<li><a href="#" class="logoutBtn">로그아웃</a></li>
-							<li><a href="#" class="signUpBtn">회원가입</a></li>
+							<li class="loginBtn"><a href="/hopeHoff/web/login/login.html">로그인</a></li>
+							<li class="logoutBtn"><a href="#">로그아웃</a></li>
+							<li class="signUpBtn"><a href="#">회원가입</a></li>
 						</ul>
 					</div>
 				</div>
@@ -75,10 +78,10 @@
 				<div id="rightSmallHeader" class="width-ul-style">
 					<div class="width-ul-style">
 						<ul>
-								<li><a class='userName' href='#'>손</a>님</li>
-								<li><a href="#" class="loginBtn">로그인</a></li>
-								<li><a href="#" class="logoutBtn">로그아웃</a></li>
-								<li><a href="#" class="signUpBtn">회원가입</a></li>
+								<li><span class='userName'>손님</span></li>
+								<li class="loginBtn"><a href="/hopeHoff/web/login/login.html">로그인</a></li>
+								<li class="logoutBtn"><a href="#">로그아웃</a></li>
+								<li class="signUpBtn"><a href="#">회원가입</a></li>
 						</ul>
 					</div>
 				</div>
@@ -138,6 +141,8 @@
 	<script src='/hopeHoff/js/common/common.js'></script>
 	<script src='/hopeHoff/js/main/main.js'></script>
 	<script src="/hopeHoff/js/jquery/jquery-ui.min.js"></script>
+	<script src='/hopeHoff/js/handlebars-v2.0.0.js'></script>
+	<script type="text/javascript" src='/hopeHoff/js/require.js'></script>
 	
 <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=d4d9b75720036a3beb504b5419e4327529360b24"></script>
 

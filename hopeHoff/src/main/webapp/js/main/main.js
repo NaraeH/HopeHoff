@@ -13,14 +13,10 @@ $(function(){
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
 	  $.getJSON('/hopeHoff/json/auth/logout.do', function(data){
-	    location.href = '/hopeHoff/web/login/login.html';
+	    location.href = '/hopeHoff/web/main/main.html';
 	  });
 	});
-//로그인 클릭 시 로그인페이지로 고고
-$('.loginBtn').click(function(event){
-	  location.href = '/hopeHoff/web/login/login.html';
-	});
-	
+
 //로그인해서 사용자 정보가 main으로 넘어오게됩니당
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	if (data.status == 'fail') {
@@ -29,11 +25,11 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		$('.signUpBtn').css('display', '');
 
 	} else {
-		$('.logoutBtn').css('display', ''); //로그인 성공 시 로그아웃버튼 살리구~ 
+		$('.logoutBtn').css('display', '').css("border", "0px"); //로그인 성공 시 로그아웃버튼 살리구~ 
 		$('.loginBtn').css('display', 'none');
 		$('.signUpBtn').css('display', 'none');
 		
-		$('.userName').html(data.loginUser.uName).css("color","#ffcd28");
+		
 
 	   if(data.loginUser.uType == "user") {
 		 
@@ -41,11 +37,15 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 			$("#btnBook").css('display','');		   
 		    $("#btnMyShop").css('display','none');
 		    
+		    $('.userName').html(data.loginUser.uName + "님").css("color","#ffb500");
+		    
 	   } else if(data.loginUser.uType == "boss") {
 		  
 		   $("#btnMyPage").css('display','');		   
 			 $("#btnBook").css('display','none');		   
 			 $("#btnMyShop").css('display','');
+			 
+			 $('.userName').html(data.loginUser.uName + " 사장님").css("color","#ffb500");
 	   } else { //손님ㅋㅋ
 		   
 		   $("#btnMyPage").css('display','none');		   
@@ -130,7 +130,7 @@ $(document).delegate(".list","mouseout",function(){
 
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		var whichNo = Math.ceil(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) * 4;
-		var shopName =  $(this).closest(".list").attr("data-shop");
+		var businessNo =  $(this).closest(".list").attr("data-shop");
 		
 		if($("#containerList").children().length < 4) {
 			whichNo = $("#containerList").children().length;
@@ -156,16 +156,37 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("z-index", "5")
 		);
 		
-		$("#detailList").load("../details/details.html"); 
+		//$("#detailList").load("../details/details.html"); 
 	
 		
-		/*
+		
 		//json으로 불러오는 건 성공 => 데이터 어떻게 뿌려줄지 고민중
 		$.getJSON(
-				'../../main/detail.do', {"shopName": shopName},
+				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
 					console.log(data);
-		});*/
+					
+					require(['text!templates/detail-table.html'], function(html){
+				        var template = Handlebars.compile(html);
+				        $('#detailList').html( template(data) );
+				      });
+		});
+		
+		
+/*		function loadProductList(pageNo) {
+			  if (pageNo <= 0) pageNo = currPageNo;
+			  
+				$.getJSON('../json/product/list.do?pageNo=' + pageNo, 
+			    function(data){
+			      setPageNo(data.currPageNo, data.maxPageNo);
+			      var products = data.products;
+			      
+			      require(['text!templates/product-table.html'], function(html){
+			        var template = Handlebars.compile(html);
+			        $('#listDiv').html( template(data) );
+			      });
+			    });
+			}*/
 		
 		
 		//detail부분 아래로 내려오는 효과
@@ -282,7 +303,7 @@ function loadContainerList(){
 			function(data){
 				for (var i = 0; i < data.shops.length; i++) {
 					var shopId = "#shop" + i;
-					$($("<div>").addClass("list").attr("id", "shop" + (i + 1)).attr("data-shop", data.shops[i].shopName)
+					$($("<div>").addClass("list").attr("id", "shop" + (i + 1)).attr("data-shop", data.shops[i].businessNo)
 							    .append($("<div>").addClass("shopPhoto")
 							    				  .append($("<img>").attr("src", "/hopeHoff/img/shopPhoto/" + data.shops[i].shopMainPhoto))
 							    				  .append($("<div>").addClass("btnBook")
