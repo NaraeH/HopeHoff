@@ -1,10 +1,9 @@
 $(function(){
 	//첫 시작시 리스트 로딩
-	//$("#containerList").load("/hopeHoff/web/main/containerList.html"); => 나중에 containerList.html지우기
 	$("#footer").load("/hopeHoff/web/common/footer.html");
 	
 	loadKeyword();
-	loadContainerList();
+	loadContainerList("none");
 	
 });
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
@@ -170,6 +169,38 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		  });
 });	
 
+//여기!!!!
+$(document).delegate(".has-sub ul a","click",function(){
+	
+	loadContainerList($(this));
+	
+/*	var ulId = $(this).closest("ul").attr("id");
+	var keywordGroup = null;
+	
+	if( ulId = "지역" ){
+		keywordGroup = "SAREA";
+	}else if( ulId = "장소타입" ){
+		keywordGroup = "STYPE";
+	}else if( ulId = "안주류" ){
+		keywordGroup = "SSNACK";
+	}else {
+		keywordGroup = "all";
+	}
+	
+	$.getJSON(
+			'../../main/list.do', {"keywordGroup": keywordGroup, "keyword":$($(this).children()[0]).html()},
+			function(data){
+				console.log(data);
+				console.log("!!!");
+				
+				require(['text!templates/list-table.html'], function(html){
+			        var template = Handlebars.compile(html);
+			        $('#containerList').html( template(data) );
+			      });
+	});*/
+});
+
+
 
 
 /*--------------------------mobile용 event------------------------------*/
@@ -246,18 +277,32 @@ function loadKeyword() {
 	});
 }
 
-function loadContainerList(){
+function loadContainerList(that){
+	var ulId = $(that).closest("ul").attr("id");
+	var keyword = $($(that).children()[0]).html();
+	var keywordGroup = null;
+	
+	if( ulId == "지역" ){ 
+		keywordGroup = "SAREA";
+	}else if( ulId == "장소타입" ){
+		keywordGroup = "STYPE";
+	}else if( ulId == "안주류" ){
+		keywordGroup = "SSNACK";
+	}else {
+		keywordGroup = "none";
+	}
+	
+	if(keyword == "undefined" ){ keyword = "all" }
+	
 	$.getJSON(
-			'../../main/list.do',
+			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
 			function(data){
-				console.log(data);
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
 			        setContainerSize();
 			      });
 			});
-	
 }
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이는 함수
@@ -301,7 +346,6 @@ function setContainerSize(){
 							  + Narae.removePx( $(".list").css("margin-left") ) 
 							  + Narae.removePx( $(".list").css("margin-right") ) + 5;
 	
-	console.log(containerListWidth);
 /*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
 			  + Narae.removePx( $(".list").css("margin-left") ) 
 			  + Narae.removePx( $(".list").css("margin-right") )) * 4;  //4 =>한줄에 있는 리스트 개수
