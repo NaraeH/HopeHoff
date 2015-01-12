@@ -6,7 +6,7 @@
 
 <mapper namespace="hopeHoff.dao.ShopDao">
 
-	<resultMap type="Map" id="shopMap">
+	<resultMap type="Shop" id="shopMap">
 		<id column="BBNO" property="businessNo"/>
    		<result column="SNAME" property="shopName"/>
    		<result column="SINTRO" property="shopIntro"/>
@@ -15,7 +15,14 @@
    		<result column="STIME" property="shopTime"/>
    		<result column="SPHONE" property="shopPhone"/>
    		<result column="SINFO" property="shopInfo"/>
-   		
+	</resultMap>
+	
+	<resultMap type="ShopPhoto" id="photoMap">
+		<id column="BBNO" property="businessNo"/>
+		<result column="MAINPHOTO" property="mainPhoto"/>
+		<result column="DETAILPHOTO1" property="detailPhoto1"/>
+		<result column="DETAILPHOTO2" property="detailPhoto2"/>
+		<result column="DETAILPHOTO3" property="detailPhoto3"/>
 	</resultMap>
 
 	<select id="selectList" resultMap="shopMap">
@@ -24,16 +31,24 @@
 		WHERE SHOP.BBNO = SHOPPHOTO.BBNO
 	</select>
 	
- 	<select id="selectOne" parameterType="String" resultMap="shopMap">
+  	<select id="selectOne" parameterType="String" resultMap="shopMap">
  		SELECT STIME, SPHONE, SNAME, SINFO, SADDR
-		FROM SHOP WHERE SHOP.SNAME = #{shopName}
+		FROM SHOP 
+		WHERE BBNO = #{businessNo}
 	</select>
 	
-	<select id="selectPhoto" parameterType="String" resultMap="shopMap">
+	<select id="selectPhoto" parameterType="String" resultMap="photoMap">
+ 		 SELECT BBNO, MAINPHOTO, DETAILPHOTO1, DETAILPHOTO2, DETAILPHOTO3
+		 FROM SHOPPHOTO  
+		 WHERE BBNO = #{businessNo}
+	</select>
+
+	
+<!-- 	<select id="selectMenu" parameterType="String" resultMap="Menu">
  		 SELECT MAINPHOTO, DETAILPHOTO1, DETAILPHOTO2, DETAILPHOTO3
 		 FROM SHOP, SHOPPHOTO  
 		 WHERE SHOP.BBNO = SHOPPHOTO.BBNO
 		 AND SHOP.SNAME = #{shopName}
-	</select>
+	</select> -->
 	
 </mapper>

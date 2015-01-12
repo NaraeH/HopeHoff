@@ -22,38 +22,32 @@ $(document).delegate(".list","mouseout",function(){
 	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
 });*/
 
-$(document).delegate(".table-tr","mouseover",function(){
-	//console.log("들어옴");
-	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
-	//console.log(num);
-	$(this).children().eq(4).html("<button id=btnDelete"+num+">삭제</button>");
-});
 
-$(document).delegate(".table-tr","mouseout",function(){
-	$(this).children().eq(4).html("");
+var status;
+$(document).delegate(".table-tr","click",function(){
+	
+	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
+	//$(this).children().eq(4).html("<button id=btnDelete"+num+">삭제</button>");
+	status= $('#myBookData').hasClass("table-content");
+	console.log(status);
+	if(status){
+	$('<tr>').addClass('table-content').attr("id","#"+"tableContent"+num)
+			 .append($('<td colspan="3">').html("aaaa")).css('text-align','center')
+			 .append($('<td>').html("<button id=btnDelete"+num+">삭제</button>"))
+			.insertAfter('#'+'table-tr'+num)
+	}
+	else if(!(status==false))
+	{
+		$('#myBookData').remove($('#'+'tableContent'+num))
+	}
+	
 	
 });
-
-	//***************************** 홀수열 눌렀을때 짝수열 내용보기 ********************************//
-
-	$('.tableTitle').click(function(event){
-		var num =$($(this)[0]).attr("id").split("tableStatus")[1]-0;
-		//console.log($($(this)[0]).attr("id");
-		//console.log($($(this)[0]).attr("id").split("dataButton"));
-
-		var status=$('#'+'tableContent'+(num+1)).css('display');
-		var tableContents = $('#'+'tableContent'+(num+1));
-		console.log(tableContents);
-		if(status=='none')
-		{
-			$('#'+'tableContent'+(num+1)).slideDown(1000);
-		}
-		else
-			$('#'+'tableContent'+(num+1)).slideUp(1000);
-	});
+		
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
 	$('#btnDelete').click(function(event){
+		console.log("Aaa");
 		alert("예약 취소 하시겠습니까?");
 		$('#'+'tRow'+checkedTable).remove();
 	});

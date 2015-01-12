@@ -27,10 +27,20 @@
 	
 	
 	/******************** DatePicker 부분 **************************/
+	#myBookDatePicker{
+		margin-top: 30px;
+		margin-bottom: 40px;
+	
+	}
 	#myBookDatePicker > p{
+		display:inline;
 		padding-left:30px;
-		margin-left: 350px;
-		margin-bottom: 55px;
+		margin-left: 200px;
+		
+	}
+	#myBookDatePicker > button{
+		width:65px !important;
+		height:30px !important;
 	}
 	
 	/********************* Container 부분 ***************************/
