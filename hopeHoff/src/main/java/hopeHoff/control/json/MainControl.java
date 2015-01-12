@@ -1,5 +1,6 @@
 package hopeHoff.control.json;
 
+import hopeHoff.dao.MenuDao;
 import hopeHoff.dao.ShopDao;
 
 import java.io.FileReader;
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/main")
 public class MainControl {
-	@Autowired
-	ShopDao shopDao;
+	@Autowired ShopDao shopDao;
+	@Autowired MenuDao menuDao;
 	
 	@RequestMapping("/keyword")
 	public Object keywords(){
@@ -48,10 +49,11 @@ public class MainControl {
 	}
 	
 	@RequestMapping("/detail")
-	public Object detail(String shopName){
+	public Object detail(String businessNo){
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("shopInfo", shopDao.selectOne(shopName));
-		resultMap.put("shopPhotos", shopDao.selectPhoto(shopName));
+		resultMap.put("shopDetail", shopDao.selectOne(businessNo));
+		resultMap.put("shopPhotos", shopDao.selectPhoto(businessNo));
+		resultMap.put("shopMenu", menuDao.selectMenu(businessNo));
 		
 		System.out.println(resultMap);
 		return resultMap;

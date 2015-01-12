@@ -66,7 +66,7 @@ $(function(){
 	/***********************************************유. 효 . 성........ 검 사**************************/	
 	var valpoint=0;
 	
-	//V ID input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)
+	//-------- ID-------------( input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)  )
 	$('#formGroupInputLarge').focus(function() {
 	 $('#idText').css("display","");
 		
@@ -74,23 +74,25 @@ $(function(){
 		// 키를 눌렀다가 내 손에 모든게 떨어졌을때
 	 $("#formGroupInputLarge").keyup(function(){
 		
-		$.get("http://192.168.0.205:3000/loginCheck",{
+		$.get("http://192.168.0.150:3000/loginCheck",{
 			// 겟 요청의 파라미터를 이것을 전달하겠다. 이위에꺼  //겟터
 			id : $('#formGroupInputLarge').val()
 		}, function(data){
 			//노드에 서버에 응답까지 성공하면  //세터
 			//이렇게 응답하겠다.(이렇게 이벤트발생하겠다.)
 			
-				if(data.result == "사용가능한 아이디입니다."){
-					$('#idText').html(data.result).css("color","green");
-					$('#colorId').css("border","green");
-					
-				} else { /*중복된 아이디가 있습니다.*/
-					$('#idText').html(data.result).css("color","red");
-					$('#colorId').css("border","red");
-				} 
-	       }
-	  ); /*get꺼*/	
+			if(($('#formGroupInputLarge').val().match(/^[a-z][a-z\d]{3,11}$/) != null)
+					 &&(data.result == "사용가능한 아이디입니다.")){
+				
+				$('#idText').html("ok").css("color","green");
+				$('#colorId').css("border","green 2px solid");
+	
+			 } else { /*중복된 아이디가 있습니다.*/
+					$('#idText').html("That's nono").css("color","red");
+					$('#colorId').css("border","red 2px solid");
+			 } 
+				
+		}); /*get꺼*/	
 	 }); /*keyup꺼*/
 	 
 	});//focus
@@ -115,6 +117,14 @@ $(function(){
 			$('#btnSignUp').attr("disabled", true);
 		}
 	});
+	
+
+	
+	
+	
+	
+	
+	
 	/* --------------password 유 효 성--------------- */
 	$('#inputPassword3').focus(function() {
 		 $('#pwdValid').css("display","");
@@ -161,7 +171,7 @@ $(function(){
 				 $('#colorPwdCheck').css("border","green");
 		
 			 } else {
-				 $('#pwdCheckText').html("불일치ㅠ_ㅠ").css("color","red");
+				 $('#pwdCheckText').html("불일치합니다.").css("color","red");
 				 $('#colorPwdCheck').css("border","red");
 				 
 			 }

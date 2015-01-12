@@ -1,12 +1,12 @@
 package hopeHoff.dao;
 
-import java.util.List;
-import java.util.Map;
+import hopeHoff.domain.Shop;
+import hopeHoff.domain.ShopPhoto;
 
+import java.util.List;
 
 public interface ShopDao {
 	public List<?> selectList();
-	public Map<String, Object> selectOne(String name);
-	public Map<String, Object> selectPhoto(String name);
-
+	public Shop selectOne(String businessNo);
+	public ShopPhoto selectPhoto(String businessNo);
 }

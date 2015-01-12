@@ -51,7 +51,12 @@ $(document).ready(function() {
 		$('#commentButton').css('background-color', '#FFB500');
 	});
 	
-
+	//id가 pubPhoto인것에 background-image 넣기
+	for( var i = 1; i < 5; i ++ ){
+		var pubPhotoName = "#pubPhoto" + i;
+		$(pubPhotoName).css("background-image", "url(/hopeHoff/img/shopPhoto/" + $(pubPhotoName).attr("data-src") + ")");
+	}
+	
 });
 
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸

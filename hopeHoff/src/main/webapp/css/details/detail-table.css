@@ -48,20 +48,6 @@
 		height: 340px; 
 	}
 	
-	
-/* 	#pubPhoto1 {
-		background-image: url("../../img/details/Wara-Wara01.jpg");
-	}
-	
-	#pubPhoto2 {
-		background-image: url("../../img/details/Wara-Wara02.jpg");
-	}
-	
-	#pubPhoto3 {
-		background-image: url("../../img/details/Wara-Wara03.jpg");
-	} */
-	
-
 	#rightContainer{                         /* 오른쪽꺼 */
 		display: inline-block;
 		width: 60%;
