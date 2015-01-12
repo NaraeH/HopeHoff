@@ -83,7 +83,7 @@
 	
 	/*************** 검사 문구**********************/
 
-	#idText, #pwdCheckText, #pwdValid, #nameValid{
+	#idText, #pwdCheckText, #pwdValid, #nameValid, #phoneNumValid{
 	color : red;
 	font-size : x-small;
 	font-weight : bolder;

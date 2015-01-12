@@ -39,12 +39,7 @@ $(function(){
 	        , 'json');
 	  });
 	
-	
-	$('#btnSignUp').click(function(event){
-		alert("감사합니다 ~ 이제,로그인 해주세요 !");
-       location.href = '../../web/login/login.html';
-	});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
-	
+
 	
 	
 	

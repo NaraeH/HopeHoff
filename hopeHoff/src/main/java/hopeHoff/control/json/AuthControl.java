@@ -87,5 +87,17 @@ public class AuthControl {
     return resultMap;
   }
 
+  @RequestMapping(value="/add", method=RequestMethod.POST)
+  public Object add(
+      String uType,
+      String uId,
+      String uName,
+      String uPwd,
+      String uPhone
+      ) throws Exception {
+	  HashMap<String,Object> resultMap = new HashMap<>();
+	  return resultMap;
+	  
+  }
 }
 
