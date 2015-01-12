@@ -32,7 +32,6 @@ public class MainControl {
 			resultMap.put("keywordRegion", keyword.get("region"));
 			resultMap.put("keywordPlace", keyword.get("place"));
 			resultMap.put("keywordSnack", keyword.get("snack"));
-			/*resultMap.put("keywordPeople", keyword.get("people"));*/
 			
 		}catch(Exception e){
 			e.printStackTrace();
@@ -55,7 +54,6 @@ public class MainControl {
 		resultMap.put("shopPhotos", shopDao.selectPhoto(businessNo));
 		resultMap.put("shopMenu", menuDao.selectMenu(businessNo));
 		
-		System.out.println(resultMap);
 		return resultMap;
 	}
 	

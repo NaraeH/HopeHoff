@@ -6,9 +6,6 @@ $(function(){
 	loadKeyword();
 	loadContainerList();
 	
-		   
-
-	
 });
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -157,37 +154,15 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		);
 		
 		//$("#detailList").load("../details/details.html"); 
-	
 		
-		
-		//json으로 불러오는 건 성공 => 데이터 어떻게 뿌려줄지 고민중
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
-					console.log(data);
-					
 					require(['text!templates/detail-table.html'], function(html){
 				        var template = Handlebars.compile(html);
 				        $('#detailList').html( template(data) );
 				      });
 		});
-		
-		
-/*		function loadProductList(pageNo) {
-			  if (pageNo <= 0) pageNo = currPageNo;
-			  
-				$.getJSON('../json/product/list.do?pageNo=' + pageNo, 
-			    function(data){
-			      setPageNo(data.currPageNo, data.maxPageNo);
-			      var products = data.products;
-			      
-			      require(['text!templates/product-table.html'], function(html){
-			        var template = Handlebars.compile(html);
-			        $('#listDiv').html( template(data) );
-			      });
-			    });
-			}*/
-		
 		
 		//detail부분 아래로 내려오는 효과
 		$( "#detailList" ).slideDown( 1000, function() {
@@ -249,33 +224,7 @@ function loadKeyword() {
 								 .appendTo("#" + keyword + " ul");
 					}
 				}
-				
-			
-/*				//webContainerKeyword
-				var ul = $("<ul>").appendTo("#WebContainerKeyword");
-				
-				for(var keyword in data){
-					//keyword group
-					$("<li>").addClass("has-sub")
-					 		 .append($("<a>").attr("href", "#")
-					 				 		 .append($("<span>").html(data[keyword][0])))
-					 		 .append($("<ul>").attr("id", data[keyword][0]))
-					 .appendTo(ul);
-					
-					//keyword item
-					var keywordGroup= data[keyword];
-					var keywordUl = $("#WebContainerKeyword>ul>li ul" + "#" + data[keyword][0]);
-					for(var i = 1; i < keywordGroup.length; i++){
-						$("<li>")
-						 		.append($("<a>").attr("href", "#")
-									     		.append($("<span>").html(keywordGroup[i])))
-						.appendTo(keywordUl);
-					}
-				}*/
-				
-				//webContainerKeyword
-				//var ul = $("<ul>").appendTo("#WebContainerKeyword");
-				
+		
 				for(var keyword in data){
 					//keyword group
 					$("<li>").addClass("has-sub")
@@ -301,25 +250,12 @@ function loadContainerList(){
 	$.getJSON(
 			'../../main/list.do',
 			function(data){
-				for (var i = 0; i < data.shops.length; i++) {
-					var shopId = "#shop" + i;
-					$($("<div>").addClass("list").attr("id", "shop" + (i + 1)).attr("data-shop", data.shops[i].businessNo)
-							    .append($("<div>").addClass("shopPhoto")
-							    				  .append($("<img>").attr("src", "/hopeHoff/img/shopPhoto/" + data.shops[i].shopMainPhoto))
-							    				  .append($("<div>").addClass("btnBook")
-							    						  			.attr("id", "book" + i)
-							    						  			.html("예약하기")))
-							    .append($("<div>").addClass("shopInfo")
-							    				  .append($("<span>").addClass("shopTilte")
-							    						  			 .html("[ " + data.shops[i].shopName + " ]"))
-							    				  .append($("<span>").addClass("shopIntro")
-							    						  			 .html(data.shops[i].shopIntro))
-							    				  .append($("<div>").addClass("shopAddr")
-							    						  			.html(data.shops[i].shopAddr))))
-							    				  /*.text("[" + data.shops[i].shopName + "]" + data.shops[i].shopIntro)))*/
-					.appendTo("#containerList");
-				}
-				setContainerSize();
+				console.log(data);
+				require(['text!templates/list-table.html'], function(html){
+			        var template = Handlebars.compile(html);
+			        $('#containerList').html( template(data) );
+			        setContainerSize();
+			      });
 			});
 	
 }
@@ -364,6 +300,8 @@ function setContainerSize(){
 	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
 							  + Narae.removePx( $(".list").css("margin-left") ) 
 							  + Narae.removePx( $(".list").css("margin-right") ) + 5;
+	
+	console.log(containerListWidth);
 /*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
 			  + Narae.removePx( $(".list").css("margin-left") ) 
 			  + Narae.removePx( $(".list").css("margin-right") )) * 4;  //4 =>한줄에 있는 리스트 개수
