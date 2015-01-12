@@ -98,6 +98,50 @@ insert into shop(BBNO,UID,SNAME,SADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNA
 		'영등포',
 		'포차',
 		'퓨전술집');
+		
+	insert into shop(BBNO,UID,SNAME,SADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('220-80-83576',
+	'b01',
+	'꾼(KKUNNORI)',
+	'서울시 서초구 서초동 1907-29번지 수호빌딩',
+	'02-535-9065',
+	'18:00 ~ 09:00',
+	'진정한 술꾼은 꾼으로 모여라!',
+	'테이블마다 각각의 독립된 공간에서 즐기는 룸타입의 호텔식 퓨전주점 꾼노리입니다.',
+	'강남',
+	'룸형식',
+	'퓨전술집');
+
+	insert into shop(BBNO,UID,SNAME,SADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('503-85-21617',
+	'b02',
+	'삼거리포차',
+	'서울특별시 서초구 서초동 1308-4 실버타운',
+	'02-532-1904',
+	'19:00 ~ 06:00',
+	'거리도 모인다 우리도 모이자 삼거리포차!',
+	'80s와 90s을 오묘하게 이어놓은 촬영장 컨셉의 삼거리포차입니다.',
+	'강남',
+	'포차',
+	'퓨전술집');
+	
+	insert into shop(BBNO,UID,SNAME,SADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('303-90-56632',
+	'b03',
+	'시바라구',
+	'서울 특별시 서초구 서초4동 1317-11',
+	'02-3477-0777',
+	'11:30 ~ 02:00',
+	'이자카야 주점은 시바라구! 욕 아니에요.',
+	'시바라구는 수제 해산물 전문 주점으로써 매일 싱싱한 재료를 이용하여 최상의 서비스를 제공하고 있습니다. 
+	  단체고객을 위한 넓은 좌석이 마련되어 있사오니 많은 이용 부탁드립니다',
+	'강남',
+	'이자카야',
+	'일본선술집');
+
+
+		
+		
 
 
 -------------- menu database  --------------------------
@@ -171,6 +215,47 @@ values(19,'128-31-85241','해물파전','12000','moon-menu3.jpg');
 insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
 values(20,'128-31-85241','찜닭','17000','moon-menu4.jpg');
 
+/****************** 꾼노리 *******************************/
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(21,'220-80-83576','데리야끼치킨','17000','kkun-menu1.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(22,'220-80-83576','칠리탕수육','16000','kkun-menu2.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(23,'220-80-83576','제육볶음','16000','kkun-menu3.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(24,'220-80-83576','까르보나라치킨','17000','kkun-menu4.jpg');
+
+/********************* 삼거리포차 **********************************/
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(25,'503-85-21617','골뱅이무침','19000','sam-menu1.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(26,'503-85-21617','두부김치','18000','sam-menu2.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(27,'503-85-21617','매콤한오돌뼈','20000','sam-menu3.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(28,'503-85-21617','오뎅탕','18000','sam-menu4.jpg')
+
+/******************** 시바라구 **********************************/
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(29,'303-90-56632','계란탕','10000','siba-menu1.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(30,'303-90-56632','나가사키짬뽕','20000','siba-menu2.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(31,'303-90-56632','타코와사비','8000','siba-menu3.jpg');
+
+insert into menu(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(32,'303-90-56632','해물볶음 우동','18000','siba-menu4.jpg')
+
 
 
 
@@ -195,7 +280,6 @@ insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
 values('211-87-14784','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
 insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
 values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u01');
-
 
 
 /*--------------------------------------------------*/
@@ -255,6 +339,14 @@ values('211-87-14784','seven-main.jpg','seven-detail1.jpg','seven-detail2.jpg','
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('128-31-85241','moon-main.jpg','moon-detail1.jpg','moon-detail2.jpg','moon-detail3.jpg');
 
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('220-80-83576','kkun-main.jpg','kkun-detail1.jpg','kkun-detail2.jpg','kkun-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('503-85-21617','sam-main.jpg','sam-detail1.jpg','sam-detail2.jpg','sam-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('303-90-56632','siba-main.jpg','siba-detail1.jpg','siba-detail2.jpg','siba-detail3.jpg');
 
 
 

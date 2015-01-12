@@ -8,6 +8,32 @@ $(function(){
 	  
 	});
 
+
+
+/*$(document).delegate(".list","mouseover",function(){
+	var shopAddr = "#" + $(this).attr("id") + " .shopAddr";
+	shopAddrText = $(shopAddr).html();
+	
+	$(shopAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
+});
+
+$(document).delegate(".list","mouseout",function(){
+	var btnDetail = "#" + $(this).attr("id") + " .btnDetail";
+	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
+});*/
+
+$(document).delegate(".table-tr","mouseover",function(){
+	//console.log("들어옴");
+	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
+	//console.log(num);
+	$(this).children().eq(4).html("<button id=btnDelete"+num+">삭제</button>");
+});
+
+$(document).delegate(".table-tr","mouseout",function(){
+	$(this).children().eq(4).html("");
+	
+});
+
 	//***************************** 홀수열 눌렀을때 짝수열 내용보기 ********************************//
 
 	$('.tableTitle').click(function(event){
@@ -47,16 +73,15 @@ $(function(){
 	
 	$('#prevBtn').click(function(event){
 		if (currPageNo > 1) {
-		  loadProductList(currPageNo - 1);
+			loadReservationList(currPageNo - 1);
 		}
 	});
 
 	$('#nextBtn').click(function(event){
 		if (currPageNo < maxPageNo) {
-		  loadProductList(currPageNo + 1);
+			loadReservationList(currPageNo + 1);
 		}
 	});
-	
 	
 	
 	function setPageNo(currPageNo, maxPageNo) {
@@ -73,22 +98,24 @@ $(function(){
 		}
 	
 	function loadReservationList(pageNo) {
-		  if (pageNo <= 0) pageNo = currPageNo;
-		  
+
+		if (pageNo <= 0) pageNo = currPageNo;
 			$.getJSON('../../json/reservation/list.do?pageNo=' + pageNo, 
 		    function(data){
 				console.log(data);
 		      setPageNo(data.currPageNo, data.maxPageNo);
 		      var reservations = data.reservations;
 		      
+		      $('.table-tr').remove();
+		      
 		      
 		      for (var i = 0; i < reservations.length; i++) {
-		        $('<tr>').addClass('tableReservationData'+i)
+		        $('<tr>').addClass('table-tr').attr('id','table-tr'+(i+1))
 		            .append($('<td class=table-data>').html(reservations[i].reservationNo))
 		            .append($('<td class=table-data>').html(reservations[i].uPhone))
 		            .append($('<td class=table-data>').html(reservations[i].reservationDate))
 		            .append($('<td class=table-data>').html(reservations[i].reservationStatus))
-		            .append($('<td class=table-data>').html('<button id=btnDelete>삭제</button>'))
+		            .append($('<td class=table-data>'))
 		            .appendTo('#myBookData')
 		      }
 		    });
