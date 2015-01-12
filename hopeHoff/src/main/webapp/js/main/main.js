@@ -297,6 +297,7 @@ function loadContainerList(that){
 	$.getJSON(
 			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
 			function(data){
+				console.log("===> " + data);
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
@@ -344,7 +345,7 @@ function setKeyword() {
 function setContainerSize(){
 	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
 							  + Narae.removePx( $(".list").css("margin-left") ) 
-							  + Narae.removePx( $(".list").css("margin-right") ) + 5;
+							  + Narae.removePx( $(".list").css("margin-right") ) + 10;
 	
 /*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
 			  + Narae.removePx( $(".list").css("margin-left") ) 
