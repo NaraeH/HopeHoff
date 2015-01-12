@@ -145,7 +145,34 @@ $(function hoverButton(){
 
 
 
+	/*$(document).delegate(".list","mouseover",function(){
+	var shopAddr = "#" + $(this).attr("id") + " .shopAddr";
+	shopAddrText = $(shopAddr).html();
+	
+	$(shopAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
+});
 
+$(document).delegate(".list","mouseout",function(){
+	var btnDetail = "#" + $(this).attr("id") + " .btnDetail";
+	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
+});*/
+
+
+$(document).delegate(".table-tr","mouseover",function(){
+	console.log("Aaaa");
+	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
+	console.log(num);
+	$("#btnDelete").css('display','');
+	
+});
+
+$(document).delegate(".table-tr","mouseout",function(){
+	console.log("bbb");
+	$("#btnDelete").css('display','none');
+	
+});
+
+.append($('<td class=table-data>').html('<button id=btnDelete>삭제</button>'))
 
 
 
