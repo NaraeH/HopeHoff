@@ -256,9 +256,6 @@
 	}
 	
 	.list:hover  {
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;    /* 위 3개의 box-sizing은 inner border */
 		border: 2px solid #ff0000;
 	}
 	
@@ -289,8 +286,10 @@
 	}
 	
 	.shopInfo {
+		width: inherit;
+		position:absolute;
 		color:#666666;
-		margin: 10px 2px;
+		margin: 10px 0px;
 	}
 
 	.shopInfo>.shopTilte {
@@ -319,9 +318,10 @@
 	.shopInfo>.btnDetail {
 		height: 35px;
 		line-height: 35px;
+		width: 90%;
 		padding: 0px 5px;
 		font-size: 12px;
-		margin-top: 5px;
+		margin: 5px auto 0px auto;
 		color: #333231;
 		overflow: hidden;
 		background: #ffb500;
@@ -330,6 +330,44 @@
 		border-radius:5px;
 		
 	}
+	
+	.shopInfo>.simpleReserv {
+		width:280px;
+		height: 160px;
+		display: none;
+		position:absolute;
+		background: rgba(0, 0, 0, 0.9);
+		transform: translateY(-152px);
+		color: #ffffff;
+		font-size: 14px;
+	}
+	
+	.shopInfo>.simpleReserv>span {
+		float:right;
+		font-size: 20px;
+		cursor: pointer;
+		margin: 5px;
+	}
+	
+	.shopInfo>.simpleReserv>p {
+		display:block;
+		margin: 2px auto;
+		width: 180px;
+		clear: right;
+	}
+	
+	.shopInfo>.simpleReserv>textarea {
+		display: block;
+		margin: 5px auto 8px auto;
+	}
+	
+	.shopInfo>.simpleReserv>button {
+		float:right;
+		margin-right: 17px;
+		padding: 3px;
+	}
+	
+
 	
 /* 	.list img:hover {
 		width: 220px;

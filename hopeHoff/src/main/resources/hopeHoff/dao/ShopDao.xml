@@ -10,7 +10,8 @@
 		<id column="BBNO" property="businessNo"/>
    		<result column="SNAME" property="shopName"/>
    		<result column="SINTRO" property="shopIntro"/>
-   		<result column="SADDR" property="shopAddr"/>
+   		<result column="SINTROADDR" property="shopIntroAddr"/>
+   		<result column="SDETAILADDR" property="shopDetailAddr"/>
    		<result column="SAREA" property="shopArea"/>
    		<result column="STYPE" property="shopType"/>
    		<result column="SSNACK" property="shopSnack"/>
@@ -29,7 +30,7 @@
 	</resultMap>
 
 	<select id="selectList" parameterType="map" resultMap="shopMap">
-		SELECT SHOP.BBNO, SNAME, SINTRO, SADDR, SAREA, STYPE, SSNACK, MAINPHOTO 
+		SELECT SHOP.BBNO, SNAME, SINTRO, SINTROADDR, SDETAILADDR, SAREA, STYPE, SSNACK, MAINPHOTO 
 		FROM SHOP, SHOPPHOTO 
 		WHERE SHOP.BBNO = SHOPPHOTO.BBNO
 		<choose>
@@ -46,7 +47,7 @@
 	</select>
 	
   	<select id="selectOne" parameterType="String" resultMap="shopMap">
- 		SELECT STIME, SPHONE, SNAME, SINFO, SADDR
+ 		SELECT STIME, SPHONE, SNAME, SINFO, SDETAILADDR
 		FROM SHOP 
 		WHERE BBNO = #{businessNo}
 	</select>

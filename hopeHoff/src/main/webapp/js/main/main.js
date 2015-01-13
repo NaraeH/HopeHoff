@@ -6,6 +6,14 @@ $(function(){
 	loadContainerList("none");
 	
 });
+
+var bodyWidth = Narae.removePx($("body").css("width"));
+var isMobile = bodyWidth < 769;
+var shopAddrText = "가게주소";
+var userName = null;
+var userPhoneNo = null;
+var isLogin = false;
+
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
 	  $.getJSON('/hopeHoff/json/auth/logout.do', function(data){
@@ -21,14 +29,16 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		$('.signUpBtn').css('display', '');
 
 	} else {
+		userName = data.loginUser.uName;
+		userPhoneNo = data.loginUser.uPhone;
+		isLogin = true;
+		
 		$('.logoutBtn').css('display', '').css("border", "0px"); //로그인 성공 시 로그아웃버튼 살리구~ 
 		$('.loginBtn').css('display', 'none');
 		$('.signUpBtn').css('display', 'none');
-		
-		
 
 	   if(data.loginUser.uType == "user") {
-		 
+		   
 		   $("#btnMyPage").css('display','');		   
 			$("#btnBook").css('display','');		   
 		    $("#btnMyShop").css('display','none');
@@ -48,15 +58,9 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 			 $("#btnBook").css('display','none');		   
 			 $("#btnMyShop").css('display','none');	
 	   }  
-
 	}
 });
 
-
-var bodyWidth = Narae.removePx($("body").css("width"));
-var isMobile = bodyWidth < 769;
-var shopAddrText = "가게주소";
-//var dataLength = 0; //데이터 개수
 
 /*------------------------이벤트 발생시------------------------*/
 $(window).resize(function(){
@@ -152,8 +156,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("z-index", "5")
 		);
 		
-		//$("#detailList").load("../details/details.html"); 
-		
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
@@ -169,38 +171,30 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		  });
 });	
 
-//여기!!!!
+//상단 keyword 선택했을 시, 리스트 다시 뿌리기
 $(document).delegate(".has-sub ul a","click",function(){
-	
 	loadContainerList($(this));
-	
-/*	var ulId = $(this).closest("ul").attr("id");
-	var keywordGroup = null;
-	
-	if( ulId = "지역" ){
-		keywordGroup = "SAREA";
-	}else if( ulId = "장소타입" ){
-		keywordGroup = "STYPE";
-	}else if( ulId = "안주류" ){
-		keywordGroup = "SSNACK";
-	}else {
-		keywordGroup = "all";
-	}
-	
-	$.getJSON(
-			'../../main/list.do', {"keywordGroup": keywordGroup, "keyword":$($(this).children()[0]).html()},
-			function(data){
-				console.log(data);
-				console.log("!!!");
-				
-				require(['text!templates/list-table.html'], function(html){
-			        var template = Handlebars.compile(html);
-			        $('#containerList').html( template(data) );
-			      });
-	});*/
 });
 
+//예약버튼 눌렀을시 간단예약화면 나타나기
+$(document).delegate('.btnBook',"click",function(){
+	var simpleReserv = "#" + $($(this).closest(".list")).attr("id") + " " + ".simpleReserv";
+	
+	if( isLogin ){
+		$( simpleReserv + ">.userInfo").html(userName + "( " + userPhoneNo + " )" + "님,");
+		$( simpleReserv ).css("display", "block");
+	}else {
+		alert ("로그인후 사용해주세요");
+		location.href = '/hopeHoff/web/login/login.html';
+	}
+	
+	
+});
 
+//간단 예약화면에서 X눌렀을 때, 간단예약화면 없애기
+$(document).delegate('.btn-close-simpleReserv',"click",function(){
+	$( $(this).closest(".simpleReserv") ).css("display", "none");
+});
 
 
 /*--------------------------mobile용 event------------------------------*/
@@ -297,7 +291,7 @@ function loadContainerList(that){
 	$.getJSON(
 			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
 			function(data){
-				console.log("===> " + data);
+				//console.log(data);
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
