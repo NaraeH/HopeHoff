@@ -11,6 +11,9 @@
    		<result column="SNAME" property="shopName"/>
    		<result column="SINTRO" property="shopIntro"/>
    		<result column="SADDR" property="shopAddr"/>
+   		<result column="SAREA" property="shopArea"/>
+   		<result column="STYPE" property="shopType"/>
+   		<result column="SSNACK" property="shopSnack"/>
    		<result column="MAINPHOTO" property="shopMainPhoto"/>
    		<result column="STIME" property="shopTime"/>
    		<result column="SPHONE" property="shopPhone"/>
@@ -25,10 +28,21 @@
 		<result column="DETAILPHOTO3" property="detailPhoto3"/>
 	</resultMap>
 
-	<select id="selectList" resultMap="shopMap">
-		SELECT SHOP.BBNO, SNAME, SINTRO, SADDR, MAINPHOTO 
+	<select id="selectList" parameterType="map" resultMap="shopMap">
+		SELECT SHOP.BBNO, SNAME, SINTRO, SADDR, SAREA, STYPE, SSNACK, MAINPHOTO 
 		FROM SHOP, SHOPPHOTO 
 		WHERE SHOP.BBNO = SHOPPHOTO.BBNO
+		<choose>
+		<when test="keywordGroup == 'SAREA'">
+			AND	SAREA = #{keyword}
+		</when>
+		<when test="keywordGroup == 'STYPE'">
+			AND	STYPE = #{keyword}
+		</when>
+		<when test="keywordGroup == 'SSNACK'">
+			AND	SSNACK = #{keyword}
+		</when>
+		</choose>
 	</select>
 	
   	<select id="selectOne" parameterType="String" resultMap="shopMap">
