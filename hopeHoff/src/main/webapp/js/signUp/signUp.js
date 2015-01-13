@@ -8,8 +8,8 @@ $(function(){
 	});
 	*/
 	$('#btnCancel').click(function(){
-		$("input[name='inlineRadioOptions']").filter("[value='option1']").prop("checked",false);
-		$("input[name='inlineRadioOptions']").filter("[value='option2']").prop("checked",false);
+		$("input[name='type']").filter("[value='user']").prop("checked",false);
+		$("input[name='type']").filter("[value='boss']").prop("checked",false);
 		$('#formGroupInputLarge').val('');
 		$('#idText').html('');
 		$('#formGroupInputSmall').val('');
@@ -27,7 +27,7 @@ $(function(){
 	$('#btnSignUp').click(function(event){
 	    $.post('../../json/auth/add.do'
 	        , {
-	          uType : $('input[name=type]').attr("value"),
+	          uType : $('input[name=type]').prop("value"),
 	          uId : $('#formGroupInputLarge').val(),
 	          uName : $('#formGroupInputSmall').val(),
 	          uPwd : $('#inputPassword3').val(),
