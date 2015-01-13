@@ -27,7 +27,7 @@ $(function(){
 	$('#btnSignUp').click(function(event){
 	    $.post('../../json/auth/add.do'
 	        , {
-	          uType : $('input[name=type]').prop("value"),
+	          uType : $(':radio[name="type"]:checked').val(),
 	          uId : $('#formGroupInputLarge').val(),
 	          uName : $('#formGroupInputSmall').val(),
 	          uPwd : $('#inputPassword3').val(),
