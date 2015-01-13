@@ -8,4 +8,5 @@ import java.util.Map;
 public interface UserDao {
   User existUser(Map<String,String> params);
   List<User> selectPhoneList();
+  void insert(Map<String,String> params);
 }

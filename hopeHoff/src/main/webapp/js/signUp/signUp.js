@@ -25,23 +25,18 @@ $(function(){
 	});
 	
 	$('#btnSignUp').click(function(event){
-	    $.post('../../json/auth/login.do'
+	    $.post('../../json/auth/add.do'
 	        , {
-	          uId : $('#uId').val(),
-	          uPwd : $('#uPwd').val(),
-	          save : $('#save').is(':checked')
+	          uType : $('input[name=type]').attr("value"),
+	          uId : $('#formGroupInputLarge').val(),
+	          uName : $('#formGroupInputSmall').val(),
+	          uPwd : $('#inputPassword3').val(),
+	          uPhone: $('#phoneNumber').val()
 	        }
 	        , function(data){
-	          if (data.status == 'success') {
-	        	 alert("환영합니다 ^_^*");
+	        	 alert("회원가입 성공 ! 이제 로그인 해주세영 >_<");
 	        	 location.href = '../../web/login/login.html';
-	        
-	            
-	          } else {
-	            alert('로그인 아이디 또는 암호가 맞지 않습니다.');
-	            $('#uPwd').val('');
-	          }
-	        }
+	         }
 	        , 'json');
 	  });
 	
@@ -56,11 +51,11 @@ $(function(){
 			 	$('#btnSignUp').css("background-color", "green");
 			 	$('#btnSignUp').attr("disabled", false);
 
-			 	$('#btnSignUp').click(function(event){
+			 /*	$('#btnSignUp').click(function(event){
 					alert("감사합니다 ~ 이제,로그인 해주세요 !");
 			       location.href = '../../web/login/login.html';
 				});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
-			 	
+*/			 	
 			 } 
 			 /*else {	$('#btnSignUp').attr("disabled", true); }*/
 		 } else {
@@ -89,7 +84,7 @@ $(function(){
 			//노드에 서버에 응답까지 성공하면  //세터
 			//이렇게 응답하겠다.(이렇게 이벤트발생하겠다.)
 			
-			if(($('#formGroupInputLarge').val().match(/^[a-z][a-z\d]{3,11}$/) != null)
+			if(($('#formGroupInputLarge').val().match(/^[a-z][a-z\d]{2,11}$/) != null)
 					 &&(data.result == "사용가능한 아이디입니다.")){
 				
 				$('#idText').html("ok").css("color","green");
@@ -123,13 +118,13 @@ $(function(){
 	$('#formGroupInputSmall').focus(function() {
 		 $('#nameValid').css("display","");
 		 $("#formGroupInputSmall").keyup(function(){
-			 if($('#formGroupInputSmall').val().match( /^[가-힝]{2,}$/) != null){
+			 if($('#formGroupInputSmall').val().match( /^[가-힝a-zA-Z]{2,}$/) != null){
 				
 				 $('#nameValid').html("멋진 이름이네요!").css("color","green");
 				 $('#formGroupInputSmall').css("border","green 2px solid");
 	
 			 } else {
-				 $('#nameValid').html("한글 2자 이상의 이름을 입력해 주세요.").css("color","red");
+				 $('#nameValid').html("2자 이상의 이름을 입력해 주세요.").css("color","red");
 				 $('#formGroupInputSmall').css("border","red 2px solid");
 				
 			 }

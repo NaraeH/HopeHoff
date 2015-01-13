@@ -24,5 +24,16 @@ public class UserService {
 	  return userDao.selectPhoneList();
   }
 
+  public void add(String uType, String uId, String uName, String uPwd, String uPhone) {
+	  HashMap<String,String> params = new HashMap<>();
+	    params.put("uType",uType);
+	    params.put("uId", uId);
+	    params.put("uName", uName);
+	    params.put("uPwd", uPwd);
+	    params.put("uPhone", uPhone);
+
+	    userDao.insert(params);
+  }
+
 }
 

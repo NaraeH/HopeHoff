@@ -29,4 +29,11 @@
   	SELECT UID,UPHONE FROM USER
   </select>
   
+  <insert id="insert" parameterType="map" 
+  useGeneratedKeys="true" keyColumn="UID" keyProperty="no">
+    INSERT INTO USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) 
+    VALUES (#{uId},#{uName},#{uType},#{uPwd},#{uPhone})
+  </insert>
+
+  
 </mapper>

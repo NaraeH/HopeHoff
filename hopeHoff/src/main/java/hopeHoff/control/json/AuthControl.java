@@ -88,15 +88,14 @@ public class AuthControl {
   }
 
   @RequestMapping(value="/add", method=RequestMethod.POST)
-  public Object add(
+  public void add(
       String uType,
       String uId,
       String uName,
       String uPwd,
       String uPhone
       ) throws Exception {
-	  HashMap<String,Object> resultMap = new HashMap<>();
-	  return resultMap;
+	  userService.add(uType,uId,uName,uPwd,uPhone);
 	  
   }
 }
