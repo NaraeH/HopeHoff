@@ -35,5 +35,11 @@
     VALUES (#{uId},#{uName},#{uType},#{uPwd},#{uPhone})
   </insert>
 
+<select id="selectOne" parameterType="String" resultMap="userMap">
+	SELECT UID,UNAME
+	FROM USER
+	WHERE UID=#{uId}
+
+</select>
   
 </mapper>

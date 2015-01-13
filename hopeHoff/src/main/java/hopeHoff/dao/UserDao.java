@@ -9,4 +9,5 @@ public interface UserDao {
   User existUser(Map<String,String> params);
   List<User> selectPhoneList();
   void insert(Map<String,String> params);
+  User selectOne(String uId);
 }

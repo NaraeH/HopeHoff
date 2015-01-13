@@ -34,6 +34,13 @@ public class UserService {
 
 	    userDao.insert(params);
   }
+  
+  public Object view(String uId){
+	  HashMap<String,String> params = new HashMap<>();
+	  params.put("uId", uId);
+	  return userDao.selectOne(uId);
+  }
+  
 
 }
 

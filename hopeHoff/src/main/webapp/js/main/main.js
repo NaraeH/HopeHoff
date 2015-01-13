@@ -54,7 +54,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 			 $('.userName').html(data.loginUser.uName + " 사장님").css("color","#ffb500");
 	   } else { //손님ㅋㅋ
 		   
-		   $("#btnMyPage").css('display','none');		   
+		   	 $("#btnMyPage").css('display','none');		   
 			 $("#btnBook").css('display','none');		   
 			 $("#btnMyShop").css('display','none');	
 	   }  
@@ -78,40 +78,56 @@ $(window).scroll(function(){
 
 
 $(".click-myBook").click(function(){
-	var height = Narae.removePx($("#mainBody").css("height"));
-	var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
-	
-	$("#mobileNav").css("display", "none");
-	$("#back").css("display", "block")
-			  .css("height", height);
-	
-	$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
-	$("#myBook").load("../myBook/myBook.html");
-	
+	if(isLogin){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+		
+		$("#mobileNav").css("display", "none");
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myBook").load("../myBook/myBook.html");
+	}else {
+		alert ("로그인후 사용해주세요");
+		location.href = '/hopeHoff/web/login/login.html';
+	}
 });
 
 $(".click-myShop").click(function(){
-	var height = Narae.removePx($("#mainBody").css("height"));
-	var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
-	
-	$("#mobileNav").css("display", "none");
-	$("#back").css("display", "block")
-			  .css("height", height);
-	
-	$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
-	$("#myMarket").load("../myMarket/myMarket.html");
+	if(isLogin){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
+		
+		$("#mobileNav").css("display", "none");
+		$("#back").css("display", "block")
+				  .css("height", height);
+		
+		$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myMarket").load("../myMarket/myMarket.html");
+	}else {
+		alert ("로그인후 사용해주세요");
+		location.href = '/hopeHoff/web/login/login.html';
+	}
 });
 
 $(".click-myPage").click(function(){
-	var height = Narae.removePx($("#mainBody").css("height"));
-	var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+	if(isLogin){
+		var height = Narae.removePx($("#mainBody").css("height"));
+		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+		
+		$("#mobileNav").css("display", "none");
+		$("#back").css("display", "block")
+		  .css("height", height);
+		
+		$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
+		$("#myPage").load("../myPage/myPage.html");
+	}
+	else {
+		alert ("로그인후 사용해주세요");
+		location.href = '/hopeHoff/web/login/login.html';
+	}
 	
-	$("#mobileNav").css("display", "none");
-	$("#back").css("display", "block")
-	  .css("height", height);
-	
-	$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
-	$("#myPage").load("../myPage/myPage.html");
 
 });
 

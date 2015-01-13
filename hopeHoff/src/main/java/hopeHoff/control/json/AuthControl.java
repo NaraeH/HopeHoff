@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AuthControl {
    //UserService userService = new UserService();
 	@Autowired UserService userService;
-  
-  @RequestMapping(value="/loginUser", method=RequestMethod.GET)
+
+	@RequestMapping(value="/loginUser", method=RequestMethod.GET)
   public Object loginUser(HttpSession session) throws Exception {
     HashMap<String,Object> resultMap = new HashMap<>();
     
@@ -36,12 +36,6 @@ public class AuthControl {
     
     return resultMap;
   }
-  
-/*  @RequestMapping("/app")
-  public Object login(){
-	  return "app";
-  }*/
-  
   @RequestMapping(value="/login", method=RequestMethod.POST)
   public Object login(
       String uId, 
@@ -98,5 +92,15 @@ public class AuthControl {
 	  userService.add(uType,uId,uName,uPwd,uPhone);
 	  
   }
+  
+  @RequestMapping(value="/view")
+  public Object view(String uId){
+	  HashMap<String, Object> resultMap = new HashMap<String, Object>();
+	  resultMap.put("User", userService.view(uId));
+	  
+	  System.out.println();
+	  return resultMap;
+  }
+  
 }
 
