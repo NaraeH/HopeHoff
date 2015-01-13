@@ -29,4 +29,6 @@
   	SELECT UID,UPHONE FROM USER
   </select>
   
+  
+  
 </mapper>
