@@ -74,7 +74,7 @@ public class ReservationControl {
   }
   
   @RequestMapping("/view")
-  public Object view(int no, Model model) throws Exception {
+  public Object view(int no) throws Exception {
     Reservation reservation = reservationService.get(no);
     
     HashMap<String,Object> resultMap = new HashMap<>();
