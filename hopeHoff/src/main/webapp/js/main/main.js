@@ -12,6 +12,7 @@ var isMobile = bodyWidth < 769;
 var shopAddrText = "가게주소";
 var userName = null;
 var userPhoneNo = null;
+var userId = null;
 var isLogin = false;
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
@@ -31,8 +32,11 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	} else {
 		userName = data.loginUser.uName;
 		userPhoneNo = data.loginUser.uPhone;
+		userId = data.loginUser.uId;
 		isLogin = true;
-		
+	
+		//console.log(userId);
+		//console.log(userPhoneNo)
 		$('.logoutBtn').css('display', '').css("border", "0px"); //로그인 성공 시 로그아웃버튼 살리구~ 
 		$('.loginBtn').css('display', 'none');
 		$('.signUpBtn').css('display', 'none');

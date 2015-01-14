@@ -8,7 +8,7 @@ $(function(){
 });
 
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
-    console.log("what the f***"+data.status);
+   //console.log("what the f***"+data.status);
 	if (data.status == "fail") {
 		console.log("fail..");
 	} else { //success

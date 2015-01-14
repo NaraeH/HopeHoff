@@ -1,6 +1,6 @@
 var currPageNo;
 var maxPageNo;
-var checkedTable;	
+var checkedTable;
 
 $(function(){
 	  
@@ -31,6 +31,7 @@ $(document).delegate(".table-tr","click",function(){
 	status= $('#myBookData').hasClass("table-content");
 	console.log(status);
 	if(status){
+		status=true;
 	$('<tr>').addClass('table-content').attr("id","#"+"tableContent"+num)
 			 .append($('<td colspan="3">').html("aaaa")).css('text-align','center')
 			 .append($('<td>').html("<button id=btnDelete"+num+">삭제</button>"))
@@ -38,6 +39,7 @@ $(document).delegate(".table-tr","click",function(){
 	}
 	else if(!(status==false))
 	{
+		
 		$('#myBookData').remove($('#'+'tableContent'+num))
 	}
 	
@@ -78,6 +80,8 @@ $(document).delegate(".table-tr","click",function(){
 	});
 	
 	
+	
+	
 	function setPageNo(currPageNo, maxPageNo) {
 		  window.currPageNo = currPageNo;
 		  window.maxPageNo = maxPageNo;
@@ -91,7 +95,7 @@ $(document).delegate(".table-tr","click",function(){
 		  else $('#nextBtn').css('display', '');
 		}
 	
-	function loadReservationList(pageNo) {
+/*	function loadReservationList(pageNo) {
 
 		if (pageNo <= 0) pageNo = currPageNo;
 			$.getJSON('../../json/reservation/list.do?pageNo=' + pageNo, 
@@ -113,7 +117,27 @@ $(document).delegate(".table-tr","click",function(){
 		            .appendTo('#myBookData')
 		      }
 		    });
+		}*/
+	
+	function loadReservationList(pageNo,uId) {
+
+		if (pageNo <= 0) pageNo = currPageNo;
+			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
+		    function(data){
+				console.log(data);
+				console.log(uId);
+				//consele.log(userId);
+		      setPageNo(data.currPageNo, data.maxPageNo);
+		      var reservations = data.reservations;
+		      
+		      require(['text!templates/booklist-table.html'],function(html){
+		    	  var template = Handlebars.compile(html);
+		    	  $('#myBookDataTable').html(template(data));
+		    	  });
+		      });
+		     
 		}
+
 
 
 

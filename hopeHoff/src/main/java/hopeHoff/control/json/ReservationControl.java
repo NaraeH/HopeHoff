@@ -1,6 +1,5 @@
 package hopeHoff.control.json;
 
-import hopeHoff.domain.Reservation;
 import hopeHoff.service.ReservationService;
 import hopeHoff.service.UserService;
 
@@ -10,7 +9,6 @@ import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,7 +20,7 @@ public class ReservationControl {
   @Autowired ReservationService     reservationService;
   @Autowired UserService 			userService;
   @Autowired ServletContext servletContext;
- 
+  
 /*  @RequestMapping(value="/add", method=RequestMethod.POST)
   public Object add(Reservation reservation) throws Exception {  
     
@@ -48,11 +46,13 @@ public class ReservationControl {
   @RequestMapping("/list")
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
-      @RequestParam(defaultValue="3") int pageSize) throws Exception {
+     @RequestParam(defaultValue="3") int pageSize ,String uId) throws Exception {
     
+	  
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
     
+
     int maxPageNo = reservationService.getMaxPageNo(pageSize);
     
     if (pageNo <= 0) pageNo = 1;
@@ -64,24 +64,25 @@ public class ReservationControl {
     resultMap.put("status", "success");
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
+    resultMap.put("uId", uId);
     resultMap.put("reservations", 
-        reservationService.getList(pageNo, pageSize));
+        reservationService.getList(pageNo, pageSize,uId));
     
-    System.out.println(resultMap);
+    System.out.println("resultMap=====>"+resultMap);
     
     
     return resultMap;
   }
-  
-  @RequestMapping("/view")
-  public Object view(int no) throws Exception {
-    Reservation reservation = reservationService.get(no);
-    
-    HashMap<String,Object> resultMap = new HashMap<>();
-    resultMap.put("status", "success");
-    resultMap.put("reservation", reservation);
-    return resultMap;
-  }
+//  
+//  @RequestMapping("/view")
+//  public Object view(int no) throws Exception {
+//    Reservation reservation = reservationService.get(no);
+//    
+//    HashMap<String,Object> resultMap = new HashMap<>();
+//    resultMap.put("status", "success");
+//    resultMap.put("reservation", reservation);
+//    return resultMap;
+//  }
 }
 
 

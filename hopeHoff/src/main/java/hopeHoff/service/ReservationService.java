@@ -1,6 +1,7 @@
 package hopeHoff.service;
 
 import hopeHoff.dao.ReservationDao;
+import hopeHoff.dao.UserDao;
 import hopeHoff.domain.Reservation;
 
 import java.util.HashMap;
@@ -20,11 +21,15 @@ import org.springframework.transaction.annotation.Transactional;
 public class ReservationService {
   @Autowired
   ReservationDao reservationDao;
+  @Autowired UserDao userDao;
   
-  public List<?> getList(int pageNo, int pageSize) {
+  
+  public List<?> getList(int pageNo, int pageSize,String uId) {
+	
     HashMap<String,Object> paramMap = new HashMap<>();
     paramMap.put("startIndex", ((pageNo - 1) * pageSize));
     paramMap.put("pageSize", pageSize);
+    paramMap.put("uId", uId);
     
     return reservationDao.selectList(paramMap);
   }
