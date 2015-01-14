@@ -132,15 +132,15 @@ $(".click-myPage").click(function(){
 });
 
 $(document).delegate(".list","mouseover",function(){
-	var shopAddr = "#" + $(this).attr("id") + " .shopAddr";
-	shopAddrText = $(shopAddr).html();
+	var shopIntroAddr = "#" + $(this).attr("id") + " .shopIntroAddr";
+	shopIntroAddrText = $(shopIntroAddr).html();
 	
-	$(shopAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
+	$(shopIntroAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
 });
 
 $(document).delegate(".list","mouseout",function(){
 	var btnDetail = "#" + $(this).attr("id") + " .btnDetail";
-	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
+	$(btnDetail).removeClass("btnDetail").addClass("shopIntroAddr").html(shopIntroAddrText);
 });
 
 

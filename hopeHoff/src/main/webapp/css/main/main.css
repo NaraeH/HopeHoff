@@ -302,7 +302,7 @@
 		overflow: hidden;
 	}
 	
-	.shopInfo>.shopAddr {
+	.shopInfo>.shopIntroAddr {
 		height: 35px;
 		line-height: 35px;
 		padding: 0px 5px;
