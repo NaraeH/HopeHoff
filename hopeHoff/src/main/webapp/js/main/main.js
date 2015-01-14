@@ -28,6 +28,10 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		$('.logoutBtn').css('display', 'none');
 		$('.signUpBtn').css('display', '');
 
+		$("#btnMyPage").css('display','none');		   
+		$("#btnBook").css('display','none');		   
+		$("#btnMyShop").css('display','none');	
+		
 	} else {
 		userName = data.loginUser.uName;
 		userPhoneNo = data.loginUser.uPhone;
@@ -36,6 +40,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		$('.logoutBtn').css('display', '').css("border", "0px"); //로그인 성공 시 로그아웃버튼 살리구~ 
 		$('.loginBtn').css('display', 'none');
 		$('.signUpBtn').css('display', 'none');
+		
 
 	   if(data.loginUser.uType == "user") {
 		   
@@ -52,12 +57,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 			 $("#btnMyShop").css('display','');
 			 
 			 $('.userName').html(data.loginUser.uName + " 사장님").css("color","#ffb500");
-	   } else { //손님ㅋㅋ
-		   
-		   	 $("#btnMyPage").css('display','none');		   
-			 $("#btnBook").css('display','none');		   
-			 $("#btnMyShop").css('display','none');	
-	   }  
+	   }
 	}
 });
 
