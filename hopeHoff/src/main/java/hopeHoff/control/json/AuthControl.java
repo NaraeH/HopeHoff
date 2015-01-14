@@ -98,7 +98,7 @@ public class AuthControl {
 	  HashMap<String, Object> resultMap = new HashMap<String, Object>();
 	  resultMap.put("User", userService.view(uId));
 	  
-	  System.out.println();
+	  System.out.println("resultMap ========>"+resultMap);
 	  return resultMap;
   }
   
