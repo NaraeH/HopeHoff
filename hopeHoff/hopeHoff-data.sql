@@ -363,8 +363,21 @@ values('303-90-56632','siba-main.jpg','siba-detail1.jpg','siba-detail2.jpg','sib
 
 ------------------------------데이터 수정---------------------------
 
-update SHOP set sintro='추억 복고풍의 달동네 포차!' where bbno='128-31-85241';
-update SHOP set sintro='추억 복고풍의 달동네 포차!' where bbno='303-90-56632';
-update SHOP set sintro='추억 복고풍의 달동네 포차!' where bbno='503-85-21617';
-update SHOP set sintro='추억 복고풍의 달동네 포차!' where bbno='220-80-83576';
-update SHOP set sintro='술마시고 노래해! 하나가득 준코!' where bbno='203-81-63199';
+update hopehoff.shop set sintro='추억 복고풍의 달동네 포차!' where bbno='128-31-85241';
+update hopehoff.shop set sintro='술마시고 노래해! 하나가득 준코!' where bbno='203-81-63199';
+
+
+
+----------------------------2015.01.14 (DB수정 쿼리)---------------------------------
+ALTER TABLE SHOP CHANGE COLUMN SADDR SDETAILADDR VARCHAR(255);
+ALTER TABLE SHOP ADD COLUMN SINTROADDR VARCHAR(255);
+
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '124-86-06376';
+UPDATE SHOP SET SINTROADDR = '서울시 서초구' WHERE BBNO = '203-81-63199';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '408-81-28536';
+UPDATE SHOP SET SINTROADDR = '서울시 영등포구' WHERE BBNO = '211-87-14784';
+UPDATE SHOP SET SINTROADDR = '서울시 영등포구' WHERE BBNO = '128-31-85241';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '220-80-83576';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '503-85-21617';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '303-90-56632';
+
