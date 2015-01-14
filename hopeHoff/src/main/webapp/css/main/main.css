@@ -117,7 +117,7 @@
 		/*  border: 1px solid yellow;  */
 	}
 	
-	#btnMyPage, #btnBook, #btnRecommandPlace, #btnMyShop{
+	#btnMyPage, #btnBook, #btnMyShop{
 		background-image: url(../../img/common/pic1_white.png);
 		width:70px;
 		height:60px;
@@ -136,14 +136,9 @@
 	#btnMyShop {
 		background-position: -313px -625px;
 	}
-
-	#btnRecommandPlace {
-		background-position: -1059px -5677px;
-	}
 	
 	
-	
-	#btnMyPage:hover, #btnBook:hover, #btnRecommandPlace:hover, #btnMyShop:hover {
+	#btnMyPage:hover, #btnBook:hover, #btnMyShop:hover {
 		background-image: url(../../img/common/pic1_yellow.png);
 	}
 
