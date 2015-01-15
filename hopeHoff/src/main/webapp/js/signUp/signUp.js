@@ -1,5 +1,3 @@
-
-
 var valpoint=0;
 
 $(function(){
@@ -68,6 +66,10 @@ $(function(){
 	});
 	
 	$("#sendValid").click(function(){
+		console.log("클릭되었습니다");
+		console.log("btnSignUp");
+		console.log( $("#phoneNumber").val() );
+		
 		var phoneNumberArray = $("#phoneNumber").val().split("-");
 		var phoneNumber= phoneNumberArray[0] + phoneNumberArray[1] + phoneNumberArray[2]
 		
@@ -75,7 +77,7 @@ $(function(){
 			alert("핸드폰번호를 입력해주세요");
 		}else {
 			console.log(randomNo);
-			  $.ajax({
+			  /*$.ajax({
 				   type: "POST",
 				   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
 				   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
@@ -96,8 +98,9 @@ $(function(){
 					   console.log("문자 전송 실패");
 				   }
 					   
-				 });
+				 });*/
 		}
+		console.log("zzzzzzzz");
 	});
 	
 	/*************************유. 효 . 성..... 검 사************************/	

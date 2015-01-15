@@ -23,6 +23,18 @@ $('.logoutBtn').click(function(event){
 	  });
 	});
 
+$('.signUpBtn').click(function(){ 
+	$("#back").css("display", "block");
+	$("#signUpDiv").css("display", "block");
+	$("#signUpDiv").css("margin-left", -( Narae.removePx( $("#signUpDiv").css("width") ) / 2 ));
+	
+	require(['text!../login/templates/signUp-table.html'],function(html){
+	   	var template = Handlebars.compile(html);
+	    	$('#signUpDiv').html(template());
+	   	    $('#myDataFormData').css("margin-left","-35px");
+		});
+	});
+
 //로그인해서 사용자 정보가 main으로 넘어오게됩니당
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	if (data.status == 'fail') {
@@ -207,7 +219,7 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 });	
 
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
-$(document).delegate(".has-sub ul a","click",function(){
+$(document).delegate(".has-sub ul a, .selectMenu","click",function(){
 	loadContainerList($(this));
 });
 
