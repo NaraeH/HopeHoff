@@ -12,7 +12,7 @@ var isMobile = bodyWidth < 769;
 var shopAddrText = "가게주소";
 var userName = null;
 var userPhoneNo = null;
-var userId = null;
+var uId = null;
 var isLogin = false;
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
@@ -36,7 +36,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	} else {
 		userName = data.loginUser.uName;
 		userPhoneNo = data.loginUser.uPhone;
-		userId = data.loginUser.uId;
+		uId = data.loginUser.uId;
 		isLogin = true;
 	
 		//console.log(userId);
@@ -91,7 +91,18 @@ $(".click-myBook").click(function(){
 				  .css("height", height);
 		
 		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myBook").load("../myBook/myBook.html");
+	
+		$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
+			    function(data){
+			      setPageNo(data.currPageNo, data.maxPageNo);
+			      var reservations = data.reservations;
+			      
+			      require(['text!templates/booklist-table.html'],function(html){
+			    	  var template = Handlebars.compile(html);
+			    	  $('#myBook').html(template(data));
+			    	  });
+			      });
+			     
 	}else {
 		alert ("로그인후 사용해주세요");
 		location.href = '/hopeHoff/web/login/login.html';
@@ -376,7 +387,17 @@ function setContainerSize(){
 	$("#containerList").css("width", ( containerListWidth * 4 ) + "px");
 }
 
-
+function setPageNo(currPageNo, maxPageNo) {
+	  window.currPageNo = currPageNo;
+	  window.maxPageNo = maxPageNo;
+	  
+	  $('#pageNo').html(currPageNo);
+	  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
+	  else $('#prevBtn').css('display', '');
+	  
+	  if (currPageNo >= maxPageNo) $('#nextBtn').css('display', 'none');
+	  else $('#nextBtn').css('display', '');
+	}
 
 
 

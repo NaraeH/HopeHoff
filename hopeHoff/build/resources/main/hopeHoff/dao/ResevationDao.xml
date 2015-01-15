@@ -27,12 +27,10 @@
     SELECT 
 		  T1.RNO, 
 		  T2.UPHONE, 
-		  T1.RDATE,
-		  T1.RCONTENT
+		  T1.RDATE
 		FROM RESERVATION T1 LEFT OUTER JOIN USER T2 
 		USING(UID)
-		ORDER BY T1.RNO
-		<!-- WHERE T2.UID=#{uId} -->
+		WHERE T2.UID=#{uId} 
   <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
     </if> 

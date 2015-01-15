@@ -2,12 +2,12 @@ var currPageNo;
 var maxPageNo;
 var checkedTable;
 
-$(function(){
+/*$(function(){
 	  
 	  loadReservationList(1);
 	  
 	});
-
+*/
 
 
 /*$(document).delegate(".list","mouseover",function(){
@@ -23,27 +23,32 @@ $(document).delegate(".list","mouseout",function(){
 });*/
 
 
-var status;
 $(document).delegate(".table-tr","click",function(){
+	var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
 	
 	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
+	console.log(num);
 	//$(this).children().eq(4).html("<button id=btnDelete"+num+">삭제</button>");
-	status= $('#myBookData').hasClass("table-content");
-	console.log(status);
-	if(status){
-		status=true;
-	$('<tr>').addClass('table-content').attr("id","#"+"tableContent"+num)
+	
+	//status= $('#myBookData').children().hasClass("table-content");
+	//console.log($($('#myBookData').children()[0]).children().hasClass("table-content"));
+	//console.log($(this).hasClass("table-content"));
+	if(!status){
+	//status=false;
+	$('<tr>').addClass('table-content').attr("id","tableContent"+num)
 			 .append($('<td colspan="3">').html("aaaa")).css('text-align','center')
-			 .append($('<td>').html("<button id=btnDelete"+num+">삭제</button>"))
+		 .append($('<td>').html("<button id=btnDelete"+num+">삭제</button>"))
 			.insertAfter('#'+'table-tr'+num)
+			console.log("aaaa");
 	}
-	else if(!(status==false))
+	else 
 	{
+		console.log("bbbbb");
+		$('#'+'tableContent'+num).remove();
 		
-		$('#myBookData').remove($('#'+'tableContent'+num))
 	}
 	
-	
+
 });
 		
 
@@ -119,7 +124,7 @@ $(document).delegate(".table-tr","click",function(){
 		    });
 		}*/
 	
-	function loadReservationList(pageNo,uId) {
+/*	function loadReservationList(pageNo,uId) {
 
 		if (pageNo <= 0) pageNo = currPageNo;
 			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
@@ -137,7 +142,7 @@ $(document).delegate(".table-tr","click",function(){
 		      });
 		     
 		}
-
+*/
 
 
 
