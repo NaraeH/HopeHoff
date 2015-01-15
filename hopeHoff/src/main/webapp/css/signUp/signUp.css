@@ -7,13 +7,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
-.hn {font-family: 'Hanna';}
-.nbs {font-family: 'Nanum Brush Script';}
-.ng {font-family: 'Nanum Gothic';}
-.ngc {font-family: 'Nanum Gothic Coding';}
-.nm {font-family: 'Nanum Myeongjo';}
-.nps {font-family: 'Nanum Pen Script';}
-.ban{font-family: 'Lobster', cursive;}
 
 
 	/******************** Header 부분 **************************/
@@ -47,18 +40,14 @@
 	} 
 	
 	#myDataForm {
-		margin-left: 35px;
+		/* margin-left: 35px; */
 		height: 100%;
 	}
-	
-	#myDataFormData{
-		margin-left: 35px;
-	}
-	
+
 	.form-data {
 		text-align:center;
 		width: 500px;
-		margin-bottom: 19px;
+/* 		margin-bottom: 19px; */
 	}
 	
 	.form-data > button {
@@ -69,10 +58,16 @@
 	
 	.form-data > input {
 		padding-left: 10px;
-		height:30px;
-		width: 350px;
+ 		height:30px;
+		width: 350px; 
 		border-radius: 5px;
 		margin-bottom: 5px;
+	}
+	.form-data > input[type="radio"] {
+		width: 50px; 
+ 		height:30px;
+		padding-left: 10px;
+	 	margin-bottom: 10px;
 	}
 	
 	.and-button{

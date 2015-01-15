@@ -36,7 +36,7 @@
   </insert>
 
 <select id="selectOne" parameterType="String" resultMap="userMap">
-	SELECT UID,UNAME
+	SELECT UID
 	FROM USER
 	WHERE UID=#{uId}
 

@@ -39,24 +39,29 @@ $(function(){
 	        , 'json');
 	  });
 	
+	$("#signUpText").click(function(data){
+		$("#back").css("display", "block");
+		$("#signUpDiv").css("display", "block");
+		$("#signUpDiv").css("margin-left", -( Narae.removePx( $("#signUpDiv").css("width") ) / 2 ));
 
-	
-	
-	
-	$(".click-signUp").click(function(){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
-		
-		$("#mobileNav").css("display", "none");
-		$("#back").css("display", "block")
-		  .css("height", height);
-		
-		$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myPage").load("../myPage/myPage.html");
+		require(['text!templates/signUp-table.html'],function(html){
+	    	  var template = Handlebars.compile(html);
+	    	  $('#signUpDiv').html(template(data));
+	    	  
+	    	  
+	    	  				/*.css("width","500px").css("height","485px").css("border","2px solid #ffcd28")
+	    	  				.css("margin","auto").css("margin-top","160px");*/
+	    	  				/*.css("background","white").css("margin","auto").css("margin-top","160px");*/
 
+	    	  /*$('#loginBody').css("z-index","-2");*/
+	    	 // $("#logo").css("z-index","1").css("margin-top","-160px");;
+	    	 // $("#back").css("width","100%").css("background","rgba(0, 0, 0, 0.5)").css("z-index","2");
+	    	  });
+	      
 	});
 	
 	
+
 	
 	/***********************************************유. 효 . 성........ 검 사**************************/	
 	var valpoint=0;
