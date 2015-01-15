@@ -311,7 +311,7 @@ function loadContainerList(that){
 	$.getJSON(
 			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
 			function(data){
-				//console.log(data);
+				console.log(data);
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );

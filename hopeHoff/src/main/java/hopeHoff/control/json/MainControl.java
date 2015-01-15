@@ -2,7 +2,6 @@ package hopeHoff.control.json;
 
 import hopeHoff.dao.MenuDao;
 import hopeHoff.dao.ShopDao;
-import hopeHoff.dao.UserDao;
 
 import java.io.FileReader;
 import java.util.HashMap;
@@ -49,7 +48,6 @@ public class MainControl {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("shops", shopDao.selectList(paraMap));
-		
 		return resultMap;
 	}
 	
