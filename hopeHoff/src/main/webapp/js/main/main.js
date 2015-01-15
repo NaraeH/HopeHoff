@@ -22,18 +22,15 @@ $('.logoutBtn').click(function(event){
 	  });
 	});
 
-$('.signUpBtn').click(function(data){ 
-	
+$('.signUpBtn').click(function(){ 
 	$("#back").css("display", "block");
 	$("#signUpDiv").css("display", "block");
 	$("#signUpDiv").css("margin-left", -( Narae.removePx( $("#signUpDiv").css("width") ) / 2 ));
 
-	require(['text!templates/signUp-table.html'],function(html){
+	require(['text!../login/templates/signUp-table.html'],function(html){
     	  var template = Handlebars.compile(html);
-    	  $('#signUpDiv').html(template(data));
+    	  $('#signUpDiv').html(template());
     	  $('#myDataFormData').css("margin-left","-35px");
-    	  
-    	  
 	});
 });
 

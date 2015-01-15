@@ -1,3 +1,5 @@
+
+
 var valpoint=0;
 
 $(function(){
@@ -35,6 +37,11 @@ $(function(){
 	         }
 	        , 'json');
 	  });
+	
+	$( "#btnSignUpClose" ).click(function(){
+		var toUrl = location.href.split("/")[5];  //main에서 호출했는지 login에서 호출했는지 찾기
+		location.href =  "../../web/" + toUrl + "/" + toUrl + ".html";
+	});
 	
 	
 	$('#confirmBtn').click(function(){
