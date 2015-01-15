@@ -275,3 +275,23 @@ values('303-90-56632','siba-main.jpg','siba-detail1.jpg','siba-detail2.jpg','sib
 
 update hopeHoff.SHOP set SINTRO='추억 복고풍의 달동네 포차!' where BBNO='128-31-85241';
 update hopeHoff.SHOP set SINTRO='술마시고 노래해! 하나가득 준코!' where BBNO='203-81-63199';
+
+----------------------------2015.01.14 (DB수정 쿼리)---------------------------------
+ALTER TABLE SHOP CHANGE COLUMN SADDR SDETAILADDR VARCHAR(255);
+ALTER TABLE SHOP ADD COLUMN SINTROADDR VARCHAR(255);
+
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '124-86-06376';
+UPDATE SHOP SET SINTROADDR = '서울시 서초구' WHERE BBNO = '203-81-63199';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '408-81-28536';
+UPDATE SHOP SET SINTROADDR = '서울시 영등포구' WHERE BBNO = '211-87-14784';
+UPDATE SHOP SET SINTROADDR = '서울시 영등포구' WHERE BBNO = '128-31-85241';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '220-80-83576';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '503-85-21617';
+UPDATE SHOP SET SINTROADDR = '서울시 강남구' WHERE BBNO = '303-90-56632';
+
+
+
+----------------------------2015.01.15 (DB수정 쿼리)---------------------------------
+UPDATE SHOP SET SINTRO='거리도 모인다 우리도 모이자!' WHERE BBNO='503-85-21617';
+UPDATE SHOP SET SINTRO='술꾼은 꾼으로 모여라!' WHERE BBNO='220-80-83576';
+UPDATE SHOP SET SINTRO='이자카야 주점은 시바라구! 욕 아님' WHERE BBNO='303-90-56632';

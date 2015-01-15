@@ -63,7 +63,7 @@ $(function(){
 			 /*else {	$('#btnSignUp').attr("disabled", true); }*/
 		 } else {
 			 $('#inNumber01').css("border","red 2px solid");
-		
+			 $('#btnSignUp').attr("disabled", true);
 		 }
 	});
 	
@@ -253,6 +253,7 @@ $(function(){
 			 } else {
 				 $('#phoneNumValid').html("예)010-1234-4567").css("color","red");
 				 $('#phoneNumber').css("border","red 2px solid");
+				 $('#sendValid').attr("disabled",true);
 			
 			 }
 		 });
@@ -264,7 +265,10 @@ $(function(){
 			valpoint++;
 			console.log(valpoint);
 		} else if($('#phoneNumValid').css("color") == "rgb(128, 0, 0)"){
+			alert("유효한 휴대폰 번호를 입력하세요.");
+			$('#sendValid').attr("disabled",true);
 			$('#phoneNumValid').css("display","");
+			
 		}
 		
 
