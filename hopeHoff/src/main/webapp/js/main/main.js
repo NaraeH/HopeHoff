@@ -14,6 +14,7 @@ var userName = null;
 var userPhoneNo = null;
 var uId = null;
 var isLogin = false;
+var currPageNo;
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -21,18 +22,6 @@ $('.logoutBtn').click(function(event){
 	    location.href = '/hopeHoff/web/main/main.html';
 	  });
 	});
-
-$('.signUpBtn').click(function(){ 
-	$("#back").css("display", "block");
-	$("#signUpDiv").css("display", "block");
-	$("#signUpDiv").css("margin-left", -( Narae.removePx( $("#signUpDiv").css("width") ) / 2 ));
-
-	require(['text!../login/templates/signUp-table.html'],function(html){
-    	  var template = Handlebars.compile(html);
-    	  $('#signUpDiv').html(template());
-    	  $('#myDataFormData').css("margin-left","-35px");
-	});
-});
 
 //로그인해서 사용자 정보가 main으로 넘어오게됩니당
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
@@ -104,16 +93,19 @@ $(".click-myBook").click(function(){
 		
 		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 	
-		$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
+		loadReservationList(1,uId);
+		/*$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
 			    function(data){
+				yyyyMMddList(data);
+				//console.log(data);
 			      setPageNo(data.currPageNo, data.maxPageNo);
-			      var reservations = data.reservations;
+			    //  var reservations = data.reservations;
 			      
 			      require(['text!templates/booklist-table.html'],function(html){
 			    	  var template = Handlebars.compile(html);
 			    	  $('#myBook').html(template(data));
 			    	  });
-			      });
+			      });*/
 			     
 	}else {
 		alert ("로그인후 사용해주세요");
@@ -412,6 +404,98 @@ function setPageNo(currPageNo, maxPageNo) {
 	}
 
 
+
+function yyyyMMddList(reservation) {
+	if (reservation) {
+		// 현재날짜
+		var currentDate = new Date();
+	//	console.log("현재날짜 :" + currentDate);
+		//console.log(reservation);
+		//console.log(reservation.reservations[0].reservationDate);
+
+		
+		var str;
+		for ( var i in reservation.reservations) {
+			// 데이터베이스 날짜
+			var dbDate = new Date(reservation.reservations[i].reservationDate);
+			
+			//console.log(dbDate);
+			str = "";
+			if (!compareDate(currentDate, dbDate)) {
+				str = dbDate.getFullYear() + '/';
+
+				if (dbDate.getMonth() < 9)
+					str += '0';
+				str += (dbDate.getMonth() + 1) + '/';
+
+				if (dbDate.getDate() < 10)
+					str += '0';
+				str += dbDate.getDate();
+			} else {
+				if (dbDate.getHours() < 10)
+					str += '0';
+				str += dbDate.getHours() + ":";
+
+				if (dbDate.getMinutes() < 10)
+					str += '0';
+				str += dbDate.getMinutes();
+			}
+
+			 //console.log("이전 : " + reservation.reservations[i].reservationDate);
+			// console.log(str);
+			 reservation.reservations[i].reservationDate = str;
+			// console.log("이전 : 이후" +boards[board].date);
+
+		}
+	} else {
+		return '';
+	}
+}
+
+function compareDate(currentDate, dbDate) {
+	if (yyyyMMdd(currentDate) == yyyyMMdd(dbDate))
+		return true;
+	else
+		false;
+}
+
+function yyyyMMdd(date) {
+	if (date) {
+		var date = new Date(date);
+		var str = date.getFullYear();
+
+		if (date.getMonth() < 9)
+			str += '0';
+		str += (date.getMonth() + 1);
+
+		if (date.getDate() < 10)
+			str += '0';
+		str += date.getDate();
+
+		return str;
+
+	} else {
+		return '';
+	}
+}
+
+function loadReservationList(pageNo,uId) {
+
+	if (pageNo <= 0) pageNo = currPageNo;
+		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
+			    function(data){
+				yyyyMMddList(data);
+				console.log(data.currPageNo);
+			      setPageNo(data.currPageNo, data.maxPageNo);
+			    //  var reservations = data.reservations;
+			      $('.table-tr').remove();
+			      
+			      require(['text!templates/booklist-table.html'],function(html){
+			    	  var template = Handlebars.compile(html);
+			    	  $('#myBook').html(template(data));
+			    	  });
+			      });
+	}
 
 
 
