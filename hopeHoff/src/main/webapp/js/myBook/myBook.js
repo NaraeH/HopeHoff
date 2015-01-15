@@ -1,6 +1,5 @@
 var currPageNo;
 var maxPageNo;
-var checkedTable;
 
 /*$(function(){
 	  
@@ -74,13 +73,15 @@ $(document).delegate(".table-tr","click",function(){
 	
 	$('#prevBtn').click(function(event){
 		if (currPageNo > 1) {
-			loadReservationList(currPageNo - 1);
+			$(".table-tr0").remove();
+			loadReservationList(currPageNo - 1,uId);
 		}
 	});
 
 	$('#nextBtn').click(function(event){
 		if (currPageNo < maxPageNo) {
-			loadReservationList(currPageNo + 1);
+			$(".table-tr0").remove();
+			loadReservationList(currPageNo + 1,uId);
 		}
 	});
 	
@@ -124,25 +125,23 @@ $(document).delegate(".table-tr","click",function(){
 		    });
 		}*/
 	
-/*	function loadReservationList(pageNo,uId) {
+	function loadReservationList(pageNo,uId) {
 
 		if (pageNo <= 0) pageNo = currPageNo;
 			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
-		    function(data){
-				console.log(data);
-				console.log(uId);
-				//consele.log(userId);
-		      setPageNo(data.currPageNo, data.maxPageNo);
-		      var reservations = data.reservations;
-		      
-		      require(['text!templates/booklist-table.html'],function(html){
-		    	  var template = Handlebars.compile(html);
-		    	  $('#myBookDataTable').html(template(data));
-		    	  });
-		      });
-		     
+				    function(data){
+					yyyyMMddList(data);
+					//console.log(data);
+				      setPageNo(data.currPageNo, data.maxPageNo);
+				    //  var reservations = data.reservations;
+				      
+				      require(['text!templates/booklist-table.html'],function(html){
+				    	  var template = Handlebars.compile(html);
+				    	  $('#myBook').html(template(data));
+				    	  });
+				      });
 		}
-*/
+
 
 
 
