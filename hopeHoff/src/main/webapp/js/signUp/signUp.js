@@ -66,10 +66,6 @@ $(function(){
 	});
 	
 	$("#sendValid").click(function(){
-		console.log("클릭되었습니다");
-		console.log("btnSignUp");
-		console.log( $("#phoneNumber").val() );
-		
 		var phoneNumberArray = $("#phoneNumber").val().split("-");
 		var phoneNumber= phoneNumberArray[0] + phoneNumberArray[1] + phoneNumberArray[2]
 		
@@ -77,7 +73,7 @@ $(function(){
 			alert("핸드폰번호를 입력해주세요");
 		}else {
 			console.log(randomNo);
-			  /*$.ajax({
+			  $.ajax({
 				   type: "POST",
 				   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
 				   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
@@ -98,9 +94,9 @@ $(function(){
 					   console.log("문자 전송 실패");
 				   }
 					   
-				 });*/
+				 });
 		}
-		console.log("zzzzzzzz");
+
 	});
 	
 	/*************************유. 효 . 성..... 검 사************************/	
@@ -146,7 +142,7 @@ $(function(){
 			$('#idText').css("display","none");
 			valpoint++;
 			console.log(valpoint);
-		} else if($('#idText').css("color") == "rgb(128, 0, 0)"){
+		} else if($('#idText').css("color") == "rgb(255, 0, 0)"){
 			$('#idText').css("display","");
 		}
 		
@@ -175,7 +171,7 @@ $(function(){
 			$('#nameValid').css("display","none");
 			valpoint++;
 			console.log(valpoint);
-		} else if($('#nameValid').css("color") == "rgb(128, 0, 0)"){
+		} else if($('#nameValid').css("color") == "rgb(255, 0, 0)"){
 			$('#nameValid').css("display","");
 		}
 		
@@ -204,7 +200,7 @@ $(function(){
 			$('#pwdValid').css("display","none");
 			valpoint++;
 			console.log(valpoint);
-		} else if($('#pwdValid').css("color") == "rgb(128, 0, 0)"){
+		} else if($('#pwdValid').css("color") == "rgb(255, 0, 0)"){
 			$('#pwdValid').css("display","");
 		}
 		
@@ -235,7 +231,7 @@ $(function(){
 			valpoint++;
 			console.log(valpoint);
 			$('#pwdCheckText').css("display","none");
-		} else if($('#pwdCheckText').css("color") == "rgb(128, 0, 0)"){
+		} else if($('#pwdCheckText').css("color") == "rgb(255, 0, 0)"){
 			$('#pwdCheckText').css("display","");
 		}
 		
@@ -252,12 +248,13 @@ $(function(){
 				
 				 $('#phoneNumValid').html("ok").css("color","green");
 				 $('#phoneNumber').css("border","green 2px solid");
+				 $('#sendValid').attr("disabled",false);
 	
 			 } else {
 				 $('#phoneNumValid').html("예)010-1234-4567").css("color","red");
 				 $('#phoneNumber').css("border","red 2px solid");
 				 $('#sendValid').attr("disabled",true);
-			
+				 
 			 }
 		 });
 	});
@@ -267,7 +264,7 @@ $(function(){
 			$('#phoneNumValid').css("display","none");
 			valpoint++;
 			console.log(valpoint);
-		} else if($('#phoneNumValid').css("color") == "rgb(128, 0, 0)"){
+		} else if($('#phoneNumValid').css("color") == "rgb(255, 0, 0)"){
 			alert("유효한 휴대폰 번호를 입력하세요.");
 			$('#sendValid').attr("disabled",true);
 			$('#phoneNumValid').css("display","");
