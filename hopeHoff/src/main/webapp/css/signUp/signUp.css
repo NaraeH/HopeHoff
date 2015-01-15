@@ -1,12 +1,5 @@
-/* 폰트 속성입니다. */
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 
 	/******************** Header 부분 **************************/
@@ -40,7 +33,6 @@
 	} 
 	
 	#myDataForm {
-		/* margin-left: 35px; */
 		height: 100%;
 	}
 

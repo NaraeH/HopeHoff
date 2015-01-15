@@ -22,6 +22,21 @@ $('.logoutBtn').click(function(event){
 	  });
 	});
 
+$('.signUpBtn').click(function(data){ 
+	
+	$("#back").css("display", "block");
+	$("#signUpDiv").css("display", "block");
+	$("#signUpDiv").css("margin-left", -( Narae.removePx( $("#signUpDiv").css("width") ) / 2 ));
+
+	require(['text!templates/signUp-table.html'],function(html){
+    	  var template = Handlebars.compile(html);
+    	  $('#signUpDiv').html(template(data));
+    	  $('#myDataFormData').css("margin-left","-35px");
+    	  
+    	  
+	});
+});
+
 //로그인해서 사용자 정보가 main으로 넘어오게됩니당
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	if (data.status == 'fail') {
