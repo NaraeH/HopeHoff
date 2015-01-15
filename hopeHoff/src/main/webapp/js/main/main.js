@@ -149,7 +149,7 @@ $(document).delegate(".list","mouseout",function(){
 
 
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
-		var whichNo = Math.ceil(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) * 4;
+		var whichNo = ( Math.floor(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) + 1 ) * 4;
 		var businessNo =  $(this).closest(".list").attr("data-shop");
 		
 		if($("#containerList").children().length < 4) {
