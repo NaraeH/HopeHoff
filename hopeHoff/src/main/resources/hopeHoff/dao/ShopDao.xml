@@ -32,16 +32,16 @@
 	<select id="selectList" parameterType="map" resultMap="shopMap">
 		SELECT SHOP.BBNO, SNAME, SINTRO, SINTROADDR, SDETAILADDR, SAREA, STYPE, SSNACK, MAINPHOTO 
 		FROM SHOP LEFT OUTER JOIN SHOPPHOTO 
-		USING(BBNO);
+		USING(BBNO)
 		<choose>
 		<when test="keywordGroup == 'SAREA'">
-			AND	SAREA = #{keyword}
+			WHERE SAREA = #{keyword}
 		</when>
 		<when test="keywordGroup == 'STYPE'">
-			AND	STYPE = #{keyword}
+			WHERE STYPE = #{keyword}
 		</when>
 		<when test="keywordGroup == 'SSNACK'">
-			AND	SSNACK = #{keyword}
+			WHERE SSNACK = #{keyword}
 		</when>
 		</choose>
 	</select>
