@@ -41,11 +41,13 @@ public class UserService {
 	  return userDao.selectOne(uId);
   }
   
-  public void update(String whichCol, String changeValue, String userid){
+  public void update(String whichCol, String changeValue, String userId){
 	  HashMap<String,String> params = new HashMap<>();
+	  params.put("whichCol", whichCol);
+	  params.put("changeValue", changeValue);
+	  params.put("userid", userId);
 	 userDao.updateUser(params);
   }
-  
 
 }
 
