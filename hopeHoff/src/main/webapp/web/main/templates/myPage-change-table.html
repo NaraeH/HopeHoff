@@ -1,20 +1,25 @@
 
 <form id="myDataForm" role="form">
 	<div id="myDataFormData">
+		<p class="myPage-container-title"> 내 정보를 <span>최신 정보로 관리</span>해주세요 </p>
 		<div class="form-data-nonchange">
 			<input type="text" class="userId" disabled="disabled" value="{{user.uId}}"> 
 			<input type="text" class="userName" disabled="disabled" value="{{user.uName}}">
 		</div>
-		<br>
 
 		<div class="form-data-change">
-			<input type="password" id="oldPwd" placeholder="새로운 비밀 번호"> 
-			<input type="text" id="phoneNo" class="and-button" placeholder="새로운 핸드폰번호">
+			<input type="password" id="newPwd" placeholder="새로운 비밀 번호"> 
+			<div class="pwdValid vaildDiv"></div>
+			
+			<input type="password" id="newPwdConfirm" placeholder="새로운 비밀 번호 확인"> 
+			<div class="pwdConfirmValid vaildDiv"></div>
+			
+			<input id="phoneNo" type="text" class="and-button" placeholder="변경할 핸드폰번호">
 			<button id='sendBtn' type="button" class="btn-deactive">전&nbsp;송</button>
-			<br> 
+			<div class="phoneNoValid vaildDiv"></div>
+			
 			<input type="text" id="confirmVerCode" class="and-button" placeholder="인증번호">
 			<button id='confirmBtn' type="button" class="btn-deactive">확&nbsp;인</button>
-			<br> 
 		</div>
 	</div>
 
@@ -24,4 +29,5 @@
 	</div>
 </form>
 
+<script src="../../js/myPage/myPage-change-table.js"></script>
 

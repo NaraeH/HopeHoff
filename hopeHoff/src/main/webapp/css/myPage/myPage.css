@@ -34,9 +34,20 @@
 		padding: 30px 0px 15px 0px;
 		margin: 0 auto;
 	} 
+
+	.myPage-container-title {
+		margin: 0px 0px 20px 115px;
+		font-size: 19px;
+	}
 	
-	#myPageContainer>p {
-		margin-left:115px;
+	.myPage-container-title>span {
+		color: #3485eb;
+	}
+	
+	.myPage-container-subTitle {
+		margin: 0px 0px 25px 115px;
+		color: #666666;
+		font-size: 13px;
 	}
 	
 	#myPageContainer #statusMsg {
@@ -47,6 +58,10 @@
 	
 	#myDataForm {
 		height: 100%;
+	}
+	
+	#phoneNo {
+		margin-top:25px;
 	}
 	
 	.form-data-nonchange, .form-data-change {
@@ -77,6 +92,11 @@
 		margin-top: 20px;
 		margin-left: 10px;
 		width:90px;
+	}
+	
+	.vaildDiv {
+		font-size: 10px;
+		font-weight: bold;
 	}
 }
 @media all and (max-width:420px) {
