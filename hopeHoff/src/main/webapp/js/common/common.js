@@ -32,7 +32,7 @@ Narae.prototype.sendSms = function(phoneNo) {
 			   type: "POST",
 			   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
 			   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-			   url: "http://link.smsceo.co.kr/sendsms_utf8.php", 
+			   url: "http://link.smsceo.co.kr/sendsms_test.php", 
 			   data: {userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
 					 userid:   "hopeHoff01",
 					 msg:      "HopeHoff [ " + randomNo + " ]",

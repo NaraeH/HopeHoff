@@ -114,7 +114,7 @@ $(function(){
 			$('#btnSignUp').attr("disabled", false);
 
 		} else {
-			$('#btnSignUp').attr("disabled", true);
+			/*$('#btnSignUp').attr("disabled", true);*/
 		}
 	});
 	
@@ -157,7 +157,7 @@ $(function(){
 			$('#btnSignUp').attr("disabled", false);
 
 		} else {
-			$('#btnSignUp').attr("disabled", true);
+			/*$('#btnSignUp').attr("disabled", true);*/
 		}
 	});
 	/************Password  다시 누르는거 확인*********/
@@ -194,7 +194,7 @@ $(function(){
 			$('#btnSignUp').attr("disabled", false);
 
 		} else {
-			$('#btnSignUp').attr("disabled", true);
+			/*$('#btnSignUp').attr("disabled", true);*/
 		}
 	});
 	
