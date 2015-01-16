@@ -1,0 +1,27 @@
+
+<form id="myDataForm" role="form">
+	<div id="myDataFormData">
+		<div class="form-data-nonchange">
+			<input type="text" class="userId" disabled="disabled" value="{{user.uId}}"> 
+			<input type="text" class="userName" disabled="disabled" value="{{user.uName}}">
+		</div>
+		<br>
+
+		<div class="form-data-change">
+			<input type="password" id="oldPwd" placeholder="새로운 비밀 번호"> 
+			<input type="text" id="phoneNo" class="and-button" placeholder="새로운 핸드폰번호">
+			<button id='sendBtn' type="button" class="btn-deactive">전&nbsp;송</button>
+			<br> 
+			<input type="text" id="confirmVerCode" class="and-button" placeholder="인증번호">
+			<button id='confirmBtn' type="button" class="btn-deactive">확&nbsp;인</button>
+			<br> 
+		</div>
+	</div>
+
+	<div id="myDataFormbuttons" align="center">
+		<button type="button" id="btnChange">수정</button>
+		<button type="reset" id="btnCancel">취소</button>
+	</div>
+</form>
+
+

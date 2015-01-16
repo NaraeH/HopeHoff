@@ -36,6 +36,21 @@ public class AuthControl {
     
     return resultMap;
   }
+	
+	@RequestMapping(value="/chkUser", method=RequestMethod.GET)
+	  public Object chkUser(String userId, String userPwd) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		User user =  userService.validate(userId, userPwd);
+		
+		if(user != null) {
+			resultMap.put("status", "success");
+			resultMap.put("user", user);
+		}else {
+			resultMap.put("status", "fail");
+		}
+	    return resultMap;
+	  }
+	
   @RequestMapping(value="/login", method=RequestMethod.POST)
   public Object login(
       String uId, 

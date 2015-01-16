@@ -1,0 +1,20 @@
+<div id='myPageHeader' class="div-header">
+	<div id="myPageHeaderTitle" class="font-div-title">내 정보</div>
+	<button id="btnMyPageClose" type="button" class="close" value="close">X</button>
+</div>
+
+<div id='myPageContainer'>
+	<p>* 비밀번호 재확인</p>
+	<div class="form-data-nonchange">
+		<input type="text" id= "chkUserId" value="{{userId}}" disabled="disabled"> 
+		<input type="password" id= "chkUserPwd"placeholder="현재 비밀번호를 입력해주세요">
+		<div id="statusMsg"></div>
+	</div>
+	<div id="myDataFormbuttons" align="center">
+		<button type="button" id="btnPwdConfirm">확인</button>
+		<button type="reset" id="btnCancel">취소</button>
+	</div>
+</div>
+
+<script src="../../js/myPage/myPage.js"></script>
+

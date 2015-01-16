@@ -95,17 +95,15 @@ $(window).scroll(function(){
 
 
 $(".click-myBook").click(function(){
-	if(isLogin){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+	var height = Narae.removePx($("#mainBody").css("height"));
+	var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
 		
-		$("#mobileNav").css("display", "none");
-		$("#back").css("display", "block")
-				  .css("height", height);
+	$("#mobileNav").css("display", "none");
+	$("#back").css("display", "block").css("height", height);
 		
-		$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
+	$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 	
-		loadReservationList(1,uId);
+	loadReservationList(1,uId);
 		/*$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
 			    function(data){
 				yyyyMMddList(data);
@@ -118,48 +116,40 @@ $(".click-myBook").click(function(){
 			    	  $('#myBook').html(template(data));
 			    	  });
 			      });*/
-			     
-	}else {
-		alert ("로그인후 사용해주세요");
-		location.href = '/hopeHoff/web/login/login.html';
-	}
 });
 
 $(".click-myShop").click(function(){
-	if(isLogin){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
+	var height = Narae.removePx($("#mainBody").css("height"));
+	var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 750) / 2;
 		
-		$("#mobileNav").css("display", "none");
-		$("#back").css("display", "block")
-				  .css("height", height);
+	$("#mobileNav").css("display", "none");
+	$("#back").css("display", "block").css("height", height);
 		
-		$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myMarket").load("../myMarket/myMarket.html");
-	}else {
-		alert ("로그인후 사용해주세요");
-		location.href = '/hopeHoff/web/login/login.html';
-	}
+	$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
+	$("#myMarket").load("../myMarket/myMarket.html");
 });
 
 $(".click-myPage").click(function(){
-	if(isLogin){
-		var height = Narae.removePx($("#mainBody").css("height"));
-		var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
+	var height = Narae.removePx($("#mainBody").css("height"));
+	var marginLeft = (Narae.removePx($("#mainBody").css("width")) - 600) / 2;
 		
-		$("#mobileNav").css("display", "none");
-		$("#back").css("display", "block")
-		  .css("height", height);
-		
-		$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
-		$("#myPage").load("../myPage/myPage.html");
-	}
-	else {
-		alert ("로그인후 사용해주세요");
-		location.href = '/hopeHoff/web/login/login.html';
-	}
+	$("#mobileNav").css("display", "none");
+	$("#back").css("display", "block").css("height", height);
+	$("#myPage").css("margin-left", marginLeft + "px").css("display", "block");
 	
-
+	require(['text!templates/myPage-chk-table.html'], function(html){
+		var template = Handlebars.compile(html);
+		var data = {"userId": uId}
+		$('#myPage').html( template(data) );
+	});
+	
+/*	require(['text!templates/myPage-table.html'], function(html){
+		var template = Handlebars.compile(html);
+		$('#myPage').html( template() );
+	});*/
+	
+	
+	//$("#myPage").load("../myPage/myPage.html");
 });
 
 $(document).delegate(".list","mouseover",function(){
