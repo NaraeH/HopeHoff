@@ -41,6 +41,11 @@ public class UserService {
 	  return userDao.selectOne(uId);
   }
   
+  public void update(String whichCol, String changeValue, String userid){
+	  HashMap<String,String> params = new HashMap<>();
+	 userDao.updateUser(params);
+  }
+  
 
 }
 

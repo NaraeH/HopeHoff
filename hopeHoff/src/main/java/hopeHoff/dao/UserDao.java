@@ -10,4 +10,5 @@ public interface UserDao {
   List<User> selectPhoneList();
   void insert(Map<String,String> params);
   User selectOne(String uId);
+  void updateUser(Map<String, String> params);
 }

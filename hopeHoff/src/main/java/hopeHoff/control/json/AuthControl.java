@@ -113,9 +113,42 @@ public class AuthControl {
 	  HashMap<String, Object> resultMap = new HashMap<String, Object>();
 	  resultMap.put("User", userService.view(uId));
 	  
-	  System.out.println("resultMap ========>"+resultMap);
 	  return resultMap;
   }
   
+  @RequestMapping(value="/updateUser", method=RequestMethod.POST)
+  public Object updateUser(String userid, String password, String phoneNo) {
+	  System.out.println("userid==>" + userid);
+	  System.out.println("password==>" + password);
+	  System.out.println("phoneNo==>" + phoneNo);
+	  
+	  if(password != null){
+		  userService.update("UPASSWORD", password, userid);
+	  }
+	  
+	  if(phoneNo != null){
+		  userService.update("UPHONE", phoneNo, userid);
+	  }
+	  
+	  HashMap<String, Object> resultMap = new HashMap<String, Object>();
+	  resultMap.put("status", "success");
+    return resultMap;
+  }
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
