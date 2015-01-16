@@ -1,10 +1,23 @@
 var pwdStatus = false;  //수정 버튼 눌렀을 때의 체크를 위함
-var randomNo = Math.ceil( Math.random() * 1000000 );
+var randomNo = 0;
+var updateUserMap = {password: "fail", phoneNo = "fail"};
 
-$( "#sendBtn" ).click(function() {
-	console.log("전송버튼 눌렀다");
+$( "#sendBtn" ).click(function(){
+	randomNo = Narae.sendSms($("#phoneNo").val());
+	console.log("인증번호==>" + randomNo);
 });
 
+
+$('#confirmBtn').click(function(){
+	console.log("눌렀음");
+	
+	if($('#confirmVerCode').val() == randomNo){
+		 $('#confirmVerCode').css("border","green 2px solid");
+	 } else {
+		 $('#confirmVerCode').css("border","red 2px solid");
+		 $( ".confimNoValid" ).html("인증번호가 맞지 않습니다").css("color", "red");
+	 }
+});
 
 /* --------------password 유 효 성--------------- */
 $( '#newPwd' ).focus( function() {
@@ -88,6 +101,7 @@ $( "#phoneNo" ).focusout(function() {
 		$( ".phoneNoValid" ).css("display","none");
 	}
 });
+
 
 
 

@@ -71,8 +71,6 @@ $(function(){
 	
 	/*************************유. 효 . 성..... 검 사************************/	
 
-	
-
 	//-------- ID-------------( input칸에 포커스들어올 때 유효성여부가 나타나지요(밑에 focusout도있습니당)  )
 	$('#formGroupInputLarge').focus(function() {
 	 $('#idText').css("display","");
