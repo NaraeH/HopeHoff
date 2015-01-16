@@ -32,11 +32,11 @@ Narae.prototype.sendSms = function(phoneNo) {
 			   type: "POST",
 			   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
 			   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-			   url: "http://link.smsceo.co.kr/sendsms_euckr.php", 
+			   url: "http://link.smsceo.co.kr/sendsms_utf8.php", 
 			   data: {userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
 					 userid:   "hopeHoff01",
 					 msg:      "HopeHoff [ " + randomNo + " ]",
-					 phone:    randomNo,
+					 phone:    phoneNo,
 					 callback: "0233333333" //문자메시지 보내는 사람번호
 			   },
 			   jsonp: false, 
