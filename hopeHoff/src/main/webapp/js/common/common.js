@@ -12,8 +12,48 @@ function Narae(){}
 Narae.prototype.removePx = function(px){
 	return px.split("px").splice(0, 1) - 0;
 }
-var Narae = new Narae();
 
+/*
+ ==> sendSms()
+1. 함수 사용방법
+	sendSms(핸드폰번호);
+	*핸드폰 번호: 010-0000-000 로 이루어진 타입이어야 함('-'로 연결되어 있는 스타일)
+ */
+Narae.prototype.sendSms = function(phoneNo) {
+	var phoneNoArray = phoneNo.split("-");
+	var phoneNo= phoneNoArray[0] + phoneNoArray[1] + phoneNoArray[2] //'-'로 연결되있던 핸드폰 번호에서 01000000000로 바꿈
+	var randomNo = Math.ceil(Math.random() * 1000000);   //인증번호 랜덤숫자
+	
+	if( phoneNo == ''){ //넘어온 번호가 없을시
+		return '';
+		
+	}else {
+		  $.ajax({
+			   type: "POST",
+			   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
+			   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
+			   url: "http://link.smsceo.co.kr/sendsms_test.php", 
+			   data: {userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
+					 userid:   "hopeHoff01",
+					 msg:      "HopeHoff [ " + randomNo + " ]",
+					 phone:    randomNo,
+					 callback: "0233333333" //문자메시지 보내는 사람번호
+			   },
+			   jsonp: false, 
+			   crossDomain: true,
+			   dataType: 'script',
+			   success: function(data, textStatus, jqXHR ) { //문자전송성공
+				   alert("인증번호가 성공적으로 전송되었습니다");
+			   }, 
+			   error: function(textStatus){ //문자전송실패
+				   alert("문자전송실패");
+			   }
+			 });
+		  return randomNo;
+	}
+}
+
+var Narae = new Narae();
 
 //---------------------------------복잡한 함수(?)-------------------------------
 /*

@@ -1,8 +1,7 @@
-var valpoint=0;
+var valpoint = 0;
+var randomNo = 0;
 
 $(function(){
-	var randomNo = Math.ceil(Math.random() * 1000000);  //인증번호 랜덤숫자
-	
 	$('#btnCancel').click(function(){
 		$("input[name='type']").filter("[value='user']").prop("checked",false);
 		$("input[name='type']").filter("[value='boss']").prop("checked",false);
@@ -66,37 +65,8 @@ $(function(){
 	});
 	
 	$("#sendValid").click(function(){
-		var phoneNumberArray = $("#phoneNumber").val().split("-");
-		var phoneNumber= phoneNumberArray[0] + phoneNumberArray[1] + phoneNumberArray[2]
-		
-		if( $("#phoneNumber").val() == ''){
-			alert("핸드폰번호를 입력해주세요");
-		}else {
-			console.log(randomNo);
-			  $.ajax({
-				   type: "POST",
-				   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
-				   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-				   url: "http://link.smsceo.co.kr/sendsms_test.php", 
-				   data: {userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
-						 userid:   "hopeHoff01",
-						 msg:      "HopeHoff [ " + randomNo + " ]",
-						 phone:    phoneNumber,
-						 callback: "0233333333" //문자메시지 보내는 사람번호
-				   },
-				   jsonp: false, 
-				   crossDomain: true,
-				   dataType: 'script',
-				   success: function(data, textStatus, jqXHR ) {
-					   alert("인증번호가 성공적으로 전송되었습니다");
-				   }, 
-				   error: function(textStatus){
-					   console.log("문자 전송 실패");
-				   }
-					   
-				 });
-		}
-
+		randomNo= Narae.sendSms($("#phoneNumber").val());
+		console.log("인증번호==>" + randomNo);
 	});
 	
 	/*************************유. 효 . 성..... 검 사************************/	
