@@ -1,0 +1,146 @@
+<div id="myMarketBody">
+
+		<div id="myMarketHeader"  class="div-header">
+			<div id="headerTitle" class="font-div-title">내 가게 정보</div>
+				<div id="myMarketSelect">
+					<form action="#">
+						    <select name="speed" id="selectForm">
+						      <!-- <option>와라와라(강남)</option> -->
+						    </select>
+					<button id="btnMyMarketClose" type="button" class="close" value="close">X</button>
+					</form>
+				</div>
+			
+		</div>
+
+		<div id="myMarketContainer">
+			<div id="myPubPhotoListWrap" class="width-silde-wrap">
+					<div class="myLeftWrap">
+						<div><span id="myPhotoToLeft" class="box-rotate-left"></span></div>
+					</div>
+					<div class="myRightWrap">
+						<div><span id="myPhotoToRight" class="box-rotate-right"></span></div>
+					</div>
+
+					<ul>
+						<li>
+							<div id="myPubPhoto1" class="myPhotoList">
+								<div class="myImgText">
+									와라와라(강남점) (1/3) <br> ●○○
+								</div>
+							</div>
+						</li>
+						<li>
+							<div id="myPubPhoto2" class="myPhotoList">
+								<div class="myImgText">
+									와라와라(강남점) (2/3) <br> ○●○
+								</div>
+							</div>
+						</li>
+						<li>
+							<div id="myPubPhoto3" class="myPhotoList">
+								<div class="myImgText">
+									와라와라(강남점) (3/3) <br> ○○●
+								</div>
+							</div>
+						</li>
+					</ul>
+				<!-- menuList -->
+			</div>
+
+			<div id="myRightContainer">
+				<div id="myHoffInfo">
+					<div id=shopName></div>
+					
+					<br><br>
+					<div>영업시간 : </div>&nbsp;<input type="text" class="myInputBox" id="time"><br><br>
+					<div>전화번호 : </div>&nbsp;<input type="text" class="myInputBox" id="phone"><br><br>
+					<div>가게주소 : </div>&nbsp;<input type="text" class="myInputBox" id="addr"><br><br>
+					<div>가게소개 : </div>&nbsp;<input type="text" class="myInputBox" id="intro"><br>
+					<button id="changeBtn" type="button">수정하기</button><br><br>
+					
+				</div>
+			</div> <!-- rightContainer -->
+			
+				<div id="myTabs">
+					<div id="myTabsContent">
+						<div id="myContentMenu">
+							<div id="myMenuListWrap" class="width-silde-wrap">
+								<div class="myLeftWrap">
+									<div><span id="myMenuToLeft" class="box-rotate-left"></span></div>
+								</div>
+								<div class="myRightWrap">
+									<div><span id="myMenuToRight" class="box-rotate-right"></span></div>
+								</div>
+
+								<ul>
+									<li>
+										<div>
+											<img src ="../../img/details/chiken.jpg" class="myPhotoList">
+											<!-- <div class="myOverlay">
+												<input class="myMenu" type="text" placeholder="뿌링클치킨"><br>
+							             		<input class="myPrice" type="text" placeholder="17500">
+											</div> -->
+										</div>
+									</li>
+									<li>
+										<img src ="../../img/details/cheese.jpg" class="myPhotoList">
+<!-- 										
+											<div class="myOverlay">
+											<input class="myMenu" type="text" placeholder="크림치즈퐁닭"><br>
+							              <input class="myPrice" type="text" placeholder="17500">
+											</div>
+										  -->
+									</li>
+									<li>
+										<img src ="../../img/details/pizza.jpg" class="myPhotoList">
+										<!-- 
+											<div class="myOverlay">
+											<input class="myMenu" type="text" placeholder="베감피자"><br>
+							              <input class="myPrice" type="text" placeholder="16800">                                   
+										</div> -->
+									</li>
+									<li>
+										<img src ="../../img/details/odang.jpg" class="myPhotoList">
+										<!-- 
+											<div class="myOverlay">
+											<input class="myMenu" type="text" placeholder="꼬치어묵전골"><br>
+							              <input class="myPrice" type="text" placeholder="17500">
+											</div>
+										 -->
+									</li>
+									<li>
+										<img src ="../../img/details/odang.jpg" class="myPhotoList">
+										<!-- 
+											<div class="myOverlay">
+											<input class="myMenu" type="text" placeholder="어묵국물"><br>
+							              <input class="myPrice" type="text" placeholder="12000">
+											</div>			-->
+									</li>
+								</ul>
+							</div>
+						</div>
+		
+						<div id="myContentComments">
+							<table id="myDataForm"></table>
+						</div>
+					</div>
+					<!-- tabsContent -->
+
+					<div id="myTabsBar">
+						<div id="myTabsBarText">
+							<div id='myMenuText' class="myMenuTabs">Menu</div>
+							<div id='myCommentText' class="myCommentTabs">Comment</div>
+						</div>
+						<div id="myTabsBarButton">
+							<div id='myMenuButton' class="myMenuTabs"></div>
+							<div id='myCommentButton' class="myCommentTabs"></div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+		
+	</div>
+	<script src='../../js/myMarket/myMarket.js'></script>
+
