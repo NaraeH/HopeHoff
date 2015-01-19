@@ -1,5 +1,6 @@
 package hopeHoff.control.json;
 
+import hopeHoff.domain.Reservation;
 import hopeHoff.service.ReservationService;
 import hopeHoff.service.UserService;
 
@@ -88,13 +89,14 @@ public class ReservationControl {
   
    //나래 수정중
 	@RequestMapping(value="/addReserv", method=RequestMethod.POST)
-	public Object addReserv() {
-		  HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		  
-		  return resultMap; 
-	  }
-}
+	public Object addReserv(Reservation reservation) {
+		reservationService.add(reservation);
 
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("status", "success");
+		return resultMap;
+	}
+}
 
 
 

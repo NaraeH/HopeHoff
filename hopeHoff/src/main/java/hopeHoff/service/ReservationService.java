@@ -4,6 +4,8 @@ import hopeHoff.dao.ReservationDao;
 import hopeHoff.dao.UserDao;
 import hopeHoff.domain.Reservation;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -42,19 +44,6 @@ public class ReservationService {
     return maxPageNo;
   }
   
-  /* @Transactional 선언
-   * => 메서드 안의 입력/변경/삭제(manipluation) 작업을 하나의 작업을 묶는다.
-   * => 모든 작업이 성공했을 때만 서버에 반영한다. 
-   */
-  @Transactional(
-      rollbackFor=Exception.class, 
-      propagation=Propagation.REQUIRED)
-  public void add(Reservation reservation) {
-	  reservationDao.insert(reservation);
-    
-  }
-  
-  
   @Transactional(
       rollbackFor=Exception.class, 
       propagation=Propagation.REQUIRED)
@@ -65,6 +54,24 @@ public class ReservationService {
   public Reservation get(int reservationNo) {
 	Reservation reservation = reservationDao.selectOne(reservationNo);
     return reservation;
+  }
+  
+  
+  /* @Transactional 선언
+   * => 메서드 안의 입력/변경/삭제(manipluation) 작업을 하나의 작업을 묶는다.
+   * => 모든 작업이 성공했을 때만 서버에 반영한다. 
+   */
+  @Transactional(
+      rollbackFor=Exception.class, 
+      propagation=Propagation.REQUIRED)
+  public void add(Reservation reservation) {
+	  //오늘 날짜 지정
+	  Date date = new Date();
+	  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+	  String currentTimeString = sdf.format(date);
+	  reservation.setReservationDate(currentTimeString);
+	  
+	  reservationDao.insert(reservation);
   }
 }
 

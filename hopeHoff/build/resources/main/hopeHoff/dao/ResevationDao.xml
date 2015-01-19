@@ -42,15 +42,16 @@
 	  	  WHERE RNO=#{value}
 	  </select>
   
-	   <select id="totalSize" resultType="int">
+	   <select id="totalSize" parameterType="String" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
+	   	 WHERE UID=#{value}
 	  </select>
 	  
-<!-- 	  <insert id="insert" parameterType="Reservation"
+	  <insert id="insert" parameterType="Reservation"
 	   	  useGeneratedKeys="true" keyColumn="RNO" keyProperty="reservationNo">
-	   	  INSERT INTO RESERVATION(RDATE,RCONTENT,UID,RSTATUS) 
-	   	  VALUES (#{reservationDate},#{reservationContent},#{userId},#{reservationStatus})
-	  </insert> -->
+	   	  INSERT INTO RESERVATION(BBNO, RDATE, RCONTENT, UID) 
+	   	  VALUES(#{businessNo}, #{reservationDate}, #{reservationContent}, #{userId})
+	  </insert> 
   
    	  <delete id="delete" parameterType="int">
          DELETE FROM RESERVATION WHERE PNO=#{value}

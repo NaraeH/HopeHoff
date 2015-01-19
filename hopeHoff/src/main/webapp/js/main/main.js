@@ -228,22 +228,25 @@ $(document).delegate('.btn-close-simpleReserv',"click",function(){
 
 //간단 예약하기
 $(document).delegate(".btnBookShop","click",function(){
-	var dataShop = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
+	var businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
 	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent"; //예약내용
-	
-	console.log( dataShop );
-	console.log( bookContent );
 	
 	if( $( bookContent ).val() != '' ){ //내용이 있을 경우
 		
 		//예약 내용 DB에 저장하기
 		$.post('../../json/reservation/addReserv.do'
-				,{}
+				,{businessNo: businessNo,
+				  reservationContent : $( bookContent ).val(),
+				  userId  : uId}
 				,function(data){
+					console.log("--------------");
+					console.log(data);
 					
+					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
+
+					//업주에게 예약내용 문자 + hopeHoff주소로 보내주기 
+					/*Narae.sendSms( $("#phoneNo").val() )*/
 				}, 'json');
-		
-		//업주에게 예약내용 문자 + hopeHoff주소로 보내주기 
 
 	}else {  //내용이 없을 경우
 		alert( "예약 시간과 인원을 입력해주세요" );
