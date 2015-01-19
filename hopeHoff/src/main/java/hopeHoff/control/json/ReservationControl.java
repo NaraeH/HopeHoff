@@ -66,6 +66,7 @@ public class ReservationControl {
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
     resultMap.put("uId", uId);
+    resultMap.put("startIndex", ((pageNo - 1) * pageSize));
     resultMap.put("reservations", 
         reservationService.getList(pageNo, pageSize,uId));
     

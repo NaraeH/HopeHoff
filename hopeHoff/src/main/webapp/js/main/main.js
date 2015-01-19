@@ -505,6 +505,7 @@ function loadReservationList(pageNo,uId) {
 			    function(data){
 				yyyyMMddList(data);
 				console.log(data.currPageNo);
+				console.log(data.startIndex);
 			      setPageNo(data.currPageNo, data.maxPageNo);
 			    //  var reservations = data.reservations;
 			      $('.table-tr').remove();

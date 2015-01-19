@@ -31,6 +31,7 @@
 		FROM RESERVATION T1 LEFT OUTER JOIN USER T2 
 		USING(UID)
 		WHERE T2.UID=#{uId} 
+		ORDER BY RDATE DESC
   <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
     </if> 

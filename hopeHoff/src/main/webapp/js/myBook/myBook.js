@@ -131,7 +131,7 @@ $(document).delegate(".table-tr","click",function(){
 			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
 				    function(data){
 					yyyyMMddList(data);
-					//console.log(data);
+					console.log(data.startIndex);
 				      setPageNo(data.currPageNo, data.maxPageNo);
 				    //  var reservations = data.reservations;
 				      
