@@ -1,7 +1,6 @@
 package hopeHoff.domain;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Reservation implements Serializable {
 
@@ -9,7 +8,7 @@ public class Reservation implements Serializable {
 	
 	protected int reservationNo;
 	protected String businessNo;
-	protected Date reservationDate;
+	protected String reservationDate;
 	protected String reservationContent;
 	protected String userId;
 	protected String reservationStatus;
@@ -44,12 +43,12 @@ public class Reservation implements Serializable {
 	}
 
 
-	public Date getReservationDate() {
+	public String getReservationDate() {
 		return reservationDate;
 	}
 
 
-	public void setReservationDate(Date reservationDate) {
+	public void setReservationDate(String reservationDate) {
 		this.reservationDate = reservationDate;
 	}
 
