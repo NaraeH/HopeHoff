@@ -78,7 +78,6 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	}
 });
 
-
 /*------------------------이벤트 발생시------------------------*/
 $(window).resize(function(){
 	bodyWidth = Narae.removePx($("body").css("width"));
@@ -142,14 +141,6 @@ $(".click-myPage").click(function(){
 		var data = {"userId": uId}
 		$('#myPage').html( template(data) );
 	});
-	
-/*	require(['text!templates/myPage-table.html'], function(html){
-		var template = Handlebars.compile(html);
-		$('#myPage').html( template() );
-	});*/
-	
-	
-	//$("#myPage").load("../myPage/myPage.html");
 });
 
 $(document).delegate(".list","mouseover",function(){
@@ -214,7 +205,7 @@ $(document).delegate(".has-sub ul a, .selectMenu","click",function(){
 });
 
 //예약버튼 눌렀을시 간단예약화면 나타나기
-$(document).delegate('.btnBook',"click",function(){
+$(document).delegate('.btnSimpleBook',"click",function(){
 	var simpleReserv = "#" + $($(this).closest(".list")).attr("id") + " " + ".simpleReserv";
 	
 	if( isLogin ){
@@ -224,8 +215,6 @@ $(document).delegate('.btnBook',"click",function(){
 		alert ("로그인후 사용해주세요");
 		location.href = '/hopeHoff/web/login/login.html';
 	}
-	
-	
 });
 
 //간단 예약화면에서 X눌렀을 때, 간단예약화면 없애기
@@ -233,6 +222,30 @@ $(document).delegate('.btn-close-simpleReserv',"click",function(){
 	$( $(this).closest(".simpleReserv") ).css("display", "none");
 });
 
+//간단 예약하기
+$(document).delegate(".btnBookShop","click",function(){
+	var dataShop = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
+	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent"; //예약내용
+	
+	console.log( dataShop );
+	console.log( bookContent );
+	
+	if( $( bookContent ).val() != '' ){ //내용이 있을 경우
+		
+		//예약 내용 DB에 저장하기
+		$.post('../../json/reservation/addReserv.do'
+				,{}
+				,function(data){
+					
+				}, 'json');
+		
+		//업주에게 예약내용 문자 + hopeHoff주소로 보내주기 
+
+	}else {  //내용이 없을 경우
+		alert( "예약 시간과 인원을 입력해주세요" );
+	}
+	
+});
 
 /*--------------------------mobile용 event------------------------------*/
 

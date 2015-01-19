@@ -2,7 +2,7 @@
 <div class="list" id="shop{{@index}}" data-shop="{{businessNo}}">
 	<div class="shopPhoto">
 		<img src="/hopeHoff/img/shopPhoto/{{shopMainPhoto}}">
-		<div class="btnBook" id="book{{@index}}">예약하기</div>
+		<div class="btnSimpleBook">예약하기</div>
 	</div>
 	<div class="shopInfo">
 		<span class="shopTilte">[ {{shopName}} ]</span>
@@ -12,8 +12,8 @@
 			<span class="btn-close-simpleReserv">X</span>
 			<p class="userInfo"></p>
 			<p>예약하시겠습니까?</p>
-			<textarea rows="3" cols="35" placeholder="예약시간과 인원을 입력해주세요."></textarea>
-			<button>예약</button>
+			<textarea class="bookContent" rows="3" cols="35" placeholder="예약시간과 인원을 입력해주세요."></textarea>
+			<button class="btnBookShop">예약</button>
 		</div>
 	</div>
 </div>

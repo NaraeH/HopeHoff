@@ -10,6 +10,7 @@ import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller("json.reservationControl")
@@ -83,6 +84,14 @@ public class ReservationControl {
 //    resultMap.put("reservation", reservation);
 //    return resultMap;
 //  }
+  
+   //나래 수정중
+	@RequestMapping(value="/addReserv", method=RequestMethod.POST)
+	public Object addReserv() {
+		  HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		  
+		  return resultMap; 
+	  }
 }
 
 
