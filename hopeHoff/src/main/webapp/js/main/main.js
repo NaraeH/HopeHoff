@@ -226,7 +226,7 @@ $(document).delegate('.btn-close-simpleReserv',"click",function(){
 	$( $(this).closest(".simpleReserv") ).css("display", "none");
 });
 
-//간단 예약하기
+/*//간단 예약하기
 $(document).delegate(".btnBookShop","click",function(){
 	var businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
 	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent"; //예약내용
@@ -239,15 +239,57 @@ $(document).delegate(".btnBookShop","click",function(){
 				  reservationContent : $( bookContent ).val(),
 				  userId  : uId}
 				,function(data){
-					console.log("--------------");
 					console.log(data);
+					
+					//업주에게 예약내용 문자보내기
+					Narae.sendSms( callbackFun, "bookMsgToBoss", '010-323-2322' );
+					console.log( statusMap );
+					
+					if(statusMap.status == 'success') {
+						console.log("업주에게 문자메시지가 성공적으로 발송되었습니다.");
+					}else {
+						console.log("문자전송실패");
+					}
 					
 					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
 
-					//업주에게 예약내용 문자 + hopeHoff주소로 보내주기 
-					/*Narae.sendSms( $("#phoneNo").val() )*/
 				}, 'json');
 
+	}else {  //내용이 없을 경우
+		alert( "예약 시간과 인원을 입력해주세요" );
+	}
+	
+});*/
+
+//간단 예약하기
+$(document).delegate(".btnBookShop","click",function(){
+	var businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
+	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent";   //예약내용
+	var shopPhone = $( this ).closest( ".list" ).attr( "data-phone" );                   //해당 가게 전화번호
+	var shopName = $( this ).closest( ".list" ).attr( "data-name" );                     //해당 가게 이름
+	var data = {shopName: shopName}
+	
+	if( $( bookContent ).val() != '' ){ //내용이 있을 경우
+		//예약 내용 DB에 저장하기
+		$.post('../../json/reservation/addReserv.do'
+				,{businessNo: businessNo,
+				  reservationContent : $( bookContent ).val(),
+				  userId  : uId}
+				,function(data){
+					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
+				}, 'json');
+		
+		//업주에게 예약내용 문자보내기
+		Narae.sendSms( callbackFun, "bookMsgToBoss", shopPhone, data );
+		if(statusMap.status == 'success') {
+			console.log("업주님께 문자메시지가 성공적으로 발송되었습니다.");
+		}else {
+			console.log("업주님께 문자전송을 실패하였습니다");
+		}
+		
+		//간단예약 창 닫기
+		$( bookContent ).val('');
+		$( this ).closest( ".simpleReserv" ).css("display", "none");
 	}else {  //내용이 없을 경우
 		alert( "예약 시간과 인원을 입력해주세요" );
 	}
