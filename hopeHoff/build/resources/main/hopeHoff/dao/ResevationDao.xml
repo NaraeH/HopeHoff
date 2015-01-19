@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="hopeHoff.dao.ReservationDao">
+	 
+	 <resultMap type="Reservation" id="reservationMap">
+    	<!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
+    	<id column="RNO" property="reservationNo"/>
+   		<result column="UPHONE" property="uPhone"/>
+   		<result column="RDATE" property="reservationDate"/>
+   		<result column="RSTATUS" property="reservationStatus"/>
+  	</resultMap>
+  	
+  	 <resultMap type="reservationListItem" id="reservationListItemMap">
+	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
+	    <id column="RNO" property="reservationNo"/>
+	    <result column="UPHONE" property="uPhone"/>
+	    <result column="RDATE" property="reservationDate"/>
+	    <result column="RSTATUS" property="reservationStatus"/>
+    </resultMap>
+    
+    <select id="selectList" parameterType="map" 
+        resultMap="reservationListItemMap">
+    SELECT 
+		  T1.RNO, 
+		  T2.UPHONE, 
+		  T1.RDATE
+		FROM RESERVATION T1 LEFT OUTER JOIN USER T2 
+		USING(UID)
+		WHERE T2.UID=#{uId} 
+		ORDER BY RDATE DESC
+  <if test="pageSize > 0">
+      limit #{startIndex}, #{pageSize}
+    </if> 
+  </select>
+  
+	  <select id="selectOne" parameterType="int" resultMap="reservationMap">
+	  	  SELECT RNO,UPHONE,RDATE
+	  	  WHERE RNO=#{value}
+	  </select>
+  
+	   <select id="totalSize" parameterType="String" resultType="int">
+	   	 SELECT count(RNO) FROM RESERVATION
+	   	 WHERE UID=#{value}
+	  </select>
+	  
+	  <insert id="insert" parameterType="Reservation"
+	   	  useGeneratedKeys="true" keyColumn="RNO" keyProperty="reservationNo">
+	   	  INSERT INTO RESERVATION(BBNO, RDATE, RCONTENT, UID) 
+	   	  VALUES(#{businessNo}, #{reservationDate}, #{reservationContent}, #{userId})
+	  </insert> 
+  
+   	  <delete id="delete" parameterType="int">
+         DELETE FROM RESERVATION WHERE PNO=#{value}
+  	  </delete>
+
+	
+</mapper>
