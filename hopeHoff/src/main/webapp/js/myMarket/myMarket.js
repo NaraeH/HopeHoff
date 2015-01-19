@@ -1,5 +1,30 @@
 
 $(document).ready(function() {
+	$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
+		
+			$.post('../../json/myMarketControl/marketList.do'
+			        , { userId: id.loginUser.uId}
+			        , function(data){
+			        	if(data.status == "success") {
+			        		$('#shopName').html(data.shopList0.shopName);
+			        		
+			        		$('<option>').html(data.shopList0.shopName).attr("selected","selected").appendTo($('#selectForm'));
+			        		$('<option>').html(data.shopList1.shopName).appendTo($('#selectForm'));
+			        		$('.myImgText').html(data.shopList0.shopName);
+			        		console.log("data.shopList0.shopName : " + data.shopList0.shopName);
+			        		console.log("data.shopList1.shopName : " + data.shopList1.shopName);
+			        		$('#time').attr("placeholder",data.shopList0.shopTime);
+			        		$('#phone').attr("placeholder",data.shopList0.shopPhone);
+			        		$('#addr').attr("placeholder",data.shopList0.shopDetailAddr);
+			        		$('#intro').attr("placeholder",data.shopList0.shopIntro);
+			        	
+			        	} else {   	console.log(data.status);        	}
+			          }
+			        , 'json');
+
+	});
+	
+	
 	$('#myContentComments').css('display', 'none');
 	$('#myMenuText').css('color', '#FFB500');
 	$('#myCommentText').css('color', '#FFB500');

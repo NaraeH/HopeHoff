@@ -8,6 +8,7 @@ import java.util.Map;
 
 public interface ShopDao {
 	public List<?> selectList(Map<String, String> param);
+	public List<?> showList(String userId);
 	public Shop selectOne(String businessNo);
 	public ShopPhoto selectPhoto(String businessNo);
 }

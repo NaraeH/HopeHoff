@@ -35,11 +35,24 @@
     VALUES (#{uId},#{uName},#{uType},#{uPwd},#{uPhone})
   </insert>
 
-<select id="selectOne" parameterType="String" resultMap="userMap">
-	SELECT UID
-	FROM USER
-	WHERE UID=#{uId}
-
-</select>
+	<select id="selectOne" parameterType="String" resultMap="userMap">
+		SELECT UID
+		FROM USER
+		WHERE UID=#{uId}
+	
+	</select>
+	
+	<update id="updateUser" parameterType="map">
+		UPDATE USER
+		<choose>
+		<when test="whichCol == 'UPASSWORD'">
+			SET UPASSWORD=#{changeValue}
+		</when>
+		<when test="whichCol == 'UPHONE'">
+			SET UPHONE=#{changeValue}
+		</when>
+		</choose>
+		WHERE UID=#{userid} 
+	</update>
   
 </mapper>

@@ -123,9 +123,13 @@ $(".click-myShop").click(function(){
 		
 	$("#mobileNav").css("display", "none");
 	$("#back").css("display", "block").css("height", height);
-		
 	$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
-	$("#myMarket").load("../myMarket/myMarket.html");
+	
+	require(['text!templates/myMarket-table.html'], function(html){
+		var template = Handlebars.compile(html);
+		var data = {"userId": uId}
+		$('#myMarket').html( template(data) );
+	});
 });
 
 $(".click-myPage").click(function(){
