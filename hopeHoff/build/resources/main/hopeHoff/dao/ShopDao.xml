@@ -58,6 +58,9 @@
 		 WHERE BBNO = #{businessNo}
 	</select>
 
+	<select id="showList" parameterType="String" resultMap="shopMap">
+ 		SELECT SNAME,STIME,SPHONE, SDETAILADDR, SINTRO FROM SHOP WHERE UID = #{userId}
+	</select>
 	
 <!-- 	<select id="selectMenu" parameterType="String" resultMap="Menu">
  		 SELECT MAINPHOTO, DETAILPHOTO1, DETAILPHOTO2, DETAILPHOTO3
