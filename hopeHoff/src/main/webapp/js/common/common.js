@@ -16,41 +16,51 @@ Narae.prototype.removePx = function(px){
 /*
  ==> sendSms()
 1. 함수 사용방법
-	sendSms(핸드폰번호);
+	sendSms(callback함수, 메시지 타입, 핸드폰번호, 데이터);
+	*메시지 타입: randomNoMsg => 인증번호 발송, bookMsgToBoss => 업주에게 가게 예약 문자 발송, 그밖에 => 원하는 내용으로 발송가능
 	*핸드폰 번호: 010-0000-000 로 이루어진 타입이어야 함('-'로 연결되어 있는 스타일)
+	*data : 메시지 타입이 randomNoMsg이거나 bookMsgToBoss에서  문자메시지에 추가로 전하고 싶은 내용
  */
-Narae.prototype.sendSms = function(phoneNo) {
+var statusMap = {status: "fail", randomNo : 000000};
+Narae.prototype.sendSms = function( callback, msgType, phoneNo, data ) {
 	var phoneNoArray = phoneNo.split("-");
 	var phoneNo= phoneNoArray[0] + phoneNoArray[1] + phoneNoArray[2] //'-'로 연결되있던 핸드폰 번호에서 01000000000로 바꿈
 	var randomNo = Math.ceil(Math.random() * 1000000);   //인증번호 랜덤숫자
+	var msg = null; //문자 메시지 전송 내용
+	
+	//문자 메시지 내용
+	if( msgType == 'randomNoMsg' ) {
+		msg = "HopeHoff 인증번호 [ " + randomNo + " ]";
+	}else if( msgType == 'bookMsgToBoss' ){
+		msg = "[ " + data.shopName + " ]" + "예약 요청이 있습니다.   " + "자세한내용:hopehoff.com";
+	}else {
+		msg = msg;   //입력하고 싶은 문자 메시지 내용
+	}
 	
 	if( phoneNo == ''){ //넘어온 번호가 없을시
-		return '';
-		
+		return statusMap;
 	}else {
-		  $.ajax({
-			   type: "POST",
-			   //과금되는 주소: http://link.smsceo.co.kr/sendsms_euckr.php
-			   //테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-			   url: "http://link.smsceo.co.kr/sendsms_test.php", 
-			   data: {userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
+		//과금되는 주소: http://link.smsceo.co.kr/sendsms_utf8.php
+		//테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
+	    $.post('http://link.smsceo.co.kr/sendsms_test.php'
+		        , { userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
 					 userid:   "hopeHoff01",
-					 msg:      "HopeHoff [ " + randomNo + " ]",
+					 msg:      msg,
 					 phone:    phoneNo,
-					 callback: "0233333333" //문자메시지 보내는 사람번호
-			   },
-			   jsonp: false, 
-			   crossDomain: true,
-			   dataType: 'script',
-			   success: function(data, textStatus, jqXHR ) { //문자전송성공
-				   alert("인증번호가 성공적으로 전송되었습니다");
-			   }, 
-			   error: function(textStatus){ //문자전송실패
-				   alert("문자전송실패");
-			   }
-			 });
-		  return randomNo;
+					 callback: "0233333333" //문자메시지 보내는 사람번호 
+						 }
+		        , callbackFun( randomNo )
+		        , 'script');
 	}
+}
+
+
+//ajax return 값 보낼 수 있도록 처리
+function callbackFun( randomNo ){
+	statusMap.status = "success";
+	statusMap.randomNo = randomNo;
+	
+	return statusMap;
 }
 
 var Narae = new Narae();
