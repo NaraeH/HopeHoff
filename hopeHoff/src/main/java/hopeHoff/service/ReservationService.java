@@ -51,8 +51,10 @@ public class ReservationService {
     reservationDao.delete(reservationNo);
   }
   
-  public Reservation get(int reservationNo) {
+  public Reservation get(Integer reservationNo) {
+	
 	Reservation reservation = reservationDao.selectOne(reservationNo);
+	
     return reservation;
   }
   

@@ -65,7 +65,15 @@ $(function(){
 	});
 	
 	$("#sendValid").click(function(){
-		randomNo= Narae.sendSms($("#phoneNumber").val());
+		Narae.sendSms( callbackFun, "randomNoMsg", $("#phoneNumber").val() );
+
+		if(statusMap.status == 'success') {
+			randomNo = statusMap.randomNo;
+			alert("인증번호가 성공적으로 전송되었습니다");
+		}else {
+			console.log("문자전송실패");
+		}
+		
 		console.log("인증번호==>" + randomNo);
 	});
 	

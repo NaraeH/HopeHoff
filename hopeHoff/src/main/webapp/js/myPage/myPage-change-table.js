@@ -2,9 +2,16 @@ var randomNo = 0;                                          //핸드폰 인증번
 var userId = $( ".userId" ).val();                         //user 아이디
 var updateUserMap = {password: "none", phoneNo: "none"};   //회원정보 수정될 값 저장
 
-
 $( "#sendBtn" ).click(function(){
-	randomNo = Narae.sendSms( $("#phoneNo").val() );
+	Narae.sendSms( callbackFun, "randomNoMsg", $("#phoneNo").val() );
+
+	if(statusMap.status == 'success') {
+		randomNo = statusMap.randomNo;
+		alert("인증번호가 성공적으로 전송되었습니다");
+	}else {
+		console.log("문자전송실패");
+	}
+	
 	$( phoneNo ).attr("data-check", "validDataClick");
 	console.log("인증번호==>" + randomNo);
 });
