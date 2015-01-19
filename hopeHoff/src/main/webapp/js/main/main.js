@@ -240,7 +240,7 @@ $(document).delegate(".btnBookShop","click",function(){
 				  userId  : uId}
 				,function(data){
 					console.log("--------------");
-					console.log(date);
+					console.log(data);
 					
 					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
 
