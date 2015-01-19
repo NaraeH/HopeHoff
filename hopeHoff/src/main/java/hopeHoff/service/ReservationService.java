@@ -36,8 +36,8 @@ public class ReservationService {
     return reservationDao.selectList(paramMap);
   }
   
-  public int getMaxPageNo(int pageSize) {
-    int totalSize = reservationDao.totalSize();
+  public int getMaxPageNo(int pageSize,String uId) {
+    int totalSize = reservationDao.totalSize(uId);
     int maxPageNo = totalSize / pageSize;
     if ((totalSize % pageSize) > 0) maxPageNo++;
     

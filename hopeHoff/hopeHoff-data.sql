@@ -391,3 +391,4 @@ UPDATE SHOP SET SINTRO='이자카야 주점은 시바라구! 욕 아님' WHERE B
 
 ----------------------------2015.01.19( 타입수정)---------------------------------
 ALTER TABLE RESERVATION CHANGE COLUMN RDATE RDATE DATETIME;
+update SHOP set SINTROADDR = '서울시 서초구' where SPHONE='02-535-9065';

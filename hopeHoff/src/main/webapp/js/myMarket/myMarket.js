@@ -8,16 +8,29 @@ $(document).ready(function() {
 			        	if(data.status == "success") {
 			        		$('#shopName').html(data.shopList0.shopName);
 			        		
-			        		$('<option>').html(data.shopList0.shopName).attr("selected","selected").appendTo($('#selectForm'));
-			        		$('<option>').html(data.shopList1.shopName).appendTo($('#selectForm'));
-			        		$('.myImgText').html(data.shopList0.shopName);
-			        		console.log("data.shopList0.shopName : " + data.shopList0.shopName);
+			        		$('<option>').html(data.shopList1.shopName).attr("selected","selected").appendTo($('#selectForm'));
+			        		$('<option>').html(data.shopList2.shopName).appendTo($('#selectForm'));
+			        		$('.myImgText').html(data.shopList1.shopName);
 			        		console.log("data.shopList1.shopName : " + data.shopList1.shopName);
-			        		$('#time').attr("placeholder",data.shopList0.shopTime);
-			        		$('#phone').attr("placeholder",data.shopList0.shopPhone);
-			        		$('#addr').attr("placeholder",data.shopList0.shopDetailAddr);
-			        		$('#intro').attr("placeholder",data.shopList0.shopIntro);
+			        		console.log("data.shopList2.shopName : " + data.shopList2.shopName);
+			        		$('#time').attr("placeholder",data.shopList1.shopTime);
+			        		$('#phone').attr("placeholder",data.shopList1.shopPhone);
+			        		$('#addr').attr("placeholder",data.shopList1.shopDetailAddr);
+			        		$('#intro').attr("placeholder",data.shopList1.shopIntro);
+			        		$('#myPubPhoto1').attr("background-image",'url("/' + data.shopList1.detailPhoto1 + '")');
+			        		$('#myPubPhoto2').attr("background-image",'url("/' + data.shopList1.detailPhoto2 + '")');
+			        		/*$('#myPubPhoto3').attr("background-image",'url("/' + data.shopList0.detailPhoto3 + '")');*/
 			        	
+			        	} else {   	console.log(data.status);        	}
+			          }
+			        , 'json');
+			
+			$.post('../../json/myMarketControl/marketMenu.do'
+			        , { userId: id.loginUser.uId}
+			        , function(data){
+			        	if(data.status == "success") {
+			        	
+			        		console.log("fetching menus .. . mission "+data.status); 
 			        	} else {   	console.log(data.status);        	}
 			          }
 			        , 'json');

@@ -28,7 +28,7 @@ public class myMarketControl {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
 		if(shopList != null) { 
-			for(int index =0; index < shopList.size() ;index++) { 
+			for(int index =1; index <= shopList.size() ;index++) { 
 				System.out.println("shopList.get(index)  :  " + shopList.get(index));
 				resultMap.put("shopList"+index, shopList.get(index)); 
 			}
@@ -44,6 +44,30 @@ public class myMarketControl {
 		return resultMap;
 	}
 
+	
+	@RequestMapping(value="/marketMenu", method=RequestMethod.POST)
+	public Object marketMenu(String userId){
+		List<?> shopMenu = myMarketService.showMenu(userId);
+		
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		if(shopMenu != null) { 
+			for(int index =1; index <= shopMenu.size() ;index++) { 
+				System.out.println("shopMenu.get("+index+")  : " + shopMenu.get(index));
+				resultMap.put("shopMenu"+index, shopMenu.get(index)); 
+			}
+			resultMap.put("status", "success");
+		} else {
+			resultMap.put("status", "fail");
+			
+		}
+		
+		
+		return resultMap;
+	}
+	
+	
+	
 	/*@RequestMapping(value="/list", method=RequestMethod.GET)
 	public Object list(String keywordGroup, String keyword ){
 		HashMap<String, String> paraMap = new HashMap<String, String>();

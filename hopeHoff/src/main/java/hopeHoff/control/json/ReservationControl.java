@@ -55,7 +55,7 @@ public class ReservationControl {
       pageSize = PAGE_DEFAULT_SIZE;
     
 
-    int maxPageNo = reservationService.getMaxPageNo(pageSize);
+    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId);
     
     if (pageNo <= 0) pageNo = 1;
     if (pageNo > maxPageNo) pageNo = maxPageNo;

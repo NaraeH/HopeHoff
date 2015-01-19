@@ -42,8 +42,9 @@
 	  	  WHERE RNO=#{value}
 	  </select>
   
-	   <select id="totalSize" resultType="int">
+	   <select id="totalSize" parameterType="String" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
+	   	 WHERE UID=#{value}
 	  </select>
 	  
 	  <insert id="insert" parameterType="Reservation"
