@@ -1,42 +1,19 @@
 var currPageNo;
 var maxPageNo;
 
-/*$(function(){
-	  
-	  loadReservationList(1);
-	  
-	});
-*/
-
-
-/*$(document).delegate(".list","mouseover",function(){
-	var shopAddr = "#" + $(this).attr("id") + " .shopAddr";
-	shopAddrText = $(shopAddr).html();
-	
-	$(shopAddr).removeClass("shopAddr").addClass("btnDetail").html("상세보기");
-});
-
-$(document).delegate(".list","mouseout",function(){
-	var btnDetail = "#" + $(this).attr("id") + " .btnDetail";
-	$(btnDetail).removeClass("btnDetail").addClass("shopAddr").html(shopAddrText);
-});*/
-
 
 $(document).delegate(".table-tr","click",function(){
 	var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
 	
+	console.log("처음",status);
 	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
-	console.log(num);
-	//$(this).children().eq(4).html("<button id=btnDelete"+num+">삭제</button>");
-	
-	//status= $('#myBookData').children().hasClass("table-content");
-	//console.log($($('#myBookData').children()[0]).children().hasClass("table-content"));
-	//console.log($(this).hasClass("table-content"));
+	//console.log(num);
 	if(!status){
 	//status=false;
+		console.log("다음",status);
 	$('<tr>').addClass('table-content').attr("id","tableContent"+num)
 			 .append($('<td colspan="3">').html("aaaa")).css('text-align','center')
-		 .append($('<td>').html("<button id=btnDelete"+num+">삭제</button>"))
+		 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
 			.insertAfter('#'+'table-tr'+num)
 			console.log("aaaa");
 	}
@@ -44,19 +21,19 @@ $(document).delegate(".table-tr","click",function(){
 	{
 		console.log("bbbbb");
 		$('#'+'tableContent'+num).remove();
-		
 	}
-	
-
 });
 		
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
-	$('#btnDelete').click(function(event){
-		console.log("Aaa");
-		alert("예약 취소 하시겠습니까?");
-		$('#'+'tRow'+checkedTable).remove();
-	});
+$(document).delegate(".btn-delete","click",function(){
+	var num = $($(this)[0]).attr("id").split("btnDelete")[1]-0;
+	
+	console.log("delete버튼의 값 ===>",num);
+	
+	console.log("버튼 눌렸다");
+	alert("예약을 취소 하시겠습니까?");
+});
 	
 	//******************** datePicker 설정 하기************************//
 	$(function() {
