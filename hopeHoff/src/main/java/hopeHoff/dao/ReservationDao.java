@@ -10,6 +10,6 @@ public interface ReservationDao {
 	public void delete(int no);
 	public void insert(Reservation reservation);
 	public Reservation selectOne(int no);
-	public int totalSize();
+	public int totalSize(String uId);
 
 }
