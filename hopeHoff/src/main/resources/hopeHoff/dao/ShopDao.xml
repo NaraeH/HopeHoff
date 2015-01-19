@@ -29,6 +29,23 @@
 		<result column="DETAILPHOTO3" property="detailPhoto3"/>
 	</resultMap>
 
+	<resultMap type="HashMap" id="sAndpMap">
+		<result column="SNAME" property="shopName"/>
+   		<result column="SINTRO" property="shopIntro"/>
+   		<result column="SDETAILADDR" property="shopDetailAddr"/>
+   		<result column="STIME" property="shopTime"/>
+   		<result column="SPHONE" property="shopPhone"/>
+		<result column="DETAILPHOTO1" property="detailPhoto1"/>
+		<result column="DETAILPHOTO2" property="detailPhoto2"/>
+		<result column="DETAILPHOTO3" property="detailPhoto3"/>
+	</resultMap>
+	
+	<resultMap type="HashMap" id="sAndmMap">   <!-- MENU -->
+		<result column="MNAME" property="menuName"/>
+		<result column="MPRICE" property="menuPrice"/>
+		<result column="MPHOTO" property="menuPhoto"/>
+	</resultMap>
+	
 	<select id="selectList" parameterType="map" resultMap="shopMap">
 		SELECT SHOP.BBNO, SNAME, SINTRO, SINTROADDR, SDETAILADDR, SAREA, STYPE, SSNACK, MAINPHOTO 
 		FROM SHOP LEFT OUTER JOIN SHOPPHOTO 
@@ -58,8 +75,13 @@
 		 WHERE BBNO = #{businessNo}
 	</select>
 
-	<select id="showList" parameterType="String" resultMap="shopMap">
- 		SELECT SNAME,STIME,SPHONE, SDETAILADDR, SINTRO FROM SHOP WHERE UID = #{userId}
+	<select id="showList" parameterType="String" resultMap="sAndpMap">
+ 		<!-- SELECT SNAME,STIME,SPHONE, SDETAILADDR, SINTRO FROM SHOP WHERE UID = #{userId} -->
+ 		select s.SNAME, s.STIME, s.SPHONE, s.SDETAILADDR, s.SINTRO, p.DETAILPHOTO1, p.DETAILPHOTO2, p.DETAILPHOTO3 FROM SHOPPHOTO p, SHOP s WHERE p.BBNO = s.BBNO and s.UID=#{userId}
+	</select>
+	
+	<select id="showMenu" parameterType="String" resultMap="sAndmMap">
+ 		select m.MNAME, m.MPRICE, m.MPHOTO from MENU m, SHOP s where m.BBNO = s.BBNO and s.UID=#{userId}
 	</select>
 	
 <!-- 	<select id="selectMenu" parameterType="String" resultMap="Menu">

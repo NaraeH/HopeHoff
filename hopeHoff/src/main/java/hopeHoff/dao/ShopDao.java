@@ -11,4 +11,5 @@ public interface ShopDao {
 	public List<?> showList(String userId);
 	public Shop selectOne(String businessNo);
 	public ShopPhoto selectPhoto(String businessNo);
+	public List<?> showMenu(String userId);
 }

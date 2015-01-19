@@ -58,20 +58,9 @@
 		height: 340px;
 	}
 	
-	#myPubPhoto1 {
-		background-image: url("../../img/details/Wara-Wara01.jpg");
-	}
-	
-	#myPubPhoto2 {
-		background-image: url("../../img/details/Wara-Wara02.jpg");
-	}
-	
-	#myPubPhoto3 {
+#myPubPhoto3 {
 		background-image: url("../../img/details/Wara-Wara03.jpg");
-	}
-	
-
-	
+	}	
 
 /*---------------------------------*/
 	#myRightContainer{                         /* 오른쪽꺼 */

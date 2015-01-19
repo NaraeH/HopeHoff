@@ -1,9 +1,6 @@
 package hopeHoff.service;
 
 import hopeHoff.dao.ShopDao;
-import hopeHoff.dao.UserDao;
-import hopeHoff.domain.Shop;
-import hopeHoff.domain.User;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class myMarketService {
-  @Autowired UserDao userDao;
   @Autowired ShopDao shopDao;
   
    public List<?> showList(String userId) {
@@ -22,6 +18,14 @@ public class myMarketService {
 	    System.out.println("shopDao.showList(userId):  "+shopDao.showList(userId));
 		return shopDao.showList(userId);
 	}
+
+   public List<?> showMenu(String userId) {
+	   HashMap<String,String> params = new HashMap<>();
+	    params.put("userId",userId);
+	    System.out.println("shopDao.showMenu(userId):  "+shopDao.showMenu(userId));
+		return shopDao.showMenu(userId);
+
+    }
   
   /*public User validate(String uId, String uPwd) {
     HashMap<String,String> params = new HashMap<>();
