@@ -20,16 +20,14 @@
 			<table id='myBookData'>
 				<tr>
 					<th class="mybook-data-th-short">#</th>
-					<th class="mybook-data-th-long">전화번호</th>
+					<th class="mybook-data-th-long">가게 이름</th>
 					<th class="mybook-data-th-long">등록일</th>
-					<th class="mybook-data-th-short">상태</th>
 				</tr>
 				{{#each reservations}}
 				<tr class="table-tr" id="table-tr{{@index}}">
-					<td class="table-data">{{startIndex}}</td>
-					<td class="table-data">{{uPhone}}</td>
+					<td id=test{{@index}} class="table-data">{{reservationNo}}</td>
+					<td class="table-data">{{shopName}}</td>
 					<td class="table-data">{{reservationDate}}</td>
-					<td class="table-data">{{reservationStatus}}</td>
 				</tr>
 				{{/each}}
 			</table>

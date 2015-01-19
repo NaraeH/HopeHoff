@@ -103,6 +103,7 @@ $(".click-myBook").click(function(){
 	$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 	
 	loadReservationList(1,uId);
+	/*tablerowClick()*/
 		/*$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
 			    function(data){
 				yyyyMMddList(data);
@@ -507,8 +508,8 @@ function loadReservationList(pageNo,uId) {
 		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
 			    function(data){
 				yyyyMMddList(data);
-				console.log(data.currPageNo);
-				console.log(data.startIndex);
+				//console.log(data.currPageNo);
+				//console.log(data.startIndex);
 			      setPageNo(data.currPageNo, data.maxPageNo);
 			    //  var reservations = data.reservations;
 			      $('.table-tr').remove();
@@ -519,6 +520,57 @@ function loadReservationList(pageNo,uId) {
 			    	  });
 			      });
 	}
+
+
+/*function tablerowClick(){
+	$(document).delegate(".table-tr","click",function(event){
+	    $.post('../../json/reservation/view.do'
+		        , {
+		          resevationNo: $('#test').val()
+		        }
+		        , function(data){
+		          if (data.status == 'success') {
+		        	 alert("환영합니다 ^_^*");
+		        
+		            
+		          } else {
+		        	  console.log("시부랄")
+		          }
+		        }
+		        , 'json');
+		
+		$.getJSON('../../json/reservation/view.do',{"resevationNo":reservationNo},
+			function(data){
+			if(data.status=="success"){
+				var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
+				console.log("처음",status);
+				var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
+				//console.log(num);
+				if(!status){
+				//status=false;
+					console.log("다음",status);
+				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+						 .append($('<td id=tableContent colspan="3">').html(data.reservationContent)).css('text-align','center')
+					 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
+						.insertAfter('#'+'table-tr'+num)
+						console.log("aaaa");
+				}
+				else 
+				{
+					console.log("bbbbb");
+					$('#'+'tableContent'+num).remove(); 
+				}
+				
+			}
+			else{
+				console.log("fail");
+			}
+		});
+		
+		
+	
+	});
+}		*/	
 
 
 

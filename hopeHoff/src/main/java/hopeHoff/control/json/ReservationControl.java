@@ -49,7 +49,6 @@ public class ReservationControl {
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
      @RequestParam(defaultValue="3") int pageSize ,String uId) throws Exception {
-    
 	  
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
@@ -71,21 +70,24 @@ public class ReservationControl {
     resultMap.put("reservations", 
         reservationService.getList(pageNo, pageSize,uId));
     
-    System.out.println("resultMap=====>"+resultMap);
+    System.out.println("LIST resultMap=====>"+resultMap);
     
     
     return resultMap;
   }
-//  
-//  @RequestMapping("/view")
-//  public Object view(int no) throws Exception {
-//    Reservation reservation = reservationService.get(no);
-//    
-//    HashMap<String,Object> resultMap = new HashMap<>();
-//    resultMap.put("status", "success");
-//    resultMap.put("reservation", reservation);
-//    return resultMap;
-//  }
+  
+  @RequestMapping("/view")
+  public Object view(Integer reservationNo) throws Exception {
+	  System.out.println("parameter:::" + reservationNo);
+   Reservation reservation = reservationService.get(reservationNo);
+   
+   HashMap<String,Object> resultMap = new HashMap<>();
+    resultMap.put("status", "success");
+    resultMap.put("reservation", reservation);
+    
+    System.out.println("View resultMap=====>"+resultMap);
+   return resultMap;
+  }
   
    //나래 수정중
 	@RequestMapping(value="/addReserv", method=RequestMethod.POST)
