@@ -28,7 +28,7 @@ public class myMarketControl {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
 		if(shopList != null) { 
-			for(int index =1; index <= shopList.size() ;index++) { 
+			for(int index =0; index < shopList.size() ;index++) { 
 				System.out.println("shopList.get(index)  :  " + shopList.get(index));
 				resultMap.put("shopList"+index, shopList.get(index)); 
 			}
@@ -45,7 +45,7 @@ public class myMarketControl {
 	}
 
 	
-	@RequestMapping(value="/marketMenu", method=RequestMethod.POST)
+/*	@RequestMapping(value="/marketMenu", method=RequestMethod.POST)
 	public Object marketMenu(String userId){
 		List<?> shopMenu = myMarketService.showMenu(userId);
 		
@@ -64,7 +64,7 @@ public class myMarketControl {
 		
 		
 		return resultMap;
-	}
+	}*/
 	
 	
 	
