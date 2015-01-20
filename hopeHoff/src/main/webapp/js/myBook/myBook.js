@@ -1,12 +1,14 @@
 var currPageNo;
 var maxPageNo;
+var reservationNo;
 
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	$(document).delegate(".table-tr","click",function(event){
 		
+		 event.stopImmediatePropagation();
 		//console.log(this);
 		var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
-		var reservationNo = $("#table-tr"+num+" td:first").html()
+		 reservationNo = $("#table-tr"+num+" td:first").html()
 		
 	  $.post('../../json/reservation/view.do'
 		        , {
@@ -39,8 +41,24 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 });
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
-$(document).delegate(".btn-delete","click",function(){
+$(document).delegate(".btn-delete","click",function(event){
 	var num = $($(this)[0]).attr("id").split("btnDelete")[1]-0;
+	
+	 event.stopImmediatePropagation();
+	console.log(reservationNo);
+	$.post('../../json/reservation/delete.do'
+		        , {
+		        	reservationNo: reservationNo
+		        }
+	        , function(data){
+	        	if(data.status == "success") {
+	        		console.log(data);
+	        		$('.table-tr'+num).remove();
+	        		loadReservationList(1,uId);
+	        	} else {   	console.log(data.status);        	}
+	          }
+	        , 'json');
+	
 	
 	console.log("delete버튼의 값 ===>",num);
 	

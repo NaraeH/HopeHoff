@@ -1,7 +1,7 @@
 <!-- -------------------------------회원가입 팝업---------------------------------------- -->
 	<div id="signUpBody">
 
-		<!-- 회원가입 팝업창 헤더ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ -->
+		<!-- 회원가입 팝업창 헤더-->
 		<div id="signUpHeader" class="div-header">
 			<div id="signUpHeaderTitle" class="font-div-title">회원가입</div>
 			<button id="btnSignUpClose" type="button" value="close">X</button>
@@ -11,7 +11,7 @@
 		<!-- 회원가입 팝업창 BODY---------------------------- -->
 		<div id='mySignUpContainer'>
 		 <form id="myDataForm" role="form">
-		  <div id="myDataFormData" class="form-data">
+		  <div class="form-data">
 			
 			<!-- 회원가입      ㅌ ㅏ 입  선  택-->
 			<input type="radio" id="user" name="type" value="user" checked /> 일반
@@ -23,32 +23,32 @@
 	       <div id="idText"></div> <!-- 회원가입 중복여부 질의응답 get받는 곳--><!-- 사용가능한 아이디입니다. -->
 
 			<!-- 회원가입 팝업창 Name -->
-	       <input type="text" id="formGroupInputSmall" placeholder="이름">
-	       <div id="nameValid"></div>
+	       <input type="text" id="inputName" placeholder="이름">
+	       <div class="validNameDiv validDiv"></div>
 	       
 			<!-- 회원가입 팝업창 PWD -->
-	       <input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자 조합 6~16자리">
-		    <div id="pwdValid"></div>
+	       <input type="password" id="inputPwd" placeholder="비밀번호: 문자, 숫자, 특수문자 조합 6~16자리">
+		    <div class="validPwdDiv validDiv"></div>
 
 			<!-- 회원가입 팝업창 Check -->
-		    <input type="password" id="checkPassword"	placeholder="비밀번호 확인">
-		    <div id="pwdCheckText"></div>
+		    <input type="password" id="inputConfirmPwd"	placeholder="비밀번호 확인">
+			<div class="validConfirmPwdDiv validDiv"></div>
 
 			<!-- 회원가입 팝업창 Phone -->
-		    <input id="phoneNumber" type="text" class="and-button" placeholder="핸드폰번호">
-           <button id="sendValid" type="button" class="btn-deactive">전&nbsp;송</button>
-           <div id="phoneNumValid"></div>
+		    <input type="text" id="inputPhoneNo" class="and-button" placeholder="핸드폰번호">
+           <button type="button" id="sendConfirmPhoneNo">전&nbsp;송</button>
+           <div class="validPhoneNoDiv validDiv"></div>
 
 			<!-- 회원가입 팝업창 인증 -->
-           <input id="inNumber01" type="text" class="and-button" placeholder="인증번호">
-           <button id='confirmBtn' type="button" class="btn-deactive">확&nbsp;인</button>
+           <input type="text" id="inputConfirmPhoneNo"  placeholder="인증번호">
+           <div class="validConfirmPhoneNoDiv validDiv"></div>
 			
 		 </div> <!-- myDataFormData -->
 
 		<!-- 회원가입 팝업창 Footer-------------------------- -->
 		<div id="myDataFormbuttons" align="center">  
-			<button id=btnSignUp type="button">Sign-up</button>
-			<button id=btnCancel type="reset">Cancel</button>
+			<button id=btnSignUp type="button">회원가입</button>
+			<button id=btnCancel type="reset">취소</button>
 		</div>
 		
 	 </form>

@@ -258,7 +258,7 @@
 	}
 
 	/* 모바일 Sign-Up 팝업창 input 길이제한 속성적용 */
-	#bNumber, #bDay, #inputPassword3, #formGroupInputLarge, #phoneNumber, #formGroupInputSmall, #checkPassword, #inNumber01{
+	#bNumber, #bDay, #inputPwd, #formGroupInputLarge, #inputPhoneNo, #inputName, #inputConfirmPwd, #inputConfirmPhoneNo{
 	width: 150px;
 	}
 	
@@ -273,7 +273,7 @@
 	}
 	
 	/* 모바일 Sign-up 팝업창 정렬 속성적용 */
-	#bNumber, #bDay, #inputPassword3, #phoneNumber, #formGroupInputSmall, #checkPassword, #formGroupInputLarge{
+	#bNumber, #bDay, #inputPwd, #inputPhoneNo, #inputName, #inputConfirmPwd, #formGroupInputLarge{
 	margin-right: 53px;
 	}
 	
@@ -311,16 +311,6 @@
 	background-color : black;
 	color : white;
 	}	
-	
-	/* 팝업 검사버튼 */
-	#idText, #pwdCheckText, #pwdValid {
-	color : red;
-	font-size : x-small;
-	font-weight : bolder;
-	/* margin-bottom : -10px; */
-	text-align: center;
-	}
-	
 	
 	/* 모바일 팝업 유효성 ID검사 */
 	#myModal104{

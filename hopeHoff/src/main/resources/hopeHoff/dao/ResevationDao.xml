@@ -51,7 +51,7 @@
 	  </insert> 
   
    	  <delete id="delete" parameterType="int">
-         DELETE FROM RESERVATION WHERE PNO=#{value}
+         DELETE FROM RESERVATION WHERE RNO=#{value}
   	  </delete>
 
 	
