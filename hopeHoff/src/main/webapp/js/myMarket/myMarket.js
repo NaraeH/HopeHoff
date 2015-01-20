@@ -4,19 +4,14 @@ $(document).ready(function() {
 			$.post('../../json/myMarketControl/marketList.do'
 			        , { userId: id.loginUser.uId}
 			        , function(data){
-			        	if(data.status == "success") {
-			        		
-			        		/*var str = "data.shopList.shopName";
-			        		var arr = str.split(".");
-			        		var newStr =  arr.splice(1, 1, "shopList1").toString();*/
-			        		
+	
 			        		$('<option>').html(data.shopList0.shopName).attr("selected","selected").appendTo($('#selectForm'));
 			        		$('<option>').html(data.shopList1.shopName).appendTo($('#selectForm'));
 			        	
-			        		if(data.shopList0 != null) {console.log("$('#selectForm').val() : "+$('#selectForm').val());}
-			        		
+/*			        		if(data.shopList0 != null) {console.log("$('#selectForm').val() : "+$('#selectForm').val());}*/			        		
 			        		console.log("data.shopList0.shopName : " + data.shopList0.shopName);
 			        		console.log("data.shopList1.shopName : " + data.shopList1.shopName);
+			        		
 			        		
 			        		//shop information 맨위 가게이름
 			        		$('#shopName').html(data.shopList0.shopName);
@@ -35,27 +30,95 @@ $(document).ready(function() {
 			        		
 			        		
 			        		
-			        	} else {   	console.log(data.status);        	}
+			   /**************************select에 따라 DB에서 가져오는게 달리지죠********************************/
+			        		$("select").change(function () {
+			        		    var str = "";
+			        		    $( "select option:selected" ).each(function() {
+			        		      str += $( this ).text() + "";
+			        		    });
+			        		    console.log("selected box is changed to -> "+ str);
+			        		    /*var str2 = data.shopList1.shopName;
+			        		    console.log("          str2             -> "+ str2);*/
+			        		    
+			        		    if(data.shopList1.shopName == str) {
+			        		    	$('#shopName').html(data.shopList1.shopName);
+					        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
+					        		$('#time').attr("placeholder",data.shopList1.shopTime);
+					        		$('#phone').attr("placeholder",data.shopList1.shopPhone);
+					        		$('#addr').attr("placeholder",data.shopList1.shopDetailAddr);
+					        		$('#intro').attr("placeholder",data.shopList1.shopIntro);
+					        		
+					        		//가게 사진위에 나오는 가게이름
+					        		$('.myImgText').html(data.shopList1.shopName);
+					        		//가게 내부 전경사진
+					        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList1.detailPhoto1 + '")');
+					        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList1.detailPhoto2 + '")');
+					        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList1.detailPhoto3 + '")');
+					        		
+			        		    } else if(data.shopList0.shopName == str) {
+			        		    	$('#shopName').html(data.shopList0.shopName);
+					        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
+					        		$('#time').attr("placeholder",data.shopList0.shopTime);
+					        		$('#phone').attr("placeholder",data.shopList0.shopPhone);
+					        		$('#addr').attr("placeholder",data.shopList0.shopDetailAddr);
+					        		$('#intro').attr("placeholder",data.shopList0.shopIntro);
+					        		
+					        		//가게 사진위에 나오는 가게이름
+					        		$('.myImgText').html(data.shopList0.shopName);
+					        		//가게 내부 전경사진
+					        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList0.detailPhoto1 + '")');
+					        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList0.detailPhoto2 + '")');
+					        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList0.detailPhoto3 + '")');
+			        		     } else {
+			        		    	 console.log("Thats nono");
+			        		     }
+			        		    
+			        		  });
+
 			          }
 			        , 'json');
 			
 			$.post('../../json/myMarketControl/marketMenu.do'
 			        , { userId: id.loginUser.uId}
 			        , function(data){
-			        	if(data.status == "success") {
-			        		console.log(data.shopMenu0.menuPhoto);
-			        		$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0.menuPhoto);
-			        		$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1.menuPhoto);
-			        		$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu2.menuPhoto);
-			        		$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopMenu3.menuPhoto);
+			        	$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[0].menuPhoto);
+			        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[1].menuPhoto);
+			        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[2].menuPhoto);
+			        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[3].menuPhoto);
 			        		
+			        		$("select").change(function () {
+			        		    var str = "";
+			        		    $( "select option:selected" ).each(function() {
+			        		      str += $( this ).text() + "";
+			        		    });
+			        		    
+			        		    if(str == "와라와라"){
+			        		    	$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[0].menuPhoto);
+						        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[1].menuPhoto);
+						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[2].menuPhoto);
+						        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[3].menuPhoto);	        		    
+			        		    } else if(str == "꾼(KKUNNORI)"){
+			        		    	/*for(var i=0; i< shopMenu1.size(); i++){
+				        		    	$('#menu'+i).attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[i].menuPhoto);
+			        		    	}*/
+			        		    	$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[0].menuPhoto);
+						        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[1].menuPhoto);
+						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[2].menuPhoto);
+						        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[3].menuPhoto);
+			        		    }
+			        		  
+			        		});
+			        		    
 			        		
-			        	} else {   	console.log(data.status);        	}
+			        
 			          }
 			        , 'json');
 
-	});
+	});    /* ready()  끝 쪽 */
+
 	
+	
+		
 	
 	$('#myContentComments').css('display', 'none');
 	$('#myMenuText').css('color', '#FFB500');
@@ -84,6 +147,10 @@ $(document).ready(function() {
 	});
 });
 
+
+
+
+
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#myPubPhotoListWrap').naraeWidthSildeAuto(1500);
 $('#myMenuListWrap').naraeWidthSilde();	
@@ -93,7 +160,7 @@ $("#btnMyMarketClose").click(function(){
 	$("#back").css("display", "none");
 });
 
-	/************************************************************************************************/
+	/*****************************tab - comment 달리는거..임시로한거에욤*************************************************/
 	
 		$('<tr id=tRow0 style="color:white">').appendTo($('#myDataForm'));
 		//$('<th class=tableDataNo>').html("No").appendTo($('#tRow0'));
