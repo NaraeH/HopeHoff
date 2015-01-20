@@ -43,11 +43,11 @@
 			
 			<div id= "rightContainer">		
 			<div id="hoffInfo">
-				<p>{{shopDetail.shopName}}</p><br><br>
-				<p>영업시간 : {{shopDetail.shopTime}}</p><br>
-				<p>가게주소 : {{shopDetail.shopDetailAddr}}</p><br>
-				<p>전화번호 : {{shopDetail.shopPhone}}</p><br>
-				<p>가게소개 : {{shopDetail.shopInfo}} </p> 
+				<p class="pTitle">{{shopDetail.shopName}}</p><br><br>
+				<p class="pContent">영업시간 : {{shopDetail.shopTime}}</p><br>
+				<p class="pContent">가게주소 : {{shopDetail.shopDetailAddr}}</p><br>
+				<p class="pContent">전화번호 : {{shopDetail.shopPhone}}</p><br>
+				<p class="pContent">가게소개 : {{shopDetail.shopInfo}} </p> 
 			</div>
 
 
@@ -66,7 +66,7 @@
 								{{#each shopMenu}}
 								<li>
 									<div>
-										<img src ="../../img/shopMenu/{{menuPhoto}}" class="box myPhotoList">
+										<img src ="../../img/shopPhoto/menu/{{menuPhoto}}" class="box myPhotoList" style="border-radius:30px;">
  										<div id="overlay">
 											<span id="menu">{{menuName}}</span><br>
 											<span id="price">{{menuPrice}}</span>
