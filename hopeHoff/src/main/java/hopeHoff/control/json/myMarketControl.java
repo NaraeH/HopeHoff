@@ -52,10 +52,17 @@ public class myMarketControl {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
 		if(shopMenu != null) { 
-			for(int index =0; index < shopMenu.size() ;index++) { 
-				System.out.println("shopMenu.get("+index+")  : " + shopMenu.get(index));
-				resultMap.put("shopMenu"+index, shopMenu.get(index)); 
-			}
+			/*for(int index =0; index < shopMenu.size() ;index++) { 
+				System.out.println("shopMenu.get("+index+")  : " + shopMenu.subList(0,3));*/
+			  
+			   
+				resultMap.put("shopMenu0", shopMenu.subList(0,4));
+				System.out.println("shopMenu0  : " + shopMenu.subList(0,4));
+				
+				resultMap.put("shopMenu1", shopMenu.subList(4,8)); 
+				System.out.println("shopMenu1  : " + shopMenu.subList(4,8));
+				
+			/*}*/
 			resultMap.put("status", "success");
 		} else {
 			resultMap.put("status", "fail");
