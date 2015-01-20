@@ -18,13 +18,13 @@
 	
 	/*------------------header-------------------*/
 	#btnClose{
-		background: #333231;
-		border: #333231;
+		background: #ffcd28;
+		border: #ffcd28;
 		display: inline-block;
 		color: white;
 		font-size: x-large;
 		cursor: pointer;
-		margin-left:97%;
+		margin-left:93%;
 		margin-top: 5px;
 		/* float: right; */
 	}
@@ -82,7 +82,7 @@
 		/* border: 1px solid #FFCD28; */
 	}
 	
-	#hoffInfo>p {
+	#hoffInfo > p {
 		display:inline-block;
 		margin: 0px;
 	}
