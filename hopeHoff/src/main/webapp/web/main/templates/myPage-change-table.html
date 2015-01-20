@@ -8,28 +8,22 @@
 		</div>
 
 		<div class="form-data-change">
-			<input type="password" id="newPwd" data-check="none" placeholder="새로운 비밀 번호"> 
-			<div class="pwdValid vaildDiv"></div>
+			<input type="password" id="inputNewPwd" placeholder="새로운 비밀 번호"> 
+			<div class="validPwdDiv validDiv"></div>
 			
-			<input type="password" id="newPwdConfirm" data-check="none" placeholder="새로운 비밀 번호 확인"> 
-			<div class="pwdConfirmValid vaildDiv"></div>
+			<input type="password" id="inputNewPwdConfirm" placeholder="새로운 비밀 번호 확인"> 
+			<div class="validConfirmPwdDiv validDiv"></div>
 			<button type="button" id="btnPwdChange" class="change-btn">비밀번호 수정</button>
 			
-			<input id="phoneNo" type="text" class="and-button" data-check="none" placeholder="{{user.uPhone}}">
-			<button id='sendBtn' type="button" class="btn-deactive">전&nbsp;송</button>
-			<div class="phoneNoValid vaildDiv"></div>
+			<input type="text" id="inputNewPhoneNo" class="and-button" placeholder="{{user.uPhone}}">
+			<button id='sendBtn' type="button">전&nbsp;송</button>
+			<div class="validPhoneNoDiv validDiv"></div>
 			
-			<input type="text" id="confirmVerCode" data-check="none" placeholder="인증번호">
-			<!-- <button id='confirmBtn' type="button" class="btn-deactive">확&nbsp;인</button> -->
-			<div class="confimNoValid vaildDiv"></div>
+			<input type="text" id="inputNewConfirmPhoneNo"placeholder="인증번호">
+			<div class="validConfirmPhoneNoDiv validDiv"></div>
 			<button type="button" id="btnPhoneNoChange" class="change-btn">핸드폰번호 수정</button>
 		</div>
 	</div>
-
-<!-- 	<div id="myDataFormbuttons" align="center">
-		<button type="button" id="btnChange">수정</button>
-		<button type="reset" id="btnCancel">취소</button>
-	</div> -->
 </form>
 
 <script src="../../js/myPage/myPage-change-table.js"></script>
