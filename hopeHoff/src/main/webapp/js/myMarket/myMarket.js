@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		
@@ -6,35 +5,54 @@ $(document).ready(function() {
 			        , { userId: id.loginUser.uId}
 			        , function(data){
 			        	if(data.status == "success") {
-			        		$('#shopName').html(data.shopList0.shopName);
+			        		
+			        		/*var str = "data.shopList.shopName";
+			        		var arr = str.split(".");
+			        		var newStr =  arr.splice(1, 1, "shopList1").toString();*/
 			        		
 			        		$('<option>').html(data.shopList0.shopName).attr("selected","selected").appendTo($('#selectForm'));
 			        		$('<option>').html(data.shopList1.shopName).appendTo($('#selectForm'));
-			        		$('.myImgText').html(data.shopList1.shopName);
+			        	
+			        		if(data.shopList0 != null) {console.log("$('#selectForm').val() : "+$('#selectForm').val());}
+			        		
 			        		console.log("data.shopList0.shopName : " + data.shopList0.shopName);
 			        		console.log("data.shopList1.shopName : " + data.shopList1.shopName);
+			        		
+			        		//shop information 맨위 가게이름
+			        		$('#shopName').html(data.shopList0.shopName);
+			        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
 			        		$('#time').attr("placeholder",data.shopList0.shopTime);
 			        		$('#phone').attr("placeholder",data.shopList0.shopPhone);
 			        		$('#addr').attr("placeholder",data.shopList0.shopDetailAddr);
 			        		$('#intro').attr("placeholder",data.shopList0.shopIntro);
 			        		
-			        		$('#myPubPhoto1').attr("background-image",'url("../../img/shopPhoto/' + data.shopList0.detailPhoto1 + '")');
-			        		$('#myPubPhoto2').attr("background-image",'url("../../img/shopPhoto/' + data.shopList0.detailPhoto2 + '")');
-			        		$('#myPubPhoto3').attr("background-image",'url("../../img/shopPhoto/' + data.shopList0.detailPhoto3 + '")');
-			        	
+			        		//가게 사진위에 나오는 가게이름
+			        		$('.myImgText').html(data.shopList0.shopName);
+			        		//가게 내부 전경사진
+			        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList0.detailPhoto1 + '")');
+			        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList0.detailPhoto2 + '")');
+			        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopList0.detailPhoto3 + '")');
+			        		
+			        		
+			        		
 			        	} else {   	console.log(data.status);        	}
 			          }
 			        , 'json');
 			
-/*			$.post('../../json/myMarketControl/marketMenu.do'
+			$.post('../../json/myMarketControl/marketMenu.do'
 			        , { userId: id.loginUser.uId}
 			        , function(data){
 			        	if(data.status == "success") {
-			        	
-			        		console.log("fetching menus .. . mission "+data.status); 
+			        		console.log(data.shopMenu0.menuPhoto);
+			        		$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0.menuPhoto);
+			        		$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1.menuPhoto);
+			        		$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu2.menuPhoto);
+			        		$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopMenu3.menuPhoto);
+			        		
+			        		
 			        	} else {   	console.log(data.status);        	}
 			          }
-			        , 'json');*/
+			        , 'json');
 
 	});
 	

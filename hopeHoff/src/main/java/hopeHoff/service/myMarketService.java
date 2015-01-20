@@ -19,13 +19,13 @@ public class myMarketService {
 		return shopDao.showList(userId);
 	}
 
-/*   public List<?> showMenu(String userId) {
+   public List<?> showMenu(String userId) {
 	   HashMap<String,String> params = new HashMap<>();
 	    params.put("userId",userId);
 	    System.out.println("shopDao.showMenu(userId):  "+shopDao.showMenu(userId));
 		return shopDao.showMenu(userId);
 
-    }*/
+    }
   
   /*public User validate(String uId, String uPwd) {
     HashMap<String,String> params = new HashMap<>();

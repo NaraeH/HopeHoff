@@ -1,29 +1,42 @@
 var currPageNo;
 var maxPageNo;
 
-
-$(document).delegate(".table-tr","click",function(){
-	var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
-	
-	console.log("처음",status);
-	var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
-	//console.log(num);
-	if(!status){
-	//status=false;
-		console.log("다음",status);
-	$('<tr>').addClass('table-content').attr("id","tableContent"+num)
-			 .append($('<td colspan="3">').html("aaaa")).css('text-align','center')
-		 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
-			.insertAfter('#'+'table-tr'+num)
-			console.log("aaaa");
-	}
-	else 
-	{
-		console.log("bbbbb");
-		$('#'+'tableContent'+num).remove();
-	}
-});
+$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
+	$(document).delegate(".table-tr","click",function(event){
 		
+		//console.log(this);
+		var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
+		var reservationNo = $("#table-tr"+num+" td:first").html()
+		
+	  $.post('../../json/reservation/view.do'
+		        , {
+		          reservationNo: reservationNo
+		        }
+	        , function(data){
+	        	if(data.status == "success") {
+	        		var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
+	        		
+	        		if(!status){
+	        			$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+	        					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
+	        				 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
+	        					.insertAfter('#'+'table-tr'+num)
+	        					console.log("aaaa");
+	        			}
+	        			else 
+	        			{
+	        				console.log("bbbbb");
+	        				$('#'+'tableContent'+num).remove(); 
+	        			}
+
+	        		
+	        	} else {   	console.log(data.status);        	}
+	          }
+	        , 'json');
+		
+		
+	});
+});
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
 $(document).delegate(".btn-delete","click",function(){
@@ -50,14 +63,14 @@ $(document).delegate(".btn-delete","click",function(){
 	
 	$('#prevBtn').click(function(event){
 		if (currPageNo > 1) {
-			$(".table-tr0").remove();
+			$(".table-tr").remove();
 			loadReservationList(currPageNo - 1,uId);
 		}
 	});
 
 	$('#nextBtn').click(function(event){
 		if (currPageNo < maxPageNo) {
-			$(".table-tr0").remove();
+			$(".table-tr").remove();
 			loadReservationList(currPageNo + 1,uId);
 		}
 	});
@@ -70,7 +83,7 @@ $(document).delegate(".btn-delete","click",function(){
 		  window.maxPageNo = maxPageNo;
 		  
 		  $('#pageNo').html(currPageNo);
-		  console.log(currPageNo);
+		  //console.log(currPageNo);
 		  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
 		  else $('#prevBtn').css('display', '');
 		  
@@ -108,9 +121,10 @@ $(document).delegate(".btn-delete","click",function(){
 			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
 				    function(data){
 					yyyyMMddList(data);
-					console.log(data.startIndex);
+					//console.log(data.startIndex);
 				      setPageNo(data.currPageNo, data.maxPageNo);
 				    //  var reservations = data.reservations;
+				      $(".table-tr").remove();
 				      
 				      require(['text!templates/booklist-table.html'],function(html){
 				    	  var template = Handlebars.compile(html);
