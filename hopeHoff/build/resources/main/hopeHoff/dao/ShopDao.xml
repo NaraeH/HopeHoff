@@ -47,7 +47,7 @@
 	</resultMap>
 	
 	<select id="selectList" parameterType="map" resultMap="shopMap">
-		SELECT SHOP.BBNO, SNAME, SINTRO, SINTROADDR, SDETAILADDR, SAREA, STYPE, SSNACK, MAINPHOTO 
+		SELECT SHOP.BBNO, SNAME, SINTRO, SINTROADDR, SDETAILADDR, SPHONE, SAREA, STYPE, SSNACK, MAINPHOTO 
 		FROM SHOP LEFT OUTER JOIN SHOPPHOTO 
 		USING(BBNO)
 		<choose>
@@ -80,9 +80,9 @@
  		select s.SNAME, s.STIME, s.SPHONE, s.SDETAILADDR, s.SINTRO, p.DETAILPHOTO1, p.DETAILPHOTO2, p.DETAILPHOTO3 FROM SHOPPHOTO p, SHOP s WHERE p.BBNO = s.BBNO and s.UID=#{userId}
 	</select>
 	
-	<!-- <select id="showMenu" parameterType="String" resultMap="sAndmMap">
+	<select id="showMenu" parameterType="String" resultMap="sAndmMap">
  		select m.MNAME, m.MPRICE, m.MPHOTO from MENU m, SHOP s where m.BBNO = s.BBNO and s.UID=#{userId}
-	</select> -->
+	</select> 
 	
 <!-- 	<select id="selectMenu" parameterType="String" resultMap="Menu">
  		 SELECT MAINPHOTO, DETAILPHOTO1, DETAILPHOTO2, DETAILPHOTO3
@@ -92,4 +92,3 @@
 	</select> -->
 	
 </mapper>
-
