@@ -15,6 +15,8 @@ $( "#sendBtn" ).click(function(){
 			console.log("문자전송실패");
 		}
 		
+	}else if( $( "#inputNewPhoneNo" ).attr("data-valid") == 'validClick' ) {
+		alert("이미 발송되었습니다");
 	}else {
 		randomNo = 0;
 		alert("유효하지 않은 번호입니다");
