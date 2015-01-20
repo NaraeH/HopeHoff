@@ -231,7 +231,7 @@ input[type="button"]:hover, button:hover {
 	background: #e6e6e6;
 }
 
-/*-------------------그외 사용자 정의 속성-------------------*/
+/*-------------------Valid 클래스에 쓰이는 css-------------------*/
 .and-button{   /* 옆에 버튼있는 input 상자 */
 	width:268px !important;
 }
