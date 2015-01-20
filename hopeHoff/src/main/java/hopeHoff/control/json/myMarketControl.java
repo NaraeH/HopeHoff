@@ -2,8 +2,8 @@ package hopeHoff.control.json;
 
 import hopeHoff.dao.MenuDao;
 import hopeHoff.dao.ShopDao;
-import hopeHoff.domain.Shop;
-import hopeHoff.service.UserService;
+/*import hopeHoff.domain.Shop;
+import hopeHoff.service.UserService;*/
 import hopeHoff.service.myMarketService;
 
 import java.util.HashMap;
@@ -20,6 +20,29 @@ public class myMarketControl {
 	@Autowired ShopDao shopDao;
 	@Autowired MenuDao menuDao;
 	@Autowired myMarketService myMarketService;
+	
+	@RequestMapping(value="/marketInfo", method=RequestMethod.POST)
+	public Object marketInfo(String userId){
+		List<?> shopInfo = myMarketService.showInfo(userId);
+		
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+	
+		for(int i=0; i< shopInfo.size()/4; i++) {
+			resultMap.put("shopInfo"+i, shopInfo.subList(4*i,4*i+4));
+			System.out.println("shopInfo"+i+"  :" + shopInfo.subList(4*i,4*i+4));
+		}
+		
+		if(shopInfo != null) { 
+			resultMap.put("status", "success");
+		} else {
+			resultMap.put("status", "fail");
+		}
+		
+		
+		return resultMap;
+	}
+	
+	
 	
 	@RequestMapping(value="/marketList", method=RequestMethod.POST)
 	public Object marketList(String userId){
