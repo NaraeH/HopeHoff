@@ -140,9 +140,8 @@ Valid.prototype.pwd = function( inputPwdBox, inputConfirmPwdBox ) {
 	$( inputPwdBox ).focus(function() {
 		 $( inputPwdBox ).keyup(function(){
 			 
-			 if( $( inputConfirmPwdBox ).attr("data-valid") == 'valid' ){
-				 $( inputConfirmPwdBox ).val("");
-				 $( inputConfirmPwdBox ).attr("data-valid", "invalid");
+			 if( $( inputPwdBox ).attr("data-valid") == 'valid' && $( inputConfirmPwdBox ).attr("data-valid") == 'valid' ){
+				 $( inputConfirmPwdBox ).val("").attr("data-valid", "invalid").css("border","red 2px solid");
 			 }
 			 
 			 if(($( inputPwdBox ).val().match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/) != null)
@@ -226,7 +225,7 @@ Valid.prototype.confirmPwd = function( inputConfirmPwdBox, inputPwdBox ) {
  Valid.phoneNo( selector1, [selector2] );
  *selector1 : 핸드폰을 입력하는 공간
  *selector2 : 핸드폰 인증번호를 입력하는 공간
- 제대로 값이 입력 되었다면 selector1의 data-valid 값이 valid => 아니라면 invalid
+ 제대로 값이 입력 되었다면 selector1의 data-valid 값이 validNoneClick => 아니라면 invalidNoneClick (noneClick은 아직 인증번호 전송 버튼은 안 눌른 상태)
 */
 Valid.prototype.phoneNo = function( inputPhoneNoBox, inputConfirmPhoneNoBox ) {
 	var validPhoneNoDiv = $( inputPhoneNoBox ).parent().find( ".validPhoneNoDiv" );
@@ -234,18 +233,17 @@ Valid.prototype.phoneNo = function( inputPhoneNoBox, inputConfirmPhoneNoBox ) {
 	$( inputPhoneNoBox ).focus(function() {
 		 $( inputPhoneNoBox ).keyup(function(){
 			 
-			 if( $( inputConfirmPhoneNoBox ).attr("data-valid") == 'valid' ){
-				 $( inputConfirmPhoneNoBox ).val("");
-				 $( inputConfirmPhoneNoBox ).attr("data-valid", "invalid");
+			 if( $( inputPhoneNoBox ).attr("data-valid") == 'validClick' && $( inputConfirmPhoneNoBox ).attr("data-valid") == 'valid' ){
+				 $( inputConfirmPhoneNoBox ).val("").attr("data-valid", "invalid").css("border","red 2px solid");
 			 }
 			 
 			 if($( inputPhoneNoBox ).val().match(/[01](0|1|6|7|8|9)[-](\d{4}|\d{3})[-]\d{4}$/) != null){
 				 $( validPhoneNoDiv ).html("ok").css("color","green");
-				 $( inputPhoneNoBox ).css("border","green 2px solid").attr("data-valid", "valid");
+				 $( inputPhoneNoBox ).css("border","green 2px solid").attr("data-valid", "validNoneClick");
 
 			 } else {
 				 $( validPhoneNoDiv).html("예)010-1234-4567").css("color","red");
-				 $( inputPhoneNoBox ).css("border","red 2px solid").attr("data-valid", "invalid");
+				 $( inputPhoneNoBox ).css("border","red 2px solid").attr("data-valid", "invalidNoneClick");
 			 }
 			 
 		 });

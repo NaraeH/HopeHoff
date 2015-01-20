@@ -1,5 +1,9 @@
 #
+<<<<<<< HEAD
 #Tue Jan 20 17:37:17 KST 2015
+=======
+#Tue Jan 20 17:07:49 KST 2015
+>>>>>>> refs/remotes/origin/master
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.compliance=1.8
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
