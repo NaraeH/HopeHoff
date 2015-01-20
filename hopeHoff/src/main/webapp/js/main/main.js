@@ -31,7 +31,6 @@ $('.signUpBtn').click(function(){
 	require(['text!../login/templates/signUp-table.html'],function(html){
 	   	var template = Handlebars.compile(html);
 	    	$('#signUpDiv').html(template());
-	   	    $('#myDataFormData').css("margin-left","-35px");
 		});
 	});
 

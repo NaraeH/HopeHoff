@@ -6,6 +6,8 @@ Array.prototype.remove = function(index){
 }
 
 //----------------------- 기존에 존재하지 않는 객체에 대한 추가함수------------------------------
+
+//Narae => removePx, sendSms
 function Narae(){}
 
 //px단위의 값을 px를 떼어내고 숫자로 바꾸어 주는 함수
@@ -64,6 +66,92 @@ function callbackFun( randomNo ){
 }
 
 var Narae = new Narae();
+
+/************************************8*/
+
+function Valid(){}
+
+/*
+ 1. 함수를 사용하기 위한 구조
+  1) 이름 유효성을 검사하기 위한 input 박스와 그밑에 유효성 검사 값을 보여줄 div 필요
+     input 박스의 id(또는 클래스등 모두 가능)는 사용자가 지정하고 파라미터로 보내줌
+     div는 class를  validNameDiv(이름의 유효성 결과를 나타낼 공간) validDiv(valid에 맞는 CSS)
+     
+     <input type="text" id="inputName" placeholder="이름">
+     <div class="validNameDiv validDiv"></div>
+
+ 2. 함수 사용방법
+  Valid.validName( selector );
+  제대로 값이 입력 되었다면 selector의 data-valid 값이 valid => 아니라면 invalid
+ 
+ */
+Valid.prototype.validName = function(inputNameBox) {
+	var inputNameBox = $( inputNameBox );
+	var validNameDiv = $( inputNameBox ).parent().find( ".validNameDiv" );
+	
+	$( inputNameBox ).focus(function() {
+		 $( validNameDiv ).css("display","");
+		 $( inputNameBox ).keyup(function(){
+			 if($( inputNameBox ).val().match( /^[가-힝a-zA-Z]{2,}$/) != null){
+				
+				 $( validNameDiv ).html("멋진 이름이네요!").css("color","green");
+				 $( inputNameBox ).css("border","green 2px solid").attr("data-valid", "valid");
+	
+			 } else {
+				 $( validNameDiv ).html("2자 이상의 이름을 입력해 주세요.").css("color","red");
+				 $( inputNameBox ).css("border","red 2px solid").attr("data-valid", "invalid");
+			 }
+		 });
+		 
+	});
+	
+	   $( inputNameBox ).focusout(function() {
+			
+			if($( validNameDiv ).css("color") == "rgb(0, 128, 0)") {
+				$( validNameDiv ).css("display","none");
+				$( inputNameBox ).attr("data-valid", "valid");
+				
+			} else if($( validNameDiv ).css("color") == "rgb(255, 0, 0)"){
+				$(validNameDiv ).css("display","");
+				$( inputNameBox ).attr("data-valid", "invalid");
+			}
+		});
+}
+
+Valid.prototype.validPwd = function( inputPwdBox ) {
+	var inputPwdBox = $( inputPwdBox );
+	var validPwdDiv = $( inputPwdBox ).parent().find( ".validPwdDiv" );
+	
+	$( inputPwdBox ).focus(function() {
+		 $( validPwdDiv ).css("display","");
+		 $( inputPwdBox ).keyup(function(){
+			 if(($( inputPwdBox ).val().match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/) != null)
+					 && (($( inputPwdBox ).val().length >= 6)&&($( inputPwdBox ).val().length <= 16) )){
+				
+				 $( validPwdDiv ).html("ok").css("color","green");
+				 $( inputPwdBox ).css("border","green 2px solid").attr("data-valid", "valid");
+	
+			 } else {
+				 $( validPwdDiv ).html("문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~의 조합으로 6~16자리").css("color","red");
+				 $( inputPwdBox ).css("border","red 2px solid").attr("data-valid", "invalid");
+				
+			 }
+		 });
+	});
+	$( inputPwdBox ).focusout(function() {
+		
+		if($( validPwdDiv ).css("color") == "rgb(0, 128, 0)") {
+			$( validPwdDiv ).css("display","none");
+			$( inputPwdBox ).attr("data-valid", "valid");
+			
+		} else if($( validPwdDiv ).css("color") == "rgb(255, 0, 0)"){
+			$( validPwdDiv ).css("display","");
+			$( inputPwdBox ).attr("data-valid", "invalid");
+		}
+	});
+}
+
+var Valid = new Valid();
 
 //---------------------------------복잡한 함수(?)-------------------------------
 /*

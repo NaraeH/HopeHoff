@@ -1,4 +1,3 @@
-var valpoint = 0;
 var randomNo = 0;
 
 $(function(){
@@ -7,10 +6,10 @@ $(function(){
 		$("input[name='type']").filter("[value='boss']").prop("checked",false);
 		$('#formGroupInputLarge').val('');
 		$('#idText').html('');
-		$('#formGroupInputSmall').val('');
-		$('#nameValid').html('');
-		$('#inputPassword3').val('');
-		$('#pwdValid').html('');
+		$('#inputName').val('');
+		$('.validNameDiv').html('');
+		$('#inputPwd').val('');
+		$('#validPwdDiv').html('');
 		$('#checkPassword').val('');
 		$('#pwdCheckText').html('');
 		$('#phoneNumber').val('');
@@ -24,8 +23,8 @@ $(function(){
 	        , {
 	          uType : $(':radio[name="type"]:checked').val(),
 	          uId : $('#formGroupInputLarge').val(),
-	          uName : $('#formGroupInputSmall').val(),
-	          uPwd : $('#inputPassword3').val(),
+	          uName : $('#inputName').val(),
+	          uPwd : $('#inputPwd').val(),
 	          uPhone: $('#phoneNumber').val()
 	        }
 	        , function(data){
@@ -40,29 +39,6 @@ $(function(){
 		location.href =  "../../web/" + toUrl + "/" + toUrl + ".html";
 	});
 	
-	
-	$('#confirmBtn').click(function(){
-		if($('#inNumber01').val() == randomNo){
-			 $('#inNumber01').css("border","green 2px solid");
-			 valpoint++;
-			 console.log(valpoint);
-
-			 if(valpoint == 6) {	
-			 	$('#btnSignUp').css("background-color", "green");
-			 	$('#btnSignUp').attr("disabled", false);
-
-			 /*	$('#btnSignUp').click(function(event){
-					alert("감사합니다 ~ 이제,로그인 해주세요 !");
-			       location.href = '../../web/login/login.html';
-				});//query insert보내기.  확인alert띠우고 로구인해달라고해. link login페이지로 ㄱ ㄱ
-*/			 	
-			 } 
-			 /*else {	$('#btnSignUp').attr("disabled", true); }*/
-		 } else {
-			 $('#inNumber01').css("border","red 2px solid");
-			 $('#btnSignUp').attr("disabled", true);
-		 }
-	});
 	
 	$("#sendValid").click(function(){
 		Narae.sendSms( callbackFun, "randomNoMsg", $("#phoneNumber").val() );
@@ -116,79 +92,50 @@ $(function(){
 		
 		if($('#idText').css("color") == "rgb(0, 128, 0)") {
 			$('#idText').css("display","none");
-			valpoint++;
-			console.log(valpoint);
 		} else if($('#idText').css("color") == "rgb(255, 0, 0)"){
 			$('#idText').css("display","");
 		}
 		
 	});
 	
-	/*    ******    이름 유효성       /^[가-힝]{2,}$/   ******* */
-	$('#formGroupInputSmall').focus(function() {
-		 $('#nameValid').css("display","");
-		 $("#formGroupInputSmall").keyup(function(){
-			 if($('#formGroupInputSmall').val().match( /^[가-힝a-zA-Z]{2,}$/) != null){
-				
-				 $('#nameValid').html("멋진 이름이네요!").css("color","green");
-				 $('#formGroupInputSmall').css("border","green 2px solid");
 	
-			 } else {
-				 $('#nameValid').html("2자 이상의 이름을 입력해 주세요.").css("color","red");
-				 $('#formGroupInputSmall').css("border","red 2px solid");
-				
-			 }
-		 });
-	});
-	
-   $('#formGroupInputSmall').focusout(function() {
-		
-		if($('#nameValid').css("color") == "rgb(0, 128, 0)") {
-			$('#nameValid').css("display","none");
-			valpoint++;
-			console.log(valpoint);
-		} else if($('#nameValid').css("color") == "rgb(255, 0, 0)"){
-			$('#nameValid').css("display","");
-		}
-		
-	});
-	
+	Valid.validName("#inputName"); //이름 유효성 검사
+	Valid.validPwd("#inputPwd");  //암호 유효성 검사
+
 	/* --------------password 유 효 성--------------- */
-	$('#inputPassword3').focus(function() {
-		 $('#pwdValid').css("display","");
-		 $("#inputPassword3").keyup(function(){
-			 if(($('#inputPassword3').val().match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/) != null)
-					 && (($('#inputPassword3').val().length >= 6)&&($('#inputPassword3').val().length <= 16) )){
+/*	$('#inputPwd').focus(function() {
+		 $('#validPwdDiv').css("display","");
+		 $("#inputPwd").keyup(function(){
+			 if(($('#inputPwd').val().match(/([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/) != null)
+					 && (($('#inputPwd').val().length >= 6)&&($('#inputPwd').val().length <= 16) )){
 				
-				 $('#pwdValid').html("ok").css("color","green");
-				 $('#inputPassword3').css("border","green 2px solid");
+				 $('#validPwdDiv').html("ok").css("color","green");
+				 $('#inputPwd').css("border","green 2px solid");
 	
 			 } else {
-				 $('#pwdValid').html("문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~의 조합으로 6~16자리").css("color","red");
-				 $('#inputPassword3').css("border","red 2px solid");
+				 $('#validPwdDiv').html("문자, 숫자, 특수문자(!,@,#,$,%,^,&,*,?,_,~의 조합으로 6~16자리").css("color","red");
+				 $('#inputPwd').css("border","red 2px solid");
 				
 			 }
 		 });
 	});
-	$('#inputPassword3').focusout(function() {
+	$('#inputPwd').focusout(function() {
 		
-		if($('#pwdValid').css("color") == "rgb(0, 128, 0)") {
-			$('#pwdValid').css("display","none");
-			valpoint++;
-			console.log(valpoint);
-		} else if($('#pwdValid').css("color") == "rgb(255, 0, 0)"){
-			$('#pwdValid').css("display","");
+		if($('#validPwdDiv').css("color") == "rgb(0, 128, 0)") {
+			$('#validPwdDiv').css("display","none");
+		} else if($('#validPwdDiv').css("color") == "rgb(255, 0, 0)"){
+			$('#validPwdDiv').css("display","");
 		}
 		
 
-	});
+	});*/
 	/************패스워드 확인*********/
 	$('#checkPassword').focus(function() {
 		 $('#pwdCheckText').css("display","");
 		
 		 $("#checkPassword").keyup(function(){
 		
-			 if(($('#inputPassword3').val() == $('#checkPassword').val()) && ($('#inputPassword3').val()!= "")){
+			 if(($('#inputPwd').val() == $('#checkPassword').val()) && ($('#inputPwd').val()!= "")){
 				 $('#pwdCheckText').html("일치합니다.").css("color","green");
 				 $('#checkPassword').css("border","green 2px solid");
 		
@@ -204,8 +151,6 @@ $(function(){
 	$('#checkPassword').focusout(function() {
 	
 		if($('#pwdCheckText').css("color") == "rgb(0, 128, 0)") {
-			valpoint++;
-			console.log(valpoint);
 			$('#pwdCheckText').css("display","none");
 		} else if($('#pwdCheckText').css("color") == "rgb(255, 0, 0)"){
 			$('#pwdCheckText').css("display","");
@@ -238,8 +183,6 @@ $(function(){
 		
 		if($('#phoneNumValid').css("color") == "rgb(0, 128, 0)") {
 			$('#phoneNumValid').css("display","none");
-			valpoint++;
-			console.log(valpoint);
 		} else if($('#phoneNumValid').css("color") == "rgb(255, 0, 0)"){
 			alert("유효한 휴대폰 번호를 입력하세요.");
 			$('#sendValid').attr("disabled",true);
@@ -250,9 +193,35 @@ $(function(){
 
 	});
 	
-	/***************inNumber01**********************/
-
-
+	/**************핸드폰 번호 인증번호 검사**********************/
+	
+	$( "#inNumber01" ).focus(function() {
+		var inNumber01 = $( "#inNumber01" );
+		
+		$( inNumber01 ).keyup(function(){
+			
+			if($( inNumber01 ).val() == randomNo){
+				//updateUserMap.phoneNo = $("#phoneNo").val();  //핸드폰 인증까지 만료 하면 변경될 핸드폰 값 넣기
+		
+				$( inNumber01 ).css("border","green 2px solid");
+				$( ".confimNoValid" ).css("display", "none");
+				$( inNumber01 ).attr("data-check", "validData");
+				 
+			 } else {
+				 $( inNumber01 ).css("border","red 2px solid");
+				 $( ".confimNoValid" ).html("인증번호가 맞지 않습니다").css("display", "block").css("color", "red");
+				 $( inNumber01 ).attr("data-check", "invalidData");
+			 }
+		});
+	});
+		
+	$( "#inNumber01" ).focus(function() {
+		var inNumber01 = $( "#inNumber01" );
+		
+		if(  $( inNumber01 ).css("border-color") == "rgb(0, 128, 0)" ){ //초록색 
+			$( ".confimNoValid" ).css("display","none");
+		}
+	});
 
 });
 

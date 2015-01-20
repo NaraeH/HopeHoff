@@ -83,9 +83,6 @@
 		border-radius: 5px;
 		margin-bottom: 5px;
 	}
-	.and-button{
-		width:268px !important;
-	}
 	
 	.change-btn {
 		display: block;
@@ -100,10 +97,6 @@
 		width:90px;
 	}
 	
-	.vaildDiv {
-		font-size: 10px;
-		font-weight: bold;
-	}
 }
 @media all and (max-width:420px) {
 	

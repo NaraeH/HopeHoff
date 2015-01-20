@@ -231,6 +231,15 @@ input[type="button"]:hover, button:hover {
 	background: #e6e6e6;
 }
 
+/*-------------------그외 사용자 정의 속성-------------------*/
+.and-button{   /* 옆에 버튼있는 input 상자 */
+	width:268px !important;
+}
+
+.validDiv { /* 유효성 검사할 때 밑에 뜨는 디비전 */
+	font-size: 10px;
+	font-weight: bold;
+}
 /*----------------------------------------------------*/
 body {
 	font-family: 'Jeju Gothic', serif;

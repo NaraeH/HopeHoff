@@ -11,7 +11,7 @@
 		<!-- 회원가입 팝업창 BODY---------------------------- -->
 		<div id='mySignUpContainer'>
 		 <form id="myDataForm" role="form">
-		  <div id="myDataFormData" class="form-data">
+		  <div class="form-data">
 			
 			<!-- 회원가입      ㅌ ㅏ 입  선  택-->
 			<input type="radio" id="user" name="type" value="user" checked /> 일반
@@ -23,12 +23,12 @@
 	       <div id="idText"></div> <!-- 회원가입 중복여부 질의응답 get받는 곳--><!-- 사용가능한 아이디입니다. -->
 
 			<!-- 회원가입 팝업창 Name -->
-	       <input type="text" id="formGroupInputSmall" placeholder="이름">
-	       <div id="nameValid"></div>
+	       <input type="text" id="inputName" placeholder="이름">
+	       <div class="validNameDiv validDiv"></div>
 	       
 			<!-- 회원가입 팝업창 PWD -->
-	       <input type="password" id="inputPassword3" placeholder="문자, 숫자, 특수문자 조합 6~16자리">
-		    <div id="pwdValid"></div>
+	       <input type="password" id="inputPwd" placeholder="문자, 숫자, 특수문자 조합 6~16자리">
+		    <div class="validPwdDiv validDiv"></div>
 
 			<!-- 회원가입 팝업창 Check -->
 		    <input type="password" id="checkPassword"	placeholder="비밀번호 확인">
@@ -40,15 +40,15 @@
            <div id="phoneNumValid"></div>
 
 			<!-- 회원가입 팝업창 인증 -->
-           <input id="inNumber01" type="text" class="and-button" placeholder="인증번호">
-           <button id='confirmBtn' type="button" class="btn-deactive">확&nbsp;인</button>
+           <input type="text" id="inNumber01"  placeholder="인증번호">
+           <div class="confimNoValid vaildDiv"></div>
 			
 		 </div> <!-- myDataFormData -->
 
 		<!-- 회원가입 팝업창 Footer-------------------------- -->
 		<div id="myDataFormbuttons" align="center">  
-			<button id=btnSignUp type="button">Sign-up</button>
-			<button id=btnCancel type="reset">Cancel</button>
+			<button id=btnSignUp type="button">회원가입</button>
+			<button id=btnCancel type="reset">취소</button>
 		</div>
 		
 	 </form>
