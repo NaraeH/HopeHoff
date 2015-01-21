@@ -1,6 +1,5 @@
 var randomNo = 0;
 var Valid = new Valid();
-var Narae = new Narae();
 
 $(function(){});
 
