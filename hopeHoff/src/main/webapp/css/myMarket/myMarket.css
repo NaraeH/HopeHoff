@@ -27,18 +27,16 @@
 	#headerTitle {
 		display: inline-block;
 		font-size: x-large;
-		margin: 10px 10px 10px 25px;
 	}
 	
 	#myMarketSelect{
 		width:75%;
 	}
 	#selectForm{
-		margin-top:7px;
-		background: #fff;
-    	/* border: 1px solid #26487f; */
+		margin-top:15px;
+		background: white;
    		border-radius: 7px;
-   		color: #444;
+   		color: black;
    		padding: 6px 10px;
 	}
 	
@@ -55,7 +53,7 @@
 	#myMarketContainer {
 		width: 96%;
 		height: 87%;
-		padding: 15px;
+		padding: 0px 15px;
 	}
 
 	#myPubPhotoList .myPhotoList {
@@ -138,6 +136,13 @@
 		width:70%;
 	}
 
+	#myMenuToLeft, #myMenuToRight {
+	  border-bottom: 20px solid #515942;
+	}
+	
+	.myLeftWrap:hover, .myRightWrap:hover{
+	   background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(16, 15, 15, 0));
+	}
 	/* ************V tabsBar************** */
 	#myTabsBar {
 		width: 99%;
@@ -180,21 +185,6 @@
 		overflow: hidden;
 	}
 
-/* 	#myBestMenu1{
-	    background-image: url('../../img/details/chiken.jpg');
-	}
-	#myBestMenu2{
-	    background-image: url('../../img/details/cheese.jpg');
-	}
-	#myBestMenu3{
-	    background-image: url('../../img/details/pizza.jpg');
-	}
-	#myBestMenu4{
-	    background-image: url('../../img/details/odang.jpg');
-	}
-	#myBestMenu5{
-	    background-image: url('../../img/details/odang.jpg');
-	} */
 	#myMenuButton, #myCommentButton {
 		cursor:pointer;
 	}
