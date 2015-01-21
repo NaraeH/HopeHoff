@@ -207,12 +207,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("z-index", "5")
 		);
 		
-		if( isLogin ){
-			$('#pubPhotoListWrap').css("height","260px");
-			$('#reservForm').css('display','block').css("padding","10px");
-			$('#reservForm > .userInfo').html(userName + "( " + userPhoneNo + " )" + "님, 예약 하시겠습니까?");
-			$('#reservForm > p').css("text-align","center").css("margin-top","10px");
-		}
 		
 		
 		$.getJSON(

@@ -18,6 +18,7 @@ $(document).ready(function() {
 			        		
 			        		//가게 사진위에 나오는 가게이름
 			        		$('.myImgText').html(data.shopInfo0[0].shopName);
+			        		
 			        		//가게 내부 전경사진
 			        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto1 + '")');
 			        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto2 + '")');
