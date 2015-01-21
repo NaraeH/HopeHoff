@@ -17,6 +17,7 @@ $(document).ready(function() {
 	
 	$("#btnClose").click(function(){
 		$("#detailList").remove();
+		$(".box-rotate-up").css("display","none");
 	});
 	
 	$('.menu').click(function(event) {
