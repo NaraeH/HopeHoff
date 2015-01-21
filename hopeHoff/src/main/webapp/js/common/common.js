@@ -70,7 +70,7 @@ function callbackFun( randomNo ){
 	return statusMap;
 }
 
-var Narae = new Narae();  //나중에 삭제하기
+var Narae = new Narae(); 
 
 /*******************************************************************/
 

@@ -58,7 +58,6 @@ $(document).ready(function() {
 	}
 	
 });
-
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#pubPhotoListWrap').naraeWidthSildeAuto();
 $('#menuListWrap').naraeWidthSilde();	
