@@ -1,6 +1,108 @@
 $(document).ready(function() {
 	$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		
+			$.post('../../json/myMarketControl/marketInfo.do'
+			        , { userId: id.loginUser.uId}
+			        , function(data){
+			        	if(data.status == "success") {
+			        		$('<option>').html(data.shopInfo0[0].shopName).attr("selected","selected").appendTo($('#selectForm'));
+			        		$('<option>').html(data.shopInfo1[0].shopName).appendTo($('#selectForm'));
+			        	
+			        		//shop information 맨위 가게이름
+			        		$('#shopName').html(data.shopInfo0[0].shopName);
+			        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
+			        		$('#time').attr("placeholder",data.shopInfo0[0].shopTime);
+			        		$('#phone').attr("placeholder",data.shopInfo0[0].shopPhone);
+			        		$('#addr').attr("placeholder",data.shopInfo0[0].shopDetailAddr);
+			        		$('#intro').attr("placeholder",data.shopInfo0[0].shopIntro);
+			        		
+			        		//가게 사진위에 나오는 가게이름
+			        		$('.myImgText').html(data.shopInfo0[0].shopName);
+			        		//가게 내부 전경사진
+			        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto1 + '")');
+			        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto2 + '")');
+			        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto3 + '")');
+			        		
+			        		$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[0].menuPhoto);
+				        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[1].menuPhoto);
+				        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[2].menuPhoto);
+				        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[3].menuPhoto);
+			        		
+			        		/************select에 따라 DB에서 가져오는게 달리지죠**************/
+			        		$("select").change(function () {
+			        		    var str = "";
+			        		    $( "select option:selected" ).each(function() {
+			        		      str += $( this ).text() + "";
+			        		    });
+			        		    console.log("selected box is changed to -> "+ str);
+			        		   
+			        		    
+			        		    if(data.shopInfo1[0].shopName == str) {
+			        		    	$('#shopName').html(data.shopInfo1[0].shopName);
+					        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
+					        		$('#time').attr("placeholder",data.shopInfo1[0].shopTime);
+					        		$('#phone').attr("placeholder",data.shopInfo1[0].shopPhone);
+					        		$('#addr').attr("placeholder",data.shopInfo1[0].shopDetailAddr);
+					        		$('#intro').attr("placeholder",data.shopInfo1[0].shopIntro);
+					        		
+					        		//가게 사진위에 나오는 가게이름
+					        		$('.myImgText').html(data.shopInfo1[0].shopName);
+					        		//가게 내부 전경사진
+					        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo1[0].detailPhoto1 + '")');
+					        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo1[0].detailPhoto2 + '")');
+					        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo1[0].detailPhoto3 + '")');
+					        		
+					        		/*for(var i=0; i< shopInfo1[0].size(); i++){
+				        		    	$('#menu'+i).attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[i].menuPhoto);
+			        		    	}*/
+			        		    	$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[0].menuPhoto);
+						        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[1].menuPhoto);
+						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[2].menuPhoto);
+						        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[3].menuPhoto);
+						        	
+			        		    } else if(data.shopInfo0[0].shopName == str) {
+			        		    	$('#shopName').html(data.shopInfo0[0].shopName);
+					        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
+					        		$('#time').attr("placeholder",data.shopInfo0[0].shopTime);
+					        		$('#phone').attr("placeholder",data.shopInfo0[0].shopPhone);
+					        		$('#addr').attr("placeholder",data.shopInfo0[0].shopDetailAddr);
+					        		$('#intro').attr("placeholder",data.shopInfo0[0].shopIntro);
+					        		
+					        		//가게 사진위에 나오는 가게이름
+					        		$('.myImgText').html(data.shopInfo0[0].shopName);
+					        		//가게 내부 전경사진
+					        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto1 + '")');
+					        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto2 + '")');
+					        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto3 + '")');
+			        		     
+					        		$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[0].menuPhoto);
+						        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[1].menuPhoto);
+						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[2].menuPhoto);
+						        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[3].menuPhoto);	
+			        		    
+			        		    } else {
+			        		    	 console.log("Thats nono");
+			        		     }
+			        		    
+			        	
+			        		  });
+			        	
+			        	} else {
+			        		console.log("-->" + data.status);			        		
+			        	}
+
+			          }
+			        , 'json');
+			
+	
+
+	});    /* ready()  끝 쪽 */
+
+
+
+/*$(document).ready(function() {
+	$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
+		
 			$.post('../../json/myMarketControl/marketList.do'
 			        , { userId: id.loginUser.uId}
 			        , function(data){
@@ -8,7 +110,7 @@ $(document).ready(function() {
 			        		$('<option>').html(data.shopList0.shopName).attr("selected","selected").appendTo($('#selectForm'));
 			        		$('<option>').html(data.shopList1.shopName).appendTo($('#selectForm'));
 			        	
-/*			        		if(data.shopList0 != null) {console.log("$('#selectForm').val() : "+$('#selectForm').val());}*/			        		
+			        		if(data.shopList0 != null) {console.log("$('#selectForm').val() : "+$('#selectForm').val());}			        		
 			        		console.log("data.shopList0.shopName : " + data.shopList0.shopName);
 			        		console.log("data.shopList1.shopName : " + data.shopList1.shopName);
 			        		
@@ -30,15 +132,15 @@ $(document).ready(function() {
 			        		
 			        		
 			        		
-			   /**************************select에 따라 DB에서 가져오는게 달리지죠********************************/
+			   *//**************************select에 따라 DB에서 가져오는게 달리지죠********************************//*
 			        		$("select").change(function () {
 			        		    var str = "";
 			        		    $( "select option:selected" ).each(function() {
 			        		      str += $( this ).text() + "";
 			        		    });
 			        		    console.log("selected box is changed to -> "+ str);
-			        		    /*var str2 = data.shopList1.shopName;
-			        		    console.log("          str2             -> "+ str2);*/
+			        		    var str2 = data.shopList1.shopName;
+			        		    console.log("          str2             -> "+ str2);
 			        		    
 			        		    if(data.shopList1.shopName == str) {
 			        		    	$('#shopName').html(data.shopList1.shopName);
@@ -98,9 +200,9 @@ $(document).ready(function() {
 						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[2].menuPhoto);
 						        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopMenu0[3].menuPhoto);	        		    
 			        		    } else if(str == "꾼(KKUNNORI)"){
-			        		    	/*for(var i=0; i< shopMenu1.size(); i++){
+			        		    	for(var i=0; i< shopMenu1.size(); i++){
 				        		    	$('#menu'+i).attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[i].menuPhoto);
-			        		    	}*/
+			        		    	}
 			        		    	$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[0].menuPhoto);
 						        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[1].menuPhoto);
 						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopMenu1[2].menuPhoto);
@@ -114,8 +216,8 @@ $(document).ready(function() {
 			          }
 			        , 'json');
 
-	});    /* ready()  끝 쪽 */
-
+	});     ready()  끝 쪽 
+*/
 	
 	
 		

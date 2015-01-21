@@ -11,7 +11,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class myMarketService {
   @Autowired ShopDao shopDao;
-  
+   public List<?> showInfo(String userId) {
+	   HashMap<String,String> params = new HashMap<>();
+	    params.put("userId",userId);
+	    System.out.println("shopDao.showInfo(userId):  "+shopDao.showInfo(userId));
+		return shopDao.showInfo(userId);
+	}
+   
    public List<?> showList(String userId) {
 	   HashMap<String,String> params = new HashMap<>();
 	    params.put("userId",userId);
