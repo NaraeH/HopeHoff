@@ -86,6 +86,10 @@
 		padding:inherit;
 	}
 	
+	#hoffInfo p {
+		margin: 0px;
+	}
+	
 	.pContent{
 		display:inline-block;
 	}
