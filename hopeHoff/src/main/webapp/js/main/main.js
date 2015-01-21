@@ -208,7 +208,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		);
 		
 		
-		
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
@@ -217,7 +216,8 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 				        $('#detailList').html( template(data) );
 				      });
 		});
-
+		
+	
 		
 });	
 

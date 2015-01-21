@@ -147,8 +147,8 @@ insert into SHOP(BBNO,UID,SNAME,SADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNA
 	'이자카야',
 	'퓨전안주');
 
-
-		
+	
+	
 		
 
 
@@ -360,7 +360,6 @@ values('303-90-56632','siba-main.jpg','siba-detail1.jpg','siba-detail2.jpg','sib
 
 
 
-
 ------------------------------데이터 수정---------------------------
 
 update hopehoff.shop set sintro='추억 복고풍의 달동네 포차!' where bbno='128-31-85241';
@@ -392,3 +391,133 @@ UPDATE SHOP SET SINTRO='이자카야 주점은 시바라구! 욕 아님' WHERE B
 ----------------------------2015.01.19( 타입수정)---------------------------------
 ALTER TABLE RESERVATION CHANGE COLUMN RDATE RDATE DATETIME;
 update SHOP set SINTROADDR = '서울시 서초구' where SPHONE='02-535-9065';
+
+
+
+---------------------2015.01.21(디비 추가)----------------------------------------
+
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('605-81-38178',
+	'b04',
+	'오븐에 빠진 닭',
+	'서울 영등포구',
+	'서울 영등포구 영등포동3가 3-4 1층 102-1호',
+	'02-2634-5892',
+	'11:30 ~ 02:00',
+	'오빠닭! 너도 나한테 빠져볼래?.',
+	'대한민국 건강을 생각하는 대표브랜드 맛과 건강을 동시에 생각하는 오븐에 빠진 닭입니다!',
+	'영등포',
+	'홀',
+	'치킨');
+	
+	insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('201-86-13140',
+	'b01',
+	'술선생 잭',
+	'서울 영등포구',
+	'서울시 영등포구 영등포동3가 4-6  2, 3층',
+	'02 -2676-3261',
+	'11:30 ~ 02:00',
+	'술의 주도는 술선생 잭으로부터!',
+	'영등포에 위치하는 룸호프 소주방 메로나주와, 스크류 키스를 직접 만들어 먹을수 있는 장소
+		다트 게임도 사용할 수 있습니다.',
+	'영등포',
+	'룸타입',
+	'퓨전술집');
+
+	insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('303-90-56632',
+	'b02',
+	'난장',
+	'서울 영등포구',
+	'서울 영등포구 영등포동3가',
+	'02 -2676-3261',
+	'11:30 ~ 02:00',
+	'이름은 난장이지만 술집 난장은 안되요!',
+	'맛있는 요리와 이야기가 있는 포자카야!',
+	'영등포',
+	'이자카야',
+	'퓨전안주');
+	
+	insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('130-11-09313',
+	'b04',
+	'놀란치킨',
+	'서울 강남구',
+	'서울특별시 서초구 서초동 1327-15 화봉빌딩 1층',
+	'02-521-5092',
+	'17:00 ~ 03:00',
+	'모두들 먹고 한번씩 놀라는 놀란치킨',
+	'서울특별시 서초구 서초동 위치, 치킨 전문점 마늘치킨, 양파치킨에 환장하는 맛을 보여드립니다.',
+	'강남',
+	'홀',
+	'치킨');
+	
+	-------------------------------
+	/********************** 오빠닭 ******************************/
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(32,'303-90-56632','크리스피 베이크','15900','obbadak-menu1.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(33,'605-81-38178','오리지널 로스트','18000','obbadak-menu2.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(34,'605-81-38178','반반세트','18900','obbadak-menu3.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(35,'605-81-38178','오리지널 로스트','18000','obbadak-menu4.jpg')
+
+/********************** 술선생 잭 ********************/
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(36,'201-86-13140','독일 소세지','18000','sul-menu1.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(37,'201-86-13140','골뱅이','18000','sul-menu2.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(38,'201-86-13140','훈제삼겹부추 ','15500','sul-menu3.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(39,'201-86-13140','닭다리살 샐러드','15000','sul-menu4.jpg')
+
+/*********************** 난장 ******************/
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(40,'303-90-56632','데리야끼 꼬치','12000','nanjang-menu1.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(41,'303-90-56632','모듬꼬치','18000','nanjang-menu2.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(42,'303-90-56632','짬뽕탕 ','15500','nanjang-menu3.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(43,'303-90-56632','치즈 불닭','18000','nanjang-menu4.jpg')
+
+/******************** 놀란치킨 **************************/
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(44,'130-11-09313','마늘치킨과골뱅이','18000','nollan-menu1.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(45,'130-11-09313','후라이드치킨','16000','nollan-menu2.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(46,'130-11-09313','어니언치킨 ','18000','nollan-menu3.jpg')
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(47,'130-11-09313','순살 고추 양념치킨','18000','nollan-menu4.jpg')
+
+-------------------------
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('605-81-38178','obbadak-main.jpg','obbadak-detail1.jpg','obbadak-detail2.jpg','obbadak-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('201-86-13140','sul-main.jpg','sul-detail1.jpg','sul-detail2.jpg','sul-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('303-90-56632','nanjang-main.jpg','nanjang-detail1.jpg','nanjang-detail2.jpg','nanjang-detail3.jpg');
+
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
+values('130-11-09313','nollan-main.jpg','nollan-detail1.jpg','nollan-detail2.jpg','nollan-detail3.jpg');
+
