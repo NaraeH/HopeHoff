@@ -34,7 +34,12 @@
 		width:75%;
 	}
 	#selectForm{
-		margin-top:15px;
+		margin-top:7px;
+		background: #fff;
+    	/* border: 1px solid #26487f; */
+   		border-radius: 7px;
+   		color: #444;
+   		padding: 6px 10px;
 	}
 	
 	#btnMyMarketClose {
@@ -68,7 +73,7 @@
 		width: 60%;
 		height: 95%;
 		float: right;
-		border: 1px dashed blue;
+		/* border: 1px dashed blue; */
 	}
 	
 	#myHoffInfo {
@@ -77,7 +82,7 @@
 		margin: 1%;
 		display: inline-block;
 		font-size: small;
-		color: #FFCD28;
+		color: black;
 		/* border: 1px solid #FFCD28; */
 	}
 	
@@ -98,8 +103,8 @@
 	
 	}
     #changeBtn {
-    	margin-top: 20px;
-    	margin-left: 10px;
+    	margin-top: 23px;
+    	margin-left: 257px;
     	width:100px;
     	
     }
@@ -140,7 +145,7 @@
 		padding: 8px 0px;
 		 margin: 0 auto;
 		clear: both;
-		border:1px solid red;
+		/* border:1px solid red; */
 	}
 	#myTabsBarText {
 		width: 100%;
@@ -163,7 +168,7 @@
 		width: 48%;
 		height: 15px;
 		margin-left:4px;
-		border: 1px solid white;
+		border: 2px solid #ffcd28;
 		background-color: white;
 	}
 
