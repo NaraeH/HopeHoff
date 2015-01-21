@@ -207,6 +207,7 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("z-index", "5")
 		);
 		
+		
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
@@ -215,21 +216,12 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 				        $('#detailList').html( template(data) );
 				      });
 		});
-
+		
+	
 		
 });	
 
 
-$(document).delegate('.reserBtn',"click",function(){
-	
-	if( isLogin ){
-		console.log($( this ));   
-			
-	}else {
-		alert ("로그인후 사용해주세요");
-		location.href = '/hopeHoff/web/login/login.html';
-	}
-});
 
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
 $(document).delegate(".has-sub ul a, .selectMenu","click",function(){

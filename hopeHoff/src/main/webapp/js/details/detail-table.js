@@ -1,4 +1,12 @@
 $(document).ready(function() {
+	
+	if( isLogin ){
+		$('#pubPhotoListWrap').css("height","220px");
+		$('#reservForm').css('display','block').css("padding","10px");
+		$('#reservForm > .userInfo').html(userName + "( " + userPhoneNo + " )" + "님, 예약 하시겠습니까?");
+		$('#reservForm > p').css("text-align","center").css("margin-top","10px");
+	}
+	
 	$('#contentMap').css('display', 'none');
 	$('#contentComments').css('display', 'none');
 	$('#menuText').css('color', '#FFB500');
@@ -9,7 +17,6 @@ $(document).ready(function() {
 	
 	$("#btnClose").click(function(){
 		$("#detailList").remove();
-		$(".box-rotate-up").css("display","none");
 	});
 	
 	$('.menu').click(function(event) {
@@ -54,11 +61,13 @@ $(document).ready(function() {
 	
 	//id가 pubPhoto인것에 background-image 넣기
 	for( var i = 1; i < 5; i ++ ){
-		var pubPhotoName = "#pubPhoto" + i;
-		$(pubPhotoName).css("background-image", "url(/hopeHoff/img/shopPhoto/" + $(pubPhotoName).attr("data-src") + ")");
+		var pubPhotoName = "#pubPhoto" + 1;
+		$(pubPhotoName).css("background-image", "url(/hopeHoff/img/shopPhoto/detail/" + $(pubPhotoName).attr("data-src") + ")");
+		console.log(pubPhotoName);
 	}
 	
 });
+
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#pubPhotoListWrap').naraeWidthSildeAuto();
 $('#menuListWrap').naraeWidthSilde();	

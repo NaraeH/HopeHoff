@@ -164,6 +164,7 @@
 	height: inherit;
 }
 .myPhotoList{
+	border-radius:30px;
 	background-repeat: no-repeat;	
 	vertical-align: middle;
 }
@@ -176,6 +177,7 @@
 	align-items: center;
 	color: white;
 	font-size: small;
+	transform: translateY(-15px);
 }
 
 /*------ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일 => 메인페이지에서 씀-----*/

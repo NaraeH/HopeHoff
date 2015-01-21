@@ -364,7 +364,7 @@
 	}
 	
  	.list .box-rotate-up {
-		transform: translateY(76px);
+		transform: translateY(78px);
 		border-bottom: 20px solid rgba(51, 50, 49, 1);
 		display:none;
 	} 
