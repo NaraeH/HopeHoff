@@ -207,6 +207,14 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("z-index", "5")
 		);
 		
+		if( isLogin ){
+			$('#pubPhotoListWrap').css("height","260px");
+			$('#reservForm').css('display','block').css("padding","10px");
+			$('#reservForm > .userInfo').html(userName + "( " + userPhoneNo + " )" + "님, 예약 하시겠습니까?");
+			$('#reservForm > p').css("text-align","center").css("margin-top","10px");
+		}
+		
+		
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
@@ -220,16 +228,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 });	
 
 
-$(document).delegate('.reserBtn',"click",function(){
-	
-	if( isLogin ){
-		console.log($( this ));   
-			
-	}else {
-		alert ("로그인후 사용해주세요");
-		location.href = '/hopeHoff/web/login/login.html';
-	}
-});
 
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
 $(document).delegate(".has-sub ul a, .selectMenu","click",function(){

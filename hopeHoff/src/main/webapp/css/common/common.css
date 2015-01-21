@@ -164,6 +164,7 @@
 	height: inherit;
 }
 .myPhotoList{
+	border-radius:30px;
 	background-repeat: no-repeat;	
 	vertical-align: middle;
 }
