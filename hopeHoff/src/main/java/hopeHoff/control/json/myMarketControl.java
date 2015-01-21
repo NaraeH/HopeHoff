@@ -34,7 +34,7 @@ public class myMarketControl {
 		
 		if(shopInfo != null) { 
 			resultMap.put("status", "success");
-		} else {
+		}else {
 			resultMap.put("status", "fail");
 		}
 		

@@ -185,6 +185,9 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 			$("#detailList").remove();
 		} 
 		
+		//스크롤 위치 이동
+        $( "html, body" ).animate( {scrollTop: offset}, 800);
+		
 		//클릭했을 때 상세정보(detail) 보이는부분
 		$($("#containerList").children()[whichNo - 1]).after(
 				$("<div>").attr("id", "detailList")
@@ -205,8 +208,7 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 				      });
 		});
 
-		//스크롤 위치 이동
-        $( "html, body" ).animate( {scrollTop: offset}, 800);
+		
 });	
 
 
