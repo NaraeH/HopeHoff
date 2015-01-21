@@ -2,6 +2,7 @@ package hopeHoff.control.json;
 
 import hopeHoff.dao.MenuDao;
 import hopeHoff.dao.ShopDao;
+import hopeHoff.domain.Shop;
 /*import hopeHoff.domain.Shop;
 import hopeHoff.service.UserService;*/
 import hopeHoff.service.myMarketService;
@@ -42,8 +43,12 @@ public class myMarketControl {
 		return resultMap;
 	}
 	
-	
-	
+	@RequestMapping(value="/marketUpdate", method=RequestMethod.POST)
+	public void marketUpdate(String name, String time, String phone, String addr, String intro){
+		myMarketService.showUpdate(name, time, phone,addr,intro);
+		
+	}
+/*	
 	@RequestMapping(value="/marketList", method=RequestMethod.POST)
 	public Object marketList(String userId){
 		List<?> shopList = myMarketService.showList(userId);
@@ -60,9 +65,9 @@ public class myMarketControl {
 			resultMap.put("status", "fail");
 			
 		}
-		/*resultMap.put("shopDetail", shopDao.selectOne(userId));
+		resultMap.put("shopDetail", shopDao.selectOne(userId));
 		resultMap.put("shopPhotos", shopDao.selectPhoto(userId));
-		resultMap.put("shopMenu", menuDao.selectMenu(userId));*/
+		resultMap.put("shopMenu", menuDao.selectMenu(userId));
 		
 		return resultMap;
 	}
@@ -75,8 +80,8 @@ public class myMarketControl {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
 		if(shopMenu != null) { 
-			/*for(int index =0; index < shopMenu.size() ;index++) { 
-				System.out.println("shopMenu.get("+index+")  : " + shopMenu.subList(0,3));*/
+			for(int index =0; index < shopMenu.size() ;index++) { 
+				System.out.println("shopMenu.get("+index+")  : " + shopMenu.subList(0,3));
 			  
 			   
 				resultMap.put("shopMenu0", shopMenu.subList(0,4));
@@ -85,7 +90,7 @@ public class myMarketControl {
 				resultMap.put("shopMenu1", shopMenu.subList(4,8)); 
 				System.out.println("shopMenu1  : " + shopMenu.subList(4,8));
 				
-			/*}*/
+			}
 			resultMap.put("status", "success");
 		} else {
 			resultMap.put("status", "fail");
@@ -95,7 +100,7 @@ public class myMarketControl {
 		
 		return resultMap;
 	}
-	
+	*/
 	
 	
 	/*@RequestMapping(value="/list", method=RequestMethod.GET)
