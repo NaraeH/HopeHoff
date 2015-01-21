@@ -66,7 +66,7 @@ $('#menuListWrap').naraeWidthSilde();
 	var mapContainer = document.getElementById('contentMap'), // 지도를 표시할 div 
 	    mapOption = {
 	        center: new daum.maps.LatLng(37.4986077,127.02851620000001), // 지도의 중심좌표
-	        level: 3 // 지도의 확대 레벨
+	        level:  2// 지도의 확대 레벨
 	    };
 
 	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다

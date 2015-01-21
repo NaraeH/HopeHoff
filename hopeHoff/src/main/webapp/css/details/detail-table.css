@@ -89,6 +89,13 @@
 		margin: 10px 0px 0px 10px;
 		
 	} 
+	#reserForm{
+	width: 90%;
+	margin : 0 auto;
+	border:  2px solid red;
+	height: 100%;
+	float: inherit;
+	}
 
 	#reservBtn:hover{
 		box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);

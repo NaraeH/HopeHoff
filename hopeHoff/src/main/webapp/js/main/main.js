@@ -203,6 +203,18 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		  });
 });	
 
+
+$(document).delegate('.reserBtn',"click",function(){
+	
+	if( isLogin ){
+		console.log($( this ));   
+			
+	}else {
+		alert ("로그인후 사용해주세요");
+		location.href = '/hopeHoff/web/login/login.html';
+	}
+});
+
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
 $(document).delegate(".has-sub ul a, .selectMenu","click",function(){
 	loadContainerList($(this));
@@ -211,7 +223,7 @@ $(document).delegate(".has-sub ul a, .selectMenu","click",function(){
 //예약버튼 눌렀을시 간단예약화면 나타나기
 $(document).delegate('.btnSimpleBook',"click",function(){
 	var simpleReserv = "#" + $($(this).closest(".list")).attr("id") + " " + ".simpleReserv";
-	
+	console.log(simpleReserv);
 	if( isLogin ){
 		$( simpleReserv + ">.userInfo").html(userName + "( " + userPhoneNo + " )" + "님,");
 		$( simpleReserv ).css("display", "block");
