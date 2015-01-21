@@ -363,26 +363,11 @@
 		padding: 3px;
 	}
 	
-
-	
-/* 	.list img:hover {
-		width: 220px;
-		height: 80px;
-		background: rgba(0,0,0, 0.5);
-	} */
-	
-/* 	.listInfo{
-		width: 220px;
-		height: 100px;
-		margin: 0 auto;
-	} */
-	
-/* 	.listTitle{
-		width: 219px;
-		border-radius:5px;	
-		text-align: center;
-		margin: 3px;
-	} */
+ 	.list .box-rotate-up {
+		transform: translateY(76px);
+		border-bottom: 20px solid rgba(51, 50, 49, 1);
+		display:none;
+	} 
 	
 	.pictureBackground{
 		background: rgba(0, 0, 0, 0.5);

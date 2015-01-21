@@ -180,10 +180,18 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 			whichNo = $("#containerList").children().length - 1;
 		}
 		
+		//이미 .box-rotate-up가 있다면 안보이도록
+		if($("#containerList:has(.box-rotate-up)")){
+			$(".box-rotate-up").css("display","none");
+		} 
+		
 		//이미 detailList있는지 체크하기
 		if($("#containerList:has(#detailList)")){
 			$("#detailList").remove();
-		} 
+		}
+		
+		//화살표 표시 생기도록
+		$("#" + $(this).closest(".list").attr("id") + " .box-rotate-up").css("display", "block");
 		
 		//스크롤 위치 이동
         $( "html, body" ).animate( {scrollTop: offset}, 800);
