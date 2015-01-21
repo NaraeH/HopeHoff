@@ -418,6 +418,7 @@ function setSizeSilde(obj, isMargin) {
 
 		$(thisMyPhotoList).css("background-size", widthSildeWrapMarginSize + " " + widthSildeWrapMarginSize);
 		$(thisMyPhotoList).css("width", widthSildeWrapMarginSize );
+		$(thisMyPhotoList).css("height", widthSildeWrapMarginSize );
 		$(thisMyPhotoList).css("margin", photoListMargin );
 		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
 		 
