@@ -116,8 +116,11 @@
 		width:98%;
 		height: 90%;
 	   margin: 1%;
-		border: 3px dotted #FFCD28;
+		border: 3px dotted #FFCD28; 
 		display: inline-block;
+		
+		/* background: #333231;
+		border-radius: 15px; */
 		
 	}
 	#myContentMenu, #myContentComments {
@@ -130,19 +133,17 @@
 		font-size: large;
 		text-align: center;
 		margin-top:18px;
-		
-	}
-	#myOverlay>input{
-		width:70%;
 	}
 
-	#myMenuToLeft, #myMenuToRight {
+
+/* 	#myMenuToLeft, #myMenuToRight {
 	  border-bottom: 20px solid #515942;
 	}
 	
 	.myLeftWrap:hover, .myRightWrap:hover{
 	   background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(16, 15, 15, 0));
-	}
+	} */
+	
 	/* ************V tabsBar************** */
 	#myTabsBar {
 		width: 99%;
@@ -189,20 +190,32 @@
 		cursor:pointer;
 	}
 
-.myOverlay {
-	background: rgba(0, 0, 0, .20); 
-	text-align : center;
-	/* padding: 30px 0 66px 0; */
-	width:150px;
-	height:140px;
-	opacity: 0;
-	display:inline-block;
-	-webkit-transition: opacity .25s ease;
-	-moz-transition: opacity .25s ease;
-	text-align: center;
+	.myOverlay {
+		background: rgba(0, 0, 0, .20); 
+		text-align : center;
+		/* padding: 30px 0 66px 0; */
+		width:175px;
+		height:175px;
+		opacity: 0;
+		display:inline-block;
+		-webkit-transition: opacity .25s ease;
+		-moz-transition: opacity .25s ease;
+		text-align: center;
+		transform: translateY(-204px);
+	}
+
+	.myOverlay>input{
+		width:70%;
+	}
+	
+	.myOverlay:hover {
+		cursor: pointer;
+		position: absolute;
+		opacity: 1;
+	}
+
 }
 /*
-}
  모바일 전용입니다. */
 /* @media all and (max-width:420px){
 	.modal-header {
