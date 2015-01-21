@@ -51,13 +51,10 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		uId = data.loginUser.uId;
 		isLogin = true;
 	
-		//console.log(userId);
-		//console.log(userPhoneNo)
 		$('.logoutBtn').css('display', '').css("border", "0px"); //로그인 성공 시 로그아웃버튼 살리구~ 
 		$('.loginBtn').css('display', 'none');
 		$('.signUpBtn').css('display', 'none');
 		
-
 	   if(data.loginUser.uType == "user") {
 		   
 		   $("#btnMyPage").css('display','');		   
@@ -164,6 +161,17 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		var whichNo = ( Math.floor(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) + 1 ) * 4;
 		var businessNo =  $(this).closest(".list").attr("data-shop");
 		
+		var height = Narae.removePx( $( ".list" ).css("height") ) 
+					+ Narae.removePx( $( ".list" ).css("border-top") ) 
+					+ Narae.removePx( $( ".list" ).css("border-bottom") )
+					+ Narae.removePx( $( ".list" ).css("margin-top") );       //.list의 높이 + .list의 margin값
+		var marginTop  = Narae.removePx( $( ".list" ).css("margin-top") );
+		var shopInfoHeight = Narae.removePx( $( ".shopInfo" ).css("height") ) 
+							+ Narae.removePx( $( ".shopInfo" ).css("margin-top") ) 
+							+ Narae.removePx( $( ".shopInfo" ).css("margin-bottom") );
+		var smallHeaderHeight = Narae.removePx( $( "#smallHeader" ).css("height") );
+		var offset = $( $( "#containerList" ).children()[0] ).offset().top + height * (whichNo / 4) - marginTop - shopInfoHeight - smallHeaderHeight; 
+		
 		if($("#containerList").children().length < 4) {
 			whichNo = $("#containerList").children().length;
 		}
@@ -184,7 +192,7 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("height", "470px")
 						  .css("background", "#333231")
 						  .css("margin-top", "15px")
-						  .css("display", "none")
+						  .css("display", "inline-block")
 						  .css("z-index", "5")
 		);
 		
@@ -196,11 +204,9 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 				        $('#detailList').html( template(data) );
 				      });
 		});
-		
-		//detail부분 아래로 내려오는 효과
-		$( "#detailList" ).slideDown( 1000, function() {
-			$("#detailList").css("display", "inline-block");
-		  });
+
+		//스크롤 위치 이동
+        $( "html, body" ).animate( {scrollTop: offset}, 800);
 });	
 
 
@@ -237,41 +243,6 @@ $(document).delegate('.btnSimpleBook',"click",function(){
 $(document).delegate('.btn-close-simpleReserv',"click",function(){
 	$( $(this).closest(".simpleReserv") ).css("display", "none");
 });
-
-/*//간단 예약하기
-$(document).delegate(".btnBookShop","click",function(){
-	var businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
-	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent"; //예약내용
-	
-	if( $( bookContent ).val() != '' ){ //내용이 있을 경우
-		
-		//예약 내용 DB에 저장하기
-		$.post('../../json/reservation/addReserv.do'
-				,{businessNo: businessNo,
-				  reservationContent : $( bookContent ).val(),
-				  userId  : uId}
-				,function(data){
-					console.log(data);
-					
-					//업주에게 예약내용 문자보내기
-					Narae.sendSms( callbackFun, "bookMsgToBoss", '010-323-2322' );
-					console.log( statusMap );
-					
-					if(statusMap.status == 'success') {
-						console.log("업주에게 문자메시지가 성공적으로 발송되었습니다.");
-					}else {
-						console.log("문자전송실패");
-					}
-					
-					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
-
-				}, 'json');
-
-	}else {  //내용이 없을 경우
-		alert( "예약 시간과 인원을 입력해주세요" );
-	}
-	
-});*/
 
 //간단 예약하기
 $(document).delegate(".btnBookShop","click",function(){
@@ -402,11 +373,10 @@ function loadContainerList(that){
 	$.getJSON(
 			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
 			function(data){
-				console.log(data);
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
-			        setContainerSize();
+			        setListAlign( data.shops.length );
 			      });
 			});
 }
@@ -447,24 +417,22 @@ function setKeyword() {
 	}
 }
 
-function setContainerSize(){
+function setListAlign( listLength ){
+	var list = $( "#containerList" ).children();
+	var containerWidth = Narae.removePx( $( "#container" ).css( "width" ) );
 	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
-							  + Narae.removePx( $(".list").css("margin-left") ) 
-							  + Narae.removePx( $(".list").css("margin-right") ) + 10;
+	  							+ Narae.removePx( $(".list").css("margin-left") ) 
+	  							+ Narae.removePx( $(".list").css("margin-right") ) 
+	  							+ Narae.removePx( $(".list").css("border-right") )
+	  							+ Narae.removePx( $(".list").css("border-left") )
+	  							;
+	var marginLeft = ( containerWidth - containerListWidth * 4 ) / 2;
 	
-/*	var containerListCountWidth = ( Narae.removePx( $(".list").css("width") ) 
-			  + Narae.removePx( $(".list").css("margin-left") ) 
-			  + Narae.removePx( $(".list").css("margin-right") )) * 4;  //4 =>한줄에 있는 리스트 개수
-	var containerWidth = Narae.removePx( $("#container").css("width") );*/
-
-/*	console.log(containerListWidth);
-	console.log(containerListCountWidth);
-	console.log(containerListCountWidth > containerWidth);
-	
-	if(containerListCountWidth > containerWidth ) { containerListCountWidth = containerListWidth * 4; }
-	$("#containerList").css("width", ( containerListCountWidth ) + "px");*/
-	
-	$("#containerList").css("width", ( containerListWidth * 4 ) + "px");
+	for(var i = 0; i < listLength; i++ ){
+		if(i % 4 == 0){
+			$( list[i] ).css("margin-left", marginLeft );
+		}
+	} 
 }
 
 function setPageNo(currPageNo, maxPageNo) {
@@ -556,7 +524,6 @@ function yyyyMMdd(date) {
 }
 
 function loadReservationList(pageNo,uId) {
-
 	if (pageNo <= 0) pageNo = currPageNo;
 		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
 			    function(data){
