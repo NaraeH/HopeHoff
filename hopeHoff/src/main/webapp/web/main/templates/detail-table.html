@@ -16,24 +16,13 @@
 	
 					<ul>
 						<li>
-							<div id="pubPhoto1" class="myPhotoList" data-src={{shopPhotos.shopMainPhoto}}>
-								<div class="myImgText"> {{shopDetail.shopName}} (1/4) <br> ●○○○ </div>
-							</div>
+							 <img src="../../img/shopPhoto/detail/{{shopPhotos.detailPhoto1}}" id="pubPhoto1" class="myPhotoList">
 						</li>
 						<li>
-							<div id="pubPhoto2" class="myPhotoList" data-src={{shopPhotos.shopDetailPhoto1}}>
-								<div class="myImgText"> {{shopDetail.shopName}} (2/4) <br> ○●○○ </div>
-							</div>
+							 <img src="../../img/shopPhoto/detail/{{shopPhotos.detailPhoto2}}" id="pubPhoto2" class="myPhotoList">
 						</li>
 						<li>
-							<div id="pubPhoto3" class="myPhotoList" data-src={{shopPhotos.shopDetailPhoto2}}>
-								<div class="myImgText"> {{shopDetail.shopName}} (3/4) <br> ○○●○ </div>
-							</div>
-						</li>
-						<li>
-							<div id="pubPhoto4" class="myPhotoList" data-src={{shopPhotos.shopDetailPhoto3}}>
-								<div class="myImgText"> {{shopDetail.shopName}} (4/4) <br> ○○○● </div>
-							</div>
+							 <img src="../../img/shopPhoto/detail/{{shopPhotos.detailPhoto3}}" id="pubPhoto3" class="myPhotoList">
 						</li>
 					</ul>
 				</div>
@@ -71,10 +60,11 @@
 								{{#each shopMenu}}
 								<li>
 									<div>
-										<img src ="../../img/shopPhoto/menu/{{menuPhoto}}" class="box myPhotoList" style="border-radius:30px;">
- 										<div id="overlay">
-											<span id="menu">{{menuName}}</span><br>
-											<span id="price">{{menuPrice}}</span>
+										<img id="detailMenu{{@index}}" class="myPhotoList" src ="../../img/shopPhoto/menu/{{menuPhoto}}" >
+ 										<div class="myOverlay">
+ 											<div class="photoInfoWrap">
+ 												<span id="detailMenuName{{@index}}">{{menuName}}</span><br>
+ 												<span id="detailMenuPrice{{@index}}">{{menuPrice}}</span>
 										</div>
 									</div>
 								</li>

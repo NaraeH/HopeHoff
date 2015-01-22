@@ -213,6 +213,12 @@
 	margin:5px;
 }
 
+.photoInfoWrap span {
+	color: white;
+	background: black;
+	margin:5px;
+}
+
 
 /*------ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일 => 메인페이지에서 씀-----*/
 .width-ul-style ul{
