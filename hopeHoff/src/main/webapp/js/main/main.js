@@ -122,11 +122,16 @@ $(".click-myShop").click(function(){
 	$("#back").css("display", "block").css("height", height);
 	$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
 	
-	require(['text!templates/myMarket-table.html'], function(html){
-		var template = Handlebars.compile(html);
-		var data = {"userId": uId}
-		$('#myMarket').html( template(data) );
-	});
+	$.post('../../json/myMarketControl/marketInfo.do',
+			{"userId": uId},
+			function(data){
+				console.log(data);
+				
+				require(['text!templates/myMarket-table.html'], function(html){
+					var template = Handlebars.compile(html);
+					$('#myMarket').html( template(data) );
+				});
+			}, 'json');
 });
 
 $(".click-myPage").click(function(){
