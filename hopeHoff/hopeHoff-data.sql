@@ -651,3 +651,8 @@ insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
 values(5,'위생이 엉망이구만!! 근데 맛있음 ㅋㅋㅋ','2015-01-21','boardPhoto2.jpg');
 insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
 values(6,'제가 원했던 맛입니다!!!!!','2015-01-22','boardPhoto3.jpg');
+
+
+update SHOP set SINTRO="모두들 먹고 한번씩 놀란 그 치킨" where SNAME="놀란치킨";
+update SHOP set SINTRO="너도 오빠닭에 빠져볼래?" where SNAME="오븐에 빠진 닭";
+
