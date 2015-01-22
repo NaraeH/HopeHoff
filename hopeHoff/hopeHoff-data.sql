@@ -426,7 +426,7 @@ insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO
 	'퓨전술집');
 
 	insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
-	values('303-90-56632',
+	values('303-90-56337',
 	'b02',
 	'난장',
 	'서울 영등포구',
@@ -456,57 +456,57 @@ insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO
 	-------------------------------
 	/********************** 오빠닭 ******************************/
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(32,'303-90-56632','크리스피 베이크','15900','obbadak-menu1.jpg')
+values(32,'605-81-38178','크리스피 베이크','15900','obbadak-menu1.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(33,'605-81-38178','오리지널 로스트','18000','obbadak-menu2.jpg')
+values(33,'605-81-38178','오리지널 로스트','18000','obbadak-menu2.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(34,'605-81-38178','반반세트','18900','obbadak-menu3.jpg')
+values(34,'605-81-38178','반반세트','18900','obbadak-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(35,'605-81-38178','오리지널 로스트','18000','obbadak-menu4.jpg')
+values(35,'605-81-38178','오리지널 로스트','18000','obbadak-menu4.jpg');
 
 /********************** 술선생 잭 ********************/
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(36,'201-86-13140','독일 소세지','18000','sul-menu1.jpg')
+values(36,'201-86-13140','독일 소세지','18000','sul-menu1.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(37,'201-86-13140','골뱅이','18000','sul-menu2.jpg')
+values(37,'201-86-13140','골뱅이','18000','sul-menu2.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(38,'201-86-13140','훈제삼겹부추 ','15500','sul-menu3.jpg')
+values(38,'201-86-13140','훈제삼겹부추 ','15500','sul-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(39,'201-86-13140','닭다리살 샐러드','15000','sul-menu4.jpg')
+values(39,'201-86-13140','닭다리살 샐러드','15000','sul-menu4.jpg');
 
 /*********************** 난장 ******************/
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(40,'303-90-56632','데리야끼 꼬치','12000','nanjang-menu1.jpg')
+values(40,'303-90-56337','데리야끼 꼬치','12000','nanjang-menu1.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(41,'303-90-56632','모듬꼬치','18000','nanjang-menu2.jpg')
+values(41,'303-90-56337','모듬꼬치','18000','nanjang-menu2.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(42,'303-90-56632','짬뽕탕 ','15500','nanjang-menu3.jpg')
+values(42,'303-90-56337','짬뽕탕 ','15500','nanjang-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(43,'303-90-56632','치즈 불닭','18000','nanjang-menu4.jpg')
+values(43,'303-90-56337','치즈 불닭','18000','nanjang-menu4.jpg');
 
 /******************** 놀란치킨 **************************/
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(44,'130-11-09313','마늘치킨과골뱅이','18000','nollan-menu1.jpg')
+values(44,'130-11-09313','마늘치킨과골뱅이','18000','nollan-menu1.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(45,'130-11-09313','후라이드치킨','16000','nollan-menu2.jpg')
+values(45,'130-11-09313','후라이드치킨','16000','nollan-menu2.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(46,'130-11-09313','어니언치킨 ','18000','nollan-menu3.jpg')
+values(46,'130-11-09313','어니언치킨 ','18000','nollan-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(47,'130-11-09313','순살 고추 양념치킨','18000','nollan-menu4.jpg')
+values(47,'130-11-09313','순살 고추 양념치킨','18000','nollan-menu4.jpg');
 
 -------------------------
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
@@ -516,7 +516,7 @@ insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('201-86-13140','sul-main.jpg','sul-detail1.jpg','sul-detail2.jpg','sul-detail3.jpg');
 
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
-values('303-90-56632','nanjang-main.jpg','nanjang-detail1.jpg','nanjang-detail2.jpg','nanjang-detail3.jpg');
+values('303-90-56337','nanjang-main.jpg','nanjang-detail1.jpg','nanjang-detail2.jpg','nanjang-detail3.jpg');
 
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('130-11-09313','nollan-main.jpg','nollan-detail1.jpg','nollan-detail2.jpg','nollan-detail3.jpg');
