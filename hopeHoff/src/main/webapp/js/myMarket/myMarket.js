@@ -311,6 +311,10 @@ $("#btnMyMarketClose").click(function(){
 
 function setShop(data){
 	
+	//사진 이동 되었던 것 리셋하기
+	$( "#myPubPhotoListWrap ul" ).css("margin-left", "0px");
+	$( "#myMenuListWrap ul" ).css("margin-left", "0px");
+	
 	//가게 사진 바꾸기
 	$("#shopPhoto1").attr("src", "../../img/shopPhoto/detail/" + data.shopPhotos.detailPhoto1);
 	$("#shopPhoto2").attr("src", "../../img/shopPhoto/detail/" + data.shopPhotos.detailPhoto2);
