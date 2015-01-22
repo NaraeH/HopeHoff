@@ -1,11 +1,49 @@
 $(document).ready(function() {
 	
-	if( isLogin ){
+	if( isLogin && uType=="user" ){
+		//console.log(shopPhone)
 		$('#pubPhotoListWrap').css("height","220px");
 		$('#reservForm').css('display','block').css("padding","10px");
-		$('#reservForm > .userInfo').html(userName + "( " + userPhoneNo + " )" + "님, 예약 하시겠습니까?");
+		$('#reservForm > .userInfo').html(userName + "( " + userPhoneNo + " )" + "님, 예약 하시겠습니까?").css("color","white");
 		$('#reservForm > p').css("text-align","center").css("margin-top","10px");
+		$('#reservData').attr("placeholder","예약시간과 인원을 입력해주세요.").css("padding-left","5px");
+	}else if( isLogin && uType=="boss" ) {
+		$('#pubPhotoListWrap').css("height","400px");
+		$("#reservBtn").css("display","none");
+		$("#boundary").css("display","none");
+	}else{
 	}
+	
+	$(document).delegate('.reservBtn',"click",function(){
+		
+		if(isLogin){
+			if( $( reservData ).val() != '' ){ //내용이 있을 경우
+				//예약 내용 DB에 저장하기
+				$.post('../../json/reservation/addReserv.do'
+						,{businessNo: businessNo,
+						  reservationContent : $( reservData ).val(),
+						  userId  : uId}
+						,function(data){
+							getConfirmation();
+						}, 'json');
+				
+				//업주에게 예약내용 문자보내기
+				/*Narae.sendSms( callbackFun, "bookMsgToBoss", shopPhone, data );
+				if(statusMap.status == 'success') {
+					console.log("업주님께 문자메시지가 성공적으로 발송되었습니다.");
+				}else {
+					console.log("업주님께 문자전송을 실패하였습니다");
+				}*/
+				
+			}else {  //내용이 없을 경우
+				alert( "예약 시간과 인원을 입력해주세요" );
+			}
+			
+		}else {
+			alert ("로그인후 사용해주세요");
+			location.href = '/hopeHoff/web/login/login.html';
+		}
+	});
 	
 	
 	$('#contentMap').css('display', 'none');
@@ -68,6 +106,9 @@ $(document).ready(function() {
 	}
 	
 });
+
+
+
 
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#pubPhotoListWrap').naraeWidthSildeAuto();
@@ -147,4 +188,18 @@ $('#menuListWrap').naraeWidthSilde();
 		  $('<td class=tableDataTime>').html("2014-12-18").appendTo($('#tRow3'));
 	
 		}); 
+		
+		
+		function getConfirmation(){
+			   var retVal = confirm("예약 하시겠습니까?");
+			   
+			   if( retVal == true ){
+				   alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
+				  return true;
+			   }else{
+			      alert("예약 취소 하였습니다. 예약 내용을 확인후 다시 이용해 주세요.");
+			      $("#reservData").val('');
+				  return false;
+			   }
+			}		
 
