@@ -36,7 +36,7 @@
 		width: 97%;
 		height: 87%;
 		padding: 15px;
-		
+		margin-left:3%;
 	}
 	#leftContainer {
 		width:420px;
@@ -46,20 +46,25 @@
 		padding:10px;
 	}
  
- 
  	#pubPhotoListWrap{
 		width: 400px;
-		height: 400px; 
+		height: 330px; 
 		/* border: 1px solid red; */
 	}
 	
+	#boundary{
+		width:96%;
+		margin-right:5%;
+	}
+		
 	#reservForm{
-		width: 400px;
-		height: 145px;
+		width: 380px;
+		height: 100px;
 		/* border: 1px solid green; */
 		text-align:right;
 		display:none;
-		background-color: rgba(61, 54, 54, 0.5);
+		margin-bottom:1%;
+		background-color: rgba(144, 133, 133, 0.5);
 
 	}
 	
@@ -71,6 +76,7 @@
 		float: left;
 		padding: 10px 0px 0px 20px;
 		margin-top:-20px ;
+		margin-left:2%;
 		
 /* 		border: 1px dashed blue; */
 	}
@@ -86,21 +92,20 @@
 		padding:inherit;
 	}
 	
-	#hoffInfo p {
-		margin: 0px;
-	}
 	
 	.pContent{
 		display:inline-block;
+		margin: 3.5px auto;
 	}
 	.pTitle{
-		font-size:large;
+		font-size:xx-large;
 		font-weight: bold;
+		margin: 0 auto;
 	}
 
  	#reservBtn {
  		margin-right:15px;
-		width:92%;
+		width:96%;
 		background: orange;
 		display: inline-block;
 		color: white;
@@ -112,7 +117,7 @@
 	#reservData{
 		width: 90%;
 		margin: 2px 15px;
-		height: 30%;
+		height: 45%;
 	}
 	
 
@@ -195,6 +200,7 @@
 	#menuListWrap {
 		width: 707px;
 		height: 220px;
+		margin-left:5%;
 	}
 
 	#bestMenu1{
