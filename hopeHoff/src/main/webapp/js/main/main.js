@@ -129,8 +129,6 @@ $(".click-myShop").click(function(){
 	$.post('../../json/myMarketControl/marketInfo.do',
 			{"userId": uId},
 			function(data){
-				console.log(data);
-				
 				require(['text!templates/myMarket-table.html'], function(html){
 					var template = Handlebars.compile(html);
 					$('#myMarket').html( template(data) );
