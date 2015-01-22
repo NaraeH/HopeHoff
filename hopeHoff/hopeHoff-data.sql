@@ -545,7 +545,7 @@ insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO
 	'경기도 안양시 만안구 안양1동 674-68',
 	'031-445-7997',
 	'PM 05:00 ~ AM 02:00',
-	'감자칩과 치맥은 더프라이팬에서!',
+	'감자칩과 치맥 짱',
 	'여러가지 메뉴보다는 제대로 맛을 낸 메뉴에 집중하여 성업 중에 있습니다. 신선한 재료로 소비자를 감동시킵니다.',
 	'안양',
 	'홀',
@@ -631,7 +631,7 @@ values(62,'707-25-96307','별난포테이토콤보','9500','fish-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
 values(63,'707-25-96307','아시아해물탕','16000','fish-menu4.jpg');
------------ ~~~~~~~~~~ -----------
+----------------
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('555-75-25271','bong9-main.jpg','bong9-detail1.jpg','bong9-detail2.jpg','bong9-detail3.jpg');
 
@@ -643,3 +643,11 @@ values('365-16-54110','suda-main.jpg','suda-detail1.jpg','suda-detail2.jpg','sud
 
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('707-25-96307','fish-main.jpg','fish-detail1.jpg','fish-detail2.jpg','fish-detail3.jpg');
+
+----------후기 추가욤-------
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(4,'양이 별로...없어...','2015-01-20','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(5,'위생이 엉망이구만!! 근데 맛있음 ㅋㅋㅋ','2015-01-21','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(6,'제가 원했던 맛입니다!!!!!','2015-01-22','boardPhoto3.jpg');
