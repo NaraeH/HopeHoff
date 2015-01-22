@@ -122,17 +122,16 @@
 	}
 	#myContentMenu, #myContentComments {
 		width: 100%;
-		height: 200px;
+		height: 205px;
 
-	}
-
-/* 	#myMenuToLeft, #myMenuToRight {
-	  border-bottom: 20px solid #515942;
 	}
 	
-	.myLeftWrap:hover, .myRightWrap:hover{
-	   background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(16, 15, 15, 0));
-	} */
+	#myContentComments #commentTable{
+		width: inherit;
+		height: inherit;
+		border: 1px solid red;
+	}
+
 	
 	/* ************V tabsBar************** */
 	#myTabsBar {
