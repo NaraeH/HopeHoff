@@ -521,3 +521,100 @@ values('303-90-56632','nanjang-main.jpg','nanjang-detail1.jpg','nanjang-detail2.
 insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3)
 values('130-11-09313','nollan-main.jpg','nollan-detail1.jpg','nollan-detail2.jpg','nollan-detail3.jpg');
 
+
+-------2015.1.22----DB 추가ㅏㅏ----------
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('555-75-25271',
+	'b04',
+	'봉구비어 안양1번가점',
+	'경기도 안양',
+	'경기도 안양시 만안구 안양동 674-22 지하1층',
+	'031-900-0909',
+	'05:30~02:00',
+	'요즘대세 봉구비어!',
+	'감튀, 치즈스틱과 크림생맥주의 환상적인 조합을 즐겨보세요!',
+	'안양',
+	'홀',
+	'치킨');
+	
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('885-39-23464',
+	'b01',
+	'더후라이팬 안양1번가점',
+	'경기도 안양',
+	'경기도 안양시 만안구 안양1동 674-68',
+	'031-445-7997',
+	'PM 05:00 ~ AM 02:00',
+	'감자칩과 치맥은 더프라이팬에서!',
+	'여러가지 메뉴보다는 제대로 맛을 낸 메뉴에 집중하여 성업 중에 있습니다. 신선한 재료로 소비자를 감동시킵니다.',
+	'안양',
+	'홀',
+	'치킨');
+	
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('365-16-54110',
+	'b02',
+	'수다포차',
+	'경기도 안양',
+	'경기 안양시 만안구 안양1동 674-97번지 2층',
+	'031-449-7773',
+	'PM 05:00 ~ AM 05:00',
+	'수다로 24시간이 모자라.',
+	'테이블 당 라면 하나 서비스! 계란후라이도 직접 해먹는 재미까지^^',
+	'안양',
+	'룸형식',
+	'퓨전안주');
+
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('707-25-96307',
+	'b02',
+	'피쉬앤그릴',
+	'서울 영등포구',
+	'서울특별시 영등포구 영등포동 3가 16',
+	'02-2068-9943',
+	'PM 05:00 ~ AM 04:00',
+	'11년째 피쉬앤그릴과 연애중',
+	'맛에 대한 상상력 피쉬&그릴이 맛있는 이유입니다. 인기있는 스마일 감자튀김을 만나보세요!',
+	'영등포',
+	'홀',
+	'퓨전안주');
+	
+	/***************봉구비어****************/
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(48,'555-75-25271','육덕포','7000','bong9-menu1.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(49,'555-75-25271','감자튀김(큰넘)','5000','bong9-menu2.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(50,'555-75-25271','쉬림프 고로케 ','4000','bong9-menu3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(51,'555-75-25271','수제 롱치즈스틱','2000','bong9-menu4.jpg');
+
+
+/********************the FryPan****************/
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(52,'885-39-23464','안심 후라이드 치킨','16800','frypan-menu1.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(53,'885-39-23464','후팬','7500','frypan-menu2.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(54,'885-39-23464','잭B','14500','frypan-menu3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(55,'885-39-23464','양념치킨','15800','frypan-menu4.jpg');
+
+/************ suda 포차***************/
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(56,'365-16-54110','해물누룽지탕','16000','suda-menu1.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(57,'365-16-54110','통두부제육철판','15000','suda-menu2.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(58,'365-16-54110','새우튀김','7500','suda-menu3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
+values(58,'365-16-54110','쭈꾸미삼겹철판','16000','suda-menu4.jpg');
