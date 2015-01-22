@@ -54,7 +54,7 @@ public class MainControl {
 	@RequestMapping("/detail")
 	public Object detail(String businessNo){
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("shopDetail", shopDao.selectOne(businessNo));
+		resultMap.put("shopDetail", shopDao.selectShop(businessNo));
 		resultMap.put("shopPhotos", shopDao.selectPhoto(businessNo));
 		resultMap.put("shopMenu", menuDao.selectMenu(businessNo));
 		

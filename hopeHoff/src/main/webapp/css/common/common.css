@@ -160,9 +160,6 @@
 	display: table-cell;
 }
 
-.width-silde-wrap li div {
-	height: inherit;
-}
 .myPhotoList{
 	border-radius:30px;
 	background-repeat: no-repeat;	
@@ -179,6 +176,43 @@
 	font-size: small;
 	transform: translateY(-15px);
 }
+
+.myOverlay {
+	display: table;
+	background: rgba(0, 0, 0, .20); 
+	text-align : center;
+	opacity: 0;
+	-webkit-transition: opacity .25s ease;
+	-moz-transition: opacity .25s ease;
+	text-align: center;
+	border-radius:30px;
+		/* transform: translateY(-204px); */
+}
+
+.myOverlay:hover {
+	position: absolute;
+	opacity: 1;
+}
+
+.myOverlay button {
+	font-size: 14px;
+	width: 45px;
+	padding: 5px;
+	float: right;
+	margin-right: 12px;
+}
+
+.photoInfoWrap {
+	display:table-cell;
+	vertical-align: middle;
+}
+
+.photoInfoWrap input {
+	color:blue;
+	text-align: center;
+	margin:5px;
+}
+
 
 /*------ul list 가로로 옮기고 아이템과 아이템 사이에 가로줄 하나 넣은 스타일 => 메인페이지에서 씀-----*/
 .width-ul-style ul{

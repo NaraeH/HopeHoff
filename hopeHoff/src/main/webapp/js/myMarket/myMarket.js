@@ -1,13 +1,39 @@
 $(document).ready(function() {
-	$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
+	
+	//선택 된 가게가 바뀔 때
+	$("select").change(function () {
+		var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
+
+		$.post('../../json/myMarketControl/marketInfo.do',
+				{"businessNo": selectedShop},
+				function(data){
+					setShop(data);
+				}, 'json');
+
+	});
+				
 		
-			$.post('../../json/myMarketControl/marketInfo.do'
-			        , { userId: id.loginUser.uId}
+	/*			$.post('../../json/myMarketControl/marketInfo.do'
+			        , { userId: userId}
 			        , function(data){
+			        	
+			        	console.log("----*********------");
+			        	console.log(data);
+			        	
 			        	if(data.status == "success") {
-			        		$('<option>').html(data.shopInfo0[0].shopName).attr("selected","selected").appendTo($('#selectForm'));
+			        		var str = data.shopInfo0[0].shopName;
+			        		    
+			        		$('<option>').html(data.shopInfo0[0].shopName).attr("selected","selected")
+			        													  .attr("data-businessNo", "")
+			        													  .appendTo($('#selectForm'));
+			        		
 			        		$('<option>').html(data.shopInfo1[0].shopName).appendTo($('#selectForm'));
 			        	
+			        		$("select").change(function () {
+			        			str = $("#selectForm option:selected").text(); 
+			        		});
+			        		
+			        		
 			        		//shop information 맨위 가게이름
 			        		$('#shopName').html(data.shopInfo0[0].shopName);
 			        		
@@ -54,7 +80,7 @@ $(document).ready(function() {
 				        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[3].menuPhoto);
 			        		
 				     
-			        		/************select에 따라 DB에서 가져오는게 달리지죠**************/
+			        		*//************select에 따라 DB에서 가져오는게 달리지죠**************//*
 			        		$("select").change(function () {
 			        		    var str = "";
 			        		    $( "select option:selected" ).each(function() {
@@ -78,9 +104,9 @@ $(document).ready(function() {
 					        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo1[0].detailPhoto2 + '")');
 					        		$('#myPubPhoto3').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo1[0].detailPhoto3 + '")');
 					        		
-					        		/*for(var i=0; i< shopInfo1[0].size(); i++){
+					        		for(var i=0; i< shopInfo1[0].size(); i++){
 				        		    	$('#menu'+i).attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[i].menuPhoto);
-			        		    	}*/
+			        		    	}
 			        		    	$('#menu1').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[0].menuPhoto);
 						        	$('#menu2').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[1].menuPhoto);
 						        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopInfo1[2].menuPhoto);
@@ -122,8 +148,7 @@ $(document).ready(function() {
 			
 	
 
-	});    /* ready()  끝 쪽 */
-
+*/
 
 
 /*$(document).ready(function() {
@@ -275,10 +300,6 @@ $(document).ready(function() {
 	});
 });
 
-
-
-
-
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#myPubPhotoListWrap').naraeWidthSildeAuto(1500);
 $('#myMenuListWrap').naraeWidthSilde();	
@@ -287,6 +308,27 @@ $("#btnMyMarketClose").click(function(){
 	$("#myMarket").css("display", "none");
 	$("#back").css("display", "none");
 });
+
+function setShop(data){
+	
+	//가게 사진 바꾸기
+	$("#shopPhoto1").attr("src", "../../img/shopPhoto/detail/" + data.shopPhotos.detailPhoto1);
+	$("#shopPhoto2").attr("src", "../../img/shopPhoto/detail/" + data.shopPhotos.detailPhoto2);
+	$("#shopPhoto3").attr("src", "../../img/shopPhoto/detail/" + data.shopPhotos.detailPhoto3);
+	
+	//가게 정보 바꾸기
+	$('#time').attr("placeholder",data.shopInfo.shopName);
+	$('#phone').attr("placeholder",data.shopInfo.shopPhone);
+	$('#addr').attr("placeholder",data.shopInfo.shopDetailAddr);
+	$('#info').attr("placeholder",data.shopInfo.shopInfo);
+
+	//메뉴 사진 바꾸기
+	for(var i = 0; i < data.shopMenu.length; i++){
+		$( "#menu" +i ).attr("src", "../../img/shopPhoto/menu/" + data.shopMenu[i].menuPhoto );
+		$( "#menuName" +i ).attr("placeholder", data.shopMenu[i].menuName );
+		$( "#menuPrice" +i ).attr("placeholder", data.shopMenu[i].menuPrice );
+	}
+}
 
 	/*****************************tab - comment 달리는거..임시로한거에욤*************************************************/
 	
