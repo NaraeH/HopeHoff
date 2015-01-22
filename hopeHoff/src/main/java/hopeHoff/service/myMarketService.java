@@ -2,6 +2,7 @@ package hopeHoff.service;
 
 import hopeHoff.dao.ShopDao;
 import hopeHoff.domain.Shop;
+import hopeHoff.domain.ShopPhoto;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,12 +13,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class myMarketService {
   @Autowired ShopDao shopDao;
-   public List<?> showInfo(String userId) {
+/*   public List<?> showInfo(String userId) {
 	    HashMap<String,String> params = new HashMap<>();
 	    params.put("userId",userId);
 	    System.out.println("shopDao.showInfo(userId):  "+shopDao.showInfo(userId));
 		return shopDao.showInfo(userId);
-	}
+	}*/
+   
     public void showUpdate(String name, String time, String phone, String addr, String intro) {
     	HashMap<String,String> params = new HashMap<>();
     	 params.put("name", name);
@@ -27,6 +29,27 @@ public class myMarketService {
         params.put("intro", intro);
         shopDao.showUpdate(params);
 	
+    }
+    
+    
+    public Shop selectFirstShop(String userId){
+  	  return shopDao.selectFirstShop(userId);
+    }
+    
+    public Shop selectShop(String businessNo){
+    	  return shopDao.selectShop(businessNo);
+     }
+    
+    public ShopPhoto selectShopPhoto(String businessNo){
+  	  return shopDao.selectPhoto(businessNo);
+    }
+
+    public List<?> selectMenu(String businessNo){
+    	  return shopDao.selectMenu(businessNo);
+      }
+    
+    public List<?> selectMarketList(String userId){
+    	return shopDao.selectMarketList(userId);
     }
 
    

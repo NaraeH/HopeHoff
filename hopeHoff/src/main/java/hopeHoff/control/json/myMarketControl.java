@@ -2,13 +2,11 @@ package hopeHoff.control.json;
 
 import hopeHoff.dao.MenuDao;
 import hopeHoff.dao.ShopDao;
-import hopeHoff.domain.Shop;
 /*import hopeHoff.domain.Shop;
 import hopeHoff.service.UserService;*/
 import hopeHoff.service.myMarketService;
 
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,22 +21,35 @@ public class myMarketControl {
 	@Autowired myMarketService myMarketService;
 	
 	@RequestMapping(value="/marketInfo", method=RequestMethod.POST)
-	public Object marketInfo(String userId){
-		List<?> shopInfo = myMarketService.showInfo(userId);
+	public Object marketInfo(String userId, String businessNo){
+		
+		if(businessNo == null){
+			businessNo = myMarketService.selectFirstShop(userId).getBusinessNo();
+		}
 		
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-	
+		
+		resultMap.put("shops", myMarketService.selectMarketList(userId));
+		resultMap.put("shopInfo", myMarketService.selectShop(businessNo));
+		resultMap.put("shopPhotos", myMarketService.selectShopPhoto(businessNo));
+		resultMap.put("shopMenu", myMarketService.selectMenu(businessNo));
+		
+		
+		//int count = myMarketService.countShop(userId);
+		//System.out.println("count==> " + count);
+		
+/*		for(int i = 0; i < count; i++){
+			resultMap.put("shopInfo"+i, "");
+		}*/
+		/*		List<?> shopInfo = myMarketService.showInfo(userId);
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		for(int i=0; i< shopInfo.size()/4; i++) {
 			resultMap.put("shopInfo"+i, shopInfo.subList(4*i,4*i+4));
 			System.out.println("shopInfo"+i+"  :" + shopInfo.subList(4*i,4*i+4));
-		}
+		}*/
 		
-		if(shopInfo != null) { 
-			resultMap.put("status", "success");
-		}else {
-			resultMap.put("status", "fail");
-		}
 		
+		resultMap.put("status", "success");
 		
 		return resultMap;
 	}
@@ -48,6 +59,16 @@ public class myMarketControl {
 		myMarketService.showUpdate(name, time, phone,addr,intro);
 		
 	}
+	
+	@RequestMapping(value="/marketList", method=RequestMethod.POST)
+	public Object marketList(String userId){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("shopList", myMarketService.selectMarketList(userId));
+		
+		return resultMap;
+	}
+	
+	
 /*	
 	@RequestMapping(value="/marketList", method=RequestMethod.POST)
 	public Object marketList(String userId){

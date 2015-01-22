@@ -6,6 +6,9 @@
 					<form action="#">
 						    <select name="speed" id="selectForm">
 						      <!-- <option>와라와라(강남)</option> -->
+						     {{#each shops}}
+						     	<option data-businessNo="{{businessNo}}">{{shopName}}</option>
+						     {{/each}}
 						    </select>
 					<button id="btnMyMarketClose" type="button" class="close" value="close">X</button>
 					</form>
@@ -24,25 +27,13 @@
 
 					<ul>
 						<li>
-							<div id="myPubPhoto1" class="myPhotoList">
-								<div class="myImgText">
-									와라와라(강남점) (1/3) <br> ●○○
-								</div>
-							</div>
+							 <img src="../../img/shopPhoto/detail/{{shopPhotos.detailPhoto1}}" id="shopPhoto1" class="myPhotoList">
 						</li>
 						<li>
-							<div id="myPubPhoto2" class="myPhotoList">
-								<div class="myImgText">
-									와라와라(강남점) (2/3) <br> ○●○
-								</div>
-							</div>
+							 <img src="../../img/shopPhoto/detail/{{shopPhotos.detailPhoto2}}" id="shopPhoto2" class="myPhotoList">
 						</li>
 						<li>
-							<div id="myPubPhoto3" class="myPhotoList">
-								<div class="myImgText">
-									와라와라(강남점) (3/3) <br> ○○●
-								</div>
-							</div>
+							 <img src="../../img/shopPhoto/detail/{{shopPhotos.detailPhoto3}}" id="shopPhoto3" class="myPhotoList">
 						</li>
 					</ul>
 				<!-- menuList -->
@@ -51,12 +42,11 @@
 			<div id="myRightContainer">
 				<div id="myHoffInfo">
 					<div id=shopName></div>
-					
 					<br><br>
-					<div>영업시간 : </div>&nbsp;<input type="text" class="myInputBox" id="time"><br><br>
-					<div>전화번호 : </div>&nbsp;<input type="text" class="myInputBox" id="phone"><br><br>
-					<div>가게주소 : </div>&nbsp;<input type="text" class="myInputBox" id="addr"><br><br>
-					<div>가게소개 : </div>&nbsp;<input type="text" class="myInputBox" id="intro"><br>
+					<div>영업시간 : </div>&nbsp;<input type="text" class="myInputBox" id="time"  placeholder="{{shopInfo.shopTime}}"><br><br>
+					<div>전화번호 : </div>&nbsp;<input type="text" class="myInputBox" id="phone" placeholder="{{shopInfo.shopPhone}}"><br><br>
+					<div>가게주소 : </div>&nbsp;<input type="text" class="myInputBox" id="addr"  placeholder="{{shopInfo.shopDetailAddr}}"><br><br>
+					<div>가게소개 : </div>&nbsp;<input type="text" class="myInputBox" id="info" placeholder="{{shopInfo.shopInfo}}"><br>
 					<button id="changeBtn" type="button">수정하기</button><br><br>
 					
 				</div>
@@ -74,36 +64,18 @@
 								</div>
 
 								<ul>
+									{{#each shopMenu}}
 									<li>
-									   <img id="menu1" class="myPhotoList">
+									   <img id="menu{{@index}}" class="myPhotoList" src="../../img/shopPhoto/menu/{{menuPhoto}}">
 									   <div class="myOverlay">
-											<input class="myMenu" id="menuName" type="text" placeholder="꼬치어묵전골">
-							             	<input class="myPrice" id="menuPrice" type="text" placeholder="17500">
+									   		<div class="photoInfoWrap">
+												<input id="menuName{{@index}}" type="text" placeholder="{{menuName}}">
+							             		<input id="menuPrice{{@index}}" type="text" placeholder="{{menuPrice}}">
+												<button>수정</button>
+											</div>
 									   </div>
-									
 									</li>
-									<li>
-										<img id="menu2" class="myPhotoList">
-										<div class="myOverlay">
-											<input class="myMenu" type="text" placeholder="크림치즈퐁닭">
-							            	<input class="myPrice" type="text" placeholder="17500">
-										</div>
-										  
-									</li>
-									<li>
-										<img id="menu3" class="myPhotoList">
-										<div class="myOverlay">
-											<input class="myMenu" type="text" placeholder="베감피자">
-							              	<input class="myPrice" type="text" placeholder="16800">                                   
-										</div>
-									</li>
-									<li>
-										<img id="menu4" class="myPhotoList">
-										<div class="myOverlay">
-											<input class="myMenu" type="text" placeholder="꼬치어묵전골">
-							                <input class="myPrice" type="text" placeholder="17500">
-										</div>
-									</li>
+									{{/each}}
 								</ul>
 							</div>
 						</div>

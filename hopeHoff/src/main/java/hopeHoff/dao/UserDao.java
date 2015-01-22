@@ -11,4 +11,5 @@ public interface UserDao {
   void insert(Map<String,String> params);
   User selectOne(String uId);
   void updateUser(Map<String, String> params);
+  
 }

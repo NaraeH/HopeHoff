@@ -412,14 +412,13 @@ function setSizeSilde(obj, isMargin) {
 	var myOverlayTransformY = Narae.removePx( widthSildeWrapMarginSize ) + ( photoListMargin * 2 );
 	
 	if(isMargin == "noMargin"){
-		$(thisMyPhotoList).css("background-size", widthSildeWrapSize + " " + widthSildeWrapSize);
-		$(thisMyPhotoList).css("width", widthSildeWrapSize);
+		$(thisMyPhotoList).css("background-size", widthSildeWrapSize + " " + widthSildeWrapSize)
+						  .css("width", widthSildeWrapSize)
+						  .css("height", widthSildeWrapSize);
 		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
 	
 	}else if(isMargin == "existMargin"){
 		
-
-		//$(thisMyPhotoList).css("background-size", widthSildeWrapMarginSize + " " + widthSildeWrapMarginSize);
 		$( thisMyPhotoList ).css("width", widthSildeWrapMarginSize )
 							.css("height", widthSildeWrapMarginSize )
 							.css("margin", photoListMargin );

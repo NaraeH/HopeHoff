@@ -10,11 +10,14 @@ $(function(){
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
 var shopAddrText = "가게주소";
+var businessNo=null;
 var userName = null;
 var userPhoneNo = null;
 var uId = null;
 var isLogin = false;
+var uType = null;
 var currPageNo;
+var shopPhone = null;
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -49,13 +52,14 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		userName = data.loginUser.uName;
 		userPhoneNo = data.loginUser.uPhone;
 		uId = data.loginUser.uId;
+		uType=data.loginUser.uType;
 		isLogin = true;
 	
 		$('.logoutBtn').css('display', '').css("border", "0px"); //로그인 성공 시 로그아웃버튼 살리구~ 
 		$('.loginBtn').css('display', 'none');
 		$('.signUpBtn').css('display', 'none');
 		
-	   if(data.loginUser.uType == "user") {
+	   if(uType == "user") {
 		   
 		   $("#btnMyPage").css('display','');		   
 			$("#btnBook").css('display','');		   
@@ -63,7 +67,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 		    
 		    $('.userName').html(data.loginUser.uName + "님").css("color","#ffb500");
 		    
-	   } else if(data.loginUser.uType == "boss") {
+	   } else if(uType == "boss") {
 		  
 		   $("#btnMyPage").css('display','');		   
 			 $("#btnBook").css('display','none');		   
@@ -122,11 +126,17 @@ $(".click-myShop").click(function(){
 	$("#back").css("display", "block").css("height", height);
 	$("#myMarket").css("margin-left", marginLeft + "px").css("display", "block");
 	
-	require(['text!templates/myMarket-table.html'], function(html){
-		var template = Handlebars.compile(html);
-		var data = {"userId": uId}
-		$('#myMarket').html( template(data) );
-	});
+	$.post('../../json/myMarketControl/marketInfo.do',
+			{"userId": uId},
+			function(data){
+				console.log(data);
+				
+				require(['text!templates/myMarket-table.html'], function(html){
+					var template = Handlebars.compile(html);
+					$('#myMarket').html( template(data) );
+				});
+			}, 'json');
+
 });
 
 $(".click-myPage").click(function(){
@@ -159,7 +169,7 @@ $(document).delegate(".list","mouseout",function(){
 
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
 		var whichNo = ( Math.floor(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) + 1 ) * 4;
-		var businessNo =  $(this).closest(".list").attr("data-shop");
+		 businessNo =  $(this).closest(".list").attr("data-shop");
 		
 		var height = Narae.removePx( $( ".list" ).css("height") ) 
 					+ Narae.removePx( $( ".list" ).css("border-top") ) 
@@ -231,7 +241,7 @@ $(document).delegate(".has-sub ul a, .selectMenu","click",function(){
 //예약버튼 눌렀을시 간단예약화면 나타나기
 $(document).delegate('.btnSimpleBook',"click",function(){
 	var simpleReserv = "#" + $($(this).closest(".list")).attr("id") + " " + ".simpleReserv";
-	console.log(simpleReserv);
+	//console.log(simpleReserv);
 	if( isLogin ){
 		$( simpleReserv + ">.userInfo").html(userName + "( " + userPhoneNo + " )" + "님,");
 		$( simpleReserv ).css("display", "block");
@@ -248,7 +258,7 @@ $(document).delegate('.btn-close-simpleReserv',"click",function(){
 
 //간단 예약하기
 $(document).delegate(".btnBookShop","click",function(){
-	var businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
+	 businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
 	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent";   //예약내용
 	var shopPhone = $( this ).closest( ".list" ).attr( "data-phone" );                   //해당 가게 전화번호
 	var shopName = $( this ).closest( ".list" ).attr( "data-name" );                     //해당 가게 이름
@@ -280,6 +290,7 @@ $(document).delegate(".btnBookShop","click",function(){
 	}
 	
 });
+
 
 /*--------------------------mobile용 event------------------------------*/
 
