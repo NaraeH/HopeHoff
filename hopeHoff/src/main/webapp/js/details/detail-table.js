@@ -45,7 +45,6 @@ $(document).ready(function() {
 		}
 	});
 	
-	
 	$('#contentMap').css('display', 'none');
 	$('#contentComments').css('display', 'none');
 	$('#menuText').css('color', '#FFB500');
@@ -56,6 +55,7 @@ $(document).ready(function() {
 	
 	$("#btnClose").click(function(){
 		$("#detailList").remove();
+		$(".box-rotate-up").css("display","none");
 	});
 	
 	$('.menu').click(function(event) {

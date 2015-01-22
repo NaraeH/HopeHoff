@@ -49,7 +49,7 @@ Narae.prototype.sendSms = function( callback, msgType, phoneNo, data ) {
 	}else {
 		//과금되는 주소: http://link.smsceo.co.kr/sendsms_utf8.php
 		//테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-	    $.post('http://link.smsceo.co.kr/sendsms_utf8.php'
+	    $.post('http://link.smsceo.co.kr/sendsms_test.php'
 		        , { userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
 					 userid:   "hopeHoff01",
 					 msg:      msg,
@@ -404,9 +404,12 @@ $.prototype.naraeWidthSildeAuto = function(time, speed, moveWidth){
 function setSizeSilde(obj, isMargin) {
 	var thisMyPhotoList = "#" + $(obj).attr("id") + " " +".myPhotoList";
 	var thisMyRightWrap = "#" + $(obj).attr("id") + " " +".myRightWrap";
+	var thisMyOverlay = "#" + $(obj).attr("id") + " " +".myOverlay";
 	var widthSildeWrapSize = $(obj).css("width");
 	var widthSildeWrapMarginSize = Narae.removePx($(obj).css("height")) - 30 + "px";
 	var myLeftWrapWidth = Narae.removePx($(".myLeftWrap").css("width"));
+	var photoListMargin = ( Narae.removePx(widthSildeWrapSize) / 3 - Narae.removePx(widthSildeWrapMarginSize) ) /2;
+	var myOverlayTransformY = Narae.removePx( widthSildeWrapMarginSize ) + ( photoListMargin * 2 );
 	
 	if(isMargin == "noMargin"){
 		$(thisMyPhotoList).css("background-size", widthSildeWrapSize + " " + widthSildeWrapSize);
@@ -414,12 +417,18 @@ function setSizeSilde(obj, isMargin) {
 		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
 	
 	}else if(isMargin == "existMargin"){
-		var photoListMargin = ( Narae.removePx(widthSildeWrapSize) / 3 - Narae.removePx(widthSildeWrapMarginSize) ) /2;
+		
 
-		$(thisMyPhotoList).css("background-size", widthSildeWrapMarginSize + " " + widthSildeWrapMarginSize);
-		$(thisMyPhotoList).css("width", widthSildeWrapMarginSize );
-		$(thisMyPhotoList).css("height", widthSildeWrapMarginSize );
-		$(thisMyPhotoList).css("margin", photoListMargin );
+		//$(thisMyPhotoList).css("background-size", widthSildeWrapMarginSize + " " + widthSildeWrapMarginSize);
+		$( thisMyPhotoList ).css("width", widthSildeWrapMarginSize )
+							.css("height", widthSildeWrapMarginSize )
+							.css("margin", photoListMargin );
+		
+		$( thisMyOverlay ).css("width", widthSildeWrapMarginSize )
+						  .css("height", widthSildeWrapMarginSize )
+						  .css("margin", photoListMargin )
+						  .css("-webkit-transform", "translate(0px," +  -myOverlayTransformY + "px)");
+		
 		$(thisMyRightWrap).css("margin-left", Narae.removePx(widthSildeWrapSize) - myLeftWrapWidth );
 		 
 	}

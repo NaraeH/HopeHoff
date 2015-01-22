@@ -10,14 +10,39 @@ $(document).ready(function() {
 			        	
 			        		//shop information 맨위 가게이름
 			        		$('#shopName').html(data.shopInfo0[0].shopName);
-			        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
-			        		$('#time').attr("placeholder",data.shopInfo0[0].shopTime);
-			        		$('#phone').attr("placeholder",data.shopInfo0[0].shopPhone);
-			        		$('#addr').attr("placeholder",data.shopInfo0[0].shopDetailAddr);
-			        		$('#intro').attr("placeholder",data.shopInfo0[0].shopIntro);
 			        		
-			        		//가게 사진위에 나오는 가게이름
+			        		//shop information - 영업시간/ 전화번호/ 주소/인삿말.
+			        		var time = data.shopInfo0[0].shopTime;
+			        		var phone = data.shopInfo0[0].shopPhone;
+			        		var addr = data.shopInfo0[0].shopDetailAddr;
+			        		var intro = data.shopInfo0[0].shopIntro;
+			        		var name = data.shopInfo0[0].shopName;
+			        		$('#time').attr("placeholder",time);
+			        		$('#phone').attr("placeholder",phone);
+			        		$('#addr').attr("placeholder",addr);
+			        		$('#intro').attr("placeholder",intro);
+			        		
+				        	$('#time').change(function() {  time = $('#time').val();	});
+				        	$('#phone').change(function() { phone = $('#phone').val(); 	});
+				        	$('#addr').change(function() {	addr = $('#addr').val(); 	});
+				        	$('#intro').change(function() { intro = $('#intro').val();	});
+			        		
+				        	
+				        	$('#changeBtn').click(function(event) {
+				        			$.post('../../json/myMarketControl/marketUpdate.do'
+							        , {  name:name,  time:time,  phone:phone, addr:addr, intro:intro  }
+							        , function(data){
+							        	alert(" 수정 완료 ^-^ ");
+							        
+							          }  
+							        , 'json');
+				        
+				        	});
+			        	
+				        	//가게 사진위에 나오는 가게이름
 			        		$('.myImgText').html(data.shopInfo0[0].shopName);
+			        	
+			        		
 			        		//가게 내부 전경사진
 			        		$('#myPubPhoto1').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto1 + '")');
 			        		$('#myPubPhoto2').css("background-image",'url("../../img/shopPhoto/detail/' + data.shopInfo0[0].detailPhoto2 + '")');
@@ -28,6 +53,7 @@ $(document).ready(function() {
 				        	$('#menu3').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[2].menuPhoto);
 				        	$('#menu4').attr("src","../../img/shopPhoto/menu/"+data.shopInfo0[3].menuPhoto);
 			        		
+				     
 			        		/************select에 따라 DB에서 가져오는게 달리지죠**************/
 			        		$("select").change(function () {
 			        		    var str = "";

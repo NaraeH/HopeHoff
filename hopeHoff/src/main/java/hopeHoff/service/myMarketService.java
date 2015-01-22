@@ -1,6 +1,7 @@
 package hopeHoff.service;
 
 import hopeHoff.dao.ShopDao;
+import hopeHoff.domain.Shop;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,13 +13,24 @@ import org.springframework.stereotype.Service;
 public class myMarketService {
   @Autowired ShopDao shopDao;
    public List<?> showInfo(String userId) {
-	   HashMap<String,String> params = new HashMap<>();
+	    HashMap<String,String> params = new HashMap<>();
 	    params.put("userId",userId);
 	    System.out.println("shopDao.showInfo(userId):  "+shopDao.showInfo(userId));
 		return shopDao.showInfo(userId);
 	}
+    public void showUpdate(String name, String time, String phone, String addr, String intro) {
+    	HashMap<String,String> params = new HashMap<>();
+    	 params.put("name", name);
+        params.put("time", time);
+        params.put("phone", phone);
+        params.put("addr", addr);
+        params.put("intro", intro);
+        shopDao.showUpdate(params);
+	
+    }
+
    
-   public List<?> showList(String userId) {
+   /*  public List<?> showList(String userId) {
 	   HashMap<String,String> params = new HashMap<>();
 	    params.put("userId",userId);
 	    System.out.println("shopDao.showList(userId):  "+shopDao.showList(userId));
@@ -33,7 +45,7 @@ public class myMarketService {
 
     }
   
-  /*public User validate(String uId, String uPwd) {
+ public User validate(String uId, String uPwd) {
     HashMap<String,String> params = new HashMap<>();
     params.put("uId", uId);
     params.put("uPwd", uPwd);
