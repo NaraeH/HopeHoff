@@ -29,6 +29,14 @@
 		<result column="DETAILPHOTO3" property="detailPhoto3"/>
 	</resultMap>
 
+	<resultMap type="Menu" id="menuMap">
+		<id column="BBNO" property="businessNo"/>
+		<result column="MNAME" property="menuName"/>
+		<result column="MPRICE" property="menuPrice"/>
+		<result column="MPHOTO" property="menuPhoto"/>
+	</resultMap>
+	
+
 	<resultMap type="HashMap" id="sAndpMap">
 		<result column="SNAME" property="shopName"/>
    		<result column="SINTRO" property="shopIntro"/>
@@ -66,22 +74,28 @@
 		FROM SHOP LEFT OUTER JOIN SHOPPHOTO 
 		USING(BBNO)
 		<choose>
-		<when test="keywordGroup == 'SAREA'">
-			WHERE SAREA = #{keyword}
-		</when>
-		<when test="keywordGroup == 'STYPE'">
-			WHERE STYPE = #{keyword}
-		</when>
-		<when test="keywordGroup == 'SSNACK'">
-			WHERE SSNACK = #{keyword}
-		</when>
+			<when test="keywordGroup == 'SAREA'">
+				WHERE SAREA = #{keyword}
+			</when>
+			<when test="keywordGroup == 'STYPE'">
+				WHERE STYPE = #{keyword}
+			</when>
+			<when test="keywordGroup == 'SSNACK'">
+				WHERE SSNACK = #{keyword}
+			</when>
 		</choose>
 	</select>
 	
-  	<select id="selectOne" parameterType="String" resultMap="shopMap">
- 		SELECT STIME, SPHONE, SNAME, SINFO, SDETAILADDR
+  	<select id="selectFirstShop" parameterType="String" resultMap="shopMap">
+ 		SELECT BBNO, STIME, SPHONE, SNAME, SINFO, SDETAILADDR
 		FROM SHOP 
-		WHERE BBNO = #{businessNo}
+		WHERE UID = #{userId} LIMIT 1
+	</select>
+	
+	 <select id="selectShop" parameterType="String" resultMap="shopMap">
+ 		SELECT BBNO, STIME, SPHONE, SNAME, SINFO, SDETAILADDR
+		FROM SHOP 
+		WHERE BBNO = #{businessNo} 
 	</select>
 	
 	<select id="selectPhoto" parameterType="String" resultMap="photoMap">
@@ -89,19 +103,35 @@
 		 FROM SHOPPHOTO  
 		 WHERE BBNO = #{businessNo}
 	</select>
+	
+	<select id="selectMenu" parameterType="String" resultMap="menuMap">
+		SELECT BBNO, MNAME, MPRICE, MPHOTO 
+		FROM MENU 
+		WHERE BBNO = #{businessNo}
 
-	<select id="showList" parameterType="String" resultMap="sAndpMap">
+	</select>
+
+<!-- 	<select id="showList" parameterType="String" resultMap="sAndpMap">
  		SELECT SNAME,STIME,SPHONE, SDETAILADDR, SINTRO FROM SHOP WHERE UID = #{userId}
  		select s.SNAME, s.STIME, s.SPHONE, s.SDETAILADDR, s.SINTRO, p.DETAILPHOTO1, p.DETAILPHOTO2, p.DETAILPHOTO3 FROM SHOPPHOTO p, SHOP s WHERE p.BBNO = s.BBNO and s.UID=#{userId}
 	</select>
 	
 	<select id="showMenu" parameterType="String" resultMap="sAndmMap">
  		select m.MNAME, m.MPRICE, m.MPHOTO from MENU m, SHOP s where m.BBNO = s.BBNO and s.UID=#{userId}
-	</select>  
+	</select>   -->
 	
-	<select id="showInfo" parameterType="String" resultMap="sAndpAndmMap">
+	<select id="countShop" parameterType="String" resultType="int">
+ 		SELECT COUNT(*) FROM SHOP WHERE UID = #{userId};
+	</select>
+	
+ 	<select id="selectMarketList" parameterType="String" resultMap="shopMap">
+ 		SELECT BBNO, SNAME FROM SHOP WHERE UID = #{userId};
+	</select>
+	
+	
+<!-- 	<select id="showInfo" parameterType="String" resultMap="sAndpAndmMap">
 	select s.SNAME, s.STIME, s.SPHONE, s.SDETAILADDR, s.SINTRO, p.DETAILPHOTO1, p.DETAILPHOTO2, p.DETAILPHOTO3, m.MPHOTO, m.MPRICE, m.MNAME FROM SHOPPHOTO p, SHOP s, MENU m WHERE p.BBNO = s.BBNO and s.BBNO = m.BBNO and s.UID=#{userId}
-	</select> 
+	</select>  -->
 	
 	
 	<update id="showUpdate" parameterType="map">
