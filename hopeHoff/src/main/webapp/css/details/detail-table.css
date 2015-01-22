@@ -84,7 +84,7 @@
 	#hoffInfo {
 		width: 100%;
 		height: 25%;
-		margin: 1%;
+		/* margin: 1%; */
 		display: inline-block;
 		font-size: small;
 		color: #ffb500;
@@ -141,17 +141,14 @@
 		display: inline-block;
 		
 	}
-	#contentMenu, #contentComments {
+	#contentMenu, #contentComments, #contentMap {
 		width: 100%;
 		height: 230px;
 	/* 	border:  1px solid white; */
 
 	}
 	
-	#contentMap{
-	width:100%;
-	height:225px;
-	}
+	
 	#menu, #price {
 		color:white;
 		font-size: large;
