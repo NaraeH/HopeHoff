@@ -33,7 +33,7 @@ public class myMarketControl {
 		resultMap.put("shopInfo", myMarketService.selectShop(businessNo));
 		resultMap.put("shopPhotos", myMarketService.selectShopPhoto(businessNo));
 		resultMap.put("shopMenu", myMarketService.selectMenu(businessNo));
-		
+		System.out.println(resultMap);
 		
 		//int count = myMarketService.countShop(userId);
 		//System.out.println("count==> " + count);
