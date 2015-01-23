@@ -296,6 +296,44 @@ input[type="button"]:hover, button:hover {
 	font-size: 10px;
 	font-weight: bold;
 }
+
+
+/*-------------------comment-----------------------*/
+
+#commentWrap {
+	height: inherit;
+	overflow-y: scroll;
+	margin-top: 5px;
+}
+
+#commentWrap>.commentItem {
+	width: 590px;
+	height: 90px;
+	margin: 0 auto;
+	border-bottom: 1px solid #ffb500;
+}
+
+#commentWrap .commentImg {
+	width: 130px;
+	height: 80px;
+	float: left;
+	margin: 5px 15px;
+}
+
+#commentWrap .commentContent {
+	height: 45px;
+	width: 415px;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	margin: 15px 0px 5px 0px;
+	font-size: 14px;
+}
+
+#commentWrap .commentUser {
+	font-size: 12px;
+}
+
 /*----------------------------------------------------*/
 body {
 	font-family: 'Jeju Gothic', serif;
