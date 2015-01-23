@@ -28,12 +28,12 @@ $(document).ready(function() {
 						}, 'json');
 				
 				//업주에게 예약내용 문자보내기
-				/*Narae.sendSms( callbackFun, "bookMsgToBoss", shopPhone, data );
+				Narae.sendSms( callbackFun, "bookMsgToBoss", shopPhone, data );
 				if(statusMap.status == 'success') {
 					console.log("업주님께 문자메시지가 성공적으로 발송되었습니다.");
 				}else {
 					console.log("업주님께 문자전송을 실패하였습니다");
-				}*/
+				}
 				
 			}else {  //내용이 없을 경우
 				alert( "예약 시간과 인원을 입력해주세요" );
@@ -82,7 +82,8 @@ $(document).ready(function() {
 		$('#mapButton').css('background-color', '#FFB500');
 		$('#commentText').css('color', '#FFB500');
 		$('#commentButton').css('background-color', 'white');
-
+		map.relayout();
+	
 	});
 
 	$('.comment').click(function(event) {
@@ -108,22 +109,38 @@ $('#menuListWrap').naraeWidthSilde();
 		
 	var mapContainer = document.getElementById('contentMap'), // 지도를 표시할 div 
 	    mapOption = {
-	        center: new daum.maps.LatLng(37.4986077,127.02851620000001), // 지도의 중심좌표
-	        level:  2// 지도의 확대 레벨
+	        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+	        level: 3// 지도의 확대 레벨
 	    };
 
 	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-	// 마커가 표시될 위치입니다
-	var markerPosition  = new daum.maps.LatLng(37.4986077,127.02851620000001); 
 
+	console.log("map.getCenter(): " + map.getCenter());
+	
+
+	map.setCenter(new daum.maps.LatLng(37.4986077,127.02851620000001));
+	
+	//"마커"가 표시될 위치입니다
+	/*var markerPosition  = new daum.maps.LatLng(33.450701, 126.570667); */
+	
 	// 마커를 생성합니다
 	var marker = new daum.maps.Marker({
-	    position: markerPosition
+	    position: new daum.maps.LatLng(33.450701, 126.570667)
+	  
 	});
-
 	// 마커가 지도 위에 표시되도록 설정합니다
 	marker.setMap(map);
+	
+  
+	//zoom controller생성합뉘당
+	var zoomControl = new daum.maps.ZoomControl();
+	// 지도 오른쪽에 줌 컨트롤이 표시되도록 지도에 컨트롤을 추가한다. 맨오른쪽으루 가렴~
+	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+	
+	
+	
+	
 
 	// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
 	// marker.setMap(null);    
