@@ -1,5 +1,6 @@
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 
+
 $(document).ready(function() {
 	
 	$('#myContentComments').css('display', 'none');
@@ -7,15 +8,8 @@ $(document).ready(function() {
 	$('#myCommentText').css('color', '#FFB500');
 	$('#myMenuButton').css('background-color', '#FFB500');
 	
-	//선택 된 가게가 바뀔 때
 	$("select").change(function () {
-		selectedShop = $("#selectForm option:selected").attr("data-businessNo");
-		
-		$.post('../../json/myMarketControl/marketInfo.do',
-				{"businessNo": selectedShop},
-				function(data){
-					setShop(data);
-				}, 'json');
+		loadMarket();
 	});
 	
 });
@@ -50,7 +44,44 @@ $('.myCommentTabs').click(function(event) {
 	$('#myCommentText').css('color', '#FFB500');
 	$('#myCommentButton').css('background-color', '#FFB500');
 	
-	loadCommnet();
+	loadComment();
+});
+
+//수정하기 버튼 눌렀을 때
+$(document).delegate("#changeBtn","click", function(){
+	var time = $('#time').val();
+	var phone = $('#phone').val();
+	var addr = $('#addr').val();
+	var info = $('#info').val();
+	
+	//selectedShop = $("#selectForm option:selected").attr("data-businessNo");
+
+	if( time == '' ){ time = $("#time").attr("placeholder"); }
+	if( phone == '' ){ phone = $("#phone").attr("placeholder"); }
+	if( addr == '' ){ addr = $("#addr").attr("placeholder"); }
+	if(info == '' ){ info = $("#info").attr("placeholder"); }
+
+	
+	$.post('../../json/myMarketControl/marketUpdate.do',
+		{"bno": selectedShop,
+		"time" :time,
+		"phone": phone,
+		"addr" : addr,
+		"info": info
+		}, function(data){
+			alert("성공적으로 변경되었습니다.");
+			$('#time').attr("placeholder",data.shopInfo.shopTime);
+			$('#phone').attr("placeholder",data.shopInfo.shopPhone);
+			$('#addr').attr("placeholder",data.shopInfo.shopDetailAddr);
+			$('#info').attr("placeholder",data.shopInfo.shopInfo);
+			
+			$('#time').val('');
+			$('#phone').val('');
+			$('#addr').val('');
+			$('#info').val('');
+			}, 
+		'json');
+
 });
 
 /*-----------------------------------함수들--------------------------------------*/
@@ -71,6 +102,7 @@ function setShop(data){
 	$('#addr').attr("placeholder",data.shopInfo.shopDetailAddr);
 	$('#info').attr("placeholder",data.shopInfo.shopInfo);
 
+
 	//메뉴 사진 바꾸기
 	for(var i = 0; i < data.shopMenu.length; i++){
 		$( "#menu" +i ).attr("src", "../../img/shopPhoto/menu/" + data.shopMenu[i].menuPhoto );
@@ -78,10 +110,10 @@ function setShop(data){
 		$( "#menuPrice" +i ).attr("placeholder", data.shopMenu[i].menuPrice );
 	}
 	
-	loadCommnet();
+	loadComment();
 }
 
-function loadCommnet(){
+function loadComment(){
 	$.post('/hopeHoff/json/commentControl/getComments.do',
 			{"businessNo": selectedShop},
 			function(data){
@@ -92,3 +124,15 @@ function loadCommnet(){
 			}, 'json');
 	
 }
+function loadMarket() {
+	console.log(selectedShop);
+		selectedShop = $("#selectForm option:selected").attr("data-businessNo");
+		
+		$.post('../../json/myMarketControl/marketInfo.do',
+				{"businessNo": selectedShop},
+				function(data){
+					setShop(data);
+					
+				}, 'json');
+}
+	

@@ -20,13 +20,13 @@ public class myMarketService {
 		return shopDao.showInfo(userId);
 	}*/
    
-    public void showUpdate(String name, String time, String phone, String addr, String intro) {
+    public void showUpdate(String bno, String time, String phone, String addr, String info) {
     	HashMap<String,String> params = new HashMap<>();
-    	 params.put("name", name);
+    	 params.put("bno", bno);
         params.put("time", time);
         params.put("phone", phone);
         params.put("addr", addr);
-        params.put("intro", intro);
+        params.put("info", info);
         shopDao.showUpdate(params);
 	
     }
