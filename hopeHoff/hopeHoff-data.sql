@@ -707,3 +707,7 @@ INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES(25, '맛남', '2015-01-23
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES(26, '맛없어요', '2015-01-23', 'boardPhoto1.jpg');
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES(27, '오돌뼈가 오들오들', '2015-01-23', 'boardPhoto1.jpg');
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES(28, '크림치즈 통닭 또 생각나네요', '2015-01-23', 'boardPhoto1.jpg');
+
+
+----------------------------update 주소수정------------
+UPDATE SHOP SET SDETAILADDR ='서울특별시 서초구 서초4동 1309-8 서울빌딩 2층' WHERE BBNO='124-86-06376';

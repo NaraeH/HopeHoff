@@ -120,8 +120,6 @@
 		height: 45%;
 	}
 	
-
-
 	#reservBtn:hover{
 		box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
 		-webkit-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
@@ -137,53 +135,60 @@
 		width:98%;
 		height: 95%;
 	    margin: 1%;
-/* 		border: 3px dotted #FFCD28; */
 		display: inline-block;
 		
 	}
 	#contentMenu, #contentComments, #contentMap {
+		display:none;
 		width: 100%;
-		height: 230px;
-	/* 	border:  1px solid white; */
-
+		height: 220px;
 	}
 	
-	
-	#menu, #price {
-		color:white;
-		font-size: large;
-		text-align: center;
-		margin-top:18px;
+	#contentMenu {
+		display: block;
 	}
 	
 	#dataForm{
 		width:90%;
 		margin: 0 auto;
 	}
+	
+	#contentComments #commentWrap>.commentItem {
+		width: 760px;
+		color: #FFFFFF;
+	}
+	
 	/* ************V tabsBar************** */
 	#tabsBar {
 		width: 100%;
 		height: 42px;
 		margin: 1%;/* 0 auto; */
 		clear: both;
-		/* border:1px solid white; */
+		color: #FFB500;
 	}
+	
 	#tabsBarText {
 		width: 100%;
 		position: relative;
-	   /* 	z-index: 2; */
 	}
+	
 	#tabsBarText>div {
 		display: inline-block;
 		width: 30%;
 		font-size: large;
 		margin-left:4px;
 	}
+	
+	#tabsBar #menuButton {
+		background-color: #FFB500;
+	}
+	
 	#tabsBarButton {
 		position: relative;
 		margin-top: -3px;
 		z-index: 1;
 	}
+	
 	#tabsBarButton>div {
 		display: inline-block;
 		width: 30%;
@@ -200,25 +205,12 @@
 		margin-left:5%;
 	}
 
-	#bestMenu1{
-	    background-image: url('../../img/details/chiken.jpg');
-	}
-	#bestMenu2{
-	    background-image: url('../../img/details/cheese.jpg');
-	}
-	#bestMenu3{
-	    background-image: url('../../img/details/pizza.jpg');
-	}
-	#bestMenu4{
-	    background-image: url('../../img/details/odang.jpg');
-	}
-	
+
 	#menuButton , #mapButton, #commentButton {
 		cursor:pointer;
+		background-color: #FFB500;
 	}
-
-
-/* } */
+ } 
 /* 모바일 전용입니다. */
 /* @media all and (max-width:420px){
 	.modal-header {
