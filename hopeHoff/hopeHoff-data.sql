@@ -651,3 +651,37 @@ insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
 values(5,'위생이 엉망이구만!! 근데 맛있음 ㅋㅋㅋ','2015-01-21','boardPhoto2.jpg');
 insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
 values(6,'제가 원했던 맛입니다!!!!!','2015-01-22','boardPhoto3.jpg');
+
+
+update SHOP set SINTRO="모두들 먹고 한번씩 놀란 그 치킨" where SNAME="놀란치킨";
+update SHOP set SINTRO="너도 오빠닭에 빠져볼래?" where SNAME="오븐에 빠진 닭";
+
+--------------------( 2015. 1. 23  DB update~)---------------------
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(7,'분위가 굿굿 넘 좋앙','2015-01-22','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(8,'여자화장실 넘 더러워요..','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(9,'최악이다-_-','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(10,'자주 와야겠네요 ^*^.','2015-01-23','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(11,'조명이 넘 어두워요 밝혀줭!','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(12,'무난하네요 ~ 직원분들도 친절하시구요^^굿','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(13,'깔끔하이 좋구만~~','2015-01-23','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(14,'배불리 먹다 갑니다*.*','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(15,'너무 춥네여... 온도조절좀...','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(16,'인테리어가 좋아요ㅎㅎㅎ','2015-01-23','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(17,'너무 짜네요...','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(18,'잘 먹다 갑니다~~ 또올게욤','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(19,'다음 회식은 또 요기다!!!','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(20,'술이 오래됐는지 쓰네요;_;','2015-01-23','boardPhoto3.jpg');
