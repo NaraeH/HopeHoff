@@ -77,10 +77,11 @@ function setShop(data){
 		$( "#menuName" +i ).attr("placeholder", data.shopMenu[i].menuName );
 		$( "#menuPrice" +i ).attr("placeholder", data.shopMenu[i].menuPrice );
 	}
+	
+	loadCommnet();
 }
 
 function loadCommnet(){
-
 	$.post('/hopeHoff/json/commentControl/getComments.do',
 			{"businessNo": selectedShop},
 			function(data){
