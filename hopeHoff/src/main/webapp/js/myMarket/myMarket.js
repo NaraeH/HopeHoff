@@ -7,23 +7,23 @@ $(document).ready(function() {
 	$('#myCommentText').css('color', '#FFB500');
 	$('#myMenuButton').css('background-color', '#FFB500');
 	
+	//선택 된 가게가 바뀔 때
+	$("select").change(function () {
+		selectedShop = $("#selectForm option:selected").attr("data-businessNo");
+		
+		$.post('../../json/myMarketControl/marketInfo.do',
+				{"businessNo": selectedShop},
+				function(data){
+					setShop(data);
+				}, 'json');
+	});
+	
 });
 
 //나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#myPubPhotoListWrap').naraeWidthSildeAuto(1500);
 $('#myMenuListWrap').naraeWidthSilde();	
 
-//선택 된 가게가 바뀔 때
-$("select").change(function () {
-	호
-
-	$.post('../../json/myMarketControl/marketInfo.do',
-			{"businessNo": selectedShop},
-			function(data){
-				setShop(data);
-			}, 'json');
-
-});
 
 $("#btnMyMarketClose").click(function(){
 	$("#myMarket").css("display", "none");
@@ -66,7 +66,7 @@ function setShop(data){
 	$("#shopPhoto3").attr("src", "../../img/shopPhoto/detail/" + data.shopPhotos.detailPhoto3);
 	
 	//가게 정보 바꾸기
-	$('#time').attr("placeholder",data.shopInfo.shopName);
+	$('#time').attr("placeholder",data.shopInfo.shopTime);
 	$('#phone').attr("placeholder",data.shopInfo.shopPhone);
 	$('#addr').attr("placeholder",data.shopInfo.shopDetailAddr);
 	$('#info').attr("placeholder",data.shopInfo.shopInfo);

@@ -97,14 +97,6 @@ $(document).ready(function() {
 		$('#commentText').css('color', '#FFB500');
 		$('#commentButton').css('background-color', '#FFB500');
 	});
-	
-	//id가 pubPhoto인것에 background-image 넣기
-	for( var i = 1; i < 5; i ++ ){
-		var pubPhotoName = "#pubPhoto" + 1;
-		$(pubPhotoName).css("background-image", "url(/hopeHoff/img/shopPhoto/detail/" + $(pubPhotoName).attr("data-src") + ")");
-		console.log(pubPhotoName);
-	}
-	
 });
 
 

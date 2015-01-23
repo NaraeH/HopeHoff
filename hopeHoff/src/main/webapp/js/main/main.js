@@ -70,7 +70,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(data){
 	   } else if(uType == "boss") {
 		  
 		   $("#btnMyPage").css('display','');		   
-			 $("#btnBook").css('display','none');		   
+			 $("#btnBook").css('display','');		   
 			 $("#btnMyShop").css('display','');
 			 
 			 $('.userName').html(data.loginUser.uName + " 사장님").css("color","#ffb500");
@@ -164,10 +164,10 @@ $(document).delegate(".list","mouseout",function(){
 	$(btnDetail).removeClass("btnDetail").addClass("shopIntroAddr").html(shopIntroAddrText);
 });
 
-
+var containerListength = $("#containerList").children().length;
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
+		businessNo =  $(this).closest(".list").attr("data-shop");
 		var whichNo = ( Math.floor(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) + 1 ) * 4;
-		 businessNo =  $(this).closest(".list").attr("data-shop");
 		
 		var height = Narae.removePx( $( ".list" ).css("height") ) 
 					+ Narae.removePx( $( ".list" ).css("border-top") ) 
@@ -179,26 +179,17 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 							+ Narae.removePx( $( ".shopInfo" ).css("margin-bottom") );
 		var smallHeaderHeight = Narae.removePx( $( "#smallHeader" ).css("height") );
 		var offset = $( $( "#containerList" ).children()[0] ).offset().top + height * (whichNo / 4) - marginTop - shopInfoHeight - smallHeaderHeight; 
+		var listLength = $( ".list" ).length; //.list의 개수
+
+		//이미 detailList가 있다면 삭제
+		$("#detailList").remove(); 
 		
-		if($("#containerList").children().length < 4) {
-			whichNo = $("#containerList").children().length;
-		}
+		//어느 위치 다음에 detailList 생길 것인지 결정
+		if($("#containerList").children().length < 4) { whichNo = listLength; }
+		if(whichNo > listLength) { whichNo = listLength; }
 		
-		if(whichNo > $("#containerList").children().length) {
-			whichNo = $("#containerList").children().length - 1;
-		}
-		
-		//이미 .box-rotate-up가 있다면 안보이도록
-		if($("#containerList:has(.box-rotate-up)")){
-			$(".box-rotate-up").css("display","none");
-		} 
-		
-		//이미 detailList있는지 체크하기
-		if($("#containerList:has(#detailList)")){
-			$("#detailList").remove();
-		}
-		
-		//화살표 표시 생기도록
+		//디테일 눌렀을 때 화살표 표시 생기는 것
+		if($("#containerList:has(.box-rotate-up)")){ $(".box-rotate-up").css("display","none");	} 
 		$("#" + $(this).closest(".list").attr("id") + " .box-rotate-up").css("display", "block");
 		
 		//스크롤 위치 이동
@@ -215,7 +206,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 						  .css("z-index", "5")
 		);
 		
-		
 		$.getJSON(
 				'../../main/detail.do', {"businessNo": businessNo},
 				function(data){
@@ -224,9 +214,6 @@ $(document).delegate(".shopInfo>.btnDetail","click",function(){
 				        $('#detailList').html( template(data) );
 				      });
 		});
-		
-	
-		
 });	
 
 
