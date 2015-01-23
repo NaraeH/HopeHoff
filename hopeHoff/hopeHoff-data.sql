@@ -249,7 +249,7 @@ insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
 values(27,'503-85-21617','매콤한오돌뼈','20000','sam-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(28,'503-85-21617','오뎅탕','18000','sam-menu4.jpg')
+values(28,'503-85-21617','오뎅탕','18000','sam-menu4.jpg');
 
 /******************** 시바라구 **********************************/
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
@@ -262,7 +262,7 @@ insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
 values(31,'303-90-56632','타코와사비','8000','siba-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(32,'303-90-56632','해물볶음 우동','18000','siba-menu4.jpg')
+values(32,'303-90-56632','해물볶음 우동','18000','siba-menu4.jpg');
 
 
 
