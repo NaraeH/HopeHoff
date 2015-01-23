@@ -249,7 +249,7 @@ insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
 values(27,'503-85-21617','매콤한오돌뼈','20000','sam-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(28,'503-85-21617','오뎅탕','18000','sam-menu4.jpg')
+values(28,'503-85-21617','오뎅탕','18000','sam-menu4.jpg');
 
 /******************** 시바라구 **********************************/
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
@@ -262,7 +262,7 @@ insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
 values(31,'303-90-56632','타코와사비','8000','siba-menu3.jpg');
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO)
-values(32,'303-90-56632','해물볶음 우동','18000','siba-menu4.jpg')
+values(32,'303-90-56632','해물볶음 우동','18000','siba-menu4.jpg');
 
 
 
@@ -656,3 +656,32 @@ values(6,'제가 원했던 맛입니다!!!!!','2015-01-22','boardPhoto3.jpg');
 update SHOP set SINTRO="모두들 먹고 한번씩 놀란 그 치킨" where SNAME="놀란치킨";
 update SHOP set SINTRO="너도 오빠닭에 빠져볼래?" where SNAME="오븐에 빠진 닭";
 
+--------------------( 2015. 1. 23  DB update~)---------------------
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(7,'분위가 굿굿 넘 좋앙','2015-01-22','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(8,'여자화장실 넘 더러워요..','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(9,'최악이다-_-','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(10,'자주 와야겠네요 ^*^.','2015-01-23','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(11,'조명이 넘 어두워요 밝혀줭!','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(12,'무난하네요 ~ 직원분들도 친절하시구요^^굿','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(13,'깔끔하이 좋구만~~','2015-01-23','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(14,'배불리 먹다 갑니다*.*','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(15,'너무 춥네여... 온도조절좀...','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(16,'인테리어가 좋아요ㅎㅎㅎ','2015-01-23','boardPhoto1.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(17,'너무 짜네요...','2015-01-23','boardPhoto2.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(18,'잘 먹다 갑니다~~ 또올게욤','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(19,'다음 회식은 또 요기다!!!','2015-01-23','boardPhoto3.jpg');
+insert into BOARD(RNO,BCONTENT,BDATE,BPHOTO)
+values(20,'술이 오래됐는지 쓰네요;_;','2015-01-23','boardPhoto3.jpg');
