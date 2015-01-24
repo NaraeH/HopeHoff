@@ -45,10 +45,10 @@ public class myMarketControl {
 	}
 	
 	@RequestMapping(value="/marketUpdate", method=RequestMethod.POST)
-	public Object marketUpdate(String bno, String time, String phone, String addr, String info){
+	public Object marketUpdate(String bno, String time, String phone, String addr, String info, String intro){
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
-		myMarketService.showUpdate(bno, time, phone,addr,info);
+		myMarketService.showUpdate(bno, time, phone,addr,info, intro);
 		resultMap.put("shopInfo", myMarketService.selectShop(bno));
 		
 		return resultMap;

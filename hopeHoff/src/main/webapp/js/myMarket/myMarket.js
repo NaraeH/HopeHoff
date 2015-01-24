@@ -53,6 +53,7 @@ $(document).delegate("#changeBtn","click", function(){
 	var phone = $('#phone').val();
 	var addr = $('#addr').val();
 	var info = $('#info').val();
+	var intro = $('#intro').val();
 	
 	//selectedShop = $("#selectForm option:selected").attr("data-businessNo");
 
@@ -60,25 +61,28 @@ $(document).delegate("#changeBtn","click", function(){
 	if( phone == '' ){ phone = $("#phone").attr("placeholder"); }
 	if( addr == '' ){ addr = $("#addr").attr("placeholder"); }
 	if(info == '' ){ info = $("#info").attr("placeholder"); }
-
+	if(intro == ''){ intro = $("#intro").attr("placeholder"); }
 	
 	$.post('../../json/myMarketControl/marketUpdate.do',
 		{"bno": selectedShop,
 		"time" :time,
 		"phone": phone,
 		"addr" : addr,
-		"info": info
+		"info": info,
+		"intro": intro
 		}, function(data){
 			alert("성공적으로 변경되었습니다.");
 			$('#time').attr("placeholder",data.shopInfo.shopTime);
 			$('#phone').attr("placeholder",data.shopInfo.shopPhone);
 			$('#addr').attr("placeholder",data.shopInfo.shopDetailAddr);
 			$('#info').attr("placeholder",data.shopInfo.shopInfo);
+			$('#intro').attr("placeholder",data.shopInfo.shopIntro);
 			
 			$('#time').val('');
 			$('#phone').val('');
 			$('#addr').val('');
 			$('#info').val('');
+			$('#intro').val('');
 			}, 
 		'json');
 
@@ -101,7 +105,7 @@ function setShop(data){
 	$('#phone').attr("placeholder",data.shopInfo.shopPhone);
 	$('#addr').attr("placeholder",data.shopInfo.shopDetailAddr);
 	$('#info').attr("placeholder",data.shopInfo.shopInfo);
-
+	$('#intro').attr("placeholder",data.shopInfo.shopIntro);
 
 	//메뉴 사진 바꾸기
 	for(var i = 0; i < data.shopMenu.length; i++){
