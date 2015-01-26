@@ -1,12 +1,3 @@
-$(function(){
-	//첫 시작시 리스트 로딩
-	$("#footer").load("/hopeHoff/web/common/footer.html");
-	
-	loadKeyword();
-	loadContainerList("none");
-	
-});
-
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
 var shopAddrText = "가게주소";
@@ -19,6 +10,19 @@ var uType = null;
 var currPageNo;
 var shopPhone = null;
 var rStatus ="예약신청";
+var listLength = 0;
+var listCount = 0;
+var detailData = null;
+
+$(function(){
+	//첫 시작시 리스트 로딩
+	$("#footer").load("/hopeHoff/web/common/footer.html");
+	
+	loadKeyword();
+	loadContainerList("none");
+	
+});
+
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -86,6 +90,18 @@ $(window).resize(function(){
 	
 	setSmallHeader();
 	setKeyword();
+	setListAlign();
+	
+	if($("#detailList").length > 0 ) {
+		var clickedList = null;
+		
+		for(var i = 0; i < $("#containerList").children().length; i++) {
+			if( $($("#containerList").children()[i]).attr("data-name") == $(".pTitle").text() ){ 
+				clickedList =  $("#containerList").children()[i];
+			}
+		}
+		setDetailList(clickedList);
+	}
 });
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
@@ -156,56 +172,10 @@ $(document).delegate(".list","mouseout",function(){
 
 var containerListength = $("#containerList").children().length;
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
-		businessNo =  $(this).closest(".list").attr("data-shop");
-		var whichNo = ( Math.floor(Narae.removePx($(this).closest(".list").attr("id").split("shop")[1]) / 4) + 1 ) * 4;
-		
-		var height = Narae.removePx( $( ".list" ).css("height") ) 
-					+ Narae.removePx( $( ".list" ).css("border-top") ) 
-					+ Narae.removePx( $( ".list" ).css("border-bottom") )
-					+ Narae.removePx( $( ".list" ).css("margin-top") );       //.list의 높이 + .list의 margin값
-		var marginTop  = Narae.removePx( $( ".list" ).css("margin-top") );
-		var shopInfoHeight = Narae.removePx( $( ".shopInfo" ).css("height") ) 
-							+ Narae.removePx( $( ".shopInfo" ).css("margin-top") ) 
-							+ Narae.removePx( $( ".shopInfo" ).css("margin-bottom") );
-		var smallHeaderHeight = Narae.removePx( $( "#smallHeader" ).css("height") );
-		var offset = $( $( "#containerList" ).children()[0] ).offset().top + height * (whichNo / 4) - marginTop - shopInfoHeight - smallHeaderHeight; 
-		var listLength = $( ".list" ).length; //.list의 개수
-
-		//이미 detailList가 있다면 삭제
-		$("#detailList").remove(); 
-		
-		//어느 위치 다음에 detailList 생길 것인지 결정
-		if($("#containerList").children().length < 4) { whichNo = listLength; }
-		if(whichNo > listLength) { whichNo = listLength; }
-		
-		//디테일 눌렀을 때 화살표 표시 생기는 것
-		if($("#containerList:has(.box-rotate-up)")){ $(".box-rotate-up").css("display","none");	} 
-		$("#" + $(this).closest(".list").attr("id") + " .box-rotate-up").css("display", "block");
-		
-		//스크롤 위치 이동
-        $( "html, body" ).animate( {scrollTop: offset}, 800);
-		
-		//클릭했을 때 상세정보(detail) 보이는부분
-		$($("#containerList").children()[whichNo - 1]).after(
-				$("<div>").attr("id", "detailList")
-						 .css("width", "100%")  
-						  .css("height", "470px")
-						  .css("background", "#333231")
-						  .css("margin-top", "15px")
-						  .css("display", "inline-block")
-						  .css("z-index", "5")
-		);
-		
-		$.getJSON(
-				'../../main/detail.do', {"businessNo": businessNo},
-				function(data){
-					require(['text!templates/detail-table.html'], function(html){
-				        var template = Handlebars.compile(html);
-				        $('#detailList').html( template(data) );
-				      });
-		});
+	businessNo =  $(this).closest(".list").attr("data-shop");
+	setDetailList(this);
+	
 });	
-
 
 
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
@@ -365,7 +335,7 @@ function loadContainerList(that){
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
-			        setListAlign( data.shops.length );
+			        setListAlign();
 			      });
 			});
 }
@@ -407,21 +377,77 @@ function setKeyword() {
 }
 
 function setListAlign( listLength ){
-	var list = $( "#containerList" ).children();
-	var containerWidth = Narae.removePx( $( "#container" ).css( "width" ) );
-	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
-	  							+ Narae.removePx( $(".list").css("margin-left") ) 
-	  							+ Narae.removePx( $(".list").css("margin-right") ) 
-	  							+ Narae.removePx( $(".list").css("border-right") )
-	  							+ Narae.removePx( $(".list").css("border-left") )
-	  							;
-	var marginLeft = ( containerWidth - containerListWidth * 4 ) / 2;
+	$( ".list" ).css("margin-left", "15px").css("margin-right", "15px");
 	
-	for(var i = 0; i < listLength; i++ ){
-		if(i % 4 == 0){
+	var windowWidth = window.innerWidth 
+						|| document.documentElement.clientWidth
+						|| document.body.clientWidth; 
+	var containerWidth = Narae.removePx( $( "#container" ).css( "width" ) );
+	
+	var containerListWidth =  Narae.removePx( $(".list").css("width") ) 
+								+ Narae.removePx( $(".list").css("margin-left") ) 
+								+ Narae.removePx( $(".list").css("margin-right") ) 
+								+ Narae.removePx( $(".list").css("border-right") )
+								+ Narae.removePx( $(".list").css("border-left") ) + 5;  //5 => div가 가지고 있는 공간 임의로 지정
+	var list = $( "#containerList .list" );
+	listCount = Math.floor( containerWidth / containerListWidth );  //가로 한줄에 몇개의 리스트가 출력되는지
+	var marginLeft = ( containerWidth - containerListWidth * listCount ) / 2;
+	
+	for(var i = 0; i < list.length; i++ ){
+		if(i % listCount == 0){
 			$( list[i] ).css("margin-left", marginLeft );
 		}
 	} 
+}
+
+function setDetailList( clickedList ){
+	var height = Narae.removePx( $( ".list" ).css("height") ) 
+					+ Narae.removePx( $( ".list" ).css("border-top") ) 
+					+ Narae.removePx( $( ".list" ).css("border-bottom") )
+					+ Narae.removePx( $( ".list" ).css("margin-top") );       //.list의 높이 + .list의 margin값
+	var whichNo = ( Math.floor( $( clickedList ).closest(".list").attr("id").split("shop")[1] / listCount) + 1 ) * listCount;
+	var marginTop  = Narae.removePx( $( ".list" ).css("margin-top") );
+	var shopInfoHeight = Narae.removePx( $( ".shopInfo" ).css("height") ) 
+					+ Narae.removePx( $( ".shopInfo" ).css("margin-top") ) 
+					+ Narae.removePx( $( ".shopInfo" ).css("margin-bottom") );
+	var smallHeaderHeight = Narae.removePx( $( "#smallHeader" ).css("height") );
+	var offset = $( $( "#containerList" ).children()[0] ).offset().top + height * (whichNo / listCount) - marginTop - shopInfoHeight - smallHeaderHeight; 
+
+
+	//이미 detailList가 있다면 삭제
+	$("#detailList").remove(); 
+	
+	//어느 위치 다음에 detailList 생길 것인지 결정
+	if($("#containerList").children().length < listCount) { whichNo = listLength; }
+	if(whichNo > listLength) { whichNo = listLength; }
+	
+	//디테일 눌렀을 때 화살표 표시 생기는 것
+	if($("#containerList:has(.box-rotate-up)")){ $(".box-rotate-up").css("display","none");	} 
+	$("#" + $(clickedList).closest(".list").attr("id") + " .box-rotate-up").css("display", "block");
+	
+	//스크롤 위치 이동
+	$( "html, body" ).animate( {scrollTop: offset}, 500);
+	
+	//클릭했을 때 상세정보(detail) 보이는부분
+	$($("#containerList").children()[whichNo - 1]).after(
+		$("<div>").attr("id", "detailList")
+				 .css("width", "100%")  
+				  .css("height", "470px")
+				  .css("background", "#333231")
+				  .css("margin-top", "15px")
+				  .css("margin-left", "0px")
+				  .css("display", "inline-block")
+				  .css("z-index", "5"));
+	
+	$.getJSON(
+		'../../main/detail.do', {"businessNo": businessNo},
+		function(data){
+			detailData = data;
+			require(['text!templates/detail-table.html'], function(html){
+		        var template = Handlebars.compile(html);
+		        $('#detailList').html( template(data) );
+		      });
+	});
 }
 
 function setPageNo(currPageNo, maxPageNo) {

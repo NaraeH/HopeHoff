@@ -19,9 +19,7 @@ var uType = null;
 var currPageNo;
 var shopPhone = null;
 /*---------------*/
-var listLength = 0;
-var listCount = 0;
-var detailData = null;
+
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -181,9 +179,9 @@ $(document).delegate(".list","mouseout",function(){
 });
 
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
-		businessNo =  $(this).closest(".list").attr("data-shop");
+	businessNo =  $(this).closest(".list").attr("data-shop");
 
-		setDetailList(this);
+	setDetailList(this);
 });	
 
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
@@ -456,7 +454,6 @@ function setDetailList( clickedList ){
 		        $('#detailList').html( template(data) );
 		      });
 	});
-	
 }
 
 function setPageNo(currPageNo, maxPageNo) {
