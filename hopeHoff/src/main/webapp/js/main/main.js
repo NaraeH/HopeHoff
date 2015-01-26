@@ -18,6 +18,7 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
+var rStatus ="예약신청";
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -254,7 +255,8 @@ $(document).delegate(".btnBookShop","click",function(){
 		$.post('../../json/reservation/addReserv.do'
 				,{businessNo: businessNo,
 				  reservationContent : $( bookContent ).val(),
-				  userId  : uId}
+				  userId  : uId,
+				  reservationStatus: rStatus}
 				,function(data){
 					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
 				}, 'json');

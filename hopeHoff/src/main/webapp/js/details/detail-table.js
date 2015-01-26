@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 /*--------------------------Event Listener-----------------------------------*/
 $(document).delegate('.reservBtn',"click",function(){
+	console.log("aaaa");
 	
 	if(isLogin){
 		if( $( reservData ).val() != '' ){ //내용이 있을 경우
@@ -27,7 +28,8 @@ $(document).delegate('.reservBtn',"click",function(){
 			$.post('../../json/reservation/addReserv.do'
 					,{businessNo: businessNo,
 					  reservationContent : $( reservData ).val(),
-					  userId  : uId}
+					  userId  : uId,
+					  reservationStatus:rStatus}
 					,function(data){
 						getConfirmation();
 					}, 'json');
