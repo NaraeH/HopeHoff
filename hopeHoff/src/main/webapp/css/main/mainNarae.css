@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
  
 /* 큰틀 */
+
 @media all and (min-width:769px){
 	body {
 		margin: 0px;
@@ -26,7 +27,7 @@
 
 	#mainBody {
 		width:100%;
-		min-width: 1300px;
+		/* min-width: 1300px; */
 		margin: 0px;
 		font-family: 'Jeju Gothic', serif;
 		position:absolute;
@@ -636,11 +637,11 @@
 		display: none;
 	} 
 	
-	#container, #containerKeyword, #containerList {
+/* 	#container, #containerKeyword, #containerList {
 		width:100%;
 		min-width:0px;
 		border:0px;
-	}
+	} */
 	
 	#adv {
 		display:block;
@@ -782,12 +783,12 @@
 	}
 
 	
-	.list {
+/* 	.list {
 		height: 160px;
 		margin-top:10px;
 		
-		/* border: 1px solid red;  */
-	}
+		border: 1px solid red; 
+	} */
 	
 	.list .listKeywordContainer, .list hr, .pictureBackground{
 		display:none;
@@ -795,10 +796,6 @@
 
 	.list .listTitle {
 		text-align: center;
-	}
-	
-	.list img {	
-		height: 160px;
 	}
 	
 	.mobileKeyword {
