@@ -31,7 +31,7 @@ public class ReservationControl {
     HashMap<String,Object> resultMap = new HashMap<>();
     resultMap.put("status", "success");
     
-    System.out.println("Delete resultMap=======>"+resultMap);
+    //System.out.println("Delete resultMap=======>"+resultMap);
     
     return resultMap;
   }
@@ -39,7 +39,8 @@ public class ReservationControl {
   @RequestMapping("/list")
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
-     @RequestParam(defaultValue="3") int pageSize ,String uId) throws Exception {
+     @RequestParam(defaultValue="3") int pageSize ,String uId, String type) throws Exception {
+	  
 	  
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
@@ -47,22 +48,27 @@ public class ReservationControl {
 
     int maxPageNo = reservationService.getMaxPageNo(pageSize,uId);
     
+    System.out.println("pre"+pageNo);
     if (pageNo <= 0) pageNo = 1;
+    System.out.println("next"+pageNo);
+    
     if (pageNo > maxPageNo) pageNo = maxPageNo;
     System.out.println("maxPageNo"+maxPageNo);
-    System.out.println("pageNo"+pageNo);
+    //System.out.println("pageNo"+pageNo);
+    
+  
     
     HashMap<String,Object> resultMap = new HashMap<>();
+    
+    
     resultMap.put("status", "success");
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
-    resultMap.put("uId", uId);
     resultMap.put("startIndex", ((pageNo - 1) * pageSize));
     resultMap.put("reservations", 
-        reservationService.getList(pageNo, pageSize,uId));
+        reservationService.getList(pageNo, pageSize,uId, type));
     
-    System.out.println("LIST resultMap=====>"+resultMap);
-    
+   // System.out.println("LIST resultMap=====>"+resultMap);
     
     return resultMap;
   }
@@ -76,7 +82,7 @@ public class ReservationControl {
     resultMap.put("status", "success");
     resultMap.put("reservation", reservation);
     
-    System.out.println("View resultMap=====>"+resultMap);
+   // System.out.println("View resultMap=====>"+resultMap);
    return resultMap;
   }
   

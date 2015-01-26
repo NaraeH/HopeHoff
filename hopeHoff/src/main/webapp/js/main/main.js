@@ -18,6 +18,7 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
+var rStatus ="예약신청";
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -102,20 +103,9 @@ $(".click-myBook").click(function(){
 		
 	$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 	
-	loadReservationList(1,uId);
-	/*tablerowClick()*/
-		/*$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
-			    function(data){
-				yyyyMMddList(data);
-				//console.log(data);
-			      setPageNo(data.currPageNo, data.maxPageNo);
-			    //  var reservations = data.reservations;
-			      
-			      require(['text!templates/booklist-table.html'],function(html){
-			    	  var template = Handlebars.compile(html);
-			    	  $('#myBook').html(template(data));
-			    	  });
-			      });*/
+	console.log(uType);
+	loadReservationList(1,uId,uType);
+	
 });
 
 $(".click-myShop").click(function(){
@@ -254,7 +244,8 @@ $(document).delegate(".btnBookShop","click",function(){
 		$.post('../../json/reservation/addReserv.do'
 				,{businessNo: businessNo,
 				  reservationContent : $( bookContent ).val(),
-				  userId  : uId}
+				  userId  : uId,
+				  reservationStatus: rStatus}
 				,function(data){
 					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
 				}, 'json');
@@ -521,9 +512,15 @@ function yyyyMMdd(date) {
 	}
 }
 
-function loadReservationList(pageNo,uId) {
+function loadReservationList(pageNo,uId,uType) {
 	if (pageNo <= 0) pageNo = currPageNo;
-		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
+
+	
+		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, 
+				{
+				"uId":uId,
+				"type":uType
+				},
 			    function(data){
 				yyyyMMddList(data);
 				//console.log(data.currPageNo);
@@ -537,9 +534,8 @@ function loadReservationList(pageNo,uId) {
 			    	  $('#myBook').html(template(data));
 			    	  });
 			      });
-	}
-
-
+		
+}
 /*function tablerowClick(){
 	$(document).delegate(".table-tr","click",function(event){
 	    $.post('../../json/reservation/view.do'

@@ -16,6 +16,7 @@
 	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
 	    <id column="RNO" property="reservationNo"/>
 	    <result column="SNAME" property="shopName"/>
+	    <result column="UNAME" property="userName"/>
 	    <result column="RDATE" property="reservationDate"/>
 	    <result column="RSTATUS" property="reservationStatus"/>
     </resultMap>
@@ -23,12 +24,21 @@
     <select id="selectList" parameterType="map" 
         resultMap="reservationListItemMap">
 		SELECT 
-			T1.RNO,
-			T2.SNAME,
-			T1.RDATE
-			FROM RESERVATION T1,SHOP T2, USER T3
-			WHERE T1.BBNO = T2.BBNO AND T1.UID= T3.UID
-			AND T3.UID=#{uId}
+			r.RNO,
+			s.SNAME,
+			u.UNAME,
+			r.RDATE,
+			r.RSTATUS
+			FROM RESERVATION r,SHOP s, USER u
+			WHERE r.BBNO = s.BBNO  
+			<choose>
+				<when test="uId !=null">
+					AND	u.UID=#{uId}
+				</when>
+				<when test="bussinessNo !=null">
+					AND s.BBNO=#{bussinessNo}
+				</when>
+			</choose>
 		ORDER BY RDATE DESC
   <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
@@ -41,13 +51,20 @@
   
 	   <select id="totalSize" parameterType="String" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
-	   	 WHERE UID=#{value}
+	   		<choose>
+				<when test="uId !=null">
+					WHERE UID=#{uId}
+				</when>
+				<when test="bussinessNo !=null">
+					WHERE BBNO=#{bussinessNo}
+				</when>
+			</choose>
 	  </select>
 	  
 	  <insert id="insert" parameterType="Reservation"
 	   	  useGeneratedKeys="true" keyColumn="RNO" keyProperty="reservationNo">
-	   	  INSERT INTO RESERVATION(BBNO, RDATE, RCONTENT, UID) 
-	   	  VALUES(#{businessNo}, #{reservationDate}, #{reservationContent}, #{userId})
+	   	  INSERT INTO RESERVATION(BBNO, RDATE, RCONTENT, UID, RSTATUS) 
+	   	  VALUES(#{businessNo}, #{reservationDate}, #{reservationContent}, #{userId} ,#{reservationStatus})
 	  </insert> 
   
    	  <delete id="delete" parameterType="int">
