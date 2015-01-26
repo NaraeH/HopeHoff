@@ -24,15 +24,36 @@ public class ReservationService {
   @Autowired
   ReservationDao reservationDao;
   @Autowired UserDao userDao;
+  @Autowired myMarketService 		myMarketService;
   
   
-  public List<?> getList(int pageNo, int pageSize,String uId) {
+  public List<?> getList(int pageNo, int pageSize,String uId,String type) {
+	  HashMap<String,Object> paramMap = new HashMap<>();
 	
-    HashMap<String,Object> paramMap = new HashMap<>();
+	if(pageNo ==0){
+		pageNo=1;
+	}
+	System.out.println("pageNo=======>"+pageNo);  
+
+	System.out.println("pageSize=======>"+pageSize);  
+	System.out.println("UID------->"+uId);
+	
+	System.out.println("type------->"+type);
+	if(type.equals("user")){
+		paramMap.put("uId", uId);
+		 System.out.println("paramMap1=====>"+paramMap);
+		    
+		
+	}else if(type.equals("boss")) {
+		paramMap.put("bussinessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		 System.out.println("paramMap2=====>"+paramMap);
+	}
     paramMap.put("startIndex", ((pageNo - 1) * pageSize));
     paramMap.put("pageSize", pageSize);
-    paramMap.put("uId", uId);
+   
     
+    System.out.println("paramMap3=====>"+paramMap);
+   
     return reservationDao.selectList(paramMap);
   }
   
@@ -40,6 +61,9 @@ public class ReservationService {
     int totalSize = reservationDao.totalSize(uId);
     int maxPageNo = totalSize / pageSize;
     if ((totalSize % pageSize) > 0) maxPageNo++;
+    
+    System.out.println("pageSize======>"+pageSize);
+    System.out.println("totalSize=====>"+totalSize);
     
     return maxPageNo;
   }

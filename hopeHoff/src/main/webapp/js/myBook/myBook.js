@@ -3,12 +3,15 @@ var maxPageNo;
 var reservationNo;
 
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
-	$(document).delegate(".table-tr","click",function(event){
+	if(uType="user"){
+	$(document).delegate(".type-user","click",function(event){
 		
 		 event.stopImmediatePropagation();
 		//console.log(this);
-		var num = $($(this)[0]).attr("id").split("table-tr")[1]-0;
-		 reservationNo = $("#table-tr"+num+" td:first").html()
+		 
+		 
+		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
+		 reservationNo = $("#tableUser"+num+" td:first").html()
 		
 	  $.post('../../json/reservation/view.do'
 		        , {
@@ -22,12 +25,10 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	        			$('<tr>').addClass('table-content').attr("id","tableContent"+num)
 	        					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
 	        				 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
-	        					.insertAfter('#'+'table-tr'+num)
-	        					console.log("aaaa");
+	        					.insertAfter('#'+'tableUser'+num)
 	        			}
 	        			else 
 	        			{
-	        				console.log("bbbbb");
 	        				$('#'+'tableContent'+num).remove(); 
 	        			}
 
@@ -38,6 +39,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		
 		
 	});
+	}
 });
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
@@ -82,14 +84,14 @@ $(document).delegate(".btn-delete","click",function(event){
 	$('#prevBtn').click(function(event){
 		if (currPageNo > 1) {
 			$(".table-tr").remove();
-			loadReservationList(currPageNo - 1,uId);
+			loadReservationList(currPageNo - 1,uId,uType);
 		}
 	});
 
 	$('#nextBtn').click(function(event){
 		if (currPageNo < maxPageNo) {
 			$(".table-tr").remove();
-			loadReservationList(currPageNo + 1,uId);
+			loadReservationList(currPageNo + 1,uId,uType);
 		}
 	});
 	
@@ -101,7 +103,7 @@ $(document).delegate(".btn-delete","click",function(event){
 		  window.maxPageNo = maxPageNo;
 		  
 		  $('#pageNo').html(currPageNo);
-		  //console.log(currPageNo);
+		  console.log(currPageNo);
 		  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
 		  else $('#prevBtn').css('display', '');
 		  
@@ -133,10 +135,12 @@ $(document).delegate(".btn-delete","click",function(event){
 		    });
 		}*/
 	
-	function loadReservationList(pageNo,uId) {
+	function loadReservationList(pageNo,uId,uType) {
 
 		if (pageNo <= 0) pageNo = currPageNo;
-			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
+			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {
+					"uId":uId,
+					"type":uType},
 				    function(data){
 					yyyyMMddList(data);
 					//console.log(data.startIndex);

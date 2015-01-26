@@ -16,6 +16,7 @@
 	    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
 	    <id column="RNO" property="reservationNo"/>
 	    <result column="SNAME" property="shopName"/>
+	    <result column="UNAME" property="userName"/>
 	    <result column="RDATE" property="reservationDate"/>
 	    <result column="RSTATUS" property="reservationStatus"/>
     </resultMap>
@@ -25,10 +26,19 @@
 		SELECT 
 			r.RNO,
 			s.SNAME,
+			u.UNAME,
 			r.RDATE,
 			r.RSTATUS
 			FROM RESERVATION r,SHOP s, USER u
-			WHERE r.BBNO = s.BBNO AND u.UID=#{uId}
+			WHERE r.BBNO = s.BBNO  
+			<choose>
+				<when test="uId !=null">
+					AND	u.UID=#{uId}
+				</when>
+				<when test="bussinessNo !=null">
+					AND s.BBNO=#{bussinessNo}
+				</when>
+			</choose>
 		ORDER BY RDATE DESC
   <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
@@ -41,7 +51,14 @@
   
 	   <select id="totalSize" parameterType="String" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
-	   	 WHERE UID=#{value}
+	   		<choose>
+				<when test="uId !=null">
+					WHERE UID=#{uId}
+				</when>
+				<when test="bussinessNo !=null">
+					WHERE BBNO=#{bussinessNo}
+				</when>
+			</choose>
 	  </select>
 	  
 	  <insert id="insert" parameterType="Reservation"
