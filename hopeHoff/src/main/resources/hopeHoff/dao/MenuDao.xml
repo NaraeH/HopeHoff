@@ -20,6 +20,10 @@
  		 WHERE BBNO = #{businessNo}
 	</select>
 	
+	<select id="showMenu" parameterType="Integer" resultMap="menuMap">
+ 		 SELECT MID, BBNO, MNAME, MPRICE FROM MENU WHERE MID = #{menuId}
+	</select>
+	
 	<update id="updateMenu" parameterType="Map">
 		UPDATE MENU
 		SET MNAME= #{menuName}, MPRICE=#{menuPrice} 

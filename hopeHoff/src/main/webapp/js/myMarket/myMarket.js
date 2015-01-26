@@ -104,7 +104,13 @@ $(document).delegate(".changeMenuBtn","click", function(){
 			 "menuPrice": menuPrice
 			},
 			function(data){
-				 console.log("되었다");
+				alert("성공적으로 변경되었습니다.");
+				$('.menuName').attr("placeholder",data.menuUpdate.menuName);
+				$('.menuPrice').attr("placeholder",data.menuUpdate.menuPrice);
+				
+				$('.menuName').val('');
+				$('.menuPrice').val('');
+		
 			}, 'json');
 	
 	
