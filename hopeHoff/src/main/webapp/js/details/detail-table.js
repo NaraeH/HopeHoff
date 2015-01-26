@@ -16,6 +16,7 @@ $(document).ready(function() {
 	
 	$('#pubPhotoListWrap').naraeWidthSildeAuto();
 	$('#menuListWrap').naraeWidthSilde();	
+	
 });
 
 /*--------------------------Event Listener-----------------------------------*/
