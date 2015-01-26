@@ -5,6 +5,7 @@ $(function(){
 	loadKeyword();
 	loadContainerList("none");
 	
+	
 });
 
 var bodyWidth = Narae.removePx($("body").css("width"));
@@ -452,6 +453,7 @@ function setDetailList( clickedList ){
 			require(['text!templates/detail-table.html'], function(html){
 		        var template = Handlebars.compile(html);
 		        $('#detailList').html( template(data) );
+		        
 		      });
 	});
 }
