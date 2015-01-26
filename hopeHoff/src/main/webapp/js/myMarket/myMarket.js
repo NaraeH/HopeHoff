@@ -88,6 +88,29 @@ $(document).delegate("#changeBtn","click", function(){
 
 });
 
+
+//메뉴 수정하기 버튼 눌렀을 때
+$(document).delegate(".changeMenuBtn","click", function(){
+	var myOverlayId = $(this).closest(".myOverlay").attr("data-menuId");
+	var menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).val();
+	var menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).val();
+	
+	if( menuName == '' ){ menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).attr("placeholder"); }
+	if( menuPrice == '' ){ menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).attr("placeholder"); }
+	
+	$.post('/hopeHoff/json/myMarketControl/menuUpdate.do',
+			{"menuId": myOverlayId,
+			 "menuName": menuName,
+			 "menuPrice": menuPrice
+			},
+			function(data){
+				 console.log("되었다");
+			}, 'json');
+	
+	
+
+});
+
 /*-----------------------------------함수들--------------------------------------*/
 function setShop(data){
 	

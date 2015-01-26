@@ -68,11 +68,11 @@
 									{{#each shopMenu}}
 									<li>
 									   <img id="menu{{@index}}" class="myPhotoList" src="../../img/shopPhoto/menu/{{menuPhoto}}">
-									   <div class="myOverlay">
+									   <div class="myOverlay" data-menuId="{{menuId}}">
 									   		<div class="photoInfoWrap">
-												<input id="menuName{{@index}}" type="text" placeholder="{{menuName}}">
-							             		<input id="menuPrice{{@index}}" type="text" placeholder="{{menuPrice}}">
-												<button>수정</button>
+												<input class="menuName" id="menuName{{@index}}" type="text" placeholder="{{menuName}}">
+							             		<input class="menuPrice" id="menuPrice{{@index}}" type="text" placeholder="{{menuPrice}}">
+												<button class="changeMenuBtn">수정</button>
 											</div>
 									   </div>
 									</li>

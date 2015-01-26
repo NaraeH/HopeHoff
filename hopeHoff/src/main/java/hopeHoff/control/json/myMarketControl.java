@@ -54,6 +54,15 @@ public class myMarketControl {
 		return resultMap;
 	}
 	
+	@RequestMapping(value="/menuUpdate", method=RequestMethod.POST)
+	public Object menuUpdate(int menuId, String menuName, int menuPrice){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		myMarketService.menuUpdate(menuId, menuName, menuPrice);
+		
+		return resultMap;
+	}
+	
 	@RequestMapping(value="/marketList", method=RequestMethod.POST)
 	public Object marketList(String userId){
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
