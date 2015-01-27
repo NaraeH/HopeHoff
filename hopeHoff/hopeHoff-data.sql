@@ -711,3 +711,33 @@ INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES(28, '크림치즈 통닭 
 
 ----------------------------update 주소수정------------
 UPDATE SHOP SET SDETAILADDR ='서울특별시 서초구 서초4동 1309-8 서울빌딩 2층' WHERE BBNO='124-86-06376';
+
+-------(2015.01.27 사진커밋하면서 이름도 바꾸는 쿼뤼~ by.연흥)--------
+update BOARD set BPHOTO="1.jpg" where RNO=1;
+update BOARD set BPHOTO="2.jpg" where RNO=2;
+update BOARD set BPHOTO="3.jpg" where RNO=3;
+update BOARD set BPHOTO="4.jpg" where RNO=4;
+update BOARD set BPHOTO="5.jpg" where RNO=5;
+update BOARD set BPHOTO="6.jpg" where RNO=6;
+update BOARD set BPHOTO="7.jpg" where RNO=7;
+update BOARD set BPHOTO="8.jpg" where RNO=8;
+update BOARD set BPHOTO="9.jpg" where RNO=9;
+update BOARD set BPHOTO="10.jpg" where RNO=10;
+update BOARD set BPHOTO="11.jpg" where RNO=11;
+update BOARD set BPHOTO="12.jpg" where RNO=12;
+update BOARD set BPHOTO="13.jpg" where RNO=13;
+update BOARD set BPHOTO="14.jpg" where RNO=14;
+update BOARD set BPHOTO="15.jpg" where RNO=15;
+update BOARD set BPHOTO="16.jpg" where RNO=16;
+update BOARD set BPHOTO="17.jpg" where RNO=17;
+update BOARD set BPHOTO="18.jpg" where RNO=18;
+update BOARD set BPHOTO="19.jpg" where RNO=19;
+update BOARD set BPHOTO="20.jpg" where RNO=20;
+update BOARD set BPHOTO="21.jpg" where RNO=21;
+update BOARD set BPHOTO="22.jpg" where RNO=22;
+update BOARD set BPHOTO="23.jpg" where RNO=23;
+update BOARD set BPHOTO="24.jpg" where RNO=24;
+update BOARD set BPHOTO="25.jpg" where RNO=25;
+update BOARD set BPHOTO="26.jpg" where RNO=26;
+update BOARD set BPHOTO="27.jpg" where RNO=27;
+update BOARD set BPHOTO="28.jpg" where RNO=28;
