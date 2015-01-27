@@ -85,37 +85,33 @@ $(document).delegate("#changeBtn","click", function(){
 			$('#intro').val('');
 			}, 
 		'json');
-
 });
 
 
 //메뉴 수정하기 버튼 눌렀을 때
 $(document).delegate(".changeMenuBtn","click", function(){
 	var myOverlayId = $(this).closest(".myOverlay").attr("data-menuId");
-	var menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).val();
-	var menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).val();
+	var menuName = $(this).closest(".photoInfoWrap").children()[0];
+	var menuPrice = $(this).closest(".photoInfoWrap").children()[1];
+	var menuNameVal = $( menuName ).val();
+	var menuPriceVal = $( menuPrice ).val();
 	
-	if( menuName == '' ){ menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).attr("placeholder"); }
-	if( menuPrice == '' ){ menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).attr("placeholder"); }
+	if( menuNameVal == '' ){ menuNameVal = $( menuName ).attr("placeholder"); }
+	if( menuPriceVal == '' ){ menuPriceVal = $( menuPrice ).attr("placeholder"); }
 	
-	console.log( this );
-	console.log("menuId=> " + myOverlayId);
 	$.post('/hopeHoff/json/myMarketControl/menuUpdate.do',
 			{"menuId": myOverlayId,
-			 "menuName": menuName,
-			 "menuPrice": menuPrice
+			 "menuName": menuNameVal,
+			 "menuPrice": menuPriceVal
 			},
 			function(data){
-				var i = (myOverlayId%4)-1;//0,1,2,3
-				
 				alert("성공적으로 변경되었습니다.");
-		       $('#menuName'+i).attr("placeholder",data.menuUpdate.menuName);
-				$('#menuPrice'+i).attr("placeholder",data.menuUpdate.menuPrice);
-					
-				$('#menuName'+i).val('');
-				$('#menuPrice'+i).val('');
-	
+
+				$( menuName ).attr("placeholder",data.menuUpdate.menuName);
+				$( menuPrice ).attr("placeholder",data.menuUpdate.menuPrice);
 				
+				$( menuName ).val("");
+				$( menuPrice ).val("");
 			}, 'json');
 	
 	
@@ -124,6 +120,7 @@ $(document).delegate(".changeMenuBtn","click", function(){
 
 /*-----------------------------------함수들--------------------------------------*/
 function setShop(data){
+	
 	//사진 이동 되었던 것 리셋하기
 	$( "#myPubPhotoListWrap ul" ).css("margin-left", "0px");
 	$( "#myMenuListWrap ul" ).css("margin-left", "0px");
@@ -145,7 +142,7 @@ function setShop(data){
 		$( "#menu" +i ).attr("src", "../../img/shopPhoto/menu/" + data.shopMenu[i].menuPhoto );
 		$( "#menuName" +i ).attr("placeholder", data.shopMenu[i].menuName );
 		$( "#menuPrice" +i ).attr("placeholder", data.shopMenu[i].menuPrice );
-		$( $('#menuSlide').children()[i] ).attr("data-menuId", data.shopMenu[i].menuId);
+		$( $( "#menuSlide .myOverlay" )[i] ).attr("data-menuId", data.shopMenu[i].menuId);
 	}
 	
 	loadComment();
