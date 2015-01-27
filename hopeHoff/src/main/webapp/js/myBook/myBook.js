@@ -4,7 +4,7 @@ var reservationNo;
 
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 
-console.log(selectedShop);
+
 $(function(){
 	var test = $(".data-change");
 	
@@ -132,27 +132,26 @@ $(document).delegate(".btn-delete","click",function(event){
 	
 	
 	$('#prevBtn').click(function(event){
-		console.log(currPageNo);
-			if (currPageNo > 1) {
-				loadReservationList(currPageNo - 1,uId,uType);
-			}
+		loadReservationList(currPageNo - 1,uId,uType);
 	});
 
 	$('#nextBtn').click(function(event){
-		console.log(currPageNo);
-			if (currPageNo > 1) {
-				loadReservationList(currPageNo + 1,uId,uType);
-			}
+		loadReservationList(currPageNo + 1,uId,uType);
 	});
 	
+	$("select").change(function () {
+		loadMarket();
+	});
 	
 	function setPageNo(currPageNo, maxPageNo) {
+		console.loga("data.currPageNo",currPageNo);
 		  window.currPageNo = currPageNo;
 		  window.maxPageNo = maxPageNo;
 		  
 		  $('#pageNo').html(currPageNo);
-		  console.log("currPageNo",currPageNo);
-		  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
+		  if (currPageNo == 1){
+			  $('#prevBtn').css('display', 'none');
+		  } 
 		  else $('#prevBtn').css('display', '');
 		  
 		  if (currPageNo >= maxPageNo) $('#nextBtn').css('display', 'none');
@@ -175,6 +174,26 @@ $(document).delegate(".btn-delete","click",function(event){
 				    	  $('#myBook').html(template(data));
 				    	  });
 				      });
+	}
+	
+	function loadMarket() {
+			selectedShop = $("#selectForm option:selected").attr("data-businessNo");
+			
+			
+			console.log("---------");
+			console.log(pageNo);
+			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo + "&businessNo="+selectedShop,
+			    function(data){
+				
+				yyyyMMddList(data);
+			      setPageNo(data.currPageNo, data.maxPageNo);
+			      $(".type-user").remove();
+			      
+			      require(['text!templates/booklist-table.html'],function(html){
+			    	  var template = Handlebars.compile(html);
+			    	  $('#myBook').html(template(data));
+			    	  });
+			      });
 	}
 
 
