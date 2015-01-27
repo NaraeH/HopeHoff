@@ -78,7 +78,7 @@
 		width: 98%;
 		height: 50%;
 		margin: 1%;
-		display: inline-block;
+		display: inline-block table;
 		font-size: small;
 		color: black;
 		/* border: 1px solid #FFCD28; */
@@ -87,8 +87,10 @@
 		resize : none;
 	}
 	
-	#myHoffInfo>div {
-		display:inline-block;
+	#myHoffInfo div {
+		display:table-cell inline-block;
+		text-align:center;
+		vertical-align:middle;
 		margin: 0px;
 	}
 	#myHoffInfo>div:first-child {
@@ -101,11 +103,12 @@
 
 	.myInputBox {
 		width: 80%;
-	
+		margin:3px;
+		display: inline-block;
 	}
     #changeBtn {
-    	margin-top: 10px;
-    	margin-left: 257px;
+    	margin-top: 6px;
+    	margin-left: 262px;
     	width:100px;
     	
     }

@@ -42,10 +42,10 @@
 			<div id="myRightContainer">
 				<div id="myHoffInfo">
 					<div id=shopName></div>
-					<div>대 푯 말 : </div>&nbsp;<input type="text" class="myInputBox" id="intro" placeholder="{{shopInfo.shopIntro}}"><br><br>
-					<div>영업시간 : </div>&nbsp;<input type="text" class="myInputBox" id="time"  placeholder="{{shopInfo.shopTime}}"><br><br>
-					<div>전화번호 : </div>&nbsp;<input type="text" class="myInputBox" id="phone" placeholder="{{shopInfo.shopPhone}}"><br><br>
-					<div>가게주소 : </div>&nbsp;<textarea class="myInputBox" id="addr"  placeholder="{{shopInfo.shopDetailAddr}}"></textarea><br><br>
+					<div>대 표 말 : </div>&nbsp;<input type="text" class="myInputBox" id="intro" placeholder="{{shopInfo.shopIntro}}"><br>
+					<div>영업시간 : </div>&nbsp;<input type="text" class="myInputBox" id="time"  placeholder="{{shopInfo.shopTime}}"><br>
+					<div>전화번호 : </div>&nbsp;<input type="text" class="myInputBox" id="phone" placeholder="{{shopInfo.shopPhone}}"><br>
+					<div>가게주소 : </div>&nbsp;<textarea class="myInputBox" id="addr"  placeholder="{{shopInfo.shopDetailAddr}}"></textarea><br>
 					<div>가게소개 : </div>&nbsp;<textarea class="myInputBox" id="info"  placeholder="{{shopInfo.shopInfo}}"></textarea>
 					<button id="changeBtn" type="button">수정하기</button>
 					
@@ -63,7 +63,7 @@
 									<div><span id="myMenuToRight" class="box-rotate-right"></span></div>
 								</div>
 
-								<ul>
+								<ul id="menuSlide">
 									{{#each shopMenu}}
 									<li>
 									   <img id="menu{{@index}}" class="myPhotoList" src="../../img/shopPhoto/menu/{{menuPhoto}}">

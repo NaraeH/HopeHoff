@@ -98,19 +98,24 @@ $(document).delegate(".changeMenuBtn","click", function(){
 	if( menuName == '' ){ menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).attr("placeholder"); }
 	if( menuPrice == '' ){ menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).attr("placeholder"); }
 	
+	console.log( this );
+	console.log("menuId=> " + myOverlayId);
 	$.post('/hopeHoff/json/myMarketControl/menuUpdate.do',
 			{"menuId": myOverlayId,
 			 "menuName": menuName,
 			 "menuPrice": menuPrice
 			},
 			function(data){
-				alert("성공적으로 변경되었습니다.");
-				$('.menuName').attr("placeholder",data.menuUpdate.menuName);
-				$('.menuPrice').attr("placeholder",data.menuUpdate.menuPrice);
+				var i = (myOverlayId%4)-1;//0,1,2,3
 				
-				$('.menuName').val('');
-				$('.menuPrice').val('');
-		
+				alert("성공적으로 변경되었습니다.");
+		       $('#menuName'+i).attr("placeholder",data.menuUpdate.menuName);
+				$('#menuPrice'+i).attr("placeholder",data.menuUpdate.menuPrice);
+					
+				$('#menuName'+i).val('');
+				$('#menuPrice'+i).val('');
+	
+				
 			}, 'json');
 	
 	
@@ -119,7 +124,6 @@ $(document).delegate(".changeMenuBtn","click", function(){
 
 /*-----------------------------------함수들--------------------------------------*/
 function setShop(data){
-	
 	//사진 이동 되었던 것 리셋하기
 	$( "#myPubPhotoListWrap ul" ).css("margin-left", "0px");
 	$( "#myMenuListWrap ul" ).css("margin-left", "0px");
@@ -136,11 +140,12 @@ function setShop(data){
 	$('#info').attr("placeholder",data.shopInfo.shopInfo);
 	$('#intro').attr("placeholder",data.shopInfo.shopIntro);
 
-	//메뉴 사진 바꾸기
+	//메뉴 사진 및 아이디 바꾸기
 	for(var i = 0; i < data.shopMenu.length; i++){
 		$( "#menu" +i ).attr("src", "../../img/shopPhoto/menu/" + data.shopMenu[i].menuPhoto );
 		$( "#menuName" +i ).attr("placeholder", data.shopMenu[i].menuName );
 		$( "#menuPrice" +i ).attr("placeholder", data.shopMenu[i].menuPrice );
+		$( $('#menuSlide').children()[i] ).attr("data-menuId", data.shopMenu[i].menuId);
 	}
 	
 	loadComment();
