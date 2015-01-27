@@ -13,8 +13,6 @@ var rStatus ="예약 신청";
 var isUser="true";
 var rStatus ="예약신청";
 var listLength = 0;
-var listCount = 0;
-var detailData = null;
 
 $(function(){
 	//첫 시작시 리스트 로딩
@@ -93,17 +91,6 @@ $(window).resize(function(){
 	setSmallHeader();
 	setKeyword();
 	setListAlign();
-	
-	if($("#detailList").length > 0 ) {
-		var clickedList = null;
-		
-		for(var i = 0; i < $("#containerList").children().length; i++) {
-			if( $($("#containerList").children()[i]).attr("data-name") == $(".pTitle").text() ){ 
-				clickedList =  $("#containerList").children()[i];
-			}
-		}
-		setDetailList(clickedList);
-	}
 });
 
 //스크롤 내릴 때 일정 범위 이상내려가면 smallhader를 보이기
@@ -392,11 +379,10 @@ function setListAlign( listLength ){
 								+ Narae.removePx( $(".list").css("border-right") )
 								+ Narae.removePx( $(".list").css("border-left") ) + 5;  //5 => div가 가지고 있는 공간 임의로 지정
 	var list = $( "#containerList .list" );
-	listCount = Math.floor( containerWidth / containerListWidth );  //가로 한줄에 몇개의 리스트가 출력되는지
-	var marginLeft = ( containerWidth - containerListWidth * listCount ) / 2;
+	var marginLeft = ( containerWidth - containerListWidth * 4 ) / 2;
 	
 	for(var i = 0; i < list.length; i++ ){
-		if(i % listCount == 0){
+		if(i % 4 == 0){
 			$( list[i] ).css("margin-left", marginLeft );
 		}
 	} 
@@ -407,20 +393,20 @@ function setDetailList( clickedList ){
 					+ Narae.removePx( $( ".list" ).css("border-top") ) 
 					+ Narae.removePx( $( ".list" ).css("border-bottom") )
 					+ Narae.removePx( $( ".list" ).css("margin-top") );       //.list의 높이 + .list의 margin값
-	var whichNo = ( Math.floor( $( clickedList ).closest(".list").attr("id").split("shop")[1] / listCount) + 1 ) * listCount;
+	var whichNo = ( Math.floor( $( clickedList ).closest(".list").attr("id").split("shop")[1] / 4) + 1 ) * 4;
 	var marginTop  = Narae.removePx( $( ".list" ).css("margin-top") );
 	var shopInfoHeight = Narae.removePx( $( ".shopInfo" ).css("height") ) 
 					+ Narae.removePx( $( ".shopInfo" ).css("margin-top") ) 
 					+ Narae.removePx( $( ".shopInfo" ).css("margin-bottom") );
 	var smallHeaderHeight = Narae.removePx( $( "#smallHeader" ).css("height") );
-	var offset = $( $( "#containerList" ).children()[0] ).offset().top + height * (whichNo / listCount) - marginTop - shopInfoHeight - smallHeaderHeight; 
-
+	var offset = $( $( "#containerList" ).children()[0] ).offset().top + height * (whichNo / 4) - marginTop - shopInfoHeight - smallHeaderHeight; 
+	var listLength = $( ".list" ).length;
 
 	//이미 detailList가 있다면 삭제
 	$("#detailList").remove(); 
 	
 	//어느 위치 다음에 detailList 생길 것인지 결정
-	if($("#containerList").children().length < listCount) { whichNo = listLength; }
+	if($("#containerList").children().length < 4) { whichNo = listLength; }
 	if(whichNo > listLength) { whichNo = listLength; }
 	
 	//디테일 눌렀을 때 화살표 표시 생기는 것
@@ -444,7 +430,6 @@ function setDetailList( clickedList ){
 	$.getJSON(
 		'../../main/detail.do', {"businessNo": businessNo},
 		function(data){
-			detailData = data;
 			require(['text!templates/detail-table.html'], function(html){
 		        var template = Handlebars.compile(html);
 		        $('#detailList').html( template(data) );
