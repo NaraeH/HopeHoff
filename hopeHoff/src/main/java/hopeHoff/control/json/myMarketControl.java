@@ -49,7 +49,19 @@ public class myMarketControl {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		
 		myMarketService.showUpdate(bno, time, phone,addr,info, intro);
+		
 		resultMap.put("shopInfo", myMarketService.selectShop(bno));
+		
+		return resultMap;
+	}
+	
+	@RequestMapping(value="/menuUpdate", method=RequestMethod.POST)
+	public Object menuUpdate(int menuId, String menuName, int menuPrice){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		myMarketService.menuUpdate(menuId, menuName, menuPrice);
+		
+		resultMap.put("menuUpdate", myMarketService.showMenu(menuId));
 		
 		return resultMap;
 	}

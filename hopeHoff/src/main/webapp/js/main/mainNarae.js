@@ -1,3 +1,13 @@
+$(function(){
+	//첫 시작시 리스트 로딩
+	$("#footer").load("/hopeHoff/web/common/footer.html");
+	
+	loadKeyword();
+	loadContainerList("none");
+	
+	
+});
+
 var bodyWidth = Narae.removePx($("body").css("width"));
 var isMobile = bodyWidth < 769;
 var shopAddrText = "가게주소";
@@ -9,25 +19,8 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
-<<<<<<< HEAD
-var rStatus ="예약 신청";
-var isUser="true";
-=======
-var rStatus ="예약신청";
-var listLength = 0;
-var listCount = 0;
-var detailData = null;
+/*---------------*/
 
-$(function(){
-	//첫 시작시 리스트 로딩
-	$("#footer").load("/hopeHoff/web/common/footer.html");
-	
-	loadKeyword();
-	loadContainerList("none");
-	
-});
-
->>>>>>> refs/remotes/origin/master
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -124,9 +117,20 @@ $(".click-myBook").click(function(){
 		
 	$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 	
-	console.log(uType);
-	loadReservationList(1,uId,uType);
-	
+	loadReservationList(1,uId);
+	/*tablerowClick()*/
+		/*$.getJSON('../../json/reservation/list.do?pageNo=1', {"uId":uId},
+			    function(data){
+				yyyyMMddList(data);
+				//console.log(data);
+			      setPageNo(data.currPageNo, data.maxPageNo);
+			    //  var reservations = data.reservations;
+			      
+			      require(['text!templates/booklist-table.html'],function(html){
+			    	  var template = Handlebars.compile(html);
+			    	  $('#myBook').html(template(data));
+			    	  });
+			      });*/
 });
 
 $(".click-myShop").click(function(){
@@ -175,13 +179,11 @@ $(document).delegate(".list","mouseout",function(){
 	$(btnDetail).removeClass("btnDetail").addClass("shopIntroAddr").html(shopIntroAddrText);
 });
 
-var containerListength = $("#containerList").children().length;
 $(document).delegate(".shopInfo>.btnDetail","click",function(){
 	businessNo =  $(this).closest(".list").attr("data-shop");
-	setDetailList(this);
-	
-});	
 
+	setDetailList(this);
+});	
 
 //상단 keyword 선택했을 시, 리스트 다시 뿌리기
 $(document).delegate(".has-sub ul a, .selectMenu","click",function(){
@@ -219,8 +221,7 @@ $(document).delegate(".btnBookShop","click",function(){
 		$.post('../../json/reservation/addReserv.do'
 				,{businessNo: businessNo,
 				  reservationContent : $( bookContent ).val(),
-				  userId  : uId,
-				  reservationStatus: rStatus}
+				  userId  : uId}
 				,function(data){
 					alert( "예약 되었습니다. 예약 내용은 상단 '예약정보보기'에서 확인 가능합니다." );
 				}, 'json');
@@ -337,6 +338,7 @@ function loadContainerList(that){
 	$.getJSON(
 			'../../main/list.do', {"keywordGroup":keywordGroup, "keyword": keyword},
 			function(data){
+				listLength = data.shops.length;
 				require(['text!templates/list-table.html'], function(html){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
@@ -381,7 +383,7 @@ function setKeyword() {
 	}
 }
 
-function setListAlign( listLength ){
+function setListAlign(){
 	$( ".list" ).css("margin-left", "15px").css("margin-right", "15px");
 	
 	var windowWidth = window.innerWidth 
@@ -451,6 +453,7 @@ function setDetailList( clickedList ){
 			require(['text!templates/detail-table.html'], function(html){
 		        var template = Handlebars.compile(html);
 		        $('#detailList').html( template(data) );
+		        
 		      });
 	});
 }
@@ -486,11 +489,11 @@ function yyyyMMddList(reservation) {
 			//console.log(dbDate);
 			str = "";
 			if (!compareDate(currentDate, dbDate)) {
-				str = dbDate.getFullYear() + '-';
+				str = dbDate.getFullYear() + '/';
 
 				if (dbDate.getMonth() < 9)
 					str += '0';
-				str += (dbDate.getMonth() + 1) + '-';
+				str += (dbDate.getMonth() + 1) + '/';
 
 				if (dbDate.getDate() < 10)
 					str += '0';
@@ -543,27 +546,25 @@ function yyyyMMdd(date) {
 	}
 }
 
-function loadReservationList(pageNo,uId,uType) {
+function loadReservationList(pageNo,uId) {
 	if (pageNo <= 0) pageNo = currPageNo;
-
-	
-		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, 
-				{
-				"uId":uId,
-				"type":uType
-				},
+		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {"uId":uId},
 			    function(data){
 				yyyyMMddList(data);
+				//console.log(data.currPageNo);
+				//console.log(data.startIndex);
 			      setPageNo(data.currPageNo, data.maxPageNo);
-			      $('.type-user').remove();
+			    //  var reservations = data.reservations;
+			      $('.table-tr').remove();
 			      
 			      require(['text!templates/booklist-table.html'],function(html){
 			    	  var template = Handlebars.compile(html);
 			    	  $('#myBook').html(template(data));
 			    	  });
 			      });
-		
-}
+	}
+
+
 /*function tablerowClick(){
 	$(document).delegate(".table-tr","click",function(event){
 	    $.post('../../json/reservation/view.do'

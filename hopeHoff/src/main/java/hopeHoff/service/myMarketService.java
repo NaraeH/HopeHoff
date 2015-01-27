@@ -1,6 +1,8 @@
 package hopeHoff.service;
 
+import hopeHoff.dao.MenuDao;
 import hopeHoff.dao.ShopDao;
+import hopeHoff.domain.Menu;
 import hopeHoff.domain.Shop;
 import hopeHoff.domain.ShopPhoto;
 
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class myMarketService {
   @Autowired ShopDao shopDao;
+  @Autowired MenuDao menuDao;
 /*   public List<?> showInfo(String userId) {
 	    HashMap<String,String> params = new HashMap<>();
 	    params.put("userId",userId);
@@ -32,6 +35,14 @@ public class myMarketService {
 	
     }
     
+    public void menuUpdate(int menuId, String menuName, int menuPrice){
+    	HashMap<String, Object> paramMap = new HashMap<String, Object>();
+    	paramMap.put("menuId", menuId);
+    	paramMap.put("menuName", menuName);
+    	paramMap.put("menuPrice", menuPrice);
+    	
+    	menuDao.updateMenu(paramMap);
+    }
     
     public Shop selectFirstShop(String userId){
   	  return shopDao.selectFirstShop(userId);
@@ -40,6 +51,10 @@ public class myMarketService {
     public Shop selectShop(String businessNo){
     	  return shopDao.selectShop(businessNo);
      }
+    
+    public Menu showMenu(int menuId){
+    	return menuDao.showMenu(menuId);
+    }
     
     public ShopPhoto selectShopPhoto(String businessNo){
   	  return shopDao.selectPhoto(businessNo);
@@ -52,6 +67,7 @@ public class myMarketService {
     public List<?> selectMarketList(String userId){
     	return shopDao.selectMarketList(userId);
     }
+
 
    
    /*  public List<?> showList(String userId) {
