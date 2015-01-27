@@ -229,7 +229,6 @@ Valid.prototype.confirmPwd = function( inputConfirmPwdBox, inputPwdBox ) {
 */
 Valid.prototype.phoneNo = function( inputPhoneNoBox, inputConfirmPhoneNoBox ) {
 	var validPhoneNoDiv = $( inputPhoneNoBox ).parent().find( ".validPhoneNoDiv" );
-	
 	$( inputPhoneNoBox ).focus(function() {
 		 $( inputPhoneNoBox ).keyup(function(){
 			 
@@ -238,7 +237,7 @@ Valid.prototype.phoneNo = function( inputPhoneNoBox, inputConfirmPhoneNoBox ) {
 			 }
 			 
 			 if($( inputPhoneNoBox ).val().match(/[01](0|1|6|7|8|9)[-](\d{4}|\d{3})[-]\d{4}$/) != null){
-				 $( validPhoneNoDiv ).html("ok").css("color","green");
+				 $( validPhoneNoDiv ).css("display", "none");
 				 $( inputPhoneNoBox ).css("border","green 2px solid").attr("data-valid", "validNoneClick");
 
 			 } else {

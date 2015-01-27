@@ -42,6 +42,10 @@ $( "#btnPwdChange" ).click(function() {
 		        , function(data){
 		        	if(data.status) {
 		        		alert("암호가 성공적으로 변경되었습니다.");
+		        		
+		        		$( "#inputNewPwd" ).val("").css("border", "2px inset");
+		        		$( "#inputNewPwdConfirm" ).val("").css("border", "2px inset");
+		        		
 		        	}else {
 		        		alert("암호가 변경에 실패하셨습니다.")
 		        	}
@@ -78,8 +82,15 @@ $( "#btnPhoneNoChange" ).click(function() {
 		        , { userId: userId,
 		        	phoneNo: updateUserMap.phoneNo }
 		        , function(data){
+		        	console.log(data);
+		        	
 		        	if(data.status) {
 		        		alert("핸드폰번호가 성공적으로 변경되었습니다.");
+		        		
+		        		$( "#inputNewPhoneNo" ).attr("placeholder", data.user.uPhone)
+		        							   .val("").css("border", "2px inset");
+		        		$( "#inputNewConfirmPhoneNo" ).val("").css("border", "2px inset");
+		        		
 		        	}else {
 		        		alert("핸드폰번호 변경에 실패하셨습니다.")
 		        	}
@@ -106,10 +117,10 @@ $( "#btnPhoneNoChange" ).click(function() {
 });
 
 
-Valid.pwd( "#inputNewPwd", "#inputNewPwdConfirm" );          //암호 유효성 검사
-Valid.confirmPwd( "#inputNewPwdConfirm", "#inputNewPwd");    //암호확인  검사
-Valid.phoneNo( "#inputNewPhoneNo", "#inputNewConfirmPhoneNo" );                       //암호 유효성 검사
-Valid.confirmValidPhoneNo( "#inputNewConfirmPhoneNo" );    //핸드폰 인증번호 검사
+Valid.pwd( "#inputNewPwd", "#inputNewPwdConfirm" );             //암호 유효성 검사
+Valid.confirmPwd( "#inputNewPwdConfirm", "#inputNewPwd");       //암호확인  검사
+Valid.phoneNo( "#inputNewPhoneNo", "#inputNewConfirmPhoneNo" ); //핸드폰 번호 유효성 검사
+Valid.confirmValidPhoneNo( "#inputNewConfirmPhoneNo" );         //핸드폰 인증번호 검사
 
 
 

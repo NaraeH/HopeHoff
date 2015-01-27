@@ -121,9 +121,11 @@ public class AuthControl {
 	  if(password != null){ userService.update("UPASSWORD", password, userId); }
 	  if(phoneNo != null){ userService.update("UPHONE", phoneNo, userId); }
 	  
-	  HashMap<String, Object> resultMap = new HashMap<String, Object>();
-	  resultMap.put("status", "success");
-    return resultMap;
+	 HashMap<String, Object> resultMap = new HashMap<String, Object>();
+	 resultMap.put("status", "success");
+	 resultMap.put("user", userService.view(userId));
+	 
+	 return resultMap;
   }
   
 }
