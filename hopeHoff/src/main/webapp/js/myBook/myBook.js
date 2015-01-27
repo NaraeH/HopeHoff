@@ -21,7 +21,6 @@ $(function(){
 });
 
 
-console.log(currPageNo);
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	if(uType=="user"){
 	$(document).delegate(".table-tr","click",function(event){
@@ -140,11 +139,11 @@ $(document).delegate(".btn-delete","click",function(event){
 	});
 	
 	$("select").change(function () {
+		$("#selectForm option:selected").attr("selected","selected")
 		loadMarket();
 	});
 	
 	function setPageNo(currPageNo, maxPageNo) {
-		console.loga("data.currPageNo",currPageNo);
 		  window.currPageNo = currPageNo;
 		  window.maxPageNo = maxPageNo;
 		  
@@ -177,14 +176,13 @@ $(document).delegate(".btn-delete","click",function(event){
 	}
 	
 	function loadMarket() {
+		
 			selectedShop = $("#selectForm option:selected").attr("data-businessNo");
 			
+			var pageNo=$("#pageNo").html();
 			
-			console.log("---------");
-			console.log(pageNo);
-			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo + "&businessNo="+selectedShop,
+			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo + "&businessNo="+selectedShop + "&type="+uType + "&uId="+uId,
 			    function(data){
-				
 				yyyyMMddList(data);
 			      setPageNo(data.currPageNo, data.maxPageNo);
 			      $(".type-user").remove();
@@ -192,6 +190,7 @@ $(document).delegate(".btn-delete","click",function(event){
 			      require(['text!templates/booklist-table.html'],function(html){
 			    	  var template = Handlebars.compile(html);
 			    	  $('#myBook').html(template(data));
+			    	  $('.table-tr').css("cursor","pointer");
 			    	  });
 			      });
 	}

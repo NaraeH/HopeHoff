@@ -24,7 +24,6 @@ public class ReservationControl {
   @Autowired UserService 			userService;
   @Autowired myMarketService		myMarketService;	
   @Autowired ServletContext servletContext;
-  
 
   @RequestMapping("/delete")
   public Object delete(Integer reservationNo ) throws Exception {
@@ -43,12 +42,15 @@ public class ReservationControl {
       @RequestParam(defaultValue="1") int pageNo,
      @RequestParam(defaultValue="3") int pageSize ,String uId, String type, String businessNo) throws Exception {
 	  
+	  System.out.println("pageNo"+pageNo);
+	  System.out.println("businessNo"+businessNo);
+	  System.out.println("userId"+uId);
 	  
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
     
 
-    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId,type);
+    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId,type, businessNo);
     
     if (pageNo <= 0) pageNo = 1;
     
@@ -66,7 +68,7 @@ public class ReservationControl {
     resultMap.put("maxPageNo", maxPageNo);
     resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
     resultMap.put("reservations", 
-        reservationService.getList(pageNo, pageSize,uId, type));
+        reservationService.getList(pageNo, pageSize,uId, type,businessNo));
     resultMap.put("shops", myMarketService.selectMarketList(uId));
     
     
