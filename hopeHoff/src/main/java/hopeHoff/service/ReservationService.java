@@ -27,7 +27,7 @@ public class ReservationService {
   @Autowired myMarketService 		myMarketService;
   
   
-  public List<?> getList(int pageNo, int pageSize,String uId,String type) {
+  public List<?> getList(int pageNo, int pageSize,String uId,String type,String businessNo) {
 	  HashMap<String,Object> paramMap = new HashMap<>();
 	
 	if(pageNo ==0){
@@ -39,7 +39,11 @@ public class ReservationService {
 		    
 		
 	}else if(type.equals("boss")) {
-		paramMap.put("bussinessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		if( businessNo == null){
+			paramMap.put("businessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		}else{
+			paramMap.put("businessNo",businessNo);
+		}
 		 System.out.println("paramMap2=====>"+paramMap);
 	}
     paramMap.put("startIndex", ((pageNo - 1) * pageSize));
@@ -51,20 +55,21 @@ public class ReservationService {
     return reservationDao.selectList(paramMap);
   }
   
-  public int getMaxPageNo(int pageSize,String uId, String type) {
+  public int getMaxPageNo(int pageSize,String uId, String type, String businessNo) {
 	  
 	  HashMap<String,Object> paramMap = new HashMap<>();
 	  
+	  System.out.println("uId===> " + uId);
+	  System.out.println("type----------------------->"+type);
 	
 	int totalSize = 0;
-	String bussinessNo = null;
 	if(type.equals("user")){
 		  paramMap.put("uId", uId);
 		 totalSize = reservationDao.totalSize(paramMap);		 
 		 System.out.println("totalSize user"+totalSize);
 			
 	}else if(type.equals("boss")) {
-		paramMap.put("bussinessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		paramMap.put("businessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
 		 totalSize = reservationDao.totalSize(paramMap);
 		 System.out.println("totalSize boss"+totalSize);
 	}

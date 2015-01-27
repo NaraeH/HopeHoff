@@ -53,12 +53,20 @@
   
 	   <select id="totalSize" parameterType="map" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
-	   		<if test="type == 'user'">
+	   	 <choose>
+				<when test="uId !=null">
+						WHERE UID=#{uId}
+				</when>
+				<when test="bussinessNo !=null">
+						WHERE BBNO=#{bussinessNo}
+				</when>
+			</choose>
+	   	<!-- 	<if test="type == 'user'">
 					WHERE UID=#{uId}
 			</if>
 			<if test="type == 'boss'">
 					WHERE BBNO=#{bussinessNo}
-			</if>
+			</if> -->
 	  </select>
 	  
 	  <insert id="insert" parameterType="Reservation"
