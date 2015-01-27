@@ -2,6 +2,21 @@ var currPageNo;
 var maxPageNo;
 var reservationNo;
 
+
+$(function(){
+	var test = $(".data-change");
+	
+	if(uType == 'boss'){
+		$( ".header-shopName" ).html("예약자 이름");
+		
+		for(var i = 0; i< bookData.reservations.length; i++){
+			$( test[i] ).html( bookData.reservations[i].userName);
+		}
+	}
+});
+
+
+
 console.log(currPageNo);
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	if(uType=="user"){

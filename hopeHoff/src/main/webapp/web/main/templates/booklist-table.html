@@ -30,7 +30,7 @@
 			<table id='myBookData'>
 				<tr class= "type-user">
 					<th class="mybook-data-th-short">#</th>
-					<th class="mybook-data-th-long">가게 이름</th>
+					<th class="mybook-data-th-long header-shopName">가게 이름</th>
 					<th class="mybook-data-th-long">등록일</th>
 					<th class="mybook-data-th-long">상태</th>
 				</tr>
@@ -38,7 +38,7 @@
 				{{#each reservations}}
 				<tr class= "type-user" class="table-tr" id="tableUser{{@index}}">
 					<td id=test{{@index}} class="table-data">{{reservationNo}}</td>
-					<td class="table-data">{{shopName}}</td>
+					<td class="table-data data-change">{{shopName}}</td>
 					<td class="table-data">{{reservationDate}}</td>
 					<td class="table-data">{{reservationStatus}}</td>
 				</tr>

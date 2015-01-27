@@ -65,6 +65,7 @@ public class ReservationControl {
     resultMap.put("reservations", 
         reservationService.getList(pageNo, pageSize,uId, type));
     
+    
   System.out.println("LIST resultMap=====>"+resultMap);
     
     return resultMap;
