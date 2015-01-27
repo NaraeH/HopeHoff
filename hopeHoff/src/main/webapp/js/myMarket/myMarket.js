@@ -85,32 +85,33 @@ $(document).delegate("#changeBtn","click", function(){
 			$('#intro').val('');
 			}, 
 		'json');
-
 });
 
 
 //메뉴 수정하기 버튼 눌렀을 때
 $(document).delegate(".changeMenuBtn","click", function(){
 	var myOverlayId = $(this).closest(".myOverlay").attr("data-menuId");
-	var menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).val();
-	var menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).val();
+	var menuName = $(this).closest(".photoInfoWrap").children()[0];
+	var menuPrice = $(this).closest(".photoInfoWrap").children()[1];
+	var menuNameVal = $( menuName ).val();
+	var menuPriceVal = $( menuPrice ).val();
 	
-	if( menuName == '' ){ menuName = $( $(this).closest(".photoInfoWrap").children()[0] ).attr("placeholder"); }
-	if( menuPrice == '' ){ menuPrice = $( $(this).closest(".photoInfoWrap").children()[1] ).attr("placeholder"); }
+	if( menuNameVal == '' ){ menuNameVal = $( menuName ).attr("placeholder"); }
+	if( menuPriceVal == '' ){ menuPriceVal = $( menuPrice ).attr("placeholder"); }
 	
 	$.post('/hopeHoff/json/myMarketControl/menuUpdate.do',
 			{"menuId": myOverlayId,
-			 "menuName": menuName,
-			 "menuPrice": menuPrice
+			 "menuName": menuNameVal,
+			 "menuPrice": menuPriceVal
 			},
 			function(data){
 				alert("성공적으로 변경되었습니다.");
-				$('.menuName').attr("placeholder",data.menuUpdate.menuName);
-				$('.menuPrice').attr("placeholder",data.menuUpdate.menuPrice);
+
+				$( menuName ).attr("placeholder",data.menuUpdate.menuName);
+				$( menuPrice ).attr("placeholder",data.menuUpdate.menuPrice);
 				
-				$('.menuName').val('');
-				$('.menuPrice').val('');
-		
+				$( menuName ).val("");
+				$( menuPrice ).val("");
 			}, 'json');
 	
 	
@@ -136,11 +137,12 @@ function setShop(data){
 	$('#info').attr("placeholder",data.shopInfo.shopInfo);
 	$('#intro').attr("placeholder",data.shopInfo.shopIntro);
 
-	//메뉴 사진 바꾸기
+	//메뉴 사진 및 아이디 바꾸기
 	for(var i = 0; i < data.shopMenu.length; i++){
 		$( "#menu" +i ).attr("src", "../../img/shopPhoto/menu/" + data.shopMenu[i].menuPhoto );
 		$( "#menuName" +i ).attr("placeholder", data.shopMenu[i].menuName );
 		$( "#menuPrice" +i ).attr("placeholder", data.shopMenu[i].menuPrice );
+		$( $( "#menuSlide .myOverlay" )[i] ).attr("data-menuId", data.shopMenu[i].menuId);
 	}
 	
 	loadComment();

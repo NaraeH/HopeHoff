@@ -85,10 +85,16 @@
 	}
 	#myHoffInfo textarea{
 		resize : none;
+		vertical-align: middle;
 	}
 	
-	#myHoffInfo>div {
+	label {
+		 vertical-align: middle;
+	}
+	#myHoffInfo div {
 		display:inline-block;
+		text-align:center;
+		vertical-align:middle;
 		margin: 0px;
 	}
 	#myHoffInfo>div:first-child {
@@ -101,11 +107,12 @@
 
 	.myInputBox {
 		width: 80%;
-	
+		margin: 4px;
+		display: inline-block;
 	}
     #changeBtn {
-    	margin-top: 10px;
-    	margin-left: 257px;
+    	margin-top: 6px;
+    	margin-left: 262px;
     	width:100px;
     	
     }
