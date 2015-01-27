@@ -30,7 +30,8 @@
 	</resultMap>
 
 	<resultMap type="Menu" id="menuMap">
-		<id column="BBNO" property="businessNo"/>
+		<id column="MID" property="menuId"/>
+		<result column="BBNO" property="businessNo"/>
 		<result column="MNAME" property="menuName"/>
 		<result column="MPRICE" property="menuPrice"/>
 		<result column="MPHOTO" property="menuPhoto"/>
@@ -72,7 +73,7 @@
 	</select>
 	
 	<select id="selectMenu" parameterType="String" resultMap="menuMap">
-		SELECT BBNO, MNAME, MPRICE, MPHOTO 
+		SELECT MID, BBNO, MNAME, MPRICE, MPHOTO 
 		FROM MENU 
 		WHERE BBNO = #{businessNo}
 	</select>

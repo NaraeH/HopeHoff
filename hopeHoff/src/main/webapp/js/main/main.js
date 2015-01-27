@@ -9,10 +9,8 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
-<<<<<<< HEAD
 var rStatus ="예약 신청";
 var isUser="true";
-=======
 var rStatus ="예약신청";
 var listLength = 0;
 var listCount = 0;
@@ -27,7 +25,6 @@ $(function(){
 	
 });
 
->>>>>>> refs/remotes/origin/master
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
