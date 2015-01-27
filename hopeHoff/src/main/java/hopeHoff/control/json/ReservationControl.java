@@ -32,19 +32,13 @@ public class ReservationControl {
     HashMap<String,Object> resultMap = new HashMap<>();
     resultMap.put("status", "success");
     
-    //System.out.println("Delete resultMap=======>"+resultMap);
-    
     return resultMap;
   }
   
-  @RequestMapping("/list")
+  @RequestMapping(value="/list", method=RequestMethod.POST )
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
      @RequestParam(defaultValue="3") int pageSize ,String uId, String type, String businessNo) throws Exception {
-	  
-	  System.out.println("pageNo"+pageNo);
-	  System.out.println("businessNo"+businessNo);
-	  System.out.println("userId"+uId);
 	  
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
@@ -55,11 +49,7 @@ public class ReservationControl {
     if (pageNo <= 0) pageNo = 1;
     
     if (pageNo > maxPageNo) pageNo = maxPageNo;
-    System.out.println("maxPageNo"+maxPageNo);
     
-   /* if(businessNo == null){
-		businessNo = myMarketService.selectFirstShop(uId).getBusinessNo();
-	}*/
     
     HashMap<String,Object> resultMap = new HashMap<>();
     
@@ -67,19 +57,16 @@ public class ReservationControl {
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
     resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
-    resultMap.put("reservations", 
-        reservationService.getList(pageNo, pageSize,uId, type,businessNo));
+    resultMap.put("reservations", reservationService.getList(pageNo, pageSize,uId, type,businessNo));
     resultMap.put("shops", myMarketService.selectMarketList(uId));
     
-    
-  System.out.println("LIST resultMap=====>"+resultMap);
+    System.out.println("LIST resultMap=====>"+resultMap);
     
     return resultMap;
   }
   
   @RequestMapping("/view")
   public Object view(Integer reservationNo) throws Exception {
-	  System.out.println("parameter:::" + reservationNo);
    Reservation reservation = reservationService.get(reservationNo);
    
    HashMap<String,Object> resultMap = new HashMap<>();
@@ -90,7 +77,6 @@ public class ReservationControl {
    return resultMap;
   }
   
-   //나래 수정중
 	@RequestMapping(value="/addReserv", method=RequestMethod.POST)
 	public Object addReserv(Reservation reservation) {
 		reservationService.add(reservation);

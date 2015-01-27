@@ -13,7 +13,6 @@ var rStatus ="예약 신청";
 var isUser="true";
 var rStatus ="예약신청";
 var listLength = 0;
-var bookData = null;
 
 $(function(){
 	//첫 시작시 리스트 로딩
@@ -527,23 +526,24 @@ function yyyyMMdd(date) {
 
 function loadReservationList(pageNo,uId,uType) {
 	if (pageNo <= 0) pageNo = currPageNo;
-		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo +'&uId='+uId, 
+		$.post('../../json/reservation/list.do', 
 				{
-				//"uId":uId,
+				"pageNo":pageNo,
+				"uId" : uId,
 				"type":uType
 				},
 			    function(data){
-					bookData = data;
+					//console.log(data);
+					yyyyMMddList(data);
+					setPageNo(data.currPageNo, data.maxPageNo);
 					
-				yyyyMMddList(data);
-			      setPageNo(data.currPageNo, data.maxPageNo);
 			      $('.type-user').remove();
 			      
-			      require(['text!templates/booklist-table.html'],function(html){
+			      require(['text!templates/booklist-header-table.html'],function(html){
 			    	  var template = Handlebars.compile(html);
 			    	  $('#myBook').html(template(data));
 			    	  });
-			      });
+			      }, 'json');
 		
 }
 /*function tablerowClick(){

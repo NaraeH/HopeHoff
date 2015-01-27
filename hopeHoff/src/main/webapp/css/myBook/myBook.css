@@ -53,6 +53,10 @@
 		margin: 0 auto;
 	}
 	
+	#myBookData .table-tr{
+		cursor: pointer;
+	}
+	
 	.mybook-data-th-check, .mybook-data-th-long , .mybook-data-th-short{
 	 	border-radius :15px;
 		background-color : #FFCD28;

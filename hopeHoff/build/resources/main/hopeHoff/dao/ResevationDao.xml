@@ -22,7 +22,8 @@
 	    <result column="RSTATUS" property="reservationStatus"/>
     </resultMap>
     
-    <select id="selectList" parameterType="map" resultMap="reservationListItemMap">
+    <select id="selectList" parameterType="map" 
+        resultMap="reservationListItemMap">
 		SELECT 
 			r.RNO,
 			s.SNAME,
@@ -41,9 +42,9 @@
 				</when>
 			</choose>
 		ORDER BY RDATE DESC
-   <if test="pageSize > 0">
+  <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
-    </if>  
+    </if> 
   </select>
   
 	  <select id="selectOne" parameterType="Integer" resultMap="reservationMap">

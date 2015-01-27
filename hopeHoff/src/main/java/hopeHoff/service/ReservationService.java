@@ -29,28 +29,23 @@ public class ReservationService {
   
   public List<?> getList(int pageNo, int pageSize,String uId,String type,String businessNo) {
 	  HashMap<String,Object> paramMap = new HashMap<>();
-	
+	  
+	  if(type.equals("user")){
+			paramMap.put("uId", uId);
+			
+	  }else if(type.equals("boss")) {
+			paramMap.put("uId", null);
+			paramMap.put("businessNo",businessNo);
+	  }
+	  
 	if(pageNo ==0){
 		pageNo=1;
 	}
-	if(type.equals("user")){
-		paramMap.put("uId", uId);
-		 System.out.println("paramMap1=====>"+paramMap);
-		    
-		
-	}else if(type.equals("boss")) {
-		if( businessNo == null){
-			paramMap.put("businessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
-		}else{
-			paramMap.put("businessNo",businessNo);
-		}
-		 System.out.println("paramMap2=====>"+paramMap);
-	}
-    paramMap.put("startIndex", ((pageNo - 1) * pageSize));
-    paramMap.put("pageSize", pageSize);
-   
-    
-    System.out.println("paramMap3=====>"+paramMap);
+
+	paramMap.put("startIndex", ((pageNo - 1) * pageSize));
+	paramMap.put("pageSize", pageSize);
+	
+	System.out.println("paramMap" + paramMap);
    
     return reservationDao.selectList(paramMap);
   }
@@ -69,7 +64,11 @@ public class ReservationService {
 		 System.out.println("totalSize user"+totalSize);
 			
 	}else if(type.equals("boss")) {
-		paramMap.put("businessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		//paramMap.put("businessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		paramMap.put("businessNo", businessNo);
+		paramMap.put("uId", null);
+		
+		System.out.println("ppppppp==>" + paramMap);
 		 totalSize = reservationDao.totalSize(paramMap);
 		 System.out.println("totalSize boss"+totalSize);
 	}
