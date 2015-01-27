@@ -60,11 +60,13 @@ public class ReservationService {
 	String bussinessNo = null;
 	if(type.equals("user")){
 		  paramMap.put("uId", uId);
-		 totalSize = reservationDao.totalSize(paramMap);		    
+		 totalSize = reservationDao.totalSize(paramMap);		 
+		 System.out.println("totalSize user"+totalSize);
 			
 	}else if(type.equals("boss")) {
 		paramMap.put("bussinessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
 		 totalSize = reservationDao.totalSize(paramMap);
+		 System.out.println("totalSize boss"+totalSize);
 	}
     int maxPageNo = totalSize / pageSize;
     if ((totalSize % pageSize) > 0) maxPageNo++;

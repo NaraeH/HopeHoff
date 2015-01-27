@@ -3,6 +3,7 @@ package hopeHoff.control.json;
 import hopeHoff.domain.Reservation;
 import hopeHoff.service.ReservationService;
 import hopeHoff.service.UserService;
+import hopeHoff.service.myMarketService;
 
 import java.util.HashMap;
 
@@ -21,6 +22,7 @@ public class ReservationControl {
   
   @Autowired ReservationService     reservationService;
   @Autowired UserService 			userService;
+  @Autowired myMarketService		myMarketService;	
   @Autowired ServletContext servletContext;
   
 
@@ -39,7 +41,7 @@ public class ReservationControl {
   @RequestMapping("/list")
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
-     @RequestParam(defaultValue="3") int pageSize ,String uId, String type) throws Exception {
+     @RequestParam(defaultValue="3") int pageSize ,String uId, String type, String businessNo) throws Exception {
 	  
 	  
     if (pageSize <= 0)
@@ -48,13 +50,14 @@ public class ReservationControl {
 
     int maxPageNo = reservationService.getMaxPageNo(pageSize,uId,type);
     
-    System.out.println("pre"+pageNo);
     if (pageNo <= 0) pageNo = 1;
-    System.out.println("next"+pageNo);
     
     if (pageNo > maxPageNo) pageNo = maxPageNo;
     System.out.println("maxPageNo"+maxPageNo);
-    //System.out.println("pageNo"+pageNo);
+    
+   /* if(businessNo == null){
+		businessNo = myMarketService.selectFirstShop(uId).getBusinessNo();
+	}*/
     
     HashMap<String,Object> resultMap = new HashMap<>();
     
@@ -64,6 +67,7 @@ public class ReservationControl {
     resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
     resultMap.put("reservations", 
         reservationService.getList(pageNo, pageSize,uId, type));
+    resultMap.put("shops", myMarketService.selectMarketList(uId));
     
     
   System.out.println("LIST resultMap=====>"+resultMap);

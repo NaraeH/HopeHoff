@@ -109,7 +109,6 @@ $(".click-myBook").click(function(){
 		
 	$("#myBook").css("margin-left", marginLeft + "px").css("display", "block");
 	
-	console.log(uType);
 	loadReservationList(1,uId,uType);
 	
 });
@@ -443,7 +442,8 @@ function setPageNo(currPageNo, maxPageNo) {
 	  window.maxPageNo = maxPageNo;
 	  
 	  $('#pageNo').html(currPageNo);
-	  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
+	  console.log("asdfasdf",currPageNo);
+	  if (currPageNo == 1) $('#prevBtn').css('display', 'none');
 	  else $('#prevBtn').css('display', '');
 	  
 	  if (currPageNo >= maxPageNo) $('#nextBtn').css('display', 'none');
@@ -527,8 +527,10 @@ function yyyyMMdd(date) {
 }
 
 function loadReservationList(pageNo,uId,uType) {
+	console.log("------pageNo",pageNo)
+	console.log("------currPageNo",currPageNo)
 	if (pageNo <= 0) pageNo = currPageNo;
-
+	
 	
 		$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, 
 				{
