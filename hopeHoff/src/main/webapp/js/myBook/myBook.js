@@ -2,10 +2,29 @@ var currPageNo;
 var maxPageNo;
 var reservationNo;
 
+var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
+
+console.log(selectedShop);
+$(function(){
+	var test = $(".data-change");
+	
+	if(uType == 'boss'){
+		$( ".header-shopName" ).html("예약자 이름");
+		$(".type-user").css("display","none");
+		for(var i = 0; i< bookData.reservations.length; i++){
+			$( test[i] ).html( bookData.reservations[i].userName);
+		}
+	}
+	if(uType == "user"){
+		$(".type-boss").css("display","none");
+	}
+});
+
+
 console.log(currPageNo);
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	if(uType=="user"){
-	$(document).delegate(".type-user","click",function(event){
+	$(document).delegate(".table-tr","click",function(event){
 		
 		event.stopImmediatePropagation();
 		 
@@ -41,7 +60,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		});
 	}
 	else{
-		$(document).delegate(".type-user","click",function(event){
+		$(document).delegate(".table-tr","click",function(event){
 			
 			 event.stopImmediatePropagation();
 			 
@@ -106,7 +125,7 @@ $(document).delegate(".btn-delete","click",function(event){
 	
 	
 	//******************** btnClose 클릭시에 ************************//
-	$("#btnMyBookClose").click(function(){
+	$(".close").click(function(){
 		$("#back").css("display", "none");
 		$("#myBook").css("display", "none");
 	});

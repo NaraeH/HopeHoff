@@ -62,7 +62,7 @@ public class myMarketControl {
 		myMarketService.menuUpdate(menuId, menuName, menuPrice);
 		
 		resultMap.put("menuUpdate", myMarketService.showMenu(menuId));
-		System.out.println("resultMap::"+resultMap);
+		
 		return resultMap;
 	}
 	

@@ -32,7 +32,7 @@
 			r.RDATE,
 			r.RSTATUS
 			FROM RESERVATION r,SHOP s, USER u
-			WHERE r.BBNO = s.BBNO  
+			WHERE r.BBNO = s.BBNO  AND r.UID=u.UID
 			<choose>
 				<when test="uId !=null">
 					AND	u.UID=#{uId}
