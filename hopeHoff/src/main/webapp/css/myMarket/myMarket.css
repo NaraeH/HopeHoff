@@ -78,17 +78,21 @@
 		width: 98%;
 		height: 50%;
 		margin: 1%;
-		display: inline-block table;
+		display: inline-block;
 		font-size: small;
 		color: black;
 		/* border: 1px solid #FFCD28; */
 	}
 	#myHoffInfo textarea{
 		resize : none;
+		vertical-align: middle;
 	}
 	
+	label {
+		 vertical-align: middle;
+	}
 	#myHoffInfo div {
-		display:table-cell inline-block;
+		display:inline-block;
 		text-align:center;
 		vertical-align:middle;
 		margin: 0px;
@@ -103,7 +107,7 @@
 
 	.myInputBox {
 		width: 80%;
-		margin:3px;
+		margin: 4px;
 		display: inline-block;
 	}
     #changeBtn {
