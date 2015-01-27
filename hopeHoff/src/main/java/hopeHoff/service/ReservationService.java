@@ -33,12 +33,6 @@ public class ReservationService {
 	if(pageNo ==0){
 		pageNo=1;
 	}
-	System.out.println("pageNo=======>"+pageNo);  
-
-	System.out.println("pageSize=======>"+pageSize);  
-	System.out.println("UID------->"+uId);
-	
-	System.out.println("type------->"+type);
 	if(type.equals("user")){
 		paramMap.put("uId", uId);
 		 System.out.println("paramMap1=====>"+paramMap);
@@ -57,12 +51,24 @@ public class ReservationService {
     return reservationDao.selectList(paramMap);
   }
   
-  public int getMaxPageNo(int pageSize,String uId) {
-    int totalSize = reservationDao.totalSize(uId);
+  public int getMaxPageNo(int pageSize,String uId, String type) {
+	  
+	  HashMap<String,Object> paramMap = new HashMap<>();
+	  
+	
+	int totalSize = 0;
+	String bussinessNo = null;
+	if(type.equals("user")){
+		  paramMap.put("uId", uId);
+		 totalSize = reservationDao.totalSize(paramMap);		    
+			
+	}else if(type.equals("boss")) {
+		paramMap.put("bussinessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
+		 totalSize = reservationDao.totalSize(paramMap);
+	}
     int maxPageNo = totalSize / pageSize;
     if ((totalSize % pageSize) > 0) maxPageNo++;
     
-    System.out.println("pageSize======>"+pageSize);
     System.out.println("totalSize=====>"+totalSize);
     
     return maxPageNo;

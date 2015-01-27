@@ -46,7 +46,7 @@ public class ReservationControl {
       pageSize = PAGE_DEFAULT_SIZE;
     
 
-    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId);
+    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId,type);
     
     System.out.println("pre"+pageNo);
     if (pageNo <= 0) pageNo = 1;
@@ -56,19 +56,16 @@ public class ReservationControl {
     System.out.println("maxPageNo"+maxPageNo);
     //System.out.println("pageNo"+pageNo);
     
-  
-    
     HashMap<String,Object> resultMap = new HashMap<>();
-    
     
     resultMap.put("status", "success");
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
-    resultMap.put("startIndex", ((pageNo - 1) * pageSize));
+    resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
     resultMap.put("reservations", 
         reservationService.getList(pageNo, pageSize,uId, type));
     
-   // System.out.println("LIST resultMap=====>"+resultMap);
+  System.out.println("LIST resultMap=====>"+resultMap);
     
     return resultMap;
   }

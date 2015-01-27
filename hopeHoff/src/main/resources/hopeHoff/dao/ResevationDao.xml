@@ -17,6 +17,7 @@
 	    <id column="RNO" property="reservationNo"/>
 	    <result column="SNAME" property="shopName"/>
 	    <result column="UNAME" property="userName"/>
+	    <result column="UTYPE" property="userType"/>
 	    <result column="RDATE" property="reservationDate"/>
 	    <result column="RSTATUS" property="reservationStatus"/>
     </resultMap>
@@ -27,6 +28,7 @@
 			r.RNO,
 			s.SNAME,
 			u.UNAME,
+			u.UTYPE,
 			r.RDATE,
 			r.RSTATUS
 			FROM RESERVATION r,SHOP s, USER u
@@ -49,16 +51,14 @@
 	  	  SELECT RCONTENT FROM RESERVATION WHERE RNO=#{value}
 	  </select>
   
-	   <select id="totalSize" parameterType="String" resultType="int">
+	   <select id="totalSize" parameterType="map" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
-	   		<choose>
-				<when test="uId !=null">
+	   		<if test="type == 'user'">
 					WHERE UID=#{uId}
-				</when>
-				<when test="bussinessNo !=null">
+			</if>
+			<if test="type == 'boss'">
 					WHERE BBNO=#{bussinessNo}
-				</when>
-			</choose>
+			</if>
 	  </select>
 	  
 	  <insert id="insert" parameterType="Reservation"

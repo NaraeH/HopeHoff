@@ -3,7 +3,17 @@
 <div id="myBookBody">
 	<div id="myBookHeader" class="div-header">
 		<div id="myBookHeaderTitle" class="font-div-title">내 예약 정보</div>
-		<button id="btnMyBookClose" type="button" class="close" value="close">X</button>
+		<div id="myMarketSelect">
+					<form action="#">
+						    <select name="speed" id="selectForm">
+						      <!-- <option>와라와라(강남)</option> -->
+						     {{#each shops}}
+						     	<option data-businessNo="{{businessNo}}">{{shopName}}</option>
+						     {{/each}}
+						    </select>
+					<button id="btnMyBookClose" type="button" class="close" value="close">X</button>
+					</form>
+				</div>
 	</div>
 
 	<div id="myBookContainer">
@@ -24,24 +34,11 @@
 					<th class="mybook-data-th-long">등록일</th>
 					<th class="mybook-data-th-long">상태</th>
 				</tr>
-				<tr class="type-boss">
-					<th class="mybook-data-th-short">#</th>
-					<th class="mybook-data-th-long">예약자 이름</th>
-					<th class="mybook-data-th-long">등록일</th>
-					<th class="mybook-data-th-long">상태</th>
-				</tr>
 				
 				{{#each reservations}}
 				<tr class= "type-user" class="table-tr" id="tableUser{{@index}}">
 					<td id=test{{@index}} class="table-data">{{reservationNo}}</td>
 					<td class="table-data">{{shopName}}</td>
-					<td class="table-data">{{reservationDate}}</td>
-					<td class="table-data">{{reservationStatus}}</td>
-				</tr>
-				<tr>
-					<tr class= "type-boss" class="table-tr" id="tableBoss{{@index}}">
-					<td id=test{{@index}} class="table-data">{{reservationNo}}</td>
-					<td class="table-data">{{userName}}</td>
 					<td class="table-data">{{reservationDate}}</td>
 					<td class="table-data">{{reservationStatus}}</td>
 				</tr>

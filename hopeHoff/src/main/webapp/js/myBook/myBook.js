@@ -2,13 +2,12 @@ var currPageNo;
 var maxPageNo;
 var reservationNo;
 
+console.log(currPageNo);
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
-	if(uType="user"){
+	if(uType=="user"){
 	$(document).delegate(".type-user","click",function(event){
 		
-		 event.stopImmediatePropagation();
-		//console.log(this);
-		 
+		event.stopImmediatePropagation();
 		 
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
 		 reservationNo = $("#tableUser"+num+" td:first").html()
@@ -18,6 +17,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		          reservationNo: reservationNo
 		        }
 	        , function(data){
+	        	console.log(data);
 	        	if(data.status == "success") {
 	        		var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
 	        		
@@ -38,8 +38,39 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	        , 'json');
 		
 		
-	});
+		});
 	}
+	else{
+		$(document).delegate(".type-user","click",function(event){
+			
+			 event.stopImmediatePropagation();
+			 
+			var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
+			 reservationNo = $("#tableUser"+num+" td:first").html()
+			
+		  $.post('../../json/reservation/view.do'
+			        , {
+			          reservationNo: reservationNo
+			        }
+		        , function(data){
+		        	if(data.status == "success") {
+		        		var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
+		        		
+		        		if(!status){
+		        			$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+		        					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
+		        				 .append($('<td>').html("<button class=btn-permission id=btnPermission"+num+">승인</button>"))
+		        					.insertAfter('#'+'tableUser'+num)
+		        			}
+		        			else 
+		        			{
+		        				$('#'+'tableContent'+num).remove(); 
+		        			}
+		        	} else {   	console.log(data.status);        	}
+		          }
+		        , 'json');
+		});
+		}
 });
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
@@ -56,7 +87,7 @@ $(document).delegate(".btn-delete","click",function(event){
 	        	if(data.status == "success") {
 	        		console.log(data);
 	        		$('.table-tr'+num).remove();
-	        		loadReservationList(1,uId);
+	        		loadReservationList(1,uId,uType);
 	        	} else {   	console.log(data.status);        	}
 	          }
 	        , 'json');
@@ -82,20 +113,18 @@ $(document).delegate(".btn-delete","click",function(event){
 	
 	
 	$('#prevBtn').click(function(event){
-		if (currPageNo > 1) {
-			$(".table-tr").remove();
-			loadReservationList(currPageNo - 1,uId,uType);
-		}
+		console.log(currPageNo);
+			if (currPageNo > 1) {
+				loadReservationList(currPageNo - 1,uId,uType);
+			}
 	});
 
 	$('#nextBtn').click(function(event){
-		if (currPageNo < maxPageNo) {
-			$(".table-tr").remove();
-			loadReservationList(currPageNo + 1,uId,uType);
-		}
+		console.log(currPageNo);
+			if (currPageNo > 1) {
+				loadReservationList(currPageNo + 1,uId,uType);
+			}
 	});
-	
-	
 	
 	
 	function setPageNo(currPageNo, maxPageNo) {
@@ -103,37 +132,13 @@ $(document).delegate(".btn-delete","click",function(event){
 		  window.maxPageNo = maxPageNo;
 		  
 		  $('#pageNo').html(currPageNo);
-		  console.log(currPageNo);
+		  console.log("currPageNo",currPageNo);
 		  if (currPageNo <= 1) $('#prevBtn').css('display', 'none');
 		  else $('#prevBtn').css('display', '');
 		  
 		  if (currPageNo >= maxPageNo) $('#nextBtn').css('display', 'none');
 		  else $('#nextBtn').css('display', '');
 		}
-	
-/*	function loadReservationList(pageNo) {
-
-		if (pageNo <= 0) pageNo = currPageNo;
-			$.getJSON('../../json/reservation/list.do?pageNo=' + pageNo, 
-		    function(data){
-				console.log(data);
-		      setPageNo(data.currPageNo, data.maxPageNo);
-		      var reservations = data.reservations;
-		      
-		      $('.table-tr').remove();
-		      
-		      
-		      for (var i = 0; i < reservations.length; i++) {
-		        $('<tr>').addClass('table-tr').attr('id','table-tr'+(i+1))
-		            .append($('<td class=table-data>').html(reservations[i].reservationNo))
-		            .append($('<td class=table-data>').html(reservations[i].uPhone))
-		            .append($('<td class=table-data>').html(reservations[i].reservationDate))
-		            .append($('<td class=table-data>').html(reservations[i].reservationStatus))
-		            .append($('<td class=table-data>'))
-		            .appendTo('#myBookData')
-		      }
-		    });
-		}*/
 	
 	function loadReservationList(pageNo,uId,uType) {
 
@@ -143,17 +148,15 @@ $(document).delegate(".btn-delete","click",function(event){
 					"type":uType},
 				    function(data){
 					yyyyMMddList(data);
-					//console.log(data.startIndex);
 				      setPageNo(data.currPageNo, data.maxPageNo);
-				    //  var reservations = data.reservations;
-				      $(".table-tr").remove();
+				      $(".type-user").remove();
 				      
 				      require(['text!templates/booklist-table.html'],function(html){
 				    	  var template = Handlebars.compile(html);
 				    	  $('#myBook').html(template(data));
 				    	  });
 				      });
-		}
+	}
 
 
 

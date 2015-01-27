@@ -18,7 +18,8 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
-var rStatus ="예약신청";
+var rStatus ="예약 신청";
+var isUser="true";
 
 //로그아웃버튼 클릭 시- 로그아웃과 동시에 로그인페이지로 ㄱㄱ
 $('.logoutBtn').click(function(event){
@@ -455,11 +456,11 @@ function yyyyMMddList(reservation) {
 			//console.log(dbDate);
 			str = "";
 			if (!compareDate(currentDate, dbDate)) {
-				str = dbDate.getFullYear() + '/';
+				str = dbDate.getFullYear() + '-';
 
 				if (dbDate.getMonth() < 9)
 					str += '0';
-				str += (dbDate.getMonth() + 1) + '/';
+				str += (dbDate.getMonth() + 1) + '-';
 
 				if (dbDate.getDate() < 10)
 					str += '0';
@@ -523,11 +524,8 @@ function loadReservationList(pageNo,uId,uType) {
 				},
 			    function(data){
 				yyyyMMddList(data);
-				//console.log(data.currPageNo);
-				//console.log(data.startIndex);
 			      setPageNo(data.currPageNo, data.maxPageNo);
-			    //  var reservations = data.reservations;
-			      $('.table-tr').remove();
+			      $('.type-user').remove();
 			      
 			      require(['text!templates/booklist-table.html'],function(html){
 			    	  var template = Handlebars.compile(html);
