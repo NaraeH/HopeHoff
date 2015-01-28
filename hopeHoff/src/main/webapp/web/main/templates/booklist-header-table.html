@@ -1,0 +1,21 @@
+
+<div id="myBookBody" data-test="{{test}}" data-test2="{{currPageNo}}">
+	<div id="myBookHeader" class="div-header">
+		<div id="myBookHeaderTitle" class="font-div-title">내 예약 정보</div>
+			<div class="type-boss"id="myMarketSelect">
+					<form action="#">
+						    <select name="speed" id="selectForm">
+						     <option>전체</option>
+						     {{#each shops}}
+						     	<option data-businessNo="{{businessNo}}">{{shopName}}</option>
+						     {{/each}}
+						    </select>
+					<button id="btnMyBookClose" type="button" class="close" value="close">X</button>
+					</form>
+				</div>
+				<button class="type-user close" id="btnMyBookClose" type="button"  value="close">X</button>
+	</div>
+	<div id="myBookContainer"></div>
+</div>
+<script src="../../js/myBook/myBook.js"></script>
+

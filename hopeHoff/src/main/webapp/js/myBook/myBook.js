@@ -1,23 +1,10 @@
 var currPageNo;
 var maxPageNo;
 var reservationNo;
-
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 
-
 $(function(){
-	var test = $(".data-change");
-	
-	if(uType == 'boss'){
-		$( ".header-shopName" ).html("예약자 이름");
-		$(".type-user").css("display","none");
-		for(var i = 0; i< bookData.reservations.length; i++){
-			$( test[i] ).html( bookData.reservations[i].userName);
-		}
-	}
-	if(uType == "user"){
-		$(".type-boss").css("display","none");
-	}
+	loadMarket(1);
 });
 
 
@@ -28,7 +15,7 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		event.stopImmediatePropagation();
 		 
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
-		 reservationNo = $("#tableUser"+num+" td:first").html()
+		reservationNo = $("#tableUser"+num+" td:first").html()
 		
 	  $.post('../../json/reservation/view.do'
 		        , {
@@ -105,7 +92,7 @@ $(document).delegate(".btn-delete","click",function(event){
 	        	if(data.status == "success") {
 	        		console.log(data);
 	        		$('.table-tr'+num).remove();
-	        		loadReservationList(1,uId,uType);
+	        		loadMarket(1);
 	        	} else {   	console.log(data.status);        	}
 	          }
 	        , 'json');
@@ -128,14 +115,13 @@ $(document).delegate(".btn-delete","click",function(event){
 		$("#back").css("display", "none");
 		$("#myBook").css("display", "none");
 	});
-	
-	
-	$('#prevBtn').click(function(event){
-		loadReservationList(currPageNo - 1,uId,uType);
+
+	$(document).delegate("#prevBtn","click",function(){
+		loadMarket(currPageNo - 1);
 	});
 
-	$('#nextBtn').click(function(event){
-		loadReservationList(currPageNo + 1,uId,uType);
+	$(document).delegate("#nextBtn","click",function(){
+		loadMarket(currPageNo + 1);
 	});
 	
 	$("select").change(function () {
@@ -157,42 +143,39 @@ $(document).delegate(".btn-delete","click",function(event){
 		  else $('#nextBtn').css('display', '');
 		}
 	
-	function loadReservationList(pageNo,uId,uType) {
-
-		if (pageNo <= 0) pageNo = currPageNo;
-			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo, {
-					"uId":uId,
-					"type":uType},
-				    function(data){
-					yyyyMMddList(data);
-				      setPageNo(data.currPageNo, data.maxPageNo);
-				      $(".type-user").remove();
-				      
-				      require(['text!templates/booklist-table.html'],function(html){
-				    	  var template = Handlebars.compile(html);
-				    	  $('#myBook').html(template(data));
-				    	  });
-				      });
-	}
-	
-	function loadMarket() {
-		
+	function loadMarket(pageNo) {
 			selectedShop = $("#selectForm option:selected").attr("data-businessNo");
 			
-			var pageNo=$("#pageNo").html();
-			
-			$.getJSON('../../json/reservation/list.do?pageNo='+pageNo + "&businessNo="+selectedShop + "&type="+uType + "&uId="+uId,
-			    function(data){
-				yyyyMMddList(data);
-			      setPageNo(data.currPageNo, data.maxPageNo);
-			      $(".type-user").remove();
-			      
-			      require(['text!templates/booklist-table.html'],function(html){
-			    	  var template = Handlebars.compile(html);
-			    	  $('#myBook').html(template(data));
-			    	  $('.table-tr').css("cursor","pointer");
-			    	  });
-			      });
+			$.post('../../json/reservation/list.do',
+					{
+					 "pageNo": pageNo,
+					 "businessNo":selectedShop,
+					 "type": uType,
+					 "uId":uId
+					 },
+					function(data){
+						 yyyyMMddList(data);
+						 setPageNo(data.currPageNo, data.maxPageNo);
+					
+						require(['text!templates/booklist-body-table.html'],function(html){
+							var template = Handlebars.compile(html);
+							$('#myBookContainer').html(template(data));
+							
+							var dataChange = $(".data-change");
+							
+							if(uType == 'boss'){
+								$( ".header-shopName" ).html("예약자 이름");
+								$(".type-user").css("display","none");
+								for(var i = 0; i< data.reservations.length; i++){
+									$( dataChange[i] ).html( data.reservations[i].userName);
+								}
+							}
+							if(uType == "user"){
+								$(".type-boss").css("display","none");
+							}
+	
+						});
+			     }, 'json');
 	}
 
 
