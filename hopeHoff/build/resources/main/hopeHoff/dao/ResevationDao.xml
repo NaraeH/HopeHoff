@@ -22,7 +22,7 @@
 	    <result column="RSTATUS" property="reservationStatus"/>
     </resultMap>
     
-    <select id="selectList" parameterType="map" resultMap="reservationListItemMap">
+  <select id="selectList" parameterType="map" resultMap="reservationListItemMap">
 		SELECT 
 			r.RNO,
 			s.SNAME,
@@ -40,6 +40,9 @@
 					AND s.BBNO=#{businessNo}
 				</when>
 			</choose>
+			<if test="date !=null">
+				AND RDATE LIKE #{date}
+			</if>
 		ORDER BY RDATE DESC
    <if test="pageSize > 0">
       limit #{startIndex}, #{pageSize}
@@ -50,22 +53,19 @@
 	  	  SELECT RCONTENT FROM RESERVATION WHERE RNO=#{value}
 	  </select>
   
-	   <select id="totalSize" parameterType="map" resultType="int">
+	<select id="totalSize" parameterType="map" resultType="int">
 	   	 SELECT count(RNO) FROM RESERVATION
-	   	 <choose>
-				<when test="uId !=null">
-						WHERE UID=#{uId}
-				</when>
-				<when test="businessNo !=null">
-						WHERE BBNO=#{businessNo}
-				</when>
-			</choose>
-	   	<!-- 	<if test="type == 'user'">
-					WHERE UID=#{uId}
-			</if>
-			<if test="type == 'boss'">
-					WHERE BBNO=#{bussinessNo}
-			</if> -->
+	   	 <where>
+		   	 <if test="uId !=null">
+		   	 	UID=#{uId}
+		   	 </if>
+		   	 <if test="businessNo !=null">
+		   	 	BBNO=#{businessNo}
+		   	 </if>
+		   	 <if test="date != null">
+		   	 	AND RDATE LIKE #{date}
+		   	 </if>
+	   	 </where>
 	  </select>
 	  
 	  <insert id="insert" parameterType="Reservation"
