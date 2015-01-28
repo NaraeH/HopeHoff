@@ -20,7 +20,7 @@
 				
 				{{#each reservations}}
 				<tr  class="table-tr" id="tableUser{{@index}}" >
-					<td id=test{{@index}} class="table-data">{{reservationNo}}</td>
+					<td id=bookNo{{@index}} class="table-data" data-reservationNo="{{reservationNo}}"></td>
 					<td class="table-data data-change">{{shopName}}</td>
 					<td class="table-data">{{reservationDate}}</td>
 					<td class="table-data">{{reservationStatus}}</td>
