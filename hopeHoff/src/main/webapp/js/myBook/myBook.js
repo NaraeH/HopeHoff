@@ -160,7 +160,7 @@ $(document).delegate(".btn-delete","click",function(event){
 	
 	//***************************** 함수모음집 ************************************//
 	function setPageNo(currPageNo, maxPageNo) {
-		  window.currPageNo = currPageNo;
+		  window.currPageNo = currPageNo; 
 		  window.maxPageNo = maxPageNo;
 		  
 		  $('#pageNo').html(currPageNo);
