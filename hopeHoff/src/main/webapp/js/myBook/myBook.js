@@ -17,7 +17,8 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		event.stopImmediatePropagation();
 		 
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
-		reservationNo = $("#tableUser"+num+" td:first").html()
+		reservationNo = $( $( this ).children()[0] ).attr( "data-reservationNo" );
+		console.log("reservationNo==> " + reservationNo);
 		
 		status=$("#tableUser"+num+" td:last").html()
 		
@@ -200,8 +201,6 @@ $(document).delegate(".btn-delete","click",function(event){
 					 "date": selectedDate
 					 },
 					function(data){
-						 console.log(data);
-						 
 						 yyyyMMddList(data);
 						 setPageNo(data.currPageNo, data.maxPageNo);
 					
@@ -221,6 +220,14 @@ $(document).delegate(".btn-delete","click",function(event){
 							if(uType == "user"){
 								$(".type-boss").css("display","none");
 							}
+
+							var bookNo = data.maxPageNo - ( data.currPageNo - 1 ) * 3 //3: pageSize
+							
+							var bookNo = ( data.currPageNo - 1) * 3 + 1  //3: pageSize
+							for(var i = 0; i < 3; i++ ){
+								$( "#bookNo" + i ).html( bookNo ++ );
+							}
+							
 	
 						});
 			     }, 'json');
