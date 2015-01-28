@@ -27,8 +27,6 @@ public class AuthControl {
     if (session.getAttribute("loginUser") != null) {
       resultMap.put("status", "success");
       resultMap.put("loginUser", session.getAttribute("loginUser"));
-      System.out.println("session.getAttribute('loginUser')"+session.getAttribute("loginUser"));
-      System.out.println("resultMap:"+resultMap);
       
     } else {
       resultMap.put("status", "fail");

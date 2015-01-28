@@ -77,6 +77,10 @@
    	  <delete id="delete" parameterType="int">
          DELETE FROM RESERVATION WHERE RNO=#{value}
   	  </delete>
+  	  
+  	  <update id="update" parameterType="int">
+		UPDATE RESERVATION set RSTATUS="승인" WHERE RNO=#{value} 	  	
+  	  </update>
 
 	
 </mapper>

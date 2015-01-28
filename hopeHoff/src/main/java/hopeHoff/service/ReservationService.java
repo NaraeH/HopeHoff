@@ -27,7 +27,7 @@ public class ReservationService {
   @Autowired myMarketService 	myMarketService;
   
   
-  public List<?> getList(int pageNo, int pageSize,String uId,String type,String businessNo) {
+  public List<?> getList(int pageNo, int pageSize,String uId,String type,String businessNo, String date) {
 	  HashMap<String,Object> paramMap = new HashMap<>();
 	  
 	  if(type.equals("user")){
@@ -38,6 +38,12 @@ public class ReservationService {
 			paramMap.put("businessNo",businessNo);
 	  }
 	  
+	  if( date != ""){ 
+		  paramMap.put("date", date + "%"); 
+	  }else{
+		  paramMap.put("date", null);
+	  }
+	  
 	if(pageNo ==0){
 		pageNo=1;
 	}
@@ -45,37 +51,25 @@ public class ReservationService {
 	paramMap.put("startIndex", ((pageNo - 1) * pageSize));
 	paramMap.put("pageSize", pageSize);
 	
-	System.out.println("paramMap" + paramMap);
-   
     return reservationDao.selectList(paramMap);
   }
   
-  public int getMaxPageNo(int pageSize,String uId, String type, String businessNo) {
-	  
+  public int getMaxPageNo(int pageSize,String uId, String type, String businessNo, String date) {
 	  HashMap<String,Object> paramMap = new HashMap<>();
-	  
-	  System.out.println("uId===> " + uId);
-	  System.out.println("type----------------------->"+type);
 	
-	int totalSize = 0;
 	if(type.equals("user")){
-		  paramMap.put("uId", uId);
-		 totalSize = reservationDao.totalSize(paramMap);		 
-		 System.out.println("totalSize user"+totalSize);
-			
+		 paramMap.put("uId", uId);
+
 	}else if(type.equals("boss")) {
-		//paramMap.put("businessNo", myMarketService.selectFirstShop(uId).getBusinessNo());
 		paramMap.put("businessNo", businessNo);
 		paramMap.put("uId", null);
-		
-		System.out.println("ppppppp==>" + paramMap);
-		 totalSize = reservationDao.totalSize(paramMap);
-		 System.out.println("totalSize boss"+totalSize);
 	}
-    int maxPageNo = totalSize / pageSize;
+
+	if( date != null){ paramMap.put("date", date + "%"); }
+	int totalSize = reservationDao.totalSize(paramMap);
+
+	int maxPageNo = totalSize / pageSize;
     if ((totalSize % pageSize) > 0) maxPageNo++;
-    
-    System.out.println("totalSize=====>"+totalSize);
     
     return maxPageNo;
   }

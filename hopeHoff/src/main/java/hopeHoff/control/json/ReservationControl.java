@@ -48,29 +48,22 @@ public class ReservationControl {
   @RequestMapping(value="/list", method=RequestMethod.POST )
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,
-     @RequestParam(defaultValue="3") int pageSize ,String uId, String type, String businessNo) throws Exception {
-	  
-    if (pageSize <= 0)
-      pageSize = PAGE_DEFAULT_SIZE;
-    
+     @RequestParam(defaultValue="3") int pageSize ,String uId, String type, String businessNo, String date) throws Exception {
+    if (pageSize <= 0) pageSize = PAGE_DEFAULT_SIZE;
 
-    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId,type, businessNo);
+    int maxPageNo = reservationService.getMaxPageNo(pageSize,uId,type, businessNo, date);
     
     if (pageNo <= 0) pageNo = 1;
-    
     if (pageNo > maxPageNo) pageNo = maxPageNo;
-    
     
     HashMap<String,Object> resultMap = new HashMap<>();
     
     resultMap.put("status", "success");
+    resultMap.put("shops", myMarketService.selectMarketList(uId));
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
-    resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
-    resultMap.put("reservations", reservationService.getList(pageNo, pageSize,uId, type,businessNo));
-    resultMap.put("shops", myMarketService.selectMarketList(uId));
-    
-    System.out.println("LIST resultMap=====>"+resultMap);
+    //resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
+    resultMap.put("reservations", reservationService.getList(pageNo, pageSize,uId, type,businessNo, date));
     
     return resultMap;
   }

@@ -2,6 +2,7 @@ var currPageNo;
 var maxPageNo;
 var reservationNo;
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
+var selectedDate = null;
 
 $(function(){
 	loadMarket(1);
@@ -145,14 +146,17 @@ $(document).delegate(".btn-delete","click",function(event){
 		loadMarket(currPageNo + 1);
 	});
 	
-	$("select").change(function () {
-		$("#selectForm option:selected").attr("selected","selected")
-		loadMarket();
+	$(document).delegate("#btnSearch","click",function(){
+		console.log("btnSearch호출");
+		selectedDate = $( "#datepicker" ).val();
+		loadMarket(1);
 	});
 	
-	
-	
-	
+	$("select").change(function () {
+		selectedShop = $("#selectForm option:selected").attr("data-businessNo");
+		selectedDate = null;
+		loadMarket(1);
+	});
 	
 	//***************************** 함수모음집 ************************************//
 	function setPageNo(currPageNo, maxPageNo) {
@@ -170,16 +174,19 @@ $(document).delegate(".btn-delete","click",function(event){
 		}
 	
 	function loadMarket(pageNo) {
-			selectedShop = $("#selectForm option:selected").attr("data-businessNo");
+			//selectedShop = $("#selectForm option:selected").attr("data-businessNo");
 			
 			$.post('../../json/reservation/list.do',
 					{
 					 "pageNo": pageNo,
 					 "businessNo":selectedShop,
 					 "type": uType,
-					 "uId":uId
+					 "uId":uId,
+					 "date": selectedDate
 					 },
 					function(data){
+						 console.log(data);
+						 
 						 yyyyMMddList(data);
 						 setPageNo(data.currPageNo, data.maxPageNo);
 					
