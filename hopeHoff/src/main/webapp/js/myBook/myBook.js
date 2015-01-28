@@ -1,6 +1,7 @@
 var currPageNo;
 var maxPageNo;
 var reservationNo;
+var status;
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 var selectedDate = null;
 
@@ -19,6 +20,8 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
 		reservationNo = $("#tableUser"+num+" td:first").html()
 		
+		status=$("#tableUser"+num+" td:last").html()
+		
 	  $.post('../../json/reservation/view.do'
 		        , {
 		          reservationNo: reservationNo
@@ -26,13 +29,19 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	        , function(data){
 	        	console.log(data);
 	        	if(data.status == "success") {
-	        		var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
-	        		
-	        		if(!status){
-	        			$('<tr>').addClass('table-content').attr("id","tableContent"+num)
-	        					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
-	        				 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
-	        					.insertAfter('#'+'tableUser'+num)
+	        		var hasClass = $($('#myBookData').children()[0]).children().hasClass("table-content");
+	        		if(!hasClass){
+		        			if(status=="승인"){	
+			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+			        				.append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
+			        				.append($('<td>').html("<button class=btn-comment id=btnComment"+num+">후기</button>"))
+			        				.insertAfter('#'+'tableUser'+num)
+		        			}else{
+			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+			       					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
+			       					 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
+			       					 .insertAfter('#'+'tableUser'+num)
+		        			}
 	        			}
 	        			else 
 	        			{
@@ -61,9 +70,9 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 			        }
 		        , function(data){
 		        	if(data.status == "success") {
-		        		var status = $($('#myBookData').children()[0]).children().hasClass("table-content");
+		        		var hasClass = $($('#myBookData').children()[0]).children().hasClass("table-content");
 		        		
-		        		if(!status){
+		        		if(!hasClass){
 		        			$('<tr>').addClass('table-content').attr("id","tableContent"+num)
 		        					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
 		        				 .append($('<td>').html("<button class=btn-permission id=btnPermission"+num+">승인</button>"))
