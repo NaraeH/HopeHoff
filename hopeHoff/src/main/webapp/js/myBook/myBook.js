@@ -7,7 +7,6 @@ var selectedDate = null;
 
 
 $(function(){
-	console.log("test");
 	loadMarket(1);
 });
 
@@ -133,6 +132,11 @@ $(document).delegate(".btn-delete","click",function(event){
 	        , 'json');
 	});
 		
+	
+	//********************* btnComment클릭  *************************//
+	$(document).delegate(".btn-comment","click",function(){
+	});
+	
 	
 	//******************** datePicker 설정 하기************************//
 	$(function() {
