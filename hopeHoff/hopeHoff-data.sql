@@ -959,3 +959,25 @@ update RESERVATION set RDATE="2015-01-04 10:04:25", RCONTENT="오늘 6시 예약
 update RESERVATION set RDATE="2015-01-04 14:17:57", RCONTENT="오늘 7시 30분 8명 예약하고싶습니다.", UID="u14", RSTATUS="예약거절"  where RNO=78;
 update RESERVATION set RDATE="2015-01-04 15:15:50", RCONTENT="오늘 5명 6시20분까지 갈게요!", UID="u15", RSTATUS="예약신청"  where RNO=79;
 update RESERVATION set RDATE="2015-01-04 17:00:13", RCONTENT="오늘 7시 4명 예약좀할게여.", UID="u16", RSTATUS="예약신청"  where RNO=80;
+---------
+insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('b05','김민지','boss','5555','010-5555-5555');
+
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('101-63-66541',
+	'b05',
+	'제주돈사돈',
+	'경기도 안양',
+	'경기도 안양시 동안구 호계동 915-3',
+	'031-459-1300',
+	'16:00~00:00',
+	'레알 제주산 생삼겹살',
+	'1박2일, vj특공대, 생성정보통 출연한 맛집!!',
+	'안양',
+	'홀',
+	'고기');
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3) values('101-63-66541','jeju-main.jpg','jeju-detail1.jpg','jeju-detail2.jpg','jeju-detail3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(64,'101-63-66541','근고기(600g)','36000','jeju-menu1.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(65,'101-63-66541','근고기(400g)','24000','jeju-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(66,'101-63-66541','김치찌개','6000','jeju-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(67,'101-63-66541','공기밥','1000','jeju-menu4.jpg');
