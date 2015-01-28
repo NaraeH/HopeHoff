@@ -8,6 +8,7 @@ import java.util.Map;
 public interface ReservationDao {
 	public List<?> selectList(Map<String,Object> params);
 	public void delete(int no);
+	public void update(int no);
 	public void insert(Reservation reservation);
 	public Reservation selectOne(Integer no);
 	public int totalSize(Map<String,Object> params);

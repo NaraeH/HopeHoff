@@ -7,7 +7,6 @@ $(function(){
 	loadMarket(1);
 });
 
-
 $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	if(uType=="user"){
 	$(document).delegate(".table-tr","click",function(event){
@@ -103,6 +102,25 @@ $(document).delegate(".btn-delete","click",function(event){
 	console.log("버튼 눌렸다");
 	alert("예약을 취소 하시겠습니까?");
 });
+
+
+   //**************************** 승인버튼  **********************************//
+	$(document).delegate(".btn-permission","click",function(){
+		var num = $($(this)[0]).attr("id").split("btnPermission")[1]-0;
+		
+		$.post('../../json/reservation/update.do'
+		        , {
+		        	reservationNo: reservationNo
+		        }
+	        , function(data){
+	        	if(data.status == "success") {
+	        		console.log(data);
+	        		loadMarket(1);
+	        	} else {   	console.log(data.status);        	}
+	          }
+	        , 'json');
+	});
+		
 	
 	//******************** datePicker 설정 하기************************//
 	$(function() {
@@ -115,7 +133,10 @@ $(document).delegate(".btn-delete","click",function(event){
 		$("#back").css("display", "none");
 		$("#myBook").css("display", "none");
 	});
-
+	
+	
+	
+//************************** 앞으로 가기 뒤로가기 버튼 ************************************//
 	$(document).delegate("#prevBtn","click",function(){
 		loadMarket(currPageNo - 1);
 	});
@@ -129,6 +150,11 @@ $(document).delegate(".btn-delete","click",function(event){
 		loadMarket();
 	});
 	
+	
+	
+	
+	
+	//***************************** 함수모음집 ************************************//
 	function setPageNo(currPageNo, maxPageNo) {
 		  window.currPageNo = currPageNo;
 		  window.maxPageNo = maxPageNo;

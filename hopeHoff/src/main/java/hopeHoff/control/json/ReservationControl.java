@@ -35,6 +35,16 @@ public class ReservationControl {
     return resultMap;
   }
   
+  @RequestMapping("/update")
+  public Object update(Integer reservationNo ) throws Exception {
+    reservationService.update(reservationNo);
+    
+    HashMap<String,Object> resultMap = new HashMap<>();
+    resultMap.put("status", "success");
+    
+    return resultMap;
+  }
+  
   @RequestMapping(value="/list", method=RequestMethod.POST )
   public Object list(
       @RequestParam(defaultValue="1") int pageNo,

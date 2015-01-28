@@ -24,7 +24,7 @@ public class ReservationService {
   @Autowired
   ReservationDao reservationDao;
   @Autowired UserDao userDao;
-  @Autowired myMarketService 		myMarketService;
+  @Autowired myMarketService 	myMarketService;
   
   
   public List<?> getList(int pageNo, int pageSize,String uId,String type,String businessNo) {
@@ -86,6 +86,13 @@ public class ReservationService {
   public void delete(int reservationNo) {
     reservationDao.delete(reservationNo);
   }
+  
+  @Transactional(
+	      rollbackFor=Exception.class, 
+	      propagation=Propagation.REQUIRED)
+	  public void update(int reservationNo) {
+	    reservationDao.update(reservationNo);
+	  }
   
   public Reservation get(Integer reservationNo) {
 	
