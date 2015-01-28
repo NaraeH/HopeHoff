@@ -14,4 +14,8 @@ public class CommentService {
 	public List<?> commentList(String businessNo){
 		return commentDao.selectCommentList(businessNo);
 	}
+	
+	public List<?> writeCommentList(String userId){
+		return commentDao.toDoCommentList(userId);
+	}
 }

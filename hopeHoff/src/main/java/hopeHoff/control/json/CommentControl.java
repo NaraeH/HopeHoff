@@ -20,5 +20,13 @@ public class CommentControl {
 		resultMap.put("comments", commentService.commentList(businessNo));
 		return resultMap;
 	}
+	
+	@RequestMapping(value="/isComments", method=RequestMethod.POST)
+	public Object isComments(String userId){
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("comments", commentService.writeCommentList(userId));
+		
+		return resultMap;
+	}
 
 }

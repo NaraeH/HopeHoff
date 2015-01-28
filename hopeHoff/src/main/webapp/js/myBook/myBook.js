@@ -10,7 +10,6 @@ $(function(){
 	loadMarket(1);
 });
 
-$.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 	if(uType=="user"){
 	$(document).delegate(".table-tr","click",function(event){
 		
@@ -18,7 +17,6 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		 
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
 		reservationNo = $( $( this ).children()[0] ).attr( "data-reservationNo" );
-		console.log("reservationNo==> " + reservationNo);
 		
 		status=$("#tableUser"+num+" td:last").html()
 		
@@ -42,21 +40,16 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 			       					 .append($('<td>').html("<button class=btn-delete id=btnDelete"+num+">취소</button>"))
 			       					 .insertAfter('#'+'tableUser'+num)
 		        			}
-	        			}
-	        			else 
-	        			{
+	        			}else {
 	        				$('#'+'tableContent'+num).remove(); 
 	        			}
 
-	        		
 	        	} else {   	console.log(data.status);        	}
 	          }
 	        , 'json');
 		
-		
 		});
-	}
-	else{
+	}else{
 		$(document).delegate(".table-tr","click",function(event){
 			
 			 event.stopImmediatePropagation();
@@ -87,7 +80,6 @@ $.getJSON('/hopeHoff/json/auth/loginUser.do', function(id){
 		        , 'json');
 		});
 		}
-});
 
 	//***************************** deleteButton클릭시 행 삭제하기 ********************************//
 $(document).delegate(".btn-delete","click",function(event){
@@ -155,15 +147,21 @@ $(document).delegate(".btn-delete","click",function(event){
 	
 //************************** 앞으로 가기 뒤로가기 버튼 ************************************//
 	$(document).delegate("#prevBtn","click",function(){
-		loadMarket(currPageNo - 1);
+		
+		if( $( "#pageNo" ).html() > 1 ){
+			loadMarket(currPageNo - 1);
+		}
 	});
 
 	$(document).delegate("#nextBtn","click",function(){
-		loadMarket(currPageNo + 1);
+		if( $( "#pageNo" ).html() < maxPageNo){
+			loadMarket(currPageNo + 1);
+		}else {
+			alert( "마지막 페이지 입니다" );
+		}
 	});
 	
 	$(document).delegate("#btnSearch","click",function(){
-		console.log("btnSearch호출");
 		selectedDate = $( "#datepicker" ).val();
 		loadMarket(1);
 	});
@@ -187,10 +185,9 @@ $(document).delegate(".btn-delete","click",function(event){
 		  
 		  if (currPageNo >= maxPageNo) $('#nextBtn').css('display', 'none');
 		  else $('#nextBtn').css('display', '');
-		}
+	}
 	
 	function loadMarket(pageNo) {
-			//selectedShop = $("#selectForm option:selected").attr("data-businessNo");
 			
 			$.post('../../json/reservation/list.do',
 					{
@@ -201,6 +198,8 @@ $(document).delegate(".btn-delete","click",function(event){
 					 "date": selectedDate
 					 },
 					function(data){
+						 var bookNo = ( data.currPageNo - 1) * 3 + 1  //3: pageSize
+
 						 yyyyMMddList(data);
 						 setPageNo(data.currPageNo, data.maxPageNo);
 					
@@ -209,6 +208,10 @@ $(document).delegate(".btn-delete","click",function(event){
 							$('#myBookContainer').html(template(data));
 							
 							var dataChange = $(".data-change");
+
+							for(var i = 0; i < 3; i++ ){
+								$( "#bookNo" + i ).html( bookNo ++ );
+							}
 							
 							if(uType == 'boss'){
 								$( ".header-shopName" ).html("예약자 이름");
@@ -220,14 +223,6 @@ $(document).delegate(".btn-delete","click",function(event){
 							if(uType == "user"){
 								$(".type-boss").css("display","none");
 							}
-
-							var bookNo = data.maxPageNo - ( data.currPageNo - 1 ) * 3 //3: pageSize
-							
-							var bookNo = ( data.currPageNo - 1) * 3 + 1  //3: pageSize
-							for(var i = 0; i < 3; i++ ){
-								$( "#bookNo" + i ).html( bookNo ++ );
-							}
-							
 	
 						});
 			     }, 'json');
