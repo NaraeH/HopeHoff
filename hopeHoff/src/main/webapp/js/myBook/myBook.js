@@ -4,7 +4,9 @@ var reservationNo;
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 var selectedDate = null;
 
+
 $(function(){
+	console.log("test");
 	loadMarket(1);
 });
 
