@@ -11,7 +11,6 @@ var currPageNo;
 var shopPhone = null;
 var rStatus ="예약 신청";
 var isUser="true";
-var rStatus ="예약신청";
 var listLength = 0;
 
 $(function(){
@@ -324,6 +323,10 @@ function loadContainerList(that){
 			        var template = Handlebars.compile(html);
 			        $('#containerList').html( template(data) );
 			        setListAlign();
+			        
+			        if( uType == "user" ){
+			        	commentAlarm(); //예약 정보 승인이 됬다면 알람쓰라는 창 뜨도록 하자
+			        }
 			      });
 			});
 }
@@ -546,6 +549,31 @@ function loadReservationList(pageNo,uId,uType) {
 			      }, 'json');
 		
 }
+
+function commentAlarm(){
+	$.post('../../json/commentControl/isComments.do',
+			{
+			"userId": uId
+			},
+			function(data){
+				var commentAlramMsg = [];
+				var j = 0;
+				
+				for(var i = 0; i < data.comments.length; i++ ){
+					
+					if( data.comments[i].content == null){
+						commentAlramMsg[ j++ ] = data.comments[i].SNAME;
+					}
+				}
+				
+				if( commentAlramMsg.length > 0){
+					var size = ( commentAlramMsg.length == 1 )? "": "외, " + ( commentAlramMsg.length - 1 ) + "개";
+					alert( commentAlramMsg[0] + size + "의 후기를 입력해주세요");
+				}
+				   
+			}, 'json');
+}
+
 /*function tablerowClick(){
 	$(document).delegate(".table-tr","click",function(event){
 	    $.post('../../json/reservation/view.do'

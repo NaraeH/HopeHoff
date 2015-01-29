@@ -14,15 +14,6 @@
 		<result column="UID" property="userId"/>
 		<result column="BPHOTO" property="photo"/>
 	</resultMap>
-	
-	<resultMap type="map" id="commentReservShopMap">
-		<result column="UID" property="userId"/>
-		<result column="SANME" property="shopName"/>
-		<result column="BCONTENT" property="content"/>
-		<result column="BDATE" property="date"/>
-		<result column="BPHOTO" property="photo"/>
-		<result column="RSTATUS" property="reservStatus"/>
-	</resultMap>
 
 	<select id="selectCommentList" parameterType="String" resultMap="commentMap">
 		SELECT r.RNO, BBNO, BDATE, BCONTENT, UID, BPHOTO 
@@ -30,19 +21,4 @@
 		WHERE r.RNO = b.RNO AND BBNO = #{businessNo}
 		ORDER BY RNO DESC;
 	</select>
-	
-	<select id="toDoCommentList" parameterType="String" resultMap="commentReservShopMap">
-		SELECT rb.UID, SNAME, rb.BCONTENT, rb.BDATE, rb.BPHOTO, rb.RSTATUS  
-		FROM( 
-			SELECT r.BBNO, r.UID, b.BCONTENT, b.BPHOTO, b.BDATE,  r.RSTATUS 
-			FROM RESERVATION r left outer join BOARD b 
-			using(rno)
-			) rb, SHOP
-		WHERE rb.BBNO = shop.BBNO
-		AND rb.UID = #{userId}
-		AND rb.RSTATUS='승인' ;
-	</select>
-	
-	
-	
 </mapper>

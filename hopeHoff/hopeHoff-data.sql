@@ -865,7 +865,7 @@ INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('77', '살찌는 이맛 �
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('78', '700cc맥주-커플끼리 마시기 좋을듯^ㅡ^', '2014-01-01', '78.jpg');
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('79', '감자췹에 소스 냠냠~~', '2014-01-01', '79.jpg');
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('80', '샐러드 5시 전 꽁짜래요!!!개굿', '2014-01-01', '80.jpg');
-----*-*-*-*-*(1월 27일 ^-^ 연흥ㅎ)*-*-*-*-*-*----
+----*-*-*-*-*(1월 28일 ^-^ 연흥ㅎ)*-*-*-*-*-*----
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u05','배연흥','user','5555','010-6250-7778');
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u06','나래신','user','6666','010-5665-7172');
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u07','김도진','user','7777','010-9707-4345');
@@ -878,84 +878,106 @@ insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u13','정다운','use
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u14','양오연','user','4444','010-3776-0326');
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u15','손다인','user','5555','010-9055-1524');
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('u16','한표현','user','6666','010-3154-6985');
-
-update RESERVATION set RDATE="2014-12-28 00:01:33", RCONTENT="지금 당장 4명 되나요?", UID="u01", RSTATUS="승인" where RNO=1;
+----*-*-*-*-*(1월 28일 연흥2^^  다시 업데이트 시키시면 됩니다 (+예약거절 추가됨)-*-*-*-*-*----
+update RESERVATION set RDATE="2014-12-28 00:01:33", RCONTENT="지금 당장 4명 되나요?", UID="u01", RSTATUS="예약승인" where RNO=1;
 update RESERVATION set RDATE="2014-12-28 00:03:58", RCONTENT="1시 3명이요", UID="u02", RSTATUS="예약신청" where RNO=2;
 update RESERVATION set RDATE="2014-12-28 00:15:18", RCONTENT="1시 반에 4명 되져~?", UID="u03", RSTATUS="예약신청"  where RNO=3;
-update RESERVATION set RDATE="2014-12-28 00:16:17", RCONTENT="1시 6명이요!!", UID="u04", RSTATUS="승인"  where RNO=4;
-update RESERVATION set RDATE="2014-12-28 00:25:40", RCONTENT="1:20쯤 3명 ", UID="u05", RSTATUS="승인"  where RNO=5;
+update RESERVATION set RDATE="2014-12-28 00:16:17", RCONTENT="1시 6명이요!!", UID="u04", RSTATUS="예약신청"  where RNO=4;
+update RESERVATION set RDATE="2014-12-28 00:25:40", RCONTENT="1:20쯤 3명 ", UID="u05", RSTATUS="예약거절"  where RNO=5;
 update RESERVATION set RDATE="2014-12-28 01:03:10", RCONTENT="1시반 5명이요", UID="u06", RSTATUS="예약신청"  where RNO=6;
-update RESERVATION set RDATE="2014-12-28 01:09:13", RCONTENT="2시 7명요", UID="u07", RSTATUS="승인"  where RNO=7;
-update RESERVATION set RDATE="2014-12-28 01:33:04", RCONTENT="2시 6명", UID="u08", RSTATUS="승인"  where RNO=8;
+update RESERVATION set RDATE="2014-12-28 01:09:13", RCONTENT="2시 7명요", UID="u07", RSTATUS="예약승인"  where RNO=7;
+update RESERVATION set RDATE="2014-12-28 01:33:04", RCONTENT="2시 6명", UID="u08", RSTATUS="예약신청"  where RNO=8;
 update RESERVATION set RDATE="2014-12-28 01:45:04", RCONTENT="2시20분 4명", UID="u09", RSTATUS="예약신청"  where RNO=9;
-update RESERVATION set RDATE="2014-12-29 15:43:44", RCONTENT="5시 8명!", UID="u10", RSTATUS="승인"  where RNO=10;
+update RESERVATION set RDATE="2014-12-29 15:43:44", RCONTENT="5시 8명!", UID="u10", RSTATUS="예약거절"  where RNO=10;
 update RESERVATION set RDATE="2014-12-29 16:04:59", RCONTENT="5시 4명 되져?", UID="u11", RSTATUS="예약신청"  where RNO=11;
-update RESERVATION set RDATE="2014-12-29 16:30:10", RCONTENT="5시반 7명 제발ㅋㅋ", UID="u12", RSTATUS="승인"  where RNO=12;
+update RESERVATION set RDATE="2014-12-29 16:30:10", RCONTENT="5시반 7명 제발ㅋㅋ", UID="u12", RSTATUS="예약승인"  where RNO=12;
 update RESERVATION set RDATE="2014-12-29 16:34:07", RCONTENT="5시30분 8명^^", UID="u13", RSTATUS="예약신청"  where RNO=13;
-update RESERVATION set RDATE="2014-12-29 17:20:19", RCONTENT="6시 10명....", UID="u14", RSTATUS="승인"  where RNO=14;
-update RESERVATION set RDATE="2014-12-29 18:45:59", RCONTENT="8시 7명 되져?????", UID="u15", RSTATUS="승인"  where RNO=15;
+update RESERVATION set RDATE="2014-12-29 17:20:19", RCONTENT="6시 10명....", UID="u14", RSTATUS="예약승인"  where RNO=14;
+update RESERVATION set RDATE="2014-12-29 18:45:59", RCONTENT="8시 7명 되져?????", UID="u15", RSTATUS="예약거절"  where RNO=15;
 update RESERVATION set RDATE="2014-12-29 19:22:13", RCONTENT="8시 5명:)", UID="u16", RSTATUS="예약신청"  where RNO=16;
-update RESERVATION set RDATE="2014-12-29 20:51:14", RCONTENT="10시 7명", UID="u01", RSTATUS="예약신청"  where RNO=17;
-update RESERVATION set RDATE="2014-12-29 21:34:50", RCONTENT="11시 7명", UID="u02", RSTATUS="승인"  where RNO=18;
-update RESERVATION set RDATE="2014-12-29 21:38:01", RCONTENT="11시 6명", UID="u03", RSTATUS="승인"  where RNO=19;
-update RESERVATION set RDATE="2014-12-29 22:11:13", RCONTENT="11시 7명", UID="u04", RSTATUS="승인" where RNO=20;
+update RESERVATION set RDATE="2014-12-29 20:51:14", RCONTENT="10시 7명", UID="u01", RSTATUS="예약거절"  where RNO=17;
+update RESERVATION set RDATE="2014-12-29 21:34:50", RCONTENT="11시 7명", UID="u02", RSTATUS="예약승인"  where RNO=18;
+update RESERVATION set RDATE="2014-12-29 21:38:01", RCONTENT="11시 6명", UID="u03", RSTATUS="예약승인"  where RNO=19;
+update RESERVATION set RDATE="2014-12-29 22:11:13", RCONTENT="11시 7명", UID="u04", RSTATUS="예약거절" where RNO=20;
 update RESERVATION set RDATE="2014-12-29 22:59:55", RCONTENT="12시 9명이요~", UID="u05", RSTATUS="예약신청"  where RNO=21;
-update RESERVATION set RDATE="2014-12-30 00:09:14", RCONTENT="1시 4명이용~<3", UID="u06" , RSTATUS="승인" where RNO=22;
+update RESERVATION set RDATE="2014-12-30 00:09:14", RCONTENT="1시 4명이용~<3", UID="u06" , RSTATUS="예약승인" where RNO=22;
 update RESERVATION set RDATE="2014-12-30 00:55:42", RCONTENT="1시반 8명이", UID="u07", RSTATUS="예약신청"  where RNO=23;
-update RESERVATION set RDATE="2014-12-30 01:10:44", RCONTENT="2시 16명 가려고 하는데요", UID="u08" , RSTATUS="승인" where RNO=24;
-update RESERVATION set RDATE="2014-12-30 16:11:37", RCONTENT="6시 9명입니다", UID="u09" , RSTATUS="승인" where RNO=25;
-update RESERVATION set RDATE="2014-12-30 17:00:01", RCONTENT="6시 반 4명이요", UID="u10" , RSTATUS="예약신청" where RNO=26;
-update RESERVATION set RDATE="2014-12-30 17:39:41", RCONTENT="6시 반 9명 가능한가요?", UID="u11", RSTATUS="승인"  where RNO=27;
-update RESERVATION set RDATE="2014-12-30 18:17:31", RCONTENT="7시 30분 혹시 20명 됩니까..", UID="u12", RSTATUS="승인"  where RNO=28;
+update RESERVATION set RDATE="2014-12-30 01:10:44", RCONTENT="2시 16명 가려고 하는데요", UID="u08" , RSTATUS="예약승인" where RNO=24;
+update RESERVATION set RDATE="2014-12-30 16:11:37", RCONTENT="6시 9명입니다", UID="u09" , RSTATUS="예약승인" where RNO=25;
+update RESERVATION set RDATE="2014-12-30 17:00:01", RCONTENT="6시 반 4명이요", UID="u10" , RSTATUS="예약거절" where RNO=26;
+update RESERVATION set RDATE="2014-12-30 17:39:41", RCONTENT="6시 반 9명 가능한가요?", UID="u11", RSTATUS="예약승인"  where RNO=27;
+update RESERVATION set RDATE="2014-12-30 18:17:31", RCONTENT="7시 30분 혹시 20명 됩니까..", UID="u12", RSTATUS="예약승인"  where RNO=28;
 update RESERVATION set RDATE="2014-12-30 18:58:58", RCONTENT="8시10분 12명이요~~~~~", UID="u13", RSTATUS="예약신청"  where RNO=29;
 update RESERVATION set RDATE="2014-12-30 19:44:32", RCONTENT="9시 3명요", UID="u14", RSTATUS="예약신청"  where RNO=30;
-update RESERVATION set RDATE="2014-12-30 20:01:11", RCONTENT="10시 24명요", UID="u15", RSTATUS="승인"  where RNO=31;
-update RESERVATION set RDATE="2014-12-30 20:04:37", RCONTENT="사장님,10시 7명 되지요~?", UID="u16", RSTATUS="승인"  where RNO=32;
+update RESERVATION set RDATE="2014-12-30 20:01:11", RCONTENT="10시 24명요", UID="u15", RSTATUS="예약승인"  where RNO=31;
+update RESERVATION set RDATE="2014-12-30 20:04:37", RCONTENT="사장님,10시 7명 되지요~?", UID="u16", RSTATUS="예약승인"  where RNO=32;
 update RESERVATION set RDATE="2014-12-30 22:00:07", RCONTENT="10시 30분 6명 예약 가능한가윰", UID="u01", RSTATUS="예약신청"  where RNO=33;
-update RESERVATION set RDATE="2014-12-30 22:42:44", RCONTENT="12시 정각에 갈게요~6명!!", UID="u02", RSTATUS="승인"  where RNO=34;
+update RESERVATION set RDATE="2014-12-30 22:42:44", RCONTENT="12시 정각에 갈게요~6명!!", UID="u02", RSTATUS="예약거절"  where RNO=34;
 update RESERVATION set RDATE="2014-12-31 00:07:04", RCONTENT="1시30분 예약이요! 5명", UID="u03", RSTATUS="예약신청"  where RNO=35;
 update RESERVATION set RDATE="2014-12-31 09:55:27", RCONTENT="5시에 10명 예약 하려고 합니다~^0^", UID="u04", RSTATUS="예약신청"  where RNO=36;
-update RESERVATION set RDATE="2014-12-31 11:01:14", RCONTENT="오늘 4시반 8명이용", UID="u05" , RSTATUS="승인" where RNO=37;
+update RESERVATION set RDATE="2014-12-31 11:01:14", RCONTENT="오늘 4시반 8명이용", UID="u05" , RSTATUS="예약승인" where RNO=37;
 update RESERVATION set RDATE="2014-12-31 13:00:12", RCONTENT="오늘5시9명예약이염", UID="u06", RSTATUS="예약신청"  where RNO=38;
-update RESERVATION set RDATE="2014-12-31 13:07:45", RCONTENT="5시30분 20명..부탁드려요", UID="u07" , RSTATUS="승인" where RNO=39;
-update RESERVATION set RDATE="2014-12-31 14:30:36", RCONTENT="5시에 예약 다 찼나요?ㅠㅠ 7명가려그여!", UID="u08", RSTATUS="승인"  where RNO=40;
-update RESERVATION set RDATE="2014-12-31 15:40:34", RCONTENT="6시 9명이요", UID="u09", RSTATUS="승인"  where RNO=41;
+update RESERVATION set RDATE="2014-12-31 13:07:45", RCONTENT="5시30분 20명..부탁드려요", UID="u07" , RSTATUS="예약승인" where RNO=39;
+update RESERVATION set RDATE="2014-12-31 14:30:36", RCONTENT="5시에 예약 다 찼나요?ㅠㅠ 7명가려그여!", UID="u08", RSTATUS="예약승인"  where RNO=40;
+update RESERVATION set RDATE="2014-12-31 15:40:34", RCONTENT="6시 9명이요", UID="u09", RSTATUS="예약거절"  where RNO=41;
 update RESERVATION set RDATE="2014-12-31 15:52:05", RCONTENT="6시 6명 66ㅋㅋ", UID="u10" , RSTATUS="예약신청" where RNO=42;
 update RESERVATION set RDATE="2014-12-31 16:16:14", RCONTENT="6시30분 5명 되는지요", UID="u11" , RSTATUS="예약신청" where RNO=43;
-update RESERVATION set RDATE="2014-12-31 17:07:00", RCONTENT="7시7명가요!", UID="u12" , RSTATUS="승인" where RNO=44;
+update RESERVATION set RDATE="2014-12-31 17:07:00", RCONTENT="7시7명가요!", UID="u12" , RSTATUS="예약승인" where RNO=44;
 update RESERVATION set RDATE="2014-12-31 18:18:18", RCONTENT="8시 10명여", UID="u13", RSTATUS="예약신청"  where RNO=45;
-update RESERVATION set RDATE="2014-12-31 19:00:01", RCONTENT="8:30 5명 가능한가요?", UID="u14", RSTATUS="승인"  where RNO=46;
+update RESERVATION set RDATE="2014-12-31 19:00:01", RCONTENT="8:30 5명 가능한가요?", UID="u14", RSTATUS="예약승인"  where RNO=46;
 update RESERVATION set RDATE="2014-12-31 20:19:15", RCONTENT="12시 4명 갈게요", UID="u15", RSTATUS="예약신청"  where RNO=47;
-update RESERVATION set RDATE="2014-12-31 23:07:27", RCONTENT="12시 5명 예약이엽!", UID="u16" , RSTATUS="승인" where RNO=48;
-update RESERVATION set RDATE="2015-01-01 09:05:29", RCONTENT="저녁 7시 11명 예약ㅎ!", UID="u01" , RSTATUS="승인" where RNO=49;
+update RESERVATION set RDATE="2014-12-31 23:07:27", RCONTENT="12시 5명 예약이엽!", UID="u16" , RSTATUS="예약승인" where RNO=48;
+update RESERVATION set RDATE="2015-01-01 09:05:29", RCONTENT="저녁 7시 11명 예약ㅎ!", UID="u01" , RSTATUS="예약거절" where RNO=49;
 update RESERVATION set RDATE="2015-01-01 14:41:36", RCONTENT="6시 13명ㅋㅋㅋ!", UID="u02", RSTATUS="예약신청"  where RNO=50;
 update RESERVATION set RDATE="2015-01-01 15:11:02", RCONTENT="6시반 12명 가능?", UID="u03" , RSTATUS="예약신청" where RNO=51;
 update RESERVATION set RDATE="2015-01-01 16:22:52", RCONTENT="6시 7명ㄱㄱ", UID="u04" , RSTATUS="예약신청" where RNO=52;
-update RESERVATION set RDATE="2015-01-01 17:15:27", RCONTENT="7시 30분 5명이요", UID="u05", RSTATUS="승인"  where RNO=53;
-update RESERVATION set RDATE="2015-01-01 17:16:00", RCONTENT="8시에 예약하고 싶습니다.", UID="u06" , RSTATUS="승인" where RNO=54;
-update RESERVATION set RDATE="2015-01-01 18:11:02", RCONTENT="20:00 9명.", UID="u07" , RSTATUS="승인" where RNO=55;
-update RESERVATION set RDATE="2015-01-01 19:41:36", RCONTENT="9시 8명", UID="u08", RSTATUS="예약신청"  where RNO=56;
+update RESERVATION set RDATE="2015-01-01 17:15:27", RCONTENT="7시 30분 5명이요", UID="u05", RSTATUS="예약거절"  where RNO=53;
+update RESERVATION set RDATE="2015-01-01 17:16:00", RCONTENT="8시에 예약하고 싶습니다.", UID="u06" , RSTATUS="예약승인" where RNO=54;
+update RESERVATION set RDATE="2015-01-01 18:11:02", RCONTENT="20:00 9명.", UID="u07" , RSTATUS="예약승인" where RNO=55;
+update RESERVATION set RDATE="2015-01-01 19:41:36", RCONTENT="9시 8명", UID="u08", RSTATUS="예약거절"  where RNO=56;
 update RESERVATION set RDATE="2015-01-01 21:55:08", RCONTENT="11시 6명요", UID="u09" , RSTATUS="예약신청" where RNO=57;
-update RESERVATION set RDATE="2015-01-02 14:00:13", RCONTENT="오늘 7시 15명!", UID="u10", RSTATUS="승인"  where RNO=58;
+update RESERVATION set RDATE="2015-01-02 14:00:13", RCONTENT="오늘 7시 15명!", UID="u10", RSTATUS="예약승인"  where RNO=58;
 update RESERVATION set RDATE="2015-01-02 15:55:08", RCONTENT="6시 4명 예약할래욤>3<", UID="u11", RSTATUS="예약신청"  where RNO=59;
-update RESERVATION set RDATE="2015-01-02 16:52:04", RCONTENT="오늘 8시 8명~", UID="u12", RSTATUS="승인"  where RNO=60;
-update RESERVATION set RDATE="2015-01-02 17:00:14", RCONTENT="한시간후 6시에 14명 예약이요", UID="u13", RSTATUS="승인"  where RNO=61;
-update RESERVATION set RDATE="2015-01-02 16:52:04", RCONTENT="오늘 8시 8명~", UID="u14", RSTATUS="승인"  where RNO=62;
+update RESERVATION set RDATE="2015-01-02 16:52:04", RCONTENT="오늘 8시 8명~", UID="u12", RSTATUS="예약거절"  where RNO=60;
+update RESERVATION set RDATE="2015-01-02 17:00:14", RCONTENT="한시간후 6시에 14명 예약이요", UID="u13", RSTATUS="예약승인"  where RNO=61;
+update RESERVATION set RDATE="2015-01-02 16:52:04", RCONTENT="오늘 8시 8명~", UID="u14", RSTATUS="예약승인"  where RNO=62;
 update RESERVATION set RDATE="2015-01-02 17:00:14", RCONTENT="오늘 8시30분에 4명예약이요", UID="u15", RSTATUS="예약신청"  where RNO=63;
 update RESERVATION set RDATE="2015-01-02 17:20:53", RCONTENT="7시 6명 되나요??", UID="u16", RSTATUS="예약신청"  where RNO=64;
 update RESERVATION set RDATE="2015-01-02 17:38:07", RCONTENT="8시 3명 ", UID="u01", RSTATUS="예약신청"  where RNO=65;
-update RESERVATION set RDATE="2015-01-02 19:07:10", RCONTENT="9시 30분 9명 부탁해영^^", UID="u02", RSTATUS="승인"  where RNO=66;
-update RESERVATION set RDATE="2015-01-02 20:10:10", RCONTENT="9시 6명 ", UID="u03", RSTATUS="승인"  where RNO=67;
-update RESERVATION set RDATE="2015-01-02 21:44:44", RCONTENT="11시 5명 제발 ㅜ_ㅜ", UID="u04", RSTATUS="승인"  where RNO=68;
+update RESERVATION set RDATE="2015-01-02 19:07:10", RCONTENT="9시 30분 9명 부탁해영^^", UID="u02", RSTATUS="예약거절"  where RNO=66;
+update RESERVATION set RDATE="2015-01-02 20:10:10", RCONTENT="9시 6명 ", UID="u03", RSTATUS="예약승인"  where RNO=67;
+update RESERVATION set RDATE="2015-01-02 21:44:44", RCONTENT="11시 5명 제발 ㅜ_ㅜ", UID="u04", RSTATUS="예약승인"  where RNO=68;
 update RESERVATION set RDATE="2015-01-02 22:23:22", RCONTENT=" 12시 ! 4명이요", UID="u05", RSTATUS="예약신청"  where RNO=69;
-update RESERVATION set RDATE="2015-01-03 12:41:04", RCONTENT="오늘 5시 8명 되나욤?~", UID="u06", RSTATUS="승인"  where RNO=70;
-update RESERVATION set RDATE="2015-01-03 13:00:42", RCONTENT="오늘 7시 3명요~", UID="u07", RSTATUS="승인"  where RNO=71;
+update RESERVATION set RDATE="2015-01-03 12:41:04", RCONTENT="오늘 5시 8명 되나욤?~", UID="u06", RSTATUS="예약승인"  where RNO=70;
+update RESERVATION set RDATE="2015-01-03 13:00:42", RCONTENT="오늘 7시 3명요~", UID="u07", RSTATUS="예약거절"  where RNO=71;
 update RESERVATION set RDATE="2015-01-03 16:52:04", RCONTENT="6시에 6명 갈게요", UID="u08", RSTATUS="예약신청"  where RNO=72;
-update RESERVATION set RDATE="2015-01-03 18:04:00", RCONTENT="7시 7명 예약가능한가요", UID="u09", RSTATUS="승인"  where RNO=73;
+update RESERVATION set RDATE="2015-01-03 18:04:00", RCONTENT="7시 7명 예약가능한가요", UID="u09", RSTATUS="예약승인"  where RNO=73;
 update RESERVATION set RDATE="2015-01-03 19:41:04", RCONTENT="8시 4명 제발!!!!사좡님 젭알!", UID="u10", RSTATUS="예약신청"  where RNO=74;
-update RESERVATION set RDATE="2015-01-03 20:00:42", RCONTENT="9시30분 6명이용", UID="u11", RSTATUS="승인"  where RNO=75;
+update RESERVATION set RDATE="2015-01-03 20:00:42", RCONTENT="9시30분 6명이용", UID="u11", RSTATUS="예약승인"  where RNO=75;
 update RESERVATION set RDATE="2015-01-03 21:53:04", RCONTENT="11시 9명예약 가능한가요", UID="u12", RSTATUS="예약신청"  where RNO=76;
-update RESERVATION set RDATE="2015-01-04 10:04:25", RCONTENT="오늘 6시 예약이요 4명입니다.", UID="u13", RSTATUS="승인"  where RNO=77;
-update RESERVATION set RDATE="2015-01-04 14:17:57", RCONTENT="오늘 7시 30분 8명 예약하고싶습니다.", UID="u14", RSTATUS="승인"  where RNO=78;
+update RESERVATION set RDATE="2015-01-04 10:04:25", RCONTENT="오늘 6시 예약이요 4명입니다.", UID="u13", RSTATUS="예약거절"  where RNO=77;
+update RESERVATION set RDATE="2015-01-04 14:17:57", RCONTENT="오늘 7시 30분 8명 예약하고싶습니다.", UID="u14", RSTATUS="예약거절"  where RNO=78;
 update RESERVATION set RDATE="2015-01-04 15:15:50", RCONTENT="오늘 5명 6시20분까지 갈게요!", UID="u15", RSTATUS="예약신청"  where RNO=79;
 update RESERVATION set RDATE="2015-01-04 17:00:13", RCONTENT="오늘 7시 4명 예약좀할게여.", UID="u16", RSTATUS="예약신청"  where RNO=80;
+---------
+insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('b05','김민지','boss','5555','010-5555-5555');
+
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('101-63-66541',
+	'b05',
+	'제주돈사돈',
+	'경기도 안양',
+	'경기도 안양시 동안구 호계동 915-3',
+	'031-459-1300',
+	'16:00~00:00',
+	'레알 제주산 생삼겹살',
+	'1박2일, vj특공대, 생성정보통 출연한 맛집!!',
+	'안양',
+	'홀',
+	'고기');
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3) values('101-63-66541','jeju-main.jpg','jeju-detail1.jpg','jeju-detail2.jpg','jeju-detail3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(64,'101-63-66541','근고기(600g)','36000','jeju-menu1.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(65,'101-63-66541','근고기(400g)','24000','jeju-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(66,'101-63-66541','김치찌개','6000','jeju-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(67,'101-63-66541','공기밥','1000','jeju-menu4.jpg');
