@@ -1,5 +1,24 @@
 #commentContent{
-	width:10%;
-	height:10%;
-	background-color: red;
+	width:98%;
+	height:80%;
+	
+}
+#commentForm{
+	height:90%;
+	margin:12% auto;
+}
+#cFormTitle{
+	height:50%;
+}
+#cFormFoot{
+	margin:2% auto;
+}
+#commentPhoto{
+	width:60%;
+}
+#btnRegister{
+	width:38%;
+}
+h4{
+	margin: 1% auto;
 }

@@ -292,7 +292,7 @@ values('128-31-85241','2014-12-28','오늘 오후 8시 5명 예약 가능한가�
 
 /*--------------------------------------------------*/
 
-insert into RESERVATION(RDATE,RCONTENT,UID)
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
 values('124-86-06376','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');
 insert into RESERVATION(BBNO,RDATE,RCONTENT,UID)
 values('203-81-63199','2014-12-28','오늘 오후 8시 5명 예약 가능한가요?','u02');

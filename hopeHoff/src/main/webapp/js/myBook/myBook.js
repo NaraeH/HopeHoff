@@ -1,7 +1,7 @@
 var currPageNo;
 var maxPageNo;
 var reservationNo;
-var status;
+var rStatus;
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 var selectedDate = null;
 
@@ -18,7 +18,7 @@ $(function(){
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
 		reservationNo = $( $( this ).children()[0] ).attr( "data-reservationNo" );
 		
-		status=$("#tableUser"+num+" td:last").html()
+		rStatus=$("#tableUser"+num+" td:last").html()
 		
 	  $.post('../../json/reservation/view.do'
 		        , {
@@ -29,7 +29,7 @@ $(function(){
 	        	if(data.status == "success") {
 	        		var hasClass = $($('#myBookData').children()[0]).children().hasClass("table-content");
 	        		if(!hasClass){
-		        			if(status=="승인"){	
+		        			if(rStatus=="승인"){	
 			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
 			        				.append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
 			        				.append($('<td>').html("<button class=btn-comment id=btnComment"+num+">후기</button>"))
@@ -55,8 +55,8 @@ $(function(){
 			 event.stopImmediatePropagation();
 			 
 			var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
-			 reservationNo = $("#tableUser"+num+" td:first").html()
-			
+			reservationNo = $( $( this ).children()[0] ).attr( "data-reservationNo" );
+			rStatus=$("#tableUser"+num+" td:last").html()
 		  $.post('../../json/reservation/view.do'
 			        , {
 			          reservationNo: reservationNo
@@ -66,15 +66,20 @@ $(function(){
 		        		var hasClass = $($('#myBookData').children()[0]).children().hasClass("table-content");
 		        		
 		        		if(!hasClass){
-		        			$('<tr>').addClass('table-content').attr("id","tableContent"+num)
-		        					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
-		        				 .append($('<td>').html("<button class=btn-permission id=btnPermission"+num+">승인</button>"))
-		        					.insertAfter('#'+'tableUser'+num)
+		        			if(rStatus=="승인"){
+		        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+		       					 .append($('<td colspan="4">').html(data.reservation.reservationContent)).css('text-align','center')
+		       					 .insertAfter('#'+'tableUser'+num)
+		        			}else{
+		        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+		       					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
+		       					 .append($('<td>').html("<button class=btn-permission id=btnPermission"+num+">승인</button>"))
+		       					 .insertAfter('#'+'tableUser'+num)
 		        			}
-		        			else 
-		        			{
-		        				$('#'+'tableContent'+num).remove(); 
-		        			}
+			        		
+		        		} else {
+		        			$('#'+'tableContent'+num).remove(); 
+		        		}
 		        	} else {   	console.log(data.status);        	}
 		          }
 		        , 'json');
@@ -127,7 +132,10 @@ $(document).delegate(".btn-delete","click",function(event){
 		
 	
 	//********************* btnComment클릭  *************************//
-	$(document).delegate(".btn-comment","click",function(){
+	$(document).delegate(".btn-comment","click",function(event){
+		 event.stopImmediatePropagation();
+		 console.log("Aaaa");
+		 loadComment();
 	});
 	
 	
@@ -226,6 +234,26 @@ $(document).delegate(".btn-delete","click",function(event){
 	
 						});
 			     }, 'json');
+	}
+	
+	function loadComment(){
+		$.post('../../json/reservation/list.do',
+				{
+				 "type": uType,
+				 "uId":uId,
+				 },
+				function(data){
+
+				
+					require(['text!templates/comment-write.html'],function(html){
+						var template = Handlebars.compile(html);
+						$('#myBookContainer').html(template(data));
+						
+						$('#myBookHeaderTitle').html("후기 작성");
+						$('#myBookContainer').css('height','400px');
+						$('.type-boss').css("display","none");
+					});
+		     }, 'json');
 	}
 
 
