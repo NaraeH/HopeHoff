@@ -134,7 +134,8 @@ $(document).delegate(".btn-delete","click",function(event){
 	//********************* btnComment클릭  *************************//
 	$(document).delegate(".btn-comment","click",function(event){
 		 event.stopImmediatePropagation();
-		console.log("Aaaa");
+		 console.log("Aaaa");
+		 loadComment();
 	});
 	
 	
@@ -236,7 +237,22 @@ $(document).delegate(".btn-delete","click",function(event){
 	}
 	
 	function loadComment(){
-		
+		$.post('../../json/reservation/list.do',
+				{
+				 "type": uType,
+				 "uId":uId,
+				 },
+				function(data){
+
+				
+					require(['text!templates/comment-write.html'],function(html){
+						var template = Handlebars.compile(html);
+						$('#myBookContainer').html(template(data));
+						
+						$('#myBookHeaderTitle').html("후기 작성");
+						$('.type-boss').css("display","none");
+					});
+		     }, 'json');
 	}
 
 
