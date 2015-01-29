@@ -250,6 +250,7 @@ $(document).delegate(".btn-delete","click",function(event){
 						$('#myBookContainer').html(template(data));
 						
 						$('#myBookHeaderTitle').html("후기 작성");
+						$('#myBookContainer').css('height','400px');
 						$('.type-boss').css("display","none");
 					});
 		     }, 'json');
