@@ -7,7 +7,7 @@
 <mapper namespace="hopeHoff.dao.CommentDao">
 
 	<resultMap type="Comment" id="commentMap">
-		<id column="RNO" property="reserNo"/>
+		<id column="RNO" property="reservationNo"/>
 		<result column="BBNO" property="businessNo"/>
 		<result column="BDATE" property="date"/>
 		<result column="BCONTENT" property="content"/>
@@ -42,6 +42,12 @@
 		AND rb.UID = #{userId}
 		AND rb.RSTATUS='승인' ;
 	</select>
+	
+	<insert id="insert" parameterType="comment"
+	   	  useGeneratedKeys="true" keyColumn="RNO" keyProperty="reservationNo">
+	   	  INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) 
+	   	  VALUES(#{reservationNo}, #{content}, #{date} ,#{photo})
+	  </insert> 
 	
 	
 	

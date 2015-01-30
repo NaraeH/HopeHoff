@@ -76,7 +76,7 @@ public class AuthControl {
       resultMap.put("status", "success");
       session.setAttribute("loginUser", user);
       
-      System.out.println("id:"+user.getuId());
+     //System.out.println("id:"+user.getuId());
      
     } else {
       session.invalidate();

@@ -1,13 +1,37 @@
-<form action="" id="commentForm">
+<form action="../../json/commentControl/addComment.do" id="commentForm" data-reservation="{{reservationNo}}" method="post"
+enctype="multipart/form-data">
 <hr>
 	<div id="cFormTitle">
 	<h4>내용</h4>
-		<textarea id="commentContent"></textarea>
+		<textarea id="commentContent" name="content"></textarea>
 	</div>
 	<div id="cFormFoot">
-	
-		<input type="file" id="commentPhoto">
+		<input type="file" id="commentPhoto" name="commentPhoto">
 		<button type="submit" id="btnRegister">등록</button>
 	</div>
 <hr>
 </form>
+<script>
+
+$('#commentForm').ajaxForm({
+	data: {
+		"reservationNo":$('#commentForm').attr('data-reservation')
+	},
+    dataType:'json',
+        beforeSubmit: function (data, frm, opt) {
+                        alert("전송전!!");
+                        
+                        return true;
+                      },
+        success: function(responseText, statusText){
+          alert("전송 성공");
+          
+            console.log(responseText);
+        } ,
+        error: function(){
+            alert("에러발생!!");
+        }        
+      });
+
+
+</script>

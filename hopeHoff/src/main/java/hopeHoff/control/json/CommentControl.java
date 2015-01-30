@@ -1,18 +1,26 @@
 package hopeHoff.control.json;
 
+import hopeHoff.domain.Comment;
 import hopeHoff.service.CommentService;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+
+import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/json/commentControl")
 public class CommentControl {
 	@Autowired CommentService commentService;
+	@Autowired ServletContext servletContext;
 	
 	@RequestMapping(value="/getComments", method=RequestMethod.POST)
 	public Object getComments(String businessNo){
@@ -28,5 +36,42 @@ public class CommentControl {
 		
 		return resultMap;
 	}
+	
+	@RequestMapping(value="/addComment", method=RequestMethod.POST)
+	public Object add(String content, MultipartFile commentPhoto, int reservationNo) throws Exception {
+		
+		System.out.println("content---->"+content);
+		System.out.println("commentPhoto=====>"+commentPhoto);
+		
+		      String fileuploadRealPath = 
+		        servletContext.getRealPath("/fileupload");
+		      String filename = System.currentTimeMillis() + "_";
+		      File file = new File(fileuploadRealPath + "/" + filename);
+		    
+		      commentPhoto.transferTo(file);
+		      
+		      Date date = new Date();
+			  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+			  String currentTimeString = sdf.format(date);
+		     
+		      Comment comment = new Comment();
+		      comment.setReservationNo(reservationNo);
+		      comment.setPhoto(filename);
+		      comment.setContent(content);
+		      comment.setDate(currentTimeString);
+		      
+		      System.out.println("comment====>"+comment);
+		      
+		      System.out.println("file=========>"+file);
+		      System.out.println("filename=========>"+filename);
+		      
+		      commentService.add(comment);
+		//commentService.add(comment);
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("status", "success");
+		return resultMap;
+	}
+	
+	
 
 }

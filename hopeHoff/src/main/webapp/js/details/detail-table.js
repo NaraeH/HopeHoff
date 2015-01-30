@@ -21,7 +21,8 @@ $(document).ready(function() {
 
 /*--------------------------Event Listener-----------------------------------*/
 $(document).delegate('.reservBtn',"click",function(){
-	console.log("aaaa");
+	var shopName = $("#detailsBody .pTitle").text();
+	var data = {shopName: shopName}
 	
 	if(isLogin){
 		if( $( reservData ).val() != '' ){ //내용이 있을 경우
