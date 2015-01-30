@@ -1016,11 +1016,10 @@ insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(69,'951-03-59754','옛날�
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(70,'951-03-59754','어부모듬','29000','uh100-menu3.jpg');
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(71,'951-03-59754','어백모듬','38000','uh100-menu4.jpg');
 
-insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 10:42:33 ','오늘 오후 5시 10명 되나요?','u09','예약신청');
-insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 11:01:42 ','8시 6명 예약 가능한가요?','u01','예약승인');
-insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 16:08:08 ','7시 7명 ㅇㅋ?','u11','예약승인');
-insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 19:32:24 ','7시 40분 5명 가능한가요?','u13','예약거절');
-
+insert into RESERVATION(RNO,BBNO,RDATE,RCONTENT,UID) values('86','951-03-59754','2015-01-06 10:42:33 ','오늘 오후 5시 10명 되나요?','u09','예약신청');
+insert into RESERVATION(RNO,BBNO,RDATE,RCONTENT,UID) values('87','951-03-59754','2015-01-06 11:01:42 ','8시 6명 예약 가능한가요?','u01','예약승인');
+insert into RESERVATION(RNO,BBNO,RDATE,RCONTENT,UID) values('88','951-03-59754','2015-01-06 16:08:08 ','7시 7명 ㅇㅋ?','u11','예약승인');
+insert into RESERVATION(RNO,BBNO,RDATE,RCONTENT,UID) values('89','951-03-59754','2015-01-06 19:32:24 ','7시 40분 5명 가능한가요?','u13','예약거절');
 
 
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('85', '새우가 신선하더라', '2014-01-01', '85.jpg');
