@@ -11,6 +11,7 @@ $(function(){
 });
 
 	if(uType=="user"){
+
 	$(document).delegate(".table-tr","click",function(event){
 		
 		event.stopImmediatePropagation();
@@ -30,10 +31,9 @@ $(function(){
 	        		var hasClass = $($('#myBookData').children()[0]).children().hasClass("table-content");
 	        		if(!hasClass){
 		        			if(rStatus=="승인"){
-		        					$(rStatus).html()
 			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
-			        				.append($('<td colspan="4">').html(data.reservation.reservationContent)).css('text-align','center')
-			        				
+			        				.append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
+			        				.append($('<td>').html("<button class=btn-comment id=btnComment"+num+">후기</button>"))
 			        				.insertAfter('#'+'tableUser'+num)
 		        			}else{
 			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
@@ -186,17 +186,17 @@ $(document).delegate(".btn-delete","click",function(event){
 		$('#commentForm').ajaxForm({
 	         dataType:'json',
 	             beforeSubmit: function (data, frm, opt) {
-	                             alert("전송전!!");
+	                             alert("등록 하시겠습니까?");
 	                             
 	                             return true;
 	                           },
 	             success: function(responseText, statusText){
-	               alert("전송 성공");
+	               alert("등록 성공");
 	               
 	                 console.log(responseText);
 	             } ,
 	             error: function(){
-	                 alert("에러발생!!");
+	                 alert("등록 실패!!");
 	             }        
 	           });
 		

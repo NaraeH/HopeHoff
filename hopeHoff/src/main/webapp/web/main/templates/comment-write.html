@@ -19,12 +19,12 @@ $('#commentForm').ajaxForm({
 	},
     dataType:'json',
         beforeSubmit: function (data, frm, opt) {
-                        alert("전송전!!");
+                        alert("등록하시겠습니까?");
                         
                         return true;
                       },
         success: function(responseText, statusText){
-          alert("전송 성공");
+          alert("등록완료!");
           
             console.log(responseText);
         } ,
