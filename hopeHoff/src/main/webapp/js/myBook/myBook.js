@@ -29,10 +29,11 @@ $(function(){
 	        	if(data.status == "success") {
 	        		var hasClass = $($('#myBookData').children()[0]).children().hasClass("table-content");
 	        		if(!hasClass){
-		        			if(rStatus=="승인"){	
+		        			if(rStatus=="승인"){
+		        					$(rStatus).html()
 			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
-			        				.append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
-			        				.append($('<td>').html("<button class=btn-comment id=btnComment"+num+">후기</button>"))
+			        				.append($('<td colspan="4">').html(data.reservation.reservationContent)).css('text-align','center')
+			        				
 			        				.insertAfter('#'+'tableUser'+num)
 		        			}else{
 			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
