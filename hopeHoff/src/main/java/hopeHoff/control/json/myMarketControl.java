@@ -1,7 +1,5 @@
 package hopeHoff.control.json;
 
-import hopeHoff.dao.MenuDao;
-import hopeHoff.dao.ShopDao;
 import hopeHoff.service.myMarketService;
 
 import java.util.HashMap;
@@ -14,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/json/myMarketControl")
 public class myMarketControl {
-	@Autowired ShopDao shopDao;
-	@Autowired MenuDao menuDao;
 	@Autowired myMarketService myMarketService;
 	
 	@RequestMapping(value="/marketInfo", method=RequestMethod.POST)

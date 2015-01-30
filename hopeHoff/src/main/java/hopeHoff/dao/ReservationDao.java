@@ -12,5 +12,6 @@ public interface ReservationDao {
 	public void insert(Reservation reservation);
 	public Reservation selectOne(Integer no);
 	public int totalSize(Map<String,Object> params);
+	public String selectBossPhone(String businessNo);
 
 }

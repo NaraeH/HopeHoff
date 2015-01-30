@@ -81,6 +81,12 @@
   	  <update id="update" parameterType="int">
 		UPDATE RESERVATION set RSTATUS="승인" WHERE RNO=#{value} 	  	
   	  </update>
+  	  
+  	  <select id="selectBossPhone" parameterType="String" resultType="String">
+		SELECT UPHONE FROM USER, SHOP 
+		WHERE USER.UID = SHOP.UID 
+		AND BBNO = #{businessNo};
+	  </select>
 
 	
 </mapper>
