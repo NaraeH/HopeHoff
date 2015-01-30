@@ -180,6 +180,29 @@ $(document).delegate(".btn-delete","click",function(event){
 		loadMarket(1);
 	});
 	
+	$("#btnRegister").click(function(){
+		
+		$('#commentForm').ajaxForm({
+	         dataType:'json',
+	             beforeSubmit: function (data, frm, opt) {
+	                             alert("전송전!!");
+	                             
+	                             return true;
+	                           },
+	             success: function(responseText, statusText){
+	               alert("전송 성공");
+	               
+	                 console.log(responseText);
+	             } ,
+	             error: function(){
+	                 alert("에러발생!!");
+	             }        
+	           });
+		
+	});
+	
+	
+	
 	//***************************** 함수모음집 ************************************//
 	function setPageNo(currPageNo, maxPageNo) {
 		  window.currPageNo = currPageNo; 
@@ -237,14 +260,8 @@ $(document).delegate(".btn-delete","click",function(event){
 	}
 	
 	function loadComment(){
-		$.post('../../json/reservation/list.do',
-				{
-				 "type": uType,
-				 "uId":uId,
-				 },
-				function(data){
+		var data = {"reservationNo":reservationNo};
 
-				
 					require(['text!templates/comment-write.html'],function(html){
 						var template = Handlebars.compile(html);
 						$('#myBookContainer').html(template(data));
@@ -253,8 +270,8 @@ $(document).delegate(".btn-delete","click",function(event){
 						$('#myBookContainer').css('height','400px');
 						$('.type-boss').css("display","none");
 					});
-		     }, 'json');
-	}
+		     }
+
 
 
 

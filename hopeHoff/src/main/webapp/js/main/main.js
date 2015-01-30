@@ -193,9 +193,11 @@ $(document).delegate(".btnBookShop","click",function(){
 	 businessNo = $( this ).closest( ".list" ).attr( "data-shop" );                   //해당 가게의 사업자번호
 	var bookContent = "#" + $( this ).closest( ".list" ).attr("id") + " .bookContent";   //예약내용
 	var shopPhone = $( this ).closest( ".list" ).attr( "data-phone" );                   //해당 가게 전화번호
-	var shopName = $( this ).closest( ".list" ).attr( "data-name" );                     //해당 가게 이름
+	 var shopName = $( this ).closest( ".list" ).attr( "data-name" );                     //해당 가게 이름
 	var data = {shopName: shopName}
 	
+	
+	console.log(shopPhone);
 	if( $( bookContent ).val() != '' ){ //내용이 있을 경우
 		//예약 내용 DB에 저장하기
 		$.post('../../json/reservation/addReserv.do'
