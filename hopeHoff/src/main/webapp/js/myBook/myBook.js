@@ -181,7 +181,7 @@ $(document).delegate(".btn-delete","click",function(event){
 		loadMarket(1);
 	});
 	
-	$("#btnRegister").click(function(){
+	/*$("#btnRegister").click(function(){
 		
 		$('#commentForm').ajaxForm({
 	         dataType:'json',
@@ -200,7 +200,7 @@ $(document).delegate(".btn-delete","click",function(event){
 	             }        
 	           });
 		
-	});
+	});*/
 	
 	
 	

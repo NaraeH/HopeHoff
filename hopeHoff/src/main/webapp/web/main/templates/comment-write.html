@@ -12,10 +12,17 @@ enctype="multipart/form-data">
 <hr>
 </form>
 <script>
-
+$('#btnRegister').click(function(){
+console.log("aaaaa");
+	
+//console.log($("#commentContent").html());
+console.log($("#commentContent").val());
+console.log("bbbbbb");
+})
 $('#commentForm').ajaxForm({
 	data: {
-		"reservationNo":$('#commentForm').attr('data-reservation')
+		"reservationNo":$('#commentForm').attr('data-reservation'),
+		"content":$("#commentContent").val()
 	},
     dataType:'json',
         beforeSubmit: function (data, frm, opt) {
@@ -32,6 +39,5 @@ $('#commentForm').ajaxForm({
             alert("에러발생!!");
         }        
       });
-
 
 </script>

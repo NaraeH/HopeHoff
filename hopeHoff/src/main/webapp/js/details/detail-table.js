@@ -23,7 +23,8 @@ $(document).ready(function() {
 $(document).delegate('.reservBtn',"click",function(){
 	var rStatus ="예약 신청";
 	var shopName = $("#detailsBody .pTitle").text();
-	var data = {shopName: shopName}
+	var bossPhone;
+	var extraData = {shopName: shopName}
 	
 	
 	if(isLogin){
@@ -35,17 +36,19 @@ $(document).delegate('.reservBtn',"click",function(){
 					  userId  : uId,
 					  reservationStatus:rStatus}
 					,function(data){
+						bossPhone = data.bossPhoneNo;
 						getConfirmation();
-					}, 'json');
-			
-			//업주에게 예약내용 문자보내기
-			Narae.sendSms( callbackFun, "bookMsgToBoss", shopPhone, data );
-			if(statusMap.status == 'success') {
-				console.log("업주님께 문자메시지가 성공적으로 발송되었습니다.");
-			}else {
-				console.log("업주님께 문자전송을 실패하였습니다");
-			}
-			
+				
+					//업주에게 예약내용 문자보내기
+					Narae.sendSms( callbackFun, "bookMsgToBoss", data.bossPhoneNo, extraData );
+					
+						if(statusMap.status == 'success') {
+							console.log("업주님께 문자메시지가 성공적으로 발송되었습니다(발송번호: " + bossPhone + ")");
+						}else {
+							console.log("업주님께 문자전송을 실패하였습니다");
+						}
+					
+				}, 'json');
 		}else {  //내용이 없을 경우
 			alert( "예약 시간과 인원을 입력해주세요" );
 		}

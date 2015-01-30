@@ -43,8 +43,10 @@ public class CommentControl {
 		System.out.println("content---->"+content);
 		System.out.println("commentPhoto=====>"+commentPhoto);
 		
-		      String filename = System.currentTimeMillis() + "_";
-		      File file = new File("/Users/용근/git/HopeHoff/hopeHoff/src/main/webapp/fileupload/" + filename+".jpg");
+		String path = CommentControl.class.getResource("../../../../../img/comment").getPath();
+		System.out.println("path=======>"+path);
+		      String filename = System.currentTimeMillis() + "_.jpg";
+		      File file = new File(path + filename);
 		      
 		      
 		    
