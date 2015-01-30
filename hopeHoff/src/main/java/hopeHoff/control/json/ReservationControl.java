@@ -86,6 +86,7 @@ public class ReservationControl {
 
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("status", "success");
+		resultMap.put("bossPhoneNo", reservationService.getBossPhoneNo(reservation.getBusinessNo()));
 		return resultMap;
 	}
 }

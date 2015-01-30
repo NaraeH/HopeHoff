@@ -82,7 +82,6 @@
  		SELECT BBNO, SNAME FROM SHOP WHERE UID = #{userId};
 	</select>
 
-	
 	<update id="showUpdate" parameterType="map">
 		update SHOP set STIME=#{time}, SPHONE=#{phone}, SDETAILADDR=#{addr}, SINFO=#{info}, SINTRO= #{intro} where BBNO=#{bno}
 	</update> 

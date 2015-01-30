@@ -95,6 +95,9 @@ public class ReservationService {
     return reservation;
   }
   
+  public String getBossPhoneNo(String businessNo){
+	  return reservationDao.selectBossPhone(businessNo);
+  }
   
   /* @Transactional 선언
    * => 메서드 안의 입력/변경/삭제(manipluation) 작업을 하나의 작업을 묶는다.
