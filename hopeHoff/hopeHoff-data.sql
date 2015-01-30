@@ -959,7 +959,7 @@ update RESERVATION set RDATE="2015-01-04 10:04:25", RCONTENT="오늘 6시 예약
 update RESERVATION set RDATE="2015-01-04 14:17:57", RCONTENT="오늘 7시 30분 8명 예약하고싶습니다.", UID="u14", RSTATUS="예약거절"  where RNO=78;
 update RESERVATION set RDATE="2015-01-04 15:15:50", RCONTENT="오늘 5명 6시20분까지 갈게요!", UID="u15", RSTATUS="예약신청"  where RNO=79;
 update RESERVATION set RDATE="2015-01-04 17:00:13", RCONTENT="오늘 7시 4명 예약좀할게여.", UID="u16", RSTATUS="예약신청"  where RNO=80;
------29일----
+-----29일 아마 여기부터 복붙하면 될껍니다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ----
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('b05','김민지','boss','5555','010-5555-5555');
 
 insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
@@ -1092,3 +1092,8 @@ INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('93', '후식 클라스 �
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('94', '좀 많이 달아요 ..', '94.jpg');
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('95', '음식도 그렇지만 후식에서 감동...', '2014-01-01', '95.jpg');
 INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('96', '면빨이 쫄깃졸길해용@', '2014-01-01', '96.jpg');
+-----2015.01.30  연정잉이이잉ㅇ---
+update SHOP set STYPE="룸형식" where BBNO="124-86-06376";
+update SHOP set SSNACK="퓨전안주" where BBNO="201-86-13140";
+update SHOP set STYPE="홀" where BBNO="303-90-56632";
+update SHOP set STYPE="룸형식" where BBNO="201-86-13140";
