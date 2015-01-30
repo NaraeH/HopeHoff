@@ -43,10 +43,10 @@ public class CommentControl {
 		System.out.println("content---->"+content);
 		System.out.println("commentPhoto=====>"+commentPhoto);
 		
-		      String fileuploadRealPath = 
-		        servletContext.getRealPath("/fileupload");
 		      String filename = System.currentTimeMillis() + "_";
-		      File file = new File(fileuploadRealPath + "/" + filename);
+		      File file = new File("/Users/용근/git/HopeHoff/hopeHoff/src/main/webapp/fileupload/" + filename+".jpg");
+		      
+		      
 		    
 		      commentPhoto.transferTo(file);
 		      

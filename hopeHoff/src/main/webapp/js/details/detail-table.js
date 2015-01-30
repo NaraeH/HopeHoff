@@ -21,8 +21,10 @@ $(document).ready(function() {
 
 /*--------------------------Event Listener-----------------------------------*/
 $(document).delegate('.reservBtn',"click",function(){
+	var rStatus ="예약 신청";
 	var shopName = $("#detailsBody .pTitle").text();
 	var data = {shopName: shopName}
+	
 	
 	if(isLogin){
 		if( $( reservData ).val() != '' ){ //내용이 있을 경우

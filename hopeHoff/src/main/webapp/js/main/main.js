@@ -9,7 +9,7 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
-var rStatus ="예약 신청";
+
 var isUser="true";
 var listLength = 0;
 
@@ -199,6 +199,7 @@ $(document).delegate(".btnBookShop","click",function(){
 	
 	console.log(shopPhone);
 	if( $( bookContent ).val() != '' ){ //내용이 있을 경우
+		var rStatus ="예약 신청";
 		//예약 내용 DB에 저장하기
 		$.post('../../json/reservation/addReserv.do'
 				,{businessNo: businessNo,
