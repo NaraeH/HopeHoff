@@ -125,6 +125,15 @@
 		-webkit-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
 		-moz-box-shadow:inset 0px 0px 85px rgba(0,0,0,.5);
 	}
+/* 	.commentImg:hover{
+		width: 200px !important;
+		height:200px !important;
+		border: 3px white solid;
+		position:absolute;
+	} */
+	
+	
+	
 	/* *************V tabs********** */
 	#tabs {
 		width: 100%;

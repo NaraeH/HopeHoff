@@ -3,7 +3,9 @@
 
 
 	/******************** Header 부분 **************************/
-	
+	.font-div-title {
+		margin: 20px 10px 10px 20px;
+	}
 	.div-header{
 		background-color: #FFCD28;
 		height: 60px;
