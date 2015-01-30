@@ -959,7 +959,7 @@ update RESERVATION set RDATE="2015-01-04 10:04:25", RCONTENT="오늘 6시 예약
 update RESERVATION set RDATE="2015-01-04 14:17:57", RCONTENT="오늘 7시 30분 8명 예약하고싶습니다.", UID="u14", RSTATUS="예약거절"  where RNO=78;
 update RESERVATION set RDATE="2015-01-04 15:15:50", RCONTENT="오늘 5명 6시20분까지 갈게요!", UID="u15", RSTATUS="예약신청"  where RNO=79;
 update RESERVATION set RDATE="2015-01-04 17:00:13", RCONTENT="오늘 7시 4명 예약좀할게여.", UID="u16", RSTATUS="예약신청"  where RNO=80;
----------
+-----29일----
 insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('b05','김민지','boss','5555','010-5555-5555');
 
 insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
@@ -979,5 +979,116 @@ insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3) val
 
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(64,'101-63-66541','근고기(600g)','36000','jeju-menu1.jpg');
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(65,'101-63-66541','근고기(400g)','24000','jeju-menu2.jpg');
-insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(66,'101-63-66541','김치찌개','6000','jeju-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(66,'101-63-66541','김치찌개','6000','jeju-menu3.jpg');
 insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(67,'101-63-66541','공기밥','1000','jeju-menu4.jpg');
+
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('81', '반지르르르 맛있어요!!', '2014-01-01', '81.jpg');
+
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('101-63-66541','2015-01-05','오늘 오후 8시 5명 예약 가능한가요?','u05');
+
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('101-63-66541','2015-01-05 15:00:43 ','오늘 오후 7시 6명 예약 가능한가요?','u06','예약신청');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('101-63-66541','2015-01-05 16:53:24 ','오늘 오후 6시 7명 예약 가능한가요?','u07','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('101-63-66541','2015-01-05 17:34:22 ','오늘 오후 7시 8명 예약 가능한가요?','u08','예약거절');
+
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('82', '김치찌개 진짜 진해요~', '2014-01-01', '82.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('83', '소스에 퐁당퐁당*', '2014-01-01', '83.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('84', '야채가 다양하고 다 맛있었습니당^^', '2014-01-01', '84.jpg');
+
+--------
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('951-03-59754',
+	'b05',
+	'어부와백정',
+	'서울시 영등포',
+	'서울 영등포구 영등포동3가 19-3',
+	'02-2677-1474',
+	'15:00~03:00',
+	'고기와 해산물을 한번에',
+	'고기와 해산물 중 뭘 먹을지 고민되실 땐 영등포 회식장소 어백으로 오세요!',
+	'영등포',
+	'홀',
+	'고기');
+	
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3) values('951-03-59754','uh100-main.jpg','uh100-detail1.jpg','uh100-detail2.jpg','uh100-detail3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(68,'951-03-59754','커플모듬','29000','uh100-menu1.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(69,'951-03-59754','옛날도시락','3000','uh100-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(70,'951-03-59754','어부모듬','29000','uh100-menu3.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(71,'951-03-59754','어백모듬','38000','uh100-menu4.jpg');
+
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 10:42:33 ','오늘 오후 5시 10명 되나요?','u09','예약신청');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 11:01:42 ','8시 6명 예약 가능한가요?','u01','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 16:08:08 ','7시 7명 ㅇㅋ?','u11','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('951-03-59754','2015-01-06 19:32:24 ','7시 40분 5명 가능한가요?','u13','예약거절');
+
+
+
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('85', '새우가 신선하더라', '2014-01-01', '85.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('86', '의자에 짐 넣을 수 있어 좋아용!', '2014-01-01', '86.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('87', '귀얇아서 어백후레시도 갔어욬ㅋㅋ', '2014-01-01', '87.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('88', '고기 육즙보소ㄷㄷ', '2014-01-01', '88.jpg');
+---------
+insert into USER(UID,UNAME,UTYPE,UPASSWORD,UPHONE) values('b06','이주현','boss','6666','010-6666-2265');
+
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('399-07-55480',
+	'b06',
+	'달고',
+	'경기도 얀양',
+	'경기도 안양시 동안구 관양동 1490-7',
+	'031-423-3599',
+	'17:00~24:00',
+	'달콤한 고추장불고기',
+	'연탄불고기, 고추장불고기 관양동에 소문난 고기집입니다^^',
+	'안양',
+	'홀',
+	'고기');
+	
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3) values('399-07-55480','dalgo-main.jpg','dalgo-detail1.jpg','dalgo-detail2.jpg','dalgo-detail3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(72,'399-07-55480','연탄 고추장불고기','8000','dalgo-menu1.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(73,'399-07-55480','연탄 파불고기','8000','dalgo-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(74,'399-07-55480','생삼겹살','11000','dalgo-menu3.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(75,'399-07-55480','돼지불고기','5000','dalgo-menu4.jpg');
+
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('399-07-55480','2015-01-07 12:40:42 ','오늘 오후 5시 10명 되나요?','u14','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('399-07-55480','2015-01-07 15:46:38 ','8시 6명 예약 가능한가요?','u15','예약신청');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('399-07-55480','2015-01-07 16:33:38 ','7시 5명 되나요','u16','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('399-07-55480','2015-01-07 21:32:24 ','11시 6명?','u04','예약거절');
+
+
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('89', '여기 누룽지탕이 진짜 맛있어여!!!', '2014-01-01', '89.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('90', '내입으로 들어갈 친구입니다', '2014-01-01', '90.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('91', '역시 다먹고 볶음밥이 진리죠ㅇㅇ', '2014-01-01', '91.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('92', '짜잔~ 한상차림~ 배불러요~', '2014-01-01', '92.jpg');
+-----                                      --------------
+insert into SHOP(BBNO,UID,SNAME,SINTROADDR,SDETAILADDR,SPHONE,STIME,SINTRO,SINFO,SAREA,STYPE,SSNACK)
+	values('514-96-50072',
+	'b06',
+	'춘하추동',
+	'서울시 강남',
+	'서울시 서초구 서초동 1327-34',
+	'02-6474-9297',
+	'11:30~22:00',
+	'사계절 내내~',
+	'손님 모시기 좋은 한우 고기맛집! 주차장도 넓습니다~^.^',
+	'강남',
+	'홀',
+	'고기');
+	
+insert into SHOPPHOTO(BBNO,MAINPHOTO,DETAILPHOTO1,DETAILPHOTO2,DETAILPHOTO3) values('514-96-50072','chcd-main.jpg','chcd-detail1.jpg','chcd-detail2.jpg','chcd-detail3.jpg');
+
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(76,'514-96-50072','차돌박이','28000','chcd-menu1.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(77,'514-96-50072','갈비살(130g)','39000','chcd-menu2.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(78,'514-96-50072','김치찌개 전골','10000','chcd-menu3.jpg');
+insert into MENU(MID,BBNO,MNAME,MPRICE,MPHOTO) values(79,'514-96-50072','한우불고기','26000','chcd-menu4.jpg');
+
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('514-96-50072','2015-01-08 14:11:34 ','오늘 오후 6시 8명 예약되나요?','u14','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('514-96-50072','2015-01-08 15:46:29 ','7시30분쯤 6명 예약 가능한가요?','u15','예약승인');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('514-96-50072','2015-01-08 17:09:22 ','오늘 7시 10명 되나요','u16','예약신청');
+insert into RESERVATION(BBNO,RDATE,RCONTENT,UID) values('514-96-50072','2015-01-08 20:51:35 ','10시 5명','u04','예약거절');
+
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('93', '후식 클라스 쩔어 ㅋㅋㅋㅋ', '2014-01-01', '93.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('94', '좀 많이 달아요 ..', '94.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('95', '음식도 그렇지만 후식에서 감동...', '2014-01-01', '95.jpg');
+INSERT INTO BOARD(RNO, BCONTENT, BDATE, BPHOTO) VALUES('96', '면빨이 쫄깃졸길해용@', '2014-01-01', '96.jpg');
