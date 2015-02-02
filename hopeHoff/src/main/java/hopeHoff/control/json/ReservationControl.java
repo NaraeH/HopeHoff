@@ -5,6 +5,7 @@ import hopeHoff.service.ReservationService;
 import hopeHoff.service.UserService;
 import hopeHoff.service.myMarketService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.ServletContext;
@@ -62,7 +63,15 @@ public class ReservationControl {
     resultMap.put("shops", myMarketService.selectMarketList(uId));
     resultMap.put("currPageNo", pageNo);
     resultMap.put("maxPageNo", maxPageNo);
-    //resultMap.put("startIndex", ((pageNo - 1) * pageSize)+1);
+    
+    if(((ArrayList<?>)resultMap.get("shops")).size() < 1){
+    	businessNo = "";
+    }else {
+    	if(businessNo.equals("all")){
+    		businessNo = null;
+    	}
+    }
+    
     resultMap.put("reservations", reservationService.getList(pageNo, pageSize,uId, type,businessNo, date));
     
     return resultMap;

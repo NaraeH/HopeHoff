@@ -9,6 +9,7 @@ var isLogin = false;
 var uType = null;
 var currPageNo;
 var shopPhone = null;
+var myMarketData = null;
 
 var isUser="true";
 var listLength = 0;
@@ -122,6 +123,8 @@ $(".click-myShop").click(function(){
 	$.post('../../json/myMarketControl/marketInfo.do',
 			{"userId": uId},
 			function(data){
+				myMarketData = data;
+				
 				require(['text!templates/myMarket-table.html'], function(html){
 					var template = Handlebars.compile(html);
 					$('#myMarket').html( template(data) );
@@ -538,7 +541,8 @@ function loadReservationList(pageNo,uId,uType) {
 				{
 				"pageNo":pageNo,
 				"uId" : uId,
-				"type":uType
+				"type":uType,
+				"businessNo":"all"
 				},
 			    function(data){
 					//console.log(data);

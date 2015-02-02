@@ -34,7 +34,13 @@ public class ReservationService {
 			paramMap.put("uId", uId);
 			
 	  }else if(type.equals("boss")) {
-		    businessNo = (businessNo == null)? "": businessNo;
+		    //businessNo = (businessNo == null)? "": businessNo;
+		  
+//		  if( businessNo == null ){
+//			  businessNo = "";
+//		  }else if( businessNo.equals("all") ){
+//			  businessNo = null;
+//		  }
 			paramMap.put("uId", null);
 			paramMap.put("businessNo",businessNo);
 	  }

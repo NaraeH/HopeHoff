@@ -55,6 +55,12 @@
 		height: 87%;
 		padding: 0px 15px;
 	}
+	
+	#myMarketAlert {
+		width: 430px;
+		margin: 100px auto;
+		text-align: center;
+	}
 
 	#myPubPhotoList .myPhotoList {
 		width: 425px;

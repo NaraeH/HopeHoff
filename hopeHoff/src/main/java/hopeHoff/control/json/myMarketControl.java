@@ -1,5 +1,6 @@
 package hopeHoff.control.json;
 
+import hopeHoff.domain.Shop;
 import hopeHoff.service.myMarketService;
 
 import java.util.HashMap;
@@ -18,7 +19,13 @@ public class myMarketControl {
 	public Object marketInfo(String userId, String businessNo){
 		
 		if(businessNo == null){
-			businessNo = myMarketService.selectFirstShop(userId).getBusinessNo();
+			Shop shop = myMarketService.selectFirstShop(userId);
+			
+			if(shop == null) {
+				businessNo =  null;
+			}else {
+				businessNo = myMarketService.selectFirstShop(userId).getBusinessNo();
+			}
 		}
 		
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
@@ -28,12 +35,11 @@ public class myMarketControl {
 		resultMap.put("shopPhotos", myMarketService.selectShopPhoto(businessNo));
 		resultMap.put("shopMenu", myMarketService.selectMenu(businessNo));
 		
-		System.out.println("shops : " + myMarketService.selectMarketList(userId));
+/*		System.out.println("shops : " + myMarketService.selectMarketList(userId));
 		System.out.println("shopInfo : " + myMarketService.selectShop(businessNo));
 		System.out.println("shopPhotos : " + myMarketService.selectShopPhoto(businessNo));
 		System.out.println("shopMenu : " + myMarketService.selectMenu(businessNo));
-		System.out.println(resultMap);
-		
+		System.out.println(resultMap);*/
 		
 		resultMap.put("status", "success");
 		

@@ -2,6 +2,12 @@ var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //�
 
 
 $(document).ready(function() {
+	//해당 기업회원의 가게가 존재하지 않을 경우
+	if( myMarketData.shops.length < 1 ){
+		$("#myMarketContainer").html(
+				"<div id='myMarketAlert'>[가게등록] 문의사항이 있으시면 아래의 연락처로 연락바랍니다. <br><br>" +
+				"Tel: 02) 3333-3333</div>");
+	}
 	
 	$('#myContentComments').css('display', 'none');
 	$('#myMenuText').css('color', '#FFB500');
@@ -14,7 +20,6 @@ $(document).ready(function() {
 	
 });
 
-//나래: 왜 여기 있어야 되는지는 모르겠지만, document 다 load된 후 부르면 에러뜸
 $('#myPubPhotoListWrap').naraeWidthSildeAuto(1500);
 $('#myMenuListWrap').naraeWidthSilde();	
 
@@ -160,7 +165,6 @@ function loadComment(){
 	
 }
 function loadMarket() {
-	console.log(selectedShop);
 		selectedShop = $("#selectForm option:selected").attr("data-businessNo");
 		
 		$.post('../../json/myMarketControl/marketInfo.do',

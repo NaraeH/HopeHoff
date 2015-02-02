@@ -7,7 +7,7 @@ var selectedDate = null;
 
 
 $(function(){
-	loadMarket(1);
+	loadMarket(1, "all");
 });
 
 	if(uType=="user"){
@@ -219,8 +219,10 @@ $(document).delegate(".btn-delete","click",function(event){
 		  else $('#nextBtn').css('display', '');
 	}
 	
-	function loadMarket(pageNo) {
-			
+	function loadMarket(pageNo, selected) {
+			selectedShop = ( selected != null )? selected : selectedShop;
+
+			if( selectedShop )
 			$.post('../../json/reservation/list.do',
 					{
 					 "pageNo": pageNo,

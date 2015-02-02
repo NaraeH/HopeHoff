@@ -12,8 +12,8 @@ function Narae(){}
 
 //px단위의 값을 px를 떼어내고 숫자로 바꾸어 주는 함수
 Narae.prototype.removePx = function(px){
-	if(px == 'undefined'){
-		console.log("removePx를 할 것이 존재하지 않습니다.");
+	if(px == 'undefined' || px == "" || px == null){
+		//console.log("removePx를 할 것이 존재하지 않습니다.");
 		return 0;
 	}else {
 		return px.split("px").splice(0, 1) - 0;
@@ -49,7 +49,7 @@ Narae.prototype.sendSms = function( callback, msgType, phoneNo, data ) {
 	}else {
 		//과금되는 주소: http://link.smsceo.co.kr/sendsms_utf8.php
 		//테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-	    $.post('http://link.smsceo.co.kr/sendsms_utf8.php'
+	    $.post('http://link.smsceo.co.kr/sendsms_test.php'
 		        , { userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
 					 userid:   "hopeHoff01",
 					 msg:      msg,
