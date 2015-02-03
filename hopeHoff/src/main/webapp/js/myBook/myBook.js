@@ -1,6 +1,7 @@
 var currPageNo;
 var maxPageNo;
 var reservationNo;
+var shopName;
 var rStatus;
 var selectedShop = $("#selectForm option:selected").attr("data-businessNo"); //선택 된 가게의 사업자 번호
 var selectedDate = null;
@@ -18,6 +19,8 @@ $(function(){
 		 
 		var num = $($(this)[0]).attr("id").split("tableUser")[1]-0;
 		reservationNo = $( $( this ).children()[0] ).attr( "data-reservationNo" );
+		shopName = $( $( this ).children()[1] ).attr( "data-shopName" );
+		console.log(shopName);
 		
 		rStatus=$("#tableUser"+num+" td:last").html()
 		
@@ -35,6 +38,11 @@ $(function(){
 			        				.append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
 			        				.append($('<td>').html("<button class=btn-comment id=btnComment"+num+">후기</button>"))
 			        				.insertAfter('#'+'tableUser'+num)
+		        			/*}else if(rStatus=="후기"){
+		        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
+		        				.append($('<td colspan="4">').html(data.reservation.reservationContent)).css('text-align','center')
+		        				.insertAfter('#'+'tableUser'+num)
+		        			*/	
 		        			}else{
 			        				$('<tr>').addClass('table-content').attr("id","tableContent"+num)
 			       					 .append($('<td colspan="3">').html(data.reservation.reservationContent)).css('text-align','center')
@@ -135,7 +143,6 @@ $(document).delegate(".btn-delete","click",function(event){
 	//********************* btnComment클릭  *************************//
 	$(document).delegate(".btn-comment","click",function(event){
 		 event.stopImmediatePropagation();
-		 console.log("Aaaa");
 		 loadComment();
 	});
 	
@@ -263,7 +270,8 @@ $(document).delegate(".btn-delete","click",function(event){
 	}
 	
 	function loadComment(){
-		var data = {"reservationNo":reservationNo};
+		var data = {"reservationNo":reservationNo,
+					"shopName":shopName};
 
 					require(['text!templates/comment-write.html'],function(html){
 						var template = Handlebars.compile(html);

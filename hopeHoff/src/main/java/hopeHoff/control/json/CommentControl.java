@@ -40,11 +40,8 @@ public class CommentControl {
 	@RequestMapping(value="/addComment", method=RequestMethod.POST)
 	public Object add(String content, MultipartFile commentPhoto, int reservationNo) throws Exception {
 		
-		System.out.println("content---->"+content);
-		System.out.println("commentPhoto=====>"+commentPhoto);
 		
 		String path = CommentControl.class.getResource("../../../../../img/comment").getPath();
-		System.out.println("path=======>"+path);
 		      String filename = System.currentTimeMillis() + "_.jpg";
 		      File file = new File(path + filename);
 		      
@@ -53,22 +50,17 @@ public class CommentControl {
 		      commentPhoto.transferTo(file);
 		      
 		      Date date = new Date();
-			  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+			  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			  String currentTimeString = sdf.format(date);
 		     
+			  
 		      Comment comment = new Comment();
 		      comment.setReservationNo(reservationNo);
 		      comment.setPhoto(filename);
 		      comment.setContent(content);
 		      comment.setDate(currentTimeString);
 		      
-		      System.out.println("comment====>"+comment);
-		      
-		      System.out.println("file=========>"+file);
-		      System.out.println("filename=========>"+filename);
-		      
 		      commentService.add(comment);
-		//commentService.add(comment);
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("status", "success");
 		return resultMap;

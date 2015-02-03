@@ -116,9 +116,14 @@ public class ReservationService {
   public void add(Reservation reservation) {
 	  //오늘 날짜 지정
 	  Date date = new Date();
-	  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
+	  
+	  System.out.println("data====>"+date);
+	  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	  System.out.println("sdf=====>"+sdf);
 	  String currentTimeString = sdf.format(date);
 	  reservation.setReservationDate(currentTimeString);
+	  
+	  System.out.println("currentTimeString===>"+currentTimeString);
 	  
 	  reservationDao.insert(reservation);
   }
