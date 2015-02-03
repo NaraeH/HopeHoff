@@ -49,7 +49,7 @@ Narae.prototype.sendSms = function( callback, msgType, phoneNo, data ) {
 	}else {
 		//과금되는 주소: http://link.smsceo.co.kr/sendsms_utf8.php
 		//테스트 주소: http://link.smsceo.co.kr/sendsms_test.php
-	    $.post('http://link.smsceo.co.kr/sendsms_test.php'
+	    $.post('http://link.smsceo.co.kr/sendsms_utf8.php'
 		        , { userkey: "VzYOOg9sB2RSNAQtBmtTOFNwAzRQGFNvUTNSN1I3BzgGLQ==",
 					 userid:   "hopeHoff01",
 					 msg:      msg,
