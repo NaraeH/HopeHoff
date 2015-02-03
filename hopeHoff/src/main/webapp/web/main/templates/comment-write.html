@@ -2,6 +2,7 @@
 enctype="multipart/form-data">
 <hr>
 	<div id="cFormTitle">
+	{{shopName}}
 	<h4>내용</h4>
 		<textarea id="commentContent" name="content"></textarea>
 	</div>
@@ -13,11 +14,8 @@ enctype="multipart/form-data">
 </form>
 <script>
 $('#btnRegister').click(function(){
-console.log("aaaaa");
-	
-//console.log($("#commentContent").html());
-console.log($("#commentContent").val());
-console.log("bbbbbb");
+	$("#back").css("display", "none");
+	$("#myBook").css("display", "none");
 })
 $('#commentForm').ajaxForm({
 	data: {
